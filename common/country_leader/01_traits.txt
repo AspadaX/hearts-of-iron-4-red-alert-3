@@ -1,0 +1,12 @@
+leader_traits = {
+	
+	emperor_yoshiro = {
+		random = no
+		stability_factor = 0.7 #FOR THE EMPERAH
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+}

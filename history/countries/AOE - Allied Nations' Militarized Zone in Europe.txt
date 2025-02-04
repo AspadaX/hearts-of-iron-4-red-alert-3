@@ -1,0 +1,79 @@
+﻿capital = 7
+
+oob = "AOE_1936"
+
+add_ideas = {
+	global_headquarter_of_allied_nations
+	militarized_zone
+	unyielding_people
+	
+}
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	gw_artillery = 1
+	tech_support = 1		
+	tech_engineers = 1
+	early_fighter = 1
+}
+set_war_support = 0.1
+set_stability = 0.5
+set_research_slots = 4
+
+create_faction = "allied_nations"
+add_to_faction = ENG
+add_to_faction = USA
+add_to_faction = CAN
+add_to_faction = SAF
+add_to_faction = DEN
+add_to_faction = IRE
+
+give_guarantee = GRE
+
+set_politics = {
+
+	parties = {
+		democratic = { 
+			popularity = 92
+		}
+
+		fascism = {
+			popularity = 3
+		}
+		
+		communism = {
+			popularity = 5
+		}
+	}
+	
+	ruling_party = democratic
+	last_election = "1934.6.3"
+	election_frequency = 36
+	elections_allowed = yes
+}
+
+#Pierre Dupong from 37
+
+create_country_leader = {
+	name = "Robert Bingham"
+	desc = "POLITICS_ROBERT_BINGHAM_DESC"
+	picture = "Robert Bingham.dds"
+	expire = "1989.1.1"
+	ideology = liberalism
+	traits = {
+		#
+	}
+}
+
+create_field_marshal = {
+	name = "Robert Bingham"
+		picture = "Robert Bingham.dds"
+	traits = { logistics_wizard bearer_of_artillery urban_assault_specialist }
+	skill = 6
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 6
+	logistics_skill = 6
+}

@@ -1,0 +1,48 @@
+technologies = {
+
+	peacekeeper = {
+
+			enable_equipments = { 
+				peacekeeper_equipment
+			}
+
+			research_cost = 1
+			start_year = 1936
+
+			#set at gamestart
+			allow = {
+				always = no
+			}
+	}
+	
+	vindicator = {
+
+			enable_equipments = { 
+				vindicator_equipment
+			}
+
+			research_cost = 1
+			start_year = 1936
+
+			#set at gamestart
+			allow = {
+				always = no
+			}
+	}
+	
+	century_bomber = {
+
+			enable_equipments = { 
+				century_bomber_equipment
+			}
+
+			research_cost = 1
+			start_year = 1936
+
+			#set at gamestart
+			allow = {
+				always = no
+			}
+	}
+	
+}

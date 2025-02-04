@@ -1,0 +1,244 @@
+
+# MAIN THEME
+music = {
+	name = "maintheme"
+	file = "ra3_credits.ogg"
+	volume = 1.00
+}
+
+# General Peace:
+music = {
+	name = "threatened_in_russia"
+	file = "threatened_in_russia.ogg"
+	volume = 1.00
+}
+music = {
+	name = "brighton_beach-building_defenses"
+	file = "brighton_beach-building_defenses.ogg"
+	volume = 1.00
+}
+music = {
+	name = "brighton_beach-soviets_coming_ashore"
+	file = "brighton_beach-soviets_coming_ashore.ogg"
+	volume = 1.00
+}
+music = {
+	name = "mykonos"
+	file = "mykonos.ogg"
+	volume = 1.00
+}
+music = {
+	name = "exploring_in_mykonos"
+	file = "exploring_in_mykonos.ogg"
+	volume = 1.00
+}
+music = {
+	name = "exploring_in_havana"
+	file = "exploring_in_havana.ogg"
+	volume = 1.00
+}
+
+# General War:
+music = {
+	name = "hell_march_3"
+	file = "hell_march_3.ogg"
+	volume = 1.00
+}
+music = {
+	name = "grinder_2"
+	file = "grinder_2.ogg"
+	volume = 1.00
+}
+music = {
+	name = "hell_march_1_fftl_remix"
+	file = "hell_march_1_fftl_remix.ogg"
+	volume = 1.00
+}
+music = {
+	name = "downloading"
+	file = "downloading.ogg"
+	volume = 1.00
+}
+music = {
+	name = "hell_march_2"
+	file = "hell_march_2.ogg"
+	volume = 1.00
+}
+
+# Allied Peace:
+music = {
+	name = "exploring_in_mainland_europe"
+	file = "exploring_in_mainland_europe.ogg"
+	volume = 1.00
+}
+music = {
+	name = "threatened_in_mainland_europe"
+	file = "threatened_in_mainland_europe.ogg"
+	volume = 1.00
+}
+music = {
+	name = "exploring_in_new_york_city"
+	file = "exploring_in_new_york_city.ogg"
+	volume = 1.00
+}
+music = {
+	name = "tanya_in_gibraltar"
+	file = "tanya_in_gibraltar.ogg"
+	volume = 1.00
+}
+
+# Allied War:
+music = {
+	name = "allied_combat_2"
+	file = "allied_combat_2.ogg"
+	volume = 1.00
+}
+music = {
+	name = "allied_combat_2-losing"
+	file = "allied_combat_2-losing.ogg"
+	volume = 1.00
+}
+music = {
+	name = "allied_combat_2-triumphal"
+	file = "allied_combat_2-triumphal.ogg"
+	volume = 1.00
+}
+music = {
+	name = "allied-up_yours"
+	file = "allied-up_yours.ogg"
+	volume = 1.00
+}
+
+# Soviet Peace:
+music = {
+	name = "soviet_march-reprise"
+	file = "soviet_march-reprise.ogg"
+	volume = 1.00
+}
+music = {
+	name = "exploring_in_russia"
+	file = "exploring_in_russia.ogg"
+	volume = 1.00
+}
+music = {
+	name = "floating_island_fortress"
+	file = "floating_island_fortress.ogg"
+	volume = 1.00
+}
+
+# Soviet War:
+music = {
+	name = "soviet_march"
+	file = "soviet_march.ogg"
+	volume = 1.00
+}
+music = {
+	name = "celebration"
+	file = "celebration.ogg"
+	volume = 1.00
+}
+
+# Asian Peace:
+music = {
+	name = "japanese_campaign"
+	file = "japanese_campaign.ogg"
+	volume = 1.00
+}
+music = {
+	name = "japan_combat_1-losing"
+	file = "japan_combat_1-losing.ogg"
+	volume = 1.00
+}
+music = {
+	name = "mount_fuji_intro"
+	file = "mount_fuji_intro.ogg"
+	volume = 1.00
+}
+music = {
+	name = "exploring_in_mount_fuji"
+	file = "exploring_in_mount_fuji.ogg"
+	volume = 1.00
+}
+music = {
+	name = "threatened_in_mount_fuji"
+	file = "threatened_in_mount_fuji.ogg"
+	volume = 1.00
+}
+music = {
+	name = "exploring_in_tokyo_harbor"
+	file = "exploring_in_tokyo_harbor.ogg"
+	volume = 1.00
+}
+music = {
+	name = "threatened_in_tokyo_harbor"
+	file = "threatened_in_tokyo_harbor.ogg"
+	volume = 1.00
+}
+
+# Asian War:
+music = {
+	name = "enter_the_shogun_executioner"
+	file = "enter_the_shogun_executioner.ogg"
+	volume = 1.00
+}
+music = {
+	name = "japan_combat_1"
+	file = "japan_combat_1.ogg"
+	volume = 1.00
+}
+music = {
+	name = "japan_combat_1-triumphal"
+	file = "japan_combat_1-triumphal.ogg"
+	volume = 1.00
+}
+music = {
+	name = "japanese-up_yours"
+	file = "japanese-up_yours.ogg"
+	volume = 1.00
+}
+
+# Axis Peace:
+music = {
+	name = "easter_island-lying_in_wait"
+	file = "easter_island-lying_in_wait.ogg"
+	volume = 1.00
+}
+music = {
+	name = "threatened_in_havana"
+	file = "threatened_in_havana.ogg"
+	volume = 1.00
+}
+
+# Axis & Soviet Peace:
+music = {
+	name = "iceland"
+	file = "iceland.ogg"
+	volume = 1.00
+}
+music = {
+	name = "exploring_in_vladivostok"
+	file = "exploring_in_vladivostok.ogg"
+	volume = 1.00
+}
+
+# Axis & Soviet War
+music = {
+	name = "soviet_combat_1-losing"
+	file = "soviet_combat_1-losing.ogg"
+	volume = 1.00
+}
+music = {
+	name = "soviet_combat_1-triumph"
+	file = "soviet_combat_1-triumph.ogg"
+	volume = 1.00
+}
+music = {
+	name = "soviet_combat_1"
+	file = "soviet_combat_1.ogg"
+	volume = 1.00
+}
+music = {
+	name = "soviet-up_yours"
+	file = "soviet-up_yours.ogg"
+	volume = 1.00
+}

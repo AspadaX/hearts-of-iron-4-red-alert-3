@@ -1,0 +1,35 @@
+ideas = {
+	country = {
+	
+		#Politics
+		
+		the_shogunate = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+					has_government = fascism
+			}
+			
+			picture = jap_militarism_showa
+			
+			modifier = {
+				political_power_gain = 1
+				army_org_Factor = 0.05
+				planning_speed = 0.25
+			}
+		}
+		
+		#Economics
+		
+		
+		
+		
+		
+		#Others
+		
+		
+		
+	}
+}

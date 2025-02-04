@@ -1,0 +1,945 @@
+focus_tree = {
+	id = empire_focus
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			tag = EOR
+		}
+	}
+
+	default = no
+	
+	focus = {
+		id = EOR_imperial_ambition
+		icon = GFX_goal_demand_sudetenland
+		x = 2
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+	
+	#War
+	
+	focus = {
+		id = EOR_cooperate_with_china
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = { focus = EOR_imperial_ambition }
+		mutually_exclusive = { focus = EOR_subjugate_china }
+		x = -2
+		y = 1
+		relative_position_id = EOR_imperial_ambition
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		available = {
+			is_faction_leader = yes
+			country_exists = CHI
+		}
+		
+		bypass = {
+			is_in_faction_with = CHI
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			CHI = { country_event = generic.5 }
+			add_ai_strategy = {
+				type = protect
+				id = "CHI"
+				value = 100
+			}
+		}
+	}
+	
+	focus = {
+		id = EOR_subjugate_china
+		icon = GFX_focus_attack_china
+		prerequisite = { focus = EOR_imperial_ambition }
+		mutually_exclusive = { focus = EOR_cooperate_with_china }
+		x = 2
+		y = 1
+		relative_position_id = EOR_imperial_ambition
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		available = {
+			country_exists = CHI
+			NOT = { has_war_with = CHI }
+			is_puppet = no 
+		}
+		
+		bypass = {
+			is_in_faction_with = CHI
+			has_war_with = CHI
+		}
+		
+		will_lead_to_war_with = CHI
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			create_wargoal = {
+ 				type = puppet_wargoal_focus
+ 				target = CHI
+ 			}
+		}
+	}
+	
+	focus = {
+		id = EOR_strike_vladivostok
+		icon = GFX_focus_eng_expose_the_belly_of_the_bear
+		prerequisite = { focus = EOR_cooperate_with_china }
+		x = 0
+		y = 1
+		relative_position_id = EOR_cooperate_with_china
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		available = {
+			is_faction_leader = yes
+			country_exists = SOV
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+		
+			transfer_state = 408
+			
+			declare_war_on = { 
+				type = annex_everything
+				target = SOV				
+				}
+		}
+	}
+	
+	focus = {
+		id = EOR_preemptive_strike_against_the_US
+		icon = GFX_focus_generic_strike_at_democracy3
+		prerequisite = { focus = EOR_strike_vladivostok }
+		x = 0
+		y = 1
+		relative_position_id = EOR_strike_vladivostok
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		available = {
+			is_faction_leader = yes
+			country_exists = USA
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			
+			declare_war_on = { 
+				type = annex_everything
+				target = USA
+				}
+		}
+	}
+	
+	#Country Development
+	
+	focus = {
+		id = EOR_ensure_the_supremacy_of_our_technology
+		icon = GFX_goal_generic_production
+		x = 22
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = EOR_approach_the_new_high_tech_companies
+		icon = GFX_focus_generic_combined_arms
+		prerequisite = { focus = EOR_ensure_the_supremacy_of_our_technology }
+		
+		x = -8
+		y = 1
+		relative_position_id = EOR_ensure_the_supremacy_of_our_technology
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = -100
+		}
+	}
+	
+	focus = {
+		id = EOR_kurikara_robotics
+		icon = GFX_
+		prerequisite = { focus = EOR_approach_the_new_high_tech_companies }
+		
+		x = 0
+		y = 1
+		relative_position_id = EOR_approach_the_new_high_tech_companies
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = kurikara_robotics
+			set_technology = { king_oni = 1 }
+		}
+	}
+	
+	focus = {
+		id = EOR_kanegawa_industries
+		icon = GFX_
+		prerequisite = { focus = EOR_approach_the_new_high_tech_companies }
+		
+		x = -2
+		y = 1
+		relative_position_id = EOR_approach_the_new_high_tech_companies
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = kanegawa_industries
+			set_technology = { wave_force_artillery = 1 }
+		}
+	}
+	
+	focus = {
+		id = EOR_tenzai_robotics
+		icon = GFX_
+		prerequisite = { focus = EOR_approach_the_new_high_tech_companies }
+		
+		x = 2
+		y = 1
+		relative_position_id = EOR_approach_the_new_high_tech_companies
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = tenzai_robotics
+		}
+	}
+	
+	focus = {
+		id = EOR_shirada_shipworks
+		icon = GFX_
+		prerequisite = { focus = EOR_approach_the_new_high_tech_companies }
+		
+		x = 4
+		y = 1
+		relative_position_id = EOR_approach_the_new_high_tech_companies
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = shirada_shipworks
+			set_technology = { shogun_battleship = 1 }
+		}
+	}
+	
+	focus = {
+		id = EOR_funding_imperial_weaponry_institute
+		icon = GFX_goal_tfv_generic_tech_sharing
+		prerequisite = { focus = EOR_ensure_the_supremacy_of_our_technology }
+		
+		x = 0
+		y = 1
+		relative_position_id = EOR_ensure_the_supremacy_of_our_technology
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = -100
+			add_ideas = EOR_supremacy_of_technology
+		}
+	}
+	
+	focus = {
+		id = EOR_a_highly_mechanized_army
+		icon = GFX_focus_generic_army_tanks2
+		prerequisite = { focus = EOR_funding_imperial_weaponry_institute }
+		
+		x = -1
+		y = 1
+		relative_position_id = EOR_funding_imperial_weaponry_institute
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_ideas = EOR_a_highly_mechanized_army
+		}
+	}
+	
+	focus = {
+		id = EOR_the_futuristic_bushido
+		icon = GFX_focus_generic_japanese_imperial_glory
+		prerequisite = { focus = EOR_funding_imperial_weaponry_institute }
+		
+		x = 1
+		y = 1
+		relative_position_id = EOR_funding_imperial_weaponry_institute
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_ideas = EOR_the_futuristic_bushido
+			set_technology = { imperial_warrior = 1 }
+		}
+	}
+	
+	focus = {
+		id = EOR_landing_combat_scheme
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = EOR_the_futuristic_bushido }
+		prerequisite = { focus = EOR_a_highly_mechanized_army }
+		
+		x = -1
+		y = 1
+		relative_position_id = EOR_the_futuristic_bushido
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_ideas = EOR_landing_combat_scheme
+			set_technology = { tsunami_tank = 1 }
+		}
+	}
+	
+	focus = {
+		id = EOR_multiple_terrains_combat_support
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = EOR_the_futuristic_bushido }
+		prerequisite = { focus = EOR_a_highly_mechanized_army }
+		
+		x = -3
+		y = 1
+		relative_position_id = EOR_the_futuristic_bushido
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_ideas = EOR_multiple_terrains_combat_support
+		}
+	}
+	
+	focus = {
+		id = EOR_fortified_fleet
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = EOR_the_futuristic_bushido }
+		prerequisite = { focus = EOR_a_highly_mechanized_army }
+		
+		x = 1
+		y = 1
+		relative_position_id = EOR_the_futuristic_bushido
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_ideas = EOR_fortified_fleet
+		}
+	}
+	
+	focus = {
+		id = EOR_the_nano_construction
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = EOR_ensure_the_supremacy_of_our_technology }
+		
+		x = 3
+		y = 1
+		relative_position_id = EOR_ensure_the_supremacy_of_our_technology
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_ideas = EOR_the_nano_construction
+		}
+	}
+	
+	focus = {
+		id = EOR_the_robotic_production
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = EOR_ensure_the_supremacy_of_our_technology }
+		
+		x = 5
+		y = 1
+		relative_position_id = EOR_ensure_the_supremacy_of_our_technology
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_ideas = EOR_the_robotic_production
+		}
+	}
+	
+	focus = {
+		id = EOR_liberate_the_manpower
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = EOR_the_nano_construction }
+		prerequisite = { focus = EOR_the_robotic_production }
+		
+		x = 1
+		y = 1
+		relative_position_id = EOR_the_nano_construction
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_ideas = EOR_liberate_the_manpower
+		}
+	}
+	
+	#Imperial Wartime Measures
+	
+	focus = {
+		id = EOR_imperial_wartime_measures
+		icon = GFX_goal_generic_national_unity
+		x = 7
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		#available = {
+		#	has_war = yes
+		#}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = EOR_build_our_overseas_territories
+		icon = GFX_focus_jap_manchurian_project
+		x = 2
+		y = 1
+		prerequisite = { focus = EOR_imperial_wartime_measures }
+		
+		relative_position_id = EOR_imperial_wartime_measures
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			OR = {
+				IOT = { is_subject_of = ROOT }
+				MAL = { is_subject_of = ROOT }
+				INS = { is_subject_of = ROOT }
+				PHI = { is_subject_of = ROOT }
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+			if = {
+				limit = {
+					IOT = { is_subject_of = ROOT }
+				}
+				IOT = {				
+					add_stability = 0.1
+					add_political_power = 150
+				}
+			}
+			
+			if = {
+				limit = {
+					MAL = { is_subject_of = ROOT }
+				}
+				MAL = {				
+					add_stability = 0.1
+					add_political_power = 150
+				}
+			}
+			
+			if = {
+				limit = {
+					INS = { is_subject_of = ROOT }
+				}
+				INS = {				
+					add_stability = 0.1
+					add_political_power = 150
+				}
+			}
+			
+			if = {
+				limit = {
+					PHI = { is_subject_of = ROOT }
+				}
+				PHI = {				
+					add_stability = 0.1
+					add_political_power = 150
+				}
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = EOR_the_technological_co-development_initiative
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = EOR_build_our_overseas_territories }
+		x = -1
+		y = 1
+		relative_position_id = EOR_build_our_overseas_territories
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		available = {
+			OR = {
+				IOT = { is_subject_of = ROOT }
+				MAL = { is_subject_of = ROOT }
+				INS = { is_subject_of = ROOT }
+				PHI = { is_subject_of = ROOT }
+			}
+		}
+		
+		completion_reward = {
+			add_to_tech_sharing_group = imperial_research
+			if = {
+				limit = {
+					IOT = { is_subject_of = ROOT }
+				}
+				IOT = {				
+					add_to_tech_sharing_group = imperial_research
+				}
+			}
+			if = {
+				limit = {
+					MAL = { is_subject_of = ROOT }
+				}
+				MAL = {				
+					add_to_tech_sharing_group = imperial_research
+				}
+			}
+			if = {
+				limit = {
+					INS = { is_subject_of = ROOT }
+				}
+				INS = {				
+					add_to_tech_sharing_group = imperial_research
+				}
+			}
+			if = {
+				limit = {
+					PHI = { is_subject_of = ROOT }
+				}
+				PHI = {				
+					add_to_tech_sharing_group = imperial_research
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = EOR_tennoheika_banzai
+		icon = GFX_focus_jap_showa_restoration
+		prerequisite = { focus = EOR_build_our_overseas_territories }
+		x = 1
+		y = 1
+		relative_position_id = EOR_build_our_overseas_territories
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		available = {
+			OR = {
+				IOT = { is_subject_of = ROOT }
+				MAL = { is_subject_of = ROOT }
+				INS = { is_subject_of = ROOT }
+				PHI = { is_subject_of = ROOT }
+			}
+		}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					IOT = { is_subject_of = ROOT }
+				}
+				IOT = {
+					swap_ideas = {
+						remove_idea = loyal_to_the_empire
+						add_idea = loyal_to_the_empire_forever
+					}
+				}
+			}
+			if = {
+				limit = {
+					MAL = { is_subject_of = ROOT }
+				}
+				MAL = {				
+					swap_ideas = {
+						remove_idea = loyal_to_the_empire
+						add_idea = loyal_to_the_empire_forever
+					}
+				}
+			}
+			if = {
+				limit = {
+					INS = { is_subject_of = ROOT }
+				}
+				INS = {				
+					swap_ideas = {
+						remove_idea = loyal_to_the_empire
+						add_idea = loyal_to_the_empire_forever
+					}
+				}
+			}
+			if = {
+				limit = {
+					PHI = { is_subject_of = ROOT }
+				}
+				PHI = {				
+					swap_ideas = {
+						remove_idea = loyal_to_the_empire
+						add_idea = loyal_to_the_empire_forever
+					}
+				}
+			}
+		}
+	}
+	
+	#Imperial Mobilization Law
+	
+	focus = {
+		id = EOR_introduce_the_imperial_mobilization_law
+		icon = GFX_goal_generic_axis_build_infantry
+		prerequisite = { focus = EOR_imperial_wartime_measures }
+		x = -1
+		y = 1
+		relative_position_id = EOR_imperial_wartime_measures
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		completion_reward = {
+			add_war_support = 0.05
+			IOT = {
+				add_war_support = 0.05
+			}
+			MAL = {
+				add_war_support = 0.2
+			}
+			INS = {
+				add_war_support = 0.2
+			}
+			PHI = {
+				add_war_support = 0.2
+			}
+		}
+	}
+	
+	focus = {
+		id = EOR_government_zaibatsus_dialogue
+		icon = GFX_focus_jap_zaibatsu
+		prerequisite = { focus = EOR_introduce_the_imperial_mobilization_law }
+		x = 0
+		y = 1
+		relative_position_id = EOR_introduce_the_imperial_mobilization_law
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = traditional_zaibatsus
+				add_idea = cooperative_zaibatsus
+			}
+		}
+	}
+	
+	focus = {
+		id = EOR_the_first_amendment_of_the_imperial_mobilization_law
+		icon = GFX_goal_rhineland
+		prerequisite = { focus = EOR_government_zaibatsus_dialogue }
+		x = 0
+		y = 1
+		relative_position_id = EOR_government_zaibatsus_dialogue
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		completion_reward = {
+			add_war_support = 0.15
+			IOT = {
+				add_war_support = 0.15
+			}
+			MAL = {
+				add_war_support = 0.3
+			}
+			INS = {
+				add_war_support = 0.3
+			}
+			PHI = {
+				add_war_support = 0.3
+			}
+		}
+	}
+	
+	focus = {
+		id = EOR_work_with_zaibatsus
+		icon = GFX_focus_jap_zaibatsu
+		prerequisite = { focus = EOR_the_first_amendment_of_the_imperial_mobilization_law }
+		x = 0
+		y = 1
+		relative_position_id = EOR_the_first_amendment_of_the_imperial_mobilization_law
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = cooperative_zaibatsus
+				add_idea = even_more_cooperative_zaibatsus
+			}
+		}
+	}
+	
+	focus = {
+		id = EOR_the_second_amendment_of_the_imperial_mobilization_law
+		icon = GFX_focus_chi_army_reform
+		prerequisite = { focus = EOR_work_with_zaibatsus }
+		x = 0
+		y = 1
+		relative_position_id = EOR_work_with_zaibatsus
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { has_idea = war_economy }
+					NOT = { has_idea = tot_economic_mobilisation }
+				}
+				add_ideas = war_economy
+			}
+			IOT = {
+				if = {
+				limit = {
+					NOT = { has_idea = war_economy }
+					NOT = { has_idea = tot_economic_mobilisation }
+				}
+				add_ideas = war_economy
+			}
+			}
+			MAL = {
+				if = {
+				limit = {
+					NOT = { has_idea = war_economy }
+					NOT = { has_idea = tot_economic_mobilisation }
+				}
+				add_ideas = war_economy
+			}
+			}
+			INS = {
+				if = {
+				limit = {
+					NOT = { has_idea = war_economy }
+					NOT = { has_idea = tot_economic_mobilisation }
+				}
+				add_ideas = war_economy
+			}
+			}
+			PHI = {
+				if = {
+				limit = {
+					NOT = { has_idea = war_economy }
+					NOT = { has_idea = tot_economic_mobilisation }
+				}
+				add_ideas = war_economy
+			}
+			}
+		}
+	}
+	
+	focus = {
+		id = EOR_bring_the_zaibatsus_into_the_fold
+		icon = GFX_focus_jap_zaibatsu
+		prerequisite = { focus = EOR_the_second_amendment_of_the_imperial_mobilization_law }
+		x = 0
+		y = 1
+		relative_position_id = EOR_the_second_amendment_of_the_imperial_mobilization_law
+		
+		cost = 10
+		ai_will_do = {
+			factor = 12
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = even_more_cooperative_zaibatsus
+				add_idea = controlled_zaibatsus
+			}
+		}
+	}
+	
+
+}

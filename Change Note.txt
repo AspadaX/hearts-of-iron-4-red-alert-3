@@ -1,0 +1,112 @@
+Plan: 
+
+- Optimization
+
+- Rework the AI strategy
+ 
+- Add minor powers: IOT, SOE, SOS, China, India, and Brazil. 
+
+- Support Countries: 
+	- Allied Nations
+		- Canada
+		- South Africa
+	- Empire
+		- Imperial Oceanic Territories
+		- Other Puppets 
+	- Soviet
+		- SOE
+		- SOS
+
+
+- Rework the AOE 
+
+	- Added national spirits. (F)
+	
+	- Swap the generic infantry weapons to peacekeepr weapons. (F)
+
+	- AOE Focus tree:  
+		- Development: (F)
+			- copied from the generic focus tree. (F)
+	
+		- Technology: 
+			- Contract with FutureTech
+	
+		- Internal Affairs: (F)
+			- Political: (F)
+				- Mobilization. (F)
+				- Defense Scheme: (F)
+					- Construct land forts. (F)
+					- Core territory combat buffs. (F)
+			- Expand the Militarized Zone (F)
+				- UK (F)
+				- Ireland (F)
+			- US support. (F)
+		
+			
+
+- Rework the empire's focus tree. 
+	- Add new focuses to the "technology"
+		- Introduce featured units 
+			#The Imperial Weaponry Institute
+			- The Tsunami Tank, with A Highly Mechanized Army (HF)
+			- The Imperial Warrior, with Futuristic Bushido (HF)
+			- The Shogun Excutioner, Secret Weapon ()
+			#Companies
+			- Kurikara Robotics (King Oni) (F)
+			- Kanegawa Industries (Wave-Force Artilery, available as equipment which can replace conventional artilleries) (F)
+			- Tenzai Robotics () (HF)
+			- Shirada Shipworks (Shogun Battleship) (F)
+			
+		- Combat bonuses 
+			- Landing (F)
+			- Terrain (F)
+			- Naval (F)
+	- Add new focuses which related to the puppets (HF, no IOT focus tree)
+		#Note: puppets which only provide resources and manpower will only have a generic focus tree. 
+		- The Empire of the Rising Sun
+			- Can change the puppets' conscription law through the focus tree. 
+			- Can develop the infrastructure of the puppets. 
+			- 
+		- Imperial Oceanic Territories 
+			- Provide research support to the Empire.
+		- Philippine
+			- Provide resources to the Empire. 
+			- Provide manpower to the Empire. 
+		- Malaysia
+			- Provide resources to the Empire. 
+			- Provide manpower to the Empire. 
+		- Indonesia
+			- Provide resources to the Empire. 
+			- Provide manpower to the Empire. 
+
+
+
+
+Cancelled:
+
+- Change the initial date to 2008. (X)
+
+Completed - The Rising Sun:
+
+- 
+
+Completed on May 2rd, 2019: 
+
+- Tweak the loading screen as well as the main menu. 
+- Rework Australia and New Zealand. These two countries will be merged into one country: "Imperial Oceanic Territories" (IOT)
+- Merge parts of Germany, Denmark, Netherland, Luxemburg and Belgim into one country: "The Allied Nations Militarized Zone of Europe" (AOE)
+- Set AOE as the leader of Allied Nations. 
+- Rework the Soviet occupied Europe. All those states will be merged into one country: "The Soviet Occupation Zone of Europe" (SOE), however, the Scandinavia part will be "The Soviet Occupation Zone of the Scandinavia" (SOS)
+- Rename British Raj as "India".
+- Release all the African countries. 
+- Rename China as "The Republic of China". 
+- Added a basic focus tree to the Soviet. 
+- Add debuffs to the SOE and SOS. 
+- Add the Shinto spirit to the Empire puppets. 
+- Edited the bookmark, description: Thanks Red Alert 3 WIKI Fandom
+- Delete Spanish civil war. 
+
+
+References: 
+- Incorporated @DezZolation's Red Alert 3 Music Pack. 
+- All RA3 related contents come from the Internet. 

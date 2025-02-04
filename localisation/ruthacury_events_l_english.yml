@@ -1,0 +1,15 @@
+﻿l_english:
+    ra3_africa.1.t:0 "[FROM.GetNameDef] Demands Annexation"
+    ra3_africa.1.d:0 "The [FROM.GetAdjective] government has issued an ultimatum that we 'unify' with them or face war. They demand all of our territory, this unification will be a one-sided affair. [THIS.GetNameDef] will no longer exist."
+    ra3_africa.1.a:0 "We have no choice..."
+    ra3_africa.1.b:0 "We shall never surrender!"
+    #
+    ra3_africa.2.t:0 "African Resistance Movement Forms"
+    ra3_africa.2.d:0 "Dozens of nations have united and declared war apon [SAF.GetNameDef] after its continued and unrelenting expansion in Africa."
+    ra3_africa.2.a:0 "This will make things... difficult."
+    ra3_africa.2.b:0 "They are uniting against a commmon enemy."
+    #
+    ra3_africa.3.t:0 "Africa United"
+    ra3_africa.3.d:0 "The government of the new [SAF.GetName] has announced the formation of a new united Africa. This new power will undoubtedly play a part in future."
+    ra3_africa.3.a:0 "We have carved out our own empire."
+    ra3_africa.3.b:0 "We will have to contend with a new power."

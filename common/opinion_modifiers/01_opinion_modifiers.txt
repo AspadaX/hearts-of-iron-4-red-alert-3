@@ -1,0 +1,11 @@
+opinion_modifiers = {
+
+	american_japanese_tie = {
+		value = 50
+	}
+
+	withdraw_from_allied_nations = {
+		value = -100
+	}
+
+}

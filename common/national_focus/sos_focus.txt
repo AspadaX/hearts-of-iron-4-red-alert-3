@@ -1,0 +1,15 @@
+focus_tree = {
+	id = sos_focus
+	
+	country = {
+		factor = 1
+		modifier = {
+			add = 20
+			tag = SOS
+		}
+	}
+	
+	default = no
+	reset_on_civilwar = no
+
+}

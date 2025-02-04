@@ -1,0 +1,12 @@
+﻿l_english:
+    SAF_reclaim_namibia_tt:0 "Owns the territory of is is overlord of the following countries:§Y\n [NMB.GetName]§!"
+    SAF_conquer_botswana_tt:0 "Owns the territory of is is overlord of the following countries:§Y\n [BOT.GetName]§!"
+    SAF_south_east_african_expansion_tt:0 "Owns the territory of is is overlord of the following countries:§Y\n [ZAM.GetName]\n [ZIM.GetName]\n [MZB.GetName]\n [MLW.GetName]\n [TZN.GetName]§!"
+    SAF_madagascar_expansion_tt:0 "Owns the territory of is is overlord of the following countries:§Y\n [MAD.GetName]§!"
+    SAF_south_west_african_expansion_tt:0 "Owns the territory of is is overlord of the following countries:§Y\n [ANG.GetName]\n [COG.GetName]\n [RCG.GetName]\n [GAB.GetName]\n [EQG.GetName]\n [CMR.GetName]§!"
+    SAF_subsaharan_african_expansion_tt:0 "Owns the territory of is is overlord of the following countries:§Y\n [NGA.GetName]\n [NGR.GetName]\n [DAH.GetName]\n [TOG.GetName]\n [GHA.GetName]\n [VOL.GetName]\n [MLI.GetName]\n [IVO.GetName]\n [LIB.GetName]\n [GNA.GetName]\n [SIE.GetName]\n [GNB.GetName]\n [SEN.GetName]\n [GAM.GetName]§!"
+    SAF_east_african_expansion_tt:0 "Owns the territory of is is overlord of the following countries:§Y\n [KEN.GetName]\n [SOM.GetName]\n [ETH.GetName]\n [DJI.GetName]\n [ERI.GetName]§!"
+    SAF_central_african_expansion_tt:0 "Owns the territory of is is overlord of the following countries:§Y\n [BRD.GetName]\n [RWA.GetName]\n [UGA.GetName]\n [SUD.GetName]\n [CAR.GetName]\n [CHA.GetName]§!"
+    SAF_north_african_expansion_tt:0 "Owns the territory of is is overlord of the following countries:§Y\n [MRT.GetName]\n [WES.GetName]\n [MOR.GetName]\n [ALG.GetName]\n [TUN.GetName]\n [LBA.GetName]\n [EGY.GetName]\n [SUD.GetName]§!"
+    
+    SAF_african_cores_tt:0 "Gains core and control on all §YAfrican states§!"

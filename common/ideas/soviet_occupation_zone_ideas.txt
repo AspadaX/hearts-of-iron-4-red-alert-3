@@ -1,0 +1,90 @@
+ideas = {
+	country = {
+	
+		#Politics
+		
+		occupation_zone = {
+			removal_cost = -1
+			
+			picture = hol_de_vaarplicht
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				stability_factor = -0.5
+				
+			}
+		}
+		
+		reluctant_people = {
+			removal_cost = -1
+			
+			picture = prc_low_popular_support3
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				conscription_factor = -0.75
+			}
+		}
+		
+		receive_direct_command_from_moscow = {
+			removal_cost = -1
+			
+			picture = ger_the_great_red_menace
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				autonomy_gain = -0.5
+			}
+		}
+		
+		receive_further_command_from_moscow = {
+			removal_cost = -1
+			
+			picture = ger_the_great_red_menace
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				autonomy_gain = -1
+			}
+		}
+		
+		#Economics
+		
+		
+		
+		
+		
+		#Others
+		
+		
+		
+	}
+}

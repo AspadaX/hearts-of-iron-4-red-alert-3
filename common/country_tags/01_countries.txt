@@ -1,0 +1,6 @@
+EOR = "countries/The Empire of the Rising Sun.txt"
+IOT = "countries/Imperial Oceanic Territories.txt"
+IPS = "countries/Imperial Pacific States.txt"
+SOE = "countries/The Soviet Occupation Zone in Europe.txt"
+SOS = "countries/The Soviet Occupation Zone in Scandinavia.txt"
+AOE = "countries/Allied Nations' Militarized Zone in Europe.txt"

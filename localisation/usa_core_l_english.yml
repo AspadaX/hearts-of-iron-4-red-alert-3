@@ -1,0 +1,166 @@
+﻿l_english:
+
+#Idea
+
+ us_congress:0 "The Congress"
+ us_congress_desc:0 "The congress is the landmark of the US democracy. It ensures the country's power stays in balance under the concept of "Separation of Powers". However, such a design also brings in some inefficiencies to the US government..."
+ us_congress_2:0 "The Gived-In Congress"
+ us_congress_2_desc:0 "Well, who said the power is going to stay in balance? We all know it is not forever!"
+ public_objection:0 "Public Objection"
+ public_objection_desc:0 "Why the US president now can dictate the country's policy all by himself?"
+ public_objection_2:0 "Diminshed Public Objection"
+ public_objection_desc:0 "The public now begins to quiet down..."
+ USA_strike_the_empire:0 "Strike the Empire"
+ USA_strike_the_empire_desc:0 "Let's teach Japanese how to make a true navy, with our invincible carriers!"
+
+#Praty
+
+ USA_fascism_party:0 "ANSP"
+ GER_fascism_party_long:0 "American National Socialist Party"
+ 
+#Country
+
+ USA_fascism:0 "National Socialist States of America"
+ USA_fascism_DEF:0 "the National Socialist States of America"
+ USA_fascism_ADJ:0 "American"
+ 
+ IPS_fascism:0 "Imperial Pacific States"
+ IPS_fascism_DEF:0 "the Imperial Pacific States"
+ IPS_fascism_ADJ:0 "Japanese"
+ 
+#Focus
+
+ USA_2018_us_election:0 "US Election of 2008"
+ USA_2018_us_election_desc:0 "The red menace is threating our homeland. Under such a crisis, who's going to be our next president?"
+ 
+ USA_america_leads:0 "Screw Em All!"
+ USA_america_leads_desc:0 "Let's send the commies back home to see their mommies shall we?"
+ 
+ USA_rally_the_allies:0 "Rally the Allies"
+ USA_rally_the_allies_desc:0 "The European theatre now is in a great danger, and they cannot even make sure of their own safety. The US should assume the responsibility and lead the Allies to victory!"
+ 
+ USA_war_in_europe:0 "War in Europe"
+ USA_war_in_europe_desc:0 "Let's crush the Soviets!"
+ 
+ USA_modern_monroe_doctrine:0 "Modern Monroe Doctrine"
+ USA_modern_monroe_doctrine_desc:0 "We need to make sure both our North and South American neighbours' safety, because if they are taken over by some commies or japs, our belly will be exposed to the knife!"
+ 
+ USA_safeguard_the_backyard:0 "Safeguard the Backyard"
+ USA_safeguard_the_backyard_desc:0 "Mexico is the key to our countries' safety. We should invite them to our faction. However, if the going isn't good, we shall consider to take them by force!"
+ 
+ USA_the_allies_military:0 "Meet with the New Contractors"
+ USA_the_allies_military_desc:0 "We need to upadate our weaponry now!"
+        
+ USA_FutureTech:0 "FutureTech"
+ USA_FutureTech_desc:0 "FutureTech Corporation is an Amsterdam-based technology firm operating within Allied jurisdiction. It was responsible for developing many of the technologies used in the Allied arsenal during the War of Three Powers."
+        
+ USA_future_electronics:0 "FutureElectronics"
+ USA_future_electronics_desc:0 "A branch of FutureTech, which is responsible for developing electronics"
+        
+ USA_future_tank_design:0 "FutureTankDesign"
+ USA_future_tank_design_desc:0 "A branch of FutureTech, which is responsible for tank design."
+        
+ USA_norwell:0 "Norwell-Hucks Corporation"
+ USA_norwell_desc:0 "Norwell-Hucks Corp. is an American company whose product is the Century Bomber."
+        
+ USA_asturias_sistemas:0 "Asturias Sistemas"
+ USA_asturias_sistemas_desc:0 "Asturias Sistemas is a Spanish company whose product is the Vindicator"
+        
+ USA_angstrom_defense:0 "Angstrom Defense"
+ USA_angstrom_defense_desc:0 "The Stockholm-based Angstrom Defense is a defense contractor that specializes in high performance and experimental weapons. One of their most famous products is the Apollo fighter, the Allies' primary air superiority fighter during the war."
+
+ USA_america_alone:0 "America Only"
+ USA_america_alone_desc:0 "Americans can only take care of their own interests. We cannot keep playing games with the Allies and Soviets any more. We need to move on!"
+ 
+ USA_presidential_power_act:0 "Presidential Power Act"
+ USA_presidential_power_act_desc:0 "Since the Soviets begin to invade Europe, the world had became an ever-dangerous place to live. Now, we need to allow our president to have more political power in order to reform the country to a safer place."
+ 
+ USA_withdraw_from_allied_nations:0 "Withdraw From Allied Nations"
+ USA_withdraw_from_allied_nations_desc:0 "It's all done, Allies! Americans shall no longer pay their lives and money to buy an impossible peace from those pathetic guys!"
+ 
+ USA_establish_the_armed_protection_squadron_tt:0 "The US shall be able to construct the Armed Protection Squadron (APS) "
+ 
+ USA_question_the_constitution:0 "Question the Constitution!"
+ USA_question_the_constitution_desc:0 "Those old essays are no longer useful. They may once led us to get rid of the British influence, but now, the British cannot even be sure of their own survival!"
+ 
+ USA_question_the_constitution_tt:0 "The US constitution has revised. Now the president has the absolute power! However, before the whole country accepts the new reality, we need to eliminate the traitors..."
+ 
+ USA_accept_japanese_help:0 "Invite Japanese Help"
+ USA_accept_japanese_help_desc:0 "Now matter how different our ideology used to be, we now sure have more similarities than differences. So why not ask them to help us?"
+ USA_accept_japanese_help_tt:0 "The empire will help us to defeat the rebels on the west coast and reduce the public objection there, but there is a price for sure...\n"
+ 
+ USA_rebuild_our_nation:0 "Rebuild Our Nation"
+ USA_rebuild_our_nation_desc:0 "The antiques now has been sweeped into the dustbin of history. Let's rebuild our country like our ancestors, the true Americans!"
+ 
+ USA_the_american_military: "Made in America"
+ USA_the_american_military_desc: "We need our military to be American not mixed with Europeans or some jelly beans!"
+ 
+ USA_armaments: "Armaments"
+ USA_armaments_desc:0 "The limits for what equipment can be carried by infantry are constantly being pushed. We will focus on giving our troops the best tools available."
+ USA_motorization_effort:0 "Motorization Effort"
+ USA_motorization_effort_desc:0 "Mobility and protection are crucial to get infantry into and out of the field safely. Focusing on these developments will allow us to take action quickly."
+ USA_armaments_2:0 "Armaments II"
+ USA_armaments_2_desc:0 "We will continue our efforts to ensure our infantry and support troops are armed with the best possible equipment of our time."
+ USA_mechanization_effort:0 "Mechanization Effort"
+ USA_mechanization_effort_desc:0 "Rethinking the possibilities of motorized infantry, we can push the limits of what vehicles can be constructed today."
+ USA_armaments_3:0 "Equipment Effort III"
+ USA_armaments_3_desc:0 "Instead of imitating or buying foreign equipment, we should aim to become world-leading in infantry weapons."
+ USA_armor_effort:0 "Armor Effort"
+ USA_armor_effort_desc:0 "Applying what we have learned from mechanizing our infantry, we can improve our armored vehicles as well."
+ USA_special_forces:0 "Special Forces"
+ USA_special_forces_desc:0 "We have need of elite forces; mountain troops and paratroopers should be our priority."
+
+
+#Event
+
+ usa2.1.t:0 "US asks Mexico about Alliance"
+ usa2.1.d:0 "Mexico is a very important place for the safety of both North and South America. If two countries can cooperate, the people in the American continent shall never worry about any global threat!"
+ usa2.1.a:0 "Mexico will reciprocate."
+ usa2.1.b:0 "Nope, we are better off without the US."
+ 
+ usa2.2.t:0 "Election of [GetYear]"
+ usa2.2.d:0 "The day of election has come. This is going to be the turning point of the US history. Which candidate the US citizens shall choose? A democratic guy who calls Americans to arm up against the Soviet threat? Or an ambitious...potentially fascist advocate?"
+ usa2.2.a:0 "Howard T. Ackerman trumps! He's going to arm us up!"
+ usa2.2.b:0 "Nope, we need George Lincoln Rockwell..."
+ 
+ usa2.3.t:0 "The States Ask the Empire For Help"
+ usa2.3.d:0 "The American government now is changing their political course. If we give them help, we sure will have beneftis..."
+ usa2.3.a:0 "Sure, we will help!"
+ usa2.3.b:0 "We may consider..."
+ 
+ usa2.4.t:0 "A New Leader for the New America"
+ usa2.4.d:0 "Now we need a new leader for the new regime. Who's going to be the one?"
+ usa2.4.a:0 "Lincoln Rockwell stays!"
+ usa2.4.b:0 "John Smith might be a better choice for American people."
+ 
+#News Event
+
+ news.403.t:0 "Mexico and the US Proclaim an Alliance"
+ news.403.d:0 "Mexco and the US are the two key roles in the American continent, now, both parties offcially enter into an alliance. They shall defend their people's interests together."
+ news.403.a:0 "Cool."
+ news.403.b:0 "Excellent!"
+
+ news.404.t:0 "Mexico Refuses to Ally with the US"
+ news.404.d:0 "Mexco and the US are the two key roles in the American continent, however, Mexico is not interested in the US's offer. The tension between the two countries grows."
+ news.404.a:0 "OK."
+ news.404.b:0 "Now we will take over Mexico by force!"
+ 
+ news.405.t:0 "The Empire accepted America's Request For Help"
+ news.405.d:0 "The Emperor of the Empire of the Rising Sun today has formally accepted America's request for help. They shall help the American people build a new country."
+ news.405.a:0 "OK."
+ news.405.b:0 "Excellent!"
+ 
+ 
+ 
+#Decision
+ 
+ USA_establish_the_armed_protection_squadron:0 "Establish the Armed Proctection Squadron"
+ USA_establish_the_armed_protection_squadron_desc:0 "Armed Protection Squadron (German: Waffen-SS) is going to be a new paramilitary force of the country. They will be faithful to the government!"
+ 
+#Opinion Modifiers
+
+ american_japanese_tie:0 "Japanese-American Tie"
+ withdraw_from_allied_nations:0 "Withdraw From Allied Nations"
+ 
+ 
+ 

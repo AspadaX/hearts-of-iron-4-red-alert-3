@@ -1,0 +1,87 @@
+﻿##################
+# African Events #
+##################
+
+add_namespace = ra3_africa
+
+# Country X wants country Y
+country_event = {
+	id = ra3_africa.1
+	title = ra3_africa.1.t
+	desc = ra3_africa.1.d
+	picture = GFX_report_event_usa_amelia_earhart_airplane
+
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	mean_time_to_happen = { days = 1 }
+	
+	#trigger = {
+		#tag = NMB
+	#}
+	
+	option = { # Surrender
+		name = ra3_africa.1.a
+		every_state = { 
+			limit = { is_owned_by = ROOT }
+			FROM = { transfer_state = PREV }
+		}
+	}
+	option = { # Refuse
+		name = ra3_africa.1.b
+		
+		FROM = {
+			create_wargoal = {
+				type = annex_everything
+				target = ROOT
+				generator = { 419 420 266 }
+			}
+		}
+	}
+}
+
+# African Resistance Movement Forms
+news_event = {
+	id = ra3_africa.2
+	title = ra3_africa.2.t
+	desc = ra3_africa.2.d
+	picture = GFX_news_event_african_soldiers
+
+	major = yes
+
+	is_triggered_only = yes
+
+	fire_only_once = no
+	
+	option = {
+		name = ra3_africa.2.a
+		trigger = { tag = SAF }
+	}
+	option = {
+		name = ra3_africa.2.b
+		trigger = { NOT = { tag = SAF } }
+	}
+}
+
+# United Africa
+news_event = {
+	id = ra3_africa.3
+	title = ra3_africa.3.t
+	desc = ra3_africa.3.d
+	picture = GFX_news_event_african_soldiers
+
+	major = yes
+
+	is_triggered_only = yes
+
+	fire_only_once = no
+	
+	option = {
+		name = ra3_africa.3.a
+		trigger = { tag = SAF }
+	}
+	option = {
+		name = ra3_africa.3.b
+		trigger = { NOT = { tag = SAF } }
+	}
+}

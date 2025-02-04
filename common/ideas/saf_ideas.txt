@@ -1,0 +1,43 @@
+ideas = {
+	country = {
+	
+		#Politics
+		SAF_communist_influence = {
+			removal_cost = -1
+			
+			picture = home_of_revolution
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+			
+			modifier = {
+				#democratic_drift = -0.02
+				communism_drift = 0.04
+			}
+		}
+		
+		SAF_fascist_support = {
+			removal_cost = -1
+			
+			picture = generic_fascism_drift_2
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+			
+			modifier = {
+				#democratic_drift = -0.02
+				fascism_drift = 0.04
+			}
+		}
+	}
+}

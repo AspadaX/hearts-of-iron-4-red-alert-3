@@ -1,0 +1,141 @@
+bookmarks = {
+	bookmark = {
+		name = "WAR_OF_THE_THREE_POWERS_NAME"
+		desc = "WAR_OF_THE_THREE_POWERS_DESC"
+		date = 2008.1.1.12
+		picture = "GFX_select_date_1936"
+		default_country = "USA"
+		default = yes
+		
+		"USA"={
+			history = "USA_WAR_OF_THE_THREE_POWERS_DESC"
+			ideology = democratic
+			ideas = {
+				free_trade
+				home_of_the_free
+				us_congress
+			}
+			focuses = {
+				USA_2018_us_election
+				USA_america_leads
+				USA_modern_monroe_doctrine
+			}
+		}
+		
+		"AOE"={
+			history = "AOE_WAR_OF_THE_THREE_POWERS_DESC"
+			ideology = democratic
+			ideas = {
+				global_headquarter_of_allied_nations
+				militarized_zone
+				unyielding_people
+			}
+			focuses = {
+				AOE_industrial_effort
+				AOE_reclaim_europe
+				AOE_rally_against_the_common_enemy
+			}
+		}
+
+		"ENG"={
+			history = "ENG_WAR_OF_THE_THREE_POWERS_DESC"
+			ideology = democratic
+			ideas = {
+				
+			}	
+			focuses = {
+				
+			}			
+		}
+		
+		"SOV"={
+			history = "SOV_WAR_OF_THE_THREE_POWERS_DESC"
+			ideology = communism
+			ideas = {
+				home_of_revolution
+			}
+			focuses = {
+				SOV_finish_five_year_plan
+				SOV_the_revolution
+				SOV_strengthen_the_command_system
+			}	
+		}
+		
+		"SOE" = {
+			history = "SOE_WAR_OF_THE_THREE_POWERS_DESC"
+			ideology = communism
+			ideas = {
+				occupation_zone
+				reluctant_people
+				receive_direct_command_from_moscow
+			}
+			focuses = {
+				
+			}
+		}
+		
+		"SOS" = {
+			history = "SOS_WAR_OF_THE_THREE_POWERS_DESC"
+			ideology = communism
+			ideas = {
+				occupation_zone
+				reluctant_people
+				receive_direct_command_from_moscow
+			}
+			focuses = {
+				
+			}
+		}
+		
+		"EOR"={
+			history = "EOR_WAR_OF_THE_THREE_POWERS_DESC"
+			ideology = fascism
+			ideas = {
+				state_shintoism
+				the_shogunate
+				traditional_zaibatsus
+			}	
+			focuses = {
+				EOR_imperial_ambition
+				EOR_strike_vladivostok
+				EOR_preemptive_strike_against_the_US
+			}			
+		}
+		
+		#Minors
+		
+		"IOT" = {
+			minor = yes
+			history = "IOT_WAR_OF_THE_THREE_POWERS_DESC"
+			ideology = fascism
+			ideas = {
+				state_shintoism
+				loyal_to_the_empire
+			}
+			focuses = {
+				
+			}
+		}
+
+		"SAF" = {
+			minor = yes
+			history = "SAF_WAR_OF_THE_THREE_POWERS_DESC"
+			ideology = democratic
+			ideas = {
+				SAF_ossewabrandwag
+			}
+			focuses = {
+				SAF_go_with_soviets
+			}
+		}
+		
+		"---"={
+			history = "OTHER_WAR_OF_THE_THREE_POWERS_DESC"
+		}
+		
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

@@ -1,0 +1,10 @@
+﻿l_english:
+ # South Africa
+ SAF_neutrality_party:0 "DA"
+ SAF_neutrality_party_long:0 "Democratic Alliance"
+ SAF_communism_party:0 "SACP"
+ SAF_communism_party_long:0 "South African Communist Party"
+ SAF_democratic_party:0 "ANC"
+ SAF_democratic_party_long:0 "African National Congress"
+ SAF_fascism_party:0 "EFF"
+ SAF_fascism_party_long:0 "Economic Freedom Fighters"

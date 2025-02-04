@@ -1,0 +1,19 @@
+focus_tree = {
+	id = iot_focus
+	
+	country = {
+		factor = 1
+		modifier = {
+			add = 20
+			tag = IOT
+		}
+	}
+	
+	default = no
+	reset_on_civilwar = no
+
+	
+
+
+
+}

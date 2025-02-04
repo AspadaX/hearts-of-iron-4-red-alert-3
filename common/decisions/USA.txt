@@ -1,0 +1,272 @@
+war_measures = {
+USA_establish_the_armed_protection_squadron = {
+		icon = generic_prepare_civil_war
+		available = {
+			OR = {
+				AND = {
+					has_war = yes
+				}
+				has_civil_war = yes
+			}
+		}
+		visible = {
+			has_completed_focus = USA_establish_the_armed_protection_squadron
+			not = { has_country_flag = USA_free_corps_raised }
+			#not = { has_government = democratic }
+		}
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 200
+		}
+		complete_effect = {
+			division_template = {
+				name = "Armed Protection Squadron"
+					priority = 1
+					division_names_group = USA_INF_01
+					regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+				}
+			}
+			366 = {
+					create_unit = {
+						division = "name = \"I/Armed Protection Squadron Florida\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"II/Armed Protection Squadron Florida\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"III/Armed Protection Squadron Florida\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+			}
+			365 = {
+					create_unit = {
+						division = "name = \"I/Armed Protection Squadron Georgia\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"II/Armed Protection Squadron Georgia\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"III/Armed Protection Squadron Georgia\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+			}
+			367 = {
+					create_unit = {
+						division = "name = \"I/Armed Protection Squadron Alabama\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"II/Armed Protection Squadron Alabama\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"III/Armed Protection Squadron Alabama\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+			}
+			370 = {
+					create_unit = {
+						division = "name = \"I/Armed Protection Squadron Mississippi\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"II/Armed Protection Squadron Mississippi\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"III/Armed Protection Squadron Mississippi\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+			}
+			362 = {
+					create_unit = {
+						division = "name = \"I/Armed Protection Squadron Virginia\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"II/Armed Protection Squadron Virginia\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"III/Armed Protection Squadron Virginia\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+			}
+			363 = {
+					create_unit = {
+						division = "name = \"I/Armed Protection Squadron North Carolina\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"II/Armed Protection Squadron North Carolina\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"III/Armed Protection Squadron North Carolina\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+			}
+			364 = {
+					create_unit = {
+						division = "name = \"I/Armed Protection Squadron South Carolina\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"II/Armed Protection Squadron South Carolina\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"III/Armed Protection Squadron South Carolina\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+			}
+			371 = {
+					create_unit = {
+						division = "name = \"I/Armed Protection Squadron Louisiana\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"II/Armed Protection Squadron Louisiana\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"III/Armed Protection Squadron Louisiana\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+			}
+			375 = {
+					create_unit = {
+						division = "name = \"I/Armed Protection Squadron Texas\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"II/Armed Protection Squadron Texas\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"III/Armed Protection Squadron Texas\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+			}
+			372 = {
+					create_unit = {
+						division = "name = \"I/Armed Protection Squadron Arkansas\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"II/Armed Protection Squadron Arkansas\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"III/Armed Protection Squadron Arkansas\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+			}
+			if = {
+					limit = {
+						has_country_flag = MTG_work_with_the_bund
+					}
+					373 = {
+						create_unit = {
+							division = "name = \"I/Freikorps Missouri\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"II/Freikorps Missouri\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"III/Freikorps Missouri\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+							owner = ROOT
+						}
+					}
+					394 = {
+						create_unit = {
+							division = "name = \"I/Freikorps Wisconsin\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"II/Freikorps Wisconsin\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"III/Freikorps Wisconsin\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+							owner = ROOT
+						}
+					}
+					395 = {
+						create_unit = {
+							division = "name = \"I/Freikorps Illinois\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"II/Freikorps Illinois\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"III/Freikorps Illinois\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+							owner = ROOT
+						}
+					}
+					261 = {
+						create_unit = {
+							division = "name = \"I/Freikorps Ohio\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"II/Freikorps Ohio\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"III/Freikorps Ohio\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+							owner = ROOT
+						}
+					}
+					396 = {
+						create_unit = {
+							division = "name = \"I/Freikorps Indiana\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"II/Freikorps Indiana\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"III/Freikorps Indiana\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+							owner = ROOT
+						}
+					}
+					393 = {
+						create_unit = {
+							division = "name = \"I/Freikorps Michigan\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"II/Freikorps Michigan\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"III/Freikorps Michigan\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
+							owner = ROOT
+						}
+					}
+			}
+		}
+	}
+}

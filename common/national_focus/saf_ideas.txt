@@ -1,0 +1,28 @@
+ideas = {
+	country = {
+	
+		#Politics
+		SAF_communist_influence = {
+			removal_cost = -1
+			
+			picture = home_of_revolution
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				#democratic_drift = -0.02
+				communism_drift = 0.04
+			}
+		}
+	}
+}

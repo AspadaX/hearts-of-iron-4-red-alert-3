@@ -1,0 +1,39 @@
+	on_actions = {
+
+		on_startup = {
+			effect = {
+				CHI = {
+					every_state = {
+						limit = {
+							is_core_of = PRC
+						}
+						remove_core_of = PRC
+					}
+				}
+				CHI = {
+					every_state = {
+						limit = {
+							is_claimed_by = PRC
+						}
+						remove_claim_by = PRC
+					}
+				}
+				EOR = {
+					every_state = {
+						limit = {
+							is_core_of = PRC
+						}
+						remove_core_of = PRC
+					}
+				}
+				EOR = {
+					every_state = {
+						limit = {
+							is_claimed_by = PRC
+						}
+						remove_claim_by = PRC
+					}
+				}
+			}
+		}
+	}

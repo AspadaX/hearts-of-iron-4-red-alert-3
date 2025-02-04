@@ -1,0 +1,582 @@
+ideas = {
+	country = {
+	
+		#Politics
+		
+		the_shogunate = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+					has_government = fascism
+			}
+			
+			picture = jap_militarism_showa
+			
+			modifier = {
+				political_power_gain = 1
+				army_org_Factor = 0.05
+				planning_speed = 0.25
+			}
+		}
+		
+		#Puppet Politics
+		
+		loyal_to_the_empire = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+					has_government = fascism
+			}
+			
+			picture = imperial_glory_idea
+			
+			modifier = {
+				autonomy_gain = -0.5
+			}
+		}
+		
+		loyal_to_the_empire_forever = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+					has_government = fascism
+			}
+			
+			picture = imperial_glory_idea
+			
+			modifier = {
+				autonomy_gain = -1
+			}
+		}
+		
+		#Economics
+		
+		traditional_zaibatsus = {
+		
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = jap_zaibatsu
+			
+			modifier = {
+				political_power_cost = 0.25
+				trade_laws_cost_factor = 0.25
+				economy_cost_factor = 0.25
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+				production_speed_dockyard_factor = 0.05
+				consumer_goods_factor = 0.05
+			}
+		}
+		
+		cooperative_zaibatsus = {
+		
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = jap_zaibatsu_ally
+			
+			modifier = {
+				political_power_cost = 0.25
+				trade_laws_cost_factor = 0.15
+				economy_cost_factor = 0.15
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+				production_speed_dockyard_factor = 0.05
+				consumer_goods_factor = 0.05
+			}
+		}
+		
+		even_more_cooperative_zaibatsus = {
+		
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = jap_zaibatsu_ally
+			
+			modifier = {
+				political_power_cost = 0.25
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+				production_speed_dockyard_factor = 0.05
+			}
+		}
+		
+		controlled_zaibatsus = {
+		
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = jap_zaibatsu_control
+			
+			modifier = {
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+				production_speed_dockyard_factor = 0.05
+			}
+		}
+		
+		#Others
+		
+		EOR_supremacy_of_technology = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = jap_supremacy_of_technology
+			
+			research_bonus = {
+				infantry_weapons = 0.1
+				armor = 0.1
+			}
+		}
+		
+		EOR_the_nano_construction = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = man_five_year_plan_industry
+			
+			modifier = {
+				production_speed_buildings_factor = 0.5
+			}
+		}
+		
+		EOR_a_highly_mechanized_army = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = man_five_year_plan_tank
+			
+			modifier = {
+				army_speed_factor = 0.25
+			}
+		}
+		
+		EOR_liberate_the_manpower = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_army_war_college
+			
+			modifier = {
+				conscription = 0.25
+			}
+		}
+		
+		EOR_the_robotic_production = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_license_production
+			
+			modifier = {
+				industrial_capacity_factory = 0.5
+				industrial_capacity_dockyard = 0.5
+			}
+		}
+		
+		EOR_the_futuristic_bushido = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = man_militarism
+			
+			modifier = {
+				offence = 0.20
+			}
+		}
+		
+		EOR_landing_combat_scheme = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = escort_effort_focus
+			
+			modifier = {
+				amphibious_invasion = 0.20
+				invasion_preparation = -0.25
+			}
+		}
+		
+		EOR_multiple_terrains_combat_support = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_war_preparation
+			
+			modifier = {
+				attrition = -0.25
+			}
+		}
+		
+		EOR_fortified_fleet = {
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_navy_bonus
+			
+			modifier = {
+				spotting_chance = 0.25
+				navy_capital_ship_attack_factor = 0.25
+				navy_capital_ship_defence_factor = 0.25
+				navy_screen_attack_factor = 0.25
+				navy_screen_defence_factor = 0.25
+				navy_submarine_attack_factor = 0.25
+				navy_submarine_defence_factor = 0.25
+				
+			}
+		}
+		
+		
+	}
+	
+	#Manufacturers
+	
+	naval_manufacturer = {
+		
+		designer = yes
+		
+		yokosuka_naval_arsenal = {
+						
+			allowed = {
+				original_tag = EOR
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { pacific_fleet_naval_manufacturer } #built best CVs
+
+			equipment_bonus = {
+				# 
+			}
+		}
+		
+		maizuru_naval_arsenal = {
+						
+			allowed = {
+				original_tag = EOR
+			}
+				
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { convoy_escort_naval_manufacturer } #destroyer R&D
+
+			equipment_bonus = {
+				# 
+			}
+		}
+		
+		sasebo_naval_arsenal = {
+			
+			allowed = {
+				original_tag = EOR
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { coastal_defence_naval_manufacturer } #used for many repairs and conversions
+			
+			equipment_bonus = {
+				
+			}
+		}
+		
+		shirada_shipworks = {
+			
+			allowed = {
+				original_tag = EOR
+			}
+			
+			available = {
+				has_completed_focus = EOR_shirada_shipworks
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.25
+			}
+			
+			traits = { battlefleet_designer } #built shogun battleships
+			
+			equipment_bonus = {
+				
+			}
+		}
+	}
+	
+	aircraft_manufacturer = {
+		
+		designer = yes
+		
+		tenzai_robotics	= {
+						
+			allowed = {
+				original_tag = EOR	
+			}
+			
+			available = {
+				has_completed_focus = EOR_tenzai_robotics
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer_2 }
+
+			modifier = {
+
+			}
+		}
+		
+		nakajima = {
+						
+			allowed = {
+				original_tag = EOR
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { heavy_aircraft_manufacturer }
+
+		}
+		
+		yokosuka = {
+						
+			allowed = {
+				original_tag = EOR
+			}
+						
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { naval_aircraft_manufacturer }
+		}
+	}
+	
+	
+	industrial_concern = {
+	
+		kawasaki = {
+			
+			allowed = {
+				original_tag = EOR
+			}
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+		}
+		
+		
+		sumitomo = {
+						
+			allowed = {
+				original_tag = EOR
+			}
+						
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+		}
+
+		JAP_idemitsu_kosan = {
+						
+			picture = generic_industrial_concern_2
+			
+			allowed = {
+				original_tag = EOR
+			}
+						
+			research_bonus = {
+				industry = 0.05
+				synth_resources = 0.1
+			}
+			
+			traits = { refinery_concern }
+		}
+	}
+	
+	materiel_manufacturer = {
+			
+		designer = yes
+		
+		tokyo_arsenal = {
+			
+			allowed = {
+				original_tag = EOR
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+		
+		nissan = {
+						
+			allowed = {
+				original_tag = EOR
+			}
+						
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+		}
+	}
+	
+	tank_manufacturer = {
+	
+		designer = yes
+	
+		kanegawa_industries = {
+			
+			allowed = {
+				original_tag = EOR
+			}
+			
+			available = { 
+				has_completed_focus = EOR_kanegawa_industries
+			}
+				
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { tank_manufacturer }
+		}
+		
+		kurikara_robotics = {
+			
+			allowed = {
+				original_tag = EOR
+			}
+			
+			available = { 
+				has_completed_focus = EOR_kurikara_robotics
+			}
+				
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { heavy_tank_manufacturer }
+		}
+		
+	}
+
+
+	
+}

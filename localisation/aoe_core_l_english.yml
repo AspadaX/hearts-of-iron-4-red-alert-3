@@ -1,0 +1,30 @@
+﻿l_english:
+
+#############
+### IDEAS ###
+#############
+
+ 
+######################
+### NATIONAL FOCUS ###
+######################
+ 
+ 
+##############
+### EVENTS ###
+##############
+
+
+##################
+### TECHNOLOGY ###
+##################
+ peacekeeper_infantry:0 "Peacekeeper"
+ peacekeeper_infantry_desc:0 "Peacekeeper's are the elite Infantry of the Allied armies."
+ apollo_fighter:0 "Apollo Fighter"
+ apollo_fighter_desc:0 "Faster and more nimble than any another fighter the Apollo is truly the master of the skies."
+ 
+ #################
+ ### EQUIPMENT ###
+ #################
+ apollo_fighter_equipment_1:0 "Apollo Fighter"
+ apollo_fighter_equipment_1_desc:0 "Faster and more nimble than any another fighter the Apollo is truly the master of the skies."

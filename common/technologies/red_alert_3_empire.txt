@@ -1,0 +1,75 @@
+technologies = {
+
+	wave_force_artillery = {
+
+			enable_equipments = { 
+				wave_force_artillery_equipment
+			}
+
+			research_cost = 1
+			start_year = 1936
+
+			#set at gamestart
+			allow = {
+				always = no
+			}
+	}
+	
+	shogun_battleship = {
+
+			enable_equipments = { 
+				ship_hull_shogun_battleship
+			}
+
+			research_cost = 1
+			start_year = 1936
+
+			#set at gamestart
+			allow = {
+				always = no
+			}
+	}
+	
+	king_oni = {
+			enable_equipments = {
+				king_oni_equipment
+			}
+			
+			research_cost = 1
+			start_year = 1936
+			
+			#set at gamestart
+			allow = {
+				always = no
+			}
+	}
+	
+	imperial_warrior = {
+			enable_equipments = {
+				imperial_warrior_equipment
+			}
+			
+			research_cost = 1
+			start_year = 1936
+			
+			#set at gamestart
+			allow = {
+				always = no
+			}
+	}
+	
+	tsunami_tank = {
+			enable_equipments = {
+				tsunami_tank_equipment
+			}
+			
+			research_cost = 1
+			start_year = 1936
+			
+			#set at gamestart
+			allow = {
+				always = no
+			}
+	}
+	
+}

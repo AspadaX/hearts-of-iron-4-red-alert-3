@@ -1,0 +1,1208 @@
+# Main Theme:
+music = {
+	song = "maintheme"
+	chance = {
+		modifier = {
+			factor = 0.5
+		}		
+	}
+}
+
+# General Peace:
+music = {
+	song = "threatened_in_russia"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_war = no
+		}		
+	}	
+}
+music = {
+	song = "brighton_beach-building_defenses"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_war = no
+		}		
+	}	
+}
+music = {
+	song = "brighton_beach-soviets_coming_ashore"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_war = no
+		}		
+	}	
+}
+music = {
+	song = "mykonos"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_war = no
+		}		
+	}	
+}
+music = {
+	song = "exploring_in_mykonos"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_war = no
+		}		
+	}	
+}
+music = {
+	song = "exploring_in_havana"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_war = no
+		}		
+	}	
+}
+
+# General War:
+music = {
+	song = "hell_march_3"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_war = yes
+		}		
+	}	
+}
+music = {
+	song = "grinder_2"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_war = yes
+		}		
+	}	
+}
+music = {
+	song = "hell_march_1_fftl_remix"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_war = yes
+		}		
+	}	
+}
+music = {
+	song = "downloading"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_war = yes
+		}		
+	}	
+}
+music = {
+	song = "hell_march_2"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 100
+			has_war = yes
+		}		
+	}	
+}
+
+# Allied Peace:
+music = {
+	song = "exploring_in_mainland_europe"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = no
+			OR = {
+				has_government = democratic
+				AND = {
+					is_in_faction_with = ENG
+					ENG = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					is_in_faction_with = USA
+					USA = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					is_in_faction_with = FRA
+					FRA = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+			}
+		}		
+	}	
+}
+music = {
+	song = "threatened_in_mainland_europe"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = no
+			OR = {
+				has_government = democratic
+				AND = {
+					is_in_faction_with = ENG
+					ENG = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					is_in_faction_with = USA
+					USA = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					is_in_faction_with = FRA
+					FRA = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+			}
+		}		
+	}	
+}
+music = {
+	song = "exploring_in_new_york_city"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = no
+			OR = {
+				has_government = democratic
+				AND = {
+					is_in_faction_with = ENG
+					ENG = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					is_in_faction_with = USA
+					USA = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					is_in_faction_with = FRA
+					FRA = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+			}
+		}		
+	}	
+}
+music = {
+	song = "tanya_in_gibraltar"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = no
+			OR = {
+				has_government = democratic
+				AND = {
+					is_in_faction_with = ENG
+					ENG = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					is_in_faction_with = USA
+					USA = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					is_in_faction_with = FRA
+					FRA = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+			}
+		}		
+	}	
+}
+
+# Allied War:
+music = {
+	song = "allied_combat_2"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = yes
+			OR = {
+				has_government = democratic
+				AND = {
+					is_in_faction_with = ENG
+					ENG = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					is_in_faction_with = USA
+					USA = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					is_in_faction_with = FRA
+					FRA = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					has_war_with = ENG
+					ENG = {
+						has_government = democratic
+					}
+				}
+				AND = {
+					has_war_with = USA
+					USA = {
+						has_government = democratic
+					}
+				}
+				AND = {
+					has_war_with = FRA
+					FRA = {
+						has_government = democratic
+					}
+				}
+			}
+		}		
+	}	
+}
+music = {
+	song = "allied_combat_2-losing"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = yes
+			OR = {
+				has_government = democratic
+				AND = {
+					is_in_faction_with = ENG
+					ENG = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					is_in_faction_with = USA
+					USA = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					is_in_faction_with = FRA
+					FRA = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					has_war_with = ENG
+					ENG = {
+						has_government = democratic
+					}
+				}
+				AND = {
+					has_war_with = USA
+					USA = {
+						has_government = democratic
+					}
+				}
+				AND = {
+					has_war_with = FRA
+					FRA = {
+						has_government = democratic
+					}
+				}
+			}
+		}		
+	}	
+}
+music = {
+	song = "allied_combat_2-triumphal"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = yes
+			OR = {
+				has_government = democratic
+				AND = {
+					is_in_faction_with = ENG
+					ENG = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					is_in_faction_with = USA
+					USA = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					is_in_faction_with = FRA
+					FRA = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					has_war_with = ENG
+					ENG = {
+						has_government = democratic
+					}
+				}
+				AND = {
+					has_war_with = USA
+					USA = {
+						has_government = democratic
+					}
+				}
+				AND = {
+					has_war_with = FRA
+					FRA = {
+						has_government = democratic
+					}
+				}
+			}
+		}		
+	}	
+}
+music = {
+	song = "allied-up_yours"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = yes
+			OR = {
+				has_government = democratic
+				AND = {
+					is_in_faction_with = ENG
+					ENG = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					is_in_faction_with = USA
+					USA = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					is_in_faction_with = FRA
+					FRA = {
+						has_government = democratic
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					has_war_with = ENG
+					ENG = {
+						has_government = democratic
+					}
+				}
+				AND = {
+					has_war_with = USA
+					USA = {
+						has_government = democratic
+					}
+				}
+				AND = {
+					has_war_with = FRA
+					FRA = {
+						has_government = democratic
+					}
+				}
+			}
+		}		
+	}	
+}
+
+# Soviet Peace:
+music = {
+	song = "soviet_march-reprise"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = no
+			OR = {
+				has_government = communism
+				AND = {
+					is_in_faction_with = SOV
+					SOV = {
+						has_government = communism
+						is_faction_leader = yes
+					}
+				}
+			}
+		}		
+	}	
+}
+music = {
+	song = "exploring_in_russia"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = no
+			OR = {
+				has_government = communism
+				AND = {
+					is_in_faction_with = SOV
+					SOV = {
+						has_government = communism
+						is_faction_leader = yes
+					}
+				}
+			}
+		}		
+	}	
+}
+music = {
+	song = "floating_island_fortress"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = no
+			OR = {
+				has_government = communism
+				AND = {
+					is_in_faction_with = SOV
+					SOV = {
+						has_government = communism
+						is_faction_leader = yes
+					}
+				}
+			}
+		}		
+	}	
+}
+
+# Soviet War:
+music = {
+	song = "soviet_march"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = yes
+			OR = {
+				has_government = communism
+				AND = {
+					is_in_faction_with = SOV
+					SOV = {
+						has_government = communism
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					has_war_with = SOV
+					SOV = {
+						has_government = communism
+					}
+				}
+			}
+		}		
+	}	
+}
+music = {
+	song = "celebration"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = yes
+			OR = {
+				has_government = communism
+				AND = {
+					is_in_faction_with = SOV
+					SOV = {
+						has_government = communism
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					has_war_with = SOV
+					SOV = {
+						has_government = communism
+					}
+				}
+			}
+		}		
+	}	
+}
+
+#Asian Peace
+music = {
+	song = "japanese_campaign"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = no
+			OR = {
+				tag = JAP
+				tag = MON
+				tag = TAN
+				tag = MEN
+				tag = PRC
+				tag = SHX
+				tag = SIA
+				tag = SIK
+				tag = YUN
+				tag = XSM
+				tag = CHI
+				tag = GXC
+			}
+		}		
+	}	
+}
+music = {
+	song = "japan_combat_1-losing"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = no
+			OR = {
+				tag = JAP
+				tag = MON
+				tag = TAN
+				tag = MEN
+				tag = PRC
+				tag = SHX
+				tag = SIA
+				tag = SIK
+				tag = YUN
+				tag = XSM
+				tag = CHI
+				tag = GXC
+			}
+		}		
+	}	
+}
+music = {
+	song = "mount_fuji_intro"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = no
+			OR = {
+				tag = JAP
+				tag = MON
+				tag = TAN
+				tag = MEN
+				tag = PRC
+				tag = SHX
+				tag = SIA
+				tag = SIK
+				tag = YUN
+				tag = XSM
+				tag = CHI
+				tag = GXC
+			}
+		}		
+	}	
+}
+music = {
+	song = "exploring_in_mount_fuji"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = no
+			OR = {
+				tag = JAP
+				tag = MON
+				tag = TAN
+				tag = MEN
+				tag = PRC
+				tag = SHX
+				tag = SIA
+				tag = SIK
+				tag = YUN
+				tag = XSM
+				tag = CHI
+				tag = GXC
+			}
+		}		
+	}	
+}
+music = {
+	song = "threatened_in_mount_fuji"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = no
+			OR = {
+				tag = JAP
+				tag = MON
+				tag = TAN
+				tag = MEN
+				tag = PRC
+				tag = SHX
+				tag = SIA
+				tag = SIK
+				tag = YUN
+				tag = XSM
+				tag = CHI
+				tag = GXC
+			}
+		}		
+	}	
+}
+music = {
+	song = "exploring_in_tokyo_harbor"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = no
+			OR = {
+				tag = JAP
+				tag = MON
+				tag = TAN
+				tag = MEN
+				tag = PRC
+				tag = SHX
+				tag = SIA
+				tag = SIK
+				tag = YUN
+				tag = XSM
+				tag = CHI
+				tag = GXC
+			}
+		}		
+	}	
+}
+music = {
+	song = "threatened_in_tokyo_harbor"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = no
+			OR = {
+				tag = JAP
+				tag = MON
+				tag = TAN
+				tag = MEN
+				tag = PRC
+				tag = SHX
+				tag = SIA
+				tag = SIK
+				tag = YUN
+				tag = XSM
+				tag = CHI
+				tag = GXC
+			}
+		}		
+	}	
+}
+
+# Asian War:
+music = {
+	song = "enter_the_shogun_executioner"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = yes
+			OR = {
+				tag = JAP
+				tag = MON
+				tag = TAN
+				tag = MEN
+				tag = PRC
+				tag = SHX
+				tag = SIA
+				tag = SIK
+				tag = YUN
+				tag = XSM
+				tag = CHI
+				tag = GXC
+				has_war_with = JAP
+				has_war_with = MON
+				has_war_with = TAN
+				has_war_with = MEN
+				has_war_with = PRC
+				has_war_with = SHX
+				has_war_with = SIA
+				has_war_with = SIK
+				has_war_with = YUN
+				has_war_with = XSM
+				has_war_with = CHI
+				has_war_with = GXC	
+			}
+		}		
+	}	
+}
+music = {
+	song = "japan_combat_1"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = yes
+			OR = {
+				tag = JAP
+				tag = MON
+				tag = TAN
+				tag = MEN
+				tag = PRC
+				tag = SHX
+				tag = SIA
+				tag = SIK
+				tag = YUN
+				tag = XSM
+				tag = CHI
+				tag = GXC
+				has_war_with = JAP
+				has_war_with = MON
+				has_war_with = TAN
+				has_war_with = MEN
+				has_war_with = PRC
+				has_war_with = SHX
+				has_war_with = SIA
+				has_war_with = SIK
+				has_war_with = YUN
+				has_war_with = XSM
+				has_war_with = CHI
+				has_war_with = GXC	
+			}
+		}		
+	}	
+}
+music = {
+	song = "japan_combat_1-triumphal"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = yes
+			OR = {
+				tag = JAP
+				tag = MON
+				tag = TAN
+				tag = MEN
+				tag = PRC
+				tag = SHX
+				tag = SIA
+				tag = SIK
+				tag = YUN
+				tag = XSM
+				tag = CHI
+				tag = GXC
+				has_war_with = JAP
+				has_war_with = MON
+				has_war_with = TAN
+				has_war_with = MEN
+				has_war_with = PRC
+				has_war_with = SHX
+				has_war_with = SIA
+				has_war_with = SIK
+				has_war_with = YUN
+				has_war_with = XSM
+				has_war_with = CHI
+				has_war_with = GXC	
+			}
+		}		
+	}	
+}
+music = {
+	song = "japanese-up_yours"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = yes
+			OR = {
+				tag = JAP
+				tag = MON
+				tag = TAN
+				tag = MEN
+				tag = PRC
+				tag = SHX
+				tag = SIA
+				tag = SIK
+				tag = YUN
+				tag = XSM
+				tag = CHI
+				tag = GXC
+				has_war_with = JAP
+				has_war_with = MON
+				has_war_with = TAN
+				has_war_with = MEN
+				has_war_with = PRC
+				has_war_with = SHX
+				has_war_with = SIA
+				has_war_with = SIK
+				has_war_with = YUN
+				has_war_with = XSM
+				has_war_with = CHI
+				has_war_with = GXC	
+			}
+		}		
+	}	
+}
+
+# Axis Peace:
+music = {
+	song = "easter_island-lying_in_wait"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = no
+			OR = {
+				has_government = fascist
+				AND = {
+					is_in_faction_with = GER
+					GER = {
+						has_government = fascist
+						is_faction_leader = yes
+					}
+				}
+			}
+		}		
+	}	
+}
+music = {
+	song = "threatened_in_havana"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = no
+			OR = {
+				has_government = fascist
+				AND = {
+					is_in_faction_with = GER
+					GER = {
+						has_government = fascist
+						is_faction_leader = yes
+					}
+				}
+			}
+		}		
+	}	
+}
+
+# Soviet & Axis Peace:
+music = {
+	song = "iceland"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = no
+			OR = {
+				has_government = fascist
+				has_government = communism
+				AND = {
+					is_in_faction_with = GER
+					GER = {
+						has_government = fascist
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					is_in_faction_with = SOV
+					SOV = {
+						has_government = communism
+						is_faction_leader = yes
+					}
+				}
+			}
+		}		
+	}	
+}
+music = {
+	song = "exploring_in_vladivostok"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = no
+			OR = {
+				has_government = fascist
+				has_government = communism
+				AND = {
+					is_in_faction_with = GER
+					GER = {
+						has_government = fascist
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					is_in_faction_with = SOV
+					SOV = {
+						has_government = communism
+						is_faction_leader = yes
+					}
+				}
+			}
+		}		
+	}	
+}
+
+#Soviet & Axis War:
+music = {
+	song = "soviet_combat_1-losing"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = yes
+			OR = {
+				has_government = communism
+				has_government = fascist
+				AND = {
+					is_in_faction_with = SOV
+					SOV = {
+						has_government = communism
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					has_war_with = SOV
+					SOV = {
+						has_government = communism
+					}
+				}
+				AND = {
+					is_in_faction_with = GER
+					GER = {
+						has_government = fascist
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					has_war_with = GER
+					GER = {
+						has_government = fascist
+					}
+				}
+			}
+		}		
+	}	
+}
+music = {
+	song = "soviet_combat_1-triumph"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = yes
+			OR = {
+				has_government = communism
+				has_government = fascist
+				AND = {
+					is_in_faction_with = SOV
+					SOV = {
+						has_government = communism
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					has_war_with = SOV
+					SOV = {
+						has_government = communism
+					}
+				}
+				AND = {
+					is_in_faction_with = GER
+					GER = {
+						has_government = fascist
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					has_war_with = GER
+					GER = {
+						has_government = fascist
+					}
+				}
+			}
+		}		
+	}	
+}
+music = {
+	song = "soviet_combat_1"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = yes
+			OR = {
+				has_government = communism
+				has_government = fascist
+				AND = {
+					is_in_faction_with = SOV
+					SOV = {
+						has_government = communism
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					has_war_with = SOV
+					SOV = {
+						has_government = communism
+					}
+				}
+				AND = {
+					is_in_faction_with = GER
+					GER = {
+						has_government = fascist
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					has_war_with = GER
+					GER = {
+						has_government = fascist
+					}
+				}
+			}
+		}		
+	}	
+}
+music = {
+	song = "soviet-up_yours"
+	
+	chance = {
+		factor = 0
+		modifier = {
+			add = 200
+			has_war = yes
+			OR = {
+				has_government = communism
+				has_government = fascist
+				AND = {
+					is_in_faction_with = SOV
+					SOV = {
+						has_government = communism
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					has_war_with = SOV
+					SOV = {
+						has_government = communism
+					}
+				}
+				AND = {
+					is_in_faction_with = GER
+					GER = {
+						has_government = fascist
+						is_faction_leader = yes
+					}
+				}
+				AND = {
+					has_war_with = GER
+					GER = {
+						has_government = fascist
+					}
+				}
+			}
+		}		
+	}	
+}

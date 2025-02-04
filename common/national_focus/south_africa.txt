@@ -1,0 +1,3832 @@
+focus_tree = {
+	id = south_african_focus
+	
+	country = {
+		factor = 1
+		
+		modifier = {
+			add = 20
+			tag = SAF
+		}
+	}
+	
+	default = no
+	reset_on_civilwar = no
+	
+	focus = {
+		id = SAF_army_effort
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 1
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_equipment_effort
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = SAF_army_effort }
+		x = -1
+		y = 1
+		relative_position_id = SAF_army_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = SAF_army_effort }
+		bypass = { has_tech = motorised_infantry }
+		x = 1
+		y = 1
+		relative_position_id = SAF_army_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 3.0
+				technology = motorised_infantry
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = SAF_army_effort }
+		x = 0
+		y = 2
+		relative_position_id = SAF_army_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_equipment_effort_2
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = SAF_equipment_effort }
+		x = 0
+		y = 2
+		relative_position_id = SAF_equipment_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_mechanization_effort
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = SAF_motorization_effort }
+		x = 0
+		y = 2
+		relative_position_id = SAF_motorization_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = SAF_doctrine_effort }
+		x = 0
+		y = 2
+		relative_position_id = SAF_doctrine_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_equipment_effort_3
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = SAF_equipment_effort_2 }
+		x = 0
+		y = 2
+		relative_position_id = SAF_equipment_effort_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_armor_effort
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = SAF_mechanization_effort }
+		x = 0
+		y = 2
+		relative_position_id = SAF_mechanization_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 2
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_special_forces
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = SAF_equipment_effort_3 }
+		prerequisite = { focus = SAF_doctrine_effort_2 }
+		prerequisite = { focus = SAF_armor_effort }
+		x = 1
+		y = 1
+		relative_position_id = SAF_equipment_effort_3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = special_forces
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 1
+				technology = paratroopers
+				technology = paratroopers2
+				technology = marines
+				technology = marines2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_aviation_effort
+		icon = GFX_goal_generic_build_airforce
+		x = 5
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		complete_tooltip = {
+			air_experience = 25
+			if = { limit = { has_country_flag = aviation_effort_AB }
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}			
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}			
+		}
+
+		completion_reward = {
+			air_experience = 25
+
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = SAF_aviation_effort }
+		mutually_exclusive = { focus = SAF_bomber_focus }
+		x = -1
+		y = 1
+		relative_position_id = SAF_aviation_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1.0
+				uses = 2
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+				technology = heavy_fighter1
+				technology = heavy_fighter2
+				technology = heavy_fighter3
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_bomber_focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = SAF_aviation_effort }
+		mutually_exclusive = { focus = SAF_fighter_focus }
+		x = 1
+		y = 1
+		relative_position_id = SAF_aviation_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 1.0
+				uses = 2
+				technology = strategic_bomber1
+				technology = strategic_bomber2
+				technology = strategic_bomber3
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_aviation_effort_2
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = SAF_bomber_focus focus = SAF_fighter_focus }
+		x = -1
+		y = 1
+		relative_position_id = SAF_bomber_focus
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		complete_tooltip = {
+			air_experience = 25
+			if = { limit = { has_country_flag = aviation_effort_2_AB }
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		completion_reward = {
+			air_experience = 25
+			if = {
+				limit = {
+					capital_scope = {
+						OR = {
+							NOT = { is_controlled_by = ROOT }
+							NOT = {
+								free_building_slots = {
+									building = air_base
+									size > 1
+								}
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_2_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}				
+					ROOT = { set_country_flag = aviation_effort_2_AB }
+				}
+			}
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_CAS_effort
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = SAF_aviation_effort_2 }
+		prerequisite = { focus = SAF_motorization_effort }
+		x = -1
+		y = 1
+		relative_position_id = SAF_aviation_effort_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = CAS_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_rocket_effort
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = SAF_aviation_effort_2 }
+		prerequisite = { focus = SAF_infrastructure_effort }
+		x = 0
+		y = 2
+		relative_position_id = SAF_aviation_effort_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 2
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_NAV_effort
+		icon = GFX_goal_generic_air_naval_bomber
+		prerequisite = { focus = SAF_aviation_effort_2 }
+		prerequisite = { focus = SAF_flexible_navy }
+		x = 1
+		y = 1
+		relative_position_id = SAF_aviation_effort_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = naval_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_naval_effort
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 9
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+
+		complete_tooltip = {
+			navy_experience = 25
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = dockyard
+				level = 3
+				instant_build = yes
+			}
+		}
+		
+		completion_reward = {
+			navy_experience = 25
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+					any_owned_state = {
+						is_coastal = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					any_owned_state = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					NOT = {
+						any_owned_state = {
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_state = {
+					limit = {
+						controller = { tag = ROOT }
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+			}			
+		}
+	}
+
+	focus = {
+		id = SAF_flexible_navy
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = SAF_naval_effort }
+		mutually_exclusive = { focus = SAF_large_navy }
+		x = -1
+		y = 1
+		relative_position_id = SAF_naval_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 1.0
+				uses = 2
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_large_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = SAF_naval_effort }
+		mutually_exclusive = { focus = SAF_flexible_navy }
+		x = 1
+		y = 1
+		relative_position_id = SAF_naval_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 1.0
+				uses = 2
+				category = fleet_in_being_tree
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = SAF_flexible_navy focus = SAF_large_navy }
+		x = 0
+		y = 1
+		relative_position_id = SAF_flexible_navy
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = SAF_large_navy focus = SAF_flexible_navy }
+		x = 0
+		y = 1
+		relative_position_id = SAF_large_navy
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_destroyer_effort
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = { focus = SAF_submarine_effort }
+		x = 0
+		y = 1
+		relative_position_id = SAF_submarine_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_capital_ships_effort
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = SAF_cruiser_effort }
+		x = 0
+		y = 1
+		relative_position_id = SAF_cruiser_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+				category = cv_tech
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_industrial_effort
+		icon = GFX_goal_generic_production
+		x = 13
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				date < 1939.1.1
+				OR = { 
+					# we dont want chinese minors to go crazy on slots early since they get eaten
+					tag = GXC 
+					tag = YUN
+					tag = SHX
+					tag = XSM
+					tag = BEL
+					tag = LUX
+					tag = HOL
+					tag = DEN
+
+					# we also dont want tiny nations to go crazy with slots right away
+					num_of_controlled_states < 2
+				}				
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_construction_effort
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = SAF_industrial_effort }
+		x = -1
+		y = 1
+		relative_position_id = SAF_industrial_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_production_effort
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = SAF_industrial_effort }
+		x = 1
+		y = 1
+		relative_position_id = SAF_industrial_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 2			
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_construction_effort_2
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = SAF_construction_effort }
+		x = 0
+		y = 1
+		relative_position_id = SAF_construction_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_production_effort_2
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = SAF_production_effort }
+		x = 0
+		y = 1
+		relative_position_id = SAF_production_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_infrastructure_effort
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = SAF_construction_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = SAF_construction_effort_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_production_effort_3
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = SAF_production_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = SAF_production_effort_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_infrastructure_effort_2
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = SAF_infrastructure_effort }
+		x = 0
+		y = 1
+		relative_position_id = SAF_infrastructure_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_construction_effort_3
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = SAF_infrastructure_effort }
+		x = 2
+		y = 1
+		relative_position_id = SAF_infrastructure_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 2
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_extra_tech_slot
+		icon = GFX_focus_research
+		prerequisite = { focus = SAF_infrastructure_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = SAF_infrastructure_effort_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	focus = {
+		id = SAF_extra_tech_slot_2
+		icon = GFX_focus_research
+		prerequisite = { focus = SAF_extra_tech_slot }
+		available = {
+			num_of_factories > 50
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		x = 0
+		y = 1
+		relative_position_id = SAF_extra_tech_slot
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}	
+
+	focus = {
+		id = SAF_secret_weapons
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = { focus = SAF_infrastructure_effort_2 }
+		x = 2
+		y = 1
+		relative_position_id = SAF_infrastructure_effort_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 1.0
+				uses = 4
+				category = electronics
+				category = rocketry
+			}
+		}
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+			}
+		}
+	}
+
+	#########################
+	#### GO WITH SOVIETS ####
+	#########################
+	
+	focus = {
+		id = SAF_communist_influence
+		icon = GFX_goal_support_communism
+		
+		available = {
+			
+		}
+		bypass = {
+			has_government = communism
+		}
+		x = 17
+		y = 0
+		#relative_position_id = SAF_political_effort
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		ai_will_do = {
+			factor = 80
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			add_timed_idea = { idea = SAF_communist_influence days = 1095 }
+		}
+	}
+	
+	focus = {
+		id = SAF_go_with_soviets
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = SAF_communist_influence }
+		#mutually_exclusive = { focus = SAF_go_with_soviets }
+		mutually_exclusive = { focus = SAF_go_with_allies }
+		mutually_exclusive = { focus = SAF_go_independent }
+		#mutually_exclusive = { focus = SAF_go_neutral }
+		available = {
+			OR = {
+				communism > 0.5
+				has_government = communism
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = SAF_communist_influence
+		cost = 10
+
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			AOE = { remove_from_faction = SAF }
+			SOV = { add_to_faction = SAF }
+			set_politics = { ruling_party = communism }
+		}
+	}
+	
+	focus = {
+		id = SAF_soviet_support_manpower
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = SAF_go_with_soviets }
+		#mutually_exclusive = { focus = SAF_go_with_allies}
+		available = {
+			has_manpower > 9999
+		}
+		x = 0
+		y = 1
+		relative_position_id = SAF_go_with_soviets
+		cost = 10
+
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			add_manpower = -10000
+			SOV = { add_manpower = 10000 }
+		}
+	}
+	
+	#infantry_equipment_1
+	#fighter_equipment_1
+	#light_tank_equipment_1
+	#artillery_equipment_1
+	
+	focus = {
+		id = SAF_soviet_support_infantry_equipment
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = SAF_soviet_support_manpower }
+		#mutually_exclusive = { focus = SAF_go_with_allies}
+		available = {
+			has_equipment = { infantry_equipment_1 > 9999 }
+			#has_equipment = { light_tank_equipment_1 > 99 }
+			#has_equipment = { fighter_equipment_1 > 99 }
+			#has_equipment = { artillery_equipment_1 > 99 }
+		}
+		x = 0
+		y = 1
+		relative_position_id = SAF_soviet_support_manpower
+		cost = 10
+
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = { 
+				type = infantry_equipment_1 
+				amount = -10000
+				producer = SAF
+			}
+			SOV = {
+				add_equipment_to_stockpile = { 
+					type = infantry_equipment_1 
+					amount = 10000
+					producer = SAF
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SAF_soviet_support_tank_equipment
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = SAF_soviet_support_infantry_equipment }
+		#mutually_exclusive = { focus = SAF_go_with_allies}
+		available = {
+			#has_equipment = { infantry_equipment_1 > 9999 }
+			has_equipment = { light_tank_equipment_1 > 99 }
+			#has_equipment = { fighter_equipment_1 > 99 }
+			#has_equipment = { artillery_equipment_1 > 99 }
+		}
+		x = 0
+		y = 1
+		relative_position_id = SAF_soviet_support_infantry_equipment
+		cost = 10
+
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = { 
+				type = light_tank_equipment_1 
+				amount = -100
+				producer = SAF
+			}
+			SOV = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_equipment_1 
+					amount = 100
+					producer = SAF
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SAF_soviet_support_fighter_equipment
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = SAF_soviet_support_tank_equipment }
+		#mutually_exclusive = { focus = SAF_go_with_allies}
+		available = {
+			#has_equipment = { infantry_equipment_1 > 9999 }
+			#has_equipment = { light_tank_equipment_1 > 99 }
+			has_equipment = { fighter_equipment_1 > 99 }
+		}
+		x = 0
+		y = 1
+		relative_position_id = SAF_soviet_support_tank_equipment
+		cost = 10
+
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = { 
+				type = fighter_equipment_1 
+				amount = -100
+				producer = SAF
+			}
+			SOV = {
+				add_equipment_to_stockpile = { 
+					type = fighter_equipment_1 
+					amount = 100
+					producer = SAF
+				}
+			}
+		}
+	}
+
+	########################
+	#### GO WITH ALLIES ####
+	########################
+
+	focus = {
+		id = SAF_go_with_allies
+		icon = GFX_goal_support_democracy
+		#prerequisite = { focus = SAF_political_effort }
+		mutually_exclusive = { focus = SAF_go_with_soviets }
+		#mutually_exclusive = { focus = SAF_go_with_allies }
+		mutually_exclusive = { focus = SAF_go_independent }
+		#mutually_exclusive = { focus = SAF_go_neutral }
+		available = {
+			OR = {
+				democratic > 0.5
+				has_government = democratic
+				neutrality > 0.5
+				has_government = neutrality
+			}
+		}
+		x = 2
+		y = 1
+		relative_position_id = SAF_communist_influence
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = SAF_allies_support_manpower
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = SAF_go_with_allies }
+		#mutually_exclusive = { focus = SAF_go_with_allies }
+		available = {
+			has_manpower > 9999
+		}
+		x = 0
+		y = 1
+		relative_position_id = SAF_go_with_allies
+		cost = 10
+
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			add_manpower = -10000
+			AOE = { add_manpower = 10000 }
+		}
+	}
+	
+	#infantry_equipment_1
+	#fighter_equipment_1
+	#light_tank_equipment_1
+	#artillery_equipment_1
+	
+	focus = {
+		id = SAF_allies_support_infantry_equipment
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = SAF_allies_support_manpower }
+		#mutually_exclusive = { focus = SAF_go_with_allies}
+		available = {
+			has_equipment = { infantry_equipment_1 > 9999 }
+			#has_equipment = { light_tank_equipment_1 > 99 }
+			#has_equipment = { fighter_equipment_1 > 99 }
+			#has_equipment = { artillery_equipment_1 > 99 }
+		}
+		x = 0
+		y = 1
+		relative_position_id = SAF_allies_support_manpower
+		cost = 10
+
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = { 
+				type = infantry_equipment_1 
+				amount = -10000
+				producer = SAF
+			}
+			AOE = {
+				add_equipment_to_stockpile = { 
+					type = infantry_equipment_1 
+					amount = 10000
+					producer = SAF
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SAF_allies_support_tank_equipment
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = SAF_allies_support_infantry_equipment }
+		#mutually_exclusive = { focus = SAF_go_with_allies}
+		available = {
+			#has_equipment = { infantry_equipment_1 > 9999 }
+			has_equipment = { light_tank_equipment_1 > 99 }
+			#has_equipment = { fighter_equipment_1 > 99 }
+			#has_equipment = { artillery_equipment_1 > 99 }
+		}
+		x = 0
+		y = 1
+		relative_position_id = SAF_allies_support_infantry_equipment
+		cost = 10
+
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = { 
+				type = light_tank_equipment_1 
+				amount = -100
+				producer = SAF
+			}
+			AOE = {
+				add_equipment_to_stockpile = { 
+					type = light_tank_equipment_1 
+					amount = 100
+					producer = SAF
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SAF_allies_support_fighter_equipment
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = SAF_allies_support_tank_equipment }
+		#mutually_exclusive = { focus = SAF_go_with_allies}
+		available = {
+			#has_equipment = { infantry_equipment_1 > 9999 }
+			#has_equipment = { light_tank_equipment_1 > 99 }
+			has_equipment = { fighter_equipment_1 > 99 }
+		}
+		x = 0
+		y = 1
+		relative_position_id = SAF_allies_support_tank_equipment
+		cost = 10
+
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = { 
+				type = fighter_equipment_1 
+				amount = -100
+				producer = SAF
+			}
+			AOE = {
+				add_equipment_to_stockpile = { 
+					type = fighter_equipment_1 
+					amount = 100
+					producer = SAF
+				}
+			}
+		}
+	}
+	
+	####################
+	#### GO NEUTRAL ####
+	####################
+
+#	focus = {
+#		id = SAF_go_neutral
+#		icon = GFX_goal_generic_neutrality_focus
+#		#prerequisite = { focus = SAF_political_effort }
+#		mutually_exclusive = { focus = SAF_go_with_soviets }
+#		mutually_exclusive = { focus = SAF_go_with_allies }
+#		mutually_exclusive = { focus = SAF_go_independent }
+#		#mutually_exclusive = { focus = SAF_go_neutral }
+#		available = {
+#			OR = {
+#				democratic > 0.5
+#				has_government = democratic
+#				neutrality > 0.5
+#				has_government = neutrality
+#			}
+#		}
+#		x = 4
+#		y = 1
+#		relative_position_id = SAF_communist_influence
+#		cost = 10
+#
+#		available_if_capitulated = yes
+#
+#		ai_will_do = {
+#			factor = 100
+#			modifier = {
+#				factor = 0
+#			}
+#		}
+#
+#		completion_reward = {
+#			
+#		}
+#	}
+	
+	######################
+	#### Africa First ####
+	######################
+	
+	focus = {
+		id = SAF_fascist_support
+		icon = GFX_goal_support_fascism
+		
+		available = {
+			
+		}
+		bypass = {
+			has_government = fascism
+		}
+		x = 23
+		y = 0
+		#relative_position_id = SAF_political_effort
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		ai_will_do = {
+			factor = 80
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			add_timed_idea = { idea = SAF_fascist_support days = 1095 }
+		}
+	}
+	
+	focus = {
+		id = SAF_go_independent
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SAF_fascist_support }
+		mutually_exclusive = { focus = SAF_go_with_soviets }
+		mutually_exclusive = { focus = SAF_go_with_allies }
+		#mutually_exclusive = { focus = SAF_go_independent }
+		#mutually_exclusive = { focus = SAF_go_neutral }
+		available = {
+			OR = {
+				fascism > 0.5
+				has_government = fascism
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = SAF_fascist_support
+		cost = 10
+
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			AOE = { remove_from_faction = SAF }
+			set_politics = { ruling_party = fascism }
+		}
+	}
+	
+	focus = {
+		id = SAF_reclaim_namibia
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SAF_go_independent }
+		will_lead_to_war_with = NMB
+		
+		available = {
+			has_army_manpower = { size > 9999 }
+		}
+		
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = SAF_reclaim_namibia_tt
+				OR = {
+					NOT = { country_exists = NMB }
+					NMB = { is_subject_of = SAF }
+				}
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = SAF_go_independent
+		cost = 10
+
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			NMB = { country_event = { id = ra3_africa.1 } }
+		}
+	}
+	
+	focus = {
+		id = SAF_conquer_botswana
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SAF_reclaim_namibia }
+		will_lead_to_war_with = BOT
+		
+		available = {
+			has_army_manpower = { size > 9999 }
+		}
+		
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = SAF_conquer_botswana_tt
+				OR = {
+					NOT = { country_exists = BOT }
+					BOT = { is_subject_of = SAF }
+				}
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = SAF_reclaim_namibia
+		cost = 10
+
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			BOT = { country_event = { id = ra3_africa.1 } }
+		}
+	}
+	
+	focus = {
+		id = SAF_south_east_african_expansion
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SAF_conquer_botswana }
+		will_lead_to_war_with = ZAM
+		will_lead_to_war_with = ZIM
+		will_lead_to_war_with = MZB
+		will_lead_to_war_with = MLW
+		will_lead_to_war_with = TZN
+		
+		available = {
+			has_army_manpower = { size > 9999 }
+		}
+		
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = SAF_south_east_african_expansion_tt
+				OR = {
+					NOT = { country_exists = ZAM }
+					ZAM = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = ZIM }
+					ZIM = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = MZB }
+					MZB = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = MLW }
+					MLW = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = TZN }
+					TZN = { is_subject_of = SAF }
+				}
+			}
+		}
+		x = 1
+		y = 1
+		relative_position_id = SAF_conquer_botswana
+		cost = 10
+
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			ZAM = { country_event = { id = ra3_africa.1 } }
+			ZIM = { country_event = { id = ra3_africa.1 } }
+			MZB = { country_event = { id = ra3_africa.1 } }
+			MLW = { country_event = { id = ra3_africa.1 } }
+			TZN = { country_event = { id = ra3_africa.1 } }
+		}
+	}
+	
+	focus = {
+		id = SAF_madagascar_expansion
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SAF_south_east_african_expansion }
+		will_lead_to_war_with = MAD
+		
+		available = {
+			has_army_manpower = { size > 9999 }
+		}
+		
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = SAF_madagascar_expansion_tt
+				OR = {
+					NOT = { country_exists = MAD }
+					MAD = { is_subject_of = SAF }
+				}
+			}
+		}
+		x = 3
+		y = 2
+		relative_position_id = SAF_south_east_african_expansion
+		cost = 10
+
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			MAD = { country_event = { id = ra3_africa.1 } }
+		}
+	}
+	
+	focus = {
+		id = SAF_south_west_african_expansion
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SAF_conquer_botswana }
+		will_lead_to_war_with = ANG
+		will_lead_to_war_with = COG
+		#will_lead_to_war_with = UGA
+		will_lead_to_war_with = RCG
+		will_lead_to_war_with = GAB
+		will_lead_to_war_with = EQG
+		will_lead_to_war_with = CMR
+		
+		available = {
+			has_army_manpower = { size > 9999 }
+		}
+		
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = SAF_south_west_african_expansion_tt
+				OR = {
+					NOT = { country_exists = ANG }
+					ANG = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = COG }
+					COG = { is_subject_of = SAF }
+				}
+				#OR = {
+					#NOT = { country_exists = UGA }
+					#UGA = { is_subject_of = SAF }
+				#}
+				OR = {
+					NOT = { country_exists = RCG }
+					RCG = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = GAB }
+					GAB = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = EQG }
+					EQG = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = CMR }
+					CMR = { is_subject_of = SAF }
+				}
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = SAF_conquer_botswana
+		cost = 10
+
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			ANG = { country_event = { id = ra3_africa.1 } }
+			COG = { country_event = { id = ra3_africa.1 } }
+			#UGA = { country_event = { id = ra3_africa.1 } }
+			RCG = { country_event = { id = ra3_africa.1 } }
+			GAB = { country_event = { id = ra3_africa.1 } }
+			EQG = { country_event = { id = ra3_africa.1 } }
+			CMR = { country_event = { id = ra3_africa.1 } }
+		}
+	}
+	
+	focus = {
+		id = SAF_subsaharan_african_expansion
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SAF_south_west_african_expansion }
+		will_lead_to_war_with = NGA
+		will_lead_to_war_with = NGR
+		will_lead_to_war_with = DAH
+		will_lead_to_war_with = TOG
+		will_lead_to_war_with = GHA
+		will_lead_to_war_with = VOL
+		will_lead_to_war_with = MLI
+		will_lead_to_war_with = IVO
+		will_lead_to_war_with = LIB
+		will_lead_to_war_with = GNA
+		will_lead_to_war_with = SIE
+		will_lead_to_war_with = GNB
+		will_lead_to_war_with = SEN
+		will_lead_to_war_with = GAM
+		
+		available = {
+			has_army_manpower = { size > 9999 }
+		}
+		
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = SAF_subsaharan_african_expansion_tt
+				OR = {
+					NOT = { country_exists = NGA }
+					NGA = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = NGR }
+					NGR = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = DAH }
+					DAH = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = TOG }
+					TOG = { is_subject_of = SAF }
+				}
+				OR = {
+				NOT = { country_exists = GHA }
+					GHA = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = VOL }
+					VOL = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = MLI }
+					MLI = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = IVO }
+					IVO = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = LIB }
+					LIB = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = GNA }
+					GNA = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = SIE }
+					SIE = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = GNB }
+					GNB = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = SEN }
+					SEN = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = GAM }
+					GAM = { is_subject_of = SAF }
+				}
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = SAF_south_west_african_expansion
+		cost = 10
+
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			NGA = { country_event = { id = ra3_africa.1 } }
+			NGR = { country_event = { id = ra3_africa.1 } }
+			DAH = { country_event = { id = ra3_africa.1 } }
+			TOG = { country_event = { id = ra3_africa.1 } }
+			GHA = { country_event = { id = ra3_africa.1 } }
+			VOL = { country_event = { id = ra3_africa.1 } }
+			MLI = { country_event = { id = ra3_africa.1 } }
+			IVO = { country_event = { id = ra3_africa.1 } }
+			LIB = { country_event = { id = ra3_africa.1 } }
+			GNA = { country_event = { id = ra3_africa.1 } }
+			SIE = { country_event = { id = ra3_africa.1 } }
+			GNB = { country_event = { id = ra3_africa.1 } }
+			SEN = { country_event = { id = ra3_africa.1 } }
+			GAM = { country_event = { id = ra3_africa.1 } }
+		}
+	}
+	
+	focus = {
+		id = SAF_east_african_expansion
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SAF_south_east_african_expansion }
+		will_lead_to_war_with = KEN
+		will_lead_to_war_with = SOM
+		will_lead_to_war_with = ETH
+		will_lead_to_war_with = DJI
+		will_lead_to_war_with = ERI
+		
+		available = {
+			has_army_manpower = { size > 9999 }
+		}
+		
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = SAF_east_african_expansion_tt
+				OR = {
+					NOT = { country_exists = KEN }
+					KEN = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = SOM }
+					SOM = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = ETH }
+					ETH = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = DJI }
+					DJI = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = ERI }
+					ERI = { is_subject_of = SAF }
+				}
+			}
+		}
+		x = 1
+		y = 1
+		relative_position_id = SAF_south_east_african_expansion
+		cost = 10
+
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			KEN = { country_event = { id = ra3_africa.1 } }
+			SOM = { country_event = { id = ra3_africa.1 } }
+			ETH = { country_event = { id = ra3_africa.1 } }
+			DJI = { country_event = { id = ra3_africa.1 } }
+			ERI = { country_event = { id = ra3_africa.1 } }
+		}
+	}
+	
+	focus = {
+		id = SAF_central_african_expansion
+		icon = GFX_goal_support_fascism
+		prerequisite = {
+			focus = SAF_south_west_african_expansion
+			focus = SAF_south_east_african_expansion
+		}
+		will_lead_to_war_with = BRD
+		will_lead_to_war_with = RWA
+		will_lead_to_war_with = UGA
+		will_lead_to_war_with = SUD
+		will_lead_to_war_with = CAR
+		will_lead_to_war_with = CHA
+		
+		available = {
+			has_army_manpower = { size > 9999 }
+		}
+		
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = SAF_central_african_expansion_tt
+				OR = {
+					NOT = { country_exists = BRD }
+					BRD = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = RWA }
+					RWA = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = UGA }
+					UGA = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = SUD }
+					SUD = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = CAR }
+					CAR = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = CHA }
+					CHA = { is_subject_of = SAF }
+				}
+			}
+		}
+		x = 1
+		y = 1
+		relative_position_id = SAF_south_west_african_expansion
+		cost = 10
+
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			BRD = { country_event = { id = ra3_africa.1 } }
+			RWA = { country_event = { id = ra3_africa.1 } }
+			UGA = { country_event = { id = ra3_africa.1 } }
+			SUD = { country_event = { id = ra3_africa.1 } }
+			CAR = { country_event = { id = ra3_africa.1 } }
+			CHA = { country_event = { id = ra3_africa.1 } }
+			hidden_effect = { # Forms African United Front
+				news_event = { id = ra3_africa.2 days = 1 }
+				TUN = {
+					create_faction = "African Resistance Movement"
+					add_to_faction = TUN
+					add_to_faction = BRD
+					add_to_faction = RWA
+					add_to_faction = UGA
+					add_to_faction = SUD
+					add_to_faction = CAR
+					add_to_faction = CHA
+					add_to_faction = KEN
+					add_to_faction = SOM
+					add_to_faction = ETH
+					add_to_faction = ERI
+					add_to_faction = DJI
+					add_to_faction = NGA
+					add_to_faction = NGR
+					add_to_faction = DAH
+					add_to_faction = TOG
+					add_to_faction = VOL
+					add_to_faction = GHA
+					add_to_faction = IVO
+					add_to_faction = MLI
+					add_to_faction = LIB
+					add_to_faction = SIE
+					add_to_faction = GNA
+					add_to_faction = GNB
+					add_to_faction = SEN
+					add_to_faction = GAM
+					add_to_faction = MRT
+					add_to_faction = WES
+					add_to_faction = MOR
+					add_to_faction = ALG
+					add_to_faction = LBA
+					add_to_faction = EGY
+					add_to_faction = ANG
+					add_to_faction = COG
+					add_to_faction = UGA
+					add_to_faction = RCG
+					add_to_faction = GAB
+					add_to_faction = EQG
+					add_to_faction = CMR
+					add_to_faction = ZAM
+					add_to_faction = ZIM
+					add_to_faction = MZB
+					add_to_faction = MLW
+					add_to_faction = TZN
+					declare_war_on = { target = SAF    type = topple_government }
+					BRD = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					RWA = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					UGA = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					SUD = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					CAR = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					CHA = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					KEN = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					SOM = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					ETH = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					ERI = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					DJI = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					NGA = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					NGR = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					DAH = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					TOG = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					VOL = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					GHA = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					IVO = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					MLI = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					LIB = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					SIE = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					GNA = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					GNB = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					SEN = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					GAM = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					MRT = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					WES = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					MOR = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					ALG = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					LBA = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					EGY = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					ANG = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					COG = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					UGA = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					RCG = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					GAB = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					EQG = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					CMR = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					ZAM = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					ZIM = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					MZB = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					MLW = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+					TZN = { add_to_war = { targeted_alliance = TUN enemy = SAF } }
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SAF_north_african_expansion
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SAF_subsaharan_african_expansion }
+		prerequisite = { focus = SAF_central_african_expansion }
+		prerequisite = { focus = SAF_east_african_expansion }
+		will_lead_to_war_with = MRT
+		will_lead_to_war_with = WES
+		will_lead_to_war_with = MOR
+		will_lead_to_war_with = ALG
+		will_lead_to_war_with = TUN
+		will_lead_to_war_with = LBA
+		will_lead_to_war_with = EGY
+		will_lead_to_war_with = SUD
+		
+		available = {
+			has_army_manpower = { size > 9999 }
+		}
+		
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = SAF_north_african_expansion_tt
+				OR = {
+					NOT = { country_exists = MRT }
+					MRT = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = WES }
+					WES = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = MOR }
+					MOR = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = ALG }
+					ALG = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = TUN }
+					TUN = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = LBA }
+					LBA = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = EGY }
+					EGY = { is_subject_of = SAF }
+				}
+				OR = {
+					NOT = { country_exists = SUD }
+					SUD = { is_subject_of = SAF }
+				}
+			}
+		}
+		x = 0
+		y = 1
+		relative_position_id = SAF_central_african_expansion
+		cost = 10
+
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			MRT = { country_event = { id = ra3_africa.1 } }
+			WES = { country_event = { id = ra3_africa.1 } }
+			MOR = { country_event = { id = ra3_africa.1 } }
+			ALG = { country_event = { id = ra3_africa.1 } }
+			TUN = { country_event = { id = ra3_africa.1 } }
+			LBA = { country_event = { id = ra3_africa.1 } }
+			EGY = { country_event = { id = ra3_africa.1 } }
+			SUD = { country_event = { id = ra3_africa.1 } }
+		}
+	}
+	
+	focus = {
+		id = SAF_form_united_africa
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = SAF_north_african_expansion }
+		prerequisite = { focus = SAF_madagascar_expansion }
+		
+		available = {
+			
+		}
+		
+		x = 2
+		y = 1
+		relative_position_id = SAF_north_african_expansion
+		cost = 10
+
+		available_if_capitulated = no
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+			}
+		}
+
+		completion_reward = {
+			set_cosmetic_tag = SAF_UNITED_AFRICA
+			custom_effect_tooltip = SAF_african_cores_tt
+			hidden_effect = {
+				news_event = { id = ra3_africa.3 days = 1 }
+				every_state = { 
+					limit = {
+						is_on_continent = africa
+						OR = {
+							owner = { tag = SAF }
+							owner = { is_subject_of = SAF }
+						}
+					}
+					SAF = { add_state_core = PREV }
+					SAF = { transfer_state = PREV }
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_african_armament_1
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = SAF_form_united_africa }
+		x = 1
+		y = 1
+		relative_position_id = SAF_form_united_africa
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 2			
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_african_armament_2
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = SAF_african_armament_1 }
+		x = 0
+		y = 1
+		relative_position_id = SAF_african_armament_1
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 2			
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_african_armament_3
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = SAF_african_armament_2 }
+		x = 0
+		y = 1
+		relative_position_id = SAF_african_armament_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 2			
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_african_construction_1
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = SAF_form_united_africa }
+		x = -1
+		y = 1
+		relative_position_id = SAF_form_united_africa
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_african_construction_2
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = SAF_african_construction_1 }
+		x = 0
+		y = 1
+		relative_position_id = SAF_african_construction_1
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SAF_african_construction_3
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = SAF_african_construction_2 }
+		x = 0
+		y = 1
+		relative_position_id = SAF_african_construction_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+}

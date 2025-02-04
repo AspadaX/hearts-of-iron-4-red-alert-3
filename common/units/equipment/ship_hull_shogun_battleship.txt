@@ -1,0 +1,56 @@
+equipments = {
+	ship_hull_shogun_battleship = {
+		year = 1945
+		visual_level = 0
+		archetype = ship_hull_heavy
+		priority = 1500
+		
+		module_slots = inherit
+		default_modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_4
+			fixed_ship_anti_air_slot = ship_anti_air_4
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_4
+			fixed_ship_secondaries_slot = dp_ship_secondaries
+			fixed_ship_armor_slot = ship_armor_bb_3
+			front_1_custom_slot = ship_anti_air_4
+			mid_1_custom_slot = ship_anti_air_4
+			mid_2_custom_slot = dp_ship_secondaries
+			rear_1_custom_slot = ship_heavy_battery_4
+		}
+		hg_armor_piercing = 0
+		hg_attack = 0
+
+		lg_armor_piercing = 0
+		lg_attack = 1
+
+		torpedo_attack = 0
+
+		anti_air_attack = 0
+		
+		armor_value = 60
+
+		
+		surface_detection = 40
+		sub_detection = 5
+		surface_visibility = 30
+		naval_speed = 40
+		reliability = 0.99
+
+		naval_range = 6000
+		
+		max_strength = 600
+		
+
+		
+		build_cost_ic = 6000
+		resources = {
+			#oil = 2
+			steel = 5
+			chromium = 3
+		}
+		manpower = 7400
+		
+	}
+}
