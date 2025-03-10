@@ -1,0 +1,15 @@
+version="0.1.0"
+tags={
+	"Alternative History"
+	"Balance"
+	"Events"
+	"Gameplay"
+	"Historical"
+	"National Focuses"
+	"Technologies"
+	"Ideologies"
+	"Military"
+}
+name="Red Alert 3"
+supported_version="1.16.0"
+remote_file_id="1722615953"
