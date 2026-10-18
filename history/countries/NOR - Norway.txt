@@ -1,4 +1,4 @@
-﻿capital = 110
+capital = 110
 
 oob = "NOR_1936"
 if = {
@@ -332,4 +332,5 @@ if = {
 				rear_1_custom_slot = ship_depth_charge_1
 			}
 		}
+}
 }

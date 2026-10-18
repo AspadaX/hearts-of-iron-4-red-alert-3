@@ -1,0 +1,276 @@
+spriteTypes = {
+	SpriteType = {
+		name = "GFX_escort_patrols_medium"
+		texturefile = "gfx/interface/technologies/escort_patrols.dds"
+	}
+	SpriteType = {
+		name = "GFX_carrier_battlegroups_medium"
+		texturefile = "gfx/interface/technologies/carrier_battlegroups.dds"
+	}
+	SpriteType = {
+		name = "GFX_massed_strikes_medium"
+		texturefile = "gfx/interface/technologies/massed_strikes.dds"
+	}
+	SpriteType = {
+		name = "GFX_carrier_task_forces_medium"
+		texturefile = "gfx/interface/technologies/carrier_task_forces.dds"
+	}
+	SpriteType = {
+		name = "GFX_carrier_primacy_medium"
+		texturefile = "gfx/interface/technologies/carrier_primacy.dds"
+	}
+	SpriteType = {
+		name = "GFX_base_strike_medium"
+		texturefile = "gfx/interface/technologies/base_strike.dds"
+	}
+	SpriteType = {
+		name = "GFX_naval_air_operations_medium"
+		texturefile = "gfx/interface/technologies/naval_air_operations.dds"
+	}
+	SpriteType = {
+		name = "GFX_carrier_operations_medium"
+		texturefile = "gfx/interface/technologies/carrier_operations.dds"
+	}
+	SpriteType = {
+		name = "GFX_capital_ship_raiders_medium"
+		texturefile = "gfx/interface/technologies/capital_ship_raiders.dds"
+	}
+	SpriteType = {
+		name = "GFX_raider_patrols_medium"
+		texturefile = "gfx/interface/technologies/raider_patrols.dds"
+	}
+	SpriteType = {
+		name = "GFX_wolfpacks_medium"
+		texturefile = "gfx/interface/technologies/wolfpacks.dds"
+	}
+	SpriteType = {
+		name = "GFX_unrestricted_submarine_warfare_medium"
+		texturefile = "gfx/interface/technologies/unrestricted_submarine_warfare.dds"
+	}
+	SpriteType = {
+		name = "GFX_trade_interdiction_medium"
+		texturefile = "gfx/interface/technologies/trade_interdiction.dds"
+	}
+	SpriteType = {
+		name = "GFX_submarine_offensive_medium"
+		texturefile = "gfx/interface/technologies/submarine_offensive.dds"
+	}
+	SpriteType = {
+		name = "GFX_convoy_interdiction_medium"
+		texturefile = "gfx/interface/technologies/convoy_interdiction.dds"
+	}
+	SpriteType = {
+		name = "GFX_undersea_blockade_medium"
+		texturefile = "gfx/interface/technologies/undersea_blockade.dds"
+	}
+	SpriteType = {
+		name = "GFX_submarine_operations_medium"
+		texturefile = "gfx/interface/technologies/submarine_operations.dds"
+	}
+	SpriteType = {
+		name = "GFX_escort_carriers_medium"
+		texturefile = "gfx/interface/technologies/escort_carriers.dds"
+	}
+	SpriteType = {
+		name = "GFX_convoy_escorts_medium"
+		texturefile = "gfx/interface/technologies/convoy_escorts.dds"
+	}
+	SpriteType = {
+		name = "GFX_convoy_sailing_medium"
+		texturefile = "gfx/interface/technologies/convoy_sailing.dds"
+	}
+	SpriteType = {
+		name = "GFX_grand_battlefleet_medium"
+		texturefile = "gfx/interface/technologies/grand_battlefleet.dds"
+	}
+	SpriteType = {
+		name = "GFX_floating_airfield_medium"
+		texturefile = "gfx/interface/technologies/floating_airfield.dds"
+	}
+	SpriteType = {
+		name = "GFX_floating_fortress_medium"
+		texturefile = "gfx/interface/technologies/floating_fortress.dds"
+	}
+	SpriteType = {
+		name = "GFX_hunter_killer_groups_medium"
+		texturefile = "gfx/interface/technologies/hunter_killer_groups.dds"
+	}
+	SpriteType = {
+		name = "GFX_subsidiary_carrier_role_medium"
+		texturefile = "gfx/interface/technologies/subsidiary_carrier_role.dds"
+	}
+	SpriteType = {
+		name = "GFX_battlefleet_concentration_medium"
+		texturefile = "gfx/interface/technologies/battlefleet_concentration.dds"
+	}
+	SpriteType = {
+		name = "GFX_fleet_in_being_medium"
+		texturefile = "gfx/interface/technologies/fleet_in_being.dds"
+	}
+	SpriteType = {
+		name = "GFX_naval_strike_torpedo_tactics_medium"
+		texturefile = "gfx/interface/technologies/naval_strike_torpedo_tactics.dds"
+	}
+	SpriteType = {
+		name = "GFX_naval_strike_tactics_medium"
+		texturefile = "gfx/interface/technologies/naval_strike_tactics.dds"
+	}
+	SpriteType = {
+		name = "GFX_mass_destruction_medium"
+		texturefile = "gfx/interface/technologies/mass_destruction.dds"
+	}
+	SpriteType = {
+		name = "GFX_flying_fortress_medium"
+		texturefile = "gfx/interface/technologies/flying_fortress.dds"
+	}
+	SpriteType = {
+		name = "GFX_escort_relay_system_medium"
+		texturefile = "gfx/interface/technologies/escort_relay_system.dds"
+	}
+	SpriteType = {
+		name = "GFX_infiltration_bombing_medium"
+		texturefile = "gfx/interface/technologies/infiltration_bombing.dds"
+	}
+	SpriteType = {
+		name = "GFX_night_bombing_medium"
+		texturefile = "gfx/interface/technologies/night_bombing.dds"
+	}
+	SpriteType = {
+		name = "GFX_strategic_destruction_medium"
+		texturefile = "gfx/interface/technologies/strategic_destruction.dds"
+	}
+	SpriteType = {
+		name = "GFX_ground_support_integration_medium"
+		texturefile = "gfx/interface/technologies/ground_support_integration.dds"
+	}
+	SpriteType = {
+		name = "GFX_keypoint_bombing_medium"
+		texturefile = "gfx/interface/technologies/keypoint_bombing.dds"
+	}
+	SpriteType = {
+		name = "GFX_carousel_bombing_medium"
+		texturefile = "gfx/interface/technologies/carousel_bombing.dds"
+	}
+	SpriteType = {
+		name = "GFX_logistical_bombing_medium"
+		texturefile = "gfx/interface/technologies/logistical_bombing.dds"
+	}
+	SpriteType = {
+		name = "GFX_infrastructure_destruction_medium"
+		texturefile = "gfx/interface/technologies/infrastructure_destruction.dds"
+	}
+	SpriteType = {
+		name = "GFX_operational_destruction_medium"
+		texturefile = "gfx/interface/technologies/operational_destruction.dds"
+	}
+	SpriteType = {
+		name = "GFX_combat_unit_destruction_medium"
+		texturefile = "gfx/interface/technologies/combat_unit_destruction.dds"
+	}
+	SpriteType = {
+		name = "GFX_low_echelon_support_medium"
+		texturefile = "gfx/interface/technologies/low_echelon_support.dds"
+	}
+	SpriteType = {
+		name = "GFX_hunt_and_destroy_medium"
+		texturefile = "gfx/interface/technologies/hunt_and_destroy.dds"
+	}
+	SpriteType = {
+		name = "GFX_direct_ground_support_medium"
+		texturefile = "gfx/interface/technologies/direct_ground_support.dds"
+	}
+	SpriteType = {
+		name = "GFX_dive_bombing_medium"
+		texturefile = "gfx/interface/technologies/dive_bombing.dds"
+	}
+	SpriteType = {
+		name = "GFX_home_defence_medium"
+		texturefile = "gfx/interface/technologies/home_defence.dds"
+	}
+	SpriteType = {
+		name = "GFX_air_skirmish_medium"
+		texturefile = "gfx/interface/technologies/air_skirmish.dds"
+	}
+	SpriteType = {
+		name = "GFX_forward_interception_medium"
+		texturefile = "gfx/interface/technologies/forward_interception.dds"
+	}
+	SpriteType = {
+		name = "GFX_force_rotation_medium"
+		texturefile = "gfx/interface/technologies/force_rotation.dds"
+	}
+	SpriteType = {
+		name = "GFX_offensive_formations_medium"
+		texturefile = "gfx/interface/technologies/offensive_formations.dds"
+	}
+	SpriteType = {
+		name = "GFX_air_offense_medium"
+		texturefile = "gfx/interface/technologies/air_offense.dds"
+	}
+	SpriteType = {
+		name = "GFX_formation_flying_medium"
+		texturefile = "gfx/interface/technologies/formation_flying.dds"
+	}
+	SpriteType = {
+		name = "GFX_decimetric_radar_medium"
+		texturefile = "gfx/interface/technologies/decimetric_radar.dds"
+	}
+	SpriteType = {
+		name = "GFX_improved_decimetric_radar_medium"
+		texturefile = "gfx/interface/technologies/improved_decimetric_radar.dds"
+	}
+	SpriteType = {
+		name = "GFX_improved_centimetric_radar_medium"
+		texturefile = "gfx/interface/technologies/improved_centimetric_radar.dds"
+	}
+	SpriteType = {
+		name = "GFX_advanced_centimetric_radar_medium"
+		texturefile = "gfx/interface/technologies/advanced_centimetric_radar.dds"
+	}
+	SpriteType = {
+		name = "GFX_USA_interwar_antiair_medium"
+		texturefile = "gfx/interface/technologies/AA_1_allies.dds"
+	}
+	SpriteType = {
+		name = "GFX_armored_spearhead_medium"
+		texturefile = "gfx/interface/technologies/armored_spearhead.dds"
+		alwaystransparent = yes
+	}
+	SpriteType = {
+		name = "GFX_nd_conscription_medium"
+		texturefile = "gfx/interface/technologies/nd_conscription.dds"
+		alwaystransparent = yes
+	}
+	SpriteType = {
+		name = "GFX_infantry_offensive_medium"
+		texturefile = "gfx/interface/technologies/infantry_offensive.dds"
+		alwaystransparent = yes
+	}
+	SpriteType = {
+		name = "GFX_grand_assault_medium"
+		texturefile = "gfx/interface/technologies/grand_assault.dds"
+		alwaystransparent = yes
+	}
+	SpriteType = {
+		name = "GFX_human_infantry_offensive_medium"
+		texturefile = "gfx/interface/technologies/infantry_offensive.dds"
+		alwaystransparent = yes
+	}
+	SpriteType = {
+		name = "GFX_guerilla_warfare_medium"
+		texturefile = "gfx/interface/technologies/guerilla_warfare.dds"
+		alwaystransparent = yes
+	}
+	SpriteType = {
+		name = "GFX_peacekeeper_infantry_medium"
+		texturefile = "gfx/interface/technologies/peacekeeper.dds"
+	}
+	SpriteType = {
+		name = "GFX_apollo_fighter_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/apollo_fighter.dds"
+	}
+	SpriteType = {
+		name = "GFX_apollo_fighter_medium"
+		texturefile = "gfx/interface/technologies/apollo_fighter_tech.dds"
+	}
+}

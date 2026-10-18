@@ -1,0 +1,40 @@
+state = {
+	id = 1081
+	name = "STATE_1081" # Otago 
+	manpower = 114181
+	resources = {
+		tungsten = 1
+	}
+
+	state_category = rural
+
+
+	history = {
+		owner = IOT
+		add_core_of = IOT
+
+
+
+		buildings = {
+
+			infrastructure = 2 
+
+		}
+
+
+
+		victory_points = {
+			8241 1 # Invercargill
+		}
+		
+	
+		victory_points = {
+			2211 1 
+		}
+	}
+	provinces = {
+		2211 8232 8241 12988 12980 
+	}
+
+	local_supplies = 0.0 
+}

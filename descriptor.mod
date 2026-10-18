@@ -13,3 +13,4 @@ tags={
 name="Red Alert 3"
 supported_version="1.16.0"
 remote_file_id="1722615953"
+replace_path="events"

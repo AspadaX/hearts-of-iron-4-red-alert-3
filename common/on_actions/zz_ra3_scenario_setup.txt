@@ -1,0 +1,30 @@
+on_actions = {
+    on_startup = {
+        effect = {
+            if = {
+                limit = { NOT = { has_global_flag = ra3_scenario_setup_complete } }
+                408 = { transfer_state_to = SOV }
+                CHI = {
+                    every_state = {
+                        limit = { is_core_of = CHI is_owned_by = JAP }
+                        transfer_state_to = CHI
+                    }
+                    every_owned_state = {
+                        limit = { is_controlled_by = JAP }
+                        set_state_controller_to = CHI
+                    }
+                }
+                SOV = {
+                    set_popularities = { communism = 95 fascism = 3 democratic = 2 neutrality = 0 }
+                    set_politics = { ruling_party = communism elections_allowed = no }
+                }
+                EOR = {
+                    set_popularities = { fascism = 100 democratic = 0 communism = 0 neutrality = 0 }
+                    set_politics = { ruling_party = fascism elections_allowed = no }
+                }
+                set_global_flag = ra3_scenario_setup_complete
+                log = "RA3 authored borders and governments initialized"
+            }
+        }
+    }
+}

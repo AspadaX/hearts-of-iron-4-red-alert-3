@@ -1,0 +1,5 @@
+# Vanilla Japan is replaced by EOR in the RA3 scenario.
+# Retain the tag for legacy equipment references, without units or WWII setup.
+capital = 282
+set_popularities = { fascism = 100 democratic = 0 communism = 0 neutrality = 0 }
+set_politics = { ruling_party = fascism elections_allowed = no }

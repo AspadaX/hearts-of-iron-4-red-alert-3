@@ -1,4 +1,4 @@
-﻿capital = 285
+capital = 285
 
 oob = "AST_1936"
 set_stability = 0.8
@@ -104,6 +104,8 @@ if = {
 }
 
 #Variants
+if = {
+	limit = { NOT = { has_dlc = "Man the Guns" } }
 	# 1936 Start #
 		### Carrier Variants
 		create_equipment_variant = {

@@ -1,0 +1,125 @@
+{
+  "state_408_owner": "SOV",
+  "party_popularity_blocks_modernized": 2,
+  "leaders_valid_through": "2051.1.1",
+  "land_divisions_relocated": 28,
+  "land_relocations": [
+    {
+      "from": 11771,
+      "to": 12421
+    },
+    {
+      "from": 4572,
+      "to": 9859
+    },
+    {
+      "from": 1150,
+      "to": 1399
+    },
+    {
+      "from": 3944,
+      "to": 12446
+    },
+    {
+      "from": 6811,
+      "to": 7087
+    },
+    {
+      "from": 7743,
+      "to": 1182
+    },
+    {
+      "from": 10541,
+      "to": 7072
+    },
+    {
+      "from": 10612,
+      "to": 9998
+    },
+    {
+      "from": 7697,
+      "to": 9950
+    },
+    {
+      "from": 10521,
+      "to": 1092
+    },
+    {
+      "from": 10368,
+      "to": 7186
+    },
+    {
+      "from": 10698,
+      "to": 4052
+    },
+    {
+      "from": 12500,
+      "to": 7125
+    },
+    {
+      "from": 1693,
+      "to": 4056
+    },
+    {
+      "from": 7569,
+      "to": 11932
+    },
+    {
+      "from": 12469,
+      "to": 3995
+    },
+    {
+      "from": 12469,
+      "to": 13025
+    },
+    {
+      "from": 7812,
+      "to": 13026
+    },
+    {
+      "from": 7812,
+      "to": 13028
+    },
+    {
+      "from": 10429,
+      "to": 4357
+    },
+    {
+      "from": 10429,
+      "to": 2489
+    },
+    {
+      "from": 3978,
+      "to": 13035
+    },
+    {
+      "from": 3978,
+      "to": 13029
+    },
+    {
+      "from": 3955,
+      "to": 13041
+    },
+    {
+      "from": 3900,
+      "to": 13046
+    },
+    {
+      "from": 11822,
+      "to": 13036
+    },
+    {
+      "from": 881,
+      "to": 13040
+    },
+    {
+      "from": 9768,
+      "to": 13043
+    }
+  ],
+  "air_groups_relocated_from": [
+    716
+  ],
+  "legacy_JAP_units_disabled": true,
+  "startup_setup": "once per new campaign; no daily political or territorial reset"
+}

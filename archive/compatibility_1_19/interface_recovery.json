@@ -1,0 +1,17 @@
+{
+  "base_game_version": "1.19.3",
+  "extra_legacy_and_ra3_sprite_definitions": 67,
+  "ra3_year_labels_preserved": 61,
+  "loading_backgrounds": [
+    "load_1",
+    "load_2",
+    "load_3",
+    "load_4",
+    "load_5",
+    "load_6",
+    "load_7",
+    "load_8",
+    "load_9"
+  ],
+  "reason": "Preserve modern sprite and research-interface definitions instead of overriding them with legacy full copies."
+}

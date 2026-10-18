@@ -1,0 +1,371 @@
+﻿add_namespace = aoe
+
+# UK is asked about Militarization
+country_event = {
+	id = aoe.3
+	title = aoe.3.t
+	desc = aoe.3.d
+	picture = GFX_news_event_ast_planning
+	
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = aoe.3.a
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = -25
+				AOE = { has_army_size = { size < 30 } }
+			}
+			modifier = {
+				add = 100
+				GER = { has_army_size = { size > 29 } }
+			}
+			modifier = {
+				add = 20
+				is_in_faction_with = AOE
+			}
+		}
+		AOE = {
+			country_event = { hours = 2 id = aoe.1 }
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+	}
+	option = { # Refuse
+		name = aoe.3.b
+		ai_chance = {
+			base = 10			
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				AOE = { has_army_size = { size > 29 } }
+				factor = 0.5
+			}
+			modifier = {
+				add = 20
+				AOE = { has_army_size = { size < 10 } }
+			}
+			#modifier = {
+			#	add = 100
+			#	HUN = { 
+			#		OR = { 
+			#			has_completed_focus = HUN_protect_austria 
+			#			is_in_faction_with = AUS
+			#		}
+			#	}
+			#}
+			modifier = {
+				factor = 2
+				is_in_faction = yes
+				NOT = { is_in_faction_with = AOE }
+			}
+			#modifier = {
+			#	any_other_country = {
+			#		has_guaranteed = ENG
+			#	}
+			#	factor = 5
+			#}
+		}
+		AOE = {
+			country_event = { hours = 2 id = aoe.2 }
+			if = { limit = { is_in_faction_with = ENG }
+				remove_from_faction = ENG
+			}
+		}
+	}
+}
+
+# Militarizing the United Kingdom Gets Rejected
+country_event = {
+	id = aoe.2
+	title = aoe.2.t
+	desc = aoe.2.d
+	picture = GFX_news_event_king_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = aoe.2.a
+		add_opinion_modifier = { target = ROOT modifier = large_decrease }
+	}
+}
+
+# Militarizing the United Kingdom Gets Accepted
+
+country_event = {
+	id = aoe.1
+	title = aoe.1.t
+	desc = aoe.1.d
+	picture = GFX_report_event_soldiers_marching
+	
+	is_triggered_only = yes
+	
+ 	#immediate = {
+ 	#	hidden_effect = {
+ 	#		add_named_threat = { threat = 10 name = germany.4.t }
+ 	#	} 		
+ 	#}
+
+	option = {
+		name = aoe.1.a
+		127 = {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = AOE
+			}
+		}
+		123 = {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = AOE
+			}
+		}
+		338 = {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = AOE
+			}
+		}
+		126 = {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = AOE
+			}
+		}
+		125 = {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = AOE
+			}
+		}
+		129 = {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = AOE
+			}
+		}
+		128 = {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = AOE
+			}
+		}
+		122 = {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = AOE
+			}
+		}
+		130 = {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = AOE
+			}
+		}
+		132 = {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = AOE
+			}
+		}
+		131 = {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = AOE
+			}
+		}
+		121 = {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = AOE
+			}
+		}
+		133 = {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = AOE
+			}
+		}
+		136 = {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = AOE
+			}
+		}
+		120 = {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = AOE
+			}
+		}
+		119 = {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = AOE
+			}
+		}
+		
+		ENG = {
+			every_unit_leader = {
+				set_nationality = AOE
+			}
+		}
+		annex_country = { target = ENG transfer_troops = yes }
+		add_political_power = 75
+		set_country_flag = ENG_annexed
+		add_war_support = 0.1
+		add_stability = 0.05
+		
+		hidden_effect = {
+			news_event = { hours = 6 id = news.aoe.1 }
+		}
+	}
+}
+
+# Ireland is asked about Militarization
+country_event = {
+	id = aoe.4
+	title = aoe.4.t
+	desc = aoe.4.d
+	picture = GFX_news_event_ast_planning
+	
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = aoe.4.a
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = -25
+				AOE = { has_army_size = { size < 30 } }
+			}
+			modifier = {
+				add = 100
+				GER = { has_army_size = { size > 29 } }
+			}
+			modifier = {
+				add = 20
+				is_in_faction_with = AOE
+			}
+		}
+		AOE = {
+			country_event = { hours = 2 id = aoe.6 }
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+	}
+	option = { # Refuse
+		name = aoe.4.b
+		ai_chance = {
+			base = 10			
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				AOE = { has_army_size = { size > 29 } }
+				factor = 0.5
+			}
+			modifier = {
+				add = 20
+				AOE = { has_army_size = { size < 10 } }
+			}
+			#modifier = {
+			#	add = 100
+			#	HUN = { 
+			#		OR = { 
+			#			has_completed_focus = HUN_protect_austria 
+			#			is_in_faction_with = AUS
+			#		}
+			#	}
+			#}
+			modifier = {
+				factor = 2
+				is_in_faction = yes
+				NOT = { is_in_faction_with = AOE }
+			}
+			#modifier = {
+			#	any_other_country = {
+			#		has_guaranteed = ENG
+			#	}
+			#	factor = 5
+			#}
+		}
+		AOE = {
+			country_event = { hours = 2 id = aoe.5 }
+			if = { limit = { is_in_faction_with = IRE }
+				remove_from_faction = IRE
+			}
+		}
+	}
+}
+
+# Militarizing Ireland Gets Rejected
+country_event = {
+	id = aoe.5
+	title = aoe.5.t
+	desc = aoe.5.d
+	picture = GFX_news_event_king_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = aoe.5.a
+		add_opinion_modifier = { target = ROOT modifier = large_decrease }
+	}
+}
+
+# Militarizing Ireland Gets Accepted
+
+country_event = {
+	id = aoe.6
+	title = aoe.6.t
+	desc = aoe.6.d
+	picture = GFX_report_event_soldiers_marching
+	
+	is_triggered_only = yes
+	
+ 	#immediate = {
+ 	#	hidden_effect = {
+ 	#		add_named_threat = { threat = 10 name = germany.4.t }
+ 	#	} 		
+ 	#}
+
+	option = {
+		name = aoe.6.a
+		134 = {
+			if = {
+				limit = { is_owned_by = IRE }
+				add_core_of = AOE
+			}
+		}
+		135 = {
+			if = {
+				limit = { is_owned_by = IRE }
+				add_core_of = AOE
+			}
+		}
+		113 = {
+			if = {
+				limit = { is_owned_by = IRE }
+				add_core_of = AOE
+			}
+		}
+		
+		IRE = {
+			every_unit_leader = {
+				set_nationality = AOE
+			}
+		}
+		annex_country = { target = IRE transfer_troops = yes }
+		add_political_power = 75
+		set_country_flag = IRE_annexed
+		add_war_support = 0.1
+		add_stability = 0.05
+		
+		hidden_effect = {
+			news_event = { hours = 6 id = news.aoe.2 }
+		}
+	}
+}

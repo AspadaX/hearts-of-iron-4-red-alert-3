@@ -1,0 +1,10 @@
+# Use the existing RA3 artwork with the current background database.
+load_1 = {}
+load_2 = {}
+load_3 = {}
+load_4 = {}
+load_5 = {}
+load_6 = {}
+load_7 = {}
+load_8 = {}
+load_9 = {}

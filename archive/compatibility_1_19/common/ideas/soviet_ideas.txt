@@ -1,0 +1,76 @@
+ideas = {
+
+	#######################
+	###-NATIONAL SPIRTS-###
+	#######################
+
+	country = {
+		SOV_propaganda = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.10
+				communism_drift = 0.05
+			}
+		}
+		
+		SOV_influence = { 
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				communism_drift = 0.1
+			}
+		}
+		
+		SOV_mil_command = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				command_power_gain_mult = 0.25
+			}
+		}
+		
+		SOV_conquest_debuff = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = -0.25
+			}
+		}
+	}

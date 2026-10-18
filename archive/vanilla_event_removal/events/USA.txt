@@ -1,0 +1,297 @@
+﻿###########################
+# USA Events
+###########################
+
+add_namespace = usa2
+
+# US asks Mexico about alliance
+country_event = {
+	id = usa2.1
+	title = usa2.1.t
+	desc = usa2.1.d
+	picture = GFX_report_event_hol_cabinet_de_geer
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	#Accept
+	option = {
+		name = usa2.1.a
+		USA = {
+			add_to_faction = MEX
+		}
+		hidden_effect = {
+			news_event = { hours = 6 id = news.403 }
+		}
+	}
+	
+	#Reject
+	option = {
+		name = usa2.1.b
+		
+		USA = {
+			create_wargoal = {
+				type = take_state
+				target = MEX
+				generator = { 277 } 
+			}
+		}
+		
+		hidden_effect = {
+			news_event = { hours = 6 id = news.404 }
+		}
+	}
+	
+}
+
+# US Election 2008, Ackerman VS Lincoln Rockwell
+country_event = {
+	id = usa2.2
+	title = usa2.2.t
+	desc = usa2.2.d
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = USA
+		democratic > 0.5
+		date > 2008.1.1
+		date < 2009.1.1
+	}
+
+	option = { 	
+		name = usa2.2.a
+		ai_chance = {
+			factor = 75
+			#modifier = {
+			#	OR = {
+			#		has_game_rule = {
+			#			rule = USA_ai_behavior
+			#			option = FASCIST
+			#		}
+			#		has_country_flag = USA_AI_RANDOM_FASCIST
+			#	}
+			#	has_dlc = "Man the Guns"
+			#	factor = 0
+			#}
+		}		
+		
+		create_country_leader = {
+			name = "Howard T. Ackerman"
+			desc = "POLITICS_HOWARD_T_ACKERMAN_DESC"
+			picture = "Portrait_USA_Howard.dds"
+			expire = "1989.1.1"
+			ideology = liberalism
+			traits = {
+		
+			}
+		}
+		
+	}
+
+	option = { 
+		name = usa2.2.b
+		ai_chance = {
+			factor = 25
+			#modifier = {
+			#	factor = 0
+			#	is_historical_focus_on = yes
+			#	has_game_rule = {
+			#		rule = USA_ai_behavior
+			#		option = DEFAULT
+			#	}
+			#}
+		}		
+		
+		create_country_leader = {
+			name = "George Lincoln Rockwell"
+			desc = "POLITICS_ALF_LANDON_DESC"
+			picture = "Portrait_USA_Rockwell.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				
+			}
+		}
+		
+	}
+}
+
+# US asks the empire for help
+country_event = {
+	id = usa2.3
+	title = usa2.3.t
+	desc = usa2.3.d
+	picture = GFX_report_event_hol_cabinet_de_geer
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	#Accept
+	option = {
+		name = usa2.3.a
+		EOR = {
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 8000
+				target = USA
+			}
+			
+			377 = {
+				add_core_of = IPS
+			}
+			
+			378 = {
+				add_core_of = IPS
+			}
+			
+			379 = {
+				add_core_of = IPS
+			}
+			
+			385 = {
+				add_core_of = IPS
+			}
+			
+			386 = {
+				add_core_of = IPS
+			}
+			
+			463 = {
+				add_core_of = IPS
+			}
+			
+			739 = {
+				add_core_of = IPS
+			}
+			
+			740 = {
+				add_core_of = IPS
+			}
+			
+			473 = {
+				add_core_of = IPS
+			}
+			
+			471 = {
+				add_core_of = IPS
+			}
+			
+				set_state_owner = 378
+				set_state_owner = 379
+				set_state_owner = 385
+				set_state_owner = 386
+				set_state_owner = 463
+			
+			release_puppet = IPS
+			
+			add_opinion_modifier = {
+				target = USA
+				modifier = american_japanese_tie
+			}
+			
+		}
+		
+		USA = {
+			
+			add_opinion_modifier = {
+				target = EOR
+				modifier = american_japanese_tie
+			}
+			
+			swap_ideas = {
+				remove_idea = public_objection
+				add_idea = public_objection_2
+			}
+			
+		}
+		
+		hidden_effect = {
+			news_event = { hours = 6 id = news.405 }
+		}
+		
+	}
+	
+	#Reject
+	#option = {
+	#	name = usa2.3.b
+	#}
+	
+}
+
+# Fascist Leadership Change
+country_event = {
+	id = usa2.4
+	title = usa2.4.t
+	desc = usa2.4.d
+	picture = GFX_report_event_hol_cabinet_de_geer
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	#Lincoln Rockwell remains at office
+	option = {
+		name = usa2.4.a
+		ai_chance = {
+			factor = 75
+			#modifier = {
+			#	OR = {
+			#		has_game_rule = {
+			#			rule = USA_ai_behavior
+			#			option = FASCIST
+			#		}
+			#		has_country_flag = USA_AI_RANDOM_FASCIST
+			#	}
+			#	has_dlc = "Man the Guns"
+			#	factor = 0
+			#}
+		}		
+		
+		create_country_leader = {
+			name = "George Lincoln Rockwell"
+			desc = "POLITICS_HOWARD_T_ACKERMAN_DESC"
+			picture = "Portrait_USA_Rockwell.dds"
+			expire = "1989.1.1"
+			ideology = nazism
+			traits = {
+		
+			}
+		}
+	}
+	
+	#John Smith takes over
+	option = {
+		name = usa2.4.b
+		
+		ai_chance = {
+			factor = 75
+			#modifier = {
+			#	OR = {
+			#		has_game_rule = {
+			#			rule = USA_ai_behavior
+			#			option = FASCIST
+			#		}
+			#		has_country_flag = USA_AI_RANDOM_FASCIST
+			#	}
+			#	has_dlc = "Man the Guns"
+			#	factor = 0
+			#}
+		}	
+		
+		create_country_leader = {
+			name = "John Smith"
+			desc = "POLITICS_HOWARD_T_ACKERMAN_DESC"
+			picture = "Portrait_USA_Smith.dds"
+			expire = "1989.1.1"
+			ideology = nazism
+			traits = {
+				dictator
+			}
+		}
+	}
+	
+}
+
+
+

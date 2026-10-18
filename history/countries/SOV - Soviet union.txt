@@ -1,4 +1,4 @@
-﻿capital = 219
+capital = 219
 
 set_convoys = 275
 oob = "SOV_1936"
@@ -30,7 +30,7 @@ if = {
 		add_popularity = { ideology = communism popularity = 1 }
 		set_politics = {
 			ruling_party = communism
-			last_election = "1920.15.6"
+			last_election = "2004.1.1"
 			election_frequency = 48
 			elections_allowed = no
 		}
@@ -40,7 +40,7 @@ if = {
 		add_popularity = { ideology = communism popularity = 1 }
 		set_politics = {
 			ruling_party = communism
-			last_election = "1920.15.6"
+			last_election = "2004.1.1"
 			election_frequency = 48
 			elections_allowed = no
 			}
@@ -118,24 +118,18 @@ if = {
 	}
 }
 
+set_popularities = {
+	democratic = 2
+	fascism = 3
+	communism = 95
+	neutrality = 0
+}
 set_politics = {
 
-	parties = {
-		democratic = { 
-			popularity = 2 #shared between all parties, should add to 100
-		}
 
-		fascism = {
-			popularity = 3
-		}
-		
-		communism = {
-			popularity = 95
-		}
-	}
 	
 	ruling_party = communism
-	last_election = "1933.7.1"
+	last_election = "2004.1.1"
 	election_frequency = 48
 	elections_allowed = no
 }
@@ -148,7 +142,7 @@ create_country_leader = {
 	name = "Anatoly Cherdenko"
 	desc = "POLITICS_JOSEPH_STALIN_DESC"
 	picture = "Portrait_Soviet_Anatoly_Cherdenko.dds"
-	expire = "1989.3.1"
+	expire = "2051.1.1"
 	ideology = stalinism
 	traits = {
 		
@@ -159,7 +153,7 @@ create_country_leader = {
 	name = "Konstantin Rodzaevsky"
 	desc = "POLITICS_KONSTANTIN_RODZAEVSKY_DESC"
 	picture = "Portrait_Soviet_Konstantin_Rodzaevsky.dds"
-	expire = "1953.3.1"
+	expire = "2051.1.1"
 	ideology = fascism_ideology
 	traits = {
 		
@@ -170,7 +164,7 @@ create_country_leader = {
 	name = "Alexander Fyodorovich Kerensky"
 	desc = "POLITICS_ALEXANDER_FYODOROVICH_KERENSKY_DESC"
 	picture = "Portrait_Soviet_Generic_1.dds"
-	expire = "1953.3.1"
+	expire = "2051.1.1"
 	ideology = socialism
 	traits = {
 		

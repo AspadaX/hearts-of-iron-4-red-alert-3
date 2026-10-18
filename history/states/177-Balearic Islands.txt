@@ -27,6 +27,5 @@ state=
 		add_core_of = AOE
 	}
 	provinces=
-	{
-7114 9793 9845 	}
+	{ 7114 9793 9845 }
 }

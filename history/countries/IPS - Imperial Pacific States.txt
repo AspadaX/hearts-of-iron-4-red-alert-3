@@ -1,4 +1,4 @@
-﻿capital = 378
+capital = 378
 
 set_stability = 0.8
 set_war_support = 0.9
@@ -130,6 +130,8 @@ if = {
 }
 
 #Variants
+if = {
+	limit = { NOT = { has_dlc = "Man the Guns" } }
 	# 1936 Start #
 		### Carrier Variants
 		create_equipment_variant = {

@@ -6,12 +6,13 @@ technologies = {
 			gw_tank_equipment
 		}
 
-		on_research_complete = {
-			limit = {
+		on_research_complete_limit = {
 				NOT = {	has_template_containing_unit = light_armor }
 				NOT = {	has_template_containing_unit = heavy_armor }
 				NOT = {	has_template_containing_unit = medium_armor }
 			}
+		on_research_complete = {
+
 			hidden_effect = {
 				if = {
 					limit = {
@@ -85,12 +86,13 @@ technologies = {
 			light_tank_equipment_1 
 		}
 
-		on_research_complete = {
-			limit = {
+		on_research_complete_limit = {
 				NOT = {	has_template_containing_unit = light_armor }
 				NOT = {	has_template_containing_unit = heavy_armor }
 				NOT = {	has_template_containing_unit = medium_armor }
 			}
+		on_research_complete = {
+
 			hidden_effect = {
 				if = {
 					limit = {
@@ -1425,12 +1427,13 @@ technologies = {
 			heavy_tank_equipment_1 
 		}
 
-		on_research_complete = {
-			limit = {
+		on_research_complete_limit = {
 				NOT = {	has_template_containing_unit = light_armor }
 				NOT = {	has_template_containing_unit = heavy_armor }
 				NOT = {	has_template_containing_unit = medium_armor }
 			}
+		on_research_complete = {
+
 			hidden_effect = {
 				if = {
 					limit = {

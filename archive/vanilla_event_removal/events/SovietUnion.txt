@@ -1,0 +1,303 @@
+﻿add_namespace = ussr
+	
+	country_event = { 
+		id = ussr.1
+		title = ussr.1.t
+		desc = ussr.1.d
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = ussr.1.a
+			
+			ai_chance = {
+				factor = 75
+			}
+			effect_tooltip = {
+				SOV = { set_state_owner = 419 }
+				SOV = { set_state_controller = 419 }
+				SOV = { set_state_owner = 421 }
+				SOV = { set_state_controller = 421 }
+				SOV = { set_state_owner = 413 }
+				SOV = { set_state_controller = 413 }
+				SOV = { set_state_owner = 420 }
+				SOV = { set_state_controller = 420 }
+			}
+			hidden_effect = {
+				SOV = {	country_event = { id = ussr.3 days = 1 } }
+			}
+		}
+		
+		option = {
+			name = ussr.1.b
+			
+			ai_chance = {
+				factor = 50
+			}
+			
+			effect_tooltip = {
+				SOV = {
+					declare_war_on = {
+						target = ROOT
+						type = annex_everything
+					}
+				}
+			}
+			hidden_effect = {
+				SOV = {	country_event = { id = ussr.2 days = 1 } }
+			}
+		}
+	}
+	
+	country_event = {
+		id = ussr.2
+		title = ussr.2.t
+		desc = ussr.2.d
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = ussr.2.a
+			
+			SOV = {
+				declare_war_on = {
+					target = FROM
+					type = annex_everything
+				}
+			}
+			hidden_effect = {
+				FROM = {
+					every_owned_state = {
+						add_claim_by = SOV
+					}
+				}
+			}
+		}
+	}
+	
+	country_event = {
+		id = ussr.3
+		title = ussr.3.t
+		desc = ussr.3.d
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = ussr.3.a
+			SOV = {
+				set_state_owner = 419
+				set_state_controller = 419
+				set_state_owner = 421
+				set_state_controller = 421
+				set_state_owner = 413
+				set_state_controller = 413
+				set_state_owner = 420
+				set_state_controller = 420
+			}
+			266 = {
+				set_demilitarized_zone = yes
+			}
+			417 = {
+				set_demilitarized_zone = yes
+			}
+			411 = {
+				set_demilitarized_zone = yes
+			}
+			412 = {
+				set_demilitarized_zone = yes
+			}
+			416 = {
+				set_demilitarized_zone = yes
+			}
+		}
+	}
+	
+	country_event = {
+		id = ussr.4
+		title = ussr.4.t
+		desc = ussr.4.d
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = ussr.4.a
+			
+			hidden_effect = {
+				SOV = {	country_event = { id = ussr.5 days = 20 } }
+			}
+		}
+	}
+	
+	country_event = {
+		id = ussr.5
+		title = ussr.5.t
+		desc = ussr.5.d
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = ussr.5.a
+			
+			remove_unit_leader = 701
+			
+			SOE = {
+				create_country_leader = {
+					name = "Nikolai Krukov"
+					desc = "POLITICS_WILHELM_PIECK_DESC"	 
+					picture = gfx/leaders/SOV/Portrait_Soviet_Nikolai_Krukov.dds
+					expire = "1965.1.1"
+					ideology = stalinism
+					traits = {
+						
+					}
+				}
+			}
+			
+			create_corps_commander = {
+				name = "Oleg Vodnik"
+				id = 703
+					picture = "Portrait_Soviet_Oleg.dds"
+				traits = { skilled_staffer winter_specialist infantry_officer }
+				skill = 5
+				attack_skill = 5
+				defense_skill = 4
+				planning_skill = 3
+				logistics_skill = 3
+			}
+			
+			
+			set_country_flag = SOV_removed_oleg
+			
+			hidden_effect = {
+				SOV = {	country_event = { id = ussr.6 days = 20 } }
+			}
+		}
+		
+		option = {
+			name = ussr.5.b
+			
+			hidden_effect = {
+				SOV = {	country_event = { id = ussr.6 days = 20 } }
+			}
+		}
+	}
+	
+	country_event = {
+		id = ussr.6
+		title = ussr.6.t
+		desc = ussr.6.d
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = ussr.6.a
+			
+			remove_unit_leader = 702
+			
+			SOS = {
+				create_country_leader = {
+					name = "Zhana Agonskaya"
+					desc = "POLITICS_WILHELM_PIECK_DESC"	 
+					picture = gfx/leaders/SOV/Portrait_Soviet_Zhana_Agonskaya.dds
+					expire = "1965.1.1"
+					ideology = stalinism
+					traits = {
+						
+					}
+				}
+			}
+			
+			create_corps_commander = {
+				name = "Dasha Fedorovich"
+				id = 705
+					picture = "Portrait_Soviet_Dasha.dds"
+				traits = {  }
+				skill = 4
+				attack_skill = 3
+				defense_skill = 5
+				planning_skill = 3
+				logistics_skill = 4
+			}
+			
+			set_country_flag = SOV_removed_dasha
+			
+			hidden_effect = {
+				SOV = {	country_event = { id = ussr.7 days = 20 } }
+			}
+		}
+		
+		option = {
+			name = ussr.6.b
+			
+			hidden_effect = {
+				SOV = {	country_event = { id = ussr.7 days = 20 } }
+			}
+		}
+	}
+	
+	country_event = {
+		id = ussr.7
+		title = ussr.7.t
+		desc = ussr.7.d
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = ussr.7.a
+			
+			remove_unit_leader = 704
+			
+			CUB = {
+				create_country_leader = {
+					name = "Nikolai Moskvin"
+					desc = "POLITICS_WILHELM_PIECK_DESC"	 
+					picture = gfx/leaders/SOV/Portrait_Soviet_Nikolai_Moskvin.dds
+					expire = "1965.1.1"
+					ideology = stalinism
+					traits = {
+						
+					}
+				}
+			}
+			
+			create_corps_commander = {
+				name = "Natasha Volkova"
+				id = 706
+					picture = "Portrait_Soviet_Natasha_Volkova.dds"
+				traits = {  }
+				skill = 5
+				attack_skill = 5
+				defense_skill = 2
+				planning_skill = 3
+				logistics_skill = 4
+			}
+			
+			set_country_flag = SOV_removed_natasha
+			
+			hidden_effect = {
+				SOV = {	country_event = { id = ussr.8 days = 9 } }
+			}
+		}
+		
+		option = {
+			name = ussr.7.b
+			
+			hidden_effect = {
+				SOV = {	country_event = { id = ussr.8 days = 9 } }
+			}
+		}
+	}
+	
+	country_event = {
+		id = ussr.8
+		title = ussr.8.t
+		desc = ussr.8.d
+		
+		is_triggered_only = yes
+		
+		option = {
+			name = ussr.8.a
+			
+			set_country_flag = SOV_leadership_changes_made
+		}
+	}

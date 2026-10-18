@@ -1,4 +1,4 @@
-﻿add_namespace = aoe
+add_namespace = aoe
 
 # UK is asked about Militarization
 country_event = {
@@ -219,7 +219,7 @@ country_event = {
 		add_stability = 0.05
 		
 		hidden_effect = {
-			news_event = { hours = 6 id = news.aoe.1 }
+			news_event = { hours = 6 id = news.400 }
 		}
 	}
 }
@@ -365,7 +365,7 @@ country_event = {
 		add_stability = 0.05
 		
 		hidden_effect = {
-			news_event = { hours = 6 id = news.aoe.2 }
+			news_event = { hours = 6 id = news.401 }
 		}
 	}
 }
