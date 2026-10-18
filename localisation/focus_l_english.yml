@@ -2282,71 +2282,29 @@
  #Red Alert 3 Focuses
  
     #The Empire of the Rising Sun
-        EOR_imperial_ambition:0 "Our Divine Destiny"
-        EOR_imperial_ambition_desc:0 "'Do not struggle against what is inevitable!' -- Emperor Yoshiro"
         
-        EOR_introduce_the_imperial_mobilization_law:0 "Introduce the Imperial Mobilization Law"
-        EOR_introduce_the_imperial_mobilization_law_desc:0 "To accomplish our divine destiny, we need all of our country's people devote."
         
-        EOR_the_first_amendment_of_the_imperial_mobilization_law:0 "The First Amendment of the Imperial Mobilization Law"
-        EOR_the_first_amendment_of_the_imperial_mobilization_law_desc:0 "The divine destiny needs more!"
         
-        EOR_the_second_amendment_of_the_imperial_mobilization_law:0 "The Second Amendment of the Imperial Mobilization Law"
-        EOR_the_second_amendment_of_the_imperial_mobilization_law_desc:0 "Not only our people's will needs to be mobilized but also our entire economy."
         
-        EOR_government_zaibatsus_dialogue:0 "Government - Zaibatsus Dialogue"
-        EOR_government_zaibatsus_dialogue_desc:0 "The traditional system no longer serves our country's purpose. We need to discuss with the Zaibatsus about a big change..."
         
         EOR_work_with_zaibatsus:0 "Install Our Representatives in the Zaibatsus"
         EOR_work_with_zaibatsus_desc:0 "We need to have dedicated government officers to work them. This ensures the communication between the Zaibatsus and the government to be more efficient."
         
-        EOR_bring_the_zaibatsus_into_the_fold:0 "Bring the Zaibatsus into the Fold"
-        EOR_bring_the_zaibatsus_into_the_fold_desc:0 "The Zaibatsus should never have influences over the government. It's time for the government to impose a total control over them!"
         
-        EOR_cooperate_with_china:0 "Cooperate with China"
-        EOR_cooperate_with_china_desc:0 "It's not the right time for us to confront with Chinese. We need to ally them to deal with the greater threats, such as the Western barbarians."
         
-        EOR_strike_vladivostok:0 "Strike Vladivostok"
-        EOR_strike_vladivostok_desc:0 "With our Chinese ally's help, we can now quickly take over one of USSR's most important cities."
         
-        EOR_preemptive_strike_against_the_US:0 "Preemptive Strike Against the US"
-        EOR_preemptive_strike_against_the_US_desc:0 "By launching an attack beforehand, we can quickly get an adavantage in the war with the Allied Nations."
         
-        EOR_subjugate_china:0 "Subjugate China"
-        EOR_subjugate_china_desc:0 "Why we need an ally when we can have a puppet? However, if we choose to strike China first, the Western barbarians will notice our strength and be on guard to us so that we cannot strike them with a surprise attack..."
         
-        EOR_ensure_the_supremacy_of_our_technology:0 "Ensure the Supremacy of Our Technology"
-        EOR_ensure_the_supremacy_of_our_technology_desc:0 "War is not only the contest of will but also the quality of the katana (sword)."
         
-        EOR_funding_imperial_weaponry_institute:0 "Funding the Imperial Weaponry Institute"
-        EOR_funding_imperial_weaponry_institute_desc:0 "The imperial arsenal needs an update. By funding our own weaponry research institutes, we will be able to do that."
         
-        EOR_approach_the_new_high_tech_companies:0 "Approach the New Military Contractors"
-        EOR_approach_the_new_high_tech_companies_desc:0 "It seems those new faces are going to provide us something more interesting than old Zaibatsus. Let's take a look shall we."
         
-        EOR_imperial_wartime_measures:0 "Imperial Wartime Measures"
-        EOR_imperial_wartime_measures_desc:0 "All the people under the rule of the empire should commit to the its wars, including those inhabitants on the overseas territories."
         
-        EOR_build_our_overseas_territories:0 "Build Imperial Territories"
-        EOR_build_our_overseas_territories_desc:0 "Imperial territories deserve the empire's care."
         
-        EOR_tennoheika_banzai:0 "Tennoheika, Banzai!"
-        EOR_tennoheika_banzai_desc:0 "The imperial territories should be loyal to the empire no matter what happens. Now, it's time to let them pledge to fight for the Emperor!"
         
-        EOR_the_technological_co-development_initiative:0 "The Technological Co-Development Initiative"
-        EOR_the_technological_co-development_initiative_desc:0 "The overseas territories are going to contribute to the imperical research as well as be benefited by the imperial technology."
         
-        EOR_shirada_shipworks:0 "Shirada Shipworks"
-        EOR_shirada_shipworks_desc:0 "Shirada Shipworks is a Japanese company, responsible for manufacturing much of the Empire of the Rising Sun's naval vessels."
         
-        EOR_tenzai_robotics:0 "Tenzai Robotics"
-        EOR_tenzai_robotics_desc:0 "One of the Empire's top defense contractors, Tenzai Robotics specializes in the production of tranformable vehicles."
         
-        EOR_kanegawa_industries:0 "Kanegawa Industries"
-        EOR_kanegawa_industries_desc:0 "They were the first firm that managed to weaponize the wave particle weapon and deploy it on a field emplacement thus making the mobile Wave-Force Artillery (Available as a support company and researched bonuses can be applied to this unit)."
         
-        EOR_kurikara_robotics:0 "Kurikara Robotics"
-        EOR_kurikara_robotics_desc:0 "Kurikara Robotics is named after Kurikara-ken, a sword that belongs to Acala (or Fudō Myō-ō in Japanese), a dharmapala primarily revered in Vajrayana Buddhism."
         
         
         

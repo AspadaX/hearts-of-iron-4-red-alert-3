@@ -6,7 +6,7 @@ bookmarks = {
 		picture = "GFX_select_date_1936"
 		default_country = "USA"
 		default = yes
-		
+
 		"USA"={
 			history = "USA_WAR_OF_THE_THREE_POWERS_DESC"
 			ideology = democratic
@@ -21,7 +21,7 @@ bookmarks = {
 				USA_modern_monroe_doctrine
 			}
 		}
-		
+
 		"AOE"={
 			history = "AOE_WAR_OF_THE_THREE_POWERS_DESC"
 			ideology = democratic
@@ -41,13 +41,13 @@ bookmarks = {
 			history = "ENG_WAR_OF_THE_THREE_POWERS_DESC"
 			ideology = democratic
 			ideas = {
-				
-			}	
+
+			}
 			focuses = {
-				
-			}			
+
+			}
 		}
-		
+
 		"SOV"={
 			history = "SOV_WAR_OF_THE_THREE_POWERS_DESC"
 			ideology = communism
@@ -58,9 +58,9 @@ bookmarks = {
 				SOV_finish_five_year_plan
 				SOV_the_revolution
 				SOV_strengthen_the_command_system
-			}	
+			}
 		}
-		
+
 		"SOE" = {
 			history = "SOE_WAR_OF_THE_THREE_POWERS_DESC"
 			ideology = communism
@@ -70,10 +70,10 @@ bookmarks = {
 				receive_direct_command_from_moscow
 			}
 			focuses = {
-				
+
 			}
 		}
-		
+
 		"SOS" = {
 			history = "SOS_WAR_OF_THE_THREE_POWERS_DESC"
 			ideology = communism
@@ -83,27 +83,27 @@ bookmarks = {
 				receive_direct_command_from_moscow
 			}
 			focuses = {
-				
+
 			}
 		}
-		
+
 		"EOR"={
 			history = "EOR_WAR_OF_THE_THREE_POWERS_DESC"
 			ideology = fascism
 			ideas = {
-				state_shintoism
+				EOR_divine_emperor
 				the_shogunate
 				traditional_zaibatsus
-			}	
+			}
 			focuses = {
 				EOR_imperial_ambition
-				EOR_strike_vladivostok
-				EOR_preemptive_strike_against_the_US
-			}			
+				EOR_the_imperial_dawn
+				EOR_the_imperial_dawn
+			}
 		}
-		
+
 		#Minors
-		
+
 		"IOT" = {
 			minor = yes
 			history = "IOT_WAR_OF_THE_THREE_POWERS_DESC"
@@ -113,7 +113,7 @@ bookmarks = {
 				loyal_to_the_empire
 			}
 			focuses = {
-				
+
 			}
 		}
 
@@ -128,11 +128,11 @@ bookmarks = {
 				SAF_go_with_soviets
 			}
 		}
-		
+
 		"---"={
 			history = "OTHER_WAR_OF_THE_THREE_POWERS_DESC"
 		}
-		
+
 		effect = {
 			randomize_weather = 22345 # <- Obligatory in every bookmark !
 			#123 = { rain_light = yes }

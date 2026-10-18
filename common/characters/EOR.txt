@@ -1,0 +1,36 @@
+characters = {
+ EOR_yoshiro = {
+ name = EOR_yoshiro
+ portraits = { civilian = { large = "gfx/leaders/EOR/Portrait_Empire_Yoshiro.dds" } }
+ country_leader = { desc = EOR_yoshiro_desc ideology = fascism_ideology expire = "2051.1.1" traits = { EOR_divine_ruler EOR_imperial_ambition EOR_traditionalist } }
+ }
+ EOR_tatsu = {
+ name = EOR_tatsu
+ portraits = { civilian = { large = "gfx/leaders/EOR/Tatsu.dds" } army = { large = "gfx/leaders/EOR/Tatsu.dds" } }
+ advisor = {
+ slot = political_advisor cost = 150 traits = { EOR_technical_minister }
+ allowed = { original_tag = EOR }
+ available = { has_completed_focus = EOR_the_crown_prince NOT = { has_country_flag = EOR_reformist_advisors_purged } }
+ on_add = { owner = { add_to_variable = { var = EOR_technocratic_influence value = 10 } } }
+ on_remove = { owner = { add_to_variable = { var = EOR_technocratic_influence value = -10 } } }
+ }
+ field_marshal = { traits = { brilliant_strategist armor_officer trait_reckless } skill = 5 attack_skill = 4 defense_skill = 5 planning_skill = 3 logistics_skill = 4 }
+ }
+
+ EOR_shinzo = {
+ name = EOR_shinzo
+ portraits = { civilian = { large = "gfx/leaders/EOR/Shinzo Nagama.dds" } army = { large = "gfx/leaders/EOR/Shinzo Nagama.dds" } }
+ corps_commander = { traits = { naval_invader infantry_leader organizer } skill = 3 attack_skill = 4 defense_skill = 4 planning_skill = 4 logistics_skill = 4 }
+ advisor = {
+ slot = political_advisor cost = 150 traits = { EOR_military_minister }
+ allowed = { original_tag = EOR }
+ available = { has_completed_focus = EOR_the_emperors_shadow NOT = { has_country_flag = EOR_shinzo_rebuffed } }
+ on_add = { owner = { add_to_variable = { var = EOR_military_influence value = 10 } } }
+ on_remove = { owner = { add_to_variable = { var = EOR_military_influence value = -10 } } }
+ }
+ }
+ EOR_reform_council = {
+ name = EOR_reform_council_name
+ portraits = { civilian = { large = "gfx/leaders/IOT/Portrait_the_oceanic_office.dds" } }
+ }
+}

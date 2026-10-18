@@ -1,0 +1,11 @@
+leader_traits = {
+ EOR_divine_ruler = { random = no stability_factor = 0.05 war_support_factor = 0.05 }
+ EOR_imperial_ambition = { random = no war_support_factor = 0.05 political_power_factor = 0.05 }
+ EOR_traditionalist = { random = no army_org_factor = 0.03 research_speed_factor = -0.03 }
+ EOR_technocratic_leader = { random = no research_speed_factor = 0.03 production_factory_efficiency_gain_factor = 0.05 }
+
+ EOR_military_ruler = { random = no war_support_factor = 0.05 political_power_factor = 0.05 research_speed_factor = -0.03 }
+ EOR_constitutional_reformer = { random = no stability_factor = 0.05 political_power_factor = 0.05 }
+ EOR_technical_minister = { random = no research_speed_factor = 0.03 }
+ EOR_military_minister = { random = no army_org_factor = 0.03 }
+}

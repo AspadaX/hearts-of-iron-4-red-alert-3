@@ -1,945 +1,4399 @@
 focus_tree = {
-	id = empire_focus
-	
-	country = {
-		factor = 0
-		modifier = {
-			add = 20
-			tag = EOR
-		}
-	}
+ id = empire_focus
+ country = { factor = 0 modifier = { add = 100 tag = EOR } }
+ default = no
+ initial_show_position = { x = 18 y = 0 }
+ # Pixel coordinates, below the lowest authored row at the installed 130px spacing.
+ continuous_focus_position = { x = 50 y = 3500 }
 
-	default = no
-	
-	focus = {
-		id = EOR_imperial_ambition
-		icon = GFX_goal_demand_sudetenland
-		x = 2
-		y = 0
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		completion_reward = {
-			add_political_power = 150
-		}
-	}
-	
-	#War
-	
-	focus = {
-		id = EOR_cooperate_with_china
-		icon = GFX_focus_chi_cooperation_with_the_nationalists
-		prerequisite = { focus = EOR_imperial_ambition }
-		mutually_exclusive = { focus = EOR_subjugate_china }
-		x = -2
-		y = 1
-		relative_position_id = EOR_imperial_ambition
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		available = {
-			is_faction_leader = yes
-			country_exists = CHI
-		}
-		
-		bypass = {
-			is_in_faction_with = CHI
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		completion_reward = {
-			CHI = { country_event = generic.5 }
-			add_ai_strategy = {
-				type = protect
-				id = "CHI"
-				value = 100
-			}
-		}
-	}
-	
-	focus = {
-		id = EOR_subjugate_china
-		icon = GFX_focus_attack_china
-		prerequisite = { focus = EOR_imperial_ambition }
-		mutually_exclusive = { focus = EOR_cooperate_with_china }
-		x = 2
-		y = 1
-		relative_position_id = EOR_imperial_ambition
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		available = {
-			country_exists = CHI
-			NOT = { has_war_with = CHI }
-			is_puppet = no 
-		}
-		
-		bypass = {
-			is_in_faction_with = CHI
-			has_war_with = CHI
-		}
-		
-		will_lead_to_war_with = CHI
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		completion_reward = {
-			create_wargoal = {
- 				type = puppet_wargoal_focus
- 				target = CHI
- 			}
-		}
-	}
-	
-	focus = {
-		id = EOR_strike_vladivostok
-		icon = GFX_focus_eng_expose_the_belly_of_the_bear
-		prerequisite = { focus = EOR_cooperate_with_china }
-		x = 0
-		y = 1
-		relative_position_id = EOR_cooperate_with_china
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		available = {
-			is_faction_leader = yes
-			country_exists = SOV
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		completion_reward = {
-		
-			transfer_state = 408
-			
-			declare_war_on = { 
-				type = annex_everything
-				target = SOV				
-				}
-		}
-	}
-	
-	focus = {
-		id = EOR_preemptive_strike_against_the_US
-		icon = GFX_focus_generic_strike_at_democracy3
-		prerequisite = { focus = EOR_strike_vladivostok }
-		x = 0
-		y = 1
-		relative_position_id = EOR_strike_vladivostok
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		available = {
-			is_faction_leader = yes
-			country_exists = USA
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		completion_reward = {
-			
-			declare_war_on = { 
-				type = annex_everything
-				target = USA
-				}
-		}
-	}
-	
-	#Country Development
-	
-	focus = {
-		id = EOR_ensure_the_supremacy_of_our_technology
-		icon = GFX_goal_generic_production
-		x = 22
-		y = 0
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		completion_reward = {
-			add_political_power = 100
-		}
-	}
-	
-	focus = {
-		id = EOR_approach_the_new_high_tech_companies
-		icon = GFX_focus_generic_combined_arms
-		prerequisite = { focus = EOR_ensure_the_supremacy_of_our_technology }
-		
-		x = -8
-		y = 1
-		relative_position_id = EOR_ensure_the_supremacy_of_our_technology
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		completion_reward = {
-			add_political_power = -100
-		}
-	}
-	
-	focus = {
-		id = EOR_kurikara_robotics
-		icon = GFX_
-		prerequisite = { focus = EOR_approach_the_new_high_tech_companies }
-		
-		x = 0
-		y = 1
-		relative_position_id = EOR_approach_the_new_high_tech_companies
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		completion_reward = {
-			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = kurikara_robotics
-			set_technology = { king_oni = 1 }
-		}
-	}
-	
-	focus = {
-		id = EOR_kanegawa_industries
-		icon = GFX_
-		prerequisite = { focus = EOR_approach_the_new_high_tech_companies }
-		
-		x = -2
-		y = 1
-		relative_position_id = EOR_approach_the_new_high_tech_companies
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		completion_reward = {
-			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = kanegawa_industries
-			set_technology = { wave_force_artillery = 1 }
-		}
-	}
-	
-	focus = {
-		id = EOR_tenzai_robotics
-		icon = GFX_
-		prerequisite = { focus = EOR_approach_the_new_high_tech_companies }
-		
-		x = 2
-		y = 1
-		relative_position_id = EOR_approach_the_new_high_tech_companies
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		completion_reward = {
-			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = tenzai_robotics
-		}
-	}
-	
-	focus = {
-		id = EOR_shirada_shipworks
-		icon = GFX_
-		prerequisite = { focus = EOR_approach_the_new_high_tech_companies }
-		
-		x = 4
-		y = 1
-		relative_position_id = EOR_approach_the_new_high_tech_companies
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		completion_reward = {
-			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = shirada_shipworks
-			set_technology = { shogun_battleship = 1 }
-		}
-	}
-	
-	focus = {
-		id = EOR_funding_imperial_weaponry_institute
-		icon = GFX_goal_tfv_generic_tech_sharing
-		prerequisite = { focus = EOR_ensure_the_supremacy_of_our_technology }
-		
-		x = 0
-		y = 1
-		relative_position_id = EOR_ensure_the_supremacy_of_our_technology
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		completion_reward = {
-			add_political_power = -100
-			add_ideas = EOR_supremacy_of_technology
-		}
-	}
-	
-	focus = {
-		id = EOR_a_highly_mechanized_army
-		icon = GFX_focus_generic_army_tanks2
-		prerequisite = { focus = EOR_funding_imperial_weaponry_institute }
-		
-		x = -1
-		y = 1
-		relative_position_id = EOR_funding_imperial_weaponry_institute
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		completion_reward = {
-			add_ideas = EOR_a_highly_mechanized_army
-		}
-	}
-	
-	focus = {
-		id = EOR_the_futuristic_bushido
-		icon = GFX_focus_generic_japanese_imperial_glory
-		prerequisite = { focus = EOR_funding_imperial_weaponry_institute }
-		
-		x = 1
-		y = 1
-		relative_position_id = EOR_funding_imperial_weaponry_institute
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		completion_reward = {
-			add_ideas = EOR_the_futuristic_bushido
-			set_technology = { imperial_warrior = 1 }
-		}
-	}
-	
-	focus = {
-		id = EOR_landing_combat_scheme
-		icon = GFX_goal_generic_amphibious_assault
-		prerequisite = { focus = EOR_the_futuristic_bushido }
-		prerequisite = { focus = EOR_a_highly_mechanized_army }
-		
-		x = -1
-		y = 1
-		relative_position_id = EOR_the_futuristic_bushido
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		completion_reward = {
-			add_ideas = EOR_landing_combat_scheme
-			set_technology = { tsunami_tank = 1 }
-		}
-	}
-	
-	focus = {
-		id = EOR_multiple_terrains_combat_support
-		icon = GFX_goal_generic_special_forces
-		prerequisite = { focus = EOR_the_futuristic_bushido }
-		prerequisite = { focus = EOR_a_highly_mechanized_army }
-		
-		x = -3
-		y = 1
-		relative_position_id = EOR_the_futuristic_bushido
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		completion_reward = {
-			add_ideas = EOR_multiple_terrains_combat_support
-		}
-	}
-	
-	focus = {
-		id = EOR_fortified_fleet
-		icon = GFX_goal_generic_navy_battleship
-		prerequisite = { focus = EOR_the_futuristic_bushido }
-		prerequisite = { focus = EOR_a_highly_mechanized_army }
-		
-		x = 1
-		y = 1
-		relative_position_id = EOR_the_futuristic_bushido
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		completion_reward = {
-			add_ideas = EOR_fortified_fleet
-		}
-	}
-	
-	focus = {
-		id = EOR_the_nano_construction
-		icon = GFX_goal_generic_construction
-		prerequisite = { focus = EOR_ensure_the_supremacy_of_our_technology }
-		
-		x = 3
-		y = 1
-		relative_position_id = EOR_ensure_the_supremacy_of_our_technology
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		completion_reward = {
-			add_ideas = EOR_the_nano_construction
-		}
-	}
-	
-	focus = {
-		id = EOR_the_robotic_production
-		icon = GFX_goal_generic_production2
-		prerequisite = { focus = EOR_ensure_the_supremacy_of_our_technology }
-		
-		x = 5
-		y = 1
-		relative_position_id = EOR_ensure_the_supremacy_of_our_technology
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		completion_reward = {
-			add_ideas = EOR_the_robotic_production
-		}
-	}
-	
-	focus = {
-		id = EOR_liberate_the_manpower
-		icon = GFX_focus_generic_military_academy
-		prerequisite = { focus = EOR_the_nano_construction }
-		prerequisite = { focus = EOR_the_robotic_production }
-		
-		x = 1
-		y = 1
-		relative_position_id = EOR_the_nano_construction
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		completion_reward = {
-			add_ideas = EOR_liberate_the_manpower
-		}
-	}
-	
-	#Imperial Wartime Measures
-	
-	focus = {
-		id = EOR_imperial_wartime_measures
-		icon = GFX_goal_generic_national_unity
-		x = 7
-		y = 0
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		#available = {
-		#	has_war = yes
-		#}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		completion_reward = {
-			add_political_power = 100
-		}
-	}
-	
-	focus = {
-		id = EOR_build_our_overseas_territories
-		icon = GFX_focus_jap_manchurian_project
-		x = 2
-		y = 1
-		prerequisite = { focus = EOR_imperial_wartime_measures }
-		
-		relative_position_id = EOR_imperial_wartime_measures
+# opening
+focus = {
+ id = EOR_the_imperial_dawn
+ icon = GFX_focus_EOR_v2_the_imperial_dawn
+ x = 18
+ y = 0
+ cost = 5
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_the_imperial_dawn_decisions_tt
+add_political_power = 100
 
-		cost = 10
+ }
+}
 
-		ai_will_do = {
-			factor = 1
-		}
+# opening
+focus = {
+ id = EOR_convene_the_imperial_court
+ icon = GFX_focus_EOR_v2_convene_the_imperial_court
+ x = 18
+ y = 2
+ cost = 5
+ prerequisite = { focus = EOR_the_imperial_dawn }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_convene_the_imperial_court_decisions_tt
+add_stability = 0.05
+eor_event_4 = yes
 
-		available = {
-			OR = {
-				IOT = { is_subject_of = ROOT }
-				MAL = { is_subject_of = ROOT }
-				INS = { is_subject_of = ROOT }
-				PHI = { is_subject_of = ROOT }
-			}
-		}
+ }
+}
 
-		bypass = {
+# opening
+focus = {
+ id = EOR_the_divine_mandate
+ icon = GFX_focus_EOR_v2_the_divine_mandate
+ x = 12
+ y = 3
+ cost = 5
+ prerequisite = { focus = EOR_convene_the_imperial_court }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+set_country_flag = EOR_mandate_active
+eor_event_2 = yes
 
-		}
+ }
+}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
+# opening
+focus = {
+ id = EOR_the_crown_prince
+ icon = GFX_focus_EOR_v2_the_crown_prince
+ x = 16
+ y = 3
+ cost = 5
+ prerequisite = { focus = EOR_convene_the_imperial_court }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_the_crown_prince_decisions_tt
+add_to_variable = { var = EOR_technocratic_influence value = 10 }
+eor_event_3 = yes
 
-		completion_reward = {
-			
-			if = {
-				limit = {
-					IOT = { is_subject_of = ROOT }
-				}
-				IOT = {				
-					add_stability = 0.1
-					add_political_power = 150
-				}
-			}
-			
-			if = {
-				limit = {
-					MAL = { is_subject_of = ROOT }
-				}
-				MAL = {				
-					add_stability = 0.1
-					add_political_power = 150
-				}
-			}
-			
-			if = {
-				limit = {
-					INS = { is_subject_of = ROOT }
-				}
-				INS = {				
-					add_stability = 0.1
-					add_political_power = 150
-				}
-			}
-			
-			if = {
-				limit = {
-					PHI = { is_subject_of = ROOT }
-				}
-				PHI = {				
-					add_stability = 0.1
-					add_political_power = 150
-				}
-			}
-			
-		}
-	}
-	
-	focus = {
-		id = EOR_the_technological_co-development_initiative
-		icon = GFX_goal_generic_scientific_exchange
-		prerequisite = { focus = EOR_build_our_overseas_territories }
-		x = -1
-		y = 1
-		relative_position_id = EOR_build_our_overseas_territories
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		available = {
-			OR = {
-				IOT = { is_subject_of = ROOT }
-				MAL = { is_subject_of = ROOT }
-				INS = { is_subject_of = ROOT }
-				PHI = { is_subject_of = ROOT }
-			}
-		}
-		
-		completion_reward = {
-			add_to_tech_sharing_group = imperial_research
-			if = {
-				limit = {
-					IOT = { is_subject_of = ROOT }
-				}
-				IOT = {				
-					add_to_tech_sharing_group = imperial_research
-				}
-			}
-			if = {
-				limit = {
-					MAL = { is_subject_of = ROOT }
-				}
-				MAL = {				
-					add_to_tech_sharing_group = imperial_research
-				}
-			}
-			if = {
-				limit = {
-					INS = { is_subject_of = ROOT }
-				}
-				INS = {				
-					add_to_tech_sharing_group = imperial_research
-				}
-			}
-			if = {
-				limit = {
-					PHI = { is_subject_of = ROOT }
-				}
-				PHI = {				
-					add_to_tech_sharing_group = imperial_research
-				}
-			}
-		}
-	}
-	
-	focus = {
-		id = EOR_tennoheika_banzai
-		icon = GFX_focus_jap_showa_restoration
-		prerequisite = { focus = EOR_build_our_overseas_territories }
-		x = 1
-		y = 1
-		relative_position_id = EOR_build_our_overseas_territories
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		available = {
-			OR = {
-				IOT = { is_subject_of = ROOT }
-				MAL = { is_subject_of = ROOT }
-				INS = { is_subject_of = ROOT }
-				PHI = { is_subject_of = ROOT }
-			}
-		}
-		
-		completion_reward = {
-			if = {
-				limit = {
-					IOT = { is_subject_of = ROOT }
-				}
-				IOT = {
-					swap_ideas = {
-						remove_idea = loyal_to_the_empire
-						add_idea = loyal_to_the_empire_forever
-					}
-				}
-			}
-			if = {
-				limit = {
-					MAL = { is_subject_of = ROOT }
-				}
-				MAL = {				
-					swap_ideas = {
-						remove_idea = loyal_to_the_empire
-						add_idea = loyal_to_the_empire_forever
-					}
-				}
-			}
-			if = {
-				limit = {
-					INS = { is_subject_of = ROOT }
-				}
-				INS = {				
-					swap_ideas = {
-						remove_idea = loyal_to_the_empire
-						add_idea = loyal_to_the_empire_forever
-					}
-				}
-			}
-			if = {
-				limit = {
-					PHI = { is_subject_of = ROOT }
-				}
-				PHI = {				
-					swap_ideas = {
-						remove_idea = loyal_to_the_empire
-						add_idea = loyal_to_the_empire_forever
-					}
-				}
-			}
-		}
-	}
-	
-	#Imperial Mobilization Law
-	
-	focus = {
-		id = EOR_introduce_the_imperial_mobilization_law
-		icon = GFX_goal_generic_axis_build_infantry
-		prerequisite = { focus = EOR_imperial_wartime_measures }
-		x = -1
-		y = 1
-		relative_position_id = EOR_imperial_wartime_measures
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		completion_reward = {
-			add_war_support = 0.05
-			IOT = {
-				add_war_support = 0.05
-			}
-			MAL = {
-				add_war_support = 0.2
-			}
-			INS = {
-				add_war_support = 0.2
-			}
-			PHI = {
-				add_war_support = 0.2
-			}
-		}
-	}
-	
-	focus = {
-		id = EOR_government_zaibatsus_dialogue
-		icon = GFX_focus_jap_zaibatsu
-		prerequisite = { focus = EOR_introduce_the_imperial_mobilization_law }
-		x = 0
-		y = 1
-		relative_position_id = EOR_introduce_the_imperial_mobilization_law
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = traditional_zaibatsus
-				add_idea = cooperative_zaibatsus
-			}
-		}
-	}
-	
-	focus = {
-		id = EOR_the_first_amendment_of_the_imperial_mobilization_law
-		icon = GFX_goal_rhineland
-		prerequisite = { focus = EOR_government_zaibatsus_dialogue }
-		x = 0
-		y = 1
-		relative_position_id = EOR_government_zaibatsus_dialogue
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		completion_reward = {
-			add_war_support = 0.15
-			IOT = {
-				add_war_support = 0.15
-			}
-			MAL = {
-				add_war_support = 0.3
-			}
-			INS = {
-				add_war_support = 0.3
-			}
-			PHI = {
-				add_war_support = 0.3
-			}
-		}
-	}
-	
-	focus = {
-		id = EOR_work_with_zaibatsus
-		icon = GFX_focus_jap_zaibatsu
-		prerequisite = { focus = EOR_the_first_amendment_of_the_imperial_mobilization_law }
-		x = 0
-		y = 1
-		relative_position_id = EOR_the_first_amendment_of_the_imperial_mobilization_law
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = cooperative_zaibatsus
-				add_idea = even_more_cooperative_zaibatsus
-			}
-		}
-	}
-	
-	focus = {
-		id = EOR_the_second_amendment_of_the_imperial_mobilization_law
-		icon = GFX_focus_chi_army_reform
-		prerequisite = { focus = EOR_work_with_zaibatsus }
-		x = 0
-		y = 1
-		relative_position_id = EOR_work_with_zaibatsus
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		completion_reward = {
-			if = {
-				limit = {
-					NOT = { has_idea = war_economy }
-					NOT = { has_idea = tot_economic_mobilisation }
-				}
-				add_ideas = war_economy
-			}
-			IOT = {
-				if = {
-				limit = {
-					NOT = { has_idea = war_economy }
-					NOT = { has_idea = tot_economic_mobilisation }
-				}
-				add_ideas = war_economy
-			}
-			}
-			MAL = {
-				if = {
-				limit = {
-					NOT = { has_idea = war_economy }
-					NOT = { has_idea = tot_economic_mobilisation }
-				}
-				add_ideas = war_economy
-			}
-			}
-			INS = {
-				if = {
-				limit = {
-					NOT = { has_idea = war_economy }
-					NOT = { has_idea = tot_economic_mobilisation }
-				}
-				add_ideas = war_economy
-			}
-			}
-			PHI = {
-				if = {
-				limit = {
-					NOT = { has_idea = war_economy }
-					NOT = { has_idea = tot_economic_mobilisation }
-				}
-				add_ideas = war_economy
-			}
-			}
-		}
-	}
-	
-	focus = {
-		id = EOR_bring_the_zaibatsus_into_the_fold
-		icon = GFX_focus_jap_zaibatsu
-		prerequisite = { focus = EOR_the_second_amendment_of_the_imperial_mobilization_law }
-		x = 0
-		y = 1
-		relative_position_id = EOR_the_second_amendment_of_the_imperial_mobilization_law
-		
-		cost = 10
-		ai_will_do = {
-			factor = 12
-		}
-		
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = even_more_cooperative_zaibatsus
-				add_idea = controlled_zaibatsus
-			}
-		}
-	}
-	
+ }
+}
 
+# opening
+focus = {
+ id = EOR_the_emperors_shadow
+ icon = GFX_focus_EOR_v2_the_emperors_shadow
+ x = 20
+ y = 3
+ cost = 5
+ prerequisite = { focus = EOR_convene_the_imperial_court }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_the_emperors_shadow_decisions_tt
+add_to_variable = { var = EOR_military_influence value = 10 }
+
+ }
+}
+
+# opening
+focus = {
+ id = EOR_establish_imperial_intelligence
+ icon = GFX_focus_EOR_v2_establish_imperial_intelligence
+ x = 24
+ y = 3
+ cost = 5
+ prerequisite = { focus = EOR_convene_the_imperial_court }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_establish_imperial_intelligence_decisions_tt
+add_ideas = EOR_v2_establish_imperial_intelligence
+
+ }
+}
+
+# opening
+focus = {
+ id = EOR_the_question_of_destiny
+ icon = GFX_focus_EOR_v2_the_question_of_destiny
+ x = 18
+ y = 5
+ cost = 5
+ prerequisite = { focus = EOR_convene_the_imperial_court }
+ available = { has_country_flag = EOR_succession_crisis }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = 50
+
+ }
+}
+
+# yoshiro
+focus = {
+ id = EOR_reaffirm_the_divine_mandate
+ icon = GFX_focus_EOR_v2_reaffirm_the_divine_mandate
+ x = 6
+ y = 7
+ cost = 10
+ prerequisite = { focus = EOR_the_question_of_destiny }
+ mutually_exclusive = { focus = EOR_tatsu_assumes_command focus = EOR_the_military_conspiracy focus = EOR_the_shattered_mandate }
+ available = {
+eor_no_political_route = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 30 modifier = { factor = 2 check_variable = { EOR_imperial_legitimacy > 70 } } }
+ completion_reward = {
+set_country_flag = EOR_route_divine
+add_to_variable = { var = EOR_divine_mandate value = 20 }
+add_to_variable = { var = EOR_imperial_legitimacy value = 20 }
+eor_refresh_mandate = yes
+eor_apply_policy_compatibility = yes
+
+ }
+}
+
+# yoshiro
+focus = {
+ id = EOR_restore_imperial_authority
+ icon = GFX_focus_EOR_v2_restore_imperial_authority
+ x = 6
+ y = 8
+ cost = 10
+ prerequisite = { focus = EOR_reaffirm_the_divine_mandate }
+ available = {
+has_country_flag = EOR_route_divine }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_stability = 0.05
+add_ideas = EOR_v2_restore_imperial_authority
+
+ }
+}
+
+# yoshiro
+focus = {
+ id = EOR_purge_the_doubters
+ icon = GFX_focus_EOR_v2_purge_the_doubters
+ x = 4
+ y = 9
+ cost = 10
+ prerequisite = { focus = EOR_restore_imperial_authority }
+ mutually_exclusive = { focus = EOR_reconcile_the_court }
+ available = {
+has_country_flag = EOR_route_divine }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_war_support = 0.1
+add_to_variable = { var = EOR_technocratic_influence value = -20 }
+add_to_variable = { var = EOR_military_influence value = -10 }
+set_country_flag = EOR_reformist_advisors_purged
+add_timed_idea = { idea = EOR_v2_scientific_purge days = 180 }
+remove_advisor_role = { character = EOR_tatsu slot = political_advisor }
+
+ }
+}
+
+# yoshiro
+focus = {
+ id = EOR_absolute_loyalty
+ icon = GFX_focus_EOR_v2_absolute_loyalty
+ x = 4
+ y = 10
+ cost = 10
+ prerequisite = { focus = EOR_purge_the_doubters }
+ available = {
+has_country_flag = EOR_route_divine }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_absolute_loyalty
+
+ }
+}
+
+# yoshiro
+focus = {
+ id = EOR_reconcile_the_court
+ icon = GFX_focus_EOR_v2_reconcile_the_court
+ x = 8
+ y = 9
+ cost = 10
+ prerequisite = { focus = EOR_restore_imperial_authority }
+ mutually_exclusive = { focus = EOR_purge_the_doubters }
+ available = {
+has_country_flag = EOR_route_divine }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_stability = 0.05
+add_political_power = -75
+add_to_variable = { var = EOR_technocratic_influence value = 10 }
+add_to_variable = { var = EOR_military_influence value = 5 }
+
+ }
+}
+
+# yoshiro
+focus = {
+ id = EOR_imperial_unity
+ icon = GFX_focus_EOR_v2_imperial_unity
+ x = 8
+ y = 10
+ cost = 10
+ prerequisite = { focus = EOR_reconcile_the_court }
+ available = {
+has_country_flag = EOR_route_divine }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_stability = 0.05
+add_ideas = EOR_v2_imperial_unity
+
+ }
+}
+
+# yoshiro
+focus = {
+ id = EOR_the_emperors_sacred_will
+ icon = GFX_focus_EOR_v2_the_emperors_sacred_will
+ x = 6
+ y = 11
+ cost = 10
+ prerequisite = { focus = EOR_absolute_loyalty focus = EOR_imperial_unity }
+ available = {
+has_country_flag = EOR_route_divine }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_the_emperors_sacred_will_decisions_tt
+add_to_variable = { var = EOR_divine_mandate value = 5 }
+add_to_variable = { var = EOR_imperial_legitimacy value = 5 }
+eor_refresh_mandate = yes
+set_country_flag = EOR_prestige_decisions
+
+ }
+}
+
+# yoshiro
+focus = {
+ id = EOR_sacred_offensive
+ icon = GFX_focus_EOR_v2_sacred_offensive
+ x = 4
+ y = 12
+ cost = 10
+ prerequisite = { focus = EOR_the_emperors_sacred_will }
+ mutually_exclusive = { focus = EOR_defend_the_homeland }
+ available = {
+has_country_flag = EOR_route_divine }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+set_country_flag = EOR_sacred_offensive_authorized
+if = { limit = { has_offensive_war = yes } add_timed_idea = { idea = EOR_v2_sacred_offensive days = 180 }
+ }
+ }
+}
+
+# yoshiro
+focus = {
+ id = EOR_warriors_of_destiny
+ icon = GFX_focus_EOR_v2_warriors_of_destiny
+ x = 4
+ y = 13
+ cost = 10
+ prerequisite = { focus = EOR_sacred_offensive }
+ available = {
+has_country_flag = EOR_route_divine }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_warriors_of_destiny
+
+ }
+}
+
+# yoshiro
+focus = {
+ id = EOR_defend_the_homeland
+ icon = GFX_focus_EOR_v2_defend_the_homeland
+ x = 8
+ y = 12
+ cost = 10
+ prerequisite = { focus = EOR_the_emperors_sacred_will }
+ mutually_exclusive = { focus = EOR_sacred_offensive }
+ available = {
+has_country_flag = EOR_route_divine }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_defend_the_homeland
+
+ }
+}
+
+# yoshiro
+focus = {
+ id = EOR_imperial_fortresses
+ icon = GFX_focus_EOR_v2_imperial_fortresses
+ x = 8
+ y = 13
+ cost = 10
+ prerequisite = { focus = EOR_defend_the_homeland }
+ available = {
+has_country_flag = EOR_route_divine }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_imperial_fortresses
+
+ }
+}
+
+# yoshiro
+focus = {
+ id = EOR_the_eternal_empire
+ icon = GFX_focus_EOR_v2_the_eternal_empire
+ x = 6
+ y = 14
+ cost = 10
+ prerequisite = { focus = EOR_warriors_of_destiny focus = EOR_imperial_fortresses }
+ available = {
+has_country_flag = EOR_route_divine }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_eternal_empire
+add_to_variable = { var = EOR_divine_mandate value = 10 }
+add_to_variable = { var = EOR_imperial_legitimacy value = 10 }
+eor_refresh_mandate = yes
+
+ }
+}
+
+# tatsu
+focus = {
+ id = EOR_tatsu_assumes_command
+ icon = GFX_focus_EOR_v2_tatsu_assumes_command
+ x = 14
+ y = 7
+ cost = 10
+ prerequisite = { focus = EOR_the_question_of_destiny }
+ mutually_exclusive = { focus = EOR_reaffirm_the_divine_mandate focus = EOR_the_military_conspiracy focus = EOR_the_shattered_mandate }
+ available = {
+eor_no_political_route = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 45 modifier = { factor = 2 check_variable = { EOR_technocratic_influence > 65 } } modifier = { factor = 2 has_country_flag = EOR_truth_known } }
+ completion_reward = {
+set_country_flag = EOR_route_technocratic
+add_political_power = -50
+add_to_variable = { var = EOR_technocratic_influence value = 15 }
+eor_event_42 = yes
+eor_apply_policy_compatibility = yes
+
+ }
+}
+
+# tatsu
+focus = {
+ id = EOR_question_the_old_order
+ icon = GFX_focus_EOR_v2_question_the_old_order
+ x = 14
+ y = 8
+ cost = 10
+ prerequisite = { focus = EOR_tatsu_assumes_command }
+ available = {
+has_country_flag = EOR_route_technocratic }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_question_the_old_order
+add_to_variable = { var = EOR_imperial_legitimacy value = -10 }
+set_country_flag = EOR_mandate_reformed
+remove_ideas = EOR_divine_emperor
+
+ }
+}
+
+# tatsu
+focus = {
+ id = EOR_force_abdication
+ icon = GFX_focus_EOR_v2_force_abdication
+ x = 12
+ y = 9
+ cost = 10
+ prerequisite = { focus = EOR_question_the_old_order }
+ mutually_exclusive = { focus = EOR_preserve_the_emperor }
+ available = {
+has_country_flag = EOR_route_technocratic }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+eor_event_101 = yes
+add_timed_idea = { idea = EOR_v2_abdication_instability days = 180 }
+set_country_flag = EOR_traditionalist_opposition
+
+ }
+}
+
+# tatsu
+focus = {
+ id = EOR_a_new_emperor
+ icon = GFX_focus_EOR_v2_a_new_emperor
+ x = 12
+ y = 10
+ cost = 10
+ prerequisite = { focus = EOR_force_abdication }
+ available = {
+has_country_flag = EOR_route_technocratic }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_a_new_emperor
+set_country_flag = EOR_tatsu_emperor
+
+ }
+}
+
+# tatsu
+focus = {
+ id = EOR_preserve_the_emperor
+ icon = GFX_focus_EOR_v2_preserve_the_emperor
+ x = 16
+ y = 9
+ cost = 10
+ prerequisite = { focus = EOR_question_the_old_order }
+ mutually_exclusive = { focus = EOR_force_abdication }
+ available = {
+has_country_flag = EOR_route_technocratic }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_stability = 0.05
+set_country_flag = EOR_monarchy_preserved
+
+ }
+}
+
+# tatsu
+focus = {
+ id = EOR_the_silent_throne
+ icon = GFX_focus_EOR_v2_the_silent_throne
+ x = 16
+ y = 10
+ cost = 10
+ prerequisite = { focus = EOR_preserve_the_emperor }
+ available = {
+has_country_flag = EOR_route_technocratic }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_stability = 0.05
+add_ideas = EOR_v2_the_silent_throne
+
+ }
+}
+
+# tatsu
+focus = {
+ id = EOR_empower_the_technocrats
+ icon = GFX_focus_EOR_v2_empower_the_technocrats
+ x = 14
+ y = 11
+ cost = 10
+ prerequisite = { focus = EOR_a_new_emperor focus = EOR_the_silent_throne }
+ available = {
+has_country_flag = EOR_route_technocratic }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_empower_the_technocrats_decisions_tt
+add_ideas = EOR_v2_empower_the_technocrats
+add_political_power = -75
+add_to_variable = { var = EOR_technocratic_influence value = 10 }
+
+ }
+}
+
+# tatsu
+focus = {
+ id = EOR_automated_warfare
+ icon = GFX_focus_EOR_v2_automated_warfare
+ x = 12
+ y = 12
+ cost = 10
+ prerequisite = { focus = EOR_empower_the_technocrats }
+ mutually_exclusive = { focus = EOR_human_machine_doctrine }
+ available = {
+has_country_flag = EOR_route_technocratic }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_automated_warfare
+add_unit_bonus = { category_all_armor = { manpower = -0.05 } }
+
+ }
+}
+
+# tatsu
+focus = {
+ id = EOR_robotic_legions
+ icon = GFX_focus_EOR_v2_robotic_legions
+ x = 12
+ y = 13
+ cost = 10
+ prerequisite = { focus = EOR_automated_warfare }
+ available = {
+has_country_flag = EOR_route_technocratic }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 2 category = armor }
+army_experience = 25
+add_ideas = EOR_v2_robotic_legions
+
+ }
+}
+
+# tatsu
+focus = {
+ id = EOR_human_machine_doctrine
+ icon = GFX_focus_EOR_v2_human_machine_doctrine
+ x = 16
+ y = 12
+ cost = 10
+ prerequisite = { focus = EOR_empower_the_technocrats }
+ mutually_exclusive = { focus = EOR_automated_warfare }
+ available = {
+has_country_flag = EOR_route_technocratic }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_human_machine_doctrine
+
+ }
+}
+
+# tatsu
+focus = {
+ id = EOR_professional_armed_forces
+ icon = GFX_focus_EOR_v2_professional_armed_forces
+ x = 16
+ y = 13
+ cost = 10
+ prerequisite = { focus = EOR_human_machine_doctrine }
+ available = {
+has_country_flag = EOR_route_technocratic }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+army_experience = 35
+add_ideas = EOR_v2_professional_armed_forces
+
+ }
+}
+
+# tatsu
+focus = {
+ id = EOR_the_empire_of_tomorrow
+ icon = GFX_focus_EOR_v2_the_empire_of_tomorrow
+ x = 14
+ y = 14
+ cost = 10
+ prerequisite = { focus = EOR_robotic_legions focus = EOR_professional_armed_forces }
+ available = {
+has_country_flag = EOR_route_technocratic }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_empire_of_tomorrow
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = electronics }
+
+ }
+}
+
+# shinzo
+focus = {
+ id = EOR_the_military_conspiracy
+ icon = GFX_focus_EOR_v2_the_military_conspiracy
+ x = 22
+ y = 7
+ cost = 10
+ prerequisite = { focus = EOR_the_question_of_destiny }
+ prerequisite = { focus = EOR_the_emperors_shadow }
+ mutually_exclusive = { focus = EOR_reaffirm_the_divine_mandate focus = EOR_tatsu_assumes_command focus = EOR_the_shattered_mandate }
+ available = { eor_shinzo_available = yes
+eor_no_political_route = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 25 modifier = { factor = 2 check_variable = { EOR_military_influence > 70 } has_stability < 0.40 } }
+ completion_reward = {
+set_country_flag = EOR_route_shinzo
+add_to_variable = { var = EOR_military_influence value = 15 }
+add_political_power = -50
+
+ }
+}
+
+# shinzo
+focus = {
+ id = EOR_proclaim_national_emergency
+ icon = GFX_focus_EOR_v2_proclaim_national_emergency
+ x = 22
+ y = 8
+ cost = 5
+ prerequisite = { focus = EOR_the_military_conspiracy }
+ available = {
+has_country_flag = EOR_route_shinzo }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_war_support = 0.1
+add_stability = -0.05
+add_to_variable = { var = EOR_military_influence value = 10 }
+
+ }
+}
+
+# shinzo
+focus = {
+ id = EOR_the_shogunate_coup
+ icon = GFX_focus_EOR_v2_the_shogunate_coup
+ x = 22
+ y = 9
+ cost = 5
+ prerequisite = { focus = EOR_proclaim_national_emergency }
+ available = {
+has_country_flag = EOR_route_shinzo }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_the_shogunate_coup_decisions_tt
+eor_event_102 = yes
+
+ }
+}
+
+# shinzo
+focus = {
+ id = EOR_bloodless_coup
+ icon = GFX_focus_EOR_v2_bloodless_coup
+ x = 20
+ y = 10
+ cost = 2
+ prerequisite = { focus = EOR_the_shogunate_coup }
+ mutually_exclusive = { focus = EOR_march_on_tokyo }
+ available = { has_country_flag = EOR_bloodless_coup_ready
+has_country_flag = EOR_route_shinzo }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+set_country_flag = EOR_coup_consolidated
+add_stability = -0.03
+
+ }
+}
+
+# shinzo
+focus = {
+ id = EOR_march_on_tokyo
+ icon = GFX_focus_EOR_v2_march_on_tokyo
+ x = 24
+ y = 10
+ cost = 2
+ prerequisite = { focus = EOR_the_shogunate_coup }
+ mutually_exclusive = { focus = EOR_bloodless_coup }
+ available = { eor_armed_coup_available = yes
+has_country_flag = EOR_route_shinzo }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+eor_begin_armed_coup = yes
+
+ }
+}
+
+# shinzo
+focus = {
+ id = EOR_silence_the_court
+ icon = GFX_focus_EOR_v2_silence_the_court
+ x = 20
+ y = 11
+ cost = 5
+ prerequisite = { focus = EOR_bloodless_coup }
+ available = {
+has_country_flag = EOR_route_shinzo }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_to_variable = { var = EOR_technocratic_influence value = -15 }
+add_to_variable = { var = EOR_imperial_legitimacy value = -15 }
+set_country_flag = EOR_civilian_opposition_removed
+
+ }
+}
+
+# shinzo
+focus = {
+ id = EOR_crush_the_loyalists
+ icon = GFX_focus_EOR_v2_crush_the_loyalists
+ x = 24
+ y = 11
+ cost = 5
+ prerequisite = { focus = EOR_march_on_tokyo }
+ available = { eor_loyalists_defeated = yes
+has_country_flag = EOR_route_shinzo }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+set_country_flag = EOR_coup_consolidated
+add_war_support = 0.05
+army_experience = 25
+
+ }
+}
+
+# shinzo
+focus = {
+ id = EOR_military_government
+ icon = GFX_focus_EOR_v2_military_government
+ x = 22
+ y = 12
+ cost = 10
+ prerequisite = { focus = EOR_silence_the_court focus = EOR_crush_the_loyalists }
+ available = {
+has_country_flag = EOR_route_shinzo }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+eor_install_shinzo = yes
+add_stability = -0.05
+eor_apply_policy_compatibility = yes
+
+ }
+}
+
+# shinzo
+focus = {
+ id = EOR_army_supremacy
+ icon = GFX_focus_EOR_v2_army_supremacy
+ x = 20
+ y = 13
+ cost = 10
+ prerequisite = { focus = EOR_military_government }
+ mutually_exclusive = { focus = EOR_naval_supremacy }
+ available = {
+has_country_flag = EOR_route_shinzo }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_army_supremacy
+
+ }
+}
+
+# shinzo
+focus = {
+ id = EOR_the_land_shogunate
+ icon = GFX_focus_EOR_v2_the_land_shogunate
+ x = 20
+ y = 14
+ cost = 10
+ prerequisite = { focus = EOR_army_supremacy }
+ available = {
+has_country_flag = EOR_route_shinzo }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_the_land_shogunate
+
+ }
+}
+
+# shinzo
+focus = {
+ id = EOR_naval_supremacy
+ icon = GFX_focus_EOR_v2_naval_supremacy
+ x = 24
+ y = 13
+ cost = 10
+ prerequisite = { focus = EOR_military_government }
+ mutually_exclusive = { focus = EOR_army_supremacy }
+ available = {
+has_country_flag = EOR_route_shinzo }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_naval_supremacy
+
+ }
+}
+
+# shinzo
+focus = {
+ id = EOR_the_oceanic_shogunate
+ icon = GFX_focus_EOR_v2_the_oceanic_shogunate
+ x = 24
+ y = 14
+ cost = 10
+ prerequisite = { focus = EOR_naval_supremacy }
+ available = {
+has_country_flag = EOR_route_shinzo }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_the_oceanic_shogunate
+
+ }
+}
+
+# shinzo
+focus = {
+ id = EOR_the_supreme_shogunate
+ icon = GFX_focus_EOR_v2_the_supreme_shogunate
+ x = 22
+ y = 15
+ cost = 10
+ prerequisite = { focus = EOR_the_land_shogunate focus = EOR_the_oceanic_shogunate }
+ available = {
+has_country_flag = EOR_route_shinzo }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_supreme_shogunate
+
+ }
+}
+
+# reform
+focus = {
+ id = EOR_the_shattered_mandate
+ icon = GFX_focus_EOR_v2_the_shattered_mandate
+ x = 30
+ y = 7
+ cost = 5
+ prerequisite = { focus = EOR_the_question_of_destiny }
+ mutually_exclusive = { focus = EOR_reaffirm_the_divine_mandate focus = EOR_tatsu_assumes_command focus = EOR_the_military_conspiracy }
+ allow_branch = { has_country_flag = EOR_new_dawn_unlocked }
+ available = { has_country_flag = EOR_new_dawn_unlocked
+eor_no_political_route = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+set_country_flag = EOR_route_reform
+add_stability = -0.05
+set_country_flag = EOR_mandate_reformed
+
+ }
+}
+
+# reform
+focus = {
+ id = EOR_the_imperial_reckoning
+ icon = GFX_focus_EOR_v2_the_imperial_reckoning
+ x = 30
+ y = 8
+ cost = 5
+ prerequisite = { focus = EOR_the_shattered_mandate }
+ allow_branch = { has_country_flag = EOR_new_dawn_unlocked }
+ available = {
+has_country_flag = EOR_route_reform }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = -50
+add_to_variable = { var = EOR_military_influence value = -10 }
+set_country_flag = EOR_reform_movement
+
+ }
+}
+
+# reform
+focus = {
+ id = EOR_the_reform_council
+ icon = GFX_focus_EOR_v2_the_reform_council
+ x = 30
+ y = 9
+ cost = 5
+ prerequisite = { focus = EOR_the_imperial_reckoning }
+ allow_branch = { has_country_flag = EOR_new_dawn_unlocked }
+ available = {
+has_country_flag = EOR_route_reform }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+eor_install_reform_council = yes
+
+ }
+}
+
+# reform
+focus = {
+ id = EOR_abolish_the_shogunate
+ icon = GFX_focus_EOR_v2_abolish_the_shogunate
+ x = 30
+ y = 10
+ cost = 5
+ prerequisite = { focus = EOR_the_reform_council }
+ allow_branch = { has_country_flag = EOR_new_dawn_unlocked }
+ available = {
+has_country_flag = EOR_route_reform }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+remove_ideas = the_shogunate
+remove_ideas = EOR_reinforced_shogunate
+remove_ideas = EOR_scientific_shogunate
+remove_ideas = EOR_divine_emperor
+set_country_flag = EOR_shogunate_abolished
+set_country_flag = EOR_partnership
+clr_country_flag = EOR_centralization
+remove_ideas = EOR_imperial_centralization
+add_ideas = EOR_imperial_partnership
+eor_update_subjects = yes
+
+ }
+}
+
+# reform
+focus = {
+ id = EOR_constitutional_monarchy
+ icon = GFX_focus_EOR_v2_constitutional_monarchy
+ x = 28
+ y = 11
+ cost = 5
+ prerequisite = { focus = EOR_abolish_the_shogunate }
+ mutually_exclusive = { focus = EOR_republican_restoration }
+ allow_branch = { has_country_flag = EOR_new_dawn_unlocked }
+ available = {
+has_country_flag = EOR_route_reform }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+set_country_flag = EOR_monarchy_preserved
+add_stability = 0.05
+
+ }
+}
+
+# reform
+focus = {
+ id = EOR_the_symbolic_throne
+ icon = GFX_focus_EOR_v2_the_symbolic_throne
+ x = 28
+ y = 12
+ cost = 5
+ prerequisite = { focus = EOR_constitutional_monarchy }
+ allow_branch = { has_country_flag = EOR_new_dawn_unlocked }
+ available = {
+has_country_flag = EOR_route_reform }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_the_symbolic_throne
+
+ }
+}
+
+# reform
+focus = {
+ id = EOR_republican_restoration
+ icon = GFX_focus_EOR_v2_republican_restoration
+ x = 32
+ y = 11
+ cost = 5
+ prerequisite = { focus = EOR_abolish_the_shogunate }
+ mutually_exclusive = { focus = EOR_constitutional_monarchy }
+ allow_branch = { has_country_flag = EOR_new_dawn_unlocked }
+ available = {
+has_country_flag = EOR_route_reform }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+set_country_flag = EOR_republic_established
+add_stability = -0.05
+add_political_power = 75
+
+ }
+}
+
+# reform
+focus = {
+ id = EOR_end_the_dynasty
+ icon = GFX_focus_EOR_v2_end_the_dynasty
+ x = 32
+ y = 12
+ cost = 5
+ prerequisite = { focus = EOR_republican_restoration }
+ allow_branch = { has_country_flag = EOR_new_dawn_unlocked }
+ available = {
+has_country_flag = EOR_route_reform }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_end_the_dynasty
+
+ }
+}
+
+# reform
+focus = {
+ id = EOR_decolonize_the_empire
+ icon = GFX_focus_EOR_v2_decolonize_the_empire
+ x = 30
+ y = 13
+ cost = 10
+ prerequisite = { focus = EOR_the_symbolic_throne focus = EOR_end_the_dynasty }
+ allow_branch = { has_country_flag = EOR_new_dawn_unlocked }
+ available = {
+has_country_flag = EOR_route_reform }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_decolonize_the_empire_decisions_tt
+eor_offer_decolonization = yes
+add_political_power = -100
+
+ }
+}
+
+# reform
+focus = {
+ id = EOR_the_asian_congress
+ icon = GFX_focus_EOR_v2_the_asian_congress
+ x = 30
+ y = 14
+ cost = 10
+ prerequisite = { focus = EOR_decolonize_the_empire }
+ allow_branch = { has_country_flag = EOR_new_dawn_unlocked }
+ available = { eor_decolonization_resolved = yes
+has_country_flag = EOR_route_reform }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_the_asian_congress_decisions_tt
+eor_convene_asian_congress = yes
+add_stability = 0.05
+
+ }
+}
+
+# reform
+focus = {
+ id = EOR_the_new_dawn
+ icon = GFX_focus_EOR_v2_the_new_dawn
+ x = 30
+ y = 15
+ cost = 10
+ prerequisite = { focus = EOR_the_asian_congress }
+ allow_branch = { has_country_flag = EOR_new_dawn_unlocked }
+ available = { eor_regional_federation = yes
+has_country_flag = EOR_route_reform }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_new_dawn
+set_country_flag = EOR_constitutional_reconstruction_complete
+
+ }
+}
+
+# strategy
+focus = {
+ id = EOR_imperial_ambition
+ icon = GFX_focus_EOR_v2_imperial_ambition
+ x = 51
+ y = 2
+ cost = 5
+ prerequisite = { focus = EOR_the_imperial_dawn }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = 100
+add_war_support = 0.05
+
+ }
+}
+
+# strategy
+focus = {
+ id = EOR_the_imperial_war_plan
+ icon = GFX_focus_EOR_v2_the_imperial_war_plan
+ x = 51
+ y = 3
+ cost = 5
+ prerequisite = { focus = EOR_imperial_ambition }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+army_experience = 20
+
+ }
+}
+
+# strategy
+focus = {
+ id = EOR_northern_thunder
+ icon = GFX_focus_EOR_v2_northern_thunder
+ x = 43
+ y = 4
+ cost = 10
+ prerequisite = { focus = EOR_the_imperial_war_plan }
+ mutually_exclusive = { focus = EOR_consolidate_asia focus = EOR_pacific_storm }
+ available = { eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 modifier = { factor = 0.1 has_war = yes } }
+ completion_reward = {
+set_country_flag = EOR_first_strategy_northern_thunder
+add_to_variable = { var = EOR_global_threat value = 5 }
+army_experience = 25
+
+ }
+}
+
+# strategy
+focus = {
+ id = EOR_pacific_storm
+ icon = GFX_focus_EOR_v2_pacific_storm
+ x = 51
+ y = 4
+ cost = 10
+ prerequisite = { focus = EOR_the_imperial_war_plan }
+ mutually_exclusive = { focus = EOR_consolidate_asia focus = EOR_northern_thunder }
+ available = { eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 modifier = { factor = 0.1 has_war = yes } }
+ completion_reward = {
+set_country_flag = EOR_first_strategy_pacific_storm
+add_to_variable = { var = EOR_global_threat value = 5 }
+navy_experience = 25
+
+ }
+}
+
+# strategy
+focus = {
+ id = EOR_consolidate_asia
+ icon = GFX_focus_EOR_v2_consolidate_asia
+ x = 59
+ y = 4
+ cost = 10
+ prerequisite = { focus = EOR_the_imperial_war_plan }
+ mutually_exclusive = { focus = EOR_northern_thunder focus = EOR_pacific_storm }
+ available = { eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+set_country_flag = EOR_first_strategy_consolidate_asia
+add_to_variable = { var = EOR_global_threat value = 5 }
+add_stability = 0.05
+add_political_power = -50
+
+ }
+}
+
+# soviet
+focus = {
+ id = EOR_northern_war_plan
+ icon = GFX_focus_EOR_v2_northern_war_plan
+ x = 43
+ y = 6
+ cost = 5
+ prerequisite = { focus = EOR_the_imperial_war_plan }
+ available = { eor_northern_theater_open = yes
+eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_northern_war_plan_decisions_tt
+add_timed_idea = { idea = EOR_offensive_preparations days = 180 }
+
+ }
+}
+
+# soviet
+focus = {
+ id = EOR_operation_vorkuta
+ icon = GFX_focus_EOR_v2_operation_vorkuta
+ x = 43
+ y = 7
+ cost = 5
+ prerequisite = { focus = EOR_northern_war_plan }
+ available = {
+eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+eor_event_10 = yes
+add_timed_idea = { idea = EOR_offensive_preparations days = 180 }
+
+ }
+}
+
+# soviet
+focus = {
+ id = EOR_strike_vladivostok
+ icon = GFX_focus_EOR_v2_strike_vladivostok
+ x = 43
+ y = 8
+ cost = 5
+ prerequisite = { focus = EOR_operation_vorkuta }
+ available = {
+eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_strike_vladivostok_decisions_tt
+if = { limit = { country_exists = SOV NOT = { has_war_with = SOV } NOT = { is_in_faction_with = SOV } } create_wargoal = { type = annex_everything target = SOV } }
+add_to_variable = { var = EOR_global_threat value = 10 }
+
+ }
+}
+
+# soviet
+focus = {
+ id = EOR_secure_the_far_east
+ icon = GFX_focus_EOR_v2_secure_the_far_east
+ x = 43
+ y = 9
+ cost = 5
+ prerequisite = { focus = EOR_strike_vladivostok }
+ available = {
+eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+army_experience = 20
+add_ideas = EOR_v2_secure_the_far_east
+
+ }
+}
+
+# soviet
+focus = {
+ id = EOR_battle_for_siberia
+ icon = GFX_focus_EOR_v2_battle_for_siberia
+ x = 43
+ y = 10
+ cost = 5
+ prerequisite = { focus = EOR_secure_the_far_east }
+ available = {
+eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_siberian_logistics
+army_experience = 20
+
+ }
+}
+
+# soviet
+focus = {
+ id = EOR_odessa_operation
+ icon = GFX_focus_EOR_v2_odessa_operation
+ x = 43
+ y = 11
+ cost = 5
+ prerequisite = { focus = EOR_battle_for_siberia }
+ available = {
+eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+set_country_flag = EOR_odessa_objective
+army_experience = 15
+
+ }
+}
+
+# soviet
+focus = {
+ id = EOR_march_on_moscow
+ icon = GFX_focus_EOR_v2_march_on_moscow
+ x = 43
+ y = 12
+ cost = 5
+ prerequisite = { focus = EOR_odessa_operation }
+ available = {
+eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+if = { limit = { country_exists = SOV } add_dynamic_modifier = { modifier = EOR_soviet_offensive days = 180 scope = SOV } }
+
+ }
+}
+
+# soviet
+focus = {
+ id = EOR_fall_of_the_kremlin
+ icon = GFX_focus_EOR_v2_fall_of_the_kremlin
+ x = 43
+ y = 13
+ cost = 5
+ prerequisite = { focus = EOR_march_on_moscow }
+ available = { eor_moscow_secured = yes
+eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_to_variable = { var = EOR_divine_mandate value = 20 }
+add_to_variable = { var = EOR_imperial_legitimacy value = 20 }
+eor_refresh_mandate = yes
+add_political_power = 150
+eor_event_14 = yes
+add_to_variable = { var = EOR_global_threat value = 20 }
+
+ }
+}
+
+# allied
+focus = {
+ id = EOR_pacific_war_plan
+ icon = GFX_focus_EOR_v2_pacific_war_plan
+ x = 51
+ y = 6
+ cost = 5
+ prerequisite = { focus = EOR_the_imperial_war_plan }
+ available = { eor_pacific_theater_open = yes
+eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_pacific_war_plan_decisions_tt
+navy_experience = 25
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = naval_equipment }
+
+ }
+}
+
+# allied
+focus = {
+ id = EOR_fortify_pearl_harbor
+ icon = GFX_focus_EOR_v2_fortify_pearl_harbor
+ x = 49
+ y = 7
+ cost = 5
+ prerequisite = { focus = EOR_pacific_war_plan }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_fortify_pearl_harbor_decisions_tt
+if = { limit = { 629 = { is_owned_by = ROOT is_controlled_by = ROOT } } 629 = { add_building_construction = { type = anti_air_building level = 2 instant_build = yes } add_building_construction = { type = coastal_bunker level = 2 province = 4180 instant_build = yes } } }
+
+ }
+}
+
+# allied
+focus = {
+ id = EOR_black_tortoise_fortress
+ icon = GFX_focus_EOR_v2_black_tortoise_fortress
+ x = 49
+ y = 8
+ cost = 10
+ prerequisite = { focus = EOR_fortify_pearl_harbor }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_black_tortoise_fortress_decisions_tt
+eor_event_21 = yes
+add_ideas = EOR_black_tortoise_doctrine
+
+ }
+}
+
+# allied
+focus = {
+ id = EOR_challenge_allied_pacific_fleet
+ icon = GFX_focus_EOR_v2_challenge_allied_pacific_fleet
+ x = 53
+ y = 7
+ cost = 5
+ prerequisite = { focus = EOR_pacific_war_plan }
+ available = {
+eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_pacific_fleet
+navy_experience = 30
+
+ }
+}
+
+# allied
+focus = {
+ id = EOR_secure_the_pacific
+ icon = GFX_focus_EOR_v2_secure_the_pacific
+ x = 51
+ y = 9
+ cost = 5
+ prerequisite = { focus = EOR_fortify_pearl_harbor }
+ prerequisite = { focus = EOR_challenge_allied_pacific_fleet }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_secure_the_pacific_decisions_tt
+add_ideas = EOR_secure_pacific
+
+ }
+}
+
+# allied
+focus = {
+ id = EOR_operation_santa_monica
+ icon = GFX_focus_EOR_v2_operation_santa_monica
+ x = 51
+ y = 10
+ cost = 5
+ prerequisite = { focus = EOR_secure_the_pacific }
+ available = {
+eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_operation_santa_monica_decisions_tt
+eor_event_22 = yes
+add_timed_idea = { idea = EOR_landing_combat_scheme days = 180 }
+add_to_variable = { var = EOR_global_threat value = 10 }
+
+ }
+}
+
+# allied
+focus = {
+ id = EOR_assault_american_mainland
+ icon = GFX_focus_EOR_v2_assault_american_mainland
+ x = 51
+ y = 11
+ cost = 5
+ prerequisite = { focus = EOR_operation_santa_monica }
+ available = {
+eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+if = { limit = { country_exists = USA } add_dynamic_modifier = { modifier = EOR_american_offensive days = 180 scope = USA } }
+
+ }
+}
+
+# allied
+focus = {
+ id = EOR_fall_of_allied_command
+ icon = GFX_focus_EOR_v2_fall_of_allied_command
+ x = 51
+ y = 12
+ cost = 5
+ prerequisite = { focus = EOR_assault_american_mainland }
+ available = { eor_allies_defeated = yes
+eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = 150
+add_to_variable = { var = EOR_divine_mandate value = 20 }
+add_to_variable = { var = EOR_imperial_legitimacy value = 20 }
+eor_refresh_mandate = yes
+eor_event_23 = yes
+add_to_variable = { var = EOR_global_threat value = 20 }
+
+ }
+}
+
+# asia
+focus = {
+ id = EOR_regional_policy
+ icon = GFX_focus_EOR_v2_regional_policy
+ x = 59
+ y = 6
+ cost = 5
+ prerequisite = { focus = EOR_the_imperial_war_plan }
+ available = { eor_asian_theater_open = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = 50
+
+ }
+}
+
+# china
+focus = {
+ id = EOR_the_china_question
+ icon = GFX_focus_EOR_v2_the_china_question
+ x = 59
+ y = 7
+ cost = 5
+ prerequisite = { focus = EOR_regional_policy }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = 50
+
+ }
+}
+
+# china
+focus = {
+ id = EOR_cooperate_with_china
+ icon = GFX_focus_EOR_v2_cooperate_with_china
+ x = 57
+ y = 8
+ cost = 5
+ prerequisite = { focus = EOR_the_china_question }
+ mutually_exclusive = { focus = EOR_subjugate_china }
+ available = { eor_diplomatic_cooperation_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = -50
+eor_offer_china_cooperation = yes
+
+ }
+}
+
+# china
+focus = {
+ id = EOR_the_asian_accord
+ icon = GFX_focus_EOR_v2_the_asian_accord
+ x = 57
+ y = 9
+ cost = 5
+ prerequisite = { focus = EOR_cooperate_with_china }
+ available = {
+eor_diplomatic_cooperation_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+if = { limit = { country_exists = CHI } CHI = { add_opinion_modifier = { target = EOR modifier = EOR_asian_cooperation } } }
+add_stability = 0.03
+
+ }
+}
+
+# china
+focus = {
+ id = EOR_joint_military_plan
+ icon = GFX_focus_EOR_v2_joint_military_plan
+ x = 57
+ y = 10
+ cost = 5
+ prerequisite = { focus = EOR_the_asian_accord }
+ available = {
+eor_diplomatic_cooperation_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+if = { limit = { CHI = { exists = yes has_country_flag = EOR_china_partner } } CHI = { army_experience = 20
+give_military_access = EOR } give_military_access = CHI }
+army_experience = 20
+
+ }
+}
+
+# china
+focus = {
+ id = EOR_partners_in_asia
+ icon = GFX_focus_EOR_v2_partners_in_asia
+ x = 57
+ y = 11
+ cost = 5
+ prerequisite = { focus = EOR_joint_military_plan }
+ available = {
+eor_diplomatic_cooperation_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = 75
+if = { limit = { CHI = { exists = yes has_country_flag = EOR_china_partner } } CHI = { add_to_tech_sharing_group = imperial_research } }
+
+ }
+}
+
+# china
+focus = {
+ id = EOR_subjugate_china
+ icon = GFX_focus_EOR_v2_subjugate_china
+ x = 61
+ y = 8
+ cost = 5
+ prerequisite = { focus = EOR_the_china_question }
+ mutually_exclusive = { focus = EOR_cooperate_with_china }
+ available = { eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = -50
+add_to_variable = { var = EOR_global_threat value = 10 }
+
+ }
+}
+
+# china
+focus = {
+ id = EOR_imperial_ultimatum
+ icon = GFX_focus_EOR_v2_imperial_ultimatum
+ x = 61
+ y = 9
+ cost = 5
+ prerequisite = { focus = EOR_subjugate_china }
+ available = {
+eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+eor_offer_china_submission = yes
+
+ }
+}
+
+# china
+focus = {
+ id = EOR_the_chinese_campaign
+ icon = GFX_focus_EOR_v2_the_chinese_campaign
+ x = 61
+ y = 10
+ cost = 5
+ prerequisite = { focus = EOR_imperial_ultimatum }
+ available = {
+eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+if = { limit = { country_exists = CHI NOT = { CHI = { is_subject_of = EOR } } NOT = { is_in_faction_with = CHI } } create_wargoal = { type = puppet_wargoal_focus target = CHI } }
+army_experience = 20
+
+ }
+}
+
+# china
+focus = {
+ id = EOR_imperial_protectorate
+ icon = GFX_focus_EOR_v2_imperial_protectorate
+ x = 61
+ y = 11
+ cost = 5
+ prerequisite = { focus = EOR_the_chinese_campaign }
+ available = { OR = { NOT = { country_exists = CHI } CHI = { is_subject_of = EOR } }
+eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+if = { limit = { CHI = { exists = yes is_subject_of = EOR } } CHI = { add_timed_idea = { idea = EOR_subject_resource_access days = 365 }
+ } }
+add_political_power = 75
+
+ }
+}
+
+# asia
+focus = {
+ id = EOR_secure_southeast_asia
+ icon = GFX_focus_EOR_v2_secure_southeast_asia
+ x = 65
+ y = 8
+ cost = 5
+ prerequisite = { focus = EOR_the_china_question }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = -50
+every_subject_country = { limit = { exists = yes }
+random_owned_controlled_state = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+}
+
+ }
+}
+
+# asia
+focus = {
+ id = EOR_reinforce_coprosperity_sphere
+ icon = GFX_focus_EOR_v2_reinforce_coprosperity_sphere
+ x = 65
+ y = 9
+ cost = 5
+ prerequisite = { focus = EOR_secure_southeast_asia }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+every_subject_country = { limit = { exists = yes }
+add_stability = 0.05
+add_war_support = 0.05
+}
+
+ }
+}
+
+# asia
+focus = {
+ id = EOR_asian_strategic_resources
+ icon = GFX_focus_EOR_v2_asian_strategic_resources
+ x = 65
+ y = 10
+ cost = 5
+ prerequisite = { focus = EOR_reinforce_coprosperity_sphere }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+every_subject_country = { limit = { exists = yes }
+random_owned_controlled_state = { add_resource = { type = steel amount = 4 } }
+}
+
+ }
+}
+
+# asia
+focus = {
+ id = EOR_establish_regional_supremacy
+ icon = GFX_focus_EOR_v2_establish_regional_supremacy
+ x = 65
+ y = 11
+ cost = 5
+ prerequisite = { focus = EOR_asian_strategic_resources }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = 100
+add_stability = 0.05
+
+ }
+}
+
+# asia
+focus = {
+ id = EOR_prepare_the_final_struggle
+ icon = GFX_focus_EOR_v2_prepare_the_final_struggle
+ x = 65
+ y = 12
+ cost = 5
+ prerequisite = { focus = EOR_establish_regional_supremacy }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+set_country_flag = EOR_reassessment_ready
+
+ }
+}
+
+# china
+focus = {
+ id = EOR_equal_partnership_with_china
+ icon = GFX_focus_EOR_v2_equal_partnership_with_china
+ x = 34
+ y = 16
+ cost = 5
+ prerequisite = { focus = EOR_the_asian_congress }
+ allow_branch = { has_country_flag = EOR_new_dawn_unlocked }
+ available = { eor_reform_china_policy = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+eor_offer_china_cooperation = yes
+
+ }
+}
+
+# strategy
+focus = {
+ id = EOR_imperial_strategic_reassessment
+ icon = GFX_focus_EOR_v2_imperial_strategic_reassessment
+ x = 51
+ y = 16
+ cost = 5
+ prerequisite = { focus = EOR_the_imperial_war_plan }
+ available = { eor_first_strategy_progress = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_imperial_strategic_reassessment_decisions_tt
+set_country_flag = EOR_other_theaters_open
+army_experience = 20
+add_political_power = 50
+
+ }
+}
+
+# strategy
+focus = {
+ id = EOR_the_second_front
+ icon = GFX_focus_EOR_v2_the_second_front
+ x = 51
+ y = 17
+ cost = 10
+ prerequisite = { focus = EOR_imperial_strategic_reassessment }
+ available = { eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+army_experience = 25
+add_war_support = 0.05
+
+ }
+}
+
+# allied
+focus = {
+ id = EOR_preemptive_strike_against_the_US
+ icon = GFX_focus_EOR_v2_preemptive_strike_against_the_US
+ x = 55
+ y = 18
+ cost = 5
+ prerequisite = { focus = EOR_the_second_front }
+ available = { eor_imperial_expansion_allowed = yes
+eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+if = { limit = { country_exists = USA NOT = { is_in_faction_with = USA } NOT = { has_war_with = USA } } create_wargoal = { type = annex_everything target = USA } }
+
+ }
+}
+
+# industry
+focus = {
+ id = EOR_imperial_wartime_measures
+ icon = GFX_focus_EOR_v2_imperial_wartime_measures
+ x = 76
+ y = 2
+ cost = 5
+ prerequisite = { focus = EOR_the_imperial_dawn }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_imperial_wartime_measures_decisions_tt
+add_political_power = 100
+add_war_support = 0.05
+
+ }
+}
+
+# industry
+focus = {
+ id = EOR_government_zaibatsus_dialogue
+ icon = GFX_focus_EOR_v2_government_zaibatsus_dialogue
+ x = 76
+ y = 3
+ cost = 5
+ prerequisite = { focus = EOR_imperial_wartime_measures }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = 50
+
+ }
+}
+
+# industry
+focus = {
+ id = EOR_corporate_partnership
+ icon = GFX_focus_EOR_v2_corporate_partnership
+ x = 73
+ y = 4
+ cost = 5
+ prerequisite = { focus = EOR_government_zaibatsus_dialogue }
+ mutually_exclusive = { focus = EOR_state_control }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 modifier = { factor = 2 OR = { has_country_flag = EOR_route_technocratic has_country_flag = EOR_route_reform } } }
+ completion_reward = {
+remove_ideas = traditional_zaibatsus
+add_ideas = cooperative_zaibatsus
+set_country_flag = EOR_corporate_economy
+eor_apply_policy_compatibility = yes
+
+ }
+}
+
+# industry
+focus = {
+ id = EOR_industrial_autonomy
+ icon = GFX_focus_EOR_v2_industrial_autonomy
+ x = 73
+ y = 5
+ cost = 5
+ prerequisite = { focus = EOR_corporate_partnership }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = -50
+add_ideas = EOR_v2_industrial_autonomy
+
+ }
+}
+
+# industry
+focus = {
+ id = EOR_corporate_innovation
+ icon = GFX_focus_EOR_v2_corporate_innovation
+ x = 73
+ y = 6
+ cost = 5
+ prerequisite = { focus = EOR_industrial_autonomy }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 2 category = industry }
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = electronics }
+
+ }
+}
+
+# industry
+focus = {
+ id = EOR_the_zaibatsu_economy
+ icon = GFX_focus_EOR_v2_the_zaibatsu_economy
+ x = 73
+ y = 7
+ cost = 5
+ prerequisite = { focus = EOR_corporate_innovation }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+capital_scope = { if = { limit = { is_controlled_by = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
+add_stability = 0.03
+
+ }
+}
+
+# industry
+focus = {
+ id = EOR_state_control
+ icon = GFX_focus_EOR_v2_state_control
+ x = 79
+ y = 4
+ cost = 5
+ prerequisite = { focus = EOR_government_zaibatsus_dialogue }
+ mutually_exclusive = { focus = EOR_corporate_partnership }
+ available = { eor_state_economy_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 modifier = { factor = 2 OR = { has_country_flag = EOR_route_divine has_country_flag = EOR_route_shinzo } } }
+ completion_reward = {
+remove_ideas = traditional_zaibatsus
+add_ideas = controlled_zaibatsus
+set_country_flag = EOR_state_economy
+eor_apply_policy_compatibility = yes
+
+ }
+}
+
+# industry
+focus = {
+ id = EOR_imperial_planning
+ icon = GFX_focus_EOR_v2_imperial_planning
+ x = 79
+ y = 5
+ cost = 5
+ prerequisite = { focus = EOR_state_control }
+ available = {
+eor_state_economy_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = -50
+add_ideas = EOR_v2_imperial_planning
+
+ }
+}
+
+# industry
+focus = {
+ id = EOR_nationalize_contracts
+ icon = GFX_focus_EOR_v2_nationalize_contracts
+ x = 79
+ y = 6
+ cost = 5
+ prerequisite = { focus = EOR_imperial_planning }
+ available = {
+eor_state_economy_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = -75
+capital_scope = { if = { limit = { is_controlled_by = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
+
+ }
+}
+
+# industry
+focus = {
+ id = EOR_bring_the_zaibatsus_into_the_fold
+ icon = GFX_focus_EOR_v2_bring_the_zaibatsus_into_the_fold
+ x = 79
+ y = 7
+ cost = 5
+ prerequisite = { focus = EOR_nationalize_contracts }
+ available = {
+eor_state_economy_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+capital_scope = { if = { limit = { is_controlled_by = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
+add_to_variable = { var = EOR_military_influence value = 5 }
+
+ }
+}
+
+# industry
+focus = {
+ id = EOR_introduce_the_imperial_mobilization_law
+ icon = GFX_focus_EOR_v2_introduce_the_imperial_mobilization_law
+ x = 76
+ y = 8
+
+ prerequisite = { focus = EOR_the_zaibatsu_economy focus = EOR_bring_the_zaibatsus_into_the_fold }
+ cost = 5
+
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_introduce_the_imperial_mobilization_law_decisions_tt
+add_war_support = 0.05
+add_ideas = EOR_mobilization_law
+
+ }
+}
+
+# industry
+focus = {
+ id = EOR_the_first_amendment_of_the_imperial_mobilization_law
+ icon = GFX_focus_EOR_v2_the_first_amendment_of_the_imperial_mobilization_law
+ x = 76
+ y = 9
+ cost = 5
+ prerequisite = { focus = EOR_introduce_the_imperial_mobilization_law }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_the_first_amendment_of_the_imperial_mobilization_law_decisions_tt
+add_war_support = 0.05
+add_ideas = EOR_first_amendment
+
+ }
+}
+
+# industry
+focus = {
+ id = EOR_the_second_amendment_of_the_imperial_mobilization_law
+ icon = GFX_focus_EOR_v2_the_second_amendment_of_the_imperial_mobilization_law
+ x = 76
+ y = 10
+ cost = 5
+ prerequisite = { focus = EOR_the_first_amendment_of_the_imperial_mobilization_law }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_the_second_amendment_of_the_imperial_mobilization_law_decisions_tt
+add_war_support = 0.05
+add_ideas = EOR_second_amendment
+
+ }
+}
+
+# resources
+focus = {
+ id = EOR_resource_security_program
+ icon = GFX_focus_EOR_v2_resource_security_program
+ x = 88
+ y = 3
+ cost = 5
+ prerequisite = { focus = EOR_imperial_wartime_measures }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 5 }
+ completion_reward = {
+custom_effect_tooltip = EOR_resource_security_program_decisions_tt
+add_political_power = 50
+
+ }
+}
+
+# resources
+focus = {
+ id = EOR_synthetic_fuel
+ icon = GFX_focus_EOR_v2_synthetic_fuel
+ x = 84
+ y = 4
+ cost = 5
+ prerequisite = { focus = EOR_resource_security_program }
+ mutually_exclusive = { focus = EOR_open_trade focus = EOR_overseas_extraction }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 5 }
+ completion_reward = {
+add_political_power = -75
+capital_scope = { if = { limit = { is_controlled_by = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = synthetic_refinery level = 1 instant_build = yes } } }
+
+ }
+}
+
+# resources
+focus = {
+ id = EOR_refinery_network
+ icon = GFX_focus_EOR_v2_refinery_network
+ x = 84
+ y = 5
+ cost = 5
+ prerequisite = { focus = EOR_synthetic_fuel }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 5 }
+ completion_reward = {
+add_political_power = -100
+capital_scope = { if = { limit = { is_controlled_by = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = synthetic_refinery level = 1 instant_build = yes } } }
+
+ }
+}
+
+# resources
+focus = {
+ id = EOR_resource_autarky
+ icon = GFX_focus_EOR_v2_resource_autarky
+ x = 84
+ y = 6
+ cost = 5
+ prerequisite = { focus = EOR_refinery_network }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 5 }
+ completion_reward = {
+add_ideas = EOR_v2_resource_autarky
+set_country_flag = EOR_resource_autarky
+
+ }
+}
+
+# resources
+focus = {
+ id = EOR_overseas_extraction
+ icon = GFX_focus_EOR_v2_overseas_extraction
+ x = 88
+ y = 4
+ cost = 5
+ prerequisite = { focus = EOR_resource_security_program }
+ mutually_exclusive = { focus = EOR_open_trade focus = EOR_synthetic_fuel }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 5 }
+ completion_reward = {
+add_to_variable = { var = EOR_subject_pressure value = 15 }
+every_subject_country = { limit = { exists = yes }
+add_timed_idea = { idea = EOR_subject_resource_access days = 365 }
+}
+add_ideas = EOR_v2_overseas_extraction
+
+ }
+}
+
+# resources
+focus = {
+ id = EOR_resource_concessions
+ icon = GFX_focus_EOR_v2_resource_concessions
+ x = 88
+ y = 5
+ cost = 5
+ prerequisite = { focus = EOR_overseas_extraction }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 5 }
+ completion_reward = {
+add_to_variable = { var = EOR_subject_pressure value = 10 }
+set_country_flag = EOR_resource_development_authorized
+
+ }
+}
+
+# resources
+focus = {
+ id = EOR_imperial_supply
+ icon = GFX_focus_EOR_v2_imperial_supply
+ x = 88
+ y = 6
+ cost = 5
+ prerequisite = { focus = EOR_resource_concessions }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 5 }
+ completion_reward = {
+add_ideas = EOR_v2_imperial_supply
+
+ }
+}
+
+# resources
+focus = {
+ id = EOR_open_trade
+ icon = GFX_focus_EOR_v2_open_trade
+ x = 92
+ y = 4
+ cost = 5
+ prerequisite = { focus = EOR_resource_security_program }
+ mutually_exclusive = { focus = EOR_overseas_extraction focus = EOR_synthetic_fuel }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 5 }
+ completion_reward = {
+add_ideas = EOR_v2_open_trade
+
+ }
+}
+
+# resources
+focus = {
+ id = EOR_commercial_access
+ icon = GFX_focus_EOR_v2_commercial_access
+ x = 92
+ y = 5
+ cost = 5
+ prerequisite = { focus = EOR_open_trade }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 5 }
+ completion_reward = {
+add_political_power = -50
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = industry }
+
+ }
+}
+
+# resources
+focus = {
+ id = EOR_maritime_commerce
+ icon = GFX_focus_EOR_v2_maritime_commerce
+ x = 92
+ y = 6
+ cost = 5
+ prerequisite = { focus = EOR_commercial_access }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 5 }
+ completion_reward = {
+add_ideas = EOR_v2_maritime_commerce
+
+ }
+}
+
+# research
+focus = {
+ id = EOR_ensure_the_supremacy_of_our_technology
+ icon = GFX_focus_EOR_v2_ensure_the_supremacy_of_our_technology
+ x = 104
+ y = 2
+ cost = 5
+ prerequisite = { focus = EOR_the_imperial_dawn }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = 75
+add_ideas = EOR_research_program
+
+ }
+}
+
+# research
+focus = {
+ id = EOR_approach_the_new_high_tech_companies
+ icon = GFX_focus_EOR_v2_approach_the_new_high_tech_companies
+ x = 104
+ y = 3
+ cost = 5
+ prerequisite = { focus = EOR_ensure_the_supremacy_of_our_technology }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = -50
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = armor }
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = air_equipment }
+
+ }
+}
+
+# research
+focus = {
+ id = EOR_kurikara_robotics
+ icon = GFX_focus_EOR_v2_kurikara_robotics
+ x = 98
+ y = 4
+ cost = 5
+ prerequisite = { focus = EOR_approach_the_new_high_tech_companies }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_kurikara_robotics_decisions_tt
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = armor }
+set_country_flag = EOR_king_oni_research_available
+
+ }
+}
+
+# research
+focus = {
+ id = EOR_kanegawa_industries
+ icon = GFX_focus_EOR_v2_kanegawa_industries
+ x = 102
+ y = 4
+ cost = 5
+ prerequisite = { focus = EOR_approach_the_new_high_tech_companies }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = artillery }
+set_technology = { wave_force_artillery = 1 }
+
+ }
+}
+
+# research
+focus = {
+ id = EOR_shirada_shipworks
+ icon = GFX_focus_EOR_v2_shirada_shipworks
+ x = 108
+ y = 4
+ cost = 5
+ prerequisite = { focus = EOR_approach_the_new_high_tech_companies }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = naval_equipment }
+set_technology = { shogun_battleship = 1 }
+
+ }
+}
+
+# research
+focus = {
+ id = EOR_tenzai_robotics
+ icon = GFX_focus_EOR_v2_tenzai_robotics
+ x = 118
+ y = 4
+ cost = 5
+ prerequisite = { focus = EOR_approach_the_new_high_tech_companies }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = air_equipment }
+set_country_flag = EOR_transformable_research_available
+
+ }
+}
+
+# research
+focus = {
+ id = EOR_funding_imperial_weaponry_institute
+ icon = GFX_focus_EOR_v2_funding_imperial_weaponry_institute
+ x = 104
+ y = 6
+
+ prerequisite = { focus = EOR_approach_the_new_high_tech_companies }
+ cost = 5
+
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_funding_imperial_weaponry_institute_decisions_tt
+swap_ideas = { remove_idea = EOR_technological_superiority add_idea = EOR_supremacy_of_technology }
+add_ideas = EOR_institute_funding
+add_to_variable = { var = EOR_technocratic_influence value = 5 }
+
+ }
+}
+
+# army
+focus = {
+ id = EOR_reform_the_imperial_army
+ icon = GFX_focus_EOR_v2_reform_the_imperial_army
+ x = 96
+ y = 8
+ cost = 5
+ prerequisite = { focus = EOR_funding_imperial_weaponry_institute }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_reform_the_imperial_army_decisions_tt
+army_experience = 25
+
+ }
+}
+
+# army
+focus = {
+ id = EOR_the_futuristic_bushido
+ icon = GFX_focus_EOR_v2_the_futuristic_bushido
+ x = 92
+ y = 9
+ cost = 5
+ prerequisite = { focus = EOR_reform_the_imperial_army }
+ mutually_exclusive = { focus = EOR_a_highly_mechanized_army focus = EOR_the_shadow_warriors }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 modifier = { factor = 2 OR = { has_country_flag = EOR_route_divine has_country_flag = EOR_route_shinzo } } }
+ completion_reward = {
+add_ideas = EOR_v2_the_futuristic_bushido
+add_unit_bonus = { infantry = { max_organisation = 0.05 } }
+eor_apply_policy_compatibility = yes
+
+ }
+}
+
+# army
+focus = {
+ id = EOR_imperial_warrior_armaments
+ icon = GFX_focus_EOR_v2_imperial_warrior_armaments
+ x = 92
+ y = 10
+ cost = 5
+ prerequisite = { focus = EOR_the_futuristic_bushido }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+set_technology = { imperial_warrior = 1 }
+army_experience = 15
+
+ }
+}
+
+# army
+focus = {
+ id = EOR_tankbuster_formations
+ icon = GFX_focus_EOR_v2_tankbuster_formations
+ x = 92
+ y = 11
+ cost = 5
+ prerequisite = { focus = EOR_imperial_warrior_armaments }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_unit_bonus = { infantry = { hard_attack = 0.05 ap_attack = 0.05 } }
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = artillery }
+
+ }
+}
+
+# army
+focus = {
+ id = EOR_rocket_angel_corps
+ icon = GFX_focus_EOR_v2_rocket_angel_corps
+ x = 92
+ y = 12
+ cost = 5
+ prerequisite = { focus = EOR_tankbuster_formations }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_unit_bonus = { paratrooper = { soft_attack = 0.05 } }
+set_technology = { paratroopers = 1 }
+air_experience = 20
+
+ }
+}
+
+# army
+focus = {
+ id = EOR_warriors_of_the_rising_sun
+ icon = GFX_focus_EOR_v2_warriors_of_the_rising_sun
+ x = 92
+ y = 13
+ cost = 5
+ prerequisite = { focus = EOR_rocket_angel_corps }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_warriors_of_the_rising_sun
+
+ }
+}
+
+# army
+focus = {
+ id = EOR_a_highly_mechanized_army
+ icon = GFX_focus_EOR_v2_a_highly_mechanized_army
+ x = 96
+ y = 9
+ cost = 5
+ prerequisite = { focus = EOR_reform_the_imperial_army }
+ mutually_exclusive = { focus = EOR_the_futuristic_bushido focus = EOR_the_shadow_warriors }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 modifier = { factor = 2 OR = { has_country_flag = EOR_route_technocratic has_country_flag = EOR_route_reform } } }
+ completion_reward = {
+add_ideas = EOR_v2_a_highly_mechanized_army
+eor_apply_policy_compatibility = yes
+
+ }
+}
+
+# army
+focus = {
+ id = EOR_amphibious_armored_formations
+ icon = GFX_focus_EOR_v2_amphibious_armored_formations
+ x = 96
+ y = 10
+ cost = 5
+ prerequisite = { focus = EOR_a_highly_mechanized_army }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+set_technology = { tsunami_tank = 1 }
+army_experience = 20
+
+ }
+}
+
+# army
+focus = {
+ id = EOR_the_tsunami_tank
+ icon = GFX_focus_EOR_v2_the_tsunami_tank
+ x = 96
+ y = 11
+ cost = 5
+ prerequisite = { focus = EOR_amphibious_armored_formations }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_unit_bonus = { amphibious_armor = { soft_attack = 0.05 } }
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = armor }
+
+ }
+}
+
+# army
+focus = {
+ id = EOR_heavy_robotic_warfare
+ icon = GFX_focus_EOR_v2_heavy_robotic_warfare
+ x = 96
+ y = 12
+ cost = 5
+ prerequisite = { focus = EOR_the_tsunami_tank }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 2 category = armor }
+army_experience = 20
+
+ }
+}
+
+# army
+focus = {
+ id = EOR_deploy_king_oni
+ icon = GFX_focus_EOR_v2_deploy_king_oni
+ x = 96
+ y = 13
+ cost = 5
+ prerequisite = { focus = EOR_heavy_robotic_warfare }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_deploy_king_oni_decisions_tt
+set_technology = { king_oni = 1 }
+army_experience = 25
+
+ }
+}
+
+# army
+focus = {
+ id = EOR_the_shadow_warriors
+ icon = GFX_focus_EOR_v2_the_shadow_warriors
+ x = 100
+ y = 9
+ cost = 5
+ prerequisite = { focus = EOR_reform_the_imperial_army }
+ mutually_exclusive = { focus = EOR_a_highly_mechanized_army focus = EOR_the_futuristic_bushido }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 modifier = { factor = 2 OR = { has_country_flag = EOR_route_shinzo has_country_flag = EOR_route_reform } } }
+ completion_reward = {
+add_ideas = EOR_v2_the_shadow_warriors
+eor_apply_policy_compatibility = yes
+
+ }
+}
+
+# army
+focus = {
+ id = EOR_shinobi_intelligence_network
+ icon = GFX_focus_EOR_v2_shinobi_intelligence_network
+ x = 100
+ y = 10
+ cost = 5
+ prerequisite = { focus = EOR_the_shadow_warriors }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_shinobi_intelligence_network
+
+ }
+}
+
+# army
+focus = {
+ id = EOR_rapid_deployment_doctrine
+ icon = GFX_focus_EOR_v2_rapid_deployment_doctrine
+ x = 100
+ y = 11
+ cost = 5
+ prerequisite = { focus = EOR_shinobi_intelligence_network }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_rapid_deployment_doctrine
+
+ }
+}
+
+# army
+focus = {
+ id = EOR_special_operations_command
+ icon = GFX_focus_EOR_v2_special_operations_command
+ x = 100
+ y = 12
+ cost = 5
+ prerequisite = { focus = EOR_rapid_deployment_doctrine }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+army_experience = 25
+add_command_power = 25
+
+ }
+}
+
+# army
+focus = {
+ id = EOR_strike_from_the_shadows
+ icon = GFX_focus_EOR_v2_strike_from_the_shadows
+ x = 100
+ y = 13
+ cost = 5
+ prerequisite = { focus = EOR_special_operations_command }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_strike_from_the_shadows
+
+ }
+}
+
+# army
+focus = {
+ id = EOR_landing_combat_scheme
+ icon = GFX_focus_EOR_v2_landing_combat_scheme
+ x = 88
+ y = 9
+ cost = 5
+ prerequisite = { focus = EOR_reform_the_imperial_army }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_landing_combat_scheme
+set_technology = { tsunami_tank = 1 }
+
+ }
+}
+
+# army
+focus = {
+ id = EOR_multiple_terrains_combat_support
+ icon = GFX_focus_EOR_v2_multiple_terrains_combat_support
+ x = 88
+ y = 10
+ cost = 5
+ prerequisite = { focus = EOR_landing_combat_scheme }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_multiple_terrains_combat_support
+army_experience = 20
+
+ }
+}
+
+# navy
+focus = {
+ id = EOR_advanced_imperial_shipbuilding
+ icon = GFX_focus_EOR_v2_advanced_imperial_shipbuilding
+ x = 108
+ y = 6
+ cost = 5
+ prerequisite = { focus = EOR_shirada_shipworks }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_advanced_shipbuilding
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = naval_equipment }
+navy_experience = 20
+
+ }
+}
+
+# navy
+focus = {
+ id = EOR_imperial_naval_reform
+ icon = GFX_focus_EOR_v2_imperial_naval_reform
+ x = 108
+ y = 8
+ cost = 5
+ prerequisite = { focus = EOR_advanced_imperial_shipbuilding }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+navy_experience = 25
+
+ }
+}
+
+# navy
+focus = {
+ id = EOR_shogun_battlefleet
+ icon = GFX_focus_EOR_v2_shogun_battlefleet
+ x = 104
+ y = 9
+ cost = 5
+ prerequisite = { focus = EOR_imperial_naval_reform }
+ mutually_exclusive = { focus = EOR_carrier_fleet focus = EOR_submarine_warfare }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 modifier = { factor = 2 OR = { has_country_flag = EOR_route_divine has_country_flag = EOR_route_shinzo } } }
+ completion_reward = {
+add_ideas = EOR_v2_shogun_battlefleet
+eor_apply_policy_compatibility = yes
+
+ }
+}
+
+# navy
+focus = {
+ id = EOR_advanced_naval_artillery
+ icon = GFX_focus_EOR_v2_advanced_naval_artillery
+ x = 104
+ y = 10
+ cost = 5
+ prerequisite = { focus = EOR_shogun_battlefleet }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 2 category = naval_equipment }
+navy_experience = 15
+
+ }
+}
+
+# navy
+focus = {
+ id = EOR_shogun_battleship_program
+ icon = GFX_focus_EOR_v2_shogun_battleship_program
+ x = 104
+ y = 11
+ cost = 5
+ prerequisite = { focus = EOR_advanced_naval_artillery }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_shogun_battleship_program_decisions_tt
+set_technology = { shogun_battleship = 1 }
+navy_experience = 20
+
+ }
+}
+
+# navy
+focus = {
+ id = EOR_fortified_fleet
+ icon = GFX_focus_EOR_v2_fortified_fleet
+ x = 104
+ y = 12
+ cost = 5
+ prerequisite = { focus = EOR_shogun_battleship_program }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_fortified_fleet
+
+ }
+}
+
+# navy
+focus = {
+ id = EOR_decisive_naval_battle
+ icon = GFX_focus_EOR_v2_decisive_naval_battle
+ x = 104
+ y = 13
+ cost = 5
+ prerequisite = { focus = EOR_fortified_fleet }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_decisive_naval_battle
+
+ }
+}
+
+# navy
+focus = {
+ id = EOR_carrier_fleet
+ icon = GFX_focus_EOR_v2_carrier_fleet
+ x = 108
+ y = 9
+ cost = 5
+ prerequisite = { focus = EOR_imperial_naval_reform }
+ mutually_exclusive = { focus = EOR_shogun_battlefleet focus = EOR_submarine_warfare }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 modifier = { factor = 2 OR = { has_country_flag = EOR_route_technocratic has_country_flag = EOR_route_reform } } }
+ completion_reward = {
+add_ideas = EOR_v2_carrier_fleet
+eor_apply_policy_compatibility = yes
+
+ }
+}
+
+# navy
+focus = {
+ id = EOR_imperial_carrier_modernization
+ icon = GFX_focus_EOR_v2_imperial_carrier_modernization
+ x = 108
+ y = 10
+ cost = 5
+ prerequisite = { focus = EOR_carrier_fleet }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = naval_equipment }
+navy_experience = 20
+
+ }
+}
+
+# navy
+focus = {
+ id = EOR_tenzai_naval_aviation
+ icon = GFX_focus_EOR_v2_tenzai_naval_aviation
+ x = 108
+ y = 11
+ cost = 5
+ prerequisite = { focus = EOR_imperial_carrier_modernization }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_tenzai_naval_aviation
+
+ }
+}
+
+# navy
+focus = {
+ id = EOR_mecha_tengu_squadrons
+ icon = GFX_focus_EOR_v2_mecha_tengu_squadrons
+ x = 108
+ y = 12
+ cost = 5
+ prerequisite = { focus = EOR_tenzai_naval_aviation }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+set_technology = { EOR_mecha_tengu = 1 }
+air_experience = 20
+
+ }
+}
+
+# navy
+focus = {
+ id = EOR_air_sea_battle_doctrine
+ icon = GFX_focus_EOR_v2_air_sea_battle_doctrine
+ x = 108
+ y = 13
+ cost = 5
+ prerequisite = { focus = EOR_mecha_tengu_squadrons }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_air_sea_battle_doctrine
+
+ }
+}
+
+# navy
+focus = {
+ id = EOR_submarine_warfare
+ icon = GFX_focus_EOR_v2_submarine_warfare
+ x = 112
+ y = 9
+ cost = 5
+ prerequisite = { focus = EOR_imperial_naval_reform }
+ mutually_exclusive = { focus = EOR_carrier_fleet focus = EOR_shogun_battlefleet }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_submarine_warfare
+
+ }
+}
+
+# navy
+focus = {
+ id = EOR_advanced_yari_submarines
+ icon = GFX_focus_EOR_v2_advanced_yari_submarines
+ x = 112
+ y = 10
+ cost = 5
+ prerequisite = { focus = EOR_submarine_warfare }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 2 category = naval_equipment }
+navy_experience = 20
+
+ }
+}
+
+# navy
+focus = {
+ id = EOR_torpedo_warfare_doctrine
+ icon = GFX_focus_EOR_v2_torpedo_warfare_doctrine
+ x = 112
+ y = 11
+ cost = 5
+ prerequisite = { focus = EOR_advanced_yari_submarines }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_torpedo_warfare_doctrine
+
+ }
+}
+
+# navy
+focus = {
+ id = EOR_disrupt_enemy_commerce
+ icon = GFX_focus_EOR_v2_disrupt_enemy_commerce
+ x = 112
+ y = 12
+ cost = 5
+ prerequisite = { focus = EOR_torpedo_warfare_doctrine }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_disrupt_enemy_commerce
+
+ }
+}
+
+# navy
+focus = {
+ id = EOR_the_silent_pacific
+ icon = GFX_focus_EOR_v2_the_silent_pacific
+ x = 112
+ y = 13
+ cost = 5
+ prerequisite = { focus = EOR_disrupt_enemy_commerce }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_the_silent_pacific
+
+ }
+}
+
+# air
+focus = {
+ id = EOR_transformable_aircraft
+ icon = GFX_focus_EOR_v2_transformable_aircraft
+ x = 118
+ y = 6
+ cost = 5
+ prerequisite = { focus = EOR_tenzai_robotics }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+set_technology = { EOR_transformable_airframes = 1 }
+set_technology = { EOR_mecha_tengu = 1 }
+set_technology = { EOR_striker_vx = 1 }
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = air_equipment }
+air_experience = 20
+
+ }
+}
+
+# air
+focus = {
+ id = EOR_imperial_air_modernization
+ icon = GFX_focus_EOR_v2_imperial_air_modernization
+ x = 118
+ y = 8
+ cost = 5
+ prerequisite = { focus = EOR_transformable_aircraft }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+air_experience = 25
+
+ }
+}
+
+# air
+focus = {
+ id = EOR_air_superiority
+ icon = GFX_focus_EOR_v2_air_superiority
+ x = 116
+ y = 9
+ cost = 5
+ prerequisite = { focus = EOR_imperial_air_modernization }
+ mutually_exclusive = { focus = EOR_tactical_support }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_air_superiority
+
+ }
+}
+
+# air
+focus = {
+ id = EOR_mecha_tengu_program
+ icon = GFX_focus_EOR_v2_mecha_tengu_program
+ x = 116
+ y = 10
+ cost = 5
+ prerequisite = { focus = EOR_air_superiority }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = light_fighter }
+air_experience = 20
+
+ }
+}
+
+# air
+focus = {
+ id = EOR_advanced_fighters
+ icon = GFX_focus_EOR_v2_advanced_fighters
+ x = 116
+ y = 11
+ cost = 5
+ prerequisite = { focus = EOR_mecha_tengu_program }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 2 category = light_fighter }
+
+ }
+}
+
+# air
+focus = {
+ id = EOR_dominate_the_skies
+ icon = GFX_focus_EOR_v2_dominate_the_skies
+ x = 116
+ y = 12
+ cost = 5
+ prerequisite = { focus = EOR_advanced_fighters }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_dominate_the_skies
+
+ }
+}
+
+# air
+focus = {
+ id = EOR_tactical_support
+ icon = GFX_focus_EOR_v2_tactical_support
+ x = 120
+ y = 9
+ cost = 5
+ prerequisite = { focus = EOR_imperial_air_modernization }
+ mutually_exclusive = { focus = EOR_air_superiority }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_tactical_support
+
+ }
+}
+
+# air
+focus = {
+ id = EOR_striker_vx_squadrons
+ icon = GFX_focus_EOR_v2_striker_vx_squadrons
+ x = 120
+ y = 10
+ cost = 5
+ prerequisite = { focus = EOR_tactical_support }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = cas_bomber }
+air_experience = 20
+
+ }
+}
+
+# air
+focus = {
+ id = EOR_close_air_support
+ icon = GFX_focus_EOR_v2_close_air_support
+ x = 120
+ y = 11
+ cost = 5
+ prerequisite = { focus = EOR_striker_vx_squadrons }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 2 category = cas_bomber }
+
+ }
+}
+
+# air
+focus = {
+ id = EOR_support_the_army
+ icon = GFX_focus_EOR_v2_support_the_army
+ x = 120
+ y = 12
+ cost = 5
+ prerequisite = { focus = EOR_close_air_support }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_support_the_army
+
+ }
+}
+
+# experimental
+focus = {
+ id = EOR_the_nano_construction
+ icon = GFX_focus_EOR_v2_the_nano_construction
+ x = 128
+ y = 7
+
+ prerequisite = { focus = EOR_funding_imperial_weaponry_institute }
+ cost = 5
+
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_the_nano_construction_decisions_tt
+add_ideas = EOR_the_nano_construction
+set_technology = { EOR_nanocores = 1 }
+
+ }
+}
+
+# experimental
+focus = {
+ id = EOR_the_robotic_production
+ icon = GFX_focus_EOR_v2_the_robotic_production
+ x = 132
+ y = 7
+
+ prerequisite = { focus = EOR_funding_imperial_weaponry_institute }
+ cost = 5
+
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_the_robotic_production
+
+ }
+}
+
+# experimental
+focus = {
+ id = EOR_establish_nanotech_mainframe
+ icon = GFX_focus_EOR_v2_establish_nanotech_mainframe
+ x = 130
+ y = 9
+ cost = 10
+ prerequisite = { focus = EOR_the_nano_construction }
+ prerequisite = { focus = EOR_the_robotic_production }
+ prerequisite = { focus = EOR_funding_imperial_weaponry_institute }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_establish_nanotech_mainframe_decisions_tt
+add_ideas = EOR_nanotech_mainframe
+set_technology = { EOR_nanotech_integration = 1 }
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = electronics }
+
+ }
+}
+
+# experimental
+focus = {
+ id = EOR_liberate_the_manpower
+ icon = GFX_focus_EOR_v2_liberate_the_manpower
+ x = 134
+ y = 9
+ cost = 5
+ prerequisite = { focus = EOR_the_nano_construction }
+ prerequisite = { focus = EOR_the_robotic_production }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_liberated_manpower
+add_stability = -0.02
+
+ }
+}
+
+# experimental
+focus = {
+ id = EOR_experimental_projects
+ icon = GFX_focus_EOR_v2_experimental_projects
+ x = 130
+ y = 10
+ cost = 10
+ prerequisite = { focus = EOR_establish_nanotech_mainframe }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = -100
+set_country_flag = EOR_grand_projects_authorized
+
+ }
+}
+
+# experimental
+focus = {
+ id = EOR_project_omega
+ icon = GFX_focus_EOR_v2_project_omega
+ x = 126
+ y = 11
+ cost = 10
+ prerequisite = { focus = EOR_experimental_projects }
+ mutually_exclusive = { focus = EOR_giga_fortress_project focus = EOR_shogun_executioner_program }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+set_country_flag = EOR_primary_omega
+add_political_power = -100
+add_to_variable = { var = EOR_technocratic_influence value = 5 }
+
+ }
+}
+
+# experimental
+focus = {
+ id = EOR_psionic_research
+ icon = GFX_focus_EOR_v2_psionic_research
+ x = 126
+ y = 12
+ cost = 10
+ prerequisite = { focus = EOR_project_omega }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = electronics }
+add_political_power = -75
+
+ }
+}
+
+# experimental
+focus = {
+ id = EOR_yuriko_omega
+ icon = GFX_focus_EOR_v2_yuriko_omega
+ x = 126
+ y = 13
+ cost = 10
+ prerequisite = { focus = EOR_psionic_research }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+set_country_flag = EOR_omega_available
+eor_event_80 = yes
+
+ }
+}
+
+# experimental
+focus = {
+ id = EOR_shogun_executioner_program
+ icon = GFX_focus_EOR_v2_shogun_executioner_program
+ x = 130
+ y = 11
+ cost = 10
+ prerequisite = { focus = EOR_experimental_projects }
+ mutually_exclusive = { focus = EOR_giga_fortress_project focus = EOR_project_omega }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+set_country_flag = EOR_primary_executioner
+add_political_power = -100
+
+ }
+}
+
+# experimental
+focus = {
+ id = EOR_executioner_heavy_robotics
+ icon = GFX_focus_EOR_v2_executioner_heavy_robotics
+ x = 130
+ y = 12
+ cost = 10
+ prerequisite = { focus = EOR_shogun_executioner_program }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = armor }
+add_political_power = -75
+
+ }
+}
+
+# experimental
+focus = {
+ id = EOR_deploy_the_executioner
+ icon = GFX_focus_EOR_v2_deploy_the_executioner
+ x = 130
+ y = 13
+ cost = 10
+ prerequisite = { focus = EOR_executioner_heavy_robotics }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+eor_event_13 = yes
+set_country_flag = EOR_executioner_finalized
+
+ }
+}
+
+# experimental
+focus = {
+ id = EOR_giga_fortress_project
+ icon = GFX_focus_EOR_v2_giga_fortress_project
+ x = 134
+ y = 11
+ cost = 10
+ prerequisite = { focus = EOR_experimental_projects }
+ mutually_exclusive = { focus = EOR_project_omega focus = EOR_shogun_executioner_program }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+set_country_flag = EOR_primary_giga
+add_political_power = -100
+
+ }
+}
+
+# experimental
+focus = {
+ id = EOR_strategic_naval_fortress
+ icon = GFX_focus_EOR_v2_strategic_naval_fortress
+ x = 134
+ y = 12
+ cost = 10
+ prerequisite = { focus = EOR_giga_fortress_project }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = naval_equipment }
+add_political_power = -100
+
+ }
+}
+
+# experimental
+focus = {
+ id = EOR_deploy_the_giga_fortress
+ icon = GFX_focus_EOR_v2_deploy_the_giga_fortress
+ x = 134
+ y = 13
+ cost = 10
+ prerequisite = { focus = EOR_strategic_naval_fortress }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+set_country_flag = EOR_giga_fortress_authorized
+add_political_power = -100
+
+ }
+}
+
+# overseas
+focus = {
+ id = EOR_build_our_overseas_territories
+ icon = GFX_focus_EOR_v2_build_our_overseas_territories
+ x = 144
+ y = 2
+ cost = 5
+ prerequisite = { focus = EOR_the_imperial_dawn }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_build_our_overseas_territories_decisions_tt
+every_subject_country = { limit = { exists = yes }
+add_stability = 0.03
+}
+eor_event_50 = yes
+
+ }
+}
+
+# overseas
+focus = {
+ id = EOR_imperial_administration
+ icon = GFX_focus_EOR_v2_imperial_administration
+ x = 144
+ y = 3
+ cost = 5
+ prerequisite = { focus = EOR_build_our_overseas_territories }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_imperial_administration_decisions_tt
+add_political_power = 75
+
+ }
+}
+
+# overseas
+focus = {
+ id = EOR_tennoheika_banzai
+ icon = GFX_focus_EOR_v2_tennoheika_banzai
+ x = 141
+ y = 4
+ cost = 5
+ prerequisite = { focus = EOR_imperial_administration }
+ mutually_exclusive = { focus = EOR_reform_coprosperity_sphere }
+ available = { NOT = { has_country_flag = EOR_route_reform } }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 modifier = { factor = 2 OR = { has_country_flag = EOR_route_divine has_country_flag = EOR_route_shinzo } } }
+ completion_reward = {
+custom_effect_tooltip = EOR_tennoheika_banzai_decisions_tt
+swap_ideas = { remove_idea = EOR_coprosperity_administration add_idea = EOR_imperial_centralization }
+set_country_flag = EOR_centralization
+add_to_variable = { var = EOR_subject_pressure value = 10 }
+eor_update_subjects = yes
+eor_apply_policy_compatibility = yes
+
+ }
+}
+
+# overseas
+focus = {
+ id = EOR_direct_imperial_rule
+ icon = GFX_focus_EOR_v2_direct_imperial_rule
+ x = 141
+ y = 5
+ cost = 5
+ prerequisite = { focus = EOR_tennoheika_banzai }
+ available = {
+NOT = { has_country_flag = EOR_route_reform } }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+every_subject_country = { limit = { exists = yes }
+add_timed_idea = { idea = EOR_subject_centralized days = 365 }
+}
+add_to_variable = { var = EOR_subject_pressure value = 10 }
+
+ }
+}
+
+# overseas
+focus = {
+ id = EOR_resource_mobilization
+ icon = GFX_focus_EOR_v2_resource_mobilization
+ x = 141
+ y = 6
+ cost = 5
+ prerequisite = { focus = EOR_direct_imperial_rule }
+ available = {
+NOT = { has_country_flag = EOR_route_reform } }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_resource_mobilization
+
+ }
+}
+
+# overseas
+focus = {
+ id = EOR_imperial_integration
+ icon = GFX_focus_EOR_v2_imperial_integration
+ x = 141
+ y = 7
+ cost = 5
+ prerequisite = { focus = EOR_resource_mobilization }
+ available = {
+NOT = { has_country_flag = EOR_route_reform } }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = 75
+add_to_variable = { var = EOR_subject_pressure value = 10 }
+every_subject_country = { limit = { exists = yes }
+add_war_support = 0.05
+}
+
+ }
+}
+
+# overseas
+focus = {
+ id = EOR_reform_coprosperity_sphere
+ icon = GFX_focus_EOR_v2_reform_coprosperity_sphere
+ x = 147
+ y = 4
+ cost = 5
+ prerequisite = { focus = EOR_imperial_administration }
+ mutually_exclusive = { focus = EOR_tennoheika_banzai }
+ available = { eor_partnership_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 modifier = { factor = 2 OR = { has_country_flag = EOR_route_technocratic has_country_flag = EOR_route_reform } } }
+ completion_reward = {
+custom_effect_tooltip = EOR_reform_coprosperity_sphere_decisions_tt
+swap_ideas = { remove_idea = EOR_coprosperity_administration add_idea = EOR_imperial_partnership }
+set_country_flag = EOR_partnership
+every_subject_country = { limit = { exists = yes }
+add_stability = 0.05
+}
+eor_update_subjects = yes
+eor_apply_policy_compatibility = yes
+
+ }
+}
+
+# overseas
+focus = {
+ id = EOR_regional_autonomy
+ icon = GFX_focus_EOR_v2_regional_autonomy
+ x = 147
+ y = 5
+ cost = 5
+ prerequisite = { focus = EOR_reform_coprosperity_sphere }
+ available = {
+eor_partnership_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+every_subject_country = { limit = { exists = yes }
+add_autonomy_score = { value = 50 localization = EOR_subject_negotiation }
+}
+add_to_variable = { var = EOR_subject_pressure value = -20 }
+
+ }
+}
+
+# overseas
+focus = {
+ id = EOR_joint_development
+ icon = GFX_focus_EOR_v2_joint_development
+ x = 147
+ y = 6
+ cost = 5
+ prerequisite = { focus = EOR_regional_autonomy }
+ available = {
+eor_partnership_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+every_subject_country = { limit = { exists = yes }
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = industry }
+}
+add_political_power = -75
+
+ }
+}
+
+# overseas
+focus = {
+ id = EOR_asian_cooperation
+ icon = GFX_focus_EOR_v2_asian_cooperation
+ x = 147
+ y = 7
+ cost = 5
+ prerequisite = { focus = EOR_joint_development }
+ available = {
+eor_partnership_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+every_subject_country = { limit = { exists = yes }
+add_stability = 0.03
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = electronics }
+}
+add_stability = 0.03
+
+ }
+}
+
+# overseas
+focus = {
+ id = EOR_imperial_logistics_network
+ icon = GFX_focus_EOR_v2_imperial_logistics_network
+ x = 144
+ y = 8
+
+ prerequisite = { focus = EOR_imperial_integration focus = EOR_asian_cooperation }
+ cost = 5
+
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_imperial_logistics_network_decisions_tt
+add_ideas = EOR_logistics_network
+
+ }
+}
+
+# overseas
+focus = {
+ id = EOR_develop_oceanic_territories
+ icon = GFX_focus_EOR_v2_develop_oceanic_territories
+ x = 144
+ y = 9
+
+ prerequisite = { focus = EOR_imperial_logistics_network }
+ cost = 5
+
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+if = { limit = { IOT = { exists = yes is_subject_of = ROOT } } IOT = { add_stability = 0.05
+capital_scope = { if = { limit = { is_controlled_by = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = naval_equipment }
+ } }
+
+ }
+}
+
+# overseas
+focus = {
+ id = EOR_the_technological_co-development_initiative
+ icon = GFX_focus_EOR_v2_the_technological_co-development_initiative
+ x = 144
+ y = 10
+ cost = 5
+ prerequisite = { focus = EOR_joint_development }
+ prerequisite = { focus = EOR_develop_oceanic_territories }
+ available = {
+eor_partnership_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_to_tech_sharing_group = imperial_research
+every_subject_country = { limit = { exists = yes }
+add_to_tech_sharing_group = imperial_research
+set_country_flag = EOR_research_partner
+}
+add_ideas = EOR_research_cooperation
+
+ }
+}
+
+# final
+focus = {
+ id = EOR_imperial_global_expansion
+ icon = GFX_focus_EOR_v2_imperial_global_expansion
+ x = 51
+ y = 19
+ cost = 10
+ prerequisite = { focus = EOR_imperial_strategic_reassessment }
+ available = { eor_expansion_threat = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_to_variable = { var = EOR_global_threat value = 10 }
+army_experience = 25
+
+ }
+}
+
+# final
+focus = {
+ id = EOR_the_world_grows_fearful
+ icon = GFX_focus_EOR_v2_the_world_grows_fearful
+ x = 51
+ y = 20
+ cost = 5
+ prerequisite = { focus = EOR_imperial_global_expansion }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+eor_event_104 = yes
+add_war_support = 0.05
+
+ }
+}
+
+# final
+focus = {
+ id = EOR_the_coalition_crisis
+ icon = GFX_focus_EOR_v2_the_coalition_crisis
+ x = 51
+ y = 21
+ cost = 5
+ prerequisite = { focus = EOR_the_world_grows_fearful }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_the_coalition_crisis_decisions_tt
+set_country_flag = EOR_coalition_crisis_acknowledged
+add_political_power = 50
+
+ }
+}
+
+# final
+focus = {
+ id = EOR_strike_first
+ icon = GFX_focus_EOR_v2_strike_first
+ x = 47
+ y = 22
+ cost = 5
+ prerequisite = { focus = EOR_the_coalition_crisis }
+ mutually_exclusive = { focus = EOR_exploit_rivalries focus = EOR_fortify_the_empire }
+ available = {
+eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_timed_idea = { idea = EOR_capital_offensive days = 180 }
+add_to_variable = { var = EOR_global_threat value = 20 }
+add_named_threat = { threat = 5 name = EOR_strike_first }
+
+ }
+}
+
+# final
+focus = {
+ id = EOR_preemptive_war
+ icon = GFX_focus_EOR_v2_preemptive_war
+ x = 47
+ y = 23
+ cost = 5
+ prerequisite = { focus = EOR_strike_first }
+ available = {
+eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_timed_idea = { idea = EOR_offensive_preparations days = 180 }
+army_experience = 30
+
+ }
+}
+
+# final
+focus = {
+ id = EOR_crush_the_coalition
+ icon = GFX_focus_EOR_v2_crush_the_coalition
+ x = 47
+ y = 24
+ cost = 5
+ prerequisite = { focus = EOR_preemptive_war }
+ available = {
+eor_imperial_expansion_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_timed_idea = { idea = EOR_capital_offensive days = 365 }
+add_war_support = 0.05
+
+ }
+}
+
+# final
+focus = {
+ id = EOR_exploit_rivalries
+ icon = GFX_focus_EOR_v2_exploit_rivalries
+ x = 51
+ y = 22
+ cost = 5
+ prerequisite = { focus = EOR_the_coalition_crisis }
+ mutually_exclusive = { focus = EOR_fortify_the_empire focus = EOR_strike_first }
+ available = { eor_diplomatic_cooperation_allowed = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = -100
+set_country_flag = EOR_coalition_delay
+set_country_flag = { flag = EOR_coalition_diplomatic_delay days = 180 }
+
+ }
+}
+
+# final
+focus = {
+ id = EOR_imperial_diplomacy
+ icon = GFX_focus_EOR_v2_imperial_diplomacy
+ x = 51
+ y = 23
+ cost = 5
+ prerequisite = { focus = EOR_exploit_rivalries }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = -75
+eor_event_105 = yes
+
+ }
+}
+
+# final
+focus = {
+ id = EOR_divide_our_enemies
+ icon = GFX_focus_EOR_v2_divide_our_enemies
+ x = 51
+ y = 24
+ cost = 5
+ prerequisite = { focus = EOR_imperial_diplomacy }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_political_power = -75
+eor_event_105 = yes
+
+ }
+}
+
+# final
+focus = {
+ id = EOR_fortify_the_empire
+ icon = GFX_focus_EOR_v2_fortify_the_empire
+ x = 55
+ y = 22
+ cost = 5
+ prerequisite = { focus = EOR_the_coalition_crisis }
+ mutually_exclusive = { focus = EOR_exploit_rivalries focus = EOR_strike_first }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_fortify_the_empire
+
+ }
+}
+
+# final
+focus = {
+ id = EOR_total_defense
+ icon = GFX_focus_EOR_v2_total_defense
+ x = 55
+ y = 23
+ cost = 5
+ prerequisite = { focus = EOR_fortify_the_empire }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_total_defense
+
+ }
+}
+
+# final
+focus = {
+ id = EOR_war_of_attrition
+ icon = GFX_focus_EOR_v2_war_of_attrition
+ x = 55
+ y = 24
+ cost = 5
+ prerequisite = { focus = EOR_total_defense }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+add_ideas = EOR_v2_war_of_attrition
+
+ }
+}
+
+# victory
+focus = {
+ id = EOR_a_world_beneath_the_emperor
+ icon = GFX_focus_EOR_v2_a_world_beneath_the_emperor
+ x = 6
+ y = 17
+ cost = 10
+ prerequisite = { focus = EOR_the_eternal_empire }
+ available = { eor_yoshiro_victory = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_a_world_beneath_the_emperor_decisions_tt
+add_political_power = 200
+add_stability = 0.05
+set_country_flag = EOR_v2_victory_achieved
+eor_event_60 = yes
+
+ }
+}
+
+# victory
+focus = {
+ id = EOR_the_architect_of_tomorrow
+ icon = GFX_focus_EOR_v2_the_architect_of_tomorrow
+ x = 14
+ y = 17
+ cost = 10
+ prerequisite = { focus = EOR_the_empire_of_tomorrow }
+ available = { eor_tatsu_victory = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_the_architect_of_tomorrow_decisions_tt
+add_political_power = 200
+add_stability = 0.05
+set_country_flag = EOR_v2_victory_achieved
+eor_event_60 = yes
+
+ }
+}
+
+# victory
+focus = {
+ id = EOR_the_rule_of_the_shoguns
+ icon = GFX_focus_EOR_v2_the_rule_of_the_shoguns
+ x = 22
+ y = 17
+ cost = 10
+ prerequisite = { focus = EOR_the_supreme_shogunate }
+ available = { eor_shinzo_victory = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_the_rule_of_the_shoguns_decisions_tt
+add_political_power = 200
+add_stability = 0.05
+set_country_flag = EOR_v2_victory_achieved
+eor_event_60 = yes
+
+ }
+}
+
+# victory
+focus = {
+ id = EOR_a_federation_of_equals
+ icon = GFX_focus_EOR_v2_a_federation_of_equals
+ x = 30
+ y = 17
+ cost = 10
+ prerequisite = { focus = EOR_the_new_dawn }
+ allow_branch = { has_country_flag = EOR_new_dawn_unlocked }
+ available = { eor_reform_victory = yes }
+ cancel_if_invalid = yes
+ continue_if_invalid = no
+ available_if_capitulated = no
+ ai_will_do = { factor = 2 }
+ completion_reward = {
+custom_effect_tooltip = EOR_a_federation_of_equals_decisions_tt
+add_political_power = 200
+add_stability = 0.05
+set_country_flag = EOR_v2_victory_achieved
+eor_event_60 = yes
+
+ }
+}
 }

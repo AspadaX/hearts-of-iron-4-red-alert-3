@@ -1,0 +1,836 @@
+add_namespace = eor
+
+country_event = { id = eor.1 title = eor.1.t desc = eor.1.d is_triggered_only = yes
+option = { name = eor.1.a
+ai_chance = { factor = 40 }
+add_political_power = 50
+add_war_support = 0.05
+set_country_flag = EOR_imperial_dawn
+}
+}
+
+country_event = { id = eor.2 title = eor.2.t desc = eor.2.d is_triggered_only = yes
+option = { name = eor.2.a
+ai_chance = { factor = 40 }
+add_to_variable = { var = EOR_divine_mandate value = 10 }
+eor_refresh_mandate = yes
+add_war_support = 0.05
+}
+}
+
+country_event = { id = eor.3 title = eor.3.t desc = eor.3.d is_triggered_only = yes
+option = { name = eor.3.a
+ai_chance = { factor = 40 }
+add_timed_idea = { idea = EOR_research_surge days = 180 }
+add_political_power = -25
+add_to_variable = { var = EOR_technocratic_influence value = 10 }
+
+}
+option = { name = eor.3.b
+ai_chance = { factor = 40 }
+add_to_variable = { var = EOR_divine_mandate value = 5 }
+eor_refresh_mandate = yes
+add_war_support = 0.03
+add_to_variable = { var = EOR_imperial_legitimacy value = 5 }
+
+}
+}
+
+country_event = { id = eor.4 title = eor.4.t desc = eor.4.d is_triggered_only = yes
+option = { name = eor.4.a
+ai_chance = { factor = 40 }
+army_experience = 20
+add_timed_idea = { idea = EOR_court_coordination days = 180 }
+}
+option = { name = eor.4.b
+ai_chance = { factor = 40 }
+navy_experience = 20
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = naval_equipment }
+}
+option = { name = eor.4.c
+ai_chance = { factor = 20 }
+army_experience = 10
+navy_experience = 10
+add_political_power = -25
+}
+}
+
+country_event = { id = eor.10 title = eor.10.t desc = eor.10.d is_triggered_only = yes
+option = { name = eor.10.a
+ai_chance = { factor = 40 }
+set_country_flag = EOR_soviet_operations
+add_timed_idea = { idea = EOR_offensive_preparations days = 180 }
+add_named_threat = { threat = 2 name = EOR_northern_war_plan }
+}
+option = { name = eor.10.b
+ai_chance = { factor = 40 }
+army_experience = 10
+add_timed_idea = { idea = EOR_offensive_preparations days = 180 }
+set_country_flag = { flag = EOR_delay_soviet_war days = 90 }
+}
+}
+
+country_event = { id = eor.11 title = eor.11.t desc = eor.11.d is_triggered_only = yes
+option = { name = eor.11.a
+ai_chance = { factor = 40 }
+add_to_variable = { var = EOR_divine_mandate value = 10 }
+eor_refresh_mandate = yes
+add_war_support = 0.05
+set_country_flag = EOR_vladivostok_reconstruction
+}
+}
+
+country_event = { id = eor.12 title = eor.12.t desc = eor.12.d is_triggered_only = yes
+option = { name = eor.12.a
+ai_chance = { factor = 40 }
+add_to_variable = { var = EOR_divine_mandate value = 10 }
+eor_refresh_mandate = yes
+add_war_support = 0.05
+}
+option = { name = eor.12.b
+ai_chance = { factor = 40 }
+army_experience = 25
+add_timed_idea = { idea = EOR_capital_offensive days = 180 }
+}
+}
+
+country_event = { id = eor.13 title = eor.13.t desc = eor.13.d is_triggered_only = yes
+option = { name = eor.13.a
+ai_chance = { factor = 40 }
+set_country_flag = EOR_executioner_authorized
+set_country_flag = EOR_executioner_unreliable
+}
+option = { name = eor.13.b
+ai_chance = { factor = 40 }
+set_country_flag = EOR_executioner_authorized
+set_country_flag = { flag = EOR_executioner_development days = 180 }
+set_country_flag = EOR_executioner_refined
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = armor }
+}
+option = { name = eor.13.c
+ai_chance = { factor = 20 }
+set_country_flag = EOR_executioner_cancelled
+add_timed_idea = { idea = EOR_the_robotic_production days = 180 }
+add_political_power = 50
+}
+}
+
+news_event = { id = eor.14 title = eor.14.t desc = eor.14.d is_triggered_only = yes major = yes picture = GFX_news_event_generic_sign_treaty3
+option = { name = eor.14.a
+trigger = { tag = EOR }
+ai_chance = { factor = 40 }
+add_political_power = 100
+add_war_support = 0.05
+add_to_variable = { var = EOR_divine_mandate value = 15 }
+eor_refresh_mandate = yes
+add_named_threat = { threat = 5 name = eor.14.t }
+}
+option = { name = eor.14.observer trigger = { NOT = { tag = EOR } } }
+}
+
+country_event = { id = eor.20 title = eor.20.t desc = eor.20.d is_triggered_only = yes
+option = { name = eor.20.a
+ai_chance = { factor = 40 }
+629 = { add_dynamic_modifier = { modifier = EOR_hawaii_defense days = 90 scope = EOR } }
+add_war_support = 0.05
+add_timed_idea = { idea = EOR_emergency_defense days = 90 }
+}
+option = { name = eor.20.b
+ai_chance = { factor = 40 }
+add_timed_idea = { idea = EOR_naval_withdrawal days = 90 }
+}
+}
+
+country_event = { id = eor.21 title = eor.21.t desc = eor.21.d is_triggered_only = yes
+option = { name = eor.21.a
+ai_chance = { factor = 40 }
+set_country_flag = EOR_black_tortoise_authorized
+}
+option = { name = eor.21.b
+ai_chance = { factor = 40 }
+add_timed_idea = { idea = EOR_fleet_expansion days = 180 }
+navy_experience = 20
+set_country_flag = { flag = EOR_tortoise_delay days = 180 }
+set_country_flag = EOR_black_tortoise_authorized
+}
+}
+
+country_event = { id = eor.22 title = eor.22.t desc = eor.22.d is_triggered_only = yes
+option = { name = eor.22.a
+ai_chance = { factor = 40 }
+add_timed_idea = { idea = EOR_landing_combat_scheme days = 180 }
+set_country_flag = EOR_american_objectives
+}
+option = { name = eor.22.b
+ai_chance = { factor = 40 }
+add_timed_idea = { idea = EOR_offensive_preparations days = 180 }
+set_country_flag = { flag = EOR_american_delay days = 90 }
+}
+}
+
+news_event = { id = eor.23 title = eor.23.t desc = eor.23.d is_triggered_only = yes major = yes picture = GFX_news_event_generic_sign_treaty3
+option = { name = eor.23.a
+trigger = { tag = EOR }
+ai_chance = { factor = 40 }
+add_political_power = 100
+add_war_support = 0.05
+add_to_variable = { var = EOR_divine_mandate value = 15 }
+eor_refresh_mandate = yes
+add_named_threat = { threat = 5 name = eor.23.t }
+}
+option = { name = eor.23.observer trigger = { NOT = { tag = EOR } } }
+}
+
+country_event = { id = eor.30 title = eor.30.t desc = eor.30.d is_triggered_only = yes
+option = { name = eor.30.a
+ai_chance = { factor = 40 }
+set_country_flag = EOR_coalition_resolved
+USA = { country_event = { id = eor.32 days = 1 } }
+}
+}
+
+country_event = { id = eor.31 title = eor.31.t desc = eor.31.d is_triggered_only = yes
+option = { name = eor.31.a
+ai_chance = { factor = 40 }
+282 = { add_dynamic_modifier = { modifier = EOR_capital_defense days = 90 scope = EOR } }
+add_war_support = 0.1
+add_to_variable = { var = EOR_divine_mandate value = -10 }
+eor_refresh_mandate = yes
+set_country_flag = EOR_emergency_mobilization
+}
+option = { name = eor.31.b
+ai_chance = { factor = 40 }
+add_political_power = -50
+add_to_variable = { var = EOR_divine_mandate value = -15 }
+eor_refresh_mandate = yes
+add_timed_idea = { idea = EOR_continuity days = 180 }
+set_country_flag = EOR_relocation_available
+}
+}
+
+country_event = {
+id = eor.40
+title = eor.40.t
+desc = eor.40.d
+is_triggered_only = yes
+immediate = { set_country_flag = EOR_truth_known
+ }
+option = { name = eor.40.a
+ai_chance = { factor = 40 }
+add_to_variable = { var = EOR_divine_mandate value = 10 }
+add_to_variable = { var = EOR_imperial_legitimacy value = 10 }
+eor_refresh_mandate = yes
+add_to_variable = { var = EOR_technocratic_influence value = -5 }
+add_war_support = 0.05
+
+}
+option = { name = eor.40.b
+ai_chance = { factor = 40 }
+add_to_variable = { var = EOR_divine_mandate value = -30 }
+add_to_variable = { var = EOR_imperial_legitimacy value = -30 }
+eor_refresh_mandate = yes
+add_to_variable = { var = EOR_technocratic_influence value = 15 }
+add_timed_idea = { idea = EOR_research_surge days = 180 }
+
+}
+option = { name = eor.40.c
+ai_chance = { factor = 40 }
+add_to_variable = { var = EOR_divine_mandate value = -10 }
+add_to_variable = { var = EOR_imperial_legitimacy value = -10 }
+eor_refresh_mandate = yes
+add_political_power = -50
+add_to_variable = { var = EOR_military_influence value = 5 }
+add_timed_idea = { idea = EOR_political_secrecy days = 180 }
+
+}
+}
+
+
+country_event = {
+id = eor.41
+title = eor.41.t
+desc = eor.41.d
+is_triggered_only = yes
+immediate = { set_country_flag = EOR_succession_crisis
+ }
+option = { name = eor.41.a
+ai_chance = { factor = 40 }
+add_to_variable = { var = EOR_imperial_legitimacy value = 10 }
+add_political_power = 25
+
+}
+option = { name = eor.41.b
+ai_chance = { factor = 40 }
+add_to_variable = { var = EOR_technocratic_influence value = 15 }
+add_political_power = -25
+
+}
+option = { name = eor.41.c
+ai_chance = { factor = 40 }
+add_to_variable = { var = EOR_military_influence value = 15 }
+add_political_power = -25
+
+}
+}
+
+
+country_event = {
+id = eor.42
+title = eor.42.t
+desc = eor.42.d
+is_triggered_only = yes
+option = { name = eor.42.a
+ai_chance = { factor = 40 }
+add_country_leader_role = { character = EOR_tatsu promote_leader = yes country_leader = { ideology = fascism_ideology expire = "2051.1.1" traits = { EOR_technocratic_leader } } }
+set_country_flag = EOR_monarchy_preserved
+
+}
+}
+
+
+country_event = {
+id = eor.43
+title = eor.43.t
+desc = eor.43.d
+is_triggered_only = yes
+option = { name = eor.43.a
+ai_chance = { factor = 40 }
+add_stability = 0.05
+add_to_variable = { var = EOR_military_influence value = -15 }
+
+}
+}
+
+
+country_event = { id = eor.50 title = eor.50.t desc = eor.50.d is_triggered_only = yes
+option = { name = eor.50.a
+ai_chance = { factor = 40 }
+add_political_power = 25
+set_country_flag = EOR_preference_centralization
+every_subject_country = { limit = { exists = yes }
+add_timed_idea = { idea = EOR_subject_resource_access days = 180 }
+}
+}
+option = { name = eor.50.b
+ai_chance = { factor = 40 }
+add_political_power = -25
+set_country_flag = EOR_preference_partnership
+every_subject_country = { limit = { exists = yes }
+add_timed_idea = { idea = EOR_subject_development days = 180 }
+}
+}
+}
+
+country_event = { id = eor.51 title = eor.51.t desc = eor.51.d is_triggered_only = yes
+trigger = { event_target:EOR_unrest_subject = { exists = yes is_subject_of = ROOT } }
+option = { name = eor.51.a
+ai_chance = { factor = 40 }
+if = { limit = { event_target:EOR_unrest_subject = { exists = yes is_subject_of = ROOT } } event_target:EOR_unrest_subject = { add_timed_idea = { idea = EOR_subject_centralized days = 180 }
+ } }
+add_to_variable = { var = EOR_subject_pressure value = 15 }
+add_war_support = 0.02
+}
+option = { name = eor.51.b
+ai_chance = { factor = 40 }
+if = { limit = { event_target:EOR_unrest_subject = { exists = yes is_subject_of = ROOT } } event_target:EOR_unrest_subject = { add_timed_idea = { idea = EOR_subject_concessions days = 180 }
+ } }
+add_to_variable = { var = EOR_subject_pressure value = -25 }
+set_country_flag = EOR_reform_movement
+
+add_political_power = -50
+}
+option = { name = eor.51.c
+trigger = { num_of_civilian_factories > 3 }
+ai_chance = { factor = 20 }
+if = { limit = { event_target:EOR_unrest_subject = { exists = yes is_subject_of = ROOT } } event_target:EOR_unrest_subject = { add_stability = 0.05
+capital_scope = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+ } }
+add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
+add_to_variable = { var = EOR_subject_pressure value = -20 }
+}
+}
+
+country_event = { id = eor.52 title = eor.52.t desc = eor.52.d is_triggered_only = yes
+trigger = { event_target:EOR_unrest_subject = { exists = yes is_subject_of = ROOT } }
+option = { name = eor.52.a
+trigger = { has_manpower > 2500 has_equipment = { infantry_equipment > 500 } }
+ai_chance = { factor = 40 }
+if = { limit = { event_target:EOR_unrest_subject = { exists = yes is_subject_of = ROOT } } event_target:EOR_unrest_subject = { add_timed_idea = { idea = EOR_subject_security days = 90 }
+add_timed_idea = { idea = EOR_subject_resentment days = 180 }
+ } }
+add_manpower = -2500
+add_equipment_to_stockpile = { type = infantry_equipment_1 amount = -500 }
+add_to_variable = { var = EOR_subject_pressure value = -10 }
+}
+option = { name = eor.52.b
+ai_chance = { factor = 40 }
+if = { limit = { event_target:EOR_unrest_subject = { exists = yes is_subject_of = ROOT } } event_target:EOR_unrest_subject = { add_autonomy_score = { value = 50 localization = EOR_subject_negotiation }
+add_timed_idea = { idea = EOR_subject_concessions days = 180 }
+ } }
+add_to_variable = { var = EOR_subject_pressure value = -30 }
+set_country_flag = EOR_reform_movement
+
+add_political_power = -50
+}
+option = { name = eor.52.c
+trigger = { num_of_civilian_factories > 3 }
+ai_chance = { factor = 20 }
+if = { limit = { event_target:EOR_unrest_subject = { exists = yes is_subject_of = ROOT } } event_target:EOR_unrest_subject = { add_timed_idea = { idea = EOR_subject_development days = 180 }
+ } }
+add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
+add_to_variable = { var = EOR_subject_pressure value = -25 }
+set_country_flag = EOR_reform_movement
+
+}
+}
+
+country_event = {
+id = eor.60
+title = eor.60.t
+desc = eor.60.d
+is_triggered_only = yes
+option = { name = eor.60.a
+trigger = { has_country_flag = EOR_route_divine }
+ai_chance = { factor = 40 }
+add_stability = 0.1
+add_war_support = 0.1
+set_country_flag = EOR_postwar_divine
+
+}
+option = { name = eor.60.b
+trigger = { has_country_flag = EOR_route_technocratic }
+ai_chance = { factor = 40 }
+add_ideas = EOR_postwar_science
+set_country_flag = EOR_postwar_technocratic
+
+}
+option = { name = eor.60.c
+trigger = { has_country_flag = EOR_route_shinzo }
+ai_chance = { factor = 40 }
+add_war_support = 0.1
+add_political_power = 100
+set_country_flag = EOR_postwar_shinzo
+
+}
+option = { name = eor.60.d
+trigger = { has_country_flag = EOR_route_reform }
+ai_chance = { factor = 40 }
+add_stability = 0.05
+add_ideas = EOR_postwar_cooperation
+set_country_flag = EOR_postwar_reform
+
+}
+}
+
+
+country_event = { id = eor.70 title = eor.70.t desc = eor.70.d is_triggered_only = yes
+option = { name = eor.70.a
+ai_chance = { factor = 40 }
+add_ideas = EOR_post_defeat
+set_country_flag = EOR_reconstruction_available
+}
+option = { name = eor.70.b
+ai_chance = { factor = 40 }
+add_ideas = EOR_imperial_resistance
+set_country_flag = EOR_resistance_available
+}
+}
+
+country_event = { id = eor.80 title = eor.80.t desc = eor.80.d is_triggered_only = yes
+option = { name = eor.80.a
+ai_chance = { factor = 40 }
+set_country_flag = EOR_omega_available
+}
+}
+
+country_event = { id = eor.32 title = eor.32.t desc = eor.32.d is_triggered_only = yes trigger = { country_exists = EOR EOR = { eor_expansion_threat = yes } NOT = { has_capitulated = yes } NOT = { has_war_with = SOV } }
+option = { name = eor.32.a ai_chance = { factor = 33 } SOV = { country_event = { id = eor.33 days = 1 } } }
+option = { name = eor.32.b ai_chance = { factor = 33 } SOV = { country_event = { id = eor.34 days = 1 } } }
+option = { name = eor.32.c ai_chance = { factor = 33 } EOR = { set_country_flag = EOR_coalition_collapsed } }
+}
+
+country_event = { id = eor.33 title = eor.33.t desc = eor.33.d is_triggered_only = yes trigger = { country_exists = EOR EOR = { eor_expansion_threat = yes } NOT = { has_capitulated = yes } NOT = { has_war_with = USA } }
+option = { name = eor.33.a ai_chance = { factor = 33 } add_timed_idea = { idea = EOR_coalition_cooperation days = 365 }
+USA = { add_timed_idea = { idea = EOR_coalition_cooperation days = 365 }
+ } give_military_access = USA USA = { give_military_access = SOV } EOR = { set_country_flag = EOR_full_coalition }
+if = { limit = { USA = { has_war_with = EOR } NOT = { has_war_with = EOR } } add_to_war = { targeted_alliance = USA enemy = EOR hostility_reason = asked_to_join single_target_only = yes } }
+if = { limit = { has_war_with = EOR USA = { NOT = { has_war_with = EOR } } } USA = { add_to_war = { targeted_alliance = SOV enemy = EOR hostility_reason = asked_to_join single_target_only = yes } } } }
+option = { name = eor.33.b ai_chance = { factor = 33 } add_timed_idea = { idea = EOR_offensive_preparations days = 180 }
+USA = { add_timed_idea = { idea = EOR_offensive_preparations days = 180 }
+ } EOR = { set_country_flag = EOR_limited_coalition } }
+option = { name = eor.33.c ai_chance = { factor = 33 } EOR = { set_country_flag = EOR_coalition_collapsed } }
+}
+
+country_event = { id = eor.34 title = eor.34.t desc = eor.34.d is_triggered_only = yes trigger = { country_exists = EOR EOR = { eor_expansion_threat = yes } NOT = { has_capitulated = yes } NOT = { has_war_with = USA } }
+option = { name = eor.34.a ai_chance = { factor = 33 } add_timed_idea = { idea = EOR_offensive_preparations days = 180 }
+USA = { add_timed_idea = { idea = EOR_offensive_preparations days = 180 }
+ } EOR = { set_country_flag = EOR_limited_coalition } }
+option = { name = eor.34.b ai_chance = { factor = 33 } EOR = { set_country_flag = EOR_coalition_collapsed } }
+}
+
+country_event = {
+id = eor.100
+title = eor.100.t
+desc = eor.100.d
+is_triggered_only = yes
+option = { name = eor.100.a
+ai_chance = { factor = 40 }
+add_to_variable = { var = EOR_military_influence value = 15 }
+add_stability = -0.03
+
+}
+option = { name = eor.100.b
+ai_chance = { factor = 40 }
+add_to_variable = { var = EOR_military_influence value = -15 }
+add_to_variable = { var = EOR_imperial_legitimacy value = 5 }
+set_country_flag = EOR_shinzo_rebuffed
+
+}
+option = { name = eor.100.c
+ai_chance = { factor = 40 }
+add_to_variable = { var = EOR_military_influence value = 5 }
+add_stability = 0.03
+add_political_power = -50
+
+}
+}
+
+
+country_event = {
+id = eor.101
+title = eor.101.t
+desc = eor.101.d
+is_triggered_only = yes
+option = { name = eor.101.a
+trigger = { check_variable = { EOR_technocratic_influence > 64 } has_stability > 0.30 }
+ai_chance = { factor = 40 }
+set_country_leader_name = { name = EOR_emperor_tatsu }
+set_country_flag = EOR_tatsu_emperor
+add_political_power = -75
+
+}
+option = { name = eor.101.b
+ai_chance = { factor = 40 }
+set_country_leader_name = { name = EOR_emperor_tatsu }
+set_country_flag = EOR_tatsu_emperor
+add_stability = -0.05
+add_to_variable = { var = EOR_military_influence value = 15 }
+set_country_flag = EOR_traditionalist_opposition
+
+}
+}
+
+
+country_event = {
+id = eor.102
+title = eor.102.t
+desc = eor.102.d
+is_triggered_only = yes
+immediate = { if = { limit = { check_variable = { EOR_military_influence < 45 } } set_country_flag = EOR_coup_discovered add_stability = -0.05 add_political_power = -50 } }
+option = { name = eor.102.a
+trigger = { check_variable = { EOR_military_influence > 69 } }
+ai_chance = { factor = 40 }
+set_country_flag = EOR_bloodless_coup_ready
+add_to_variable = { var = EOR_imperial_legitimacy value = -10 }
+
+}
+option = { name = eor.102.b
+trigger = { check_variable = { EOR_military_influence > 44 } }
+ai_chance = { factor = 40 }
+add_political_power = -100
+add_to_variable = { var = EOR_military_influence value = 5 }
+set_country_flag = EOR_coup_negotiations
+
+}
+option = { name = eor.102.c
+ai_chance = { factor = 40 }
+set_country_flag = EOR_armed_coup_ready
+add_stability = -0.05
+
+}
+option = { name = eor.102.d
+ai_chance = { factor = 40 }
+set_country_flag = EOR_coup_abandoned
+add_to_variable = { var = EOR_military_influence value = -15 }
+add_stability = 0.03
+
+}
+}
+
+
+country_event = {
+id = eor.103
+title = eor.103.t
+desc = eor.103.d
+is_triggered_only = yes
+option = { name = eor.103.a
+ai_chance = { factor = 40 }
+add_political_power = 100
+add_war_support = 0.05
+set_country_flag = EOR_supreme_shogun_title
+
+}
+}
+
+
+country_event = {
+id = eor.104
+title = eor.104.t
+desc = eor.104.d
+is_triggered_only = yes
+option = { name = eor.104.a
+ai_chance = { factor = 40 }
+add_political_power = 25
+set_country_flag = EOR_global_crisis_warning
+
+}
+}
+
+
+country_event = {
+id = eor.105
+title = eor.105.t
+desc = eor.105.d
+is_triggered_only = yes
+option = { name = eor.105.a
+ai_chance = { factor = 40 }
+set_country_flag = EOR_settlement_diplomacy
+add_political_power = -25
+
+}
+}
+
+
+country_event = {
+id = eor.106
+title = eor.106.t
+desc = eor.106.d
+is_triggered_only = yes
+trigger = { eor_no_political_route = yes }
+option = { name = eor.106.a
+ai_chance = { factor = 40 }
+add_political_power = -50
+add_to_variable = { var = EOR_military_influence value = 10 }
+add_stability = -0.05
+set_country_flag = EOR_reform_movement_suppressed
+
+}
+option = { name = eor.106.b
+ai_chance = { factor = 40 }
+add_political_power = -75
+add_to_variable = { var = EOR_subject_pressure value = -15 }
+add_to_variable = { var = EOR_imperial_legitimacy value = 10 }
+
+}
+option = { name = eor.106.c
+ai_chance = { factor = 40 }
+set_country_flag = EOR_new_dawn_unlocked
+mark_focus_tree_layout_dirty = yes
+add_stability = -0.03
+
+}
+}
+
+
+country_event = {
+id = eor.107
+title = eor.107.t
+desc = eor.107.d
+is_triggered_only = yes
+immediate = { set_country_flag = EOR_legitimacy_warning
+ }
+option = { name = eor.107.a
+ai_chance = { factor = 40 }
+add_political_power = -50
+add_to_variable = { var = EOR_imperial_legitimacy value = 10 }
+
+}
+option = { name = eor.107.b
+ai_chance = { factor = 40 }
+set_country_flag = EOR_reform_movement
+add_to_variable = { var = EOR_technocratic_influence value = 5 }
+
+}
+}
+
+
+country_event = {
+id = eor.108
+title = eor.108.t
+desc = eor.108.d
+is_triggered_only = yes
+immediate = { set_country_flag = EOR_counter_conspiracy
+ }
+option = { name = eor.108.a
+ai_chance = { factor = 40 }
+add_political_power = -75
+add_to_variable = { var = EOR_military_influence value = -10 }
+add_stability = 0.03
+
+}
+option = { name = eor.108.b
+ai_chance = { factor = 40 }
+add_to_variable = { var = EOR_technocratic_influence value = 10 }
+add_stability = -0.03
+
+}
+option = { name = eor.108.c
+trigger = { has_country_flag = EOR_route_technocratic check_variable = { EOR_military_influence > 69 } has_stability < 0.30 }
+ai_chance = { factor = 15 }
+clr_country_flag = EOR_route_technocratic
+set_country_flag = EOR_route_shinzo
+set_country_flag = EOR_counter_coup_transition
+complete_national_focus = EOR_the_military_conspiracy
+eor_install_shinzo = yes
+
+}
+}
+
+
+country_event = {
+id = eor.109
+title = eor.109.t
+desc = eor.109.d
+is_triggered_only = yes
+option = { name = eor.109.a
+ai_chance = { factor = 40 }
+clr_country_flag = EOR_route_shinzo
+set_country_flag = EOR_route_divine
+set_country_flag = EOR_coup_return_settled
+complete_national_focus = EOR_reaffirm_the_divine_mandate
+add_country_leader_role = { character = EOR_yoshiro promote_leader = yes country_leader = { ideology = fascism_ideology expire = "2051.1.1" traits = { EOR_divine_ruler EOR_imperial_ambition EOR_traditionalist } } }
+add_stability = -0.03
+
+}
+}
+
+
+country_event = {
+id = eor.110
+title = eor.110.t
+desc = eor.110.d
+is_triggered_only = yes
+trigger = { tag = CHI country_exists = EOR }
+option = { name = eor.110.a
+trigger = { NOT = { has_war_with = EOR } }
+ai_chance = { factor = 45 }
+set_country_flag = EOR_china_partner
+if = { limit = { is_in_faction = no } EOR = { add_to_faction = ROOT } }
+give_military_access = EOR
+EOR = { give_military_access = ROOT }
+add_opinion_modifier = { target = EOR modifier = EOR_asian_cooperation }
+
+}
+option = { name = eor.110.b
+trigger = { NOT = { has_war_with = EOR } }
+ai_chance = { factor = 35 }
+set_country_flag = EOR_china_partner
+EOR = { add_political_power = -100 }
+add_stability = 0.03
+give_military_access = EOR
+
+}
+option = { name = eor.110.c
+ai_chance = { factor = 20 }
+EOR = { set_country_flag = EOR_china_offer_rejected }
+
+}
+}
+
+
+country_event = {
+id = eor.111
+title = eor.111.t
+desc = eor.111.d
+is_triggered_only = yes
+trigger = { tag = CHI country_exists = EOR NOT = { is_subject_of = EOR } }
+option = { name = eor.111.a
+trigger = { NOT = { has_war_with = EOR } }
+ai_chance = { factor = 15 }
+EOR = { set_autonomy = { target = ROOT autonomy_state = autonomy_puppet } }
+
+}
+option = { name = eor.111.b
+ai_chance = { factor = 85 }
+EOR = { set_country_flag = EOR_china_submission_refused if = { limit = { NOT = { is_in_faction_with = CHI } } create_wargoal = { type = puppet_wargoal_focus target = CHI } } }
+
+}
+}
+
+
+country_event = {
+id = eor.112
+title = eor.112.t
+desc = eor.112.d
+is_triggered_only = yes
+trigger = { is_subject_of = EOR EOR = { has_country_flag = EOR_route_reform } }
+option = { name = eor.112.a
+ai_chance = { factor = 60 }
+EOR = { set_autonomy = { target = ROOT autonomy_state = autonomy_free } }
+clr_country_flag = EOR_decolonization_pending
+set_country_flag = EOR_voluntary_partner
+EOR = { add_to_faction = ROOT }
+add_stability = 0.05
+
+}
+option = { name = eor.112.b
+ai_chance = { factor = 25 }
+EOR = { set_autonomy = { target = ROOT autonomy_state = autonomy_free } }
+clr_country_flag = EOR_decolonization_pending
+if = { limit = { is_in_faction_with = EOR } leave_faction = yes }
+
+}
+option = { name = eor.112.c
+ai_chance = { factor = 15 }
+set_country_flag = EOR_decolonization_negotiating
+clr_country_flag = EOR_decolonization_pending
+EOR = { add_political_power = -50 }
+
+}
+}
+
+
+country_event = {
+id = eor.113
+title = eor.113.t
+desc = eor.113.d
+is_triggered_only = yes
+trigger = { country_exists = EOR NOT = { is_subject = yes } NOT = { has_war_with = EOR } }
+option = { name = eor.113.a
+trigger = { OR = { is_in_faction = no is_in_faction_with = EOR } }
+ai_chance = { factor = 65 }
+set_country_flag = EOR_voluntary_partner
+if = { limit = { is_in_faction = no } EOR = { add_to_faction = ROOT } }
+add_to_tech_sharing_group = imperial_research
+
+}
+option = { name = eor.113.b
+ai_chance = { factor = 35 }
+add_opinion_modifier = { target = EOR modifier = EOR_asian_cooperation }
+
+}
+}
+
+
+country_event = {
+id = eor.114
+title = eor.114.t
+desc = eor.114.d
+is_triggered_only = yes
+trigger = { country_exists = EOR NOT = { is_subject_of = EOR } }
+option = { name = eor.114.a
+trigger = { OR = { surrender_progress > 0.35 AND = { NOT = { has_war_with = EOR } EOR = { eor_technology_victory = yes eor_home_secure = yes strength_ratio = { tag = ROOT ratio > 1.0 } } } } }
+ai_chance = { factor = 45 }
+diplomatic_relation = { country = EOR relation = non_aggression_pact active = yes }
+set_truce = { target = EOR days = 365 }
+set_country_flag = EOR_negotiated_settlement
+if = { limit = { has_war_with = EOR } white_peace = EOR }
+add_opinion_modifier = { target = EOR modifier = EOR_strategic_settlement }
+
+}
+option = { name = eor.114.b
+ai_chance = { factor = 55 }
+EOR = { add_political_power = -25 }
+
+}
+}

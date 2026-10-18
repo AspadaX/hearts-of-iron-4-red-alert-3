@@ -1,0 +1,610 @@
+eor_decolonize_direct_holdings = {
+ if = {
+  limit = { has_country_flag = EOR_route_reform }
+  if = {
+   limit = { OR = { 524 = { is_owned_by = EOR } } NOT = { has_war_with = CHI } CHI = { OR = { is_subject = no is_subject_of = EOR } } }
+   if = { limit = { CHI = { is_subject_of = EOR } } set_autonomy = { target = CHI autonomy_state = autonomy_free end_wars = no end_civil_wars = no } }
+   524 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = CHI
+   } }
+  }
+  if = {
+   limit = { OR = { 525 = { is_owned_by = EOR } 527 = { is_owned_by = EOR } 1028 = { is_owned_by = EOR } 1029 = { is_owned_by = EOR } 1030 = { is_owned_by = EOR } 1031 = { is_owned_by = EOR } } NOT = { has_war_with = KOR } KOR = { OR = { is_subject = no is_subject_of = EOR } } }
+   if = { limit = { KOR = { is_subject_of = EOR } } set_autonomy = { target = KOR autonomy_state = autonomy_free end_wars = no end_civil_wars = no } }
+   525 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = KOR
+   } }
+   527 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = KOR
+   } }
+   1028 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = KOR
+   } }
+   1029 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = KOR
+   } }
+   1030 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = KOR
+   } }
+   1031 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = KOR
+   } }
+   KOR = { if = { limit = { exists = yes } set_country_flag = EOR_initial_subject clr_country_flag = EOR_decolonization_pending if = { limit = { is_in_faction_with = EOR } leave_faction = yes } } }
+  }
+  if = {
+   limit = { OR = { 286 = { is_owned_by = EOR } 671 = { is_owned_by = EOR } 1017 = { is_owned_by = EOR } 1066 = { is_owned_by = EOR } } NOT = { has_war_with = VIN } VIN = { OR = { is_subject = no is_subject_of = EOR } } }
+   if = { limit = { VIN = { is_subject_of = EOR } } set_autonomy = { target = VIN autonomy_state = autonomy_free end_wars = no end_civil_wars = no } }
+   286 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = VIN
+   } }
+   671 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = VIN
+   } }
+   1017 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = VIN
+   } }
+   1066 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = VIN
+   } }
+   VIN = { if = { limit = { exists = yes } set_country_flag = EOR_initial_subject clr_country_flag = EOR_decolonization_pending if = { limit = { is_in_faction_with = EOR } leave_faction = yes } } }
+  }
+  if = {
+   limit = { OR = { 670 = { is_owned_by = EOR } 1068 = { is_owned_by = EOR } 1069 = { is_owned_by = EOR } } NOT = { has_war_with = LAO } LAO = { OR = { is_subject = no is_subject_of = EOR } } }
+   if = { limit = { LAO = { is_subject_of = EOR } } set_autonomy = { target = LAO autonomy_state = autonomy_free end_wars = no end_civil_wars = no } }
+   670 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = LAO
+   } }
+   1068 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = LAO
+   } }
+   1069 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = LAO
+   } }
+   LAO = { if = { limit = { exists = yes } set_country_flag = EOR_initial_subject clr_country_flag = EOR_decolonization_pending if = { limit = { is_in_faction_with = EOR } leave_faction = yes } } }
+  }
+  if = {
+   limit = { OR = { 741 = { is_owned_by = EOR } 1067 = { is_owned_by = EOR } } NOT = { has_war_with = CAM } CAM = { OR = { is_subject = no is_subject_of = EOR } } }
+   if = { limit = { CAM = { is_subject_of = EOR } } set_autonomy = { target = CAM autonomy_state = autonomy_free end_wars = no end_civil_wars = no } }
+   741 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = CAM
+   } }
+   1067 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = CAM
+   } }
+   CAM = { if = { limit = { exists = yes } set_country_flag = EOR_initial_subject clr_country_flag = EOR_decolonization_pending if = { limit = { is_in_faction_with = EOR } leave_faction = yes } } }
+  }
+  if = {
+   limit = { OR = { 629 = { is_owned_by = EOR } 630 = { is_owned_by = EOR } 631 = { is_owned_by = EOR } 632 = { is_owned_by = EOR } 638 = { is_owned_by = EOR } 646 = { is_owned_by = EOR } } NOT = { has_war_with = USA } USA = { OR = { is_subject = no is_subject_of = EOR } } }
+   if = { limit = { USA = { is_subject_of = EOR } } set_autonomy = { target = USA autonomy_state = autonomy_free end_wars = no end_civil_wars = no } }
+   629 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = USA
+   } }
+   630 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = USA
+   } }
+   631 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = USA
+   } }
+   632 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = USA
+   } }
+   638 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = USA
+   } }
+   646 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = USA
+   } }
+  }
+  if = {
+   limit = { OR = { 537 = { is_owned_by = EOR } 555 = { is_owned_by = EOR } 655 = { is_owned_by = EOR } } NOT = { has_war_with = SOV } SOV = { OR = { is_subject = no is_subject_of = EOR } } }
+   if = { limit = { SOV = { is_subject_of = EOR } } set_autonomy = { target = SOV autonomy_state = autonomy_free end_wars = no end_civil_wars = no } }
+   537 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = SOV
+   } }
+   555 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = SOV
+   } }
+   655 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = SOV
+   } }
+  }
+  if = {
+   limit = { OR = { 270 = { is_owned_by = EOR } 633 = { is_owned_by = EOR } 635 = { is_owned_by = EOR } 636 = { is_owned_by = EOR } 639 = { is_owned_by = EOR } 641 = { is_owned_by = EOR } 642 = { is_owned_by = EOR } 643 = { is_owned_by = EOR } 647 = { is_owned_by = EOR } 648 = { is_owned_by = EOR } 684 = { is_owned_by = EOR } 721 = { is_owned_by = EOR } 725 = { is_owned_by = EOR } 727 = { is_owned_by = EOR } 734 = { is_owned_by = EOR } 1071 = { is_owned_by = EOR } } NOT = { has_war_with = IOT } IOT = { OR = { is_subject = no is_subject_of = EOR } } }
+   if = { limit = { IOT = { is_subject_of = EOR } } set_autonomy = { target = IOT autonomy_state = autonomy_free end_wars = no end_civil_wars = no } }
+   270 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = IOT
+   } }
+   633 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = IOT
+   } }
+   635 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = IOT
+   } }
+   636 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = IOT
+   } }
+   639 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = IOT
+   } }
+   641 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = IOT
+   } }
+   642 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = IOT
+   } }
+   643 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = IOT
+   } }
+   647 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = IOT
+   } }
+   648 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = IOT
+   } }
+   684 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = IOT
+   } }
+   721 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = IOT
+   } }
+   725 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = IOT
+   } }
+   727 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = IOT
+   } }
+   734 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = IOT
+   } }
+   1071 = { if = { limit = { is_owned_by = EOR is_fully_controlled_by = EOR }
+    clr_state_flag = EOR_initial_home_core remove_core_of = EOR remove_claim_by = EOR
+    transfer_state_to = IOT
+   } }
+   IOT = { if = { limit = { exists = yes } set_country_flag = EOR_initial_subject clr_country_flag = EOR_decolonization_pending if = { limit = { is_in_faction_with = EOR } leave_faction = yes } } }
+  }
+ }
+}
+
+eor_install_shinzo = {
+add_country_leader_role = { character = EOR_shinzo promote_leader = yes country_leader = { ideology = fascism_ideology expire = "2051.1.1" traits = { EOR_military_ruler } } }
+set_country_flag = EOR_military_government_installed
+remove_ideas = EOR_divine_emperor
+set_politics = { ruling_party = fascism elections_allowed = no }
+if = { limit = { has_country_flag = EOR_counter_coup_transition } remove_ideas = EOR_empire_of_tomorrow
+remove_ideas = EOR_v2_question_the_old_order
+remove_ideas = EOR_v2_empower_the_technocrats
+ }
+
+}
+eor_install_reform_council = {
+add_country_leader_role = { character = EOR_reform_council promote_leader = yes country_leader = { ideology = liberalism expire = "2051.1.1" traits = { EOR_constitutional_reformer } } }
+set_popularities = { democratic = 65 neutrality = 20 fascism = 15 communism = 0 }
+set_politics = { ruling_party = democratic elections_allowed = yes }
+set_country_flag = EOR_mandate_reformed
+eor_event_43 = yes
+
+}
+eor_begin_armed_coup = {
+eor_install_shinzo = yes
+set_country_flag = EOR_civil_conflict_started
+if = {
+ limit = { check_variable = { EOR_military_influence > 44 } }
+ start_civil_war = {
+  ideology = neutrality ruling_party = fascism size = 0.25 army_ratio = 0.25 navy_ratio = 0.20 air_ratio = 0.25
+  states = { 282 } states_filter = { is_owned_by = EOR is_controlled_by = EOR }
+  keep_all_characters = yes
+  set_country_flag = EOR_imperial_loyalists
+  save_event_target_as = EOR_loyalist_country
+  set_cosmetic_tag = EOR_LOYALISTS
+  EOR = { EOR_yoshiro = { set_nationality = event_target:EOR_loyalist_country } }
+  add_country_leader_role = { character = EOR_yoshiro promote_leader = yes country_leader = { ideology = despotism expire = "2051.1.1" traits = { EOR_divine_ruler } } }
+
+ }
+}
+else = {
+ start_civil_war = {
+  ideology = neutrality ruling_party = fascism size = 0.45 army_ratio = 0.45 navy_ratio = 0.40 air_ratio = 0.45
+  states = { 282 531 532 } states_filter = { is_owned_by = EOR is_controlled_by = EOR }
+  keep_all_characters = yes
+  set_country_flag = EOR_imperial_loyalists
+  save_event_target_as = EOR_loyalist_country
+  set_cosmetic_tag = EOR_LOYALISTS
+  EOR = { EOR_yoshiro = { set_nationality = event_target:EOR_loyalist_country } }
+  add_country_leader_role = { character = EOR_yoshiro promote_leader = yes country_leader = { ideology = despotism expire = "2051.1.1" traits = { EOR_divine_ruler } } }
+
+ }
+}
+
+}
+eor_offer_china_cooperation = {
+if = { limit = { CHI = { exists = yes NOT = { has_war_with = EOR } } } CHI = { country_event = { id = eor.110 days = 1 } } }
+
+}
+eor_offer_china_submission = {
+if = { limit = { CHI = { exists = yes NOT = { is_subject_of = EOR } NOT = { is_in_faction_with = EOR } } } CHI = { country_event = { id = eor.111 days = 1 } } }
+
+}
+eor_offer_decolonization = {
+eor_decolonize_direct_holdings = yes
+every_subject_country = {
+ limit = { exists = yes }
+ set_country_flag = EOR_decolonization_pending
+ country_event = { id = eor.112 days = 1 }
+}
+
+}
+eor_convene_asian_congress = {
+if = { limit = { is_faction_leader = yes } set_faction_name = EOR_asian_community } else = { if = { limit = { is_in_faction = yes } leave_faction = yes } create_faction = EOR_asian_community }
+every_country = {
+ limit = { exists = yes has_country_flag = EOR_initial_subject NOT = { is_subject = yes } NOT = { has_war_with = EOR } }
+ country_event = { id = eor.113 days = 1 }
+}
+
+}
+eor_apply_policy_compatibility = {
+if = { limit = { OR = { has_country_flag = EOR_route_technocratic has_country_flag = EOR_route_reform } has_country_flag = EOR_corporate_economy NOT = { has_country_flag = EOR_corporate_favor_paid } } add_political_power = 50 set_country_flag = EOR_corporate_favor_paid }
+if = { limit = { OR = { has_country_flag = EOR_route_divine has_country_flag = EOR_route_shinzo } has_country_flag = EOR_state_economy NOT = { has_country_flag = EOR_state_favor_paid } } add_political_power = 50 set_country_flag = EOR_state_favor_paid }
+if = { limit = { OR = { has_country_flag = EOR_route_technocratic has_country_flag = EOR_route_reform } has_country_flag = EOR_partnership NOT = { has_country_flag = EOR_partnership_favor_paid } } add_political_power = 50 set_country_flag = EOR_partnership_favor_paid }
+if = { limit = { OR = { has_country_flag = EOR_route_divine has_country_flag = EOR_route_shinzo } has_country_flag = EOR_centralization NOT = { has_country_flag = EOR_centralization_favor_paid } } add_political_power = 50 set_country_flag = EOR_centralization_favor_paid }
+if = { limit = { OR = { has_country_flag = EOR_route_divine has_country_flag = EOR_route_shinzo } has_completed_focus = EOR_the_futuristic_bushido NOT = { has_country_flag = EOR_army_favor_paid } } add_political_power = 35 set_country_flag = EOR_army_favor_paid }
+if = { limit = { OR = { has_country_flag = EOR_route_technocratic has_country_flag = EOR_route_reform } has_completed_focus = EOR_a_highly_mechanized_army NOT = { has_country_flag = EOR_army_favor_paid } } add_political_power = 35 set_country_flag = EOR_army_favor_paid }
+if = { limit = { OR = { has_country_flag = EOR_route_shinzo has_country_flag = EOR_route_reform } has_completed_focus = EOR_the_shadow_warriors NOT = { has_country_flag = EOR_army_favor_paid } } add_political_power = 35 set_country_flag = EOR_army_favor_paid }
+if = { limit = { OR = { has_country_flag = EOR_route_divine has_country_flag = EOR_route_shinzo } has_completed_focus = EOR_shogun_battlefleet NOT = { has_country_flag = EOR_navy_favor_paid } } add_political_power = 35 set_country_flag = EOR_navy_favor_paid }
+if = { limit = { OR = { has_country_flag = EOR_route_technocratic has_country_flag = EOR_route_reform } has_completed_focus = EOR_carrier_fleet NOT = { has_country_flag = EOR_navy_favor_paid } } add_political_power = 35 set_country_flag = EOR_navy_favor_paid }
+
+}
+eor_refresh_mandate = {
+
+ clamp_variable = { var = EOR_divine_mandate min = 0 max = 100 }
+if = { limit = { check_variable = { EOR_divine_mandate > 79 } }
+if = { limit = { NOT = { has_idea = EOR_mandate_ascendancy } }
+remove_ideas = EOR_mandate_confidence
+remove_ideas = EOR_mandate_doubts
+remove_ideas = EOR_mandate_crisis
+remove_ideas = EOR_mandate_shattered
+add_ideas = EOR_mandate_ascendancy
+}
+}
+else_if = { limit = { check_variable = { EOR_divine_mandate > 59 } }
+if = { limit = { NOT = { has_idea = EOR_mandate_confidence } }
+remove_ideas = EOR_mandate_ascendancy
+remove_ideas = EOR_mandate_doubts
+remove_ideas = EOR_mandate_crisis
+remove_ideas = EOR_mandate_shattered
+add_ideas = EOR_mandate_confidence
+}
+}
+else_if = { limit = { OR = { check_variable = { EOR_divine_mandate > 39 } has_country_flag = EOR_mandate_reformed } }
+if = { limit = { NOT = { has_idea = EOR_mandate_doubts } }
+remove_ideas = EOR_mandate_ascendancy
+remove_ideas = EOR_mandate_confidence
+remove_ideas = EOR_mandate_crisis
+remove_ideas = EOR_mandate_shattered
+add_ideas = EOR_mandate_doubts
+}
+}
+else_if = { limit = { check_variable = { EOR_divine_mandate > 19 } }
+if = { limit = { NOT = { has_idea = EOR_mandate_crisis } }
+remove_ideas = EOR_mandate_ascendancy
+remove_ideas = EOR_mandate_confidence
+remove_ideas = EOR_mandate_doubts
+remove_ideas = EOR_mandate_shattered
+add_ideas = EOR_mandate_crisis
+}
+}
+else_if = { limit = { always = yes }
+if = { limit = { NOT = { has_idea = EOR_mandate_shattered } }
+remove_ideas = EOR_mandate_ascendancy
+remove_ideas = EOR_mandate_confidence
+remove_ideas = EOR_mandate_doubts
+remove_ideas = EOR_mandate_crisis
+add_ideas = EOR_mandate_shattered
+}
+}
+
+}
+eor_update_subjects = {
+
+ every_country = {
+  limit = { OR = { has_country_flag = EOR_research_partner has_idea = EOR_subject_centralized has_idea = EOR_subject_partnership has_idea = EOR_subject_resource_access } NOT = { is_subject_of = EOR } NOT = { has_country_flag = EOR_voluntary_partner } }
+  remove_ideas = EOR_subject_centralized remove_ideas = EOR_subject_partnership remove_ideas = EOR_subject_resource_access
+  remove_ideas = EOR_subject_concessions remove_ideas = EOR_subject_security remove_ideas = EOR_subject_resentment remove_ideas = EOR_subject_development
+  remove_from_tech_sharing_group = imperial_research
+clr_country_flag = EOR_research_partner
+ }
+ every_subject_country = {
+  if = { limit = { EOR = { has_country_flag = EOR_centralization } }
+   add_ideas = EOR_subject_centralized
+  }
+  if = { limit = { EOR = { has_country_flag = EOR_partnership } }
+   remove_ideas = loyal_to_the_empire
+remove_ideas = loyal_to_the_empire_forever
+add_ideas = EOR_subject_partnership
+  }
+ }
+
+}
+eor_initialize = {
+if = {
+ limit = { NOT = { has_country_flag = EOR_v2_initialized } }
+ set_variable = { var = EOR_divine_mandate value = 75 }
+ set_variable = { var = EOR_imperial_legitimacy value = 75 }
+ set_variable = { var = EOR_technocratic_influence value = 30 }
+ set_variable = { var = EOR_military_influence value = 40 }
+ set_variable = { var = EOR_subject_pressure value = 0 }
+ set_variable = { var = EOR_global_threat value = 0 }
+ set_variable = { var = EOR_regional_partners value = 0 }
+ every_country = { limit = { exists = yes NOT = { tag = EOR } } capital_scope = { set_state_flag = EOR_initial_foreign_capital } }
+ every_subject_country = { set_country_flag = EOR_initial_subject }
+ every_owned_state = { limit = { is_core_of = EOR } set_state_flag = EOR_initial_home_core }
+set_country_flag = EOR_v2_initialized
+ set_country_flag = EOR_initialized
+ eor_refresh_mandate = yes
+ eor_event_1 = yes
+}
+
+}
+eor_daily_update = {
+every_country = { limit = { exists = yes has_country_flag = EOR_negotiated_settlement has_war_with = EOR } clr_country_flag = EOR_negotiated_settlement }
+if = { limit = { has_war = yes NOT = { has_country_flag = EOR_first_war_threat } } set_country_flag = EOR_first_war_threat add_to_variable = { var = EOR_global_threat value = 10 }
+ }
+if = { limit = { has_completed_focus = EOR_the_emperors_shadow check_variable = { EOR_military_influence > 64 } } eor_event_100 = yes }
+eor_refresh_mandate = yes
+eor_update_subjects = yes
+if = { limit = { has_completed_focus = EOR_convene_the_imperial_court NOT = { has_country_flag = EOR_succession_crisis } OR = { has_country_flag = EOR_truth_known check_variable = { EOR_imperial_legitimacy < 45 } has_country_flag = EOR_major_defeat AND = { has_country_flag = EOR_intelligence_complete check_variable = { EOR_global_threat > 19 } } } } eor_event_41 = yes }
+if = { limit = { has_completed_focus = EOR_the_crown_prince NOT = { has_country_flag = EOR_truth_known } OR = { eor_moscow_secured = yes eor_soviets_defeated = yes has_country_flag = EOR_intelligence_complete } } eor_event_40 = yes }
+if = { limit = { eor_secret_path_eligible = yes NOT = { has_country_flag = EOR_new_dawn_unlocked } } eor_event_106 = yes }
+if = { limit = { check_variable = { EOR_imperial_legitimacy < 30 } NOT = { has_country_flag = EOR_legitimacy_warning } } eor_event_107 = yes }
+if = { limit = { has_country_flag = EOR_traditionalist_opposition check_variable = { EOR_military_influence > 64 } NOT = { has_country_flag = EOR_counter_conspiracy } } eor_event_108 = yes }
+if = { limit = { has_completed_focus = EOR_the_supreme_shogunate OR = { eor_soviets_defeated = yes has_country_flag = EOR_defeated_USA has_country_flag = EOR_defeated_ENG has_country_flag = EOR_defeated_AOE } } eor_event_103 = yes }
+if = { limit = { eor_coalition_possible = yes } eor_event_30 = yes }
+if = { limit = { has_country_flag = EOR_coup_abandoned NOT = { has_country_flag = EOR_coup_return_settled } } eor_event_109 = yes }
+if = { limit = { has_completed_focus = EOR_strike_vladivostok 408 = { controller = { OR = { tag = EOR is_in_faction_with = EOR } } } } eor_event_11 = yes }
+if = { limit = { has_completed_focus = EOR_northern_war_plan 217 = { controller = { OR = { tag = EOR is_in_faction_with = EOR } } } } eor_event_12 = yes }
+if = { limit = { has_completed_focus = EOR_odessa_operation NOT = { has_country_flag = EOR_odessa_secured } 192 = { controller = { OR = { tag = EOR is_in_faction_with = EOR } } } } set_country_flag = EOR_odessa_secured add_to_variable = { var = EOR_divine_mandate value = 10 }
+add_to_variable = { var = EOR_imperial_legitimacy value = 10 }
+eor_refresh_mandate = yes
+army_experience = 20
+ }
+if = { limit = { has_war = yes 282 = { NOT = { is_fully_controlled_by = EOR } } } eor_event_31 = yes }
+if = { limit = { has_war_with = USA 629 = { is_controlled_by = EOR NOT = { is_fully_controlled_by = EOR } } } eor_event_20 = yes }
+if = { limit = { has_capitulated = yes 282 = { NOT = { is_controlled_by = EOR } } } eor_event_70 = yes }
+if = { limit = { NOT = { has_country_flag = EOR_core_occupation_penalty } any_owned_state = { is_core_of = EOR NOT = { is_fully_controlled_by = EOR } } }
+ set_country_flag = EOR_core_occupation_penalty set_country_flag = EOR_major_defeat add_to_variable = { var = EOR_divine_mandate value = -20 }
+add_to_variable = { var = EOR_imperial_legitimacy value = -20 }
+eor_refresh_mandate = yes
+ }
+if = { limit = { has_country_flag = EOR_event_20 NOT = { has_country_flag = EOR_hawaii_defended } 629 = { is_fully_controlled_by = EOR } } set_country_flag = EOR_hawaii_defended add_to_variable = { var = EOR_divine_mandate value = 10 }
+add_to_variable = { var = EOR_imperial_legitimacy value = 10 }
+eor_refresh_mandate = yes
+ }
+if = { limit = { has_country_flag = EOR_event_31 NOT = { has_country_flag = EOR_capital_defended } 282 = { is_fully_controlled_by = EOR } } set_country_flag = EOR_capital_defended add_to_variable = { var = EOR_divine_mandate value = 10 }
+add_to_variable = { var = EOR_imperial_legitimacy value = 10 }
+eor_refresh_mandate = yes
+ }
+every_state = {
+ limit = { has_state_flag = EOR_initial_foreign_capital NOT = { has_state_flag = EOR_enemy_capital_reward } owner = { has_war_with = EOR } controller = { OR = { tag = EOR is_in_faction_with = EOR } } }
+ set_state_flag = EOR_enemy_capital_reward EOR = { add_to_variable = { var = EOR_divine_mandate value = 15 }
+add_to_variable = { var = EOR_imperial_legitimacy value = 15 }
+eor_refresh_mandate = yes
+add_to_variable = { var = EOR_global_threat value = 5 }
+ }
+}
+every_owned_state = {
+ limit = { NOT = { is_core_of = EOR } NOT = { is_controlled_by = EOR } NOT = { has_state_flag = EOR_overseas_loss_recorded } }
+ set_state_flag = EOR_overseas_loss_recorded EOR = { set_country_flag = EOR_major_defeat add_to_variable = { var = EOR_divine_mandate value = -10 }
+add_to_variable = { var = EOR_imperial_legitimacy value = -10 }
+eor_refresh_mandate = yes
+ }
+}
+if = { limit = { has_country_flag = EOR_route_divine has_country_flag = EOR_major_defeat NOT = { has_country_flag = EOR_divine_defeat_penalty } } set_country_flag = EOR_divine_defeat_penalty add_to_variable = { var = EOR_divine_mandate value = -10 }
+add_to_variable = { var = EOR_imperial_legitimacy value = -10 }
+eor_refresh_mandate = yes
+ }
+if = { limit = { has_completed_focus = EOR_sacred_offensive has_offensive_war = yes NOT = { has_country_flag = EOR_sacred_offensive_used } } set_country_flag = EOR_sacred_offensive_used add_timed_idea = { idea = EOR_v2_sacred_offensive days = 180 }
+ }
+if = { limit = { has_completed_focus = EOR_resource_autarky } remove_ideas = EOR_imperial_resource_dependency }
+else_if = { limit = { has_completed_focus = EOR_imperial_supply MAL = { exists = yes is_subject_of = EOR has_country_flag = EOR_resources_developed } INS = { exists = yes is_subject_of = EOR has_country_flag = EOR_resources_developed } } remove_ideas = EOR_imperial_resource_dependency }
+else_if = { limit = { has_completed_focus = EOR_maritime_commerce NOT = { has_war_with = USA } NOT = { has_war_with = SOV } } remove_ideas = EOR_imperial_resource_dependency }
+else = { add_ideas = EOR_imperial_resource_dependency }
+if = { limit = { has_completed_focus = EOR_open_trade OR = { has_war_with = USA has_war_with = SOV } } add_ideas = EOR_v2_trade_disruption }
+else = { remove_ideas = EOR_v2_trade_disruption }
+if = { limit = { has_country_flag = EOR_route_reform has_defensive_war = yes } add_ideas = EOR_v2_constitutional_defense }
+else = { remove_ideas = EOR_v2_constitutional_defense }
+
+eor_update_regional_partners = yes
+
+}
+eor_monthly_update = {
+if = { limit = { any_subject_country = { exists = yes } }
+ add_to_variable = { var = EOR_subject_pressure value = 2 }
+ if = { limit = { has_country_flag = EOR_centralization } add_to_variable = { var = EOR_subject_pressure value = 3 } }
+ if = { limit = { has_completed_focus = EOR_overseas_extraction } add_to_variable = { var = EOR_subject_pressure value = 3 } }
+ if = { limit = { has_country_flag = EOR_route_shinzo } add_to_variable = { var = EOR_subject_pressure value = 3 } }
+ if = { limit = { has_country_flag = EOR_partnership } add_to_variable = { var = EOR_subject_pressure value = -4 } }
+ if = { limit = { check_variable = { EOR_subject_pressure > 39 } NOT = { has_country_flag = EOR_demands_cooldown } } random_subject_country = { save_event_target_as = EOR_unrest_subject } country_event = { id = eor.51 days = 1 } set_country_flag = { flag = EOR_demands_cooldown days = 180 } }
+ if = { limit = { check_variable = { EOR_subject_pressure > 69 } NOT = { has_country_flag = EOR_unrest_cooldown } } random_subject_country = { save_event_target_as = EOR_unrest_subject } country_event = { id = eor.52 days = 2 } set_country_flag = { flag = EOR_unrest_cooldown days = 180 } }
+}
+clamp_variable = { var = EOR_divine_mandate min = 0 max = 100 }
+clamp_variable = { var = EOR_imperial_legitimacy min = 0 max = 100 }
+clamp_variable = { var = EOR_technocratic_influence min = 0 max = 100 }
+clamp_variable = { var = EOR_military_influence min = 0 max = 100 }
+clamp_variable = { var = EOR_subject_pressure min = 0 max = 100 }
+clamp_variable = { var = EOR_global_threat min = 0 max = 100 }
+eor_apply_policy_compatibility = yes
+
+}
+eor_event_1 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_1 } } set_country_flag = EOR_event_1 country_event = { id = eor.1 days = 1 } }
+}
+eor_event_2 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_2 } } set_country_flag = EOR_event_2 country_event = { id = eor.2 days = 1 } }
+}
+eor_event_3 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_3 } } set_country_flag = EOR_event_3 country_event = { id = eor.3 days = 1 } }
+}
+eor_event_4 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_4 } } set_country_flag = EOR_event_4 country_event = { id = eor.4 days = 1 } }
+}
+eor_event_10 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_10 } } set_country_flag = EOR_event_10 country_event = { id = eor.10 days = 1 } }
+}
+eor_event_11 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_11 } } set_country_flag = EOR_event_11 country_event = { id = eor.11 days = 1 } }
+}
+eor_event_12 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_12 } } set_country_flag = EOR_event_12 country_event = { id = eor.12 days = 1 } }
+}
+eor_event_13 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_13 } } set_country_flag = EOR_event_13 country_event = { id = eor.13 days = 1 } }
+}
+eor_event_14 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_14 } } set_country_flag = EOR_event_14 news_event = { id = eor.14 days = 1 } }
+}
+eor_event_20 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_20 } } set_country_flag = EOR_event_20 country_event = { id = eor.20 days = 1 } }
+}
+eor_event_21 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_21 } } set_country_flag = EOR_event_21 country_event = { id = eor.21 days = 1 } }
+}
+eor_event_22 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_22 } } set_country_flag = EOR_event_22 country_event = { id = eor.22 days = 1 } }
+}
+eor_event_23 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_23 } } set_country_flag = EOR_event_23 news_event = { id = eor.23 days = 1 } }
+}
+eor_event_30 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_30 } } set_country_flag = EOR_event_30 country_event = { id = eor.30 days = 1 } }
+}
+eor_event_31 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_31 } } set_country_flag = EOR_event_31 country_event = { id = eor.31 days = 1 } }
+}
+eor_event_40 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_40 } } set_country_flag = EOR_event_40 country_event = { id = eor.40 days = 1 } }
+}
+eor_event_41 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_41 } } set_country_flag = EOR_event_41 country_event = { id = eor.41 days = 1 } }
+}
+eor_event_42 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_42 } } set_country_flag = EOR_event_42 country_event = { id = eor.42 days = 1 } }
+}
+eor_event_43 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_43 } } set_country_flag = EOR_event_43 country_event = { id = eor.43 days = 1 } }
+}
+eor_event_50 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_50 } } set_country_flag = EOR_event_50 country_event = { id = eor.50 days = 1 } }
+}
+eor_event_51 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_51 } } set_country_flag = EOR_event_51 country_event = { id = eor.51 days = 1 } }
+}
+eor_event_52 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_52 } } set_country_flag = EOR_event_52 country_event = { id = eor.52 days = 1 } }
+}
+eor_event_60 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_60 } } set_country_flag = EOR_event_60 country_event = { id = eor.60 days = 1 } }
+}
+eor_event_70 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_70 } } set_country_flag = EOR_event_70 country_event = { id = eor.70 days = 1 } }
+}
+eor_event_80 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_80 } } set_country_flag = EOR_event_80 country_event = { id = eor.80 days = 1 } }
+}
+eor_event_32 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_32 } } set_country_flag = EOR_event_32 country_event = { id = eor.32 days = 1 } }
+}
+eor_event_33 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_33 } } set_country_flag = EOR_event_33 country_event = { id = eor.33 days = 1 } }
+}
+eor_event_34 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_34 } } set_country_flag = EOR_event_34 country_event = { id = eor.34 days = 1 } }
+}
+eor_event_100 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_100 } } set_country_flag = EOR_event_100 country_event = { id = eor.100 days = 1 } }
+}
+eor_event_101 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_101 } } set_country_flag = EOR_event_101 country_event = { id = eor.101 days = 1 } }
+}
+eor_event_102 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_102 } } set_country_flag = EOR_event_102 country_event = { id = eor.102 days = 1 } }
+}
+eor_event_103 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_103 } } set_country_flag = EOR_event_103 country_event = { id = eor.103 days = 1 } }
+}
+eor_event_104 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_104 } } set_country_flag = EOR_event_104 country_event = { id = eor.104 days = 1 } }
+}
+eor_event_105 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_105 } } set_country_flag = EOR_event_105 country_event = { id = eor.105 days = 1 } }
+}
+eor_event_106 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_106 } } set_country_flag = EOR_event_106 country_event = { id = eor.106 days = 1 } }
+}
+eor_event_107 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_107 } } set_country_flag = EOR_event_107 country_event = { id = eor.107 days = 1 } }
+}
+eor_event_108 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_108 } } set_country_flag = EOR_event_108 country_event = { id = eor.108 days = 1 } }
+}
+eor_event_109 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_109 } } set_country_flag = EOR_event_109 country_event = { id = eor.109 days = 1 } }
+}
+eor_event_110 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_110 } } set_country_flag = EOR_event_110 country_event = { id = eor.110 days = 1 } }
+}
+eor_event_111 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_111 } } set_country_flag = EOR_event_111 country_event = { id = eor.111 days = 1 } }
+}
+eor_event_112 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_112 } } set_country_flag = EOR_event_112 country_event = { id = eor.112 days = 1 } }
+}
+eor_event_113 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_113 } } set_country_flag = EOR_event_113 country_event = { id = eor.113 days = 1 } }
+}
+eor_event_114 = {
+if = { limit = { NOT = { has_country_flag = EOR_event_114 } } set_country_flag = EOR_event_114 country_event = { id = eor.114 days = 1 } }
+}
+eor_update_regional_partners = {
+set_variable = { var = EOR_regional_partners value = 0 }
+every_country = { limit = { exists = yes has_country_flag = EOR_voluntary_partner NOT = { is_subject = yes } is_in_faction_with = EOR } EOR = { add_to_variable = { var = EOR_regional_partners value = 1 } } }
+
+}

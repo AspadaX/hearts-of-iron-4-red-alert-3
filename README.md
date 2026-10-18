@@ -48,7 +48,7 @@ Soviet and EOR party support now uses modern `set_popularities` syntax with thei
 
 ## RA3 event isolation
 
-The descriptor replaces the `events` directory so base-game and DLC historical event files are not loaded. The mod keeps its USA, Soviet, European, African, and custom news events. The functional generic faction invitation exchange (`generic.5` through `.7`) and its faction announcement (`news.289`) remain because the EOR China-cooperation focus uses them. These are diplomatic mechanics, not historical story chains.
+The descriptor replaces the `events` directory so base-game and DLC historical event files are not loaded. The mod keeps its USA, Soviet, European, African, and custom news events. The functional generic faction invitation exchange (`generic.5` through `.7`) and its faction announcement (`news.289`) remain as the explicit mechanical diplomacy exception. These are diplomatic mechanics, not historical story chains.
 
 The local build filters calls and random-event pool entries for excluded events from inherited `common` and `history` scripts. Other effects in those scripts remain. The active event catalog and filtering report are recorded in `.event-compatibility.json` inside the development build. Original event files are preserved under `archive/vanilla_event_removal/`. Start a new campaign so old saves do not retain already queued historical events.
 
@@ -57,3 +57,15 @@ The local build filters calls and random-event pool entries for excluded events 
 An earlier high-speed run crashed with SIGSEGV after the last log entry at `2008.03.02.14`. The user reported that the latest retry did not crash, without specifying its duration or speed. The earlier failure does not establish a speed-specific cause, and long-running stability remains unverified. Repeated invalid AI technology references and a final Natasha Volkova small-portrait warning are clues, not proven causes. The pre-crash autosave and full logs were preserved under the HOI4 user directory at `development_backups/runtime_hoi4_20261018_202526/`.
 
 Run `python3 tools/trace_runtime.py` after preparing the development build to add event/option BEGIN/END markers and a daily heartbeat. This changes only the installed copy and does not alter gameplay effects. Rebuilding with `setup_local.py` removes it. Replay the same autosave at speed 2 or 3 through March 3 to check whether the failure repeats near the same game time. Do not publish runtime tracing overlays.
+
+## Rising Sun campaign redesign
+
+EOR now has 213 focuses with 213 distinct icon textures, four political outcomes (Yoshiro, Tatsu, Shinzo and the hidden New Dawn), doctrine choices, overseas administration, experimental programs and separate victory conditions. There are 85 decisions and 43 EOR events; the active event catalog contains 73 events. IOT now selects the full generic focus tree.
+
+New Dawn includes negotiated subject independence and the approved return of directly ruled territories, including Taiwan to China, Korea and Indochina to their countries, American Pacific holdings to USA, Sakhalin and the Kurils to SOV, and the remaining overseas islands to independent IOT. These are campaign outcomes, not starting-border changes.
+
+See [Rising Sun implementation and runtime checks](docs/EOR_IMPLEMENTATION.md) for mechanics, exact territorial mappings, provisional balance and testing. Run `python3 tools/validate_eor.py`, synchronize with `python3 tools/setup_local.py`, then validate with `--installed`. Fully restart and use a **new non-Ironman campaign**. Runtime loading, event behavior and balance need user confirmation.
+
+The continuous-focus panel sits below every main branch. All 213 focus icons have different artwork files, and the country-selection description stays a short paragraph. Exact presentation at the user's display scale needs in-game confirmation.
+
+Imperial national spirits use 156 distinct native icons. Focus descriptions are complete, and mobilization, experimental research and overseas development connect to their relevant parent programs. Use a new campaign to test these updated prerequisites.

@@ -1,0 +1,1 @@
+opinion_modifiers = { EOR_asian_cooperation = { value = 40 } EOR_strategic_settlement = { value = 30 } }

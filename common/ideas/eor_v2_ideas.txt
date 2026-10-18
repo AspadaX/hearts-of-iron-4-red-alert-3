@@ -1,0 +1,255 @@
+ideas = { country = {
+EOR_v2_establish_imperial_intelligence = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_establish_imperial_intelligence
+modifier = { decryption_factor = 0.05 enemy_operative_detection_chance_factor = 0.05 }
+
+}
+EOR_v2_restore_imperial_authority = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_restore_imperial_authority
+modifier = { political_power_factor = 0.05 }
+
+}
+EOR_v2_scientific_purge = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_scientific_purge
+modifier = { research_speed_factor = -0.05 political_power_factor = -0.05 }
+
+}
+EOR_v2_absolute_loyalty = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_absolute_loyalty
+modifier = { army_org_factor = 0.05 political_power_cost = 0.10 }
+
+}
+EOR_v2_imperial_unity = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_imperial_unity
+modifier = { conscription_factor = 0.05 }
+
+}
+EOR_v2_sacred_offensive = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_sacred_offensive
+modifier = { army_attack_factor = 0.10 supply_consumption_factor = 0.05 }
+
+}
+EOR_v2_defend_the_homeland = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_defend_the_homeland
+modifier = { army_core_defence_factor = 0.10 army_speed_factor = -0.03 }
+
+}
+EOR_v2_warriors_of_destiny = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_warriors_of_destiny
+modifier = { army_infantry_attack_factor = 0.05 special_forces_attack_factor = 0.05 }
+
+}
+EOR_v2_imperial_fortresses = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_imperial_fortresses
+modifier = { production_speed_bunker_factor = 0.15 production_speed_coastal_bunker_factor = 0.15 army_core_defence_factor = 0.03 }
+
+}
+EOR_v2_question_the_old_order = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_question_the_old_order
+modifier = { research_speed_factor = 0.05 stability_factor = -0.03 }
+
+}
+EOR_v2_abdication_instability = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_abdication_instability
+modifier = { stability_factor = -0.10 }
+
+}
+EOR_v2_a_new_emperor = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_a_new_emperor
+modifier = { political_power_factor = 0.10 stability_factor = -0.03 }
+
+}
+EOR_v2_the_silent_throne = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_the_silent_throne
+modifier = { research_speed_factor = -0.02 political_power_factor = 0.03 }
+
+}
+EOR_v2_empower_the_technocrats = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_empower_the_technocrats
+modifier = { production_factory_efficiency_gain_factor = 0.05 }
+research_bonus = { armor = 0.10 electronics = 0.10 }
+
+}
+EOR_v2_automated_warfare = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_automated_warfare
+modifier = { industrial_capacity_factory = 0.05 supply_consumption_factor = 0.05 country_resource_cost_steel = 0.05 }
+research_bonus = { armor = 0.10 }
+equipment_bonus = { armor = { build_cost_ic = -0.05 instant = yes } }
+}
+EOR_v2_human_machine_doctrine = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_human_machine_doctrine
+modifier = { army_org_factor = 0.05 }
+equipment_bonus = { infantry = { build_cost_ic = -0.03 instant = yes } armor = { build_cost_ic = -0.03 instant = yes } }
+}
+EOR_v2_robotic_legions = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_robotic_legions
+modifier = { army_armor_attack_factor = 0.03 }
+
+}
+EOR_v2_professional_armed_forces = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_professional_armed_forces
+modifier = { planning_speed = 0.10 supply_consumption_factor = -0.03 }
+
+}
+EOR_v2_army_supremacy = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_army_supremacy
+modifier = { industrial_capacity_factory = 0.10 army_org_factor = 0.05 industrial_capacity_dockyard = -0.05 }
+equipment_bonus = { armor = { breakthrough = 0.05 instant = yes } }
+}
+EOR_v2_naval_supremacy = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_naval_supremacy
+modifier = { industrial_capacity_dockyard = 0.10 navy_capital_ship_attack_factor = 0.05 amphibious_invasion = 0.05 industrial_capacity_factory = -0.05 }
+
+}
+EOR_v2_the_land_shogunate = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_the_land_shogunate
+modifier = { army_armor_speed_factor = 0.05 supply_consumption_factor = -0.03 }
+
+}
+EOR_v2_the_oceanic_shogunate = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_the_oceanic_shogunate
+modifier = { navy_capital_ship_defence_factor = 0.05 invasion_preparation = -0.10 }
+
+}
+EOR_v2_supreme_shogunate = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_supreme_shogunate
+modifier = { war_support_factor = 0.15 army_org_factor = 0.05 industrial_capacity_factory = 0.10 stability_factor = -0.10 research_speed_factor = -0.05 }
+
+}
+EOR_v2_the_symbolic_throne = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_the_symbolic_throne
+modifier = { stability_factor = 0.05 political_power_factor = 0.03 }
+
+}
+EOR_v2_end_the_dynasty = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_end_the_dynasty
+modifier = { political_power_factor = 0.08 stability_factor = -0.05 }
+
+}
+EOR_v2_new_dawn = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_new_dawn
+modifier = { stability_factor = 0.10 research_speed_factor = 0.05 political_power_factor = 0.05 autonomy_manpower_share_from_subjects = -0.10 resource_trade_cost_bonus_per_factory = -0.10 }
+
+}
+EOR_v2_secure_the_far_east = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_secure_the_far_east
+modifier = { supply_consumption_factor = -0.05 }
+
+}
+EOR_cooperative_zaibatsus = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_cooperative_zaibatsus
+modifier = { research_speed_factor = 0.05 production_factory_efficiency_gain_factor = 0.10 industrial_capacity_factory = 0.05 political_power_factor = -0.05 }
+
+}
+EOR_v2_industrial_autonomy = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_industrial_autonomy
+modifier = { production_factory_max_efficiency_factor = 0.03 political_power_factor = -0.02 }
+
+}
+EOR_controlled_zaibatsus = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_controlled_zaibatsus
+modifier = { industrial_capacity_factory = 0.10 production_speed_arms_factory_factor = 0.10 research_speed_factor = -0.03 consumer_goods_factor = 0.03 }
+
+}
+EOR_v2_imperial_planning = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_imperial_planning
+modifier = { production_factory_efficiency_gain_factor = 0.03 production_speed_infrastructure_factor = 0.05 }
+
+}
+EOR_v2_resource_autarky = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_resource_autarky
+modifier = { fuel_gain_factor = 0.15 production_speed_synthetic_refinery_factor = 0.10 consumer_goods_factor = 0.02 }
+
+}
+EOR_v2_overseas_extraction = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_overseas_extraction
+modifier = { resource_trade_cost_bonus_per_factory = 0.15 political_power_factor = -0.03 }
+
+}
+EOR_v2_imperial_supply = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_imperial_supply
+modifier = { supply_consumption_factor = -0.05 convoy_escort_efficiency = 0.05 }
+
+}
+EOR_v2_open_trade = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_open_trade
+modifier = { resource_trade_cost_bonus_per_factory = 0.10 political_power_factor = 0.03 }
+
+}
+EOR_v2_maritime_commerce = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_maritime_commerce
+modifier = { convoy_escort_efficiency = 0.10 industrial_capacity_dockyard = 0.03 }
+
+}
+EOR_v2_trade_disruption = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_trade_disruption
+modifier = { industrial_capacity_factory = -0.05 fuel_gain_factor = -0.10 }
+
+}
+EOR_v2_the_futuristic_bushido = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_the_futuristic_bushido
+modifier = { special_forces_attack_factor = 0.10 }
+equipment_bonus = { infantry = { build_cost_ic = -0.05 instant = yes } }
+}
+EOR_v2_warriors_of_the_rising_sun = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_warriors_of_the_rising_sun
+modifier = { army_infantry_attack_factor = 0.05 }
+
+}
+EOR_v2_a_highly_mechanized_army = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_a_highly_mechanized_army
+modifier = { army_armor_speed_factor = 0.05 supply_consumption_factor = 0.05 }
+research_bonus = { armor = 0.10 }
+equipment_bonus = { armor = { breakthrough = 0.10 instant = yes } }
+}
+EOR_v2_the_shadow_warriors = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_the_shadow_warriors
+modifier = { special_forces_attack_factor = 0.10 recon_factor = 0.10 operation_cost = -0.05 }
+
+}
+EOR_v2_shinobi_intelligence_network = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_shinobi_intelligence_network
+modifier = { decryption_factor = 0.05 intelligence_operation_speed = 0.05 }
+
+}
+EOR_v2_rapid_deployment_doctrine = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_rapid_deployment_doctrine
+modifier = { special_forces_training_time_factor = -0.10 invasion_preparation = -0.05 }
+
+}
+EOR_v2_strike_from_the_shadows = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_strike_from_the_shadows
+modifier = { special_forces_attack_factor = 0.03 planning_speed = 0.05 }
+
+}
+EOR_v2_shogun_battlefleet = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_shogun_battlefleet
+modifier = { navy_capital_ship_attack_factor = 0.10 shore_bombardment_bonus = 0.10 }
+equipment_bonus = { capital_ship = { build_cost_ic = 0.10 instant = yes } }
+}
+EOR_v2_decisive_naval_battle = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_decisive_naval_battle
+modifier = { naval_coordination = 0.05 navy_capital_ship_defence_factor = 0.03 }
+
+}
+EOR_v2_carrier_fleet = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_carrier_fleet
+modifier = { naval_strike_attack_factor = 0.10 sortie_efficiency = 0.10 }
+
+}
+EOR_v2_tenzai_naval_aviation = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_tenzai_naval_aviation
+modifier = { navy_carrier_air_attack_factor = 0.05 }
+
+}
+EOR_v2_air_sea_battle_doctrine = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_air_sea_battle_doctrine
+modifier = { naval_strike_targetting_factor = 0.05 convoy_escort_efficiency = 0.05 }
+
+}
+EOR_v2_submarine_warfare = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_submarine_warfare
+modifier = { navy_submarine_attack_factor = 0.10 convoy_raiding_efficiency_factor = 0.10 }
+equipment_bonus = { submarine = { build_cost_ic = -0.05 instant = yes } }
+}
+EOR_v2_torpedo_warfare_doctrine = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_torpedo_warfare_doctrine
+modifier = { naval_torpedo_hit_chance_factor = 0.05 }
+
+}
+EOR_v2_disrupt_enemy_commerce = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_disrupt_enemy_commerce
+modifier = { convoy_raiding_efficiency_factor = 0.05 }
+
+}
+EOR_v2_the_silent_pacific = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_the_silent_pacific
+modifier = { navy_submarine_defence_factor = 0.05 }
+
+}
+EOR_v2_air_superiority = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_air_superiority
+modifier = { air_agility_factor = 0.05 air_superiority_efficiency = 0.10 }
+research_bonus = { light_fighter = 0.10 }
+
+}
+EOR_v2_dominate_the_skies = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_dominate_the_skies
+modifier = { air_intercept_efficiency = 0.05 }
+
+}
+EOR_v2_tactical_support = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_tactical_support
+modifier = { air_cas_present_factor = 0.10 air_cas_efficiency = 0.10 experience_gain_air_factor = 0.05 }
+
+}
+EOR_v2_support_the_army = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_support_the_army
+modifier = { air_cas_present_factor = 0.03 air_cas_efficiency = 0.03 }
+
+}
+EOR_v2_resource_mobilization = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_resource_mobilization
+modifier = { autonomy_manpower_share_from_subjects = 0.05 resource_trade_cost_bonus_per_factory = 0.10 political_power_factor = -0.03 }
+
+}
+EOR_v2_fortify_the_empire = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_fortify_the_empire
+modifier = { army_core_defence_factor = 0.05 army_attack_factor = -0.03 }
+
+}
+EOR_v2_total_defense = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_total_defense
+modifier = { supply_consumption_factor = -0.05 industrial_capacity_factory = 0.05 }
+
+}
+EOR_v2_war_of_attrition = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_war_of_attrition
+modifier = { army_org_regain = 0.05 industry_repair_factor = 0.10 }
+
+}
+EOR_v2_constitutional_defense = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_constitutional_defense
+modifier = { war_support_factor = 0.10 }
+
+}
+}
+}

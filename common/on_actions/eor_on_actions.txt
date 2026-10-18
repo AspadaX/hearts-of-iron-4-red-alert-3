@@ -1,0 +1,37 @@
+on_actions = {
+ on_startup = { effect = { EOR = { eor_initialize = yes } } }
+ on_daily_EOR = { effect = { EOR = { if = { limit = { exists = yes has_country_flag = EOR_v2_initialized } eor_daily_update = yes } } } }
+ on_monthly_EOR = { effect = { EOR = { if = { limit = { exists = yes has_country_flag = EOR_v2_initialized } eor_monthly_update = yes } } } }
+ on_capitulation = { effect = {
+ if = { limit = { tag = EOR } EOR = { set_country_flag = EOR_major_defeat
+add_to_variable = { var = EOR_imperial_legitimacy value = -15 }
+ add_to_variable = { var = EOR_divine_mandate value = -15 }
+eor_refresh_mandate = yes
+ } }
+ if = { limit = { OR = { tag = SOV tag = USA tag = ENG tag = AOE } FROM = { OR = { tag = EOR is_in_faction_with = EOR } } }
+if = { limit = { tag = SOV } EOR = { if = { limit = { NOT = { has_country_flag = EOR_defeated_SOV } } set_country_flag = EOR_defeated_SOV add_to_variable = { var = EOR_divine_mandate value = 10 }
+eor_refresh_mandate = yes
+} } }
+if = { limit = { tag = USA } EOR = { if = { limit = { NOT = { has_country_flag = EOR_defeated_USA } } set_country_flag = EOR_defeated_USA add_to_variable = { var = EOR_divine_mandate value = 10 }
+eor_refresh_mandate = yes
+} } }
+if = { limit = { tag = ENG } EOR = { if = { limit = { NOT = { has_country_flag = EOR_defeated_ENG } } set_country_flag = EOR_defeated_ENG add_to_variable = { var = EOR_divine_mandate value = 10 }
+eor_refresh_mandate = yes
+} } }
+if = { limit = { tag = AOE } EOR = { if = { limit = { NOT = { has_country_flag = EOR_defeated_AOE } } set_country_flag = EOR_defeated_AOE add_to_variable = { var = EOR_divine_mandate value = 10 }
+eor_refresh_mandate = yes
+} } }
+} } }
+on_army_leader_won_combat = { effect = { FROM = { if = { limit = { tag = EOR NOT = { has_country_flag = EOR_recent_battle_influence } } set_country_flag = { flag = EOR_recent_battle_influence days = 30 } add_to_variable = { var = EOR_imperial_legitimacy value = 1 }
+add_to_variable = { var = EOR_military_influence value = 1 }
+ } } } }
+on_army_leader_lost_combat = { effect = { FROM = { if = { limit = { tag = EOR NOT = { has_country_flag = EOR_recent_battle_influence } } set_country_flag = { flag = EOR_recent_battle_influence days = 30 } add_to_variable = { var = EOR_imperial_legitimacy value = -2 }
+add_to_variable = { var = EOR_military_influence value = 1 }
+ } } } }
+on_navy_leader_won_combat = { effect = { FROM = { if = { limit = { tag = EOR NOT = { has_country_flag = EOR_recent_battle_influence } } set_country_flag = { flag = EOR_recent_battle_influence days = 30 } add_to_variable = { var = EOR_imperial_legitimacy value = 1 }
+add_to_variable = { var = EOR_military_influence value = 1 }
+ } } } }
+on_navy_leader_lost_combat = { effect = { FROM = { if = { limit = { tag = EOR NOT = { has_country_flag = EOR_recent_battle_influence } } set_country_flag = { flag = EOR_recent_battle_influence days = 30 } add_to_variable = { var = EOR_imperial_legitimacy value = -2 }
+add_to_variable = { var = EOR_military_influence value = 1 }
+ } } } }
+}

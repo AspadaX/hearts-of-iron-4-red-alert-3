@@ -2593,46 +2593,20 @@
  #Red Alert 3 Ideas
  
     #The Empire of the Rising Sun
-        traditional_zaibatsus:0 "Traditional Zaibatsus"
-        traditional_zaibatsus_desc:0 "Our zaibatsu system has carried our countries' both civil and military industries for a long while. Perhaps, it is time to tweak the system now..."
-        the_shogunate:0 "The Shogunate"
-        the_shogunate_desc:0 "A group of people who serves the Emperor and passes his divine orders to the rest of the country. The Emperor is no longer a symbol but an actual god with real political power."
  
-        cooperative_zaibatsus:0 "Cooperative Zaibatsus"
-        cooperative_zaibatsus_desc:0 "After a series of discussions, the Zaibatsus finally show their understanding of the empire's vision."
         
         even_more_cooperative_zaibatsus:0 "Even More Cooperative Zaibatsus"
         even_more_cooperative_zaibatsus_desc:0 "With our representatives installed in the Zaibatsus, they are going to serve their country better than before!"
  
-        controlled_zaibatsus:0 "Controlled Zaibatsus"
-        controlled_zaibatsus_desc:0 "The Zaibatsus should serve its country for no reason!"
         
-        EOR_supremacy_of_technology:0 "Supremacy of Technology"
-        EOR_supremacy_of_technology_desc:0 "The empire's might now is safeguarded by our high technology. Who can possiblely compete with us now?!"
         
-        EOR_the_nano_construction:0 "The Nano Construction"
-        EOR_the_nano_construction_desc:0 "Human builders may get tired, but nano robots never!"
         
-        EOR_a_highly_mechanized_army:0 "A Highly Mechanized Army"
-        EOR_a_highly_mechanized_army_desc:0 "If we speed up our attack and bring down the enemies' forces before they can coordinate with each other, there will be no chance for us to fail!"
  
-        EOR_liberate_the_manpower:0 "Liberate the Manpower"
-        EOR_liberate_the_manpower_desc:0 "Builders now has lost their jobs. However, they can still fight for their country!"
         
-        EOR_the_robotic_production:0 "The Robotic Assembly"
-        EOR_the_robotic_production_desc:0 "The high-tech development allows us to access a greater productivity."
         
-        EOR_the_futuristic_bushido:0 "The Futuristic Bushido"
-        EOR_the_futuristic_bushido_desc:0 "By adopting the Imperial Warrior equipment in our army, these Samurais will be more effective in the combats."
         
-        EOR_landing_combat_scheme:0 "Landing Combat Scheme"
-        EOR_landing_combat_scheme_desc:0 "Improving the landing combat plan will realize a greater potential of our soldiers."
         
-        EOR_multiple_terrains_combat_support:0 "Multi-Terrain Combat Support"
-        EOR_multiple_terrains_combat_support_desc:0 "We need to ensure our army's performance in tough environments, so that we can handle various situations."
         
-        EOR_fortified_fleet:0 "Fortified Fleet"
-        EOR_fortified_fleet_desc:0 "Better detection, better firepower, and better armours. Now who can shake our dominant position in the ocean?"
         
         loyal_to_the_empire:0 "Loyal to the Empire"
         loyal_to_the_empire_desc:0 "The imperial territories are loyal to their overlord."

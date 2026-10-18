@@ -1,0 +1,14 @@
+EOR_nanocore_state = { enable = { always = yes } state_production_speed_buildings_factor = 0.20 }
+EOR_forward_mecha_state = { enable = { always = yes } local_supplies = 0.5 }
+EOR_reconstruction_state = { enable = { always = yes } state_repair_speed_infrastructure_factor = 0.50 state_repair_speed_arms_factory_factor = 0.50 state_repair_speed_industrial_complex_factor = 0.50 }
+EOR_omega_assault_state = { enable = { always = yes } local_org_regain = 0.10 }
+EOR_hawaii_defense = { enable = { always = yes } local_org_regain = 0.10 local_supplies = 0.5 }
+EOR_capital_defense = { enable = { always = yes } local_org_regain = 0.10 local_supplies = 0.5 }
+EOR_soviet_planning = { enable = { always = yes } planning_speed = 0.10 }
+EOR_soviet_offensive = { enable = { always = yes } attack_bonus_against = 0.05 planning_speed = 0.10 }
+EOR_subject_centralized_state = { enable = { always = yes } resistance_target = 10 }
+EOR_nanocore_construction = { enable = { always = yes } production_speed_buildings_factor = 0.20 }
+EOR_omega_assault = { enable = { always = yes } breakthrough_bonus_against = 0.10 }
+EOR_mobile_naval_state = { enable = { always = yes } state_production_speed_naval_base_factor = 0.30 }
+EOR_port_repair = { enable = { always = yes } state_repair_speed_naval_base_factor = 0.50 }
+EOR_american_offensive = { enable = { always = yes } attack_bonus_against = 0.05 planning_speed = 0.10 }

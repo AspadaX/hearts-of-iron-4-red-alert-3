@@ -1,0 +1,7 @@
+technologies = {
+EOR_nanocores = { research_cost = 2 start_year = 2008 allow = { always = no }  }
+EOR_nanotech_integration = { research_cost = 2 start_year = 2008 allow = { always = no }  }
+EOR_transformable_airframes = { research_cost = 2 start_year = 2008 allow = { always = no }  }
+EOR_mecha_tengu = { research_cost = 2 start_year = 2008 allow = { always = no } enable_equipments = { EOR_mecha_tengu_equipment } }
+EOR_striker_vx = { research_cost = 2 start_year = 2008 allow = { always = no } enable_equipments = { EOR_striker_vx_equipment } }
+}

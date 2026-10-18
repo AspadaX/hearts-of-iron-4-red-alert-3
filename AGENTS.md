@@ -74,10 +74,10 @@ The user requested removal of vanilla historical events.
 
 - Preserve `replace_path="events"` in the release descriptor and generated development descriptors. Base-game and DLC historical event directories must not merge back in.
 - Preserve custom USA (`usa2`), Soviet (`ussr`), European (`aoe`), African (`ra3_africa`), and RA3 news chains.
-- The functional alliance-invitation exchange `generic.5`, `.6`, `.7` and faction announcement `news.289` are retained because the Empire's China-cooperation focus depends on them. They are the current explicit mechanical exception, not permission to restore historical chains.
+- The functional alliance-invitation exchange `generic.5`, `.6`, `.7` and faction announcement `news.289` remain the explicit mechanical diplomacy exception after the EOR tree redesign. They are the current explicit mechanical exception, not permission to restore historical chains.
 - Custom announcements currently use `news.400`, `.401`, `.403`, `.404`, and `.405`. The European militarization events reference `.400` and `.401`.
 - Adding or changing events requires checking both definitions and callers. Retained chains must resolve; excluded events must not remain in direct calls, event pools, or inherited scheduling hooks.
-- The current catalog has 30 events. This is a snapshot, not a limit on future user-designed content.
+- The current catalog has 73 events, including 43 EOR events. This is a snapshot, not a limit on future user-designed content.
 
 ## Compatibility and validation
 
@@ -108,3 +108,18 @@ User-confirmed runtime baseline: the mod loads, USA/Soviet/Rising Sun campaigns 
 - Prepare a clean release with all required compatibility transformations applied. Do not upload the raw checkout: exclude Git data, tools, archives, development descriptors, backups, diagnostic overlays, and trace markers.
 - Test the prepared release locally, update the existing item through the owning Steam account, and then test the downloaded Workshop build.
 - Follow actual environment permissions for writes. Explain required sandbox escalation briefly; do not use GUI tools to bypass a filesystem restriction.
+
+## Rising Sun design implementation (2026-10-18)
+
+- The revised design has 213 focuses, 85 decisions and 43 EOR events. `PLAN.md` is removed after implementation as requested. The design manifest and `docs/EOR_IMPLEMENTATION.md` preserve the implemented scope.
+- Four political outcomes are Yoshiro, Tatsu, Shinzo and hidden New Dawn. Keep unique characters and Tatsu's military role. An armed coup keeps the player as fascist EOR/Shinzo against non-aligned Imperial loyalists under the existing Yoshiro character.
+- New Dawn releases subjects through negotiations and relinquishes direct overseas holdings. Taiwan returns to CHI; Korea to KOR; Vietnam, Laos and Cambodia to VIN/LAO/CAM; Hawaii and American Pacific holdings to USA; Sakhalin and the Kurils to SOV; remaining overseas islands to independent IOT. Exact state IDs are in the manifest. The misleading filename `555-Lagos.txt` actually describes the Kurils; do not create a Nigerian territorial change from that filename.
+- Approved territorial handovers occur only in the reform campaign, for EOR-owned and fully controlled states, at peace with independent recipients or EOR subjects. Do not rewrite starting borders. Remove handed-over states from EOR's homeland victory requirement. Other countries' subjects are not forcibly freed.
+- First theaters are mutually exclusive, with later Global Reassessment opening additional campaigns. Four separate victory gates replace the former shared ending. Deliberate coup abandonment and a severe countercoup are explicit political-transition exceptions; completed focuses remain historical.
+- Use tag-specific `on_daily_EOR` and `on_monthly_EOR` for recurring mechanics. Keep numerical balance provisional.
+- Preserve the approved dedicated Tengu fighter/VX CAS representation, temporary costly Executioner/Giga Fortress operations, and unique Yuriko mission decisions. Do not claim native transforming or giant hybrid units.
+- IOT must select the full generic focus tree; its former empty tree is archived outside loaded content.
+- Keep every EOR focus icon's artwork unique, continuous focuses below all branches, downward prerequisites and a compact country-picker description.
+- Run `python3 tools/validate_eor.py`, synchronize with `tools/setup_local.py`, then validate `--installed`. Preserve event isolation and compatibility transformations. Full restart and a new non-Ironman campaign are required; static checks are not runtime confirmation.
+
+- Preserve the reviewed native artwork for all 156 country spirits and full prose for all 213 focus descriptions. Mobilization merges either economic endpoint, experiments follow the Weaponry Institute, and overseas logistics merges either administrative endpoint. The manifest and validator cover these connections, description completeness and spirit artwork uniqueness.

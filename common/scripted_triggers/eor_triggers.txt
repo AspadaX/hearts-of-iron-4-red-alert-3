@@ -1,0 +1,131 @@
+eor_moscow_secured = { 219 = { controller = { OR = { tag = EOR is_in_faction_with = EOR } } } }
+eor_soviets_defeated = {
+ OR = { has_country_flag = EOR_defeated_SOV
+ AND = { NOT = { country_exists = SOV } eor_moscow_secured = yes }
+ SOV = { exists = yes is_subject_of = EOR } }
+}
+eor_allies_defeated = {
+ AND = {
+ OR = { has_country_flag = EOR_defeated_USA AND = { NOT = { country_exists = USA } 361 = { controller = { OR = { tag = EOR is_in_faction_with = EOR } } } } USA = { exists = yes is_subject_of = EOR } }
+ OR = { has_country_flag = EOR_defeated_ENG AND = { NOT = { country_exists = ENG } 126 = { controller = { OR = { tag = EOR is_in_faction_with = EOR } } } } ENG = { exists = yes is_subject_of = EOR } }
+ OR = { has_country_flag = EOR_defeated_AOE AND = { NOT = { country_exists = AOE } 7 = { controller = { OR = { tag = EOR is_in_faction_with = EOR } } } } AOE = { exists = yes is_subject_of = EOR } }
+ }
+}
+eor_coalition_possible = {
+ eor_expansion_threat = yes country_exists = SOV country_exists = USA
+ SOV = { NOT = { has_capitulated = yes } NOT = { has_war_with = USA } }
+ USA = { NOT = { has_capitulated = yes } }
+ NOT = { has_country_flag = EOR_coalition_resolved }
+ NOT = { has_country_flag = EOR_coalition_diplomatic_delay }
+}
+eor_can_attack_soviets = {
+ country_exists = SOV NOT = { has_war_with = SOV } NOT = { is_in_faction_with = SOV }
+ OR = { is_ai = no AND = { has_war = no strength_ratio = { tag = SOV ratio > 0.8 } } }
+}
+eor_can_attack_allies = {
+ country_exists = USA NOT = { has_war_with = USA } NOT = { is_in_faction_with = USA }
+ OR = { is_ai = no AND = { has_war = no strength_ratio = { tag = USA ratio > 0.8 } } }
+}
+
+eor_no_political_route = {
+NOT = { OR = { has_country_flag = EOR_route_divine has_country_flag = EOR_route_technocratic has_country_flag = EOR_route_shinzo has_country_flag = EOR_route_reform } }
+}
+
+eor_shinzo_available = {
+has_completed_focus = EOR_the_emperors_shadow OR = { check_variable = { EOR_imperial_legitimacy < 45 } check_variable = { EOR_military_influence > 65 } has_country_flag = EOR_major_defeat has_country_flag = EOR_traditionalist_opposition }
+}
+
+eor_armed_coup_available = {
+282 = { is_owned_by = EOR is_controlled_by = EOR } NOT = { has_country_flag = EOR_coup_abandoned } NOT = { has_country_flag = EOR_bloodless_coup_ready } NOT = { has_civil_war = yes }
+}
+
+eor_loyalists_defeated = {
+has_country_flag = EOR_civil_conflict_started NOT = { has_civil_war = yes } NOT = { any_country = { has_country_flag = EOR_imperial_loyalists exists = yes } }
+}
+
+eor_imperial_expansion_allowed = {
+NOT = { has_country_flag = EOR_route_reform }
+}
+
+eor_northern_theater_open = {
+OR = { has_completed_focus = EOR_northern_thunder has_completed_focus = EOR_imperial_strategic_reassessment has_country_flag = EOR_route_reform }
+}
+
+eor_pacific_theater_open = {
+OR = { has_completed_focus = EOR_pacific_storm has_completed_focus = EOR_imperial_strategic_reassessment has_country_flag = EOR_route_reform }
+}
+
+eor_asian_theater_open = {
+OR = { has_completed_focus = EOR_consolidate_asia has_completed_focus = EOR_imperial_strategic_reassessment has_country_flag = EOR_route_reform }
+}
+
+eor_first_strategy_progress = {
+OR = { has_completed_focus = EOR_operation_vorkuta has_completed_focus = EOR_secure_the_pacific has_completed_focus = EOR_establish_regional_supremacy has_country_flag = EOR_reassessment_ready has_country_flag = EOR_major_defeat eor_soviets_defeated = yes eor_allies_defeated = yes }
+}
+
+eor_expansion_threat = {
+check_variable = { EOR_global_threat > 39 } NOT = { has_country_flag = EOR_route_reform }
+}
+
+eor_secret_path_eligible = {
+eor_no_political_route = yes check_variable = { EOR_imperial_legitimacy < 30 } check_variable = { EOR_subject_pressure > 39 } OR = { has_country_flag = EOR_major_defeat has_stability < 0.30 } has_country_flag = EOR_reform_movement
+}
+
+eor_diplomatic_cooperation_allowed = {
+OR = { AND = { NOT = { has_country_flag = EOR_route_divine } NOT = { has_country_flag = EOR_route_shinzo } } has_country_flag = EOR_diplomatic_concessions }
+}
+
+eor_state_economy_allowed = {
+OR = { NOT = { has_country_flag = EOR_route_reform } has_country_flag = EOR_civilian_industry_oversight }
+}
+
+eor_partnership_allowed = {
+OR = { NOT = { has_country_flag = EOR_route_shinzo } has_country_flag = EOR_military_accepts_partnership }
+}
+
+eor_reform_china_policy = {
+has_country_flag = EOR_route_reform NOT = { CHI = { exists = yes has_country_flag = EOR_china_partner } }
+}
+
+eor_decolonization_resolved = {
+NOT = { OR = { 524 = { is_owned_by = EOR } 525 = { is_owned_by = EOR } 527 = { is_owned_by = EOR } 1028 = { is_owned_by = EOR } 1029 = { is_owned_by = EOR } 1030 = { is_owned_by = EOR } 1031 = { is_owned_by = EOR } 286 = { is_owned_by = EOR } 671 = { is_owned_by = EOR } 1017 = { is_owned_by = EOR } 1066 = { is_owned_by = EOR } 670 = { is_owned_by = EOR } 1068 = { is_owned_by = EOR } 1069 = { is_owned_by = EOR } 741 = { is_owned_by = EOR } 1067 = { is_owned_by = EOR } 629 = { is_owned_by = EOR } 630 = { is_owned_by = EOR } 631 = { is_owned_by = EOR } 632 = { is_owned_by = EOR } 638 = { is_owned_by = EOR } 646 = { is_owned_by = EOR } 537 = { is_owned_by = EOR } 555 = { is_owned_by = EOR } 655 = { is_owned_by = EOR } 270 = { is_owned_by = EOR } 633 = { is_owned_by = EOR } 635 = { is_owned_by = EOR } 636 = { is_owned_by = EOR } 639 = { is_owned_by = EOR } 641 = { is_owned_by = EOR } 642 = { is_owned_by = EOR } 643 = { is_owned_by = EOR } 647 = { is_owned_by = EOR } 648 = { is_owned_by = EOR } 684 = { is_owned_by = EOR } 721 = { is_owned_by = EOR } 725 = { is_owned_by = EOR } 727 = { is_owned_by = EOR } 734 = { is_owned_by = EOR } 1071 = { is_owned_by = EOR } } }
+NOT = { any_subject_country = { exists = yes } } NOT = { any_enemy_country = { has_country_flag = EOR_initial_subject } }
+}
+
+eor_regional_federation = {
+eor_decolonization_resolved = yes check_variable = { EOR_regional_partners > 1 } is_subject = no NOT = { has_civil_war = yes } 282 = { is_fully_controlled_by = EOR }
+}
+
+eor_home_secure = {
+is_subject = no NOT = { has_capitulated = yes } NOT = { has_civil_war = yes } NOT = { any_state = { has_state_flag = EOR_initial_home_core NOT = { is_fully_controlled_by = EOR } } }
+}
+
+eor_soviets_neutralized = {
+OR = { NOT = { country_exists = SOV } eor_soviets_defeated = yes SOV = { exists = yes has_country_flag = EOR_negotiated_settlement NOT = { has_war_with = EOR } } }
+}
+
+eor_allies_neutralized = {
+OR = { NOT = { country_exists = USA } EOR = { has_country_flag = EOR_defeated_USA } AND = { NOT = { country_exists = USA } 361 = { controller = { OR = { tag = EOR is_in_faction_with = EOR } } } } USA = { exists = yes OR = { is_subject_of = EOR AND = { has_country_flag = EOR_negotiated_settlement NOT = { has_war_with = EOR } } } } }
+OR = { NOT = { country_exists = ENG } EOR = { has_country_flag = EOR_defeated_ENG } AND = { NOT = { country_exists = ENG } 126 = { controller = { OR = { tag = EOR is_in_faction_with = EOR } } } } ENG = { exists = yes OR = { is_subject_of = EOR AND = { has_country_flag = EOR_negotiated_settlement NOT = { has_war_with = EOR } } } } }
+OR = { NOT = { country_exists = AOE } EOR = { has_country_flag = EOR_defeated_AOE } AND = { NOT = { country_exists = AOE } 7 = { controller = { OR = { tag = EOR is_in_faction_with = EOR } } } } AOE = { exists = yes OR = { is_subject_of = EOR AND = { has_country_flag = EOR_negotiated_settlement NOT = { has_war_with = EOR } } } } }
+}
+
+eor_technology_victory = {
+has_completed_focus = EOR_establish_nanotech_mainframe OR = { has_country_flag = EOR_omega_available has_country_flag = EOR_executioner_deployed has_country_flag = EOR_giga_deployed }
+}
+
+eor_yoshiro_victory = {
+has_country_flag = EOR_route_divine has_country_leader = { character = EOR_yoshiro ruling_only = yes } eor_home_secure = yes eor_soviets_defeated = yes eor_allies_defeated = yes OR = { has_completed_focus = EOR_crush_the_coalition has_completed_focus = EOR_divide_our_enemies has_completed_focus = EOR_war_of_attrition }
+}
+
+eor_tatsu_victory = {
+has_country_flag = EOR_route_technocratic has_country_leader = { character = EOR_tatsu ruling_only = yes } eor_home_secure = yes eor_soviets_neutralized = yes eor_allies_neutralized = yes eor_technology_victory = yes
+}
+
+eor_shinzo_victory = {
+has_country_flag = EOR_route_shinzo has_country_flag = EOR_coup_consolidated has_country_leader = { character = EOR_shinzo ruling_only = yes } eor_home_secure = yes eor_soviets_defeated = yes eor_allies_defeated = yes
+}
+
+eor_reform_victory = {
+has_country_flag = EOR_route_reform has_country_flag = EOR_constitutional_reconstruction_complete eor_home_secure = yes eor_regional_federation = yes
+}

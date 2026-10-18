@@ -3,14 +3,17 @@ capital = 282
 oob = "EOR_2008"
 set_air_oob = "EOR_2008_air"
 
-set_stability = 0.2 #baseline, THE EMPEROR PROTECTS
-set_war_support = 0.8
+set_stability = 0.45 # +15% initial spirits/leader = 60% displayed stability.
+set_war_support = 0.60 # +20% initial spirits/leader = 80% displayed war support.
 
 #Defining the Country
 set_research_slots = 4
 set_fuel_ratio = 1.0
 add_ideas = {
-	state_shintoism
+	EOR_divine_emperor
+	EOR_technological_superiority
+	EOR_imperial_resource_dependency
+	EOR_coprosperity_administration
 	limited_exports
 	limited_conscription
 	partial_economic_mobilisation
@@ -119,19 +122,19 @@ if = {
 	}
 	set_autonomy = {
 		target = MAL
-		autonomous_state = autonomy_integrated_puppet
+		autonomy_state = autonomy_integrated_puppet
 	}
 	set_autonomy = {
 		target = IOT
-		autonomous_state = autonomy_integrated_puppet
+		autonomy_state = autonomy_integrated_puppet
 	}
 	set_autonomy = {
 		target = PHI
-		autonomous_state = autonomy_integrated_puppet
+		autonomy_state = autonomy_integrated_puppet
 	}
 	set_autonomy = {
 		target = INS
-		autonomous_state = autonomy_integrated_puppet
+		autonomy_state = autonomy_integrated_puppet
 	}
 }
 
@@ -208,19 +211,7 @@ set_politics = {
 	elections_allowed = no
 }
 
-create_country_leader = {
-	name = "Yoshiro"
-	desc = "POLITICS_Hirohito_DESC"
-	picture = "Portrait_Empire_Yoshiro.dds"
-	expire = "2051.1.1"
-	ideology = fascism_ideology
-	traits = {
-		warrior_code
-		emperor_yoshiro
-		imperial_sanction
-	}
-	#id = 700 #Hirohito
-}
+recruit_character = EOR_yoshiro
 
 create_country_leader = {
 	name = "Kyuichi Tokuda"
@@ -253,27 +244,9 @@ create_corps_commander = {
 	logistics_skill = 3
 }
 
-create_corps_commander = {
-	name = "Shinzo Nagama"
-		picture = "Shinzo Nagama.dds"
-	traits = { naval_invader infantry_leader organizer }
-	skill = 3
-	attack_skill = 4
-	defense_skill = 4
-	planning_skill = 4
-	logistics_skill = 4
-}
+recruit_character = EOR_shinzo
 
-create_field_marshal = {
-	name = "Tatsu"
-		picture = "Tatsu.dds"
-	traits = { brilliant_strategist armor_officer trait_reckless }
-	skill = 5
-	attack_skill = 4
-	defense_skill = 5
-	planning_skill = 3
-	logistics_skill = 4
-}
+recruit_character = EOR_tatsu
 
 create_navy_leader = {
 	name = "Naomi Shirada"
@@ -855,4 +828,11 @@ if = {
 				rear_1_custom_slot = ship_mine_layer_sub
 			}
 		}
+}
+# Modern base-game fallback for the authored Imperial subject relationships.
+if = { limit = { NOT = { has_dlc = "Together for Victory" } }
+set_autonomy = { target = MAL autonomy_state = autonomy_puppet }
+set_autonomy = { target = IOT autonomy_state = autonomy_puppet }
+set_autonomy = { target = PHI autonomy_state = autonomy_puppet }
+set_autonomy = { target = INS autonomy_state = autonomy_puppet }
 }
