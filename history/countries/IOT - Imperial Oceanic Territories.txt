@@ -16,8 +16,8 @@ add_ideas = {
 create_country_leader = {
 	name = "The Oceanic Office"
 	desc = "POLITICS_THE_OCEANIC_OFFICE_DESC"
-	picture = "Portrait_the_oceanic_office.dds"
-	expire = "1989.1.1"
+	picture = "gfx/leaders/IOT/Portrait_the_oceanic_office.dds"
+	expire = "2051.1.1"
 	ideology = fascism_ideology
 	traits = {
 		#

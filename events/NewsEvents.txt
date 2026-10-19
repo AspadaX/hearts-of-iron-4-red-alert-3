@@ -157,7 +157,7 @@ news_event = {
 			}
 		}
 		option = {
-			name = news.400.d
+			name = news.400.option_ack
 			trigger = {
 					NOT = { 
 						original_tag = AOE
@@ -202,7 +202,7 @@ news_event = {
 			}
 		}
 		option = {
-			name = news.401.d
+			name = news.401.option_ack
 			trigger = {
 					NOT = { 
 						original_tag = AOE

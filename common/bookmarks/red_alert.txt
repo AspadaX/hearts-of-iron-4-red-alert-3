@@ -7,6 +7,10 @@ bookmarks = {
 		default_country = "USA"
 		default = yes
 
+        include_majors_in_minor_list = no
+        sort_unplayed_first = no
+        scrollable_country_list = yes
+
 		"USA"={
 			history = "USA_WAR_OF_THE_THREE_POWERS_DESC"
 			ideology = democratic
@@ -55,8 +59,8 @@ bookmarks = {
 				home_of_revolution
 			}
 			focuses = {
-				SOV_finish_five_year_plan
-				SOV_the_revolution
+				SOV_industrial_effort
+				SOV_resource_extraction
 				SOV_strengthen_the_command_system
 			}
 		}
@@ -96,9 +100,9 @@ bookmarks = {
 				traditional_zaibatsus
 			}
 			focuses = {
+				EOR_the_imperial_dawn
+				EOR_convene_the_imperial_court
 				EOR_imperial_ambition
-				EOR_the_imperial_dawn
-				EOR_the_imperial_dawn
 			}
 		}
 
@@ -116,6 +120,30 @@ bookmarks = {
 
 			}
 		}
+
+        "PHI" = {
+            minor = yes
+            history = "PHI_WAR_OF_THE_THREE_POWERS_DESC"
+            ideology = fascism
+            ideas = { state_shintoism loyal_to_the_empire }
+            focuses = { }
+        }
+
+        "MAL" = {
+            minor = yes
+            history = "MAL_WAR_OF_THE_THREE_POWERS_DESC"
+            ideology = fascism
+            ideas = { state_shintoism loyal_to_the_empire }
+            focuses = { }
+        }
+
+        "INS" = {
+            minor = yes
+            history = "INS_WAR_OF_THE_THREE_POWERS_DESC"
+            ideology = fascism
+            ideas = { state_shintoism loyal_to_the_empire }
+            focuses = { }
+        }
 
 		"SAF" = {
 			minor = yes

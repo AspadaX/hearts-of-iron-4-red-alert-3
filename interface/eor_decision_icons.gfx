@@ -1,0 +1,6 @@
+spriteTypes = {
+ spriteType = { name = "GFX_decision_EOR_omega" texturefile = "gfx/interface/ideas/generic_spy_intel.dds" }
+ spriteType = { name = "GFX_decision_EOR_executioner" texturefile = "gfx/interface/ideas/idea_war_economy.dds" }
+ spriteType = { name = "GFX_decision_EOR_giga_fortress" texturefile = "gfx/interface/ideas/idea_PRC_shipbuilding_industry_bureau.dds" }
+ spriteType = { name = "GFX_decision_EOR_black_tortoise" texturefile = "gfx/interface/ideas/FRA_fortification_focus.dds" }
+}

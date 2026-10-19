@@ -1,0 +1,30 @@
+defined_text = { name = GetEORAuthorityAscendancy
+ text = { trigger = { has_country_leader = { character = EOR_tatsu ruling_only = yes } } localization_key = EOR_modernization_ascendancy }
+ text = { trigger = { has_country_flag = EOR_military_government_installed has_country_leader = { character = EOR_shinzo ruling_only = yes } } localization_key = EOR_military_ascendancy }
+ text = { localization_key = EOR_sacred_ascendancy }
+}
+defined_text = { name = GetEORAuthorityConfidence
+ text = { trigger = { has_country_leader = { character = EOR_tatsu ruling_only = yes } } localization_key = EOR_modernization_confidence }
+ text = { trigger = { has_country_flag = EOR_military_government_installed has_country_leader = { character = EOR_shinzo ruling_only = yes } } localization_key = EOR_military_confidence }
+ text = { localization_key = EOR_sacred_confidence }
+}
+defined_text = { name = GetEORAuthorityDoubts
+ text = { trigger = { has_country_leader = { character = EOR_tatsu ruling_only = yes } } localization_key = EOR_modernization_doubts }
+ text = { trigger = { has_country_flag = EOR_military_government_installed has_country_leader = { character = EOR_shinzo ruling_only = yes } } localization_key = EOR_military_doubts }
+ text = { localization_key = EOR_sacred_doubts }
+}
+defined_text = { name = GetEORAuthorityCrisis
+ text = { trigger = { has_country_leader = { character = EOR_tatsu ruling_only = yes } } localization_key = EOR_modernization_crisis }
+ text = { trigger = { has_country_flag = EOR_military_government_installed has_country_leader = { character = EOR_shinzo ruling_only = yes } } localization_key = EOR_military_crisis }
+ text = { localization_key = EOR_sacred_crisis }
+}
+defined_text = { name = GetEORAuthorityShattered
+ text = { trigger = { has_country_leader = { character = EOR_tatsu ruling_only = yes } } localization_key = EOR_modernization_shattered }
+ text = { trigger = { has_country_flag = EOR_military_government_installed has_country_leader = { character = EOR_shinzo ruling_only = yes } } localization_key = EOR_military_shattered }
+ text = { localization_key = EOR_sacred_shattered }
+}
+defined_text = { name = GetEORAuthorityDescription
+ text = { trigger = { has_country_leader = { character = EOR_tatsu ruling_only = yes } } localization_key = EOR_modernization_authority_desc }
+ text = { trigger = { has_country_flag = EOR_military_government_installed has_country_leader = { character = EOR_shinzo ruling_only = yes } } localization_key = EOR_military_authority_desc }
+ text = { localization_key = EOR_sacred_authority_desc }
+}

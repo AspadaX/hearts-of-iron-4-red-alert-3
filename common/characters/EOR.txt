@@ -10,7 +10,7 @@ characters = {
  advisor = {
  slot = political_advisor cost = 150 traits = { EOR_technical_minister }
  allowed = { original_tag = EOR }
- available = { has_completed_focus = EOR_the_crown_prince NOT = { has_country_flag = EOR_reformist_advisors_purged } }
+ available = { OR = { has_completed_focus = EOR_the_crown_prince has_completed_focus = EOR_reconcile_the_court } NOT = { has_country_flag = EOR_reformist_advisors_purged } }
  on_add = { owner = { add_to_variable = { var = EOR_technocratic_influence value = 10 } } }
  on_remove = { owner = { add_to_variable = { var = EOR_technocratic_influence value = -10 } } }
  }
@@ -29,8 +29,5 @@ characters = {
  on_remove = { owner = { add_to_variable = { var = EOR_military_influence value = -10 } } }
  }
  }
- EOR_reform_council = {
- name = EOR_reform_council_name
- portraits = { civilian = { large = "gfx/leaders/IOT/Portrait_the_oceanic_office.dds" } }
- }
+
 }

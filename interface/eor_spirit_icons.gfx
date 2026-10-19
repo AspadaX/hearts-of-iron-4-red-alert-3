@@ -5,8 +5,8 @@ spriteTypes = {
  spriteType = { name = "GFX_idea_eor_spirit_the_shogunate" texturefile = "gfx/interface/ideas/idea_jap_militarism_shogun.dds" }
  spriteType = { name = "GFX_idea_eor_spirit_EOR_technological_superiority" texturefile = "gfx/interface/ideas/idea_jap_supremacy_of_technology.dds" }
  spriteType = { name = "GFX_idea_eor_spirit_traditional_zaibatsus" texturefile = "gfx/interface/ideas/idea_jap_zaibatsu.dds" }
- spriteType = { name = "GFX_idea_eor_spirit_cooperative_zaibatsus" texturefile = "gfx/interface/ideas/idea_jap_zaibatsu_ally.dds" }
- spriteType = { name = "GFX_idea_eor_spirit_controlled_zaibatsus" texturefile = "gfx/interface/ideas/idea_jap_zaibatsu_control.dds" }
+
+
  spriteType = { name = "GFX_idea_eor_spirit_EOR_imperial_resource_dependency" texturefile = "gfx/interface/ideas/idea_generic_stockpile_fuel.dds" }
  spriteType = { name = "GFX_idea_eor_spirit_EOR_coprosperity_administration" texturefile = "gfx/interface/ideas/idea_JAP_east_asian_co_prosperity.dds" }
  spriteType = { name = "GFX_idea_eor_spirit_EOR_reinforced_shogunate" texturefile = "gfx/interface/ideas/idea_man_militarism.dds" }
@@ -75,7 +75,7 @@ spriteTypes = {
  spriteType = { name = "GFX_idea_eor_spirit_EOR_psionic_command_disruption" texturefile = "gfx/interface/ideas/generic_spy_coup.dds" }
  spriteType = { name = "GFX_idea_eor_spirit_EOR_omega_counterintelligence" texturefile = "gfx/interface/ideas/generic_spy_intel.dds" }
  spriteType = { name = "GFX_idea_eor_spirit_EOR_postwar_science" texturefile = "gfx/interface/ideas/idea_generic_radar.dds" }
- spriteType = { name = "GFX_idea_eor_spirit_EOR_postwar_cooperation" texturefile = "gfx/interface/ideas/idea_generic_flexible_foreign_policy2.dds" }
+
  spriteType = { name = "GFX_idea_eor_spirit_EOR_post_defeat" texturefile = "gfx/interface/ideas/idea_generic_army_problems.dds" }
  spriteType = { name = "GFX_idea_eor_spirit_EOR_imperial_resistance" texturefile = "gfx/interface/ideas/idea_generic_guerilla_warfare.dds" }
  spriteType = { name = "GFX_idea_eor_spirit_EOR_coalition_cooperation" texturefile = "gfx/interface/ideas/generic_volunteer_expedition_bonus.dds" }
@@ -116,9 +116,8 @@ spriteTypes = {
  spriteType = { name = "GFX_idea_eor_spirit_EOR_v2_the_land_shogunate" texturefile = "gfx/interface/ideas/idea_jap_interservice_rivalry_army_strengthened.dds" }
  spriteType = { name = "GFX_idea_eor_spirit_EOR_v2_the_oceanic_shogunate" texturefile = "gfx/interface/ideas/idea_jap_interservice_rivalry_navy_strengthened.dds" }
  spriteType = { name = "GFX_idea_eor_spirit_EOR_v2_supreme_shogunate" texturefile = "gfx/interface/ideas/idea_jap_militarism_showa.dds" }
- spriteType = { name = "GFX_idea_eor_spirit_EOR_v2_the_symbolic_throne" texturefile = "gfx/interface/ideas/idea_generic_constitutional_guarantee.dds" }
- spriteType = { name = "GFX_idea_eor_spirit_EOR_v2_end_the_dynasty" texturefile = "gfx/interface/ideas/generic_democratic_drift_bonus.dds" }
- spriteType = { name = "GFX_idea_eor_spirit_EOR_v2_new_dawn" texturefile = "gfx/interface/ideas/idea_JAP_free_asia_pacific.dds" }
+
+
  spriteType = { name = "GFX_idea_eor_spirit_EOR_v2_secure_the_far_east" texturefile = "gfx/interface/ideas/idea_generic_supply_depot.dds" }
  spriteType = { name = "GFX_idea_eor_spirit_EOR_cooperative_zaibatsus" texturefile = "gfx/interface/ideas/idea_CZE_industrialists_veto.dds" }
  spriteType = { name = "GFX_idea_eor_spirit_EOR_v2_industrial_autonomy" texturefile = "gfx/interface/ideas/generic_economic_increase.dds" }
@@ -154,5 +153,5 @@ spriteTypes = {
  spriteType = { name = "GFX_idea_eor_spirit_EOR_v2_fortify_the_empire" texturefile = "gfx/interface/ideas/idea_SWE_hedgehog_defense.dds" }
  spriteType = { name = "GFX_idea_eor_spirit_EOR_v2_total_defense" texturefile = "gfx/interface/ideas/idea_ast_volunteer_defence_corps.dds" }
  spriteType = { name = "GFX_idea_eor_spirit_EOR_v2_war_of_attrition" texturefile = "gfx/interface/ideas/idea_SOV_third_five_year_plan_military.dds" }
- spriteType = { name = "GFX_idea_eor_spirit_EOR_v2_constitutional_defense" texturefile = "gfx/interface/ideas/idea_hol_the_foundations_of_defense.dds" }
+
 }

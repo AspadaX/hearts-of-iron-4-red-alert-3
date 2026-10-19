@@ -12,3 +12,7 @@ EOR_omega_assault = { enable = { always = yes } breakthrough_bonus_against = 0.1
 EOR_mobile_naval_state = { enable = { always = yes } state_production_speed_naval_base_factor = 0.30 }
 EOR_port_repair = { enable = { always = yes } state_repair_speed_naval_base_factor = 0.50 }
 EOR_american_offensive = { enable = { always = yes } attack_bonus_against = 0.05 planning_speed = 0.10 }
+
+EOR_psionic_factory_disruption = { enable = { always = yes } local_resources_factor = -0.10 local_factory_sabotage = 0.20 }
+
+EOR_chinese_offensive = { enable = { always = yes } attack_bonus_against = 0.05 planning_speed = 0.10 }

@@ -1,52 +1,5 @@
 EOR_imperial_decisions = {
-EOR_deploy_construction_nanocores = { icon = generic_prepare_civil_war cost = 50
-visible = { has_completed_focus = EOR_the_nano_construction }
-state_target = yes
-target_trigger = { FROM = { is_owned_by = ROOT is_controlled_by = ROOT } }
-available = { has_tech = EOR_nanocores NOT = { has_idea = EOR_nanocore_investment } }
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { FROM = { add_dynamic_modifier = { modifier = EOR_nanocore_state days = 90 scope = ROOT } }
-add_timed_idea = { idea = EOR_nanocore_investment days = 90 }
- }
-}
-EOR_forward_mecha_bay = { icon = generic_prepare_civil_war cost = 75
-visible = { has_completed_focus = EOR_establish_nanotech_mainframe }
-state_target = yes
-target_trigger = { FROM = { is_owned_by = ROOT is_controlled_by = ROOT } }
-available = { has_tech = EOR_nanocores num_of_civilian_factories > 3 has_equipment = { support_equipment > 99 } NOT = { has_idea = EOR_nanocore_investment } }
-days_remove = 90
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_equipment_to_stockpile = { type = support_equipment_1 amount = -100 }
-add_timed_idea = { idea = EOR_nanocore_investment days = 90 }
- }
-remove_effect = { FROM = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } add_dynamic_modifier = { modifier = EOR_forward_mecha_state days = 180 scope = ROOT } } } }
-}
-EOR_mobile_naval_facilities = { icon = generic_prepare_civil_war cost = 50
-visible = { has_completed_focus = EOR_the_nano_construction }
-state_target = yes
-target_trigger = { FROM = { is_owned_by = ROOT is_controlled_by = ROOT is_coastal = yes } }
-available = { has_tech = EOR_nanocores num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-days_remove = 90
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 90 }
- }
-remove_effect = { FROM = { if = { limit = { is_controlled_by = ROOT } add_dynamic_modifier = { modifier = EOR_mobile_naval_state days = 180 scope = ROOT } } } }
-}
-EOR_emergency_reconstruction = { icon = generic_prepare_civil_war cost = 35
-visible = { has_completed_focus = EOR_the_nano_construction }
-state_target = yes
-target_trigger = { FROM = { is_owned_by = ROOT is_controlled_by = ROOT } }
-available = { has_tech = EOR_nanocores has_equipment = { support_equipment > 99 } NOT = { has_idea = EOR_nanocore_investment } }
-days_re_enable = 120
-ai_will_do = { factor = 1 }
-complete_effect = { add_equipment_to_stockpile = { type = support_equipment_1 amount = -100 }
-add_timed_idea = { idea = EOR_nanocore_investment days = 60 }
-FROM = { add_dynamic_modifier = { modifier = EOR_reconstruction_state days = 60 scope = ROOT } } }
-}
-EOR_imperial_administration_review = { icon = generic_prepare_civil_war cost = 50
+EOR_imperial_administration_review = { icon = generic_political_discourse cost = 50
 visible = { has_completed_focus = EOR_convene_the_imperial_court }
 available = {  }
 days_re_enable = 180
@@ -56,147 +9,7 @@ eor_refresh_mandate = yes
 add_to_variable = { var = EOR_subject_pressure value = -10 }
  }
 }
-EOR_war_council_planning = { icon = generic_prepare_civil_war cost = 50
-visible = { has_completed_focus = EOR_reform_the_imperial_army }
-available = {  }
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_timed_idea = { idea = EOR_offensive_preparations days = 90 }
- }
-}
-EOR_technological_administration = { icon = generic_prepare_civil_war cost = 75
-visible = { has_completed_focus = EOR_empower_the_technocrats }
-available = { num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-days_remove = 90
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 90 }
- }
-remove_effect = { add_timed_idea = { idea = EOR_research_surge days = 180 }
- }
-}
-EOR_investigate_soviet_research = { icon = generic_prepare_civil_war cost = 100
-visible = { has_completed_focus = EOR_funding_imperial_weaponry_institute }
-fire_only_once = yes
-available = { has_completed_focus = EOR_the_crown_prince num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } NOT = { has_country_flag = EOR_truth_known } }
-days_remove = 180
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 180 }
- }
-remove_effect = { set_country_flag = EOR_intelligence_complete
- }
-}
-EOR_begin_northern_war = { icon = generic_prepare_civil_war cost = 50
-visible = { has_completed_focus = EOR_strike_vladivostok }
-fire_only_once = yes
-available = { eor_imperial_expansion_allowed = yes  eor_can_attack_soviets = yes NOT = { has_country_flag = EOR_delay_soviet_war } }
-days_re_enable = 180
-ai_will_do = { factor = 0.5 }
-complete_effect = { declare_war_on = { target = SOV type = annex_everything } }
-}
-EOR_prepare_soviet_offensive = { icon = generic_prepare_civil_war cost = 50
-visible = { has_completed_focus = EOR_northern_war_plan }
-available = { has_war_with = SOV }
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_dynamic_modifier = { modifier = EOR_soviet_offensive days = 90 scope = SOV } }
-}
-EOR_begin_pacific_war = { icon = generic_prepare_civil_war cost = 50
-visible = { has_completed_focus = EOR_pacific_war_plan }
-fire_only_once = yes
-available = { eor_imperial_expansion_allowed = yes  eor_can_attack_allies = yes NOT = { has_country_flag = EOR_american_delay } }
-days_re_enable = 180
-ai_will_do = { factor = 0.5 }
-complete_effect = { declare_war_on = { target = USA type = annex_everything } }
-}
-EOR_pacific_operations = { icon = generic_prepare_civil_war cost = 50
-visible = { has_completed_focus = EOR_secure_the_pacific }
-available = { has_war = yes fuel_ratio > 0.01 }
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_timed_idea = { idea = EOR_secure_pacific days = 90 }
-add_fuel = -50
- }
-}
-EOR_mainland_invasion = { icon = generic_prepare_civil_war cost = 75
-visible = { has_completed_focus = EOR_operation_santa_monica }
-available = { has_war_with = USA NOT = { has_country_flag = EOR_american_delay } }
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_timed_idea = { idea = EOR_landing_combat_scheme days = 90 }
-add_timed_idea = { idea = EOR_offensive_preparations days = 90 }
- }
-}
-EOR_global_strategy = { icon = generic_prepare_civil_war cost = 50
-visible = { has_completed_focus = EOR_imperial_strategic_reassessment }
-available = {  }
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { army_experience = 20
-add_timed_idea = { idea = EOR_offensive_preparations days = 90 }
- }
-}
-EOR_anti_coalition_readiness = { icon = generic_prepare_civil_war cost = 75
-visible = { has_completed_focus = EOR_the_coalition_crisis }
-available = { has_war = yes }
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_timed_idea = { idea = EOR_emergency_defense days = 90 }
- }
-}
-EOR_defend_pearl_harbor = { icon = generic_prepare_civil_war cost = 50
-visible = { has_completed_focus = EOR_fortify_pearl_harbor }
-available = { has_manpower > 2500 629 = { is_controlled_by = ROOT } }
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_manpower = -2500
-629 = { add_dynamic_modifier = { modifier = EOR_hawaii_defense days = 90 scope = EOR } } }
-}
-EOR_rebuild_vladivostok = { icon = generic_prepare_civil_war cost = 50
-visible = { has_completed_focus = EOR_strike_vladivostok }
-available = { has_country_flag = EOR_vladivostok_reconstruction num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } 408 = { is_controlled_by = ROOT } }
-days_remove = 90
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 90 }
- }
-remove_effect = { 408 = { if = { limit = { is_controlled_by = ROOT } add_dynamic_modifier = { modifier = EOR_port_repair days = 180 scope = EOR } } } }
-}
-EOR_procure_king_oni = { icon = generic_prepare_civil_war cost = 75
-visible = { has_completed_focus = EOR_deploy_king_oni }
-available = { num_of_civilian_factories > 3 NOT = { has_idea = EOR_procurement_investment } has_tech = king_oni }
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_ideas = EOR_procurement_investment
- }
-remove_effect = { remove_ideas = EOR_procurement_investment
-add_equipment_to_stockpile = { type = king_oni_equipment amount = 30 producer = EOR } }
-}
-EOR_procure_infantry = { icon = generic_prepare_civil_war cost = 75
-visible = { has_completed_focus = EOR_the_first_amendment_of_the_imperial_mobilization_law }
-available = { num_of_civilian_factories > 3 NOT = { has_idea = EOR_procurement_investment } has_tech = imperial_warrior }
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_ideas = EOR_procurement_investment
- }
-remove_effect = { remove_ideas = EOR_procurement_investment
-add_equipment_to_stockpile = { type = imperial_warrior_equipment amount = 600 producer = EOR } }
-}
-EOR_shogun_construction_program = { icon = generic_prepare_civil_war cost = 100
-visible = { has_completed_focus = EOR_shogun_battleship_program }
-available = { num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-days_remove = 180
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 180 }
- }
-remove_effect = { add_timed_idea = { idea = EOR_fleet_expansion days = 180 }
- }
-}
-EOR_mobilize_imperial_workforce = { icon = generic_prepare_civil_war cost = 50
+EOR_mobilize_imperial_workforce = { icon = generic_political_discourse cost = 50
 visible = { has_completed_focus = EOR_imperial_wartime_measures }
 available = {  }
 days_re_enable = 180
@@ -205,251 +18,41 @@ complete_effect = { add_stability = -0.02
 add_timed_idea = { idea = EOR_first_amendment days = 180 }
  }
 }
-EOR_expanded_economic_mobilization = { icon = generic_prepare_civil_war cost = 75
-visible = { has_completed_focus = EOR_the_second_amendment_of_the_imperial_mobilization_law }
-available = { num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } capital_scope = { is_controlled_by = ROOT } }
-days_remove = 180
-days_re_enable = 365
-ai_will_do = { factor = 1 }
-complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 180 }
- }
-remove_effect = { capital_scope = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
- }
-}
-EOR_develop_mal_resources = { icon = generic_prepare_civil_war cost = 75
-visible = { has_completed_focus = EOR_resource_security_program }
-fire_only_once = yes
-available = { MAL = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-days_remove = 180
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 180 }
- }
-remove_effect = { if = { limit = { MAL = { exists = yes is_subject_of = ROOT } } MAL = { set_country_flag = EOR_resources_developed random_owned_controlled_state = { add_resource = { type = rubber amount = 8 } } } } }
-}
-EOR_develop_ins_resources = { icon = generic_prepare_civil_war cost = 75
-visible = { has_completed_focus = EOR_resource_security_program }
-fire_only_once = yes
-available = { INS = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-days_remove = 180
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 180 }
- }
-remove_effect = { if = { limit = { INS = { exists = yes is_subject_of = ROOT } } INS = { set_country_flag = EOR_resources_developed random_owned_controlled_state = { add_resource = { type = oil amount = 8 } } } } }
-}
-EOR_overseas_infrastructure = { icon = generic_prepare_civil_war cost = 50
-visible = { has_completed_focus = EOR_build_our_overseas_territories }
+EOR_postwar_imperial = { icon = generic_political_discourse cost = 75
 state_target = yes
-target_trigger = { FROM = { is_controlled_by = OWNER owner = { exists = yes is_subject_of = ROOT } infrastructure < 5 } }
-available = { num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-days_remove = 90
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 90 }
- }
-remove_effect = { FROM = { if = { limit = { owner = { is_subject_of = ROOT } is_controlled_by = OWNER } add_building_construction = { type = infrastructure level = 1 instant_build = yes } owner = { add_stability = 0.03 } } } }
-}
-EOR_overseas_ports = { icon = generic_prepare_civil_war cost = 75
-visible = { has_completed_focus = EOR_imperial_logistics_network }
-state_target = yes
-target_trigger = { FROM = { is_controlled_by = OWNER owner = { exists = yes is_subject_of = ROOT } is_coastal = yes } }
-available = { num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
- }
-remove_effect = { FROM = { if = { limit = { owner = { is_subject_of = ROOT } is_controlled_by = OWNER } add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } } }
-}
-EOR_overseas_mobilization = { icon = generic_prepare_civil_war cost = 50
-visible = { has_completed_focus = EOR_introduce_the_imperial_mobilization_law }
-available = { any_subject_country = { exists = yes } }
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { every_subject_country = { limit = { exists = yes }
-add_war_support = 0.05
-}
-army_experience = 10
- }
-}
-EOR_centralization_administration = { icon = generic_prepare_civil_war cost = 75
-visible = { has_completed_focus = EOR_tennoheika_banzai }
-available = { any_subject_country = { exists = yes } }
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_to_variable = { var = EOR_subject_pressure value = -20 }
- }
-}
-EOR_partnership_investment = { icon = generic_prepare_civil_war cost = 75
-visible = { has_completed_focus = EOR_reform_coprosperity_sphere }
-available = { any_subject_country = { exists = yes } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
- }
-remove_effect = { every_subject_country = { limit = { exists = yes }
-add_stability = 0.03
-add_timed_idea = { idea = EOR_research_surge days = 180 }
-}
- }
-}
-EOR_build_executioner = { icon = generic_prepare_civil_war cost = 150
-visible = { OR = { has_completed_focus = EOR_deploy_the_executioner has_country_flag = EOR_secondary_executioner } }
-available = { NOT = { has_country_flag = EOR_project_busy } num_of_civilian_factories > 8 has_country_flag = EOR_executioner_authorized NOT = { has_country_flag = EOR_executioner_development } NOT = { has_country_flag = EOR_executioner_cancelled } has_war = yes }
-days_remove = 180
-days_re_enable = 365
-ai_will_do = { factor = 0.5 }
-complete_effect = { set_country_flag = EOR_project_busy
-add_ideas = EOR_project_investment
- }
-remove_effect = {
-set_country_flag = EOR_executioner_deployed clr_country_flag = EOR_project_busy
-remove_ideas = EOR_project_investment
-if = { limit = { NOT = { has_country_flag = EOR_build_executioner_prestige_reward } } set_country_flag = EOR_build_executioner_prestige_reward add_to_variable = { var = EOR_divine_mandate value = 5 } eor_refresh_mandate = yes }
-if = { limit = { has_country_flag = EOR_executioner_refined } add_timed_idea = { idea = EOR_executioner_reliable days = 60 }
- } else = { add_timed_idea = { idea = EOR_executioner days = 60 }
- } }
-}
-EOR_build_giga_fortress = { icon = generic_prepare_civil_war cost = 200
-visible = { OR = { has_completed_focus = EOR_deploy_the_giga_fortress has_country_flag = EOR_secondary_giga } }
-available = { NOT = { has_country_flag = EOR_project_busy } num_of_civilian_factories > 8 has_tech = EOR_nanotech_integration has_war = yes }
-days_remove = 240
-days_re_enable = 540
-ai_will_do = { factor = 0.5 }
-complete_effect = { set_country_flag = EOR_project_busy
-add_ideas = EOR_project_investment
- }
-remove_effect = {
-set_country_flag = EOR_giga_deployed clr_country_flag = EOR_project_busy
-remove_ideas = EOR_project_investment
-if = { limit = { NOT = { has_country_flag = EOR_build_giga_fortress_prestige_reward } } set_country_flag = EOR_build_giga_fortress_prestige_reward add_to_variable = { var = EOR_divine_mandate value = 5 } eor_refresh_mandate = yes }
-add_timed_idea = { idea = EOR_giga_fortress days = 90 }
- }
-}
-EOR_build_black_tortoise = { icon = generic_prepare_civil_war cost = 150
-visible = { has_completed_focus = EOR_black_tortoise_fortress }
-available = { NOT = { has_country_flag = EOR_project_busy } num_of_civilian_factories > 8 has_country_flag = EOR_black_tortoise_authorized NOT = { has_country_flag = EOR_tortoise_delay } }
-days_remove = 180
-days_re_enable = 365
-ai_will_do = { factor = 1 }
-complete_effect = { set_country_flag = EOR_project_busy
-add_ideas = EOR_project_investment
- }
-remove_effect = { clr_country_flag = EOR_project_busy
-remove_ideas = EOR_project_investment
-if = { limit = { NOT = { has_country_flag = EOR_build_black_tortoise_prestige_reward } } set_country_flag = EOR_build_black_tortoise_prestige_reward add_to_variable = { var = EOR_divine_mandate value = 5 } eor_refresh_mandate = yes }
-add_timed_idea = { idea = EOR_black_tortoise days = 180 }
- }
-}
-EOR_omega_assault = { icon = generic_prepare_civil_war cost = 100
-visible = { OR = { has_completed_focus = EOR_yuriko_omega has_country_flag = EOR_secondary_omega } }
-state_target = yes
-target_trigger = { FROM = { is_controlled_by = ROOT owner = { has_war_with = ROOT } } }
-available = { has_country_flag = EOR_omega_available NOT = { has_country_flag = EOR_omega_cooldown } }
-days_remove = 30
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { set_country_flag = { flag = EOR_omega_cooldown days = 180 }
- }
-remove_effect = { if = { limit = { FROM = { is_controlled_by = ROOT owner = { has_war_with = ROOT } } } FROM = { add_dynamic_modifier = { modifier = EOR_omega_assault_state days = 30 scope = ROOT } } add_dynamic_modifier = { modifier = EOR_omega_assault days = 30 scope = FROM.OWNER } } }
-}
-EOR_omega_command_disruption = { icon = generic_prepare_civil_war cost = 100
-visible = { OR = { has_completed_focus = EOR_yuriko_omega has_country_flag = EOR_secondary_omega } }
-target_trigger = { FROM = { exists = yes has_war_with = ROOT } }
-available = { has_country_flag = EOR_omega_available NOT = { has_country_flag = EOR_omega_cooldown } }
-days_remove = 30
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { set_country_flag = { flag = EOR_omega_cooldown days = 180 }
- }
-remove_effect = { if = { limit = { FROM = { exists = yes has_war_with = ROOT } } FROM = { add_timed_idea = { idea = EOR_psionic_command_disruption days = 30 }
- } } }
-}
-EOR_omega_sabotage = { icon = generic_prepare_civil_war cost = 100
-visible = { OR = { has_completed_focus = EOR_yuriko_omega has_country_flag = EOR_secondary_omega } }
-state_target = yes
-target_trigger = { FROM = { controller = { has_war_with = ROOT } arms_factory > 0 } }
-available = { has_country_flag = EOR_omega_available NOT = { has_country_flag = EOR_omega_cooldown } }
-days_remove = 30
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { set_country_flag = { flag = EOR_omega_cooldown days = 180 }
- }
-remove_effect = { FROM = { if = { limit = { controller = { has_war_with = ROOT } } damage_building = { type = arms_factory damage = 1 } } } }
-}
-EOR_omega_counterintelligence = { icon = generic_prepare_civil_war cost = 100
-visible = { OR = { has_completed_focus = EOR_yuriko_omega has_country_flag = EOR_secondary_omega } }
-available = { has_country_flag = EOR_omega_available NOT = { has_country_flag = EOR_omega_cooldown } }
-days_remove = 30
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { set_country_flag = { flag = EOR_omega_cooldown days = 180 }
- }
-remove_effect = { add_timed_idea = { idea = EOR_omega_counterintelligence days = 60 }
- }
-}
-EOR_emergency_relocation = { icon = generic_prepare_civil_war cost = 75
-visible = { has_completed_focus = EOR_convene_the_imperial_court }
-state_target = yes
-target_trigger = { FROM = { is_owned_by = ROOT is_controlled_by = ROOT is_core_of = EOR is_capital = no } }
-fire_only_once = yes
-available = { has_country_flag = EOR_relocation_available }
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { FROM = { ROOT = { set_capital = { state = PREV } } }
-add_timed_idea = { idea = EOR_continuity days = 180 }
- }
-}
-EOR_emergency_homeland_mobilization = { icon = generic_prepare_civil_war cost = 75
-visible = { has_completed_focus = EOR_convene_the_imperial_court }
-available = { has_country_flag = EOR_emergency_mobilization has_war = yes }
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_stability = -0.03
-add_timed_idea = { idea = EOR_emergency_defense days = 90 }
- }
-}
-EOR_postwar_imperial = { icon = generic_prepare_civil_war cost = 75
+target_trigger = { FROM = { is_owned_by = ROOT is_controlled_by = ROOT is_core_of = EOR industrial_complex < 20 } }
 visible = { has_completed_focus = EOR_a_world_beneath_the_emperor }
-available = { has_country_flag = EOR_postwar_divine num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+available = { has_country_flag = EOR_route_divine has_country_flag = EOR_postwar_divine num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment }  NOT = { has_country_flag = EOR_postwar_imperial_authorization_cooldown } }
 days_remove = 180
-days_re_enable = 365
+days_re_enable = 1
 ai_will_do = { factor = 1 }
 complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 180 }
- }
-remove_effect = { add_stability = 0.03
-add_political_power = 25
- }
+  set_country_flag = { flag = EOR_postwar_imperial_authorization_cooldown days = 365 } }
+remove_effect = {
+if = { limit = { has_country_flag = EOR_route_divine FROM = { is_owned_by = ROOT is_controlled_by = ROOT is_core_of = EOR industrial_complex < 20 } }
+FROM = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } add_dynamic_modifier = { modifier = EOR_reconstruction_state days = 180 scope = ROOT } }
+add_stability = 0.03 country_event = { id = eor.144 days = 1 }
+} else = { country_event = { id = eor.145 days = 1 } }
 }
-EOR_postwar_science = { icon = generic_prepare_civil_war cost = 75
+}
+EOR_postwar_science = { icon = generic_political_discourse cost = 75
 visible = { has_completed_focus = EOR_the_architect_of_tomorrow }
-available = { has_country_flag = EOR_postwar_technocratic num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+available = { has_country_flag = EOR_route_technocratic has_country_flag = EOR_postwar_technocratic num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment }  NOT = { has_country_flag = EOR_postwar_science_authorization_cooldown } }
 days_remove = 180
-days_re_enable = 365
+days_re_enable = 1
 ai_will_do = { factor = 1 }
 complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 180 }
- }
-remove_effect = { add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = electronics }
+  set_country_flag = { flag = EOR_postwar_science_authorization_cooldown days = 365 } }
+remove_effect = {
+if = { limit = { has_country_flag = EOR_route_technocratic }
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = electronics }
 add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = armor }
- }
-}
-EOR_postwar_cooperation = { icon = generic_prepare_civil_war cost = 75
-visible = { has_completed_focus = EOR_a_federation_of_equals }
-available = { has_country_flag = EOR_postwar_reform num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-days_remove = 180
-days_re_enable = 365
-ai_will_do = { factor = 1 }
-complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 180 }
- }
-remove_effect = { every_subject_country = { limit = { exists = yes }
-add_stability = 0.03
 add_timed_idea = { idea = EOR_research_surge days = 180 }
+country_event = { id = eor.144 days = 1 }
+} else = { country_event = { id = eor.145 days = 1 } }
 }
- }
 }
-EOR_post_defeat_reconstruction = { icon = generic_prepare_civil_war cost = 50
+EOR_post_defeat_reconstruction = { icon = generic_political_discourse cost = 50
 visible = { has_completed_focus = EOR_the_imperial_dawn }
 fire_only_once = yes
 available = { has_country_flag = EOR_reconstruction_available has_capitulated = no num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
@@ -462,20 +65,11 @@ remove_effect = { remove_ideas = EOR_post_defeat
 add_stability = 0.05
  }
 }
-EOR_imperial_resistance_preparation = { icon = generic_prepare_civil_war cost = 75
-visible = { has_completed_focus = EOR_the_imperial_dawn }
-available = { has_country_flag = EOR_resistance_available }
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = { add_timed_idea = { idea = EOR_emergency_defense days = 90 }
- }
-}
-
 EOR_bolster_imperial_legitimacy = {
 icon = generic_political_discourse
 cost = 50
 visible = { has_completed_focus = EOR_convene_the_imperial_court }
-available = { NOT = { has_country_flag = EOR_route_reform } }
+available = { always = yes }
 days_re_enable = 180
 ai_will_do = { factor = 1 }
 complete_effect = {
@@ -511,53 +105,6 @@ add_to_variable = { var = EOR_imperial_legitimacy value = -5 }
 
 }
 }
-EOR_hear_constitutional_reformers = {
-icon = generic_political_discourse
-cost = 50
-visible = { has_completed_focus = EOR_convene_the_imperial_court }
-available = { eor_no_political_route = yes }
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-set_country_flag = EOR_reform_movement
-add_to_variable = { var = EOR_imperial_legitimacy value = -10 }
-add_stability = -0.03
-
-}
-}
-EOR_colonial_administrative_review = {
-icon = generic_political_discourse
-cost = 50
-visible = { has_completed_focus = EOR_convene_the_imperial_court }
-available = {  }
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-add_to_variable = { var = EOR_subject_pressure value = -15 }
-every_subject_country = { limit = { exists = yes }
-add_stability = 0.02
-}
-
-}
-}
-EOR_intelligence_crisis_investigation = {
-icon = generic_political_discourse
-cost = 100
-visible = { has_completed_focus = EOR_establish_imperial_intelligence }
-available = { check_variable = { EOR_global_threat > 19 } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-fire_only_once = yes
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
-
-}
-remove_effect = {
-set_country_flag = EOR_intelligence_complete
-
-}
-}
 EOR_negotiate_coup_transition = {
 icon = generic_political_discourse
 cost = 100
@@ -570,69 +117,560 @@ add_to_variable = { var = EOR_military_influence value = 10 }
 if = { limit = { check_variable = { EOR_military_influence > 69 } } set_country_flag = EOR_bloodless_coup_ready }
 }
 }
-EOR_diplomatic_concessions = {
-icon = generic_political_discourse
-cost = 100
-visible = { has_completed_focus = EOR_convene_the_imperial_court }
-available = { OR = { has_country_flag = EOR_route_divine has_country_flag = EOR_route_shinzo } }
-fire_only_once = yes
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-set_country_flag = EOR_diplomatic_concessions
-add_to_variable = { var = EOR_military_influence value = -5 }
-
-}
-}
-EOR_civilian_industry_oversight = {
-icon = generic_political_discourse
-cost = 150
-visible = { has_country_flag = EOR_route_reform }
-available = {  }
-fire_only_once = yes
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-set_country_flag = EOR_civilian_industry_oversight
-add_stability = -0.03
-
-}
-}
-EOR_military_partnership_concessions = {
-icon = generic_political_discourse
-cost = 100
-visible = { has_country_flag = EOR_route_shinzo }
-available = {  }
-fire_only_once = yes
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-set_country_flag = EOR_military_accepts_partnership
-add_to_variable = { var = EOR_military_influence value = -10 }
-
-}
-}
 EOR_imperial_prestige_project = {
 icon = generic_political_discourse
-cost = 100
+cost = 75
 visible = { has_completed_focus = EOR_the_emperors_sacred_will }
-available = { num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+state_target = yes
+target_trigger = { FROM = { owner = { is_subject_of = ROOT } is_controlled_by = OWNER industrial_complex < 20 } }
+available = { has_country_flag = EOR_route_divine NOT = { has_country_flag = EOR_sacred_program_cooldown } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
 days_remove = 90
-days_re_enable = 365
+days_re_enable = 1
 ai_will_do = { factor = 1 }
 complete_effect = {
 add_timed_idea = { idea = EOR_nanocore_investment days = 90 }
+set_country_flag = { flag = EOR_sacred_program_cooldown days = 365 }
+FROM = { owner = { save_global_event_target_as = EOR_prestige_recipient } }
+}
+remove_effect = {
+if = { limit = { has_country_flag = EOR_route_divine event_target:EOR_prestige_recipient = { exists = yes is_subject_of = ROOT } FROM = { is_owned_by = event_target:EOR_prestige_recipient is_controlled_by = event_target:EOR_prestige_recipient industrial_complex < 20 } }
+ FROM = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+ add_to_variable = { var = EOR_divine_mandate value = 5 }
+ add_to_variable = { var = EOR_imperial_legitimacy value = 5 }
+ if = { limit = { NOT = { has_country_flag = EOR_prestige_relief_awarded } } set_country_flag = EOR_prestige_relief_awarded eor_award_development_relief = yes } eor_refresh_mandate = yes
+ country_event = { id = eor.144 days = 1 }
+} else = { country_event = { id = eor.145 days = 1 } }
+clear_global_event_target = EOR_prestige_recipient
+}
+}
+EOR_postwar_military = {
+icon = generic_political_discourse
+cost = 75
+visible = { has_completed_focus = EOR_the_rule_of_the_shoguns }
+available = { has_country_flag = EOR_route_shinzo num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment }  NOT = { has_country_flag = EOR_postwar_military_authorization_cooldown } }
+days_remove = 180
+days_re_enable = 1
+ai_will_do = { factor = 1 }
+complete_effect = {
+add_timed_idea = { idea = EOR_nanocore_investment days = 180 }
+
+ set_country_flag = { flag = EOR_postwar_military_authorization_cooldown days = 365 } }
+remove_effect = {
+if = { limit = { has_country_flag = EOR_route_shinzo }
+if = { limit = { has_completed_focus = EOR_naval_supremacy }
+navy_experience = 30 add_timed_idea = { idea = EOR_fleet_expansion days = 180 } add_timed_idea = { idea = EOR_naval_withdrawal days = 180 }
+} else = { army_experience = 30 add_equipment_to_stockpile = { type = support_equipment_1 amount = 150 producer = EOR } add_timed_idea = { idea = EOR_rapid_offensive days = 180 } }
+add_stability = 0.03 country_event = { id = eor.144 days = 1 }
+} else = { country_event = { id = eor.145 days = 1 } }
+}
+}
+EOR_reassert_civilian_authority = {
+icon = generic_political_discourse
+cost = 50
+visible = { has_completed_focus = EOR_convene_the_imperial_court }
+available = { NOT = { has_country_flag = EOR_route_shinzo } }
+days_re_enable = 90
+ai_will_do = { factor = 1 }
+complete_effect = {
+add_to_variable = { var = EOR_military_influence value = -10 }
+add_to_variable = { var = EOR_imperial_legitimacy value = 5 }
+
+}
+}
+
+EOR_schedule_court_review = {
+ icon = generic_political_discourse cost = 75
+ visible = { has_completed_focus = EOR_convene_the_imperial_court }
+ available = { eor_no_political_route = yes NOT = { has_country_flag = EOR_succession_crisis } NOT = { has_country_flag = EOR_court_review_pending } has_capitulated = no NOT = { has_civil_war = yes } }
+ fire_only_once = yes days_remove = 60
+ ai_will_do = { factor = 1 }
+ complete_effect = { set_country_flag = EOR_court_review_pending }
+ remove_effect = { clr_country_flag = EOR_court_review_pending if = { limit = { eor_no_political_route = yes NOT = { has_country_flag = EOR_succession_crisis } has_capitulated = no NOT = { has_civil_war = yes } } set_country_flag = EOR_court_review_requested eor_event_41 = yes } }
+}
+
+EOR_sacred_mobilization = {
+ icon = generic_research cost = 75
+ visible = { has_completed_focus = EOR_the_emperors_sacred_will }
+ available = { has_country_flag = EOR_route_divine NOT = { has_country_flag = EOR_sacred_program_cooldown } has_capitulated = no num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+
+ days_remove = 90 days_re_enable = 1
+ ai_will_do = { factor = 1 }
+ complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 90 } set_country_flag = { flag = EOR_sacred_program_cooldown days = 365 } }
+ remove_effect = { if = { limit = { has_country_flag = EOR_route_divine has_capitulated = no } add_manpower = 10000
+if = { limit = { has_tech = imperial_warrior } add_equipment_to_stockpile = { type = imperial_warrior_equipment amount = 300 producer = EOR } }
+else = { add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 300 producer = EOR } }
+add_to_variable = { var = EOR_divine_mandate value = 5 }
+eor_refresh_mandate = yes country_event = { id = eor.144 days = 1 } } else = { country_event = { id = eor.145 days = 1 } } }
+}
+
+EOR_fund_homeland_fortress = {
+ icon = generic_construction cost = 0 state_target = yes
+ visible = { has_completed_focus = EOR_imperial_fortresses }
+ target_trigger = { FROM = { OR = { state = 282 state = 531 state = 532 } is_owned_by = ROOT is_fully_controlled_by = ROOT NOT = { has_state_flag = EOR_fortress_grant_used } anti_air_building < 5 } }
+ available = { has_country_flag = EOR_route_divine check_variable = { EOR_fortress_grants > 0 } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+ days_remove = 90 days_re_enable = 1 ai_will_do = { factor = 1 }
+ complete_effect = { add_to_variable = { var = EOR_fortress_grants value = -1 } add_timed_idea = { idea = EOR_nanocore_investment days = 90 } }
+ remove_effect = { if = { limit = { has_country_flag = EOR_route_divine FROM = { is_owned_by = ROOT is_fully_controlled_by = ROOT anti_air_building < 5 NOT = { has_state_flag = EOR_fortress_grant_used } } }
+ FROM = { set_state_flag = EOR_fortress_grant_used add_building_construction = { type = anti_air_building level = 2 instant_build = yes }
+ if = { limit = { state = 282 } add_building_construction = { type = bunker province = 1182 level = 2 instant_build = yes } }
+ if = { limit = { state = 531 } add_building_construction = { type = bunker province = 7072 level = 2 instant_build = yes } }
+ if = { limit = { state = 532 } add_building_construction = { type = bunker province = 10125 level = 2 instant_build = yes } }
+ } country_event = { id = eor.144 days = 1 }
+ } else = { country_event = { id = eor.145 days = 1 } } }
+}
+
+EOR_settle_military_administration = {
+ icon = generic_research cost = 75
+ visible = { has_completed_focus = EOR_military_government }
+ available = { has_country_flag = EOR_route_shinzo has_capitulated = no num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+ fire_only_once = yes
+ days_remove = 60 days_re_enable = 365
+ ai_will_do = { factor = 1 }
+ complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 60 }  }
+ remove_effect = { if = { limit = { has_country_flag = EOR_route_shinzo has_capitulated = no } add_to_variable = { var = EOR_military_influence value = -5 }
+add_to_variable = { var = EOR_administration_relief value = 2 }
+clamp_variable = { var = EOR_administration_relief min = 0 max = 6 }
+add_stability = 0.03 country_event = { id = eor.144 days = 1 } } else = { country_event = { id = eor.145 days = 1 } } }
+}
+}
+
+
+
+
+
+EOR_operations_decisions = {
+EOR_war_council_planning = { icon = generic_army_support cost = 50
+visible = { has_completed_focus = EOR_reform_the_imperial_army }
+available = {  }
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_timed_idea = { idea = EOR_offensive_preparations days = 90 }
+ }
+}
+EOR_begin_northern_war = { icon = generic_army_support cost = 50
+visible = { has_completed_focus = EOR_strike_vladivostok }
+fire_only_once = yes
+available = { always = yes  eor_can_attack_soviets = yes NOT = { has_country_flag = EOR_delay_soviet_war } }
+days_re_enable = 180
+ai_will_do = { factor = 0.5 }
+complete_effect = { declare_war_on = { target = SOV type = annex_everything } }
+}
+EOR_prepare_soviet_offensive = { icon = generic_army_support cost = 50
+visible = { has_completed_focus = EOR_northern_war_plan }
+available = { has_war_with = SOV }
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_dynamic_modifier = { modifier = EOR_soviet_offensive days = 90 scope = SOV } }
+}
+EOR_begin_pacific_war = { icon = generic_army_support cost = 50
+visible = { has_completed_focus = EOR_pacific_war_plan }
+fire_only_once = yes
+available = { always = yes  eor_can_attack_allies = yes NOT = { has_country_flag = EOR_american_delay } }
+days_re_enable = 180
+ai_will_do = { factor = 0.5 }
+complete_effect = { declare_war_on = { target = USA type = annex_everything } }
+}
+EOR_pacific_operations = { icon = generic_army_support cost = 50
+visible = { has_completed_focus = EOR_secure_the_pacific }
+available = { has_war = yes fuel_ratio > 0.01 }
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_timed_idea = { idea = EOR_secure_pacific days = 90 }
+add_fuel = -50
+ }
+}
+EOR_mainland_invasion = { icon = generic_army_support cost = 75
+visible = { has_completed_focus = EOR_operation_santa_monica }
+available = { has_war_with = USA NOT = { has_country_flag = EOR_american_delay } }
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_timed_idea = { idea = EOR_landing_combat_scheme days = 90 }
+add_timed_idea = { idea = EOR_offensive_preparations days = 90 }
+ }
+}
+EOR_global_strategy = { icon = generic_army_support cost = 50
+visible = { has_completed_focus = EOR_imperial_strategic_reassessment }
+available = {  }
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { army_experience = 20
+add_timed_idea = { idea = EOR_offensive_preparations days = 90 }
+ }
+}
+EOR_anti_coalition_readiness = { icon = generic_army_support cost = 75
+visible = { has_completed_focus = EOR_the_coalition_crisis }
+available = { has_war = yes }
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_timed_idea = { idea = EOR_emergency_defense days = 90 }
+ }
+}
+EOR_defend_pearl_harbor = { icon = generic_army_support cost = 50
+visible = { has_completed_focus = EOR_fortify_pearl_harbor }
+available = { has_manpower > 2500 629 = { is_controlled_by = ROOT } }
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_manpower = -2500
+629 = { add_dynamic_modifier = { modifier = EOR_hawaii_defense days = 90 scope = EOR } } }
+}
+EOR_rebuild_vladivostok = { icon = generic_army_support cost = 50
+visible = { has_completed_focus = EOR_strike_vladivostok }
+available = { has_country_flag = EOR_vladivostok_reconstruction num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } 408 = { is_controlled_by = ROOT } }
+days_remove = 90
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 90 }
+ }
+remove_effect = { if = { limit = { 408 = { is_controlled_by = ROOT } } 408 = { add_dynamic_modifier = { modifier = EOR_port_repair days = 180 scope = EOR } } country_event = { id = eor.144 days = 1 } } else = { country_event = { id = eor.145 days = 1 } } }
+}
+EOR_omega_assault = { icon = GFX_decision_EOR_omega cost = 100
+visible = { OR = { has_completed_focus = EOR_yuriko_omega has_country_flag = EOR_secondary_omega } }
+state_target = yes
+target_trigger = { FROM = { is_controlled_by = ROOT owner = { has_war_with = ROOT } } }
+available = { has_country_flag = EOR_omega_available NOT = { has_country_flag = EOR_omega_cooldown } }
+days_remove = 30
+days_re_enable = 1
+ai_will_do = { factor = 1 }
+complete_effect = { set_country_flag = { flag = EOR_omega_cooldown days = 180 }
+ }
+remove_effect = { if = { limit = { FROM = { is_controlled_by = ROOT owner = { has_war_with = ROOT } } } FROM = { add_dynamic_modifier = { modifier = EOR_omega_assault_state days = 30 scope = ROOT } } add_dynamic_modifier = { modifier = EOR_omega_assault days = 30 scope = FROM.OWNER }  country_event = { id = eor.130 days = 1 } } else = { country_event = { id = eor.134 days = 1 } } }
+}
+EOR_omega_command_disruption = { icon = GFX_decision_EOR_omega cost = 100
+visible = { OR = { has_completed_focus = EOR_yuriko_omega has_country_flag = EOR_secondary_omega } }
+target_trigger = { FROM = { exists = yes has_war_with = ROOT } }
+available = { has_country_flag = EOR_omega_available NOT = { has_country_flag = EOR_omega_cooldown } }
+days_remove = 30
+days_re_enable = 1
+ai_will_do = { factor = 1 }
+complete_effect = { set_country_flag = { flag = EOR_omega_cooldown days = 180 }
+ }
+remove_effect = { if = { limit = { FROM = { exists = yes has_war_with = ROOT } } FROM = { add_timed_idea = { idea = EOR_psionic_command_disruption days = 30 }
+ }  country_event = { id = eor.131 days = 1 } } else = { country_event = { id = eor.135 days = 1 } } }
+}
+EOR_omega_sabotage = { icon = GFX_decision_EOR_omega cost = 75
+visible = { OR = { has_completed_focus = EOR_yuriko_omega has_country_flag = EOR_secondary_omega } }
+state_target = yes
+target_trigger = { FROM = { controller = { has_war_with = ROOT } arms_factory > 0 } }
+available = { has_country_flag = EOR_omega_available NOT = { has_country_flag = EOR_omega_cooldown } }
+days_remove = 30
+days_re_enable = 1
+ai_will_do = { factor = 1 }
+complete_effect = { set_country_flag = { flag = EOR_omega_cooldown days = 180 }
+ }
+remove_effect = {
+ if = { limit = { FROM = { controller = { has_war_with = ROOT } arms_factory > 0 } }
+  FROM = { damage_building = { type = arms_factory damage = 2 } add_dynamic_modifier = { modifier = EOR_psionic_factory_disruption days = 60 scope = ROOT } }
+  country_event = { id = eor.132 days = 1 }
+ }
+ else = { country_event = { id = eor.136 days = 1 } }
+}
+}
+EOR_omega_counterintelligence = { icon = GFX_decision_EOR_omega cost = 100
+visible = { OR = { has_completed_focus = EOR_yuriko_omega has_country_flag = EOR_secondary_omega } }
+available = { has_country_flag = EOR_omega_available NOT = { has_country_flag = EOR_omega_cooldown } }
+days_remove = 30
+days_re_enable = 1
+ai_will_do = { factor = 1 }
+complete_effect = { set_country_flag = { flag = EOR_omega_cooldown days = 180 }
+ }
+remove_effect = { if = { limit = { has_capitulated = no } add_timed_idea = { idea = EOR_omega_counterintelligence days = 60 } country_event = { id = eor.133 days = 1 } } else = { country_event = { id = eor.137 days = 1 } } }
+}
+EOR_emergency_relocation = { icon = generic_army_support cost = 75
+visible = { has_completed_focus = EOR_convene_the_imperial_court }
+state_target = yes
+target_trigger = { FROM = { is_owned_by = ROOT is_controlled_by = ROOT is_core_of = EOR is_capital = no } }
+fire_only_once = yes
+available = { has_country_flag = EOR_relocation_available }
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { FROM = { ROOT = { set_capital = { state = PREV } } }
+add_timed_idea = { idea = EOR_continuity days = 180 }
+ }
+}
+EOR_emergency_homeland_mobilization = { icon = generic_army_support cost = 75
+visible = { has_completed_focus = EOR_convene_the_imperial_court }
+available = { has_country_flag = EOR_emergency_mobilization has_war = yes }
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_stability = -0.03
+add_timed_idea = { idea = EOR_emergency_defense days = 90 }
+ }
+}
+EOR_imperial_resistance_preparation = { icon = generic_army_support cost = 75
+visible = { has_completed_focus = EOR_the_imperial_dawn }
+available = { has_country_flag = EOR_resistance_available }
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_timed_idea = { idea = EOR_emergency_defense days = 90 }
+ }
+}
+
+EOR_activate_executioner = {
+ icon = GFX_decision_EOR_executioner
+ cost = 0
+ visible = { has_country_flag = EOR_executioner_ready }
+ available = { has_war = yes NOT = { has_country_flag = EOR_executioner_active } NOT = { has_country_flag = EOR_executioner_recovering } }
+ ai_will_do = { factor = 1 }
+ complete_effect = {
+  clr_country_flag = EOR_executioner_ready
+  set_country_flag = { flag = EOR_executioner_active days = 60 }
+  set_country_flag = { flag = EOR_executioner_recovering days = 425 }
+  if = { limit = { has_country_flag = EOR_executioner_refined } add_timed_idea = { idea = EOR_executioner_reliable days = 60 } } else = { add_timed_idea = { idea = EOR_executioner days = 60 } }
+  if = { limit = { NOT = { has_country_flag = EOR_executioner_prestige_awarded } } set_country_flag = EOR_executioner_prestige_awarded add_to_variable = { var = EOR_divine_mandate value = 5 } eor_refresh_mandate = yes }
+  country_event = { id = eor.123 days = 1 }
+ }
+}
+EOR_activate_giga_fortress = {
+ icon = GFX_decision_EOR_giga_fortress
+ cost = 0
+ visible = { has_country_flag = EOR_giga_fortress_ready }
+ available = { has_war = yes NOT = { has_country_flag = EOR_giga_fortress_active } NOT = { has_country_flag = EOR_giga_fortress_recovering } }
+ ai_will_do = { factor = 1 }
+ complete_effect = {
+  clr_country_flag = EOR_giga_fortress_ready
+  set_country_flag = { flag = EOR_giga_fortress_active days = 90 }
+  set_country_flag = { flag = EOR_giga_fortress_recovering days = 630 }
+  add_timed_idea = { idea = EOR_giga_fortress days = 90 }
+  if = { limit = { NOT = { has_country_flag = EOR_giga_fortress_prestige_awarded } } set_country_flag = EOR_giga_fortress_prestige_awarded add_to_variable = { var = EOR_divine_mandate value = 5 } eor_refresh_mandate = yes }
+  country_event = { id = eor.124 days = 1 }
+ }
+}
+EOR_activate_black_tortoise = {
+ icon = GFX_decision_EOR_black_tortoise
+ cost = 0
+ visible = { has_country_flag = EOR_black_tortoise_ready }
+ available = { has_war = yes NOT = { has_country_flag = EOR_black_tortoise_active } NOT = { has_country_flag = EOR_black_tortoise_recovering } }
+ ai_will_do = { factor = 1 }
+ complete_effect = {
+  clr_country_flag = EOR_black_tortoise_ready
+  set_country_flag = { flag = EOR_black_tortoise_active days = 180 }
+  set_country_flag = { flag = EOR_black_tortoise_recovering days = 545 }
+  add_timed_idea = { idea = EOR_black_tortoise days = 180 }
+  if = { limit = { NOT = { has_country_flag = EOR_black_tortoise_prestige_awarded } } set_country_flag = EOR_black_tortoise_prestige_awarded add_to_variable = { var = EOR_divine_mandate value = 5 } eor_refresh_mandate = yes }
+  country_event = { id = eor.125 days = 1 }
+ }
+}
+
+EOR_land_service_program = {
+ icon = generic_research cost = 75
+ visible = { has_completed_focus = EOR_the_land_shogunate }
+ available = { has_country_flag = EOR_route_shinzo has_tech = tsunami_tank has_capitulated = no num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment }  NOT = { has_country_flag = EOR_land_service_program_authorization_cooldown } }
+
+ days_remove = 120 days_re_enable = 1
+ ai_will_do = { factor = 1 }
+ complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 120 }   set_country_flag = { flag = EOR_land_service_program_authorization_cooldown days = 365 } }
+ remove_effect = { if = { limit = { has_country_flag = EOR_route_shinzo has_tech = tsunami_tank has_capitulated = no } add_equipment_to_stockpile = { type = tsunami_tank_equipment amount = 30 producer = EOR }
+add_equipment_to_stockpile = { type = support_equipment_1 amount = 100 producer = EOR }
+add_timed_idea = { idea = EOR_rapid_offensive days = 180 } country_event = { id = eor.144 days = 1 } } else = { country_event = { id = eor.145 days = 1 } } }
+}
+
+EOR_naval_service_program = {
+ icon = generic_research cost = 75
+ visible = { has_completed_focus = EOR_the_oceanic_shogunate }
+ available = { has_country_flag = EOR_route_shinzo has_capitulated = no num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment }  NOT = { has_country_flag = EOR_naval_service_program_authorization_cooldown } }
+
+ days_remove = 120 days_re_enable = 1
+ ai_will_do = { factor = 1 }
+ complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 120 }   set_country_flag = { flag = EOR_naval_service_program_authorization_cooldown days = 365 } }
+ remove_effect = { if = { limit = { has_country_flag = EOR_route_shinzo has_capitulated = no } navy_experience = 30
+add_timed_idea = { idea = EOR_fleet_expansion days = 180 }
+add_timed_idea = { idea = EOR_naval_withdrawal days = 180 } country_event = { id = eor.144 days = 1 } } else = { country_event = { id = eor.145 days = 1 } } }
+}
+
+EOR_prepare_odessa_operation = {
+ icon = generic_army_support cost = 50
+ visible = { has_completed_focus = EOR_odessa_operation }
+ available = { has_war_with = SOV NOT = { has_country_flag = EOR_odessa_preparation_busy }  NOT = { has_country_flag = EOR_prepare_odessa_operation_authorization_cooldown } }
+ days_remove = 30 days_re_enable = 1 ai_will_do = { factor = 1 }
+ complete_effect = { set_country_flag = { flag = EOR_odessa_preparation_busy days = 30 }  set_country_flag = { flag = EOR_prepare_odessa_operation_authorization_cooldown days = 180 } }
+ remove_effect = { if = { limit = { has_war_with = SOV } add_dynamic_modifier = { modifier = EOR_soviet_offensive days = 90 scope = SOV } add_timed_idea = { idea = EOR_urban_operations days = 90 } country_event = { id = eor.144 days = 1 } } else = { country_event = { id = eor.145 days = 1 } } }
+}
+}
+
+
+
+
+EOR_research_decisions = {
+EOR_deploy_construction_nanocores = { icon = generic_research cost = 50
+visible = { has_completed_focus = EOR_the_nano_construction }
+state_target = yes
+target_trigger = { FROM = { is_owned_by = ROOT is_controlled_by = ROOT } }
+available = { has_tech = EOR_nanocores NOT = { has_idea = EOR_nanocore_investment } }
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { FROM = { add_dynamic_modifier = { modifier = EOR_nanocore_state days = 90 scope = ROOT } }
+add_timed_idea = { idea = EOR_nanocore_investment days = 90 }
+ }
+}
+EOR_forward_mecha_bay = { icon = generic_research cost = 75
+visible = { has_completed_focus = EOR_establish_nanotech_mainframe }
+state_target = yes
+target_trigger = { FROM = { is_owned_by = ROOT is_controlled_by = ROOT } }
+available = { has_tech = EOR_nanocores num_of_civilian_factories > 3 has_equipment = { support_equipment > 99 } NOT = { has_idea = EOR_nanocore_investment } }
+days_remove = 90
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_equipment_to_stockpile = { type = support_equipment_1 amount = -100 }
+add_timed_idea = { idea = EOR_nanocore_investment days = 90 }
+ }
+remove_effect = { if = { limit = { FROM = { is_owned_by = ROOT is_controlled_by = ROOT } } FROM = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } add_dynamic_modifier = { modifier = EOR_forward_mecha_state days = 180 scope = ROOT } } country_event = { id = eor.144 days = 1 } } else = { country_event = { id = eor.145 days = 1 } } }
+}
+EOR_mobile_naval_facilities = { icon = generic_research cost = 50
+visible = { has_completed_focus = EOR_the_nano_construction }
+state_target = yes
+target_trigger = { FROM = { is_owned_by = ROOT is_controlled_by = ROOT is_coastal = yes } }
+available = { has_tech = EOR_nanocores num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+days_remove = 90
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 90 }
+ }
+remove_effect = { if = { limit = { FROM = { is_owned_by = ROOT is_controlled_by = ROOT } } FROM = { add_dynamic_modifier = { modifier = EOR_mobile_naval_state days = 180 scope = ROOT } } country_event = { id = eor.144 days = 1 } } else = { country_event = { id = eor.145 days = 1 } } }
+}
+EOR_emergency_reconstruction = { icon = generic_research cost = 35
+visible = { has_completed_focus = EOR_the_nano_construction }
+state_target = yes
+target_trigger = { FROM = { is_owned_by = ROOT is_controlled_by = ROOT } }
+available = { has_tech = EOR_nanocores has_equipment = { support_equipment > 99 } NOT = { has_idea = EOR_nanocore_investment } }
+days_re_enable = 120
+ai_will_do = { factor = 1 }
+complete_effect = { add_equipment_to_stockpile = { type = support_equipment_1 amount = -100 }
+add_timed_idea = { idea = EOR_nanocore_investment days = 60 }
+FROM = { add_dynamic_modifier = { modifier = EOR_reconstruction_state days = 60 scope = ROOT } } }
+}
+EOR_technological_administration = { icon = generic_research cost = 75
+visible = { has_completed_focus = EOR_empower_the_technocrats }
+available = { has_country_flag = EOR_route_technocratic num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+days_remove = 90
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 90 }
+ }
+remove_effect = {
+if = { limit = { has_country_flag = EOR_route_technocratic } add_timed_idea = { idea = EOR_research_surge days = 180 } country_event = { id = eor.144 days = 1 } } else = { country_event = { id = eor.145 days = 1 } }
+}
+}
+EOR_investigate_soviet_research = { icon = generic_research cost = 100
+visible = { has_completed_focus = EOR_funding_imperial_weaponry_institute }
+fire_only_once = yes
+available = { has_completed_focus = EOR_the_crown_prince num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } NOT = { has_country_flag = EOR_truth_known } }
+days_remove = 180
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 180 }
+ }
+remove_effect = { set_country_flag = EOR_intelligence_complete set_country_flag = EOR_evidence_investigation
+ }
+}
+EOR_procure_king_oni = { icon = generic_research cost = 75
+visible = { has_completed_focus = EOR_deploy_king_oni }
+available = { num_of_civilian_factories > 3 NOT = { has_idea = EOR_procurement_investment } has_tech = king_oni }
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_ideas = EOR_procurement_investment
+ }
+remove_effect = { remove_ideas = EOR_procurement_investment
+add_equipment_to_stockpile = { type = king_oni_equipment amount = 30 producer = EOR } }
+}
+EOR_procure_infantry = { icon = generic_research cost = 75
+visible = { has_completed_focus = EOR_the_first_amendment_of_the_imperial_mobilization_law }
+available = { num_of_civilian_factories > 3 NOT = { has_idea = EOR_procurement_investment } has_tech = imperial_warrior }
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_ideas = EOR_procurement_investment
+ }
+remove_effect = { remove_ideas = EOR_procurement_investment
+add_equipment_to_stockpile = { type = imperial_warrior_equipment amount = 600 producer = EOR } }
+}
+EOR_shogun_construction_program = { icon = generic_research cost = 100
+visible = { has_completed_focus = EOR_shogun_battleship_program }
+available = { num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+days_remove = 180
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 180 }
+ }
+remove_effect = { add_timed_idea = { idea = EOR_fleet_expansion days = 180 }
+ }
+}
+EOR_expanded_economic_mobilization = { icon = generic_research cost = 75
+visible = { has_completed_focus = EOR_the_second_amendment_of_the_imperial_mobilization_law }
+available = { num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } capital_scope = { is_controlled_by = ROOT } }
+days_remove = 180
+days_re_enable = 365
+ai_will_do = { factor = 1 }
+complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 180 }
+ }
+remove_effect = { capital_scope = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
+ }
+}
+EOR_build_executioner = { icon = GFX_decision_EOR_executioner cost = 150
+visible = { OR = { has_completed_focus = EOR_deploy_the_executioner has_country_flag = EOR_secondary_executioner } }
+available = { NOT = { has_country_flag = EOR_project_busy } num_of_civilian_factories > 8 has_country_flag = EOR_executioner_authorized NOT = { has_country_flag = EOR_executioner_development } NOT = { has_country_flag = EOR_executioner_cancelled }  NOT = { has_country_flag = EOR_executioner_ready } NOT = { has_country_flag = EOR_executioner_active } NOT = { has_country_flag = EOR_executioner_recovering } }
+days_remove = 180
+days_re_enable = 1
+ai_will_do = { factor = 0.5 }
+complete_effect = { set_country_flag = EOR_project_busy
+add_ideas = EOR_project_investment
+ }
+remove_effect = {
+ eor_release_grand_project = yes
+ set_country_flag = EOR_executioner_ready
+ country_event = { id = eor.120 days = 1 }
+}
+}
+EOR_build_giga_fortress = { icon = GFX_decision_EOR_giga_fortress cost = 200
+visible = { OR = { has_completed_focus = EOR_deploy_the_giga_fortress has_country_flag = EOR_secondary_giga } }
+available = { NOT = { has_country_flag = EOR_project_busy } num_of_civilian_factories > 8 has_tech = EOR_nanotech_integration  NOT = { has_country_flag = EOR_giga_fortress_ready } NOT = { has_country_flag = EOR_giga_fortress_active } NOT = { has_country_flag = EOR_giga_fortress_recovering } }
+days_remove = 240
+days_re_enable = 1
+ai_will_do = { factor = 0.5 }
+complete_effect = { set_country_flag = EOR_project_busy
+add_ideas = EOR_project_investment
+ }
+remove_effect = {
+ eor_release_grand_project = yes
+ set_country_flag = EOR_giga_fortress_ready
+ country_event = { id = eor.121 days = 1 }
+}
+}
+EOR_build_black_tortoise = { icon = GFX_decision_EOR_black_tortoise cost = 150
+visible = { has_completed_focus = EOR_black_tortoise_fortress }
+available = { NOT = { has_country_flag = EOR_project_busy } num_of_civilian_factories > 8 has_country_flag = EOR_black_tortoise_authorized NOT = { has_country_flag = EOR_tortoise_delay }  NOT = { has_country_flag = EOR_black_tortoise_ready } NOT = { has_country_flag = EOR_black_tortoise_active } NOT = { has_country_flag = EOR_black_tortoise_recovering } }
+days_remove = 180
+days_re_enable = 1
+ai_will_do = { factor = 1 }
+complete_effect = { set_country_flag = EOR_project_busy
+add_ideas = EOR_project_investment
+ }
+remove_effect = {
+ eor_release_grand_project = yes
+ set_country_flag = EOR_black_tortoise_ready
+ country_event = { id = eor.122 days = 1 }
+}
+}
+EOR_intelligence_crisis_investigation = {
+icon = generic_research
+cost = 100
+visible = { has_completed_focus = EOR_establish_imperial_intelligence }
+available = { check_variable = { EOR_global_threat > 19 } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+fire_only_once = yes
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = {
+add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
 
 }
 remove_effect = {
-add_to_variable = { var = EOR_divine_mandate value = 5 }
-add_to_variable = { var = EOR_imperial_legitimacy value = 5 }
-eor_refresh_mandate = yes
+set_country_flag = EOR_intelligence_complete set_country_flag = EOR_evidence_intercepts
 
 }
 }
 EOR_research_warrior = {
-icon = generic_political_discourse
+icon = generic_research
 cost = 75
 visible = { has_completed_focus = EOR_funding_imperial_weaponry_institute }
 available = { NOT = { has_tech = imperial_warrior } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
@@ -650,7 +688,7 @@ set_technology = { imperial_warrior = 1 }
 }
 }
 EOR_research_tsunami = {
-icon = generic_political_discourse
+icon = generic_research
 cost = 75
 visible = { has_completed_focus = EOR_funding_imperial_weaponry_institute }
 available = { NOT = { has_tech = tsunami_tank } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
@@ -668,7 +706,7 @@ set_technology = { tsunami_tank = 1 }
 }
 }
 EOR_research_oni = {
-icon = generic_political_discourse
+icon = generic_research
 cost = 75
 visible = { has_completed_focus = EOR_kurikara_robotics }
 available = { NOT = { has_tech = king_oni } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
@@ -686,7 +724,7 @@ set_technology = { king_oni = 1 }
 }
 }
 EOR_additional_project_omega = {
-icon = generic_political_discourse
+icon = generic_research
 cost = 300
 visible = { has_completed_focus = EOR_establish_nanotech_mainframe }
 available = { num_of_military_factories > 59 num_of_civilian_factories > 39 NOT = { has_country_flag = EOR_project_busy } NOT = { has_country_flag = EOR_primary_omega } NOT = { has_country_flag = EOR_secondary_omega } }
@@ -709,7 +747,7 @@ remove_ideas = EOR_project_investment
 }
 }
 EOR_additional_project_executioner = {
-icon = generic_political_discourse
+icon = generic_research
 cost = 300
 visible = { has_completed_focus = EOR_establish_nanotech_mainframe }
 available = { num_of_military_factories > 59 num_of_civilian_factories > 39 NOT = { has_country_flag = EOR_project_busy } NOT = { has_country_flag = EOR_primary_executioner } NOT = { has_country_flag = EOR_secondary_executioner } }
@@ -732,7 +770,7 @@ remove_ideas = EOR_project_investment
 }
 }
 EOR_additional_project_giga = {
-icon = generic_political_discourse
+icon = generic_research
 cost = 300
 visible = { has_completed_focus = EOR_establish_nanotech_mainframe }
 available = { num_of_military_factories > 59 num_of_civilian_factories > 39 NOT = { has_country_flag = EOR_project_busy } NOT = { has_country_flag = EOR_primary_giga } NOT = { has_country_flag = EOR_secondary_giga } }
@@ -753,35 +791,529 @@ remove_ideas = EOR_project_investment
 
 }
 }
-EOR_renew_decolonization_talks = {
-icon = generic_political_discourse
-cost = 75
-visible = { has_completed_focus = EOR_decolonize_the_empire }
-available = { has_country_flag = EOR_route_reform NOT = { eor_decolonization_resolved = yes } }
+
+EOR_automated_armored_contract = {
+ icon = generic_research cost = 75
+ visible = { has_completed_focus = EOR_automated_warfare }
+ available = { has_country_flag = EOR_route_technocratic OR = { has_tech = king_oni has_tech = tsunami_tank } has_capitulated = no num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment }  NOT = { has_country_flag = EOR_automated_armored_contract_authorization_cooldown } }
+
+ days_remove = 120 days_re_enable = 1
+ ai_will_do = { factor = 1 }
+ complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 120 }   set_country_flag = { flag = EOR_automated_armored_contract_authorization_cooldown days = 365 } }
+ remove_effect = { if = { limit = { has_country_flag = EOR_route_technocratic OR = { has_tech = king_oni has_tech = tsunami_tank } has_capitulated = no } if = { limit = { has_tech = king_oni } add_equipment_to_stockpile = { type = king_oni_equipment amount = 20 producer = EOR } }
+else = { add_equipment_to_stockpile = { type = tsunami_tank_equipment amount = 40 producer = EOR } }
+army_experience = 15 country_event = { id = eor.144 days = 1 } } else = { country_event = { id = eor.145 days = 1 } } }
+}
+
+EOR_combined_force_contract = {
+ icon = generic_research cost = 75
+ visible = { has_completed_focus = EOR_human_machine_doctrine }
+ available = { has_country_flag = EOR_route_technocratic has_capitulated = no num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment }  NOT = { has_country_flag = EOR_combined_force_contract_authorization_cooldown } }
+
+ days_remove = 120 days_re_enable = 1
+ ai_will_do = { factor = 1 }
+ complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 120 }   set_country_flag = { flag = EOR_combined_force_contract_authorization_cooldown days = 365 } }
+ remove_effect = { if = { limit = { has_country_flag = EOR_route_technocratic has_capitulated = no } if = { limit = { has_tech = imperial_warrior } add_equipment_to_stockpile = { type = imperial_warrior_equipment amount = 400 producer = EOR } }
+else = { add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 400 producer = EOR } }
+add_equipment_to_stockpile = { type = support_equipment_1 amount = 150 producer = EOR }
+army_experience = 25 country_event = { id = eor.144 days = 1 } } else = { country_event = { id = eor.145 days = 1 } } }
+}
+}
+
+
+
+EOR_overseas_decisions = {
+EOR_develop_mal_resources = { icon = generic_construction cost = 75
+visible = { has_completed_focus = EOR_resource_security_program }
+fire_only_once = yes
+available = { MAL = { exists = yes is_subject_of = ROOT any_owned_state = { is_controlled_by = MAL } } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+days_remove = 180
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 180 }
+ }
+remove_effect = { if = { limit = { MAL = { exists = yes is_subject_of = ROOT any_owned_state = { is_controlled_by = MAL } } }
+ MAL = { random_owned_controlled_state = { add_resource = { type = rubber amount = 8 } } set_country_flag = EOR_resources_developed } country_event = { id = eor.144 days = 1 }
+ } else = { country_event = { id = eor.145 days = 1 } } }
+}
+EOR_develop_ins_resources = { icon = generic_construction cost = 75
+visible = { has_completed_focus = EOR_resource_security_program }
+fire_only_once = yes
+available = { INS = { exists = yes is_subject_of = ROOT any_owned_state = { is_controlled_by = INS } } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+days_remove = 180
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 180 }
+ }
+remove_effect = { if = { limit = { INS = { exists = yes is_subject_of = ROOT any_owned_state = { is_controlled_by = INS } } }
+ INS = { random_owned_controlled_state = { add_resource = { type = oil amount = 8 } } set_country_flag = EOR_resources_developed } country_event = { id = eor.144 days = 1 }
+ } else = { country_event = { id = eor.145 days = 1 } } }
+}
+EOR_overseas_infrastructure = { icon = generic_construction cost = 50
+visible = { has_completed_focus = EOR_build_our_overseas_territories }
+state_target = yes
+target_trigger = { FROM = { is_controlled_by = OWNER owner = { exists = yes is_subject_of = ROOT } infrastructure < 5 } }
+available = { num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+days_remove = 90
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 90 }
+  FROM = { owner = { save_global_event_target_as = EOR_overseas_infrastructure_recipient } } }
+remove_effect = {
+ if = { limit = { event_target:EOR_overseas_infrastructure_recipient = { exists = yes is_subject_of = ROOT } FROM = { is_owned_by = event_target:EOR_overseas_infrastructure_recipient is_controlled_by = event_target:EOR_overseas_infrastructure_recipient } }
+  FROM = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } owner = { add_stability = 0.03 } } country_event = { id = eor.144 days = 1 }
+ } else = { country_event = { id = eor.145 days = 1 } }
+ clear_global_event_target = EOR_overseas_infrastructure_recipient
+}
+}
+EOR_overseas_ports = { icon = generic_construction cost = 75
+visible = { has_completed_focus = EOR_imperial_logistics_network }
+state_target = yes
+target_trigger = { FROM = { is_controlled_by = OWNER owner = { exists = yes is_subject_of = ROOT } is_coastal = yes } }
+available = { num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
+  FROM = { owner = { save_global_event_target_as = EOR_overseas_ports_recipient } } }
+remove_effect = {
+ if = { limit = { event_target:EOR_overseas_ports_recipient = { exists = yes is_subject_of = ROOT } FROM = { is_owned_by = event_target:EOR_overseas_ports_recipient is_controlled_by = event_target:EOR_overseas_ports_recipient } }
+  FROM = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } country_event = { id = eor.144 days = 1 }
+ } else = { country_event = { id = eor.145 days = 1 } }
+ clear_global_event_target = EOR_overseas_ports_recipient
+}
+}
+EOR_overseas_mobilization = { icon = generic_construction cost = 50
+visible = { has_completed_focus = EOR_introduce_the_imperial_mobilization_law }
+available = { any_subject_country = { exists = yes } }
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { every_subject_country = { limit = { exists = yes }
+add_war_support = 0.05
+}
+army_experience = 10
+ }
+}
+EOR_centralization_administration = { icon = generic_construction cost = 75
+visible = { has_completed_focus = EOR_tennoheika_banzai }
+available = { any_subject_country = { exists = yes }  has_country_flag = EOR_centralization }
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_to_variable = { var = EOR_subject_pressure value = -20 }
+ if = { limit = { NOT = { has_country_flag = EOR_administrative_settlement } } set_country_flag = EOR_administrative_settlement add_to_variable = { var = EOR_administration_relief value = 2 } clamp_variable = { var = EOR_administration_relief min = 0 max = 6 } }
+}
+}
+EOR_partnership_investment = { icon = generic_construction cost = 75
+visible = { has_completed_focus = EOR_reform_coprosperity_sphere }
+available = { any_subject_country = { exists = yes } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = { add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
+ }
+remove_effect = { if = { limit = { has_country_flag = EOR_partnership any_subject_country = { exists = yes } }  every_subject_country = { limit = { exists = yes }
+add_stability = 0.03
+add_timed_idea = { idea = EOR_research_surge days = 180 }
+}
+ if = { limit = { NOT = { has_country_flag = EOR_administrative_settlement } } set_country_flag = EOR_administrative_settlement add_to_variable = { var = EOR_administration_relief value = 2 } clamp_variable = { var = EOR_administration_relief min = 0 max = 6 } }
+
+country_event = { id = eor.144 days = 1 } } else = { country_event = { id = eor.145 days = 1 } } }
+}
+EOR_colonial_administrative_review = {
+icon = generic_construction
+cost = 50
+visible = { has_completed_focus = EOR_convene_the_imperial_court }
+available = {  }
 days_re_enable = 180
 ai_will_do = { factor = 1 }
 complete_effect = {
-eor_offer_decolonization = yes
+add_to_variable = { var = EOR_subject_pressure value = -15 }
+every_subject_country = { limit = { exists = yes }
+add_stability = 0.02
+}
 
 }
 }
-EOR_renew_asian_congress = {
-icon = generic_political_discourse
-cost = 75
-visible = { has_completed_focus = EOR_the_asian_congress }
+EOR_military_partnership_concessions = {
+icon = generic_construction
+cost = 100
+visible = { has_country_flag = EOR_route_shinzo }
 available = {  }
-days_re_enable = 365
+fire_only_once = yes
+days_re_enable = 180
 ai_will_do = { factor = 1 }
 complete_effect = {
-eor_convene_asian_congress = yes
+set_country_flag = EOR_military_accepts_partnership
+add_to_variable = { var = EOR_military_influence value = -10 }
+
+}
+}
+EOR_subject_iot_pacific_naval_research = {
+icon = generic_construction
+cost = 75
+visible = { has_completed_focus = EOR_imperial_administration }
+available = { IOT = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+fire_only_once = yes
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = {
+add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
+
+
+IOT = { capital_scope = { save_global_event_target_as = EOR_subject_iot_pacific_naval_research_state } }
+}
+remove_effect = { if = { limit = { IOT = { exists = yes is_subject_of = ROOT event_target:EOR_subject_iot_pacific_naval_research_state = { is_owned_by = IOT is_controlled_by = IOT } } } IOT = { add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 2 category = naval_equipment }
+ }
+country_event = { id = eor.140 days = 1 }
+}
+else = { country_event = { id = eor.141 days = 1 } }  clear_global_event_target = EOR_subject_iot_pacific_naval_research_state }
+}
+EOR_subject_iot_advanced_shipbuilding = {
+icon = generic_construction
+cost = 75
+visible = { has_completed_focus = EOR_imperial_administration }
+available = { IOT = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+fire_only_once = yes
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = {
+add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
+
+
+IOT = { capital_scope = { save_global_event_target_as = EOR_subject_iot_advanced_shipbuilding_state } }
+}
+remove_effect = { if = { limit = { IOT = { exists = yes is_subject_of = ROOT event_target:EOR_subject_iot_advanced_shipbuilding_state = { is_owned_by = IOT is_controlled_by = IOT } } } IOT = { event_target:EOR_subject_iot_advanced_shipbuilding_state = { if = { limit = { is_owned_by = IOT is_controlled_by = IOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } }
+ }
+country_event = { id = eor.140 days = 1 }
+}
+else = { country_event = { id = eor.141 days = 1 } }  clear_global_event_target = EOR_subject_iot_advanced_shipbuilding_state }
+}
+EOR_subject_iot_joint_military_laboratories = {
+icon = generic_construction
+cost = 75
+visible = { has_completed_focus = EOR_imperial_administration }
+available = { IOT = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+fire_only_once = yes
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = {
+add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
+
+
+IOT = { capital_scope = { save_global_event_target_as = EOR_subject_iot_joint_military_laboratories_state } }
+}
+remove_effect = { if = { limit = { IOT = { exists = yes is_subject_of = ROOT event_target:EOR_subject_iot_joint_military_laboratories_state = { is_owned_by = IOT is_controlled_by = IOT } } } IOT = { add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = electronics }
+add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = armor }
+ }
+country_event = { id = eor.140 days = 1 }
+}
+else = { country_event = { id = eor.141 days = 1 } }  clear_global_event_target = EOR_subject_iot_joint_military_laboratories_state }
+}
+EOR_subject_iot_southern_pacific_defense_network = {
+icon = generic_construction
+cost = 75
+visible = { has_completed_focus = EOR_imperial_administration }
+available = { IOT = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+fire_only_once = yes
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = {
+add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
+
+
+IOT = { capital_scope = { save_global_event_target_as = EOR_subject_iot_southern_pacific_defense_network_state } }
+}
+remove_effect = { if = { limit = { IOT = { exists = yes is_subject_of = ROOT event_target:EOR_subject_iot_southern_pacific_defense_network_state = { is_owned_by = IOT is_controlled_by = IOT } } } IOT = { event_target:EOR_subject_iot_southern_pacific_defense_network_state = { if = { limit = { is_owned_by = IOT is_controlled_by = IOT } add_extra_state_shared_building_slots = 2 add_building_construction = { type = anti_air_building level = 2 instant_build = yes } } }
+ }
+country_event = { id = eor.140 days = 1 }
+}
+else = { country_event = { id = eor.141 days = 1 } }  clear_global_event_target = EOR_subject_iot_southern_pacific_defense_network_state }
+}
+EOR_subject_phi_imperial_recruitment_centers = {
+icon = generic_construction
+cost = 75
+visible = { has_completed_focus = EOR_imperial_administration }
+available = { PHI = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+fire_only_once = yes
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = {
+add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
+
+
+PHI = { capital_scope = { save_global_event_target_as = EOR_subject_phi_imperial_recruitment_centers_state } }
+}
+remove_effect = { if = { limit = { PHI = { exists = yes is_subject_of = ROOT event_target:EOR_subject_phi_imperial_recruitment_centers_state = { is_owned_by = PHI is_controlled_by = PHI } } } PHI = { add_war_support = 0.05
+add_manpower = 5000
+ }
+country_event = { id = eor.140 days = 1 }
+}
+else = { country_event = { id = eor.141 days = 1 } }  clear_global_event_target = EOR_subject_phi_imperial_recruitment_centers_state }
+}
+EOR_subject_phi_naval_infrastructure = {
+icon = generic_construction
+cost = 75
+visible = { has_completed_focus = EOR_imperial_administration }
+available = { PHI = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+fire_only_once = yes
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = {
+add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
+
+
+PHI = { capital_scope = { save_global_event_target_as = EOR_subject_phi_naval_infrastructure_state } }
+}
+remove_effect = { if = { limit = { PHI = { exists = yes is_subject_of = ROOT event_target:EOR_subject_phi_naval_infrastructure_state = { is_owned_by = PHI is_controlled_by = PHI } } } PHI = { event_target:EOR_subject_phi_naval_infrastructure_state = { if = { limit = { is_owned_by = PHI is_controlled_by = PHI } add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } }
+ }
+country_event = { id = eor.140 days = 1 }
+}
+else = { country_event = { id = eor.141 days = 1 } }  clear_global_event_target = EOR_subject_phi_naval_infrastructure_state }
+}
+EOR_subject_phi_pacific_logistics_command = {
+icon = generic_construction
+cost = 75
+visible = { has_completed_focus = EOR_imperial_administration }
+available = { PHI = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+fire_only_once = yes
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = {
+add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
+
+
+PHI = { capital_scope = { save_global_event_target_as = EOR_subject_phi_pacific_logistics_command_state } }
+}
+remove_effect = { if = { limit = { PHI = { exists = yes is_subject_of = ROOT event_target:EOR_subject_phi_pacific_logistics_command_state = { is_owned_by = PHI is_controlled_by = PHI } } } PHI = { add_timed_idea = { idea = EOR_logistics_network days = 365 } set_country_flag = EOR_subject_logistics
+ }
+country_event = { id = eor.140 days = 1 }
+}
+else = { country_event = { id = eor.141 days = 1 } }  clear_global_event_target = EOR_subject_phi_pacific_logistics_command_state }
+}
+EOR_subject_phi_local_military_administration = {
+icon = generic_construction
+cost = 75
+visible = { has_completed_focus = EOR_imperial_administration }
+available = { PHI = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+fire_only_once = yes
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = {
+add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
+
+
+PHI = { capital_scope = { save_global_event_target_as = EOR_subject_phi_local_military_administration_state } }
+}
+remove_effect = { if = { limit = { PHI = { exists = yes is_subject_of = ROOT event_target:EOR_subject_phi_local_military_administration_state = { is_owned_by = PHI is_controlled_by = PHI } } } PHI = { add_stability = 0.05
+EOR = { add_to_variable = { var = EOR_subject_pressure value = -5 } }
+ }
+add_to_variable = { var = EOR_administration_relief value = 2 }
+clamp_variable = { var = EOR_administration_relief min = 0 max = 6 }
+country_event = { id = eor.140 days = 1 }
+}
+else = { country_event = { id = eor.141 days = 1 } }  clear_global_event_target = EOR_subject_phi_local_military_administration_state }
+}
+EOR_subject_mal_rubber_development = {
+icon = generic_construction
+cost = 75
+visible = { has_completed_focus = EOR_imperial_administration }
+available = { MAL = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+fire_only_once = yes
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = {
+add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
+
+
+MAL = { capital_scope = { save_global_event_target_as = EOR_subject_mal_rubber_development_state } }
+}
+remove_effect = { if = { limit = { MAL = { exists = yes is_subject_of = ROOT event_target:EOR_subject_mal_rubber_development_state = { is_owned_by = MAL is_controlled_by = MAL } } } MAL = { random_owned_controlled_state = { add_resource = { type = rubber amount = 8 } }
+ }
+country_event = { id = eor.140 days = 1 }
+}
+else = { country_event = { id = eor.141 days = 1 } }  clear_global_event_target = EOR_subject_mal_rubber_development_state }
+}
+EOR_subject_mal_industrial_expansion = {
+icon = generic_construction
+cost = 75
+visible = { has_completed_focus = EOR_imperial_administration }
+available = { MAL = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+fire_only_once = yes
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = {
+add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
+
+
+MAL = { capital_scope = { save_global_event_target_as = EOR_subject_mal_industrial_expansion_state } }
+}
+remove_effect = { if = { limit = { MAL = { exists = yes is_subject_of = ROOT event_target:EOR_subject_mal_industrial_expansion_state = { is_owned_by = MAL is_controlled_by = MAL } } } MAL = { event_target:EOR_subject_mal_industrial_expansion_state = { if = { limit = { is_owned_by = MAL is_controlled_by = MAL } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
+ }
+country_event = { id = eor.140 days = 1 }
+}
+else = { country_event = { id = eor.141 days = 1 } }  clear_global_event_target = EOR_subject_mal_industrial_expansion_state }
+}
+EOR_subject_mal_strategic_resource_export = {
+icon = generic_construction
+cost = 75
+visible = { has_completed_focus = EOR_imperial_administration }
+available = { MAL = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+fire_only_once = yes
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = {
+add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
+
+
+MAL = { capital_scope = { save_global_event_target_as = EOR_subject_mal_strategic_resource_export_state } }
+}
+remove_effect = { if = { limit = { MAL = { exists = yes is_subject_of = ROOT event_target:EOR_subject_mal_strategic_resource_export_state = { is_owned_by = MAL is_controlled_by = MAL } } } MAL = { add_timed_idea = { idea = EOR_subject_resource_access days = 365 }
+ }
+country_event = { id = eor.140 days = 1 }
+}
+else = { country_event = { id = eor.141 days = 1 } }  clear_global_event_target = EOR_subject_mal_strategic_resource_export_state }
+}
+EOR_subject_mal_local_administrative_reform = {
+icon = generic_construction
+cost = 75
+visible = { has_completed_focus = EOR_imperial_administration }
+available = { MAL = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+fire_only_once = yes
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = {
+add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
+
+
+MAL = { capital_scope = { save_global_event_target_as = EOR_subject_mal_local_administrative_reform_state } }
+}
+remove_effect = { if = { limit = { MAL = { exists = yes is_subject_of = ROOT event_target:EOR_subject_mal_local_administrative_reform_state = { is_owned_by = MAL is_controlled_by = MAL } } } MAL = { add_stability = 0.05
+ }
+add_to_variable = { var = EOR_administration_relief value = 2 }
+clamp_variable = { var = EOR_administration_relief min = 0 max = 6 }
+country_event = { id = eor.140 days = 1 }
+}
+else = { country_event = { id = eor.141 days = 1 } }  clear_global_event_target = EOR_subject_mal_local_administrative_reform_state }
+}
+EOR_subject_ins_oil_development = {
+icon = generic_construction
+cost = 75
+visible = { has_completed_focus = EOR_imperial_administration }
+available = { INS = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+fire_only_once = yes
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = {
+add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
+
+
+INS = { capital_scope = { save_global_event_target_as = EOR_subject_ins_oil_development_state } }
+}
+remove_effect = { if = { limit = { INS = { exists = yes is_subject_of = ROOT event_target:EOR_subject_ins_oil_development_state = { is_owned_by = INS is_controlled_by = INS } } } INS = { random_owned_controlled_state = { add_resource = { type = oil amount = 8 } }
+ }
+country_event = { id = eor.140 days = 1 }
+}
+else = { country_event = { id = eor.141 days = 1 } }  clear_global_event_target = EOR_subject_ins_oil_development_state }
+}
+EOR_subject_ins_maritime_infrastructure = {
+icon = generic_construction
+cost = 75
+visible = { has_completed_focus = EOR_imperial_administration }
+available = { INS = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+fire_only_once = yes
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = {
+add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
+
+
+INS = { capital_scope = { save_global_event_target_as = EOR_subject_ins_maritime_infrastructure_state } }
+}
+remove_effect = { if = { limit = { INS = { exists = yes is_subject_of = ROOT event_target:EOR_subject_ins_maritime_infrastructure_state = { is_owned_by = INS is_controlled_by = INS } } } INS = { event_target:EOR_subject_ins_maritime_infrastructure_state = { if = { limit = { is_owned_by = INS is_controlled_by = INS } add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } }
+ }
+country_event = { id = eor.140 days = 1 }
+}
+else = { country_event = { id = eor.141 days = 1 } }  clear_global_event_target = EOR_subject_ins_maritime_infrastructure_state }
+}
+EOR_subject_ins_imperial_energy_security = {
+icon = generic_construction
+cost = 75
+visible = { has_completed_focus = EOR_imperial_administration }
+available = { INS = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+fire_only_once = yes
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = {
+add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
+
+
+INS = { capital_scope = { save_global_event_target_as = EOR_subject_ins_imperial_energy_security_state } }
+}
+remove_effect = { if = { limit = { INS = { exists = yes is_subject_of = ROOT event_target:EOR_subject_ins_imperial_energy_security_state = { is_owned_by = INS is_controlled_by = INS } } } INS = { random_owned_controlled_state = { add_resource = { type = oil amount = 4 } }
+ }
+country_event = { id = eor.140 days = 1 }
+}
+else = { country_event = { id = eor.141 days = 1 } }  clear_global_event_target = EOR_subject_ins_imperial_energy_security_state }
+}
+EOR_subject_ins_regional_naval_bases = {
+icon = generic_construction
+cost = 75
+visible = { has_completed_focus = EOR_imperial_administration }
+available = { INS = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
+fire_only_once = yes
+days_remove = 120
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = {
+add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
+
+
+INS = { capital_scope = { save_global_event_target_as = EOR_subject_ins_regional_naval_bases_state } }
+}
+remove_effect = { if = { limit = { INS = { exists = yes is_subject_of = ROOT event_target:EOR_subject_ins_regional_naval_bases_state = { is_owned_by = INS is_controlled_by = INS } } } INS = { add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = naval_equipment }
+event_target:EOR_subject_ins_regional_naval_bases_state = { if = { limit = { is_owned_by = INS is_controlled_by = INS } add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } }
+ }
+country_event = { id = eor.140 days = 1 }
+}
+else = { country_event = { id = eor.141 days = 1 } }  clear_global_event_target = EOR_subject_ins_regional_naval_bases_state }
+}
+}
+
+EOR_diplomacy_decisions = {
+EOR_diplomatic_concessions = {
+icon = generic_political_discourse
+cost = 100
+visible = { has_completed_focus = EOR_convene_the_imperial_court }
+available = { OR = { has_country_flag = EOR_route_divine has_country_flag = EOR_route_shinzo } }
+fire_only_once = yes
+days_re_enable = 180
+ai_will_do = { factor = 1 }
+complete_effect = {
+set_country_flag = EOR_diplomatic_concessions
+add_to_variable = { var = EOR_military_influence value = -5 }
 
 }
 }
 EOR_renew_china_cooperation = {
 icon = generic_political_discourse
 cost = 75
-visible = { OR = { has_completed_focus = EOR_cooperate_with_china has_completed_focus = EOR_equal_partnership_with_china } }
-available = { CHI = { exists = yes NOT = { has_war_with = EOR } NOT = { has_country_flag = EOR_china_partner } } eor_diplomatic_cooperation_allowed = yes }
+visible = { has_completed_focus = EOR_cooperate_with_china }
+available = { CHI = { eor_china_can_negotiate = yes NOT = { has_country_flag = EOR_china_partner } } eor_diplomatic_cooperation_allowed = yes }
 days_re_enable = 180
 ai_will_do = { factor = 1 }
 complete_effect = {
@@ -792,8 +1324,8 @@ eor_offer_china_cooperation = yes
 EOR_seek_settlement_sov = {
 icon = generic_political_discourse
 cost = 100
-visible = { OR = { has_country_flag = EOR_settlement_diplomacy has_country_flag = EOR_route_technocratic has_country_flag = EOR_route_reform } }
-available = { country_exists = SOV NOT = { is_in_faction_with = SOV } }
+visible = { OR = { has_country_flag = EOR_settlement_diplomacy has_country_flag = EOR_route_technocratic } }
+available = { SOV = { eor_can_receive_settlement = yes } }
 days_re_enable = 365
 ai_will_do = { factor = 1 }
 complete_effect = {
@@ -803,8 +1335,8 @@ if = { limit = { SOV = { exists = yes } } SOV = { country_event = { id = eor.114
 EOR_seek_settlement_usa = {
 icon = generic_political_discourse
 cost = 100
-visible = { OR = { has_country_flag = EOR_settlement_diplomacy has_country_flag = EOR_route_technocratic has_country_flag = EOR_route_reform } }
-available = { country_exists = USA NOT = { is_in_faction_with = USA } }
+visible = { OR = { has_country_flag = EOR_settlement_diplomacy has_country_flag = EOR_route_technocratic } }
+available = { USA = { eor_can_receive_settlement = yes } }
 days_re_enable = 365
 ai_will_do = { factor = 1 }
 complete_effect = {
@@ -814,8 +1346,8 @@ if = { limit = { USA = { exists = yes } } USA = { country_event = { id = eor.114
 EOR_seek_settlement_eng = {
 icon = generic_political_discourse
 cost = 100
-visible = { OR = { has_country_flag = EOR_settlement_diplomacy has_country_flag = EOR_route_technocratic has_country_flag = EOR_route_reform } }
-available = { country_exists = ENG NOT = { is_in_faction_with = ENG } }
+visible = { OR = { has_country_flag = EOR_settlement_diplomacy has_country_flag = EOR_route_technocratic } }
+available = { ENG = { eor_can_receive_settlement = yes } }
 days_re_enable = 365
 ai_will_do = { factor = 1 }
 complete_effect = {
@@ -825,335 +1357,56 @@ if = { limit = { ENG = { exists = yes } } ENG = { country_event = { id = eor.114
 EOR_seek_settlement_aoe = {
 icon = generic_political_discourse
 cost = 100
-visible = { OR = { has_country_flag = EOR_settlement_diplomacy has_country_flag = EOR_route_technocratic has_country_flag = EOR_route_reform } }
-available = { country_exists = AOE NOT = { is_in_faction_with = AOE } }
+visible = { OR = { has_country_flag = EOR_settlement_diplomacy has_country_flag = EOR_route_technocratic } }
+available = { AOE = { eor_can_receive_settlement = yes } }
 days_re_enable = 365
 ai_will_do = { factor = 1 }
 complete_effect = {
 if = { limit = { AOE = { exists = yes } } AOE = { country_event = { id = eor.114 days = 1 } } }
 }
 }
-EOR_subject_iot_pacific_naval_research = {
-icon = generic_political_discourse
-cost = 75
-visible = { has_completed_focus = EOR_imperial_administration }
-available = { IOT = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-fire_only_once = yes
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
 
+EOR_prepare_settlement_sov = {
+ icon = generic_political_discourse cost = 75
+ visible = { has_country_flag = EOR_targeted_envoys_authorized }
+ available = { SOV = { eor_can_receive_settlement = yes NOT = { has_country_flag = EOR_prepared_settlement } } NOT = { has_country_flag = EOR_envoys_busy } has_capitulated = no  NOT = { has_country_flag = EOR_prepare_settlement_sov_authorization_cooldown } }
+ days_remove = 60 days_re_enable = 1 ai_will_do = { factor = 1 }
+ complete_effect = { set_country_flag = { flag = EOR_envoys_busy days = 60 }  set_country_flag = { flag = EOR_prepare_settlement_sov_authorization_cooldown days = 365 } }
+ remove_effect = { if = { limit = { has_country_flag = EOR_targeted_envoys_authorized has_capitulated = no SOV = { eor_can_receive_settlement = yes } }
+ SOV = { set_country_flag = { flag = EOR_prepared_settlement days = 180 } } country_event = { id = eor.154 days = 1 }
+ } else = { country_event = { id = eor.155 days = 1 } } }
 }
-remove_effect = {
-if = { limit = { IOT = { exists = yes is_subject_of = ROOT capital_scope = { is_controlled_by = IOT } } } IOT = { add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 2 category = naval_equipment }
- } }
-}
-}
-EOR_subject_iot_advanced_shipbuilding = {
-icon = generic_political_discourse
-cost = 75
-visible = { has_completed_focus = EOR_imperial_administration }
-available = { IOT = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-fire_only_once = yes
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
 
+EOR_prepare_settlement_usa = {
+ icon = generic_political_discourse cost = 75
+ visible = { has_country_flag = EOR_targeted_envoys_authorized }
+ available = { USA = { eor_can_receive_settlement = yes NOT = { has_country_flag = EOR_prepared_settlement } } NOT = { has_country_flag = EOR_envoys_busy } has_capitulated = no  NOT = { has_country_flag = EOR_prepare_settlement_usa_authorization_cooldown } }
+ days_remove = 60 days_re_enable = 1 ai_will_do = { factor = 1 }
+ complete_effect = { set_country_flag = { flag = EOR_envoys_busy days = 60 }  set_country_flag = { flag = EOR_prepare_settlement_usa_authorization_cooldown days = 365 } }
+ remove_effect = { if = { limit = { has_country_flag = EOR_targeted_envoys_authorized has_capitulated = no USA = { eor_can_receive_settlement = yes } }
+ USA = { set_country_flag = { flag = EOR_prepared_settlement days = 180 } } country_event = { id = eor.154 days = 1 }
+ } else = { country_event = { id = eor.155 days = 1 } } }
 }
-remove_effect = {
-if = { limit = { IOT = { exists = yes is_subject_of = ROOT capital_scope = { is_controlled_by = IOT } } } IOT = { capital_scope = { if = { limit = { is_controlled_by = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } }
- } }
-}
-}
-EOR_subject_iot_joint_military_laboratories = {
-icon = generic_political_discourse
-cost = 75
-visible = { has_completed_focus = EOR_imperial_administration }
-available = { IOT = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-fire_only_once = yes
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
 
+EOR_prepare_settlement_eng = {
+ icon = generic_political_discourse cost = 75
+ visible = { has_country_flag = EOR_targeted_envoys_authorized }
+ available = { ENG = { eor_can_receive_settlement = yes NOT = { has_country_flag = EOR_prepared_settlement } } NOT = { has_country_flag = EOR_envoys_busy } has_capitulated = no  NOT = { has_country_flag = EOR_prepare_settlement_eng_authorization_cooldown } }
+ days_remove = 60 days_re_enable = 1 ai_will_do = { factor = 1 }
+ complete_effect = { set_country_flag = { flag = EOR_envoys_busy days = 60 }  set_country_flag = { flag = EOR_prepare_settlement_eng_authorization_cooldown days = 365 } }
+ remove_effect = { if = { limit = { has_country_flag = EOR_targeted_envoys_authorized has_capitulated = no ENG = { eor_can_receive_settlement = yes } }
+ ENG = { set_country_flag = { flag = EOR_prepared_settlement days = 180 } } country_event = { id = eor.154 days = 1 }
+ } else = { country_event = { id = eor.155 days = 1 } } }
 }
-remove_effect = {
-if = { limit = { IOT = { exists = yes is_subject_of = ROOT capital_scope = { is_controlled_by = IOT } } } IOT = { add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = electronics }
-add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = armor }
- } }
-}
-}
-EOR_subject_iot_southern_pacific_defense_network = {
-icon = generic_political_discourse
-cost = 75
-visible = { has_completed_focus = EOR_imperial_administration }
-available = { IOT = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-fire_only_once = yes
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
 
-}
-remove_effect = {
-if = { limit = { IOT = { exists = yes is_subject_of = ROOT capital_scope = { is_controlled_by = IOT } } } IOT = { capital_scope = { if = { limit = { is_controlled_by = ROOT } add_extra_state_shared_building_slots = 2 add_building_construction = { type = anti_air_building level = 2 instant_build = yes } } }
- } }
-}
-}
-EOR_subject_phi_imperial_recruitment_centers = {
-icon = generic_political_discourse
-cost = 75
-visible = { has_completed_focus = EOR_imperial_administration }
-available = { PHI = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-fire_only_once = yes
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
-
-}
-remove_effect = {
-if = { limit = { PHI = { exists = yes is_subject_of = ROOT capital_scope = { is_controlled_by = PHI } } } PHI = { add_war_support = 0.05
-add_manpower = 5000
- } }
-}
-}
-EOR_subject_phi_naval_infrastructure = {
-icon = generic_political_discourse
-cost = 75
-visible = { has_completed_focus = EOR_imperial_administration }
-available = { PHI = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-fire_only_once = yes
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
-
-}
-remove_effect = {
-if = { limit = { PHI = { exists = yes is_subject_of = ROOT capital_scope = { is_controlled_by = PHI } } } PHI = { capital_scope = { if = { limit = { is_controlled_by = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } }
- } }
-}
-}
-EOR_subject_phi_pacific_logistics_command = {
-icon = generic_political_discourse
-cost = 75
-visible = { has_completed_focus = EOR_imperial_administration }
-available = { PHI = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-fire_only_once = yes
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
-
-}
-remove_effect = {
-if = { limit = { PHI = { exists = yes is_subject_of = ROOT capital_scope = { is_controlled_by = PHI } } } PHI = { add_timed_idea = { idea = EOR_logistics_network days = 365 }
- } }
-}
-}
-EOR_subject_phi_local_military_administration = {
-icon = generic_political_discourse
-cost = 75
-visible = { has_completed_focus = EOR_imperial_administration }
-available = { PHI = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-fire_only_once = yes
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
-
-}
-remove_effect = {
-if = { limit = { PHI = { exists = yes is_subject_of = ROOT capital_scope = { is_controlled_by = PHI } } } PHI = { add_stability = 0.05
-add_to_variable = { var = EOR_subject_pressure value = -5 }
- } }
-}
-}
-EOR_subject_mal_rubber_development = {
-icon = generic_political_discourse
-cost = 75
-visible = { has_completed_focus = EOR_imperial_administration }
-available = { MAL = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-fire_only_once = yes
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
-
-}
-remove_effect = {
-if = { limit = { MAL = { exists = yes is_subject_of = ROOT capital_scope = { is_controlled_by = MAL } } } MAL = { random_owned_controlled_state = { add_resource = { type = rubber amount = 8 } }
- } }
-}
-}
-EOR_subject_mal_industrial_expansion = {
-icon = generic_political_discourse
-cost = 75
-visible = { has_completed_focus = EOR_imperial_administration }
-available = { MAL = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-fire_only_once = yes
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
-
-}
-remove_effect = {
-if = { limit = { MAL = { exists = yes is_subject_of = ROOT capital_scope = { is_controlled_by = MAL } } } MAL = { capital_scope = { if = { limit = { is_controlled_by = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
- } }
-}
-}
-EOR_subject_mal_strategic_resource_export = {
-icon = generic_political_discourse
-cost = 75
-visible = { has_completed_focus = EOR_imperial_administration }
-available = { MAL = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-fire_only_once = yes
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
-
-}
-remove_effect = {
-if = { limit = { MAL = { exists = yes is_subject_of = ROOT capital_scope = { is_controlled_by = MAL } } } MAL = { add_timed_idea = { idea = EOR_subject_resource_access days = 365 }
- } }
-}
-}
-EOR_subject_mal_local_administrative_reform = {
-icon = generic_political_discourse
-cost = 75
-visible = { has_completed_focus = EOR_imperial_administration }
-available = { MAL = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-fire_only_once = yes
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
-
-}
-remove_effect = {
-if = { limit = { MAL = { exists = yes is_subject_of = ROOT capital_scope = { is_controlled_by = MAL } } } MAL = { add_stability = 0.05
- } }
-}
-}
-EOR_subject_ins_oil_development = {
-icon = generic_political_discourse
-cost = 75
-visible = { has_completed_focus = EOR_imperial_administration }
-available = { INS = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-fire_only_once = yes
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
-
-}
-remove_effect = {
-if = { limit = { INS = { exists = yes is_subject_of = ROOT capital_scope = { is_controlled_by = INS } } } INS = { random_owned_controlled_state = { add_resource = { type = oil amount = 8 } }
- } }
-}
-}
-EOR_subject_ins_maritime_infrastructure = {
-icon = generic_political_discourse
-cost = 75
-visible = { has_completed_focus = EOR_imperial_administration }
-available = { INS = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-fire_only_once = yes
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
-
-}
-remove_effect = {
-if = { limit = { INS = { exists = yes is_subject_of = ROOT capital_scope = { is_controlled_by = INS } } } INS = { capital_scope = { if = { limit = { is_controlled_by = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } }
- } }
-}
-}
-EOR_subject_ins_imperial_energy_security = {
-icon = generic_political_discourse
-cost = 75
-visible = { has_completed_focus = EOR_imperial_administration }
-available = { INS = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-fire_only_once = yes
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
-
-}
-remove_effect = {
-if = { limit = { INS = { exists = yes is_subject_of = ROOT capital_scope = { is_controlled_by = INS } } } INS = { random_owned_controlled_state = { add_resource = { type = oil amount = 4 } }
- } }
-}
-}
-EOR_subject_ins_regional_naval_bases = {
-icon = generic_political_discourse
-cost = 75
-visible = { has_completed_focus = EOR_imperial_administration }
-available = { INS = { exists = yes is_subject_of = ROOT } num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-fire_only_once = yes
-days_remove = 120
-days_re_enable = 180
-ai_will_do = { factor = 1 }
-complete_effect = {
-add_timed_idea = { idea = EOR_nanocore_investment days = 120 }
-
-}
-remove_effect = {
-if = { limit = { INS = { exists = yes is_subject_of = ROOT capital_scope = { is_controlled_by = INS } } } INS = { add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = naval_equipment }
-capital_scope = { if = { limit = { is_controlled_by = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } }
- } }
-}
-}
-EOR_postwar_military = {
-icon = generic_political_discourse
-cost = 75
-visible = { has_completed_focus = EOR_the_rule_of_the_shoguns }
-available = { num_of_civilian_factories > 3 NOT = { has_idea = EOR_nanocore_investment } }
-days_remove = 180
-days_re_enable = 365
-ai_will_do = { factor = 1 }
-complete_effect = {
-add_timed_idea = { idea = EOR_nanocore_investment days = 180 }
-
-}
-remove_effect = {
-army_experience = 25
-add_stability = 0.03
-
-}
-}
-EOR_reassert_civilian_authority = {
-icon = generic_political_discourse
-cost = 50
-visible = { has_completed_focus = EOR_convene_the_imperial_court }
-available = { NOT = { has_country_flag = EOR_route_shinzo } }
-days_re_enable = 90
-ai_will_do = { factor = 1 }
-complete_effect = {
-add_to_variable = { var = EOR_military_influence value = -10 }
-add_to_variable = { var = EOR_imperial_legitimacy value = 5 }
-
-}
+EOR_prepare_settlement_aoe = {
+ icon = generic_political_discourse cost = 75
+ visible = { has_country_flag = EOR_targeted_envoys_authorized }
+ available = { AOE = { eor_can_receive_settlement = yes NOT = { has_country_flag = EOR_prepared_settlement } } NOT = { has_country_flag = EOR_envoys_busy } has_capitulated = no  NOT = { has_country_flag = EOR_prepare_settlement_aoe_authorization_cooldown } }
+ days_remove = 60 days_re_enable = 1 ai_will_do = { factor = 1 }
+ complete_effect = { set_country_flag = { flag = EOR_envoys_busy days = 60 }  set_country_flag = { flag = EOR_prepare_settlement_aoe_authorization_cooldown days = 365 } }
+ remove_effect = { if = { limit = { has_country_flag = EOR_targeted_envoys_authorized has_capitulated = no AOE = { eor_can_receive_settlement = yes } }
+ AOE = { set_country_flag = { flag = EOR_prepared_settlement days = 180 } } country_event = { id = eor.154 days = 1 }
+ } else = { country_event = { id = eor.155 days = 1 } } }
 }
 }

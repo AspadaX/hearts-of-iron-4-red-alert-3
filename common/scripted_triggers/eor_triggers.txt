@@ -28,7 +28,7 @@ eor_can_attack_allies = {
 }
 
 eor_no_political_route = {
-NOT = { OR = { has_country_flag = EOR_route_divine has_country_flag = EOR_route_technocratic has_country_flag = EOR_route_shinzo has_country_flag = EOR_route_reform } }
+NOT = { OR = { has_country_flag = EOR_route_divine has_country_flag = EOR_route_technocratic has_country_flag = EOR_route_shinzo } }
 }
 
 eor_shinzo_available = {
@@ -43,89 +43,54 @@ eor_loyalists_defeated = {
 has_country_flag = EOR_civil_conflict_started NOT = { has_civil_war = yes } NOT = { any_country = { has_country_flag = EOR_imperial_loyalists exists = yes } }
 }
 
-eor_imperial_expansion_allowed = {
-NOT = { has_country_flag = EOR_route_reform }
-}
 
 eor_northern_theater_open = {
-OR = { has_completed_focus = EOR_northern_thunder has_completed_focus = EOR_imperial_strategic_reassessment has_country_flag = EOR_route_reform }
+OR = { has_completed_focus = EOR_northern_thunder has_completed_focus = EOR_imperial_strategic_reassessment }
 }
 
 eor_pacific_theater_open = {
-OR = { has_completed_focus = EOR_pacific_storm has_completed_focus = EOR_imperial_strategic_reassessment has_country_flag = EOR_route_reform }
+OR = { has_completed_focus = EOR_pacific_storm has_completed_focus = EOR_imperial_strategic_reassessment }
 }
 
 eor_asian_theater_open = {
-OR = { has_completed_focus = EOR_consolidate_asia has_completed_focus = EOR_imperial_strategic_reassessment has_country_flag = EOR_route_reform }
+OR = { has_completed_focus = EOR_consolidate_asia has_completed_focus = EOR_imperial_strategic_reassessment }
 }
 
 eor_first_strategy_progress = {
-OR = { has_completed_focus = EOR_operation_vorkuta has_completed_focus = EOR_secure_the_pacific has_completed_focus = EOR_establish_regional_supremacy has_country_flag = EOR_reassessment_ready has_country_flag = EOR_major_defeat eor_soviets_defeated = yes eor_allies_defeated = yes }
+OR = { has_completed_focus = EOR_operation_vorkuta has_completed_focus = EOR_secure_the_pacific has_completed_focus = EOR_establish_regional_supremacy has_country_flag = EOR_major_defeat eor_soviets_defeated = yes eor_allies_defeated = yes }
 }
 
 eor_expansion_threat = {
-check_variable = { EOR_global_threat > 39 } NOT = { has_country_flag = EOR_route_reform }
+ check_variable = { EOR_global_threat > 39 }
 }
 
-eor_secret_path_eligible = {
-eor_no_political_route = yes check_variable = { EOR_imperial_legitimacy < 30 } check_variable = { EOR_subject_pressure > 39 } OR = { has_country_flag = EOR_major_defeat has_stability < 0.30 } has_country_flag = EOR_reform_movement
-}
 
 eor_diplomatic_cooperation_allowed = {
 OR = { AND = { NOT = { has_country_flag = EOR_route_divine } NOT = { has_country_flag = EOR_route_shinzo } } has_country_flag = EOR_diplomatic_concessions }
 }
 
-eor_state_economy_allowed = {
-OR = { NOT = { has_country_flag = EOR_route_reform } has_country_flag = EOR_civilian_industry_oversight }
-}
 
 eor_partnership_allowed = {
 OR = { NOT = { has_country_flag = EOR_route_shinzo } has_country_flag = EOR_military_accepts_partnership }
 }
 
-eor_reform_china_policy = {
-has_country_flag = EOR_route_reform NOT = { CHI = { exists = yes has_country_flag = EOR_china_partner } }
+
+# Recipient-country scope. ROOT is never used to mean the subject itself.
+eor_can_receive_settlement = {
+ exists = yes is_subject = no NOT = { tag = EOR } NOT = { is_in_faction_with = EOR }
+ NOT = { has_country_flag = EOR_negotiated_settlement }
+ OR = {
+  AND = { has_war_with = EOR surrender_progress > 0.35 }
+  AND = { NOT = { has_war_with = EOR } EOR = { NOT = { has_capitulated = yes } NOT = { has_civil_war = yes } strength_ratio = { tag = PREV ratio > 1.0 } } }
+ }
 }
 
-eor_decolonization_resolved = {
-NOT = { OR = { 524 = { is_owned_by = EOR } 525 = { is_owned_by = EOR } 527 = { is_owned_by = EOR } 1028 = { is_owned_by = EOR } 1029 = { is_owned_by = EOR } 1030 = { is_owned_by = EOR } 1031 = { is_owned_by = EOR } 286 = { is_owned_by = EOR } 671 = { is_owned_by = EOR } 1017 = { is_owned_by = EOR } 1066 = { is_owned_by = EOR } 670 = { is_owned_by = EOR } 1068 = { is_owned_by = EOR } 1069 = { is_owned_by = EOR } 741 = { is_owned_by = EOR } 1067 = { is_owned_by = EOR } 629 = { is_owned_by = EOR } 630 = { is_owned_by = EOR } 631 = { is_owned_by = EOR } 632 = { is_owned_by = EOR } 638 = { is_owned_by = EOR } 646 = { is_owned_by = EOR } 537 = { is_owned_by = EOR } 555 = { is_owned_by = EOR } 655 = { is_owned_by = EOR } 270 = { is_owned_by = EOR } 633 = { is_owned_by = EOR } 635 = { is_owned_by = EOR } 636 = { is_owned_by = EOR } 639 = { is_owned_by = EOR } 641 = { is_owned_by = EOR } 642 = { is_owned_by = EOR } 643 = { is_owned_by = EOR } 647 = { is_owned_by = EOR } 648 = { is_owned_by = EOR } 684 = { is_owned_by = EOR } 721 = { is_owned_by = EOR } 725 = { is_owned_by = EOR } 727 = { is_owned_by = EOR } 734 = { is_owned_by = EOR } 1071 = { is_owned_by = EOR } } }
-NOT = { any_subject_country = { exists = yes } } NOT = { any_enemy_country = { has_country_flag = EOR_initial_subject } }
+# CHI country scope. Diplomatic cooperation cannot override war or another overlord.
+eor_china_can_negotiate = {
+ exists = yes NOT = { has_war_with = EOR } NOT = { has_capitulated = yes }
+ OR = { is_subject = no is_subject_of = EOR }
 }
-
-eor_regional_federation = {
-eor_decolonization_resolved = yes check_variable = { EOR_regional_partners > 1 } is_subject = no NOT = { has_civil_war = yes } 282 = { is_fully_controlled_by = EOR }
-}
-
-eor_home_secure = {
-is_subject = no NOT = { has_capitulated = yes } NOT = { has_civil_war = yes } NOT = { any_state = { has_state_flag = EOR_initial_home_core NOT = { is_fully_controlled_by = EOR } } }
-}
-
-eor_soviets_neutralized = {
-OR = { NOT = { country_exists = SOV } eor_soviets_defeated = yes SOV = { exists = yes has_country_flag = EOR_negotiated_settlement NOT = { has_war_with = EOR } } }
-}
-
-eor_allies_neutralized = {
-OR = { NOT = { country_exists = USA } EOR = { has_country_flag = EOR_defeated_USA } AND = { NOT = { country_exists = USA } 361 = { controller = { OR = { tag = EOR is_in_faction_with = EOR } } } } USA = { exists = yes OR = { is_subject_of = EOR AND = { has_country_flag = EOR_negotiated_settlement NOT = { has_war_with = EOR } } } } }
-OR = { NOT = { country_exists = ENG } EOR = { has_country_flag = EOR_defeated_ENG } AND = { NOT = { country_exists = ENG } 126 = { controller = { OR = { tag = EOR is_in_faction_with = EOR } } } } ENG = { exists = yes OR = { is_subject_of = EOR AND = { has_country_flag = EOR_negotiated_settlement NOT = { has_war_with = EOR } } } } }
-OR = { NOT = { country_exists = AOE } EOR = { has_country_flag = EOR_defeated_AOE } AND = { NOT = { country_exists = AOE } 7 = { controller = { OR = { tag = EOR is_in_faction_with = EOR } } } } AOE = { exists = yes OR = { is_subject_of = EOR AND = { has_country_flag = EOR_negotiated_settlement NOT = { has_war_with = EOR } } } } }
-}
-
-eor_technology_victory = {
-has_completed_focus = EOR_establish_nanotech_mainframe OR = { has_country_flag = EOR_omega_available has_country_flag = EOR_executioner_deployed has_country_flag = EOR_giga_deployed }
-}
-
-eor_yoshiro_victory = {
-has_country_flag = EOR_route_divine has_country_leader = { character = EOR_yoshiro ruling_only = yes } eor_home_secure = yes eor_soviets_defeated = yes eor_allies_defeated = yes OR = { has_completed_focus = EOR_crush_the_coalition has_completed_focus = EOR_divide_our_enemies has_completed_focus = EOR_war_of_attrition }
-}
-
-eor_tatsu_victory = {
-has_country_flag = EOR_route_technocratic has_country_leader = { character = EOR_tatsu ruling_only = yes } eor_home_secure = yes eor_soviets_neutralized = yes eor_allies_neutralized = yes eor_technology_victory = yes
-}
-
-eor_shinzo_victory = {
-has_country_flag = EOR_route_shinzo has_country_flag = EOR_coup_consolidated has_country_leader = { character = EOR_shinzo ruling_only = yes } eor_home_secure = yes eor_soviets_defeated = yes eor_allies_defeated = yes
-}
-
-eor_reform_victory = {
-has_country_flag = EOR_route_reform has_country_flag = EOR_constitutional_reconstruction_complete eor_home_secure = yes eor_regional_federation = yes
+# EOR country scope.
+eor_china_partnership_current = {
+ CHI = { eor_china_can_negotiate = yes has_country_flag = EOR_china_partner }
 }

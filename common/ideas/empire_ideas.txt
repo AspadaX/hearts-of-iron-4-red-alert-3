@@ -1,375 +1,366 @@
 ideas = {
 country = {
-loyal_to_the_empire = { allowed = { always = no } picture = eor_spirit_loyal_to_the_empire modifier = { autonomy_gain = -0.5 } }
-loyal_to_the_empire_forever = { allowed = { always = no } picture = eor_spirit_loyal_to_the_empire_forever modifier = { autonomy_gain = -1 } }
-EOR_divine_emperor = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_divine_emperor
+loyal_to_the_empire = { name = EOR_spirit_text_loyal_to_the_empire allowed = { always = no } picture = eor_spirit_loyal_to_the_empire modifier = { autonomy_gain = -0.5 } }
+loyal_to_the_empire_forever = { name = EOR_spirit_text_loyal_to_the_empire_forever allowed = { always = no } picture = eor_spirit_loyal_to_the_empire_forever modifier = { autonomy_gain = -1 } }
+EOR_divine_emperor = { name = EOR_spirit_text_EOR_divine_emperor allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_divine_emperor
 modifier = { stability_factor = 0.05 war_support_factor = 0.05 }
 
 }
-the_shogunate = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_the_shogunate
+the_shogunate = { name = EOR_spirit_text_the_shogunate allowed = { always = no } removal_cost = -1 picture = eor_spirit_the_shogunate
 modifier = { planning_speed = 0.10 political_power_factor = 0.05 }
 
 }
-EOR_technological_superiority = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_technological_superiority
+EOR_technological_superiority = { name = EOR_spirit_text_EOR_technological_superiority allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_technological_superiority
 modifier = { research_speed_factor = 0.05 }
 research_bonus = { armor = 0.05 electronics = 0.05 }
 
 }
-traditional_zaibatsus = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_traditional_zaibatsus
+traditional_zaibatsus = { name = EOR_spirit_text_traditional_zaibatsus allowed = { always = no } removal_cost = -1 picture = eor_spirit_traditional_zaibatsus
 modifier = { production_speed_industrial_complex_factor = 0.05 production_speed_arms_factory_factor = 0.05 political_power_factor = -0.05 }
 
 }
-cooperative_zaibatsus = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_cooperative_zaibatsus
-modifier = { production_speed_industrial_complex_factor = 0.05 production_speed_arms_factory_factor = 0.05 production_factory_efficiency_gain_factor = 0.05 }
 
-}
-controlled_zaibatsus = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_controlled_zaibatsus
-modifier = { production_speed_arms_factory_factor = 0.10 industrial_capacity_factory = 0.05 political_power_factor = 0.05 }
 
-}
-EOR_imperial_resource_dependency = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_imperial_resource_dependency
+EOR_imperial_resource_dependency = { name = EOR_spirit_text_EOR_imperial_resource_dependency allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_imperial_resource_dependency
 modifier = { production_factory_efficiency_gain_factor = -0.05 fuel_gain_factor = -0.05 }
 
 }
-EOR_coprosperity_administration = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_coprosperity_administration
+EOR_coprosperity_administration = { name = EOR_spirit_text_EOR_coprosperity_administration allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_coprosperity_administration
 modifier = { resource_trade_cost_bonus_per_factory = 0.10 political_power_factor = -0.05 }
 
 }
-EOR_reinforced_shogunate = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_reinforced_shogunate
+EOR_reinforced_shogunate = { name = EOR_spirit_text_EOR_reinforced_shogunate allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_reinforced_shogunate
 modifier = { political_power_factor = 0.10 army_org_factor = 0.05 planning_speed = 0.10 }
 
 }
-EOR_eternal_empire = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_eternal_empire
+EOR_eternal_empire = { name = EOR_spirit_text_EOR_eternal_empire allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_eternal_empire
 modifier = { stability_factor = 0.10 war_support_factor = 0.10 army_org_factor = 0.05 political_power_factor = 0.10 research_speed_factor = -0.05 }
 
 }
 
-EOR_scientific_legitimacy = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_scientific_legitimacy
+EOR_scientific_legitimacy = { name = EOR_spirit_text_EOR_scientific_legitimacy allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_scientific_legitimacy
 modifier = { research_speed_factor = 0.05 stability_factor = -0.05 political_power_factor = 0.05 }
 
 }
-EOR_scientific_shogunate = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_scientific_shogunate
+EOR_scientific_shogunate = { name = EOR_spirit_text_EOR_scientific_shogunate allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_scientific_shogunate
 modifier = { planning_speed = 0.10 research_speed_factor = 0.05 production_factory_efficiency_gain_factor = 0.05 }
 
 }
-EOR_empire_of_tomorrow = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_empire_of_tomorrow
+EOR_empire_of_tomorrow = { name = EOR_spirit_text_EOR_empire_of_tomorrow allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_empire_of_tomorrow
 modifier = { research_speed_factor = 0.08 production_factory_efficiency_gain_factor = 0.10 stability_factor = -0.05 political_power_factor = -0.05 }
 research_bonus = { armor = 0.10 }
 
 }
-EOR_modern_shogunate = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_modern_shogunate
+EOR_modern_shogunate = { name = EOR_spirit_text_EOR_modern_shogunate allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_modern_shogunate
 modifier = { stability_factor = 0.05 planning_speed = 0.05 production_factory_efficiency_gain_factor = 0.05 }
 
 }
-EOR_one_empire_one_future = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_one_empire_one_future
+EOR_one_empire_one_future = { name = EOR_spirit_text_EOR_one_empire_one_future allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_one_empire_one_future
 modifier = { stability_factor = 0.10 war_support_factor = 0.05 research_speed_factor = 0.05 political_power_factor = 0.05 }
 
 }
-EOR_supremacy_of_technology = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_supremacy_of_technology
+EOR_supremacy_of_technology = { name = EOR_spirit_text_EOR_supremacy_of_technology allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_supremacy_of_technology
 modifier = { research_speed_factor = 0.05 }
 research_bonus = { infantry_weapons = 0.05 armor = 0.05 }
 
 }
-EOR_the_nano_construction = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_the_nano_construction
+EOR_the_nano_construction = { name = EOR_spirit_text_EOR_the_nano_construction allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_the_nano_construction
 modifier = { production_speed_buildings_factor = 0.10 production_speed_infrastructure_factor = 0.10 }
 
 }
-EOR_the_robotic_production = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_the_robotic_production
+EOR_the_robotic_production = { name = EOR_spirit_text_EOR_the_robotic_production allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_the_robotic_production
 modifier = { industrial_capacity_factory = 0.10 production_factory_efficiency_gain_factor = 0.05 }
 
 }
-EOR_nanotech_mainframe = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_nanotech_mainframe
+EOR_nanotech_mainframe = { name = EOR_spirit_text_EOR_nanotech_mainframe allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_nanotech_mainframe
 research_bonus = { electronics = 0.10 armor = 0.05 air_equipment = 0.05 naval_equipment = 0.05 }
 
 }
-EOR_a_highly_mechanized_army = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_a_highly_mechanized_army
+EOR_a_highly_mechanized_army = { name = EOR_spirit_text_EOR_a_highly_mechanized_army allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_a_highly_mechanized_army
 modifier = { army_speed_factor = 0.05 }
 equipment_bonus = { armor = { breakthrough = 0.05 instant = yes } }
 }
-EOR_the_futuristic_bushido = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_the_futuristic_bushido
+EOR_the_futuristic_bushido = { name = EOR_spirit_text_EOR_the_futuristic_bushido allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_the_futuristic_bushido
 modifier = { army_infantry_attack_factor = 0.05 }
 
 }
-EOR_landing_combat_scheme = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_landing_combat_scheme
+EOR_landing_combat_scheme = { name = EOR_spirit_text_EOR_landing_combat_scheme allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_landing_combat_scheme
 modifier = { amphibious_invasion = 0.10 invasion_preparation = -0.10 }
 
 }
-EOR_multiple_terrains_combat_support = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_multiple_terrains_combat_support
+EOR_multiple_terrains_combat_support = { name = EOR_spirit_text_EOR_multiple_terrains_combat_support allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_multiple_terrains_combat_support
 modifier = { attrition = -0.10 supply_consumption_factor = -0.05 }
 
 }
-EOR_fortified_fleet = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_fortified_fleet
+EOR_fortified_fleet = { name = EOR_spirit_text_EOR_fortified_fleet allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_fortified_fleet
 modifier = { navy_capital_ship_defence_factor = 0.05 spotting_chance = 0.05 repair_speed_factor = 0.10 }
 
 }
-EOR_imperial_centralization = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_imperial_centralization
+EOR_imperial_centralization = { name = EOR_spirit_text_EOR_imperial_centralization allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_imperial_centralization
 modifier = { resource_trade_cost_bonus_per_factory = 0.20 autonomy_manpower_share_from_subjects = 0.10 subjects_autonomy_gain = -0.5 political_power_factor = -0.05 }
 
 }
-EOR_imperial_partnership = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_imperial_partnership
+EOR_imperial_partnership = { name = EOR_spirit_text_EOR_imperial_partnership allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_imperial_partnership
 modifier = { resource_trade_cost_bonus_per_factory = -0.10 subjects_autonomy_gain = 0.25 research_speed_factor = 0.02 }
 
 }
-EOR_court_coordination = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_court_coordination
+EOR_court_coordination = { name = EOR_spirit_text_EOR_court_coordination allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_court_coordination
 modifier = { planning_speed = 0.05 }
 
 }
-EOR_crown_prince = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_crown_prince
+EOR_crown_prince = { name = EOR_spirit_text_EOR_crown_prince allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_crown_prince
 modifier = { research_speed_factor = 0.02 }
 
 }
-EOR_warriors = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_warriors
+EOR_warriors = { name = EOR_spirit_text_EOR_warriors allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_warriors
 modifier = { army_infantry_attack_factor = 0.05 special_forces_attack_factor = 0.05 }
 
 }
-EOR_guard = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_guard
+EOR_guard = { name = EOR_spirit_text_EOR_guard allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_guard
 modifier = { army_core_defence_factor = 0.05 }
 
 }
-EOR_prince_speaks = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_prince_speaks
+EOR_prince_speaks = { name = EOR_spirit_text_EOR_prince_speaks allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_prince_speaks
 modifier = { research_speed_factor = 0.03 }
 
 }
-EOR_reformed_war_council = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_reformed_war_council
+EOR_reformed_war_council = { name = EOR_spirit_text_EOR_reformed_war_council allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_reformed_war_council
 modifier = { planning_speed = 0.10 }
 
 }
-EOR_empowered_technocrats = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_empowered_technocrats
+EOR_empowered_technocrats = { name = EOR_spirit_text_EOR_empowered_technocrats allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_empowered_technocrats
 modifier = { production_factory_efficiency_gain_factor = 0.05 }
 research_bonus = { armor = 0.10 electronics = 0.10 }
 
 }
-EOR_scientific_administration = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_scientific_administration
+EOR_scientific_administration = { name = EOR_spirit_text_EOR_scientific_administration allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_scientific_administration
 modifier = { research_speed_factor = 0.03 }
 
 }
-EOR_accord = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_accord
+EOR_accord = { name = EOR_spirit_text_EOR_accord allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_accord
 modifier = { research_speed_factor = 0.02 }
 
 }
-EOR_innovation = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_innovation
+EOR_innovation = { name = EOR_spirit_text_EOR_innovation allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_innovation
 modifier = { research_speed_factor = 0.03 }
 
 }
-EOR_reformed_court = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_reformed_court
-modifier = { political_power_factor = 0.05 }
+EOR_reformed_court = { name = EOR_spirit_text_EOR_reformed_court allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_reformed_court
+modifier = { research_speed_factor = 0.03 political_power_factor = -0.03 }
 
 }
-EOR_siberian_logistics = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_siberian_logistics
+EOR_siberian_logistics = { name = EOR_spirit_text_EOR_siberian_logistics allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_siberian_logistics
 modifier = { supply_consumption_factor = -0.05 winter_attrition_factor = -0.10 }
 
 }
-EOR_offensive_preparations = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_offensive_preparations
+EOR_offensive_preparations = { name = EOR_spirit_text_EOR_offensive_preparations allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_offensive_preparations
 modifier = { planning_speed = 0.10 supply_consumption_factor = -0.05 }
 
 }
-EOR_rapid_offensive = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_rapid_offensive
+EOR_rapid_offensive = { name = EOR_spirit_text_EOR_rapid_offensive allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_rapid_offensive
 modifier = { army_speed_factor = 0.05 planning_speed = 0.10 }
 
 }
-EOR_capital_offensive = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_capital_offensive
+EOR_capital_offensive = { name = EOR_spirit_text_EOR_capital_offensive allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_capital_offensive
 modifier = { army_attack_factor = 0.05 planning_speed = 0.10 }
 
 }
-EOR_urban_operations = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_urban_operations
+EOR_urban_operations = { name = EOR_spirit_text_EOR_urban_operations allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_urban_operations
 modifier = { terrain_penalty_reduction = 0.05 }
 }
-EOR_black_tortoise_doctrine = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_black_tortoise_doctrine
+EOR_black_tortoise_doctrine = { name = EOR_spirit_text_EOR_black_tortoise_doctrine allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_black_tortoise_doctrine
 modifier = { amphibious_invasion = 0.05 }
 
 }
-EOR_pacific_fleet = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_pacific_fleet
+EOR_pacific_fleet = { name = EOR_spirit_text_EOR_pacific_fleet allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_pacific_fleet
 modifier = { navy_capital_ship_attack_factor = 0.05 }
 
 }
-EOR_secure_pacific = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_secure_pacific
+EOR_secure_pacific = { name = EOR_spirit_text_EOR_secure_pacific allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_secure_pacific
 modifier = { convoy_escort_efficiency = 0.10 invasion_preparation = -0.10 }
 
 }
-EOR_coalition_preparation = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_coalition_preparation
+EOR_coalition_preparation = { name = EOR_spirit_text_EOR_coalition_preparation allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_coalition_preparation
 modifier = { army_core_defence_factor = 0.05 }
 
 }
-EOR_advanced_shipbuilding = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_advanced_shipbuilding
+EOR_advanced_shipbuilding = { name = EOR_spirit_text_EOR_advanced_shipbuilding allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_advanced_shipbuilding
 modifier = { production_speed_dockyard_factor = 0.10 }
 
 }
-EOR_shogun_battleship = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_shogun_battleship
+EOR_shogun_battleship = { name = EOR_spirit_text_EOR_shogun_battleship allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_shogun_battleship
 modifier = { navy_capital_ship_attack_factor = 0.05 }
 
 }
-EOR_mecha_tengu_doctrine = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_mecha_tengu_doctrine
+EOR_mecha_tengu_doctrine = { name = EOR_spirit_text_EOR_mecha_tengu_doctrine allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_mecha_tengu_doctrine
 modifier = { air_agility_factor = 0.05 }
 
 }
-EOR_striker_vx_doctrine = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_striker_vx_doctrine
+EOR_striker_vx_doctrine = { name = EOR_spirit_text_EOR_striker_vx_doctrine allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_striker_vx_doctrine
 modifier = { air_cas_present_factor = 0.05 }
 
 }
-EOR_liberated_manpower = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_liberated_manpower
+EOR_liberated_manpower = { name = EOR_spirit_text_EOR_liberated_manpower allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_liberated_manpower
 modifier = { conscription_factor = 0.02 production_speed_arms_factory_factor = 0.05 }
 
 }
-EOR_mobilization_law = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_mobilization_law
+EOR_mobilization_law = { name = EOR_spirit_text_EOR_mobilization_law allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_mobilization_law
 modifier = { production_factory_efficiency_gain_factor = 0.05 }
 
 }
-EOR_zaibatsu_dialogue = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_zaibatsu_dialogue
+EOR_zaibatsu_dialogue = { name = EOR_spirit_text_EOR_zaibatsu_dialogue allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_zaibatsu_dialogue
 modifier = { production_speed_arms_factory_factor = 0.05 }
 
 }
-EOR_first_amendment = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_first_amendment
+EOR_first_amendment = { name = EOR_spirit_text_EOR_first_amendment allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_first_amendment
 modifier = { industrial_capacity_factory = 0.05 }
 
 }
-EOR_second_amendment = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_second_amendment
+EOR_second_amendment = { name = EOR_spirit_text_EOR_second_amendment allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_second_amendment
 modifier = { production_speed_arms_factory_factor = 0.10 }
 
 }
-EOR_controlled_procurement = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_controlled_procurement
+EOR_controlled_procurement = { name = EOR_spirit_text_EOR_controlled_procurement allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_controlled_procurement
 modifier = { production_factory_efficiency_gain_factor = 0.05 }
 
 }
-EOR_logistics_network = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_logistics_network
+EOR_logistics_network = { name = EOR_spirit_text_EOR_logistics_network allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_logistics_network
 modifier = { convoy_escort_efficiency = 0.05 supply_consumption_factor = -0.05 }
 
 }
-EOR_research_cooperation = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_research_cooperation
+EOR_research_cooperation = { name = EOR_spirit_text_EOR_research_cooperation allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_research_cooperation
 modifier = { research_speed_factor = 0.02 }
 
 }
-EOR_research_surge = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_research_surge
+EOR_research_surge = { name = EOR_spirit_text_EOR_research_surge allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_research_surge
 modifier = { research_speed_factor = 0.03 }
 
 }
-EOR_political_secrecy = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_political_secrecy
+EOR_political_secrecy = { name = EOR_spirit_text_EOR_political_secrecy allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_political_secrecy
 modifier = { stability_factor = -0.05 }
 
 }
-EOR_fleet_expansion = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_fleet_expansion
+EOR_fleet_expansion = { name = EOR_spirit_text_EOR_fleet_expansion allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_fleet_expansion
 modifier = { industrial_capacity_dockyard = 0.10 }
 
 }
-EOR_emergency_defense = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_emergency_defense
+EOR_emergency_defense = { name = EOR_spirit_text_EOR_emergency_defense allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_emergency_defense
 modifier = { army_core_defence_factor = 0.10 mobilization_speed = 0.10 }
 
 }
-EOR_continuity = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_continuity
+EOR_continuity = { name = EOR_spirit_text_EOR_continuity allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_continuity
 modifier = { surrender_limit = 0.05 }
 
 }
-EOR_naval_withdrawal = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_naval_withdrawal
+EOR_naval_withdrawal = { name = EOR_spirit_text_EOR_naval_withdrawal allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_naval_withdrawal
 modifier = { naval_retreat_speed = 0.10 repair_speed_factor = 0.10 }
 
 }
-EOR_project_investment = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_project_investment
+EOR_project_investment = { name = EOR_spirit_text_EOR_project_investment allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_project_investment
 modifier = { civilian_factory_use = 8 industrial_capacity_factory = -0.10 }
 
 }
-EOR_nanocore_investment = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_nanocore_investment
+EOR_nanocore_investment = { name = EOR_spirit_text_EOR_nanocore_investment allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_nanocore_investment
 modifier = { civilian_factory_use = 3 }
 
 }
-EOR_procurement_investment = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_procurement_investment
+EOR_procurement_investment = { name = EOR_spirit_text_EOR_procurement_investment allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_procurement_investment
 modifier = { civilian_factory_use = 3 }
 
 }
-EOR_executioner = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_executioner
+EOR_executioner = { name = EOR_spirit_text_EOR_executioner allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_executioner
 modifier = { breakthrough_factor = 0.15 supply_consumption_factor = 0.15 attrition = 0.10 }
 
 }
-EOR_executioner_reliable = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_executioner_reliable
+EOR_executioner_reliable = { name = EOR_spirit_text_EOR_executioner_reliable allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_executioner_reliable
 modifier = { breakthrough_factor = 0.15 supply_consumption_factor = 0.10 attrition = 0.03 }
 
 }
-EOR_giga_fortress = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_giga_fortress
-modifier = { navy_capital_ship_attack_factor = 0.10 air_attack_factor = 0.10 fuel_gain_factor = -0.10 }
+EOR_giga_fortress = { name = EOR_spirit_text_EOR_giga_fortress allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_giga_fortress
+modifier = { navy_capital_ship_attack_factor = 0.10 air_attack_factor = 0.10 shore_bombardment_bonus = 0.10 naval_coordination = 0.05 fuel_gain_factor = -0.10 }
 
 }
-EOR_black_tortoise = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_black_tortoise
+EOR_black_tortoise = { name = EOR_spirit_text_EOR_black_tortoise allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_black_tortoise
 modifier = { navy_max_range_factor = 0.10 convoy_escort_efficiency = 0.10 }
 
 }
-EOR_psionic_command_disruption = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_psionic_command_disruption
+EOR_psionic_command_disruption = { name = EOR_spirit_text_EOR_psionic_command_disruption allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_psionic_command_disruption
 modifier = { planning_speed = -0.10 army_org_factor = -0.05 }
 
 }
-EOR_omega_counterintelligence = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_omega_counterintelligence
+EOR_omega_counterintelligence = { name = EOR_spirit_text_EOR_omega_counterintelligence allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_omega_counterintelligence
 modifier = { enemy_operative_detection_chance_factor = 0.10 }
 
 }
-EOR_postwar_science = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_postwar_science
+EOR_postwar_science = { name = EOR_spirit_text_EOR_postwar_science allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_postwar_science
 modifier = { research_speed_factor = 0.05 production_factory_efficiency_gain_factor = 0.05 }
 
 }
-EOR_postwar_cooperation = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_postwar_cooperation
-modifier = { research_speed_factor = 0.05 }
 
-}
-EOR_post_defeat = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_post_defeat
+EOR_post_defeat = { name = EOR_spirit_text_EOR_post_defeat allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_post_defeat
 modifier = { stability_factor = -0.10 political_power_factor = -0.10 }
 
 }
-EOR_imperial_resistance = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_imperial_resistance
+EOR_imperial_resistance = { name = EOR_spirit_text_EOR_imperial_resistance allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_imperial_resistance
 modifier = { army_core_defence_factor = 0.05 }
 
 }
-EOR_coalition_cooperation = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_coalition_cooperation
+EOR_coalition_cooperation = { name = EOR_spirit_text_EOR_coalition_cooperation allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_coalition_cooperation
 modifier = { planning_speed = 0.05 supply_consumption_factor = -0.05 }
 
 }
-EOR_subject_centralized = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_subject_centralized
+EOR_subject_centralized = { name = EOR_spirit_text_EOR_subject_centralized allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_subject_centralized
 modifier = { autonomy_gain = -0.5 resistance_target = 10 stability_factor = -0.05 }
 
 }
-EOR_subject_partnership = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_subject_partnership
+EOR_subject_partnership = { name = EOR_spirit_text_EOR_subject_partnership allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_subject_partnership
 modifier = { autonomy_gain = 0.25 stability_factor = 0.05 research_speed_factor = 0.02 }
 
 }
-EOR_subject_concessions = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_subject_concessions
+EOR_subject_concessions = { name = EOR_spirit_text_EOR_subject_concessions allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_subject_concessions
 modifier = { autonomy_gain = 0.5 stability_factor = 0.05 resistance_target = -5 }
 
 }
-EOR_subject_security = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_subject_security
+EOR_subject_security = { name = EOR_spirit_text_EOR_subject_security allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_subject_security
 modifier = { autonomy_gain = -0.5 resistance_target = -10 }
 
 }
-EOR_subject_resentment = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_subject_resentment
+EOR_subject_resentment = { name = EOR_spirit_text_EOR_subject_resentment allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_subject_resentment
 modifier = { stability_factor = -0.05 }
 
 }
-EOR_subject_development = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_subject_development
+EOR_subject_development = { name = EOR_spirit_text_EOR_subject_development allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_subject_development
 modifier = { stability_factor = 0.05 }
 
 }
-EOR_subject_resource_access = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_subject_resource_access
+EOR_subject_resource_access = { name = EOR_spirit_text_EOR_subject_resource_access allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_subject_resource_access
 modifier = { resources_to_overlord_factor = 0.10 }
 
 }
-EOR_mandate_ascendancy = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_mandate_ascendancy
+EOR_mandate_ascendancy = { name = EOR_spirit_text_EOR_mandate_ascendancy allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_mandate_ascendancy
 modifier = { stability_factor = 0.10 war_support_factor = 0.10 army_org_factor = 0.05 }
 
 }
-EOR_mandate_confidence = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_mandate_confidence
+EOR_mandate_confidence = { name = EOR_spirit_text_EOR_mandate_confidence allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_mandate_confidence
 modifier = { stability_factor = 0.05 war_support_factor = 0.05 }
 
 }
-EOR_mandate_doubts = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_mandate_doubts
+EOR_mandate_doubts = { name = EOR_spirit_text_EOR_mandate_doubts allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_mandate_doubts
 
 }
-EOR_mandate_crisis = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_mandate_crisis
+EOR_mandate_crisis = { name = EOR_spirit_text_EOR_mandate_crisis allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_mandate_crisis
 modifier = { stability_factor = -0.10 political_power_factor = -0.10 }
 
 }
-EOR_mandate_shattered = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_mandate_shattered
+EOR_mandate_shattered = { name = EOR_spirit_text_EOR_mandate_shattered allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_mandate_shattered
 modifier = { stability_factor = -0.15 war_support_factor = -0.10 political_power_factor = -0.20 }
 
 }
-EOR_research_program = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_research_program
+EOR_research_program = { name = EOR_spirit_text_EOR_research_program allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_research_program
 modifier = { research_speed_factor = 0.03 }
 
 }
-EOR_institute_funding = { allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_institute_funding
+EOR_institute_funding = { name = EOR_spirit_text_EOR_institute_funding allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_institute_funding
 modifier = { research_speed_factor = 0.03 }
 
 }
@@ -623,7 +614,6 @@ modifier = { research_speed_factor = 0.03 }
 		}
 
 	}
-
 
 
 }
