@@ -468,6 +468,11 @@ def check(root,game,source_only=False):
         assert 'expire = "2051.1.1"' in leaders[0],('Institutional leader expires before the scenario ends',tag)
         assert f'picture = "{picture}"' in leaders[0],('Institutional leader has wrong portrait',tag)
         assert (root/picture).is_file(),('Missing institutional leader portrait',picture)
+    # Inherited vanilla INS history sets the INS_HOL cosmetic tag, so the
+    # fascist puppet resolves its displayed flag through INS_HOL_fascism.
+    for size in ['', 'medium', 'small']:
+        flag=root/'gfx/flags'/size/'INS_HOL_fascism.tga'
+        assert flag.is_file(),('Missing displayed Indonesian puppet flag',str(flag))
     assert 'replace_path="events"' in (root/'descriptor.mod').read_text()
     # IOT must select the full generic tree, not the former empty stub.
     generic=(root/'common/national_focus/generic.txt').read_text()

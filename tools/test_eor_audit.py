@@ -24,6 +24,7 @@ class AuditRegressionTests(unittest.TestCase):
             shutil.copy2(ROOT / country, cls.fixture / country)
         for tag in ['IOT','PHI','MAL','INS']:
             shutil.copytree(ROOT / 'gfx/leaders' / tag, cls.fixture / 'gfx/leaders' / tag)
+        shutil.copytree(ROOT / 'gfx/flags', cls.fixture / 'gfx/flags')
         shutil.copy2(ROOT / 'descriptor.mod', cls.fixture / 'descriptor.mod')
 
     @classmethod
