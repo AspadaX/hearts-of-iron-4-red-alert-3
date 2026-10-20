@@ -1,0 +1,89 @@
+EOR_default_plan = {
+	name = "Imperial defense plan"
+	desc = "Balances industrial modernization, research and self-sufficient Pacific defense."
+
+	allowed = {
+		original_tag = EOR
+	}
+	enable = {
+		always = yes
+	}
+	abort = {
+		always = no
+	}
+
+	focus_factors = {
+		EOR_the_imperial_dawn = 10
+		EOR_convene_the_imperial_court = 10
+		EOR_the_divine_mandate = 3
+		EOR_the_crown_prince = 3
+		EOR_the_emperors_shadow = 3
+		EOR_establish_imperial_intelligence = 4
+		EOR_the_question_of_destiny = 10
+
+		EOR_government_zaibatsus_dialogue = 6
+		EOR_corporate_partnership = 6
+		EOR_industrial_autonomy = 6
+		EOR_the_zaibatsu_economy = 6
+		EOR_introduce_the_imperial_mobilization_law = 8
+		EOR_the_first_amendment_of_the_imperial_mobilization_law = 6
+		EOR_the_second_amendment_of_the_imperial_mobilization_law = 6
+		EOR_resource_security_program = 8
+		EOR_synthetic_fuel = 6
+		EOR_refinery_network = 6
+		EOR_resource_autarky = 5
+		EOR_imperial_supply = 6
+
+		EOR_ensure_the_supremacy_of_our_technology = 8
+		EOR_approach_the_new_high_tech_companies = 6
+		EOR_funding_imperial_weaponry_institute = 5
+		EOR_reform_the_imperial_army = 6
+		EOR_professional_armed_forces = 5
+		EOR_advanced_imperial_shipbuilding = 5
+		EOR_imperial_naval_reform = 5
+		EOR_carrier_fleet = 4
+		EOR_transformable_aircraft = 4
+		EOR_imperial_air_modernization = 4
+		EOR_air_superiority = 4
+
+		EOR_build_our_overseas_territories = 6
+		EOR_imperial_administration = 6
+		EOR_imperial_logistics_network = 5
+		EOR_develop_oceanic_territories = 4
+		EOR_fortify_the_empire = 4
+		EOR_total_defense = 4
+	}
+
+	research = {
+		industry = 8.0
+		construction_tech = 3.0
+		electronics = 6.0
+		computing_tech = 4.0
+		infantry_tech = 3.0
+		infantry_weapons = 2.0
+		artillery = 2.0
+		armor = 4.0
+		motorized_equipment = 2.0
+		support_tech = 2.0
+		land_doctrine = 4.0
+		air_doctrine = 3.0
+		light_air = 3.0
+		light_fighter = 4.0
+		cas_bomber = 3.0
+		naval_equipment = 4.0
+		naval_doctrine = 2.0
+		dd_tech = 2.0
+		ss_tech = 2.0
+		cv_tech = 2.0
+	}
+
+	ideas = {
+	}
+
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}

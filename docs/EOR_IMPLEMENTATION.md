@@ -1,6 +1,10 @@
 # Rising Sun implementation — 19 October 2026
 
-The current build has **189 focuses, 96 decisions, 72 EOR events (102 active events overall), and 149 national-spirit definitions**. Three political routes remain: Yoshiro, Tatsu and Shinzo. All routes use HOI4's normal capitulation, war resolution, peace conferences and scoring. Government milestones neither announce a custom victory nor end the campaign.
+The current build has **189 focuses, 24 decisions, 77 EOR events (107 active events overall), and 149 national-spirit definitions**. Three political routes remain: Yoshiro, Tatsu and Shinzo. All routes use HOI4's normal capitulation, war resolution, peace conferences and scoring. Government milestones neither announce a custom victory nor end the campaign.
+
+The later [decision simplification](EOR_PLAYABILITY_IMPLEMENTATION.md#decision-simplification-20-october-2026) supersedes the 96-decision inventories and four-mission Yuriko descriptions below. Those sections remain a historical record of the earlier implementation.
+
+EOR also has a baseline AI plan at `common/ai_strategy_plans/EOR_default_strategy_plan.txt` and force-structure/subject-support strategies at `common/ai_strategy/EOR.txt`. The plan keeps the existing Yoshiro/Tatsu/Shinzo focus weights and adds route-neutral economic, research, army, navy and air priorities. Static validation resolves every named focus and strategy token; actual AI focus selection, production and campaign performance remain runtime-unverified.
 
 This revision supersedes the former four-route implementation. New Dawn, its council and exclusive spirits, hidden-unlock checks, independence/federation programs, automatic direct-state handovers and bespoke victory gates are removed from loaded content. Starting history, the 2008–2050 timeline, EOR's borders and dedicated deployments are unchanged. Old saves are not migrated; use a new campaign.
 
@@ -80,14 +84,14 @@ All source changes below pass source validation. Runtime results for **every ite
 | S11 | Separate spirit-role localization and complete prose | Verify native name override and dynamic authority labels render |
 | S12 | Replacement for economic/authority identities and countercoup cleanup | Optional wider consolidation and complete-build numerical audit not performed |
 | S13 | Native signature contact sheet and semantic findings; unchanged retained artwork | Optional RA3 signature-art replacement and whole-inventory human review remain |
-| S14 | Five categories, dashboards, semantic decision icon aliases | Runtime visibility, scroll and cooldown review |
+| S14 | Four categories, dashboards, semantic decision icon aliases | Runtime visibility, scroll and cooldown review |
 | S15 | Position-only repack; manifest/native geometry checks | Inspect long connectors and display-scale usability |
 | S16 | Coup key repaired; event 60 repurposed to policy feedback; validator | Verify full descriptions/options in game |
 | S17 | Recorded evidence provenance, honest authorization text, selected native images, project/mission outcomes | Full longest-window rendering and all cancellation paths need engine checks |
 | S18 | Shared recipient eligibility, contextual AI factors and diplomatic result reports | Strong peaceful, defeated wartime and incompatible-recipient trials |
 | S19 | Complete former-subject cleanup and original-recipient investment checks | Test independence/overlord change during and after investment |
 | S20 | Optional prepared/ready/active/recovering operation redesign implemented | Test peace during preparation, deliberate activation and full recovery |
-| S21 | Four revalidated missions, distinct result/invalidation reports and shared cooldown | Test foothold loss, factory target loss and capitulation during preparation |
+| S21 | Two revalidated missions, distinct result/invalidation reports and shared cooldown | Test foothold loss, factory target loss and capitulation during preparation |
 | S22 | Existing three allocations explained; grand-project release helper and target cleanup | Optional queue separation not implemented; verify reservation expiry |
 | S23 | Explicit recipient building checks, original-capital persistence, EOR-scoped Philippines pressure | Static defects fixed; suspected engine behavior still requires before/after observation |
 | S24 | No new superweapon operation | Optional Nanoswarm/Psionic Decimator need target, warning/counterplay, effects and cooldown design |
@@ -101,7 +105,7 @@ After `python3 tools/setup_local.py`, run `python3 tools/validate_eor.py --insta
 
 Fully restart HOI4 yourself, choose **Red Alert 3 Development** with only **Red Alert 3 - Development**, and start a **new non-Ironman EOR campaign**. Use separate saves for the three governments.
 
-1. Confirm only Yoshiro, Tatsu and Shinzo exist as political routes. Starting borders/deployments should match the accepted scenario; no automatic independence or state-return program appears. Inspect the two-bank tree, continuous panel and five decision categories.
+1. Confirm only Yoshiro, Tatsu and Shinzo exist as political routes. Starting borders/deployments should match the accepted scenario; no automatic independence or state-return program appears. Inspect the two-bank tree, continuous panel and four decision categories.
 2. Check authority at 15, 50 and 85 under each actual leader. Expect one tier with the appropriate government name; Tatsu/Shinzo use institutional legitimacy. Test both coup outcomes and the severe countercoup; old completed focuses remain visible without stale regime benefits.
 3. In separate saves choose each economic branch. Expect exactly its newer corporate/state spirit and matching modifiers. Finish a government milestone without defeating every rival; normal play must continue and its continuing-policy decision must unlock.
 4. Fund an IOT/PHI capital project. Keep the original capital controlled for successful construction, then repeat with lost control or independence in another save. Expect success versus invalidation reports and no reward on invalidation. The PHI administration action should reduce **EOR** pressure by five.

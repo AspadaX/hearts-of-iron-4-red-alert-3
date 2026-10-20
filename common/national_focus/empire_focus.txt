@@ -78,6 +78,7 @@ focus = {
  completion_reward = {
 custom_effect_tooltip = EOR_the_crown_prince_decisions_tt
 add_to_variable = { var = EOR_technocratic_influence value = 10 }
+if = { limit = { has_country_flag = EOR_intelligence_complete } set_country_flag = EOR_evidence_investigation }
 eor_event_3 = yes
 
  }
@@ -98,7 +99,6 @@ focus = {
  completion_reward = {
 custom_effect_tooltip = EOR_the_emperors_shadow_decisions_tt
 add_to_variable = { var = EOR_military_influence value = 10 }
-
  }
 }
 
@@ -117,6 +117,9 @@ focus = {
  completion_reward = {
 custom_effect_tooltip = EOR_establish_imperial_intelligence_decisions_tt
 add_ideas = EOR_v2_establish_imperial_intelligence
+set_country_flag = EOR_intelligence_complete
+set_country_flag = EOR_evidence_intercepts
+if = { limit = { has_completed_focus = EOR_the_crown_prince } set_country_flag = EOR_evidence_investigation }
 
  }
 }
@@ -247,9 +250,12 @@ has_country_flag = EOR_route_divine }
  available_if_capitulated = no
  ai_will_do = { factor = 2 }
  completion_reward = {
-custom_effect_tooltip = EOR_sacred_programs_tt
+custom_effect_tooltip = EOR_the_emperors_sacred_will_decisions_tt
 add_to_variable = { var = EOR_divine_mandate value = 5 }
 add_to_variable = { var = EOR_imperial_legitimacy value = 5 }
+add_manpower = 10000
+if = { limit = { has_tech = imperial_warrior } add_equipment_to_stockpile = { type = imperial_warrior_equipment amount = 300 producer = EOR } }
+else = { add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 300 producer = EOR } }
 eor_refresh_mandate = yes
  }
 }
@@ -515,6 +521,9 @@ add_ideas = EOR_v2_automated_warfare
 custom_effect_tooltip = EOR_automation_scope_tt
 
  add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = armor }
+if = { limit = { has_tech = king_oni } add_equipment_to_stockpile = { type = king_oni_equipment amount = 20 producer = EOR } }
+else_if = { limit = { has_tech = tsunami_tank } add_equipment_to_stockpile = { type = tsunami_tank_equipment amount = 40 producer = EOR } }
+army_experience = 15
 custom_effect_tooltip = EOR_modernization_programs_tt
  }
 }
@@ -560,6 +569,10 @@ has_country_flag = EOR_route_technocratic }
 add_ideas = EOR_v2_human_machine_doctrine
 
  add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = infantry_weapons }
+if = { limit = { has_tech = imperial_warrior } add_equipment_to_stockpile = { type = imperial_warrior_equipment amount = 400 producer = EOR } }
+else = { add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 400 producer = EOR } }
+add_equipment_to_stockpile = { type = support_equipment_1 amount = 150 producer = EOR }
+army_experience = 25
 custom_effect_tooltip = EOR_modernization_programs_tt
  }
 }
@@ -761,6 +774,8 @@ if = { limit = { has_completed_focus = EOR_bloodless_coup }
  add_to_variable = { var = EOR_imperial_legitimacy value = -15 }
 }
 eor_install_shinzo = yes
+add_to_variable = { var = EOR_administration_relief value = 2 }
+clamp_variable = { var = EOR_administration_relief min = 0 max = 6 }
 add_stability = -0.05
 eor_apply_policy_compatibility = yes
 
@@ -807,8 +822,10 @@ has_country_flag = EOR_route_shinzo }
  ai_will_do = { factor = 2 }
  completion_reward = {
 add_ideas = EOR_v2_the_land_shogunate
-
-
+if = { limit = { has_tech = tsunami_tank } add_equipment_to_stockpile = { type = tsunami_tank_equipment amount = 30 producer = EOR } }
+add_equipment_to_stockpile = { type = support_equipment_1 amount = 100 producer = EOR }
+add_timed_idea = { idea = EOR_rapid_offensive days = 180 }
+army_experience = 20
 custom_effect_tooltip = EOR_service_programs_tt
  }
 }
@@ -850,8 +867,9 @@ has_country_flag = EOR_route_shinzo }
  ai_will_do = { factor = 2 }
  completion_reward = {
 add_ideas = EOR_v2_the_oceanic_shogunate
-
-
+navy_experience = 30
+add_timed_idea = { idea = EOR_fleet_expansion days = 180 }
+add_timed_idea = { idea = EOR_naval_withdrawal days = 180 }
 custom_effect_tooltip = EOR_service_programs_tt
  }
 }
@@ -1097,6 +1115,8 @@ always = yes }
  completion_reward = {
 set_country_flag = EOR_odessa_objective
 army_experience = 15
+add_timed_idea = { idea = EOR_urban_operations days = 90 }
+if = { limit = { country_exists = SOV } add_dynamic_modifier = { modifier = EOR_soviet_offensive days = 90 } }
 custom_effect_tooltip = EOR_odessa_support_tt
  }
 }
@@ -1841,6 +1861,8 @@ focus = {
 custom_effect_tooltip = EOR_introduce_the_imperial_mobilization_law_decisions_tt
 add_war_support = 0.05
 add_ideas = EOR_mobilization_law
+every_subject_country = { limit = { exists = yes } add_war_support = 0.05 }
+army_experience = 10
 
  }
 }
@@ -1881,6 +1903,7 @@ focus = {
 custom_effect_tooltip = EOR_the_second_amendment_of_the_imperial_mobilization_law_decisions_tt
 add_war_support = 0.05
 add_ideas = EOR_second_amendment
+capital_scope = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
 
  }
 }
@@ -1900,6 +1923,8 @@ focus = {
  completion_reward = {
 custom_effect_tooltip = EOR_resource_security_program_decisions_tt
 add_political_power = 50
+if = { limit = { MAL = { exists = yes is_subject_of = ROOT any_owned_state = { is_controlled_by = MAL } } } MAL = { random_owned_controlled_state = { add_resource = { type = rubber amount = 8 } } set_country_flag = EOR_resources_developed } }
+if = { limit = { INS = { exists = yes is_subject_of = ROOT any_owned_state = { is_controlled_by = INS } } } INS = { random_owned_controlled_state = { add_resource = { type = oil amount = 8 } } set_country_flag = EOR_resources_developed } }
 
  }
 }
@@ -3744,7 +3769,7 @@ focus = {
  available_if_capitulated = no
  ai_will_do = { factor = 2 }
  completion_reward = {
-add_political_power = -75
+set_country_flag = EOR_prepared_negotiation
 eor_event_105 = yes
 
  }
@@ -3763,8 +3788,9 @@ focus = {
  available_if_capitulated = no
  ai_will_do = { factor = 2 }
  completion_reward = {
-set_country_flag = EOR_targeted_envoys_authorized
-custom_effect_tooltip = EOR_targeted_envoys_tt
+add_political_power = 50
+add_to_variable = { var = EOR_global_threat value = 5 }
+custom_effect_tooltip = EOR_divide_our_enemies_tt
  }
 }
 

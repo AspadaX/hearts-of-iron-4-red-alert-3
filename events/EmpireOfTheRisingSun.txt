@@ -207,7 +207,6 @@ add_political_power = -50
 add_to_variable = { var = EOR_divine_mandate value = -15 }
 eor_refresh_mandate = yes
 add_timed_idea = { idea = EOR_continuity days = 180 }
-set_country_flag = EOR_relocation_available
 }
 }
 
@@ -590,7 +589,6 @@ is_triggered_only = yes
 option = { name = eor.105.a
 ai_chance = { factor = 40 }
 set_country_flag = EOR_settlement_diplomacy
-add_political_power = -25
 
 }
 }
@@ -745,7 +743,7 @@ EOR = { country_event = { id = eor.115 days = 1 } }
 option = { name = eor.114.b
 ai_chance = { factor = 55 }
 clr_country_flag = EOR_prepared_settlement
-EOR = { add_political_power = -25 country_event = { id = eor.116 days = 1 } }
+EOR = { add_political_power = -15 country_event = { id = eor.116 days = 1 } }
 
 }
 }
@@ -862,4 +860,103 @@ country_event = { id = eor.155 title = eor.155.t desc = eor.155.d picture = GFX_
 is_triggered_only = yes
 
 option = { name = eor.report_ack }
+}
+
+country_event = { id = eor.156 title = eor.156.t desc = eor.156.desc picture = GFX_report_event_japanese_officers
+is_triggered_only = yes
+
+option = { name = eor.156.a trigger = { has_war_with = SOV }
+ai_chance = { factor = 40 }
+add_dynamic_modifier = { modifier = EOR_soviet_offensive days = 90 }
+add_timed_idea = { idea = EOR_urban_operations days = 90 }
+add_timed_idea = { idea = EOR_offensive_preparations days = 90 }
+army_experience = 20
+}
+
+option = { name = eor.156.b trigger = { has_war_with = USA }
+ai_chance = { factor = 35 }
+add_timed_idea = { idea = EOR_landing_combat_scheme days = 90 }
+add_timed_idea = { idea = EOR_offensive_preparations days = 90 }
+army_experience = 20 navy_experience = 10
+}
+
+option = { name = eor.156.c
+ai_chance = { factor = 20 }
+add_timed_idea = { idea = EOR_offensive_preparations days = 120 }
+army_experience = 25
+}
+
+option = { name = eor.156.d trigger = { has_country_flag = EOR_omega_available NOT = { has_country_flag = EOR_omega_cooldown } any_country = { has_war_with = ROOT } }
+ai_chance = { factor = 5 }
+set_country_flag = { flag = EOR_omega_cooldown days = 180 }
+random_country = { limit = { has_war_with = ROOT } add_timed_idea = { idea = EOR_psionic_command_disruption days = 30 } }
+}
+}
+
+country_event = { id = eor.157 title = eor.157.t desc = eor.157.d picture = GFX_report_event_japanese_officers
+is_triggered_only = yes
+
+option = { name = eor.157.a ai_chance = { factor = 45 }
+IOT = { add_stability = -0.02 random_owned_controlled_state = { limit = { is_coastal = yes } add_resource = { type = rubber amount = 6 } add_resource = { type = aluminium amount = 4 } } }
+add_to_variable = { var = EOR_subject_pressure value = 5 }
+add_political_power = 50
+}
+
+option = { name = eor.157.b ai_chance = { factor = 55 }
+IOT = { add_stability = 0.05 add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = naval_equipment } }
+add_to_variable = { var = EOR_administration_relief value = 1 }
+clamp_variable = { var = EOR_administration_relief min = 0 max = 6 }
+add_political_power = 25
+}
+}
+
+country_event = { id = eor.158 title = eor.158.t desc = eor.158.d picture = GFX_report_event_japanese_officers
+is_triggered_only = yes
+
+option = { name = eor.158.a ai_chance = { factor = 45 }
+PHI = { add_war_support = 0.03 add_manpower = 5000 add_stability = -0.02 }
+add_to_variable = { var = EOR_subject_pressure value = 5 }
+add_political_power = 50
+}
+
+option = { name = eor.158.b ai_chance = { factor = 55 }
+PHI = { add_stability = 0.05 random_owned_controlled_state = { limit = { is_coastal = yes } add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } }
+add_to_variable = { var = EOR_administration_relief value = 1 }
+clamp_variable = { var = EOR_administration_relief min = 0 max = 6 }
+add_political_power = 25
+}
+}
+
+country_event = { id = eor.159 title = eor.159.t desc = eor.159.d picture = GFX_report_event_japanese_officers
+is_triggered_only = yes
+
+option = { name = eor.159.a ai_chance = { factor = 45 }
+MAL = { add_stability = -0.02 random_owned_controlled_state = { limit = { is_coastal = yes } add_resource = { type = rubber amount = 8 } } }
+add_to_variable = { var = EOR_subject_pressure value = 5 }
+add_political_power = 50
+}
+
+option = { name = eor.159.b ai_chance = { factor = 55 }
+MAL = { add_stability = 0.05 random_owned_controlled_state = { limit = { is_coastal = yes } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
+add_to_variable = { var = EOR_administration_relief value = 1 }
+clamp_variable = { var = EOR_administration_relief min = 0 max = 6 }
+add_political_power = 25
+}
+}
+
+country_event = { id = eor.160 title = eor.160.t desc = eor.160.d picture = GFX_report_event_japanese_officers
+is_triggered_only = yes
+
+option = { name = eor.160.a ai_chance = { factor = 45 }
+INS = { add_stability = -0.02 random_owned_controlled_state = { limit = { is_coastal = yes } add_resource = { type = oil amount = 8 } } }
+add_to_variable = { var = EOR_subject_pressure value = 5 }
+add_political_power = 50
+}
+
+option = { name = eor.160.b ai_chance = { factor = 55 }
+INS = { add_stability = 0.05 add_tech_bonus = { name = EOR_research_investment bonus = 0.5 uses = 1 category = naval_equipment } random_owned_controlled_state = { limit = { is_coastal = yes } add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } }
+add_to_variable = { var = EOR_administration_relief value = 1 }
+clamp_variable = { var = EOR_administration_relief min = 0 max = 6 }
+add_political_power = 25
+}
 }

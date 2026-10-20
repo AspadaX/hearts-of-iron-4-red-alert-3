@@ -2,4 +2,3 @@ EOR_imperial_decisions = { icon = generic_political_actions allowed = { original
 EOR_operations_decisions = { icon = military_operation allowed = { original_tag = EOR } visible = { tag = EOR has_completed_focus = EOR_convene_the_imperial_court } }
 EOR_research_decisions = { icon = generic_industry allowed = { original_tag = EOR } visible = { tag = EOR has_completed_focus = EOR_ensure_the_supremacy_of_our_technology } }
 EOR_overseas_decisions = { icon = generic_prospect_for_resources allowed = { original_tag = EOR } visible = { tag = EOR has_completed_focus = EOR_build_our_overseas_territories } }
-EOR_diplomacy_decisions = { icon = generic_independence allowed = { original_tag = EOR } visible = { tag = EOR has_completed_focus = EOR_convene_the_imperial_court } }
