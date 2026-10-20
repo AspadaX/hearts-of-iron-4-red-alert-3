@@ -352,15 +352,6 @@ country_event = {
 
 			modifier = {
 				factor = 0
-				tag = SPC
-				FROM = {
-					original_tag = SOV
-					has_completed_focus = SOV_covert_support_for_spanish_poum
-				}
-			}
-
-			modifier = {
-				factor = 0
 				is_historical_focus_on = yes
 				FROM = { original_tag = JAP }
 				original_tag = SIA

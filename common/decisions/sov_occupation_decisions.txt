@@ -1,0 +1,82 @@
+SOV_occupation_decisions = {
+	SOV_reinforce_european_garrison = {
+		icon = generic_army_support
+		cost = 50
+		visible = { has_completed_focus = SOV_the_burden_of_victory has_idea = SOV_continent_under_occupation }
+		available = { check_variable = { SOV_europe_loyalty < 70 } }
+		days_remove = 60
+		days_re_enable = 120
+		ai_will_do = {
+			factor = 2
+			modifier = { factor = 3 check_variable = { SOV_europe_loyalty < 40 } }
+		}
+		remove_effect = {
+			add_to_variable = { var = SOV_europe_loyalty value = 10 }
+			if = { limit = { check_variable = { SOV_europe_loyalty > 100 } } set_variable = { var = SOV_europe_loyalty value = 100 } }
+		}
+	}
+
+	SOV_reinforce_scandinavian_garrison = {
+		icon = generic_army_support
+		cost = 50
+		visible = { has_completed_focus = SOV_the_burden_of_victory has_idea = SOV_continent_under_occupation }
+		available = { check_variable = { SOV_scandinavia_loyalty < 70 } }
+		days_remove = 60
+		days_re_enable = 120
+		ai_will_do = {
+			factor = 2
+			modifier = { factor = 3 check_variable = { SOV_scandinavia_loyalty < 40 } }
+		}
+		remove_effect = {
+			add_to_variable = { var = SOV_scandinavia_loyalty value = 10 }
+			if = { limit = { check_variable = { SOV_scandinavia_loyalty > 100 } } set_variable = { var = SOV_scandinavia_loyalty value = 100 } }
+		}
+	}
+
+	SOV_european_plebiscite = {
+		icon = generic_political_discourse
+		cost = 75
+		visible = { has_completed_focus = SOV_the_burden_of_victory has_idea = SOV_continent_under_occupation }
+		available = { check_variable = { SOV_europe_loyalty > 50 } }
+		days_remove = 90
+		days_re_enable = 180
+		ai_will_do = { factor = 1 }
+		remove_effect = {
+			add_to_variable = { var = SOV_europe_loyalty value = 10 }
+			add_stability = 0.05
+			if = { limit = { check_variable = { SOV_europe_loyalty > 100 } } set_variable = { var = SOV_europe_loyalty value = 100 } }
+		}
+	}
+
+	SOV_scandinavian_plebiscite = {
+		icon = generic_political_discourse
+		cost = 75
+		visible = { has_completed_focus = SOV_the_burden_of_victory has_idea = SOV_continent_under_occupation }
+		available = { check_variable = { SOV_scandinavia_loyalty > 50 } }
+		days_remove = 90
+		days_re_enable = 180
+		ai_will_do = { factor = 1 }
+		remove_effect = {
+			add_to_variable = { var = SOV_scandinavia_loyalty value = 10 }
+			add_stability = 0.05
+			if = { limit = { check_variable = { SOV_scandinavia_loyalty > 100 } } set_variable = { var = SOV_scandinavia_loyalty value = 100 } }
+		}
+	}
+
+	SOV_crack_down_on_dissent = {
+		icon = generic_political_actions
+		cost = 75
+		visible = { has_completed_focus = SOV_the_burden_of_victory has_idea = SOV_continent_under_occupation }
+		available = { OR = { check_variable = { SOV_europe_loyalty < 60 } check_variable = { SOV_scandinavia_loyalty < 60 } } }
+		days_remove = 30
+		days_re_enable = 180
+		ai_will_do = { factor = 2 }
+		remove_effect = {
+			add_to_variable = { var = SOV_europe_loyalty value = 6 }
+			add_to_variable = { var = SOV_scandinavia_loyalty value = 6 }
+			add_stability = -0.03
+			if = { limit = { check_variable = { SOV_europe_loyalty > 100 } } set_variable = { var = SOV_europe_loyalty value = 100 } }
+			if = { limit = { check_variable = { SOV_scandinavia_loyalty > 100 } } set_variable = { var = SOV_scandinavia_loyalty value = 100 } }
+		}
+	}
+}

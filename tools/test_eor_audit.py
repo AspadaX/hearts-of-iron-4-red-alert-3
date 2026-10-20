@@ -71,7 +71,7 @@ class AuditRegressionTests(unittest.TestCase):
 
     def test_dead_bookmark_preview(self):
         self.rejects('common/bookmarks/red_alert.txt',
-                     lambda t: t.replace('SOV_industrial_effort', 'SOV_finish_five_year_plan', 1),
+                     lambda t: t.replace('SOV_the_red_continent', 'SOV_finish_five_year_plan', 1),
                      'Invalid bookmark focus preview')
 
     def test_native_china_rewards_cannot_be_hidden(self):

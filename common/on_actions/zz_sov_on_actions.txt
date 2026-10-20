@@ -1,0 +1,68 @@
+on_actions = {
+	on_monthly_SOV = {
+		effect = {
+			SOV = {
+				if = {
+					limit = {
+						exists = yes
+						has_completed_focus = SOV_the_burden_of_victory
+						has_idea = SOV_continent_under_occupation
+						check_variable = { SOV_europe_loyalty > -1 }
+					}
+					if = { limit = { has_country_flag = SOV_route_cherdenko } add_to_variable = { var = SOV_europe_loyalty value = 2 } }
+					else_if = { limit = { has_country_flag = SOV_route_krukov } add_to_variable = { var = SOV_europe_loyalty value = 1 } }
+					else_if = { limit = { has_country_flag = SOV_route_commander } add_to_variable = { var = SOV_europe_loyalty value = 3 } }
+					else = { add_to_variable = { var = SOV_europe_loyalty value = -1 } }
+					if = {
+						limit = { check_variable = { SOV_europe_loyalty < 0 } }
+						set_variable = { var = SOV_europe_loyalty value = 0 }
+					}
+					if = {
+						limit = { check_variable = { SOV_europe_loyalty > 100 } }
+						set_variable = { var = SOV_europe_loyalty value = 100 }
+					}
+					if = {
+						limit = { check_variable = { SOV_europe_loyalty < 25 } NOT = { has_country_flag = SOV_europe_unrest_cooldown } }
+						set_country_flag = { flag = SOV_europe_unrest_cooldown days = 365 }
+						country_event = { id = sov.10 days = 1 }
+					}
+					if = {
+						limit = { check_variable = { SOV_europe_loyalty > 85 } NOT = { has_country_flag = SOV_europe_consolidated } }
+						set_country_flag = SOV_europe_consolidated
+						add_stability = 0.03
+					}
+				}
+				if = {
+					limit = {
+						exists = yes
+						has_completed_focus = SOV_the_burden_of_victory
+						has_idea = SOV_continent_under_occupation
+						check_variable = { SOV_scandinavia_loyalty > -1 }
+					}
+					if = { limit = { has_country_flag = SOV_route_cherdenko } add_to_variable = { var = SOV_scandinavia_loyalty value = 2 } }
+					else_if = { limit = { has_country_flag = SOV_route_krukov } add_to_variable = { var = SOV_scandinavia_loyalty value = 1 } }
+					else_if = { limit = { has_country_flag = SOV_route_commander } add_to_variable = { var = SOV_scandinavia_loyalty value = 3 } }
+					else = { add_to_variable = { var = SOV_scandinavia_loyalty value = -1 } }
+					if = {
+						limit = { check_variable = { SOV_scandinavia_loyalty < 0 } }
+						set_variable = { var = SOV_scandinavia_loyalty value = 0 }
+					}
+					if = {
+						limit = { check_variable = { SOV_scandinavia_loyalty > 100 } }
+						set_variable = { var = SOV_scandinavia_loyalty value = 100 }
+					}
+					if = {
+						limit = { check_variable = { SOV_scandinavia_loyalty < 25 } NOT = { has_country_flag = SOV_scandinavia_unrest_cooldown } }
+						set_country_flag = { flag = SOV_scandinavia_unrest_cooldown days = 365 }
+						country_event = { id = sov.11 days = 1 }
+					}
+					if = {
+						limit = { check_variable = { SOV_scandinavia_loyalty > 85 } NOT = { has_country_flag = SOV_scandinavia_consolidated } }
+						set_country_flag = SOV_scandinavia_consolidated
+						add_stability = 0.03
+					}
+				}
+			}
+		}
+	}
+}

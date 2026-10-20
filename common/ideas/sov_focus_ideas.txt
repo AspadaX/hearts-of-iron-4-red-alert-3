@@ -1,0 +1,449 @@
+ideas = {
+	country = {
+		SOV_red_army_triumphant = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.05
+				army_org_factor = 0.05
+				war_support_factor = 0.05
+			}
+		}
+
+		SOV_continent_under_occupation = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.10
+				political_power_factor = -0.10
+				consumer_goods_factor = 0.05
+			}
+		}
+
+		SOV_red_fleet_deficiencies = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				navy_org_factor = -0.15
+				industrial_capacity_dockyard = -0.10
+				naval_coordination = -0.05
+			}
+		}
+
+		SOV_fractured_supreme_command = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				planning_speed = -0.10
+				command_power_gain_mult = -0.10
+				political_power_factor = -0.05
+			}
+		}
+
+		SOV_industrial_colossus = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.10
+				construction_speed = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+
+		SOV_premier_authority = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.10
+				stability_factor = 0.05
+			}
+		}
+
+		SOV_party_unity = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				communism_drift = 0.02
+			}
+		}
+
+		SOV_general_secretary = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.10
+				army_org_factor = 0.05
+				political_power_factor = -0.05
+			}
+		}
+
+		SOV_revolutionary_command = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.10
+				army_org_factor = 0.05
+				stability_factor = 0.05
+			}
+		}
+
+		SOV_dasha_adviser = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				decryption_factor = 0.05
+				enemy_operative_detection_chance_factor = 0.10
+			}
+		}
+
+		SOV_direct_rule_europe = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				autonomy_gain = -0.5
+				resistance_target = -5
+				stability_factor = -0.05
+			}
+		}
+
+		SOV_direct_rule_scandinavia = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				autonomy_gain = -0.5
+				resistance_target = -5
+				stability_factor = -0.05
+			}
+		}
+
+		SOV_imperial_administration = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				resistance_target = -5
+				political_power_factor = 0.05
+			}
+		}
+
+		SOV_european_security_bloc = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.05
+				subjects_autonomy_gain = -0.25
+				autonomy_manpower_share_from_subjects = 0.05
+			}
+		}
+
+		SOV_northern_security_bloc = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.05
+				subjects_autonomy_gain = -0.25
+			}
+		}
+
+		SOV_soviet_security_bloc = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.10
+				subjects_autonomy_gain = -0.5
+				stability_factor = 0.05
+			}
+		}
+
+		SOV_krukov_legacy = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.10
+				army_attack_factor = 0.05
+				political_power_factor = 0.05
+			}
+		}
+
+		SOV_liberation_doctrine = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = 0.05
+				communism_drift = 0.02
+			}
+		}
+
+		SOV_internationalist_union = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.10
+				stability_factor = 0.05
+				communism_drift = 0.03
+			}
+		}
+
+		SOV_cherdenko_legacy = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.10
+				stability_factor = 0.10
+				resistance_target = -5
+			}
+		}
+
+		SOV_world_revolution = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.10
+				communism_drift = 0.05
+				political_power_factor = 0.05
+			}
+		}
+
+		SOV_baltic_fleet = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				navy_org_factor = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+
+		SOV_socialist_economy = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.05
+				stability_factor = 0.05
+			}
+		}
+
+		SOV_war_economy = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.10
+				consumer_goods_factor = 0.10
+				war_support_factor = 0.05
+			}
+		}
+
+		SOV_tesla_program = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.05
+				industrial_capacity_factory = 0.03
+			}
+		}
+
+		SOV_iron_curtain_defenses = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				air_defence_factor = 0.10
+				enemy_operative_detection_chance_factor = 0.10
+				stability_factor = 0.05
+			}
+		}
+
+		SOV_vacuum_imploder_program = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.05
+				research_speed_factor = 0.03
+			}
+		}
+
+		SOV_occupation_ministry = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.05
+				stability_factor = 0.05
+			}
+		}
+
+		SOV_european_garrison_network = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				resistance_target = -5
+				conscription_factor = 0.02
+			}
+		}
+
+		SOV_northern_garrison_network = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				resistance_target = -5
+				winter_attrition_factor = -0.10
+			}
+		}
+
+		SOV_internal_security = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				enemy_operative_detection_chance_factor = 0.15
+			}
+		}
+
+		SOV_imperial_integration = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = 0.05
+				resistance_target = -5
+			}
+		}
+
+		SOV_red_navy_rebuilt = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				navy_org_factor = 0.10
+				industrial_capacity_dockyard = 0.10
+				naval_coordination = 0.05
+			}
+		}
+
+		SOV_modern_red_army = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.10
+				army_attack_factor = 0.05
+			}
+		}
+
+		SOV_red_air_doctrine = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				air_agility_factor = 0.10
+				air_superiority_efficiency = 0.10
+			}
+		}
+
+		SOV_deep_battle = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.05
+				planning_speed = 0.10
+				breakthrough_factor = 0.05
+			}
+		}
+
+		SOV_rocket_command = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.05
+				research_speed_factor = 0.03
+			}
+		}
+
+		SOV_nuclear_program = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.05
+				war_support_factor = 0.05
+			}
+		}
+
+		SOV_comintern_direction = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.05
+				subjects_autonomy_gain = -0.25
+				autonomy_manpower_share_from_subjects = 0.05
+			}
+		}
+
+		SOV_anti_colonial = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.05
+				war_support_factor = 0.03
+			}
+		}
+
+		SOV_eastern_outreach = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.05
+				resource_trade_cost_bonus_per_factory = 0.05
+			}
+		}
+
+		SOV_global_revolutionary_line = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.10
+				communism_drift = 0.05
+				political_power_factor = 0.05
+			}
+		}
+	}
+}

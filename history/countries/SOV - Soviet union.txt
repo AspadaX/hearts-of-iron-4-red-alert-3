@@ -135,7 +135,11 @@ set_politics = {
 }
 
 add_ideas = {
-	SOV_conquest_debuff
+	SOV_red_army_triumphant
+	SOV_continent_under_occupation
+	SOV_red_fleet_deficiencies
+	SOV_fractured_supreme_command
+	SOV_industrial_colossus
 }
 
 create_country_leader = {

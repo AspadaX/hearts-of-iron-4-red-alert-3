@@ -1,0 +1,112 @@
+add_namespace = sov
+
+country_event = {
+	id = sov.1
+	title = sov.1.t
+	desc = sov.1.d
+	picture = GFX_report_event_soviet_soldiers
+	is_triggered_only = yes
+	option = {
+		name = sov.1.a
+		add_political_power = 25
+	}
+}
+
+country_event = {
+	id = sov.2
+	title = sov.2.t
+	desc = sov.2.d
+	picture = GFX_report_event_soviet_purge_speech
+	is_triggered_only = yes
+	option = {
+		name = sov.2.a
+		add_political_power = 25
+	}
+}
+
+country_event = {
+	id = sov.3
+	title = sov.3.t
+	desc = sov.3.d
+	picture = GFX_report_event_communist_leader
+	is_triggered_only = yes
+	option = {
+		name = sov.3.a
+		add_political_power = 50
+		add_stability = 0.03
+	}
+}
+
+country_event = {
+	id = sov.4
+	title = sov.4.t
+	desc = sov.4.d
+	picture = GFX_report_event_soviet_tank_parade
+	is_triggered_only = yes
+	option = {
+		name = sov.4.a
+		add_war_support = 0.03
+		army_experience = 25
+	}
+}
+
+country_event = {
+	id = sov.5
+	title = sov.5.t
+	desc = sov.5.d
+	picture = GFX_report_event_generic_communist_congress
+	is_triggered_only = yes
+	option = {
+		name = sov.5.a
+		add_political_power = 25
+		add_stability = 0.03
+	}
+}
+
+country_event = {
+	id = sov.10
+	title = sov.10.t
+	desc = sov.10.d
+	picture = GFX_report_event_soviet_in_riga
+	is_triggered_only = yes
+	option = {
+		name = sov.10.a
+		trigger = { political_power > 50 }
+		add_political_power = -50
+		add_to_variable = { var = SOV_europe_loyalty value = 15 }
+		add_stability = -0.02
+		add_war_support = 0.02
+		if = { limit = { check_variable = { SOV_europe_loyalty > 100 } } set_variable = { var = SOV_europe_loyalty value = 100 } }
+	}
+	option = {
+		name = sov.10.b
+		add_to_variable = { var = SOV_europe_loyalty value = 8 }
+		add_stability = -0.05
+		add_political_power = 25
+		if = { limit = { check_variable = { SOV_europe_loyalty > 100 } } set_variable = { var = SOV_europe_loyalty value = 100 } }
+	}
+}
+
+country_event = {
+	id = sov.11
+	title = sov.11.t
+	desc = sov.11.d
+	picture = GFX_report_event_communists_in_riga
+	is_triggered_only = yes
+	option = {
+		name = sov.11.a
+		trigger = { political_power > 50 }
+		add_political_power = -50
+		add_to_variable = { var = SOV_scandinavia_loyalty value = 15 }
+		add_stability = -0.02
+		add_war_support = 0.02
+		if = { limit = { check_variable = { SOV_scandinavia_loyalty > 100 } } set_variable = { var = SOV_scandinavia_loyalty value = 100 } }
+	}
+	option = {
+		name = sov.11.b
+		add_to_variable = { var = SOV_scandinavia_loyalty value = 8 }
+		add_stability = -0.05
+		add_political_power = 25
+		if = { limit = { check_variable = { SOV_scandinavia_loyalty > 100 } } set_variable = { var = SOV_scandinavia_loyalty value = 100 } }
+	}
+}
