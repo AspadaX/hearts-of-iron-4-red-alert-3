@@ -16,7 +16,7 @@ Start a new non-Ironman game after restarting HOI4. First verify that the main m
 
 On macOS logs are in `~/Documents/Paradox Interactive/Hearts of Iron IV/logs/`. The most useful files are `error.log`, `game.log`, `setup.log`, and `system.log`. Logs are overwritten on subsequent launches, so preserve logs from a failure before trying again.
 
-The installed game was 1.19.3 when development was resumed. The original mod declares 1.16.0 support; compatibility must be established through fixes and in-game testing before that declaration is updated.
+The installed game is 1.19.3. The 0.2.0 release declares 1.19.* support; static and installed validation pass, but a new-campaign runtime check remains required before publishing.
 
 ## Publishing
 
