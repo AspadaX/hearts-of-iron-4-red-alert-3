@@ -1,0 +1,130 @@
+SOV_release_european_puppets = {
+	if = { limit = { SOE = { exists = yes } } SOE = { every_owned_state = { transfer_state_to = SOV } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = FRA } } } SOV = { release_autonomy = { target = FRA autonomy_state = autonomy_puppet } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = GER } } } SOV = { release_autonomy = { target = GER autonomy_state = autonomy_puppet } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = ITA } } } SOV = { release_autonomy = { target = ITA autonomy_state = autonomy_puppet } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = SPR } } } SOV = { release_autonomy = { target = SPR autonomy_state = autonomy_puppet } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = POL } } } SOV = { release_autonomy = { target = POL autonomy_state = autonomy_puppet } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = YUG } } } SOV = { release_autonomy = { target = YUG autonomy_state = autonomy_puppet } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = ROM } } } SOV = { release_autonomy = { target = ROM autonomy_state = autonomy_puppet } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = CZE } } } SOV = { release_autonomy = { target = CZE autonomy_state = autonomy_puppet } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = AUS } } } SOV = { release_autonomy = { target = AUS autonomy_state = autonomy_puppet } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = HUN } } } SOV = { release_autonomy = { target = HUN autonomy_state = autonomy_puppet } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = BUL } } } SOV = { release_autonomy = { target = BUL autonomy_state = autonomy_puppet } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = POR } } } SOV = { release_autonomy = { target = POR autonomy_state = autonomy_puppet } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = ALB } } } SOV = { release_autonomy = { target = ALB autonomy_state = autonomy_puppet } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = SWI } } } SOV = { release_autonomy = { target = SWI autonomy_state = autonomy_puppet } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = LIT } } } SOV = { release_autonomy = { target = LIT autonomy_state = autonomy_puppet } } }
+	every_country = {
+		limit = { exists = yes OR = { tag = FRA tag = GER tag = ITA tag = SPR tag = POL tag = YUG tag = ROM tag = CZE tag = AUS tag = HUN tag = BUL tag = POR tag = ALB tag = SWI tag = LIT } }
+		set_country_flag = SOV_client_state
+	}
+}
+
+SOV_release_scandinavian_puppets = {
+	if = { limit = { SOS = { exists = yes } } SOS = { every_owned_state = { transfer_state_to = SOV } } }
+	if = {
+		limit = { SOV = { any_owned_state = { is_core_of = SWE } } }
+		if = { limit = { SWE = { exists = yes } } SOV = { every_owned_state = { limit = { is_core_of = SWE } transfer_state_to = SWE } } SOV = { set_autonomy = { target = SWE autonomy_state = autonomy_puppet } } }
+		else = { SOV = { release_autonomy = { target = SWE autonomy_state = autonomy_puppet } } }
+	}
+	if = {
+		limit = { SOV = { any_owned_state = { is_core_of = NOR } } }
+		if = { limit = { NOR = { exists = yes } } SOV = { every_owned_state = { limit = { is_core_of = NOR } transfer_state_to = NOR } } SOV = { set_autonomy = { target = NOR autonomy_state = autonomy_puppet } } }
+		else = { SOV = { release_autonomy = { target = NOR autonomy_state = autonomy_puppet } } }
+	}
+	if = {
+		limit = { SOV = { any_owned_state = { is_core_of = FIN } } }
+		if = { limit = { FIN = { exists = yes } } SOV = { every_owned_state = { limit = { is_core_of = FIN } transfer_state_to = FIN } } SOV = { set_autonomy = { target = FIN autonomy_state = autonomy_puppet } } }
+		else = { SOV = { release_autonomy = { target = FIN autonomy_state = autonomy_puppet } } }
+	}
+	every_country = {
+		limit = { exists = yes OR = { tag = SWE tag = NOR tag = FIN } }
+		set_country_flag = SOV_client_state
+	}
+}
+
+SOV_release_european_independents = {
+	if = { limit = { SOE = { exists = yes } } SOE = { every_owned_state = { transfer_state_to = SOV } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = FRA } } } SOV = { release_autonomy = { target = FRA autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = GER } } } SOV = { release_autonomy = { target = GER autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = ITA } } } SOV = { release_autonomy = { target = ITA autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = SPR } } } SOV = { release_autonomy = { target = SPR autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = POL } } } SOV = { release_autonomy = { target = POL autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = YUG } } } SOV = { release_autonomy = { target = YUG autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = ROM } } } SOV = { release_autonomy = { target = ROM autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = CZE } } } SOV = { release_autonomy = { target = CZE autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = AUS } } } SOV = { release_autonomy = { target = AUS autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = HUN } } } SOV = { release_autonomy = { target = HUN autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = BUL } } } SOV = { release_autonomy = { target = BUL autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = POR } } } SOV = { release_autonomy = { target = POR autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = ALB } } } SOV = { release_autonomy = { target = ALB autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = SWI } } } SOV = { release_autonomy = { target = SWI autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = LIT } } } SOV = { release_autonomy = { target = LIT autonomy_state = autonomy_free } } }
+	every_country = {
+		limit = { exists = yes OR = { tag = FRA tag = GER tag = ITA tag = SPR tag = POL tag = YUG tag = ROM tag = CZE tag = AUS tag = HUN tag = BUL tag = POR tag = ALB tag = SWI tag = LIT } }
+		set_country_flag = SOV_republic_state
+	}
+}
+
+SOV_release_scandinavian_independents = {
+	if = { limit = { SOS = { exists = yes } } SOS = { every_owned_state = { transfer_state_to = SOV } } }
+	if = {
+		limit = { SOV = { any_owned_state = { is_core_of = SWE } } }
+		if = { limit = { SWE = { exists = yes } } SOV = { every_owned_state = { limit = { is_core_of = SWE } transfer_state_to = SWE } } }
+		else = { SOV = { release_autonomy = { target = SWE autonomy_state = autonomy_free } } }
+	}
+	if = {
+		limit = { SOV = { any_owned_state = { is_core_of = NOR } } }
+		if = { limit = { NOR = { exists = yes } } SOV = { every_owned_state = { limit = { is_core_of = NOR } transfer_state_to = NOR } } }
+		else = { SOV = { release_autonomy = { target = NOR autonomy_state = autonomy_free } } }
+	}
+	if = {
+		limit = { SOV = { any_owned_state = { is_core_of = FIN } } }
+		if = { limit = { FIN = { exists = yes } } SOV = { every_owned_state = { limit = { is_core_of = FIN } transfer_state_to = FIN } } }
+		else = { SOV = { release_autonomy = { target = FIN autonomy_state = autonomy_free } } }
+	}
+	every_country = {
+		limit = { exists = yes OR = { tag = SWE tag = NOR tag = FIN } }
+		set_country_flag = SOV_republic_state
+	}
+}
+
+SOV_install_european_governments = {
+	if = { limit = { FRA = { exists = yes } } FRA = { set_popularities = { communism = 100 fascism = 0 democratic = 0 neutrality = 0 } set_politics = { ruling_party = communism elections_allowed = no } retire_country_leader = yes create_country_leader = { name = "Marcel Dubois" desc = "POLITICS_WILHELM_PIECK_DESC" picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" expire = "2051.1.1" ideology = stalinism traits = { } } } }
+	if = { limit = { GER = { exists = yes } } GER = { set_popularities = { communism = 100 fascism = 0 democratic = 0 neutrality = 0 } set_politics = { ruling_party = communism elections_allowed = no } retire_country_leader = yes create_country_leader = { name = "Ernst Weber" desc = "POLITICS_WILHELM_PIECK_DESC" picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds" expire = "2051.1.1" ideology = stalinism traits = { } } } }
+	if = { limit = { ITA = { exists = yes } } ITA = { set_popularities = { communism = 100 fascism = 0 democratic = 0 neutrality = 0 } set_politics = { ruling_party = communism elections_allowed = no } retire_country_leader = yes create_country_leader = { name = "Giovanni Rossi" desc = "POLITICS_WILHELM_PIECK_DESC" picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds" expire = "2051.1.1" ideology = stalinism traits = { } } } }
+	if = { limit = { SPR = { exists = yes } } SPR = { set_popularities = { communism = 100 fascism = 0 democratic = 0 neutrality = 0 } set_politics = { ruling_party = communism elections_allowed = no } retire_country_leader = yes create_country_leader = { name = "Rafael Mendez" desc = "POLITICS_WILHELM_PIECK_DESC" picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds" expire = "2051.1.1" ideology = stalinism traits = { } } } }
+	if = { limit = { POL = { exists = yes } } POL = { set_popularities = { communism = 100 fascism = 0 democratic = 0 neutrality = 0 } set_politics = { ruling_party = communism elections_allowed = no } retire_country_leader = yes create_country_leader = { name = "Jan Kowalski" desc = "POLITICS_WILHELM_PIECK_DESC" picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds" expire = "2051.1.1" ideology = stalinism traits = { } } } }
+	if = { limit = { YUG = { exists = yes } } YUG = { set_popularities = { communism = 100 fascism = 0 democratic = 0 neutrality = 0 } set_politics = { ruling_party = communism elections_allowed = no } retire_country_leader = yes create_country_leader = { name = "Milan Petrovic" desc = "POLITICS_WILHELM_PIECK_DESC" picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" expire = "2051.1.1" ideology = stalinism traits = { } } } }
+	if = { limit = { ROM = { exists = yes } } ROM = { set_popularities = { communism = 100 fascism = 0 democratic = 0 neutrality = 0 } set_politics = { ruling_party = communism elections_allowed = no } retire_country_leader = yes create_country_leader = { name = "Andrei Popescu" desc = "POLITICS_WILHELM_PIECK_DESC" picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds" expire = "2051.1.1" ideology = stalinism traits = { } } } }
+	if = { limit = { CZE = { exists = yes } } CZE = { set_popularities = { communism = 100 fascism = 0 democratic = 0 neutrality = 0 } set_politics = { ruling_party = communism elections_allowed = no } retire_country_leader = yes create_country_leader = { name = "Karel Novak" desc = "POLITICS_WILHELM_PIECK_DESC" picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds" expire = "2051.1.1" ideology = stalinism traits = { } } } }
+	if = { limit = { AUS = { exists = yes } } AUS = { set_popularities = { communism = 100 fascism = 0 democratic = 0 neutrality = 0 } set_politics = { ruling_party = communism elections_allowed = no } retire_country_leader = yes create_country_leader = { name = "Franz Gruber" desc = "POLITICS_WILHELM_PIECK_DESC" picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds" expire = "2051.1.1" ideology = stalinism traits = { } } } }
+	if = { limit = { HUN = { exists = yes } } HUN = { set_popularities = { communism = 100 fascism = 0 democratic = 0 neutrality = 0 } set_politics = { ruling_party = communism elections_allowed = no } retire_country_leader = yes create_country_leader = { name = "Laszlo Nagy" desc = "POLITICS_WILHELM_PIECK_DESC" picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds" expire = "2051.1.1" ideology = stalinism traits = { } } } }
+	if = { limit = { BUL = { exists = yes } } BUL = { set_popularities = { communism = 100 fascism = 0 democratic = 0 neutrality = 0 } set_politics = { ruling_party = communism elections_allowed = no } retire_country_leader = yes create_country_leader = { name = "Ivan Petrov" desc = "POLITICS_WILHELM_PIECK_DESC" picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" expire = "2051.1.1" ideology = stalinism traits = { } } } }
+	if = { limit = { POR = { exists = yes } } POR = { set_popularities = { communism = 100 fascism = 0 democratic = 0 neutrality = 0 } set_politics = { ruling_party = communism elections_allowed = no } retire_country_leader = yes create_country_leader = { name = "Joao Silva" desc = "POLITICS_WILHELM_PIECK_DESC" picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds" expire = "2051.1.1" ideology = stalinism traits = { } } } }
+	if = { limit = { ALB = { exists = yes } } ALB = { set_popularities = { communism = 100 fascism = 0 democratic = 0 neutrality = 0 } set_politics = { ruling_party = communism elections_allowed = no } retire_country_leader = yes create_country_leader = { name = "Arben Krasniqi" desc = "POLITICS_WILHELM_PIECK_DESC" picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds" expire = "2051.1.1" ideology = stalinism traits = { } } } }
+	if = { limit = { SWI = { exists = yes } } SWI = { set_popularities = { communism = 100 fascism = 0 democratic = 0 neutrality = 0 } set_politics = { ruling_party = communism elections_allowed = no } retire_country_leader = yes create_country_leader = { name = "Hans Muller" desc = "POLITICS_WILHELM_PIECK_DESC" picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds" expire = "2051.1.1" ideology = stalinism traits = { } } } }
+	if = { limit = { LIT = { exists = yes } } LIT = { set_popularities = { communism = 100 fascism = 0 democratic = 0 neutrality = 0 } set_politics = { ruling_party = communism elections_allowed = no } retire_country_leader = yes create_country_leader = { name = "Jonas Petrauskas" desc = "POLITICS_WILHELM_PIECK_DESC" picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds" expire = "2051.1.1" ideology = stalinism traits = { } } } }
+}
+
+SOV_install_scandinavian_governments = {
+	if = { limit = { SWE = { exists = yes } } SWE = { set_popularities = { communism = 100 fascism = 0 democratic = 0 neutrality = 0 } set_politics = { ruling_party = communism elections_allowed = no } retire_country_leader = yes create_country_leader = { name = "Erik Lindberg" desc = "POLITICS_WILHELM_PIECK_DESC" picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" expire = "2051.1.1" ideology = stalinism traits = { } } } }
+	if = { limit = { NOR = { exists = yes } } NOR = { set_popularities = { communism = 100 fascism = 0 democratic = 0 neutrality = 0 } set_politics = { ruling_party = communism elections_allowed = no } retire_country_leader = yes create_country_leader = { name = "Olav Haugen" desc = "POLITICS_WILHELM_PIECK_DESC" picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds" expire = "2051.1.1" ideology = stalinism traits = { } } } }
+	if = { limit = { FIN = { exists = yes } } FIN = { set_popularities = { communism = 100 fascism = 0 democratic = 0 neutrality = 0 } set_politics = { ruling_party = communism elections_allowed = no } retire_country_leader = yes create_country_leader = { name = "Mikko Virtanen" desc = "POLITICS_WILHELM_PIECK_DESC" picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds" expire = "2051.1.1" ideology = stalinism traits = { } } } }
+}
+
+SOV_add_clients_to_faction = {
+	every_country = {
+		limit = { has_country_flag = SOV_client_state NOT = { is_in_faction_with = SOV } }
+		add_to_faction = SOV
+		add_ideas = receive_further_command_from_moscow
+	}
+}
+
+SOV_add_republics_to_faction = {
+	every_country = {
+		limit = { has_country_flag = SOV_republic_state NOT = { is_in_faction_with = SOV } }
+		add_to_faction = SOV
+	}
+}

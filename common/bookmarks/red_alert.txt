@@ -59,9 +59,9 @@ bookmarks = {
 				home_of_revolution
 			}
 			focuses = {
-				SOV_industrial_effort
-				SOV_resource_extraction
-				SOV_strengthen_the_command_system
+				SOV_the_red_continent
+				SOV_the_burden_of_victory
+				SOV_the_kremlin_divided
 			}
 		}
 

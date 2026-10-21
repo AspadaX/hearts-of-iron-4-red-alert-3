@@ -1,6 +1,6 @@
 # EOR playability implementation — 19 October 2026
 
-The user approved proceeding with the [playability review](review/EOR_PLAYABILITY_REVIEW.md). The authored build now has **189 focuses, 96 decisions, 72 EOR events, 102 active events overall and 149 country-spirit definitions**. All quantities, costs, durations and modifiers remain provisional. No runtime playthrough was performed by the agent.
+The user approved proceeding with the [playability review](review/EOR_PLAYABILITY_REVIEW.md). The authored build now has **189 focuses, 24 decisions, 77 EOR events, 107 active events overall and 149 country-spirit definitions**. The 19 October sections below describe the earlier 96-decision implementation; the [decision simplification](#decision-simplification-20-october-2026) at the end of this document supersedes their decision inventory. All quantities, costs, durations and modifiers remain provisional. No runtime playthrough was performed by the agent.
 
 ## Focus substance and pacing
 
@@ -83,3 +83,17 @@ For the immediate display test: fully restart, start a new non-Ironman EOR campa
 China follow-up synchronization: `development_backups/20261019-232304-253138/` preserves the preceding build and logs. Revised source/native/installed checks and authored-byte parity passed; native UI display and delivery remain pending user confirmation.
 
 The later [self-audit](review/EOR_SELF_AUDIT.md) supersedes earlier hidden-effect, registration-order, starting-research, cooldown and country-picker details. It records the additional two-node consolidation and the remaining runtime evidence limits.
+
+## Decision simplification (20 October 2026)
+
+The user requested a smaller, clearer decision system. The active inventory is now **24 decisions in four categories**: Statecraft 9, Military Operations 6, Experimental Projects 4 and Overseas Administration 5. The 96-decision service, project, court, war-authorization, convoy, per-country investment and secondary-project lists are removed from loaded content and recorded in the manifest's removed list.
+
+Statecraft retains scheduled court review, negotiated coup transition, post-defeat reconstruction, the Yoshiro fortress grant, China renewal and four settlement requests. Settlement requests cost 75 PP, consume `EOR_prepared_negotiation` when available, set a 180-day recipient preparation flag, and fire the recipient's existing event 114; refusal costs 15 PP. `EOR_imperial_diplomacy` sets the preparation flag instead of charging 75 PP, and event 105 no longer charges EOR before Chinese consent. Removed unilateral war, peace and reconstruction decisions are not replaced: normal declarations, wargoals, capitulation and peace conferences apply.
+
+Military Operations keeps Yuriko's assault and sabotage missions, the three great-machine activations and the new `EOR_prepare_major_offensive`. The offensive preparation costs 75 PP, requires an ongoing war, prepares for 30 days and shares a 120-day authorization cooldown; its event `eor.156` offers Soviet, Pacific, general or Yuriko options. Experimental Projects keeps nanocore deployment and the three paid great-machine preparations. Overseas Administration keeps infrastructure investment plus one 120-day investment decision for each current subject — IOT, PHI, MAL and INS — whose events `eor.157`–`eor.160` offer an extraction or partnership settlement.
+
+Focus rewards compensate for the removed programs: `EOR_military_government` grants administrative relief, the land and oceanic shogunates deliver immediate equipment/experience/timed support, the mobilization-law amendments grant permanent spirits and an instant factory, Odessa grants direct Soviet offensive support, and the sacred-will focus delivers a one-time manpower and equipment package. The active event catalog is **107 events overall and 77 EOR events**; `eor.156.desc` avoids collision with option `eor.156.d`.
+
+The baseline EOR AI uses `common/ai_strategy_plans/EOR_default_strategy_plan.txt` for route-neutral focus and research weights and `common/ai_strategy/EOR.txt` for force ratios, production emphasis and subject support. It does not add a new route-selection mechanic; the existing focus weights still choose Yoshiro, Tatsu or Shinzo. AI behavior and campaign balance remain unverified until a user-run campaign.
+
+Source, native and installed static checks pass with 189 focuses, 24 decisions and 107 active events. Runtime execution, decision visibility, investment delivery, settlement refusal and campaign balance remain unconfirmed; the user launches a fresh non-Ironman campaign.

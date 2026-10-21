@@ -66,12 +66,12 @@ eor_expansion_threat = {
 
 
 eor_diplomatic_cooperation_allowed = {
-OR = { AND = { NOT = { has_country_flag = EOR_route_divine } NOT = { has_country_flag = EOR_route_shinzo } } has_country_flag = EOR_diplomatic_concessions }
+always = yes
 }
 
 
 eor_partnership_allowed = {
-OR = { NOT = { has_country_flag = EOR_route_shinzo } has_country_flag = EOR_military_accepts_partnership }
+OR = { NOT = { has_country_flag = EOR_route_shinzo } has_country_flag = EOR_military_government_installed }
 }
 
 

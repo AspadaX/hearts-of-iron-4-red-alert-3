@@ -65,6 +65,42 @@ def check_unit_bonus_stats(source,enums):
             for stat in re.findall(r'\b(\w+)\s*=\s*-?[\d.]',body):
                 assert stat in unit_stats,('Unsupported unit-bonus stat',group,stat)
 
+def check_ai(root, focuses):
+    plan=(root/'common/ai_strategy_plans/EOR_default_strategy_plan.txt').read_text(encoding='utf-8-sig')
+    plan_blocks=blocks(plan,'EOR_default_plan')
+    assert len(plan_blocks)==1,'Missing EOR default AI plan'
+    plan_block=plan_blocks[0]
+    assert 'original_tag = EOR' in blocks(plan_block,'allowed')[0]
+    assert 'always = yes' in blocks(plan_block,'enable')[0]
+    assert 'always = no' in blocks(plan_block,'abort')[0]
+    factors=blocks(plan_block,'focus_factors')
+    assert len(factors)==1,'Missing EOR AI focus factors'
+    for fid in re.findall(r'\b(EOR_\w+)\s*=\s*-?\d',factors[0]):
+        assert fid in focuses,('AI plan references unknown focus',fid)
+    research=blocks(plan_block,'research')
+    assert len(research)==1 and 'industry' in research[0],'Missing AI research priorities'
+    strategies=(root/'common/ai_strategy/EOR.txt').read_text(encoding='utf-8-sig')
+    strategy_groups=re.findall(r'^([A-Za-z0-9_]+)\s*=\s*\{',strategies,re.M)
+    assert strategy_groups,'Missing EOR AI strategies'
+    roles={'infantry','armor','marines','garrison'}
+    units={'fighter','cas','naval_bomber','tactical_bomber','capital_ship','screen_ship','submarine','convoy'}
+    equipment={'fighter','cas','infantry','artillery'}
+    allowed_types={'role_ratio','unit_ratio','equipment_production_factor','added_military_to_civilian_factory_ratio','air_factory_balance','support'}
+    for name in strategy_groups:
+        group=blocks(strategies,name)[0]
+        assert 'original_tag = EOR' in blocks(group,'allowed')[0],('AI strategy missing EOR restriction',name)
+        assert 'always = yes' in blocks(group,'enable')[0],('AI strategy is not enabled',name)
+        assert 'always = no' in blocks(group,'abort')[0],('AI strategy lacks abort',name)
+        for entry in blocks(group,'ai_strategy'):
+            kind=scalar(entry,'type')
+            assert kind in allowed_types,('Unknown AI strategy type',name,kind)
+            if kind=='role_ratio':
+                assert scalar(entry,'id') in roles,('Unknown AI role',name,scalar(entry,'id'))
+            elif kind=='unit_ratio':
+                assert scalar(entry,'id') in units,('Unknown AI unit ratio',name,scalar(entry,'id'))
+            elif kind=='equipment_production_factor':
+                assert scalar(entry,'id') in equipment,('Unknown AI equipment factor',name,scalar(entry,'id'))
+
 def check_starting_research(root,game):
     files={q.name:q for q in (game/'common/technologies').glob('*.txt')}
     files.update({q.name:q for q in (root/'common/technologies').glob('*.txt')})
@@ -176,7 +212,7 @@ def check_native(root,game,tree,focuses,positions,manifest,spirits,ideas,dynamic
 def check(root,game,source_only=False):
     manifest=json.loads((ROOT/'tools/eor_design_manifest.json').read_text())
     assert manifest['version']==3
-    names=['common/national_focus/empire_focus.txt','common/national_focus/generic.txt','common/ideas/empire_ideas.txt','common/ideas/eor_v2_ideas.txt','common/characters/EOR.txt','common/country_leader/eor_traits.txt','common/decisions/eor_decisions.txt','common/decisions/categories/eor_categories.txt','common/dynamic_modifiers/eor_operations.txt','common/scripted_effects/eor_effects.txt','common/scripted_triggers/eor_triggers.txt','common/scripted_localisation/eor_authority.txt','interface/eor_decision_icons.gfx','common/on_actions/eor_on_actions.txt','common/technologies/eor_advanced_technologies.txt','common/units/equipment/zz_eor_aircraft.txt','common/opinion_modifiers/eor_v2_opinions.txt','events/EmpireOfTheRisingSun.txt','events/NewsEvents.txt','localisation/events_l_english.yml','localisation/bookmarks_l_english.yml','interface/eor_equipment.gfx','interface/eor_focus_icons.gfx','interface/eor_spirit_icons.gfx','history/countries/EOR - The Empire of the Rising Sun.txt','history/countries/IOT - Imperial Oceanic Territories.txt','common/bookmarks/red_alert.txt','common/technology_sharing/01_tech_sharing_groups.txt']
+    names=['common/national_focus/empire_focus.txt','common/national_focus/generic.txt','common/ideas/empire_ideas.txt','common/ideas/eor_v2_ideas.txt','common/characters/EOR.txt','common/country_leader/eor_traits.txt','common/decisions/eor_decisions.txt','common/decisions/categories/eor_categories.txt','common/dynamic_modifiers/eor_operations.txt','common/scripted_effects/eor_effects.txt','common/scripted_triggers/eor_triggers.txt','common/scripted_localisation/eor_authority.txt','interface/eor_decision_icons.gfx','common/on_actions/eor_on_actions.txt','common/technologies/eor_advanced_technologies.txt','common/units/equipment/zz_eor_aircraft.txt','common/opinion_modifiers/eor_v2_opinions.txt','events/EmpireOfTheRisingSun.txt','events/NewsEvents.txt','localisation/events_l_english.yml','localisation/bookmarks_l_english.yml','interface/eor_equipment.gfx','interface/eor_focus_icons.gfx','interface/eor_spirit_icons.gfx','history/countries/EOR - The Empire of the Rising Sun.txt','history/countries/IOT - Imperial Oceanic Territories.txt','common/bookmarks/red_alert.txt','common/technology_sharing/01_tech_sharing_groups.txt','common/ai_strategy_plans/EOR_default_strategy_plan.txt','common/ai_strategy/EOR.txt']
     paths=[root/p for p in names]
     for p in paths:lex(p.read_text(encoding='utf-8-sig'))
     source='\n'.join(p.read_text(encoding='utf-8-sig') for p in paths)
@@ -336,7 +372,7 @@ def check(root,game,source_only=False):
             assert not any(v in description.lower() for v in ['balance values','initial balance','requires testing','choose a ','invest 75 pp']),('Development/choice prose in spirit',key)
     decisions=(root/'common/decisions/eor_decisions.txt').read_text()
     categories=direct_blocks('wrapper = { '+decisions+' }')
-    assert len(categories)==5,'Expected five intent-based decision categories'
+    assert len(categories)==4,'Expected four intent-based decision categories'
     entries={}
     for category,block in categories.items():
         assert category in loc and category+'_desc' in loc
@@ -345,16 +381,7 @@ def check(root,game,source_only=False):
             entries[key]=decision
             assert key in loc and key+'_desc' in loc,key
     assert set(entries)==set(manifest['decision_ids']),'Decision inventory changed'
-    for key,decision in entries.items():
-        if key.startswith('EOR_subject_'):
-            tag=key.split('_')[2].upper();end=blocks(decision,'remove_effect')[0]
-            assert 'is_subject_of = ROOT' in end
-            assert f'is_owned_by = {tag} is_controlled_by = {tag}' in end
-            assert 'is_controlled_by = ROOT' not in end
-            assert 'save_global_event_target_as = '+key+'_state' in decision
-            assert 'clear_global_event_target = '+key+'_state' in end
-    phi=entries['EOR_subject_phi_local_military_administration']
-    assert 'EOR = { add_to_variable = { var = EOR_subject_pressure value = -5 } }' in phi
+    check_ai(root,focuses)
     sabotage=blocks(entries['EOR_omega_sabotage'],'remove_effect')[0]
     assert 'damage_building = { type = arms_factory damage = 2 }' in sabotage
     assert 'modifier = EOR_psionic_factory_disruption days = 60 scope = ROOT' in sabotage
@@ -365,15 +392,23 @@ def check(root,game,source_only=False):
         assert 'add_timed_idea' not in blocks(prepare,'remove_effect')[0]
         assert 'has_war = yes' in blocks(activate,'available')[0]
         assert 'clr_country_flag = EOR_'+kind+'_ready' in activate
-    for key in ['EOR_omega_assault','EOR_omega_command_disruption','EOR_omega_sabotage','EOR_omega_counterintelligence']:
+    for key in ['EOR_omega_assault','EOR_omega_sabotage']:
         assert 'EOR_omega_cooldown' in entries[key]
         end=blocks(entries[key],'remove_effect')[0]
         assert 'else =' in end and 'country_event' in end,('Missing mission failure report',key)
+    offensive=entries['EOR_prepare_major_offensive']
+    assert 'has_war = yes' in blocks(offensive,'available')[0]
+    assert 'flag = EOR_major_offensive_busy days = 30' in offensive
+    assert 'flag = EOR_major_offensive_authorization_cooldown days = 120' in offensive
+    end=blocks(offensive,'remove_effect')[0]
+    assert 'id = eor.156' in end and 'id = eor.145' in end
     # Playability regressions: paid follow-ups must deliver an independent action,
     # bilateral work must have a current partner, and delayed investments must
     # survive neither a changed government nor an invalid recipient as rewards.
     diplomacy=blocks(focuses['EOR_divide_our_enemies'],'completion_reward')[0]
-    assert 'eor_event_105' not in diplomacy and 'EOR_targeted_envoys_authorized' in diplomacy,'Duplicate one-time diplomacy reward'
+    assert 'eor_event_105' not in diplomacy and 'EOR_targeted_envoys_authorized' not in diplomacy
+    assert 'add_political_power = 50' in diplomacy and 'EOR_global_threat' in diplomacy
+    assert 'custom_effect_tooltip = EOR_divide_our_enemies_tt' in diplomacy
     concessions=blocks(focuses['EOR_resource_concessions'],'completion_reward')[0]
     assert 'EOR_resource_development_authorized' not in concessions
     assert 'add_resource' in concessions and 'is_subject_of = ROOT' in concessions
@@ -402,25 +437,42 @@ def check(root,game,source_only=False):
     review=entries['EOR_schedule_court_review']
     assert 'EOR_global_threat' not in review and 'EOR_intelligence_complete' not in review
     assert 'eor_no_political_route = yes' in blocks(review,'remove_effect')[0]
-    for key,route in [
-        ('EOR_sacred_mobilization','divine'),('EOR_imperial_prestige_project','divine'),
-        ('EOR_fund_homeland_fortress','divine'),('EOR_automated_armored_contract','technocratic'),
-        ('EOR_combined_force_contract','technocratic'),('EOR_land_service_program','shinzo'),
-        ('EOR_naval_service_program','shinzo'),('EOR_settle_military_administration','shinzo'),
-        ('EOR_postwar_imperial','divine'),('EOR_postwar_science','technocratic'),('EOR_postwar_military','shinzo')]:
-        end=blocks(entries[key],'remove_effect')[0]
-        assert 'has_country_flag = EOR_route_'+route in blocks(end,'limit')[0],('Stale government delivery',key)
-        assert 'else =' in end and 'id = eor.145' in end,('Missing invalidation report',key)
-    prestige=entries['EOR_imperial_prestige_project']
-    assert 'save_global_event_target_as = EOR_prestige_recipient' in prestige
-    assert 'clear_global_event_target = EOR_prestige_recipient' in prestige
-    assert 'is_owned_by = event_target:EOR_prestige_recipient' in prestige
-    assert 'is_controlled_by = event_target:EOR_prestige_recipient' in prestige
+    assert 'set_country_flag = EOR_court_review_pending' in blocks(review,'complete_effect')[0]
+    fortress=entries['EOR_fund_homeland_fortress']
+    assert 'check_variable = { EOR_fortress_grants > 0 }' in blocks(fortress,'available')[0]
+    assert 'has_country_flag = EOR_route_divine' in blocks(blocks(fortress,'remove_effect')[0],'limit')[0]
+    assert 'id = eor.145' in blocks(fortress,'remove_effect')[0]
+    coup=entries['EOR_negotiate_coup_transition']
+    assert 'EOR_military_influence value = 10' in blocks(coup,'complete_effect')[0]
+    for key,tag,event in [
+        ('EOR_invest_iot','IOT',157),('EOR_invest_phi','PHI',158),
+        ('EOR_invest_mal','MAL',159),('EOR_invest_ins','INS',160)]:
+        decision=entries[key]
+        assert 'fire_only_once = yes' in decision
+        assert 'num_of_civilian_factories > 3' in blocks(decision,'available')[0]
+        assert tag+' = { exists = yes is_subject_of = ROOT' in blocks(decision,'available')[0]
+        assert 'save_global_event_target_as = EOR_investment_state' in decision
+        end=blocks(decision,'remove_effect')[0]
+        assert 'is_owned_by = '+tag+' is_controlled_by = '+tag in end
+        assert 'id = eor.'+str(event) in end and 'id = eor.145' in end
+        assert 'clear_global_event_target = EOR_investment_state' in end
+    infrastructure=entries['EOR_overseas_infrastructure']
+    assert 'save_global_event_target_as = EOR_overseas_infrastructure_recipient' in infrastructure
+    end=blocks(infrastructure,'remove_effect')[0]
+    assert 'is_owned_by = event_target:EOR_overseas_infrastructure_recipient' in end
+    assert 'is_controlled_by = event_target:EOR_overseas_infrastructure_recipient' in end
+    assert 'type = infrastructure level = 1 instant_build = yes' in end
+    assert 'id = eor.144' in end and 'id = eor.145' in end
     for tag in ['sov','usa','eng','aoe']:
-        end=blocks(entries['EOR_prepare_settlement_'+tag],'remove_effect')[0]
-        assert 'eor_can_receive_settlement = yes' in blocks(end,'limit')[0]
-        assert 'else =' in end and 'id = eor.155' in end
+        decision=entries['EOR_seek_settlement_'+tag]
+        assert 'cost = 75' in decision
+        assert tag.upper()+' = { eor_can_receive_settlement = yes }' in decision
+        assert 'EOR_prepared_negotiation' in decision
+        assert 'flag = EOR_prepared_settlement days = 180' in decision
+        assert 'id = eor.114' in decision
     assert 'factor = 2 has_country_flag = EOR_prepared_settlement' in events['eor.114']
+    assert 'SOV = { add_dynamic_modifier' not in events['eor.156'],'Soviet offensive support buffs the enemy'
+    assert 'add_dynamic_modifier = { modifier = EOR_soviet_offensive days = 90 }' in events['eor.156']
     assert 'add_political_power = -100' not in events['eor.110'],'Chinese terms charge EOR before consent'
     assert 'id = eor.150' in events['eor.110'] and len(blocks(events['eor.150'],'option'))==2
     monthly=blocks(effects,'eor_monthly_update')[0]

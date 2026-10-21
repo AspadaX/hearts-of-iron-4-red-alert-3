@@ -1,6 +1,6 @@
 ideas = { country = {
 EOR_v2_establish_imperial_intelligence = { name = EOR_spirit_text_EOR_v2_establish_imperial_intelligence allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_establish_imperial_intelligence
-modifier = { decryption_factor = 0.05 enemy_operative_detection_chance_factor = 0.05 }
+modifier = { decryption_factor = 0.05 enemy_operative_detection_chance_factor = 0.10 }
 
 }
 EOR_v2_restore_imperial_authority = { name = EOR_spirit_text_EOR_v2_restore_imperial_authority allowed = { always = no } removal_cost = -1 picture = eor_spirit_EOR_v2_restore_imperial_authority

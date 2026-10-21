@@ -71,7 +71,7 @@ class AuditRegressionTests(unittest.TestCase):
 
     def test_dead_bookmark_preview(self):
         self.rejects('common/bookmarks/red_alert.txt',
-                     lambda t: t.replace('SOV_industrial_effort', 'SOV_finish_five_year_plan', 1),
+                     lambda t: t.replace('SOV_the_red_continent', 'SOV_finish_five_year_plan', 1),
                      'Invalid bookmark focus preview')
 
     def test_native_china_rewards_cannot_be_hidden(self):
@@ -90,6 +90,11 @@ class AuditRegressionTests(unittest.TestCase):
             modified = reward[:-1] + ' CHI = { add_to_tech_sharing_group = imperial_research } }'
             return text.replace(focus, focus.replace(reward, modified, 1), 1)
         self.rejects('common/national_focus/empire_focus.txt', add, 'Independent partner sent to subject group')
+
+    def test_ai_plan_cannot_reference_missing_focus(self):
+        self.rejects('common/ai_strategy_plans/EOR_default_strategy_plan.txt',
+                     lambda t: t.replace('EOR_the_imperial_dawn = 10', 'EOR_missing_focus = 10', 1),
+                     'AI plan references unknown focus')
 
     def test_equipment_load_order(self):
         current = self.fixture / 'common/units/equipment/zz_eor_aircraft.txt'
@@ -118,14 +123,7 @@ class AuditRegressionTests(unittest.TestCase):
 
     def test_authorization_cooldowns_do_not_add_preparation_again(self):
         text = (ROOT / 'common/decisions/eor_decisions.txt').read_text()
-        keys = ['EOR_postwar_imperial', 'EOR_postwar_science', 'EOR_postwar_military',
-                'EOR_automated_armored_contract', 'EOR_combined_force_contract',
-                'EOR_land_service_program', 'EOR_naval_service_program']
-        keys += ['EOR_prepare_settlement_' + tag for tag in ['sov', 'usa', 'eng', 'aoe']]
-        for key in keys + ['EOR_sacred_mobilization', 'EOR_imperial_prestige_project',
-                           'EOR_prepare_odessa_operation', 'EOR_omega_assault',
-                           'EOR_omega_command_disruption', 'EOR_omega_sabotage',
-                           'EOR_omega_counterintelligence']:
+        for key in ['EOR_prepare_major_offensive', 'EOR_omega_assault', 'EOR_omega_sabotage']:
             with self.subTest(decision=key):
                 decision = blocks(text, key)[0]
                 prepare = int(scalar(decision, 'days_remove'))

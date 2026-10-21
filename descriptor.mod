@@ -1,4 +1,4 @@
-version="0.1.0"
+version="0.2.0"
 tags={
 	"Alternative History"
 	"Balance"
@@ -11,6 +11,6 @@ tags={
 	"Military"
 }
 name="Red Alert 3"
-supported_version="1.16.0"
+supported_version="1.19.*"
 remote_file_id="1722615953"
 replace_path="events"
