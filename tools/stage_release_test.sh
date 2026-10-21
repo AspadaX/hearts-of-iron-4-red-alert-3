@@ -26,8 +26,9 @@ usage() {
     cat <<'EOF'
 Usage: tools/stage_release_test.sh --release-dir PATH [options]
 
-Copy a prepared release folder into a separate local mod named
-"Red Alert 3 - Release Test". The development mod is never modified.
+Copy a prepared release folder into a separate local mod registered
+under the release name. The Workshop ID is preserved so the launcher
+uploader updates the existing Workshop item. Development is never modified.
 
 Options:
   --release-dir PATH  Prepared release folder (required unless --remove)
@@ -149,8 +150,12 @@ trap cleanup EXIT
 
 rsync -a --exclude 'descriptor.mod' --exclude '.DS_Store' "$RELEASE_DIR/" "$STAGE/"
 
-METADATA="$(sed -E '/^[[:space:]]*(remote_file_id|path|archive)[[:space:]]*=/d; s/^name[[:space:]]*=.*/name="Red Alert 3 - Release Test"/' "$RELEASE_DIR/descriptor.mod")"
-grep -q '^name[[:space:]]*=[[:space:]]*"Red Alert 3 - Release Test"' <<<"$METADATA" || die "could not rename the release descriptor"
+REMOTE_ID="$(sed -nE 's/^[[:space:]]*remote_file_id[[:space:]]*=[[:space:]]*"([^"]+)".*/\1/p' "$RELEASE_DIR/descriptor.mod" | head -n 1)"
+[[ "$REMOTE_ID" == "1722615953" ]] || die "release descriptor must target Workshop item 1722615953; found '${REMOTE_ID:-none}'"
+
+METADATA="$(sed -E '/^[[:space:]]*(path|archive)[[:space:]]*=/d' "$RELEASE_DIR/descriptor.mod")"
+NAME="$(sed -nE 's/^[[:space:]]*name[[:space:]]*=[[:space:]]*"([^"]+)".*/\1/p' <<<"$METADATA" | head -n 1)"
+[[ -n "$NAME" ]] || die "release descriptor has no name"
 printf '%s\n' "$METADATA" >"$STAGE/descriptor.mod"
 printf '%s\n' "$ROOT" >"$STAGE/.release-test-source"
 
@@ -179,10 +184,13 @@ if [[ $VALIDATE -eq 1 ]]; then
     python3 "$ROOT/tools/validate_eor.py" --installed "$TEST" --game-dir "$GAME_DIR"
 fi
 
-printf '\nStaged Red Alert 3 - Release Test\n'
+printf '\nStaged Red Alert 3 release test\n'
 printf 'Release: %s\n' "$RELEASE_DIR"
 printf 'Launcher entry: %s\n' "$ENTRY"
+printf 'Local mod name: %s\n' "$NAME"
+printf 'Workshop target: %s (existing item; the uploader updates it)\n' "$REMOTE_ID"
 if [[ -n "$BACKUP" ]]; then
     printf 'Previous test build and logs: %s\n' "$BACKUP"
 fi
-printf 'Restart HOI4, enable Red Alert 3 - Release Test, and start a new non-Ironman campaign.\n'
+printf 'Select the local "%s" entry for this test build, not the subscribed Workshop copy.\n' "$NAME"
+printf 'Restart HOI4, enable that local mod, and start a new non-Ironman campaign.\n'

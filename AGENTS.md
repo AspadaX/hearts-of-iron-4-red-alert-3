@@ -55,7 +55,7 @@ Build tools:
 - `tools/trace_startup.py`: reversible development-only tracing.
 - `tools/release_build.py`: shared release-package builder used by the shell entry points. It requires a clean worktree by default, applies both compatibility passes, writes `dist/red_alert_3-<version>/` and a manifest, and supports `--allow-dirty`, `--force`, and `--zip`.
 - `tools/prepare_release.sh`: runs source validation and the audit regression suite before calling the builder. The release folder is the primary artifact; the zip is optional.
-- `tools/stage_release_test.sh`: stages a prepared release folder as **Red Alert 3 - Release Test**, separate from the development mod. It strips the Workshop ID from the test entry, backs up the prior test build and logs, and runs installed validation. `--remove` deletes only a marked test build.
+- `tools/stage_release_test.sh`: stages a prepared release folder as a local **Red Alert 3** entry in `mod/red_alert_3_release_test`, separate from the development mod. It preserves Workshop ID **1722615953** so the launcher uploader updates the existing item, backs up the prior test build and logs, and runs installed validation. `--remove` deletes only a marked test build. The local entry uses the release name so the upload title stays correct; select the local copy, not the subscribed Workshop copy.
 - `tools/port_119.py`: one-time map/settings migration. **Do not rerun it** to refresh a build; it refuses to overwrite its archive to protect subsequent design work.
 
 Generated `.history-compatibility.json`, `.event-compatibility.json`, and `.startup-tracing.json` describe the installed build. They are diagnostic/build metadata, not authored gameplay designs.
@@ -110,7 +110,7 @@ User-confirmed runtime baseline: the mod loads, USA/Soviet/Rising Sun campaigns 
 - The existing Workshop item is **1722615953**. Preserve that release identity; generated development descriptors intentionally omit the Workshop ID.
 - Publishing is separate from local synchronization and Git operations. Obtain an explicit release instruction before uploading or changing the live Workshop item.
 - Prepare a clean release with `tools/prepare_release.sh` so all required compatibility transformations are applied. Do not upload the raw checkout: exclude Git data, tools, archives, development descriptors, backups, diagnostic overlays, and trace markers.
-- Stage the prepared folder with `tools/stage_release_test.sh`, test it locally, update the existing item through the owning Steam account, and then test the downloaded Workshop build.
+- Stage the prepared folder with `tools/stage_release_test.sh`, test the local **Red Alert 3** copy locally, then select that local copy in the launcher uploader to update the existing item through the owning Steam account. Verify Workshop target **1722615953**, and test the downloaded Workshop build afterward.
 - Follow actual environment permissions for writes. Explain required sandbox escalation briefly; do not use GUI tools to bypass a filesystem restriction.
 
 ## Rising Sun revision implementation (2026-10-19)

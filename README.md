@@ -28,17 +28,17 @@ tools/prepare_release.sh
 
 The script runs source validation and the audit regression tests, applies the history/event compatibility passes, excludes development tooling and Git data, and writes `dist/red_alert_3-<version>/` with a sidecar manifest. Use `--allow-dirty` to build from an uncommitted worktree; the manifest records that condition. Use `--zip` to also create an archive. The release folder is the primary artifact.
 
-Stage the prepared folder as a separate local mod named **Red Alert 3 - Release Test**:
+Stage the prepared folder as a separate local test copy:
 
 ```sh
 tools/stage_release_test.sh --release-dir dist/red_alert_3-0.2.1
 ```
 
-This does not modify **Red Alert 3 - Development**. It removes the Workshop ID from the test descriptor, backs up the previous test build and available logs, and runs installed validation. Enable only the release-test mod in a separate playset, restart HOI4, and start a new non-Ironman campaign. Remove the staged build with `tools/stage_release_test.sh --remove`.
+This does not modify **Red Alert 3 - Development**. It registers the copy in `mod/red_alert_3_release_test` under the release name **Red Alert 3** and preserves Workshop ID **1722615953**, so the launcher uploader updates the existing item instead of creating a new one. Enable only that local **Red Alert 3** entry, not the subscribed Workshop copy, in a separate playset. Restart HOI4 and start a new non-Ironman campaign. After testing, select the same local entry in the launcher uploader. Remove the staged build with `tools/stage_release_test.sh --remove`.
 
 ## Publishing
 
-The prepared `dist/red_alert_3-<version>/` folder contains game content and release metadata, excluding development tools and Git data. Test it locally, then use the launcher upload tools with the owning Steam account and verify the existing Workshop item **1722615953** is the update target. Test the downloaded Workshop build after uploading. Publishing is a separate release action; the preparation scripts do not upload anything.
+The prepared `dist/red_alert_3-<version>/` folder contains game content and release metadata, excluding development tools and Git data. Test it through the local release-test entry described above. Then use the launcher uploader on that local **Red Alert 3** entry, confirm the Workshop target is **1722615953**, and verify the title remains **Red Alert 3**. Test the downloaded Workshop build after uploading. Publishing is a separate release action; the preparation scripts do not upload anything.
 
 ## Compatibility recovery for HOI4 1.19
 
