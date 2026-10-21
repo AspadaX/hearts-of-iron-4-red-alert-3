@@ -16,11 +16,29 @@ Start a new non-Ironman game after restarting HOI4. First verify that the main m
 
 On macOS logs are in `~/Documents/Paradox Interactive/Hearts of Iron IV/logs/`. The most useful files are `error.log`, `game.log`, `setup.log`, and `system.log`. Logs are overwritten on subsequent launches, so preserve logs from a failure before trying again.
 
-The installed game is 1.19.3. The 0.2.0 release declares 1.19.* support; static and installed validation pass, but a new-campaign runtime check remains required before publishing.
+The installed game is 1.19.3. The 0.2.1 release declares 1.19.* support; static and installed validation pass, but a new-campaign runtime check remains required before publishing.
+
+## Preparing and testing a release
+
+Build a release folder from a clean checkout:
+
+```sh
+tools/prepare_release.sh
+```
+
+The script runs source validation and the audit regression tests, applies the history/event compatibility passes, excludes development tooling and Git data, and writes `dist/red_alert_3-<version>/` with a sidecar manifest. Use `--allow-dirty` to build from an uncommitted worktree; the manifest records that condition. Use `--zip` to also create an archive. The release folder is the primary artifact.
+
+Stage the prepared folder as a separate local mod named **Red Alert 3 - Release Test**:
+
+```sh
+tools/stage_release_test.sh --release-dir dist/red_alert_3-0.2.1
+```
+
+This does not modify **Red Alert 3 - Development**. It removes the Workshop ID from the test descriptor, backs up the previous test build and available logs, and runs installed validation. Enable only the release-test mod in a separate playset, restart HOI4, and start a new non-Ironman campaign. Remove the staged build with `tools/stage_release_test.sh --remove`.
 
 ## Publishing
 
-Prepare a clean release folder containing game content and release metadata, excluding development tools and Git data. Test it locally, then use the launcher upload tools with the owning Steam account and verify the existing Workshop item **1722615953** is the update target. Test the downloaded Workshop build after uploading. Publishing is a separate release action.
+The prepared `dist/red_alert_3-<version>/` folder contains game content and release metadata, excluding development tools and Git data. Test it locally, then use the launcher upload tools with the owning Steam account and verify the existing Workshop item **1722615953** is the update target. Test the downloaded Workshop build after uploading. Publishing is a separate release action; the preparation scripts do not upload anything.
 
 ## Compatibility recovery for HOI4 1.19
 
@@ -46,6 +64,12 @@ The designer confirmed China should control Japanese-held areas within China, Vl
 
 Soviet and EOR party support now uses modern `set_popularities` syntax with their original intended percentages. Their leaders remain valid through the scenario end, and elections remain disabled. A guarded startup hook applies the intended borders and governments once per new campaign, after inherited hooks. It does not reset governments or territorial gains every day. New campaigns are required to test these initialization changes. Original files and the relocation report are under `archive/scenario_start_fixes_2008/`.
 
+## Soviet occupation routes
+
+The shared Soviet occupation and Comintern expansion branches are replaced by three route-specific policies. Cherdenko keeps direct rule, builds garrison and security networks, integrates the zones and adopts a continental diktat with a preemptive-war line. Krukov breaks the zones into smaller client republics and adds armed deterrence, fortress economics and pragmatic eastern outreach. The Commander releases the zones as independent republics and pursues anti-colonial solidarity and revolutionary diplomacy. Only the chosen route's occupation and diplomacy branches are visible.
+
+All route branches and their rewards remain provisional pending a new non-Ironman campaign. The Union starts with exactly three route-linked crises: `SOV_continent_under_occupation`, `SOV_fractured_supreme_command` and `SOV_diplomatic_isolation`. Cherdenko resolves the occupation burden, Krukov resolves fractured command, and the Commander resolves diplomatic isolation; route directives do not clear a crisis early. Commander rewards emphasize diplomacy modifiers rather than generic stability. `release = TAG` creates a puppet; independence helpers follow it with `set_autonomy` using `autonomy_state = autonomy_free`. SOE/SOS and the four Imperial subjects use the generic focus tree, and their bookmark entries have real focus previews. Source/native/installed validation passes with 47 Soviet focuses and 45 Soviet spirit definitions.
+
 ## RA3 event isolation
 
 The descriptor replaces the `events` directory so base-game and DLC historical event files are not loaded. The mod keeps its USA, Soviet, European, African, and custom news events. The functional generic faction invitation exchange (`generic.5` through `.7`) and its faction announcement (`news.289`) remain as the explicit mechanical diplomacy exception. These are diplomatic mechanics, not historical story chains.
@@ -60,7 +84,7 @@ Run `python3 tools/trace_runtime.py` after preparing the development build to ad
 
 ## Rising Sun campaign redesign
 
-EOR has **189 focuses, 24 decisions and three political routes: Yoshiro, Tatsu and Shinzo**. There are 77 EOR events and 107 active events overall. All routes use standard HOI4 outcomes; the final political focuses consolidate government policy. New Dawn, its automatic territorial-return programs and the custom victory layer are removed. The accepted starting borders and 2008 scenario remain unchanged.
+EOR has **189 focuses, 24 decisions and three political routes: Yoshiro, Tatsu and Shinzo**. There are 77 EOR events and 114 active events overall. All routes use standard HOI4 outcomes; the final political focuses consolidate government policy. New Dawn, its automatic territorial-return programs and the custom victory layer are removed. The accepted starting borders and 2008 scenario remain unchanged.
 
 Decisions are organized into Statecraft, Military Operations, Experimental Projects and Overseas Administration. The emergency relocation decision is removed. Great machines prepare into ready assets and require separate wartime activation. Yuriko missions and subject projects recheck recipients/targets and report invalidation. The newer corporate/state spirit pair is authoritative, government authority uses one regime-appropriate tier, and active spirits have separate descriptive prose. A baseline EOR AI plan and force-structure strategy prioritize industry, research, defense and current subjects without replacing the existing route weights.
 

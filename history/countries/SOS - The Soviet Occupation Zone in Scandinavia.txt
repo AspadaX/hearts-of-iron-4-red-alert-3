@@ -66,27 +66,13 @@ if = {
 	}
 }
 
+set_popularities = {
+	democratic = 0
+	neutrality = 0
+	communism = 100
+	fascism = 0
+}
 set_politics = {
-
-	parties = {
-		democratic = { 
-			popularity = 0
-		}
-
-		neutrality = {
-			popularity  = 0
-		}
-
-		communism = {
-			popularity = 100
-		}
-
-		fascism = {
-			popularity = 0
-		}
-		
-	}
-	
 	ruling_party = communism
 	last_election = "1932.9.18"
 	election_frequency = 48

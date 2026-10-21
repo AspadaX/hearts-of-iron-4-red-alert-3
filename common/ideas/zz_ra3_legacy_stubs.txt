@@ -1,0 +1,15 @@
+ideas = {
+	country = {
+		SOV_vyacheslav_molotov = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+		}
+
+		SOV_maksim_litvinov = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+		}
+	}
+}

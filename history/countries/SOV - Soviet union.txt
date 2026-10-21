@@ -17,12 +17,12 @@ if = {
 	
 	set_autonomy = {
 		target = SOS
-		autonomous_state = autonomy_integrated_puppet
+		autonomy_state = autonomy_integrated_puppet
 	}
 	
 	set_autonomy = {
 		target = SOE
-		autonomous_state = autonomy_integrated_puppet
+		autonomy_state = autonomy_integrated_puppet
 	}
 	
 
@@ -137,8 +137,8 @@ set_politics = {
 add_ideas = {
 	SOV_red_army_triumphant
 	SOV_continent_under_occupation
-	SOV_red_fleet_deficiencies
 	SOV_fractured_supreme_command
+	SOV_diplomatic_isolation
 	SOV_industrial_colossus
 }
 

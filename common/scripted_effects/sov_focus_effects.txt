@@ -1,22 +1,42 @@
 SOV_release_european_puppets = {
 	if = { limit = { SOE = { exists = yes } } SOE = { every_owned_state = { transfer_state_to = SOV } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = FRA } } } SOV = { release_autonomy = { target = FRA autonomy_state = autonomy_puppet } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = GER } } } SOV = { release_autonomy = { target = GER autonomy_state = autonomy_puppet } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = ITA } } } SOV = { release_autonomy = { target = ITA autonomy_state = autonomy_puppet } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = SPR } } } SOV = { release_autonomy = { target = SPR autonomy_state = autonomy_puppet } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = POL } } } SOV = { release_autonomy = { target = POL autonomy_state = autonomy_puppet } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = YUG } } } SOV = { release_autonomy = { target = YUG autonomy_state = autonomy_puppet } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = ROM } } } SOV = { release_autonomy = { target = ROM autonomy_state = autonomy_puppet } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = CZE } } } SOV = { release_autonomy = { target = CZE autonomy_state = autonomy_puppet } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = AUS } } } SOV = { release_autonomy = { target = AUS autonomy_state = autonomy_puppet } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = HUN } } } SOV = { release_autonomy = { target = HUN autonomy_state = autonomy_puppet } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = BUL } } } SOV = { release_autonomy = { target = BUL autonomy_state = autonomy_puppet } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = POR } } } SOV = { release_autonomy = { target = POR autonomy_state = autonomy_puppet } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = ALB } } } SOV = { release_autonomy = { target = ALB autonomy_state = autonomy_puppet } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = SWI } } } SOV = { release_autonomy = { target = SWI autonomy_state = autonomy_puppet } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = LIT } } } SOV = { release_autonomy = { target = LIT autonomy_state = autonomy_puppet } } }
+	if = {
+		limit = { has_dlc = "Together for Victory" }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = FRA } } } SOV = { release_autonomy = { target = FRA autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = GER } } } SOV = { release_autonomy = { target = GER autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = ITA } } } SOV = { release_autonomy = { target = ITA autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = SPR } } } SOV = { release_autonomy = { target = SPR autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = POL } } } SOV = { release_autonomy = { target = POL autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = YUG } } } SOV = { release_autonomy = { target = YUG autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = ROM } } } SOV = { release_autonomy = { target = ROM autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = CZE } } } SOV = { release_autonomy = { target = CZE autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = AUS } } } SOV = { release_autonomy = { target = AUS autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = HUN } } } SOV = { release_autonomy = { target = HUN autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = BUL } } } SOV = { release_autonomy = { target = BUL autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = POR } } } SOV = { release_autonomy = { target = POR autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = ALB } } } SOV = { release_autonomy = { target = ALB autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = SWI } } } SOV = { release_autonomy = { target = SWI autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = LIT } } } SOV = { release_autonomy = { target = LIT autonomy_state = autonomy_puppet } } }
+	}
+	else = {
+		if = { limit = { SOV = { any_owned_state = { is_core_of = FRA } } } SOV = { release = FRA set_autonomy = { target = FRA autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = GER } } } SOV = { release = GER set_autonomy = { target = GER autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = ITA } } } SOV = { release = ITA set_autonomy = { target = ITA autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = SPR } } } SOV = { release = SPR set_autonomy = { target = SPR autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = POL } } } SOV = { release = POL set_autonomy = { target = POL autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = YUG } } } SOV = { release = YUG set_autonomy = { target = YUG autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = ROM } } } SOV = { release = ROM set_autonomy = { target = ROM autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = CZE } } } SOV = { release = CZE set_autonomy = { target = CZE autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = AUS } } } SOV = { release = AUS set_autonomy = { target = AUS autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = HUN } } } SOV = { release = HUN set_autonomy = { target = HUN autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = BUL } } } SOV = { release = BUL set_autonomy = { target = BUL autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = POR } } } SOV = { release = POR set_autonomy = { target = POR autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = ALB } } } SOV = { release = ALB set_autonomy = { target = ALB autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = SWI } } } SOV = { release = SWI set_autonomy = { target = SWI autonomy_state = autonomy_puppet } } }
+		if = { limit = { SOV = { any_owned_state = { is_core_of = LIT } } } SOV = { release = LIT set_autonomy = { target = LIT autonomy_state = autonomy_puppet } } }
+	}
 	every_country = {
-		limit = { exists = yes OR = { tag = FRA tag = GER tag = ITA tag = SPR tag = POL tag = YUG tag = ROM tag = CZE tag = AUS tag = HUN tag = BUL tag = POR tag = ALB tag = SWI tag = LIT } }
+		limit = { OR = { tag = FRA tag = GER tag = ITA tag = SPR tag = POL tag = YUG tag = ROM tag = CZE tag = AUS tag = HUN tag = BUL tag = POR tag = ALB tag = SWI tag = LIT } }
 		set_country_flag = SOV_client_state
 	}
 }
@@ -24,45 +44,68 @@ SOV_release_european_puppets = {
 SOV_release_scandinavian_puppets = {
 	if = { limit = { SOS = { exists = yes } } SOS = { every_owned_state = { transfer_state_to = SOV } } }
 	if = {
-		limit = { SOV = { any_owned_state = { is_core_of = SWE } } }
-		if = { limit = { SWE = { exists = yes } } SOV = { every_owned_state = { limit = { is_core_of = SWE } transfer_state_to = SWE } } SOV = { set_autonomy = { target = SWE autonomy_state = autonomy_puppet } } }
-		else = { SOV = { release_autonomy = { target = SWE autonomy_state = autonomy_puppet } } }
+		limit = { has_dlc = "Together for Victory" }
+		if = {
+			limit = { SOV = { any_owned_state = { is_core_of = SWE } } }
+			if = { limit = { SWE = { exists = yes } } SOV = { every_owned_state = { limit = { is_core_of = SWE } transfer_state_to = SWE } } SOV = { set_autonomy = { target = SWE autonomy_state = autonomy_puppet } } }
+			else = { SOV = { release_autonomy = { target = SWE autonomy_state = autonomy_puppet } } }
+		}
+		if = {
+			limit = { SOV = { any_owned_state = { is_core_of = NOR } } }
+			if = { limit = { NOR = { exists = yes } } SOV = { every_owned_state = { limit = { is_core_of = NOR } transfer_state_to = NOR } } SOV = { set_autonomy = { target = NOR autonomy_state = autonomy_puppet } } }
+			else = { SOV = { release_autonomy = { target = NOR autonomy_state = autonomy_puppet } } }
+		}
+		if = {
+			limit = { SOV = { any_owned_state = { is_core_of = FIN } } }
+			if = { limit = { FIN = { exists = yes } } SOV = { every_owned_state = { limit = { is_core_of = FIN } transfer_state_to = FIN } } SOV = { set_autonomy = { target = FIN autonomy_state = autonomy_puppet } } }
+			else = { SOV = { release_autonomy = { target = FIN autonomy_state = autonomy_puppet } } }
+		}
 	}
-	if = {
-		limit = { SOV = { any_owned_state = { is_core_of = NOR } } }
-		if = { limit = { NOR = { exists = yes } } SOV = { every_owned_state = { limit = { is_core_of = NOR } transfer_state_to = NOR } } SOV = { set_autonomy = { target = NOR autonomy_state = autonomy_puppet } } }
-		else = { SOV = { release_autonomy = { target = NOR autonomy_state = autonomy_puppet } } }
-	}
-	if = {
-		limit = { SOV = { any_owned_state = { is_core_of = FIN } } }
-		if = { limit = { FIN = { exists = yes } } SOV = { every_owned_state = { limit = { is_core_of = FIN } transfer_state_to = FIN } } SOV = { set_autonomy = { target = FIN autonomy_state = autonomy_puppet } } }
-		else = { SOV = { release_autonomy = { target = FIN autonomy_state = autonomy_puppet } } }
+	else = {
+		if = {
+			limit = { SOV = { any_owned_state = { is_core_of = SWE } } }
+			if = { limit = { SWE = { exists = yes } } SOV = { every_owned_state = { limit = { is_core_of = SWE } transfer_state_to = SWE } } }
+			else = { SOV = { release = SWE } }
+		}
+		if = { limit = { SWE = { exists = yes } } SOV = { set_autonomy = { target = SWE autonomy_state = autonomy_puppet } } }
+		if = {
+			limit = { SOV = { any_owned_state = { is_core_of = NOR } } }
+			if = { limit = { NOR = { exists = yes } } SOV = { every_owned_state = { limit = { is_core_of = NOR } transfer_state_to = NOR } } }
+			else = { SOV = { release = NOR } }
+		}
+		if = { limit = { NOR = { exists = yes } } SOV = { set_autonomy = { target = NOR autonomy_state = autonomy_puppet } } }
+		if = {
+			limit = { SOV = { any_owned_state = { is_core_of = FIN } } }
+			if = { limit = { FIN = { exists = yes } } SOV = { every_owned_state = { limit = { is_core_of = FIN } transfer_state_to = FIN } } }
+			else = { SOV = { release = FIN } }
+		}
+		if = { limit = { FIN = { exists = yes } } SOV = { set_autonomy = { target = FIN autonomy_state = autonomy_puppet } } }
 	}
 	every_country = {
-		limit = { exists = yes OR = { tag = SWE tag = NOR tag = FIN } }
+		limit = { OR = { tag = SWE tag = NOR tag = FIN } }
 		set_country_flag = SOV_client_state
 	}
 }
 
 SOV_release_european_independents = {
 	if = { limit = { SOE = { exists = yes } } SOE = { every_owned_state = { transfer_state_to = SOV } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = FRA } } } SOV = { release_autonomy = { target = FRA autonomy_state = autonomy_free } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = GER } } } SOV = { release_autonomy = { target = GER autonomy_state = autonomy_free } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = ITA } } } SOV = { release_autonomy = { target = ITA autonomy_state = autonomy_free } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = SPR } } } SOV = { release_autonomy = { target = SPR autonomy_state = autonomy_free } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = POL } } } SOV = { release_autonomy = { target = POL autonomy_state = autonomy_free } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = YUG } } } SOV = { release_autonomy = { target = YUG autonomy_state = autonomy_free } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = ROM } } } SOV = { release_autonomy = { target = ROM autonomy_state = autonomy_free } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = CZE } } } SOV = { release_autonomy = { target = CZE autonomy_state = autonomy_free } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = AUS } } } SOV = { release_autonomy = { target = AUS autonomy_state = autonomy_free } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = HUN } } } SOV = { release_autonomy = { target = HUN autonomy_state = autonomy_free } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = BUL } } } SOV = { release_autonomy = { target = BUL autonomy_state = autonomy_free } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = POR } } } SOV = { release_autonomy = { target = POR autonomy_state = autonomy_free } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = ALB } } } SOV = { release_autonomy = { target = ALB autonomy_state = autonomy_free } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = SWI } } } SOV = { release_autonomy = { target = SWI autonomy_state = autonomy_free } } }
-	if = { limit = { SOV = { any_owned_state = { is_core_of = LIT } } } SOV = { release_autonomy = { target = LIT autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = FRA } } } SOV = { release = FRA set_autonomy = { target = FRA autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = GER } } } SOV = { release = GER set_autonomy = { target = GER autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = ITA } } } SOV = { release = ITA set_autonomy = { target = ITA autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = SPR } } } SOV = { release = SPR set_autonomy = { target = SPR autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = POL } } } SOV = { release = POL set_autonomy = { target = POL autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = YUG } } } SOV = { release = YUG set_autonomy = { target = YUG autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = ROM } } } SOV = { release = ROM set_autonomy = { target = ROM autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = CZE } } } SOV = { release = CZE set_autonomy = { target = CZE autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = AUS } } } SOV = { release = AUS set_autonomy = { target = AUS autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = HUN } } } SOV = { release = HUN set_autonomy = { target = HUN autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = BUL } } } SOV = { release = BUL set_autonomy = { target = BUL autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = POR } } } SOV = { release = POR set_autonomy = { target = POR autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = ALB } } } SOV = { release = ALB set_autonomy = { target = ALB autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = SWI } } } SOV = { release = SWI set_autonomy = { target = SWI autonomy_state = autonomy_free } } }
+	if = { limit = { SOV = { any_owned_state = { is_core_of = LIT } } } SOV = { release = LIT set_autonomy = { target = LIT autonomy_state = autonomy_free } } }
 	every_country = {
-		limit = { exists = yes OR = { tag = FRA tag = GER tag = ITA tag = SPR tag = POL tag = YUG tag = ROM tag = CZE tag = AUS tag = HUN tag = BUL tag = POR tag = ALB tag = SWI tag = LIT } }
+		limit = { OR = { tag = FRA tag = GER tag = ITA tag = SPR tag = POL tag = YUG tag = ROM tag = CZE tag = AUS tag = HUN tag = BUL tag = POR tag = ALB tag = SWI tag = LIT } }
 		set_country_flag = SOV_republic_state
 	}
 }
@@ -72,20 +115,23 @@ SOV_release_scandinavian_independents = {
 	if = {
 		limit = { SOV = { any_owned_state = { is_core_of = SWE } } }
 		if = { limit = { SWE = { exists = yes } } SOV = { every_owned_state = { limit = { is_core_of = SWE } transfer_state_to = SWE } } }
-		else = { SOV = { release_autonomy = { target = SWE autonomy_state = autonomy_free } } }
+		else = { SOV = { release = SWE } }
 	}
+	if = { limit = { SWE = { exists = yes } } SOV = { set_autonomy = { target = SWE autonomy_state = autonomy_free } } }
 	if = {
 		limit = { SOV = { any_owned_state = { is_core_of = NOR } } }
 		if = { limit = { NOR = { exists = yes } } SOV = { every_owned_state = { limit = { is_core_of = NOR } transfer_state_to = NOR } } }
-		else = { SOV = { release_autonomy = { target = NOR autonomy_state = autonomy_free } } }
+		else = { SOV = { release = NOR } }
 	}
+	if = { limit = { NOR = { exists = yes } } SOV = { set_autonomy = { target = NOR autonomy_state = autonomy_free } } }
 	if = {
 		limit = { SOV = { any_owned_state = { is_core_of = FIN } } }
 		if = { limit = { FIN = { exists = yes } } SOV = { every_owned_state = { limit = { is_core_of = FIN } transfer_state_to = FIN } } }
-		else = { SOV = { release_autonomy = { target = FIN autonomy_state = autonomy_free } } }
+		else = { SOV = { release = FIN } }
 	}
+	if = { limit = { FIN = { exists = yes } } SOV = { set_autonomy = { target = FIN autonomy_state = autonomy_free } } }
 	every_country = {
-		limit = { exists = yes OR = { tag = SWE tag = NOR tag = FIN } }
+		limit = { OR = { tag = SWE tag = NOR tag = FIN } }
 		set_country_flag = SOV_republic_state
 	}
 }

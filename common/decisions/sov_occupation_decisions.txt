@@ -2,7 +2,7 @@ SOV_occupation_decisions = {
 	SOV_reinforce_european_garrison = {
 		icon = generic_army_support
 		cost = 50
-		visible = { has_completed_focus = SOV_the_burden_of_victory has_idea = SOV_continent_under_occupation }
+		visible = { has_completed_focus = SOV_the_burden_of_victory has_idea = SOV_continent_under_occupation NOT = { has_country_flag = SOV_europe_occupation_dissolved } }
 		available = { check_variable = { SOV_europe_loyalty < 70 } }
 		days_remove = 60
 		days_re_enable = 120
@@ -19,7 +19,7 @@ SOV_occupation_decisions = {
 	SOV_reinforce_scandinavian_garrison = {
 		icon = generic_army_support
 		cost = 50
-		visible = { has_completed_focus = SOV_the_burden_of_victory has_idea = SOV_continent_under_occupation }
+		visible = { has_completed_focus = SOV_the_burden_of_victory has_idea = SOV_continent_under_occupation NOT = { has_country_flag = SOV_scandinavia_occupation_dissolved } }
 		available = { check_variable = { SOV_scandinavia_loyalty < 70 } }
 		days_remove = 60
 		days_re_enable = 120
@@ -36,7 +36,7 @@ SOV_occupation_decisions = {
 	SOV_european_plebiscite = {
 		icon = generic_political_discourse
 		cost = 75
-		visible = { has_completed_focus = SOV_the_burden_of_victory has_idea = SOV_continent_under_occupation }
+		visible = { has_completed_focus = SOV_the_burden_of_victory has_idea = SOV_continent_under_occupation NOT = { has_country_flag = SOV_europe_occupation_dissolved } }
 		available = { check_variable = { SOV_europe_loyalty > 50 } }
 		days_remove = 90
 		days_re_enable = 180
@@ -51,7 +51,7 @@ SOV_occupation_decisions = {
 	SOV_scandinavian_plebiscite = {
 		icon = generic_political_discourse
 		cost = 75
-		visible = { has_completed_focus = SOV_the_burden_of_victory has_idea = SOV_continent_under_occupation }
+		visible = { has_completed_focus = SOV_the_burden_of_victory has_idea = SOV_continent_under_occupation NOT = { has_country_flag = SOV_scandinavia_occupation_dissolved } }
 		available = { check_variable = { SOV_scandinavia_loyalty > 50 } }
 		days_remove = 90
 		days_re_enable = 180
@@ -66,7 +66,7 @@ SOV_occupation_decisions = {
 	SOV_crack_down_on_dissent = {
 		icon = generic_political_actions
 		cost = 75
-		visible = { has_completed_focus = SOV_the_burden_of_victory has_idea = SOV_continent_under_occupation }
+		visible = { has_completed_focus = SOV_the_burden_of_victory has_idea = SOV_continent_under_occupation OR = { NOT = { has_country_flag = SOV_europe_occupation_dissolved } NOT = { has_country_flag = SOV_scandinavia_occupation_dissolved } } }
 		available = { OR = { check_variable = { SOV_europe_loyalty < 60 } check_variable = { SOV_scandinavia_loyalty < 60 } } }
 		days_remove = 30
 		days_re_enable = 180

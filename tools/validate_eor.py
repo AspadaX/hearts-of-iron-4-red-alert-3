@@ -503,6 +503,28 @@ def check(root,game,source_only=False):
     for preview in blocks(bookmark,'focuses'):
         tokens,_=lex(preview)
         assert {t[0] for t in tokens[3:-1]} <= authored_focus_ids,('Invalid bookmark focus preview',preview)
+    # The occupation zones and Imperial subjects use the generic tree and need
+    # real previews; empty previews are not a usable bookmark selection card.
+    for tag in ['SOE','SOS','IOT','PHI','MAL','INS']:
+        country=blocks(bookmark,'"'+tag+'"')[0]
+        preview=blocks(country,'focuses')[0]
+        tokens,_=lex(preview)
+        assert tokens[3:-1],('Empty bookmark focus preview',tag)
+    generic=(root/'common/national_focus/generic.txt').read_text()
+    for tag in ['SOE','SOS','IOT','PHI','MAL','INS']:
+        assert f'modifier = {{ add = 100 tag = {tag} }}' in generic,('Missing generic-tree assignment',tag)
+    # SOV starts with exactly three route-linked crises; each capstone resolves only its own.
+    sov_history=(root/'history/countries/SOV - Soviet union.txt').read_text()
+    for idea in ['SOV_continent_under_occupation','SOV_fractured_supreme_command','SOV_diplomatic_isolation']:
+        assert idea in sov_history,('Missing SOV starting crisis',idea)
+    assert 'SOV_red_fleet_deficiencies' not in sov_history,'Extra SOV starting debuff'
+    sov_focus=(root/'common/national_focus/soviet.txt').read_text()
+    sov_blocks={scalar(b,'id'):b for b in blocks(sov_focus,'focus')}
+    for directive in ['SOV_cherdenko_directive','SOV_krukov_directive','SOV_commander_directive']:
+        assert 'remove_ideas = SOV_fractured_supreme_command' not in sov_blocks[directive],('Route directive resolves a crisis early',directive)
+    assert 'remove_ideas = SOV_continent_under_occupation' in sov_blocks['SOV_cherdenko_red_century']
+    assert 'remove_ideas = SOV_fractured_supreme_command' in sov_blocks['SOV_krukov_peace_through_strength']
+    assert 'remove_ideas = SOV_diplomatic_isolation' in sov_blocks['SOV_export_the_revolution']
     assert h.index('set_air_oob = "EOR_2008_air"')>h.rindex('set_naval_oob ='), 'Carrier wings registered before navy'
     iot_history=(root/'history/countries/IOT - Imperial Oceanic Territories.txt').read_text()
     assert 'expire = "2051.1.1"' in iot_history,'IOT leader expires before the scenario ends'

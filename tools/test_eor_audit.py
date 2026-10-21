@@ -18,7 +18,7 @@ class AuditRegressionTests(unittest.TestCase):
         cls.fixture = Path(cls.temp.name)
         for folder in ['common', 'events', 'localisation', 'interface']:
             shutil.copytree(ROOT / folder, cls.fixture / folder)
-        for name in ['EOR - The Empire of the Rising Sun.txt','IOT - Imperial Oceanic Territories.txt']:
+        for name in ['EOR - The Empire of the Rising Sun.txt','IOT - Imperial Oceanic Territories.txt','SOV - Soviet union.txt']:
             country = Path('history/countries') / name
             (cls.fixture / country).parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(ROOT / country, cls.fixture / country)

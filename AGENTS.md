@@ -53,6 +53,9 @@ Build tools:
 - `tools/history_compat.py`: guards inherited dated history after the 1936 baseline and before 2000 during build preparation. Preserve this recovery mechanism unless a tested replacement is implemented.
 - `tools/event_compat.py`: retains the active event catalog and removes excluded event scheduling from inherited `common/` and `history/` scripts.
 - `tools/trace_startup.py`: reversible development-only tracing.
+- `tools/release_build.py`: shared release-package builder used by the shell entry points. It requires a clean worktree by default, applies both compatibility passes, writes `dist/red_alert_3-<version>/` and a manifest, and supports `--allow-dirty`, `--force`, and `--zip`.
+- `tools/prepare_release.sh`: runs source validation and the audit regression suite before calling the builder. The release folder is the primary artifact; the zip is optional.
+- `tools/stage_release_test.sh`: stages a prepared release folder as **Red Alert 3 - Release Test**, separate from the development mod. It strips the Workshop ID from the test entry, backs up the prior test build and logs, and runs installed validation. `--remove` deletes only a marked test build.
 - `tools/port_119.py`: one-time map/settings migration. **Do not rerun it** to refresh a build; it refuses to overwrite its archive to protect subsequent design work.
 
 Generated `.history-compatibility.json`, `.event-compatibility.json`, and `.startup-tracing.json` describe the installed build. They are diagnostic/build metadata, not authored gameplay designs.
@@ -81,7 +84,7 @@ The user requested removal of vanilla historical events.
 
 ## Compatibility and validation
 
-- The installed development target is **HOI4 1.19.3**. The source descriptor and prepared 0.2.0 release declare `supported_version="1.19.*"`. Static and installed validation pass; a new-campaign runtime check of the release candidate remains required before publishing.
+- The installed development target is **HOI4 1.19.3**. The source descriptor and prepared 0.2.1 release declare `supported_version="1.19.*"`. Static and installed validation pass; a new-campaign runtime check of the release candidate remains required before publishing.
 - Keep engine settings additive in `common/defines/ra3_defines.lua`. Do not restore the archived full `00_defines.lua` or `00_graphics.lua`; they removed required modern defaults.
 - Preserve current research-interface widgets and modern sprite definitions. Extra RA3/legacy sprites live in `interface/ra3_technologies.gfx`; do not restore the obsolete full `Technologies.gfx` override.
 - Loading backgrounds are explicitly registered in `common/frontend/backgrounds/base_backgrounds.txt` using the existing RA3 images.
@@ -106,13 +109,13 @@ User-confirmed runtime baseline: the mod loads, USA/Soviet/Rising Sun campaigns 
 - Work remains local unless the user requests a commit, push, or release. Do not run `cchain_auto_git.json` as a routine task: it stages everything, commits, and pushes.
 - The existing Workshop item is **1722615953**. Preserve that release identity; generated development descriptors intentionally omit the Workshop ID.
 - Publishing is separate from local synchronization and Git operations. Obtain an explicit release instruction before uploading or changing the live Workshop item.
-- Prepare a clean release with all required compatibility transformations applied. Do not upload the raw checkout: exclude Git data, tools, archives, development descriptors, backups, diagnostic overlays, and trace markers.
-- Test the prepared release locally, update the existing item through the owning Steam account, and then test the downloaded Workshop build.
+- Prepare a clean release with `tools/prepare_release.sh` so all required compatibility transformations are applied. Do not upload the raw checkout: exclude Git data, tools, archives, development descriptors, backups, diagnostic overlays, and trace markers.
+- Stage the prepared folder with `tools/stage_release_test.sh`, test it locally, update the existing item through the owning Steam account, and then test the downloaded Workshop build.
 - Follow actual environment permissions for writes. Explain required sandbox escalation briefly; do not use GUI tools to bypass a filesystem restriction.
 
 ## Rising Sun revision implementation (2026-10-19)
 
-- The current design has 189 focuses, 24 decisions, 77 EOR events and 149 country-spirit definitions. The active event catalog has 107 events. `docs/EOR_IMPLEMENTATION.md` records S01–S25 implementation scope, deferred optional work and runtime tests; the manifest records the current three-route inventory.
+- The current design has 189 focuses, 24 decisions, 77 EOR events and 149 country-spirit definitions. The active event catalog has 114 events. `docs/EOR_IMPLEMENTATION.md` records S01–S25 implementation scope, deferred optional work and runtime tests; the manifest records the current three-route inventory.
 - Three political routes only: Yoshiro, Tatsu and Shinzo. New Dawn, its hidden unlock, constitutional council, branch-exclusive independence/federation actions and automatic overseas handovers are removed. Preserve the accepted starting borders. Do not resurrect the discarded route or infer new territorial changes.
 - Use standard HOI4 victory, capitulation, war resolution, peace conferences and scoring. The three former final focuses are ordinary government-policy milestones with local route prerequisites and practical rewards. Do not add custom win flags, partner-count victories or mandatory rival/technology/coalition victory gates.
 - Preserve unique characters and Tatsu's military role. Armed coups keep the player as fascist EOR/Shinzo against non-aligned loyalists under the existing Yoshiro. Completed focuses remain historical during the explicit coup stand-down or severe countercoup; incompatible regime benefits are cleaned once by government installation helpers.
@@ -142,8 +145,8 @@ User-confirmed runtime baseline: the mod loads, USA/Soviet/Rising Sun campaigns 
 
 ## EOR self-audit and minor picker (2026-10-19)
 
-- The current inventory is 189 focuses, 24 decisions and 77 EOR events (107 active overall). The later self-audit removes two more redundant steps and merges bloodless political costs into actual government installation. See `docs/review/EOR_SELF_AUDIT.md` for findings and corrections; do not describe earlier checks as engine or UI confirmation.
-- IOT/PHI/MAL/INS are explicit `minor = yes` entries in the standard bookmark minor-country list. Do not restore the removed `filters = { label }` / `label_order` custom tab or per-country `label` keys. Keep `scrollable_country_list = yes` and valid focus previews. SIA is an ally, not a newly inferred puppet. Menu visibility remains pending user confirmation.
+- The current inventory is 189 focuses, 24 decisions and 77 EOR events (114 active overall). The later self-audit removes two more redundant steps and merges bloodless political costs into actual government installation. See `docs/review/EOR_SELF_AUDIT.md` for findings and corrections; do not describe earlier checks as engine or UI confirmation.
+- IOT/PHI/MAL/INS are explicit `minor = yes` entries in the standard bookmark minor-country list. Do not restore the removed `filters = { label }` / `label_order` custom tab or per-country `label` keys. Keep `scrollable_country_list = yes` and non-empty generic focus previews. SIA is an ally, not a newly inferred puppet. Menu visibility remains pending user confirmation.
 - EOR aircraft definitions load in `common/units/equipment/zz_eor_aircraft.txt`, after their conventional parent/archetype definitions. Air OOB registration follows naval registration. Starting doctrines use native 1.19 grand-doctrine setup; removed battery technology IDs are not restored.
 - `add_unit_bonus` cannot apply `manpower` in the current engine. Keep the rejected bonus removed; do not claim battalion-manpower reduction or silently substitute another mechanic. China rewards retain native visible effects plus explanatory previews, with factory capacity rechecked.
 - Run `python3 tools/test_eor_audit.py` for the self-audit regression fixtures. New authorization-based cooldowns use explicit timed flags; do not stack a second full per-decision re-enable delay after preparation.
@@ -158,11 +161,23 @@ User-confirmed runtime baseline: the mod loads, USA/Soviet/Rising Sun campaigns 
 - Statecraft keeps scheduled court review, negotiated coup transition, post-defeat reconstruction, the Yoshiro fortress grant, China renewal and four settlement requests. Settlement requests cost 75 PP, consume `EOR_prepared_negotiation` when available and set a 180-day recipient preparation flag; refusal costs 15 PP. `EOR_imperial_diplomacy` now sets the preparation flag instead of charging PP, and event 105 no longer charges EOR before consent.
 - Military Operations keeps Yuriko's assault and sabotage missions, the three great-machine activations and `EOR_prepare_major_offensive`. Preparations use explicit timed flags; do not stack a second full re-enable delay. The offensive preparation requires war and fires `eor.156`, which offers Soviet, Pacific, general or Yuriko options. Removed unilateral war/peace decisions must not return: use normal declarations, wargoals, capitulation and peace conferences.
 - Experimental Projects keeps nanocore deployment and the three paid great-machine preparations. Overseas Administration keeps infrastructure investment plus one 120-day investment decision for IOT, PHI, MAL and INS, with extract or partnership choices in `eor.157`–`eor.160`.
-- The active event catalog is 107 events overall and 77 EOR events. New event keys use `eor.156`–`eor.160`; `eor.156.desc` avoids collision with option `eor.156.d`.
-- Source, native and installed static checks pass with 189 focuses, 24 decisions and 107 active events. Runtime execution, decision visibility, investment delivery and campaign balance remain unconfirmed; the user launches a fresh non-Ironman campaign.
+- The active event catalog is 114 events overall and 77 EOR events. New event keys use `eor.156`–`eor.160`; `eor.156.desc` avoids collision with option `eor.156.d`.
+- Source, native and installed static checks pass with 189 focuses, 24 decisions and 114 active events. Runtime execution, decision visibility, investment delivery and campaign balance remain unconfirmed; the user launches a fresh non-Ironman campaign.
 
 ## EOR AI baseline (2026-10-20)
 
 - `common/ai_strategy_plans/EOR_default_strategy_plan.txt` supplies EOR focus priorities and research weights; `common/ai_strategy/EOR.txt` supplies army, navy, air and production ratios. These are baseline technical behavior, not a claim about campaign balance.
 - The AI plan is route-neutral: existing focus `ai_will_do` values retain the Yoshiro/Tatsu/Shinzo selection. Do not add a second route-selection mechanic or restore removed unilateral war/peace decisions.
 - AI focus factors and strategy identifiers are statically checked; research weights are reviewed separately. Actual AI focus selection, production, diplomacy and campaign performance require a user-run campaign; source validation does not prove them.
+
+## Soviet occupation and diplomacy routes (2026-10-21)
+
+- The shared Soviet occupation and Comintern expansion branches are removed. The Soviet tree now has 47 unique focuses. The Union starts with exactly three route-linked crises: `SOV_continent_under_occupation` (Cherdenko), `SOV_fractured_supreme_command` (Krukov) and `SOV_diplomatic_isolation` (Commander). `SOV_red_fleet_deficiencies` is no longer a starting idea. Route selection occurs after `SOV_the_burden_of_victory` through `SOV_the_future_of_the_union`.
+- Route-specific occupation and diplomacy branches are hidden by `available = { has_country_flag = SOV_route_cherdenko|SOV_route_krukov|SOV_route_commander }`. Preserve this visibility gate so only the chosen route's policy branch appears.
+- Cherdenko tightens direct rule: European and Scandinavian garrison networks, internal security, imperial integration, a continental diktat and a preemptive-war line. Krukov breaks the zones into smaller client republics, then adds armed deterrence, fortress economics and pragmatic eastern outreach. The Commander releases the zones as independent republics and pursues anti-colonial solidarity and revolutionary diplomacy.
+- The old shared focuses must not return: `SOV_occupation_administration`, `SOV_european_garrison`, `SOV_northern_garrison`, `SOV_suppress_dissent`, `SOV_integrate_occupation`, `SOV_consolidate_comintern`, `SOV_support_colonial_revolution`, `SOV_courting_the_east`, `SOV_global_revolution`.
+- Autonomy semantics: `release = TAG` creates a puppet, not an independent state. Independence helpers use `release = TAG` followed by `set_autonomy = { target = TAG autonomy_state = autonomy_free }`; puppet helpers retain `release_autonomy` plus no-TFV `release`/`set_autonomy` fallbacks. Use `autonomy_state`, not `autonomous_state`.
+- New spirits are `SOV_krukov_deterrence_doctrine`, `SOV_krukov_fortress_doctrine` and the starting `SOV_diplomatic_isolation`; Cherdenko reuses `SOV_comintern_direction` and `SOV_global_revolutionary_line`; Commander reuses `SOV_anti_colonial`, `SOV_liberation_doctrine`, `SOV_internationalist_union` and `SOV_world_revolution`; Krukov reuses `SOV_eastern_outreach`. All active Soviet spirits have matching `sov_spirit_*` pictures and `GFX_idea_sov_spirit_*` sprites.
+- Each route capstone resolves only its own crisis: `SOV_cherdenko_red_century` removes the occupation burden, `SOV_krukov_peace_through_strength` removes fractured command, and `SOV_export_the_revolution` removes diplomatic isolation. Route directives must not remove a crisis early. Commander rewards use diplomacy modifiers (`opinion_gain_monthly_factor`, `improve_relations_maintain_cost_factor`, `faction_influence_contribution_factor`) rather than generic stability.
+- SOE/SOS no longer have empty focus-tree overrides; they and IOT/PHI/MAL/INS explicitly weight `generic_focus`. Their bookmark entries use real generic focus previews. `SOV_red_fleet_deficiencies` remains defined for old saves but is not granted at start.
+- Source, native and installed validation pass with 47 SOV focuses and 45 Soviet spirit definitions. Runtime icon rendering, bookmark minor visibility, branch visibility, release behavior and campaign balance remain unconfirmed; test with a new non-Ironman 2008 campaign.

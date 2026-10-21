@@ -4,6 +4,11 @@ focus_tree = {
 	country = {
 		factor = 1
 		modifier = { add = 100 tag = IOT }
+		modifier = { add = 100 tag = SOE }
+		modifier = { add = 100 tag = SOS }
+		modifier = { add = 100 tag = PHI }
+		modifier = { add = 100 tag = MAL }
+		modifier = { add = 100 tag = INS }
 	}
 
 	default = yes

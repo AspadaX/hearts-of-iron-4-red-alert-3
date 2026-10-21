@@ -74,7 +74,9 @@ bookmarks = {
 				receive_direct_command_from_moscow
 			}
 			focuses = {
-
+				political_effort
+				industrial_effort
+				army_effort
 			}
 		}
 
@@ -87,7 +89,9 @@ bookmarks = {
 				receive_direct_command_from_moscow
 			}
 			focuses = {
-
+				political_effort
+				industrial_effort
+				army_effort
 			}
 		}
 
@@ -117,7 +121,9 @@ bookmarks = {
 				loyal_to_the_empire
 			}
 			focuses = {
-
+				political_effort
+				industrial_effort
+				army_effort
 			}
 		}
 
@@ -126,7 +132,11 @@ bookmarks = {
             history = "PHI_WAR_OF_THE_THREE_POWERS_DESC"
             ideology = fascism
             ideas = { state_shintoism loyal_to_the_empire }
-            focuses = { }
+            focuses = {
+				political_effort
+				industrial_effort
+				army_effort
+			}
         }
 
         "MAL" = {
@@ -134,7 +144,11 @@ bookmarks = {
             history = "MAL_WAR_OF_THE_THREE_POWERS_DESC"
             ideology = fascism
             ideas = { state_shintoism loyal_to_the_empire }
-            focuses = { }
+            focuses = {
+				political_effort
+				industrial_effort
+				army_effort
+			}
         }
 
         "INS" = {
@@ -142,7 +156,11 @@ bookmarks = {
             history = "INS_WAR_OF_THE_THREE_POWERS_DESC"
             ideology = fascism
             ideas = { state_shintoism loyal_to_the_empire }
-            focuses = { }
+            focuses = {
+				political_effort
+				industrial_effort
+				army_effort
+			}
         }
 
 		"SAF" = {

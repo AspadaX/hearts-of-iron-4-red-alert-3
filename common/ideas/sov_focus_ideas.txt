@@ -4,6 +4,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_red_army_triumphant
 			modifier = {
 				army_attack_factor = 0.05
 				army_org_factor = 0.05
@@ -15,10 +16,13 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_continent_under_occupation
 			modifier = {
-				stability_factor = -0.10
-				political_power_factor = -0.10
-				consumer_goods_factor = 0.05
+				stability_factor = -0.15
+				political_power_factor = -0.15
+				consumer_goods_factor = 0.10
+				resistance_target = 5
+				war_support_factor = -0.05
 			}
 		}
 
@@ -26,6 +30,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_red_fleet_deficiencies
 			modifier = {
 				navy_org_factor = -0.15
 				industrial_capacity_dockyard = -0.10
@@ -37,10 +42,27 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_fractured_supreme_command
 			modifier = {
-				planning_speed = -0.10
-				command_power_gain_mult = -0.10
-				political_power_factor = -0.05
+				planning_speed = -0.20
+				command_power_gain_mult = -0.20
+				army_attack_factor = -0.10
+				army_defence_factor = -0.10
+				war_support_factor = -0.05
+			}
+		}
+
+		SOV_diplomatic_isolation = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = sov_spirit_diplomatic_isolation
+			modifier = {
+				opinion_gain_monthly_factor = -0.30
+				improve_relations_maintain_cost_factor = 0.25
+				trade_opinion_factor = -0.20
+				faction_influence_contribution_factor = -0.20
+				political_power_factor = -0.10
 			}
 		}
 
@@ -48,9 +70,10 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_industrial_colossus
 			modifier = {
 				industrial_capacity_factory = 0.10
-				construction_speed = 0.05
+				production_speed_buildings_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
 			}
 		}
@@ -59,6 +82,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_premier_authority
 			modifier = {
 				political_power_factor = 0.10
 				stability_factor = 0.05
@@ -69,6 +93,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_party_unity
 			modifier = {
 				stability_factor = 0.05
 				communism_drift = 0.02
@@ -79,6 +104,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_general_secretary
 			modifier = {
 				war_support_factor = 0.10
 				army_org_factor = 0.05
@@ -90,10 +116,11 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_revolutionary_command
 			modifier = {
 				political_power_factor = 0.10
 				army_org_factor = 0.05
-				stability_factor = 0.05
+				opinion_gain_monthly_factor = 0.10
 			}
 		}
 
@@ -101,8 +128,9 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_dasha_adviser
 			modifier = {
-				stability_factor = 0.05
+				intel_network_gain_factor = 0.10
 				decryption_factor = 0.05
 				enemy_operative_detection_chance_factor = 0.10
 			}
@@ -112,6 +140,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_direct_rule_europe
 			modifier = {
 				autonomy_gain = -0.5
 				resistance_target = -5
@@ -123,6 +152,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_direct_rule_scandinavia
 			modifier = {
 				autonomy_gain = -0.5
 				resistance_target = -5
@@ -134,6 +164,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_imperial_administration
 			modifier = {
 				stability_factor = 0.10
 				resistance_target = -5
@@ -145,6 +176,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_european_security_bloc
 			modifier = {
 				political_power_factor = 0.05
 				subjects_autonomy_gain = -0.25
@@ -156,6 +188,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_northern_security_bloc
 			modifier = {
 				political_power_factor = 0.05
 				subjects_autonomy_gain = -0.25
@@ -166,6 +199,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_soviet_security_bloc
 			modifier = {
 				political_power_factor = 0.10
 				subjects_autonomy_gain = -0.5
@@ -177,6 +211,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_krukov_legacy
 			modifier = {
 				war_support_factor = 0.10
 				army_attack_factor = 0.05
@@ -184,13 +219,39 @@ ideas = {
 			}
 		}
 
+		SOV_krukov_deterrence_doctrine = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = sov_spirit_krukov_deterrence_doctrine
+			modifier = {
+				defensive_war_stability_factor = 0.10
+				army_defence_factor = 0.10
+				war_support_factor = 0.05
+			}
+		}
+
+		SOV_krukov_fortress_doctrine = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = sov_spirit_krukov_fortress_doctrine
+			modifier = {
+				stability_factor = 0.05
+				industrial_capacity_factory = 0.05
+				enemy_operative_detection_chance_factor = 0.10
+			}
+		}
+
 		SOV_liberation_doctrine = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_liberation_doctrine
 			modifier = {
 				political_power_factor = 0.05
-				stability_factor = 0.05
+				opinion_gain_monthly_factor = 0.20
+				improve_relations_maintain_cost_factor = -0.20
 				communism_drift = 0.02
 			}
 		}
@@ -199,9 +260,12 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_internationalist_union
 			modifier = {
 				political_power_factor = 0.10
-				stability_factor = 0.05
+				opinion_gain_monthly_factor = 0.25
+				improve_relations_maintain_cost_factor = -0.25
+				faction_influence_contribution_factor = 0.10
 				communism_drift = 0.03
 			}
 		}
@@ -210,6 +274,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_cherdenko_legacy
 			modifier = {
 				political_power_factor = 0.10
 				stability_factor = 0.10
@@ -221,10 +286,12 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_world_revolution
 			modifier = {
 				war_support_factor = 0.10
 				communism_drift = 0.05
-				political_power_factor = 0.05
+				opinion_gain_monthly_factor = 0.20
+				faction_influence_contribution_factor = 0.15
 			}
 		}
 
@@ -232,6 +299,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_baltic_fleet
 			modifier = {
 				navy_org_factor = 0.05
 				industrial_capacity_dockyard = 0.05
@@ -242,6 +310,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_socialist_economy
 			modifier = {
 				consumer_goods_factor = -0.05
 				industrial_capacity_factory = 0.05
@@ -253,6 +322,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_war_economy
 			modifier = {
 				industrial_capacity_factory = 0.10
 				consumer_goods_factor = 0.10
@@ -264,6 +334,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_tesla_program
 			modifier = {
 				research_speed_factor = 0.05
 				industrial_capacity_factory = 0.03
@@ -274,6 +345,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_iron_curtain_defenses
 			modifier = {
 				air_defence_factor = 0.10
 				enemy_operative_detection_chance_factor = 0.10
@@ -285,6 +357,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_vacuum_imploder_program
 			modifier = {
 				war_support_factor = 0.05
 				research_speed_factor = 0.03
@@ -295,6 +368,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_occupation_ministry
 			modifier = {
 				political_power_factor = -0.05
 				stability_factor = 0.05
@@ -305,6 +379,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_european_garrison_network
 			modifier = {
 				resistance_target = -5
 				conscription_factor = 0.02
@@ -315,6 +390,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_northern_garrison_network
 			modifier = {
 				resistance_target = -5
 				winter_attrition_factor = -0.10
@@ -325,6 +401,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_internal_security
 			modifier = {
 				stability_factor = 0.05
 				enemy_operative_detection_chance_factor = 0.15
@@ -335,6 +412,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_imperial_integration
 			modifier = {
 				political_power_factor = 0.05
 				stability_factor = 0.05
@@ -346,6 +424,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_red_navy_rebuilt
 			modifier = {
 				navy_org_factor = 0.10
 				industrial_capacity_dockyard = 0.10
@@ -357,6 +436,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_modern_red_army
 			modifier = {
 				army_org_factor = 0.10
 				army_attack_factor = 0.05
@@ -367,6 +447,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_red_air_doctrine
 			modifier = {
 				air_agility_factor = 0.10
 				air_superiority_efficiency = 0.10
@@ -377,6 +458,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_deep_battle
 			modifier = {
 				army_attack_factor = 0.05
 				planning_speed = 0.10
@@ -388,6 +470,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_rocket_command
 			modifier = {
 				war_support_factor = 0.05
 				research_speed_factor = 0.03
@@ -398,6 +481,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_nuclear_program
 			modifier = {
 				research_speed_factor = 0.05
 				war_support_factor = 0.05
@@ -408,6 +492,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_comintern_direction
 			modifier = {
 				political_power_factor = 0.05
 				subjects_autonomy_gain = -0.25
@@ -419,8 +504,10 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_anti_colonial
 			modifier = {
-				political_power_factor = 0.05
+				opinion_gain_monthly_factor = 0.20
+				improve_relations_maintain_cost_factor = -0.20
 				war_support_factor = 0.03
 			}
 		}
@@ -429,6 +516,7 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_eastern_outreach
 			modifier = {
 				political_power_factor = 0.05
 				resource_trade_cost_bonus_per_factory = 0.05
@@ -439,9 +527,10 @@ ideas = {
 			allowed = { always = no }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
+			picture = sov_spirit_global_revolutionary_line
 			modifier = {
-				war_support_factor = 0.10
-				communism_drift = 0.05
+				war_support_factor = 0.15
+				army_attack_factor = 0.05
 				political_power_factor = 0.05
 			}
 		}
