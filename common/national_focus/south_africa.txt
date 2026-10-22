@@ -1675,7 +1675,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			AOE = { remove_from_faction = SAF }
+			AME = { remove_from_faction = SAF }
 			SOV = { add_to_faction = SAF }
 			set_politics = { ruling_party = communism }
 		}
@@ -1899,7 +1899,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_manpower = -10000
-			AOE = { add_manpower = 10000 }
+			AME = { add_manpower = 10000 }
 		}
 	}
 	
@@ -1939,7 +1939,7 @@ focus_tree = {
 				amount = -10000
 				producer = SAF
 			}
-			AOE = {
+			AME = {
 				add_equipment_to_stockpile = { 
 					type = infantry_equipment_1 
 					amount = 10000
@@ -1980,7 +1980,7 @@ focus_tree = {
 				amount = -100
 				producer = SAF
 			}
-			AOE = {
+			AME = {
 				add_equipment_to_stockpile = { 
 					type = light_tank_equipment_1 
 					amount = 100
@@ -2020,7 +2020,7 @@ focus_tree = {
 				amount = -100
 				producer = SAF
 			}
-			AOE = {
+			AME = {
 				add_equipment_to_stockpile = { 
 					type = fighter_equipment_1 
 					amount = 100
@@ -2131,7 +2131,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			AOE = { remove_from_faction = SAF }
+			AME = { remove_from_faction = SAF }
 			set_politics = { ruling_party = fascism }
 		}
 	}

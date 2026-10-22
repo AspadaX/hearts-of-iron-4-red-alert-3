@@ -21,7 +21,7 @@ state={
 		}
 		add_core_of = SWI
 		add_core_of = SOE
-		add_core_of = AOE
+		add_core_of = AME
 	
 		victory_points = {
 			663 10 

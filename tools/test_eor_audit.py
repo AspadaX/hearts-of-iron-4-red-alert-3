@@ -18,7 +18,7 @@ class AuditRegressionTests(unittest.TestCase):
         cls.fixture = Path(cls.temp.name)
         for folder in ['common', 'events', 'localisation', 'interface']:
             shutil.copytree(ROOT / folder, cls.fixture / folder)
-        for name in ['EOR - The Empire of the Rising Sun.txt','IOT - Imperial Oceanic Territories.txt','SOV - Soviet union.txt']:
+        for name in ['EOR - The Empire of the Rising Sun.txt','IOT - Imperial Oceanic Territories.txt','SOV - Soviet union.txt',"AME - Allied Nations' Militarized Zone in Europe.txt"]:
             country = Path('history/countries') / name
             (cls.fixture / country).parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(ROOT / country, cls.fixture / country)
@@ -134,6 +134,74 @@ class AuditRegressionTests(unittest.TestCase):
                 available = blocks(decision, 'available')[0]
                 self.assertIn('NOT = { has_country_flag = ' + scalar(cooldown, 'flag') + ' }', available)
                 self.assertEqual(max(duration, prepare + reenable), duration)
+
+
+    def test_ame_convergence_uses_one_or_block(self):
+        def split(text):
+            old = ('\tprerequisite = {\n'
+                   '\t\tfocus = AME_lend_lease_act\n'
+                   '\t\tfocus = AME_expeditionary_forces\n'
+                   '\t\tfocus = AME_direct_intervention\n'
+                   '\t}')
+            new = ('\tprerequisite = {\n\t\tfocus = AME_lend_lease_act\n\t}\n'
+                   '\tprerequisite = {\n\t\tfocus = AME_expeditionary_forces\n\t}\n'
+                   '\tprerequisite = {\n\t\tfocus = AME_direct_intervention\n\t}')
+            return text.replace(old, new, 1)
+        self.rejects('common/national_focus/ame_focus.txt', split,
+                     'AME convergence must use one OR prerequisite block')
+
+    def test_ame_focus_rewards_use_defined_ideas(self):
+        self.rejects('common/national_focus/ame_focus.txt',
+                     lambda t: t.replace('add_ideas = AME_fortress_europe_spirit',
+                                         'add_ideas = AME_missing_spirit', 1),
+                     'AME focus add_ideas target is not defined')
+
+    def test_ame_bingham_routes_are_pairwise_mutually_exclusive(self):
+        def remove(text):
+            return text.replace('\tmutually_exclusive = {\n'
+                                '\t\tfocus = AME_mobile_counteroffensive\n'
+                                '\t\tfocus = AME_war_behind_enemy_lines\n'
+                                '\t}\n', '', 1)
+        self.rejects('common/national_focus/ame_focus.txt', remove,
+                     'AME Bingham route must declare one mutually_exclusive block')
+
+    def test_ame_release_helper_has_no_scripted_parameters(self):
+        self.rejects('common/scripted_effects/ame_focus_effects.txt',
+                     lambda t: t.replace('target = ALB', 'target = $TAG$', 1),
+                     'HOI4 scripted effects do not substitute parameters')
+        self.rejects('events/AME.txt',
+                     lambda t: t.replace('set_country_flag = AME_strategy_fortress',
+                                         'add_country_flag = AME_strategy_fortress', 1),
+                     'Invalid HOI4 effect add_country_flag')
+
+    def test_ame_ideas_file_rejects_bom(self):
+        path = self.fixture / 'common/ideas/ame_ideas.txt'
+        original = path.read_bytes()
+        try:
+            path.write_bytes(b'\xef\xbb\xbf' + original)
+            with self.assertRaisesRegex(AssertionError, 'UTF-8 BOM'):
+                self.source_check()
+        finally:
+            path.write_bytes(original)
+
+    def test_ame_localisation_files_require_bom(self):
+        for rel in ['localisation/ideas_l_english.yml','localisation/focus_l_english.yml',
+                    'localisation/ame_core_l_english.yml','localisation/events_l_english.yml']:
+            with self.subTest(file=rel):
+                path = self.fixture / rel
+                original = path.read_bytes()
+                try:
+                    path.write_bytes(original[3:])
+                    with self.assertRaisesRegex(AssertionError, 'UTF-8 BOM'):
+                        self.source_check()
+                finally:
+                    path.write_bytes(original)
+
+    def test_ame_starting_faction_excludes_usa(self):
+        self.rejects("history/countries/AME - Allied Nations' Militarized Zone in Europe.txt",
+                     lambda t: t.replace('add_to_faction = ENG',
+                                         'add_to_faction = ENG\nadd_to_faction = USA', 1),
+                     'USA must not start in the AME-led faction')
 
 
 if __name__ == '__main__':

@@ -2191,9 +2191,9 @@
     SOS_communism_DEF:0 "the Soviet Occupation Zone in Scandinavia"
     SOS_communism_ADJ:0 "Scandinavian"
     
-    AOE_democratic:0 "Allied Nations' Militarized Zone in Europe"
-    AOE_democratic_DEF:0 "the Allied Nations' Militarized Zone in Europe"
-    AOE_democratic_ADJ:0 "European"
+    AME_democratic:0 "Allied Nations' Militarized Zone in Europe"
+    AME_democratic_DEF:0 "the Allied Nations' Militarized Zone in Europe"
+    AME_democratic_ADJ:0 "European"
     
     RAJ_fascism:0 "Free India"
     RAJ_fascism_DEF:0 "Free India"

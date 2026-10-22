@@ -26,8 +26,8 @@ bookmarks = {
 			}
 		}
 
-		"AOE"={
-			history = "AOE_WAR_OF_THE_THREE_POWERS_DESC"
+		"AME"={
+			history = "AME_WAR_OF_THE_THREE_POWERS_DESC"
 			ideology = democratic
 			ideas = {
 				global_headquarter_of_allied_nations
@@ -35,9 +35,9 @@ bookmarks = {
 				unyielding_people
 			}
 			focuses = {
-				AOE_industrial_effort
-				AOE_reclaim_europe
-				AOE_rally_against_the_common_enemy
+				AME_industrial_effort
+				AME_reclaim_europe
+				AME_rally_against_the_common_enemy
 			}
 		}
 

@@ -201,7 +201,7 @@ if = { limit = { has_completed_focus = EOR_the_crown_prince NOT = { has_country_
 
 if = { limit = { check_variable = { EOR_imperial_legitimacy < 30 } NOT = { has_country_flag = EOR_legitimacy_warning } } eor_event_107 = yes }
 if = { limit = { has_country_flag = EOR_traditionalist_opposition check_variable = { EOR_military_influence > 64 } NOT = { has_country_flag = EOR_counter_conspiracy } } eor_event_108 = yes }
-if = { limit = { has_completed_focus = EOR_the_supreme_shogunate OR = { eor_soviets_defeated = yes has_country_flag = EOR_defeated_USA has_country_flag = EOR_defeated_ENG has_country_flag = EOR_defeated_AOE } } eor_event_103 = yes }
+if = { limit = { has_completed_focus = EOR_the_supreme_shogunate OR = { eor_soviets_defeated = yes has_country_flag = EOR_defeated_USA has_country_flag = EOR_defeated_ENG has_country_flag = EOR_defeated_AME } } eor_event_103 = yes }
 if = { limit = { eor_coalition_possible = yes } eor_event_30 = yes }
 if = { limit = { has_country_flag = EOR_coup_abandoned NOT = { has_country_flag = EOR_coup_return_settled } } eor_event_109 = yes }
 if = { limit = { has_completed_focus = EOR_strike_vladivostok 408 = { controller = { OR = { tag = EOR is_in_faction_with = EOR } } } } eor_event_11 = yes }

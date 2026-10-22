@@ -11,8 +11,8 @@ state={
 	state_category = metropolis
 	
 	history={
-		owner = AOE
-		add_core_of = AOE
+		owner = AME
+		add_core_of = AME
 		victory_points = {
 			6469 10 
 		}

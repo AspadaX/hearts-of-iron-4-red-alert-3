@@ -1,4 +1,4 @@
-﻿division_template = {
+division_template = {
 	name = "Division d'Infanterie"		# Same for "Active" and "Reserve" Infantry Divisions
 	division_names_group = BEL_INF_01
 
@@ -172,7 +172,7 @@ units = {
 		name = "6ème Division d'Infanterie"
 		location = 6583
 		division_template = "Division d'Infanterie"
-		force_equipment_variants = { infantry_equipment_0 = { owner = "AOE" } }
+		force_equipment_variants = { infantry_equipment_0 = { owner = "AME" } }
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
 
@@ -290,7 +290,7 @@ air_wings = {
 		# Consisted of 50 operational Gladiator Is, Hurricanes, CR.42s in 1940
 		# Only had Fairey Fox recon/l bombers that were also used as fighters in 1936, along with trainers
 		fighter_equipment_0 =  {
-			owner = "AOE" 
+			owner = "AME" 
 			amount = 1000
 		}
 	}

@@ -1,0 +1,2018 @@
+focus_tree = {
+	id = ame_focus
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			tag = AME
+		}
+	}
+	
+	default = no
+	
+	# Industry
+	
+focus = {
+	id = AME_industrial_effort
+	icon = GFX_goal_generic_production
+	x = 0
+	y = 0
+	cost = 10
+	available_if_capitulated = yes
+	completion_reward = {
+		add_tech_bonus = {
+		    name = industrial_bonus
+		    bonus = 1.0
+		    uses = 1
+		    category = industry
+		}
+	}
+	ai_will_do = {
+		factor = 3
+	}
+}
+
+focus = {
+	id = AME_construction_effort
+	icon = GFX_goal_generic_construct_civ_factory
+	x = -2
+	y = 1
+	cost = 10
+	prerequisite = {
+		focus = AME_industrial_effort
+	}
+	available_if_capitulated = yes
+	bypass = {
+		custom_trigger_tooltip = {
+		    tooltip = construction_effort_tt
+		    all_owned_state = {
+		        free_building_slots = {
+		            building = industrial_complex
+		            size < 1
+		            include_locked = yes
+		        }
+		    }
+		}
+	}
+	complete_tooltip = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+		    type = industrial_complex
+		    level = 1
+		    instant_build = yes
+		}
+	}
+	completion_reward = {
+		random_owned_controlled_state = {
+		    limit = {
+		        free_building_slots = {
+		            building = industrial_complex
+		            size > 0
+		            include_locked = yes
+		        }
+		        OR = {
+		            is_in_home_area = yes
+		            NOT = {
+		                owner = {
+		                    any_owned_state = {
+		                        free_building_slots = {
+		                            building = industrial_complex
+		                            size > 0
+		                            include_locked = yes
+		                        }
+		                        is_in_home_area = yes
+		                    }
+		                }
+		            }
+		        }
+		    }
+		    add_extra_state_shared_building_slots = 1
+		    add_building_construction = {
+		        type = industrial_complex
+		        level = 1
+		        instant_build = yes
+		    }
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_production_effort
+	icon = GFX_goal_generic_construct_mil_factory
+	x = 2
+	y = 1
+	cost = 10
+	prerequisite = {
+		focus = AME_industrial_effort
+	}
+	available_if_capitulated = yes
+	bypass = {
+		custom_trigger_tooltip = {
+		    tooltip = construction_effort_tt
+		    all_owned_state = {
+		        free_building_slots = {
+		            building = arms_factory
+		            size < 1
+		            include_locked = yes
+		        }
+		    }
+		}
+	}
+	complete_tooltip = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+		    type = arms_factory
+		    level = 1
+		    instant_build = yes
+		}
+	}
+	completion_reward = {
+		random_owned_controlled_state = {
+		    limit = {
+		        free_building_slots = {
+		            building = arms_factory
+		            size > 0
+		            include_locked = yes
+		        }
+		        OR = {
+		            is_in_home_area = yes
+		            NOT = {
+		                owner = {
+		                    any_owned_state = {
+		                        free_building_slots = {
+		                            building = arms_factory
+		                            size > 0
+		                            include_locked = yes
+		                        }
+		                        is_in_home_area = yes
+		                    }
+		                }
+		            }
+		        }
+		    }
+		    add_extra_state_shared_building_slots = 1
+		    add_building_construction = {
+		        type = arms_factory
+		        level = 1
+		        instant_build = yes
+		    }
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_construction_effort_2
+	icon = GFX_goal_generic_construct_civ_factory
+	x = -2
+	y = 2
+	cost = 10
+	prerequisite = {
+		focus = AME_construction_effort
+	}
+	available_if_capitulated = yes
+	bypass = {
+		custom_trigger_tooltip = {
+		    tooltip = construction_effort_tt
+		    all_owned_state = {
+		        free_building_slots = {
+		            building = industrial_complex
+		            size < 1
+		            include_locked = yes
+		        }
+		    }
+		}
+	}
+	complete_tooltip = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+		    type = industrial_complex
+		    level = 1
+		    instant_build = yes
+		}
+	}
+	completion_reward = {
+		random_owned_controlled_state = {
+		    limit = {
+		        free_building_slots = {
+		            building = industrial_complex
+		            size > 0
+		            include_locked = yes
+		        }
+		        OR = {
+		            is_in_home_area = yes
+		            NOT = {
+		                owner = {
+		                    any_owned_state = {
+		                        free_building_slots = {
+		                            building = industrial_complex
+		                            size > 0
+		                            include_locked = yes
+		                        }
+		                        is_in_home_area = yes
+		                    }
+		                }
+		            }
+		        }
+		    }
+		    add_extra_state_shared_building_slots = 1
+		    add_building_construction = {
+		        type = industrial_complex
+		        level = 1
+		        instant_build = yes
+		    }
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_infrastructure_effort
+	icon = GFX_goal_generic_construct_infrastructure
+	x = -2
+	y = 3
+	cost = 10
+	prerequisite = {
+		focus = AME_construction_effort_2
+	}
+	available_if_capitulated = yes
+	bypass = {
+		custom_trigger_tooltip = {
+		    tooltip = infrastructure_effort_tt
+		    all_owned_state = {
+		        free_building_slots = {
+		            building = infrastructure
+		            size < 1
+		        }
+		    }
+		}
+	}
+	complete_tooltip = {
+		add_building_construction = {
+		    type = infrastructure
+		    level = 1
+		    instant_build = yes
+		}
+		add_building_construction = {
+		    type = infrastructure
+		    level = 1
+		    instant_build = yes
+		}
+	}
+	completion_reward = {
+		random_owned_controlled_state = {
+		    limit = {
+		        free_building_slots = {
+		            building = infrastructure
+		            size > 0
+		        }
+		        OR = {
+		            is_in_home_area = yes
+		            NOT = {
+		                owner = {
+		                    any_owned_state = {
+		                        free_building_slots = {
+		                            building = infrastructure
+		                            size > 0
+		                        }
+		                        is_in_home_area = yes
+		                    }
+		                }
+		            }
+		        }
+		    }
+		    add_building_construction = {
+		        type = infrastructure
+		        level = 1
+		        instant_build = yes
+		    }
+		}
+		random_owned_controlled_state = {
+		    limit = {
+		        free_building_slots = {
+		            building = infrastructure
+		            size > 1
+		        }
+		        OR = {
+		            is_in_home_area = yes
+		            NOT = {
+		                owner = {
+		                    any_owned_state = {
+		                        free_building_slots = {
+		                            building = infrastructure
+		                            size > 1
+		                        }
+		                        is_in_home_area = yes
+		                    }
+		                }
+		            }
+		        }
+		    }
+		    add_building_construction = {
+		        type = infrastructure
+		        level = 2
+		        instant_build = yes
+		    }
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_infrastructure_effort_2
+	icon = GFX_goal_generic_construct_infrastructure
+	x = -3
+	y = 4
+	cost = 10
+	prerequisite = {
+		focus = AME_infrastructure_effort
+	}
+	available_if_capitulated = yes
+	bypass = {
+		custom_trigger_tooltip = {
+		    tooltip = infrastructure_effort_tt
+		    all_owned_state = {
+		        free_building_slots = {
+		            building = infrastructure
+		            size < 1
+		        }
+		    }
+		}
+	}
+	complete_tooltip = {
+		add_building_construction = {
+		    type = infrastructure
+		    level = 1
+		    instant_build = yes
+		}
+		add_building_construction = {
+		    type = infrastructure
+		    level = 1
+		    instant_build = yes
+		}
+	}
+	completion_reward = {
+		random_owned_controlled_state = {
+		    limit = {
+		        free_building_slots = {
+		            building = infrastructure
+		            size > 0
+		        }
+		        OR = {
+		            is_in_home_area = yes
+		            NOT = {
+		                owner = {
+		                    any_owned_state = {
+		                        free_building_slots = {
+		                            building = infrastructure
+		                            size > 0
+		                        }
+		                        is_in_home_area = yes
+		                    }
+		                }
+		            }
+		        }
+		    }
+		    add_building_construction = {
+		        type = infrastructure
+		        level = 1
+		        instant_build = yes
+		    }
+		}
+		random_owned_controlled_state = {
+		    limit = {
+		        free_building_slots = {
+		            building = infrastructure
+		            size > 1
+		        }
+		        OR = {
+		            is_in_home_area = yes
+		            NOT = {
+		                owner = {
+		                    any_owned_state = {
+		                        free_building_slots = {
+		                            building = infrastructure
+		                            size > 1
+		                        }
+		                        is_in_home_area = yes
+		                    }
+		                }
+		            }
+		        }
+		    }
+		    add_building_construction = {
+		        type = infrastructure
+		        level = 2
+		        instant_build = yes
+		    }
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_construction_effort_3
+	icon = GFX_goal_generic_construct_civ_factory
+	x = -1
+	y = 4
+	cost = 10
+	prerequisite = {
+		focus = AME_infrastructure_effort
+	}
+	available_if_capitulated = yes
+	bypass = {
+		custom_trigger_tooltip = {
+		    tooltip = construction_effort_tt
+		    all_owned_state = {
+		        free_building_slots = {
+		            building = industrial_complex
+		            size < 2
+		            include_locked = yes
+		        }
+		    }
+		}
+	}
+	complete_tooltip = {
+		add_extra_state_shared_building_slots = 2
+		add_building_construction = {
+		    type = industrial_complex
+		    level = 2
+		    instant_build = yes
+		}
+	}
+	completion_reward = {
+		random_owned_controlled_state = {
+		    limit = {
+		        free_building_slots = {
+		            building = industrial_complex
+		            size > 1
+		            include_locked = yes
+		        }
+		        OR = {
+		            is_in_home_area = yes
+		            NOT = {
+		                owner = {
+		                    any_owned_state = {
+		                        free_building_slots = {
+		                            building = industrial_complex
+		                            size > 1
+		                            include_locked = yes
+		                        }
+		                        is_in_home_area = yes
+		                    }
+		                }
+		            }
+		        }
+		    }
+		    add_extra_state_shared_building_slots = 2
+		    add_building_construction = {
+		        type = industrial_complex
+		        level = 2
+		        instant_build = yes
+		    }
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_extra_tech_slot
+	icon = GFX_focus_research
+	x = -3
+	y = 5
+	cost = 10
+	prerequisite = {
+		focus = AME_infrastructure_effort_2
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_research_slot = 1
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_extra_tech_slot_2
+	icon = GFX_focus_research
+	x = -3
+	y = 6
+	cost = 10
+	prerequisite = {
+		focus = AME_extra_tech_slot
+	}
+	available = {
+		num_of_factories > 50
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_research_slot = 1
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_production_effort_2
+	icon = GFX_goal_generic_construct_mil_factory
+	x = 2
+	y = 2
+	cost = 10
+	prerequisite = {
+		focus = AME_production_effort
+	}
+	available_if_capitulated = yes
+	bypass = {
+		custom_trigger_tooltip = {
+		    tooltip = construction_effort_tt
+		    all_owned_state = {
+		        free_building_slots = {
+		            building = arms_factory
+		            size < 1
+		            include_locked = yes
+		        }
+		    }
+		}
+	}
+	complete_tooltip = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+		    type = arms_factory
+		    level = 1
+		    instant_build = yes
+		}
+	}
+	completion_reward = {
+		random_owned_controlled_state = {
+		    limit = {
+		        free_building_slots = {
+		            building = arms_factory
+		            size > 0
+		            include_locked = yes
+		        }
+		        OR = {
+		            is_in_home_area = yes
+		            NOT = {
+		                owner = {
+		                    any_owned_state = {
+		                        free_building_slots = {
+		                            building = arms_factory
+		                            size > 0
+		                            include_locked = yes
+		                        }
+		                        is_in_home_area = yes
+		                    }
+		                }
+		            }
+		        }
+		    }
+		    add_extra_state_shared_building_slots = 1
+		    add_building_construction = {
+		        type = arms_factory
+		        level = 1
+		        instant_build = yes
+		    }
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_production_effort_3
+	icon = GFX_goal_generic_construct_mil_factory
+	x = 2
+	y = 3
+	cost = 10
+	prerequisite = {
+		focus = AME_production_effort_2
+	}
+	available_if_capitulated = yes
+	bypass = {
+		custom_trigger_tooltip = {
+		    tooltip = construction_effort_tt
+		    all_owned_state = {
+		        free_building_slots = {
+		            building = arms_factory
+		            size < 1
+		            include_locked = yes
+		        }
+		    }
+		}
+	}
+	complete_tooltip = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+		    type = arms_factory
+		    level = 1
+		    instant_build = yes
+		}
+	}
+	completion_reward = {
+		random_owned_controlled_state = {
+		    limit = {
+		        free_building_slots = {
+		            building = arms_factory
+		            size > 0
+		            include_locked = yes
+		        }
+		        OR = {
+		            is_in_home_area = yes
+		            NOT = {
+		                owner = {
+		                    any_owned_state = {
+		                        free_building_slots = {
+		                            building = arms_factory
+		                            size > 0
+		                            include_locked = yes
+		                        }
+		                        is_in_home_area = yes
+		                    }
+		                }
+		            }
+		        }
+		    }
+		    add_extra_state_shared_building_slots = 1
+		    add_building_construction = {
+		        type = arms_factory
+		        level = 1
+		        instant_build = yes
+		    }
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_wartime_industrial_conversion
+	icon = GFX_focus_generic_military_industry
+	x = 2
+	y = 4
+	cost = 10
+	prerequisite = {
+		focus = AME_production_effort_3
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_ideas = AME_wartime_manufacturing
+		add_tech_bonus = {
+		    name = AME_wartime_industrial_conversion
+		    bonus = 1.0
+		    uses = 1
+		    category = industry
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_continental_supply_network
+	icon = GFX_focus_generic_supply_line
+	x = 2
+	y = 5
+	cost = 10
+	prerequisite = {
+		focus = AME_wartime_industrial_conversion
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_ideas = AME_continental_supply
+		add_war_support = 0.05
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_european_economic_community
+	icon = GFX_focus_generic_industry_investment
+	x = 6
+	y = 7
+	cost = 20
+	prerequisite = {
+		focus = AME_construction_effort_3
+		focus = AME_extra_tech_slot_2
+		focus = AME_continental_supply_network
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_ideas = AME_rebuild_liberated_europe
+		add_political_power = 100
+		add_stability = 0.05
+	}
+	ai_will_do = {
+		factor = 3
+	}
+}
+
+	# European Theatre
+	
+focus = {
+	id = AME_the_european_theatre
+	icon = GFX_focus_usa_focus_on_europe
+	x = 10
+	y = 0
+	cost = 10
+	available_if_capitulated = yes
+	completion_reward = {
+		add_political_power = 150
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_approach_the_young_officers
+	icon = GFX_focus_generic_military_mission
+	x = 8
+	y = 1
+	cost = 10
+	prerequisite = {
+		focus = AME_the_european_theatre
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		custom_effect_tooltip = AME_approach_the_young_officers_tt
+		hidden_effect = {
+		    create_corps_commander = {
+		        traits = { trickster }
+		        id = 90750
+		        attack_skill = 1
+		        defense_skill = 4
+		        planning_skill = 3
+		        logistics_skill = 2
+		        skill = 3
+		    }
+		    create_corps_commander = {
+		        traits = { trait_mountaineer trait_cautious }
+		        id = 90751
+		        attack_skill = 2
+		        defense_skill = 2
+		        planning_skill = 1
+		        logistics_skill = 2
+		        skill = 2
+		    }
+		    create_corps_commander = {
+		        traits = { trait_reckless politically_connected }
+		        id = 90752
+		        attack_skill = 4
+		        defense_skill = 1
+		        planning_skill = 3
+		        logistics_skill = 3
+		        skill = 3
+		    }
+		}
+		add_war_support = 0.1
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_the_army_of_freedom
+	icon = GFX_focus_usa_recruit_the_free_corps
+	x = 12
+	y = 1
+	cost = 10
+	prerequisite = {
+		focus = AME_the_european_theatre
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_ideas = the_army_of_freedom_spirit
+		add_ideas = limited_conscription
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_the_shield_of_europe
+	icon = GFX_focus_generic_little_entente
+	x = 10
+	y = 2
+	cost = 10
+	prerequisite = {
+		focus = AME_approach_the_young_officers
+		focus = AME_the_army_of_freedom
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_ideas = the_shield_of_europe_spirit
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_deploy_the_peacekeepers
+	icon = GFX_focus_ETH_peacekeeping_forces
+	x = 6
+	y = 3
+	cost = 10
+	prerequisite = {
+		focus = AME_the_shield_of_europe
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		set_technology = { peacekeeper_infantry = 1 }
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+focus = {
+	id = AME_stabilize_the_main_battlefield
+	icon = GFX_goal_generic_fortify_city
+	x = 8
+	y = 3
+	cost = 10
+	prerequisite = {
+		focus = AME_the_shield_of_europe
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_ideas = speed_up_the_fort_construction
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+focus = {
+	id = AME_defend_copenhagen
+	icon = GFX_focus_generic_coastal_fort
+	x = 12
+	y = 3
+	cost = 10
+	prerequisite = {
+		focus = AME_the_shield_of_europe
+	}
+	available = {
+		owns_state = 37
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		37 = {
+		    if = {
+		        limit = { is_controlled_by = ROOT }
+		        add_building_construction = {
+		            type = bunker
+		            level = 3
+		            province = 6287
+		            instant_build = yes
+		        }
+		        add_building_construction = {
+		            type = coastal_bunker
+		            level = 3
+		            province = 6287
+		            instant_build = yes
+		        }
+		    }
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+focus = {
+	id = AME_binghams_war_conference
+	icon = GFX_focus_generic_conference
+	x = 10
+	y = 3
+	cost = 10
+	prerequisite = {
+		focus = AME_the_shield_of_europe
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_political_power = 75
+		add_war_support = 0.05
+		country_event = ame.7
+	}
+	ai_will_do = {
+		factor = 3
+	}
+}
+
+focus = {
+	id = AME_fortress_europe
+	icon = GFX_focus_generic_fortify_denmark
+	x = 8
+	y = 4
+	cost = 10
+	prerequisite = {
+		focus = AME_binghams_war_conference
+	}
+	mutually_exclusive = {
+		focus = AME_mobile_counteroffensive
+		focus = AME_war_behind_enemy_lines
+	}
+	available = {
+		has_country_flag = AME_strategy_fortress
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_ideas = AME_fortress_europe_spirit
+	}
+	ai_will_do = {
+		factor = 5
+	}
+}
+
+focus = {
+	id = AME_mobile_counteroffensive
+	icon = GFX_focus_generic_tank_assault
+	x = 10
+	y = 4
+	cost = 10
+	prerequisite = {
+		focus = AME_binghams_war_conference
+	}
+	mutually_exclusive = {
+		focus = AME_fortress_europe
+		focus = AME_war_behind_enemy_lines
+	}
+	available = {
+		has_country_flag = AME_strategy_mobile
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_ideas = AME_mobile_counteroffensive_spirit
+	}
+	ai_will_do = {
+		factor = 5
+	}
+}
+
+focus = {
+	id = AME_war_behind_enemy_lines
+	icon = GFX_focus_POL_resistance
+	x = 12
+	y = 4
+	cost = 10
+	prerequisite = {
+		focus = AME_binghams_war_conference
+	}
+	mutually_exclusive = {
+		focus = AME_fortress_europe
+		focus = AME_mobile_counteroffensive
+	}
+	available = {
+		has_country_flag = AME_strategy_resistance
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_ideas = AME_resistance_network
+	}
+	ai_will_do = {
+		factor = 5
+	}
+}
+
+focus = {
+	id = AME_defense_in_depth
+	icon = GFX_focus_generic_home_defense
+	x = 8
+	y = 5
+	cost = 10
+	prerequisite = {
+		focus = AME_fortress_europe
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_ideas = AME_defense_in_depth_spirit
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_combined_arms_command
+	icon = GFX_focus_GER_combined_arms_historical
+	x = 10
+	y = 5
+	cost = 10
+	prerequisite = {
+		focus = AME_mobile_counteroffensive
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_ideas = AME_combined_arms_command_spirit
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_european_resistance_network
+	icon = GFX_focus_SWI_spirit_of_resistance
+	x = 12
+	y = 5
+	cost = 10
+	prerequisite = {
+		focus = AME_war_behind_enemy_lines
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_ideas = AME_european_resistance_network_spirit
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_coordinate_the_liberation
+	icon = GFX_focus_generic_the_council_of_europe
+	x = 10
+	y = 6
+	cost = 20
+	prerequisite = {
+		focus = AME_defense_in_depth
+		focus = AME_combined_arms_command
+		focus = AME_european_resistance_network
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_political_power = 75
+		add_war_support = 0.05
+	}
+	ai_will_do = {
+		factor = 3
+	}
+}
+
+focus = {
+	id = AME_prepare_the_liberation
+	icon = GFX_focus_generic_military_mission
+	x = 10
+	y = 7
+	cost = 10
+	prerequisite = {
+		focus = AME_coordinate_the_liberation
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		army_experience = 25
+		add_command_power = 50
+		add_political_power = 50
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_reclaim_europe
+	icon = GFX_focus_hol_liberation
+	x = 10
+	y = 8
+	cost = 20
+	prerequisite = {
+		focus = AME_prepare_the_liberation
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		if = {
+		    limit = { country_exists = SOV NOT = { has_war_with = SOV } }
+		    create_wargoal = { type = annex_everything target = SOV }
+		}
+		if = {
+		    limit = { country_exists = SOE NOT = { has_war_with = SOE } }
+		    create_wargoal = { type = annex_everything target = SOE }
+		}
+		if = {
+		    limit = { country_exists = SOS NOT = { has_war_with = SOS } }
+		    create_wargoal = { type = annex_everything target = SOS }
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_the_liberation_of_europe
+	icon = GFX_focus_generic_democratic_europe
+	x = 10
+	y = 9
+	cost = 20
+	prerequisite = {
+		focus = AME_reclaim_europe
+	}
+	available = {
+		OR = {
+		    NOT = { country_exists = SOE }
+		    SOE = { is_subject_of = ROOT }
+		}
+		OR = {
+		    NOT = { country_exists = SOS }
+		    SOS = { is_subject_of = ROOT }
+		}
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_ideas = AME_liberated_europe
+		add_political_power = 100
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_the_future_of_liberated_europe
+	icon = GFX_focus_generic_conference
+	x = 10
+	y = 10
+	cost = 20
+	prerequisite = {
+		focus = AME_the_liberation_of_europe
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_political_power = 50
+		country_event = ame.8
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_restore_sovereign_republics
+	icon = GFX_focus_generic_democratic_europe
+	x = 8
+	y = 11
+	cost = 20
+	prerequisite = {
+		focus = AME_the_future_of_liberated_europe
+	}
+	available = {
+		has_country_flag = AME_restore_republics
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		custom_effect_tooltip = AME_release_republics_tt
+		hidden_effect = { AME_release_european_republics = yes }
+		add_ideas = AME_restored_republics
+	}
+	ai_will_do = {
+		factor = 5
+	}
+}
+
+focus = {
+	id = AME_transitional_allied_administration
+	icon = GFX_focus_generic_freedom_council
+	x = 12
+	y = 11
+	cost = 20
+	prerequisite = {
+		focus = AME_the_future_of_liberated_europe
+	}
+	available = {
+		has_country_flag = AME_transitional_administration_route
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_ideas = AME_transitional_administration
+		add_political_power = 75
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_restore_civilian_government
+	icon = GFX_focus_generic_election
+	x = 12
+	y = 12
+	cost = 20
+	prerequisite = {
+		focus = AME_transitional_allied_administration
+	}
+	available = {
+		has_country_flag = AME_transitional_administration_route
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		remove_ideas = AME_transitional_administration
+		custom_effect_tooltip = AME_release_republics_tt
+		hidden_effect = { AME_release_european_republics = yes }
+		add_ideas = AME_civilian_government
+	}
+	ai_will_do = {
+		factor = 5
+	}
+}
+
+	# Diplomacy
+	
+focus = {
+	id = AME_rally_against_the_common_enemy
+	icon = GFX_goal_generic_alliance
+	x = 22
+	y = 0
+	cost = 10
+	available = {
+		is_puppet = no
+		has_government = democratic
+		has_army_manpower = { size > 249999 }
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_political_power = 150
+		add_opinion_modifier = { target = SAF modifier = small_increase }
+		add_opinion_modifier = { target = ENG modifier = small_increase }
+		add_opinion_modifier = { target = USA modifier = small_increase }
+		add_opinion_modifier = { target = IRE modifier = small_increase }
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_the_allied_cause
+	icon = GFX_focus_generic_conference
+	x = 22
+	y = 1
+	cost = 10
+	prerequisite = {
+		focus = AME_rally_against_the_common_enemy
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_political_power = 50
+		add_ideas = AME_allied_cause
+		add_opinion_modifier = { target = USA modifier = medium_increase }
+		add_opinion_modifier = { target = ENG modifier = medium_increase }
+		add_opinion_modifier = { target = IRE modifier = medium_increase }
+		add_opinion_modifier = { target = SAF modifier = medium_increase }
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_support_greece
+	icon = GFX_focus_generic_befriend_greece
+	x = 16
+	y = 2
+	cost = 10
+	prerequisite = {
+		focus = AME_the_allied_cause
+	}
+	available = {
+		country_exists = GRE
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_political_power = 25
+		if = {
+		    limit = {
+		        country_exists = GRE
+		    }
+		    add_opinion_modifier = { target = GRE modifier = medium_increase }
+		    if = {
+		        limit = {
+		            is_faction_leader = yes
+		            GRE = {
+		                is_in_faction = no
+		                is_subject = no
+		            }
+		        }
+		        add_to_faction = GRE
+		    }
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_support_the_united_kingdom
+	icon = GFX_focus_eng_unite_the_anglosphere
+	x = 19
+	y = 2
+	cost = 10
+	prerequisite = {
+		focus = AME_the_allied_cause
+	}
+	available = {
+		country_exists = ENG
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_political_power = 25
+		add_opinion_modifier = { target = ENG modifier = medium_increase }
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_support_ireland
+	icon = GFX_goal_generic_alliance
+	x = 22
+	y = 2
+	cost = 10
+	prerequisite = {
+		focus = AME_the_allied_cause
+	}
+	available = {
+		country_exists = IRE
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_political_power = 25
+		add_opinion_modifier = { target = IRE modifier = medium_increase }
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_support_the_commonwealth
+	icon = GFX_focus_generic_commonwealth_build_infantry
+	x = 25
+	y = 2
+	cost = 10
+	prerequisite = {
+		focus = AME_the_allied_cause
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_political_power = 25
+		add_opinion_modifier = { target = CAN modifier = medium_increase }
+		add_opinion_modifier = { target = SAF modifier = medium_increase }
+		add_opinion_modifier = { target = AST modifier = medium_increase }
+		add_opinion_modifier = { target = NZL modifier = medium_increase }
+		add_opinion_modifier = { target = RAJ modifier = medium_increase }
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_american_diplomacy
+	icon = GFX_goal_generic_military_deal
+	x = 28
+	y = 2
+	cost = 10
+	prerequisite = {
+		focus = AME_the_allied_cause
+	}
+	available = {
+		country_exists = USA
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_political_power = 50
+		add_opinion_modifier = { target = USA modifier = large_increase }
+	}
+	ai_will_do = {
+		factor = 3
+	}
+}
+
+focus = {
+	id = AME_the_london_accord
+	icon = GFX_focus_generic_diplomatic_treaty
+	x = 18
+	y = 3
+	cost = 10
+	prerequisite = {
+		focus = AME_support_the_united_kingdom
+	}
+	available = {
+		country_exists = ENG
+	}
+	available_if_capitulated = yes
+	mutually_exclusive = { focus = AME_militarize_the_uk }
+	completion_reward = {
+		add_opinion_modifier = { target = ENG modifier = large_increase }
+		add_ideas = AME_british_cooperation
+	}
+	ai_will_do = {
+		factor = 3
+	}
+}
+
+focus = {
+	id = AME_the_dublin_accord
+	icon = GFX_focus_generic_treaty
+	x = 22
+	y = 3
+	cost = 10
+	prerequisite = {
+		focus = AME_support_ireland
+	}
+	available = {
+		country_exists = IRE
+	}
+	available_if_capitulated = yes
+	mutually_exclusive = { focus = AME_militarize_ireland }
+	completion_reward = {
+		add_opinion_modifier = { target = IRE modifier = large_increase }
+		add_ideas = AME_irish_cooperation
+	}
+	ai_will_do = {
+		factor = 3
+	}
+}
+
+focus = {
+	id = AME_commonwealth_outreach
+	icon = GFX_focus_eng_bring_the_dominions_back_into_the_fold
+	x = 26
+	y = 3
+	cost = 10
+	prerequisite = {
+		focus = AME_support_the_commonwealth
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_ideas = AME_commonwealth_cooperation
+		add_opinion_modifier = { target = CAN modifier = medium_increase }
+		add_opinion_modifier = { target = SAF modifier = medium_increase }
+		add_opinion_modifier = { target = AST modifier = medium_increase }
+		add_opinion_modifier = { target = NZL modifier = medium_increase }
+		add_opinion_modifier = { target = RAJ modifier = medium_increase }
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_declaration_of_the_allied_nations
+	icon = GFX_focus_generic_democratic_europe
+	x = 21
+	y = 4
+	cost = 20
+	prerequisite = {
+		focus = AME_the_london_accord
+		focus = AME_the_dublin_accord
+		focus = AME_commonwealth_outreach
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_ideas = AME_allied_command
+		add_political_power = 100
+	}
+	ai_will_do = {
+		factor = 3
+	}
+}
+
+focus = {
+	id = AME_american_response
+	icon = GFX_goal_generic_military_deal
+	x = 28
+	y = 4
+	cost = 10
+	prerequisite = {
+		focus = AME_american_diplomacy
+	}
+	available = {
+		country_exists = USA
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_political_power = 50
+		if = {
+		    limit = { country_exists = USA }
+		    USA = { country_event = ame.9 }
+		}
+	}
+	ai_will_do = {
+		factor = 3
+	}
+}
+
+focus = {
+	id = AME_lend_lease_act
+	icon = GFX_focus_generic_military_industry
+	x = 26
+	y = 5
+	cost = 10
+	prerequisite = {
+		focus = AME_american_response
+	}
+	available = {
+		has_country_flag = AME_usa_aid
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_ideas = AME_american_aid
+		add_political_power = 50
+	}
+	ai_will_do = {
+		factor = 4
+	}
+}
+
+focus = {
+	id = AME_expeditionary_forces
+	icon = GFX_focus_generic_combined_arms
+	x = 28
+	y = 5
+	cost = 10
+	prerequisite = {
+		focus = AME_american_response
+	}
+	available = {
+		has_country_flag = AME_usa_expeditionary
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_ideas = AME_american_expeditionary
+		army_experience = 25
+	}
+	ai_will_do = {
+		factor = 4
+	}
+}
+
+focus = {
+	id = AME_direct_intervention
+	icon = GFX_goal_generic_major_alliance
+	x = 30
+	y = 5
+	cost = 10
+	prerequisite = {
+		focus = AME_american_response
+	}
+	available = {
+		has_country_flag = AME_usa_intervention
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_ideas = AME_american_intervention
+		add_war_support = 0.1
+	}
+	ai_will_do = {
+		factor = 4
+	}
+}
+
+focus = {
+	id = AME_joint_command
+	icon = GFX_focus_CHI_combined_logistics_command
+	x = 26
+	y = 6
+	cost = 10
+	prerequisite = {
+		focus = AME_lend_lease_act
+		focus = AME_expeditionary_forces
+		focus = AME_direct_intervention
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_ideas = AME_joint_command_spirit
+		add_command_power = 50
+	}
+	ai_will_do = {
+		factor = 3
+	}
+}
+
+focus = {
+	id = AME_the_grand_alliance
+	icon = GFX_goal_generic_major_alliance
+	x = 29
+	y = 6
+	cost = 20
+	prerequisite = {
+		focus = AME_expeditionary_forces
+		focus = AME_direct_intervention
+	}
+	available_if_capitulated = yes
+	completion_reward = {
+		add_ideas = AME_grand_alliance
+		add_political_power = 100
+	}
+	ai_will_do = {
+		factor = 3
+	}
+}
+
+focus = {
+	id = AME_militarize_the_uk
+	icon = GFX_focus_eng_global_defense
+	x = 20
+	y = 3
+	cost = 10
+	prerequisite = {
+		focus = AME_support_the_united_kingdom
+	}
+	available_if_capitulated = yes
+	mutually_exclusive = { focus = AME_the_london_accord }
+	bypass = {
+		OR = {
+		    ENG = {
+		        OR = {
+		            is_subject = yes
+		            exists = no
+		            NOT = { has_government = democratic }
+		            AND = {
+		                is_in_faction = yes
+		                NOT = { is_in_faction_with = AME }
+		            }
+		        }
+		    }
+		}
+	}
+	completion_reward = {
+		if = {
+		    limit = {
+		        country_exists = ENG
+		        ENG = { has_civil_war = no has_government = democratic }
+		    }
+		    ENG = { country_event = ame.3 }
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_militarize_ireland
+	icon = GFX_goal_generic_allies_build_infantry
+	x = 24
+	y = 3
+	cost = 10
+	prerequisite = {
+		focus = AME_support_ireland
+	}
+	available_if_capitulated = yes
+	mutually_exclusive = { focus = AME_the_dublin_accord }
+	bypass = {
+		OR = {
+		    IRE = {
+		        OR = {
+		            is_subject = yes
+		            exists = no
+		            NOT = { has_government = democratic }
+		            AND = {
+		                is_in_faction = yes
+		                NOT = { is_in_faction_with = AME }
+		            }
+		        }
+		    }
+		}
+	}
+	completion_reward = {
+		if = {
+		    limit = {
+		        country_exists = IRE
+		        IRE = { has_civil_war = no has_government = democratic }
+		    }
+		    IRE = { country_event = ame.4 }
+		}
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+	# Contractors
+	
+focus = {
+	id = AME_meet_with_the_new_contractors
+	icon = GFX_focus_generic_license_production
+	x = 34
+	y = 0
+	cost = 10
+	available_if_capitulated = no
+	completion_reward = {
+		add_political_power = 150
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_FutureTech
+	icon = GFX_focus_generic_advanced_military_studies
+	x = 31
+	y = 1
+	cost = 10
+	prerequisite = {
+		focus = AME_meet_with_the_new_contractors
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_political_power = -150
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_future_electronics
+	icon = GFX_focus_generic_radio_communication
+	x = 34
+	y = 1
+	cost = 10
+	prerequisite = {
+		focus = AME_meet_with_the_new_contractors
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_tech_bonus = {
+		    name = AME_future_electronics
+		    bonus = 1.5
+		    uses = 4
+		    category = electronics
+		}
+		custom_effect_tooltip = available_designer
+		show_ideas_tooltip = AME_future_electronics
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_future_tank_design
+	icon = GFX_focus_generic_tank_assembly
+	x = 36
+	y = 1
+	cost = 10
+	prerequisite = {
+		focus = AME_meet_with_the_new_contractors
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_tech_bonus = {
+		    name = AME_future_tank_design
+		    bonus = 1.5
+		    uses = 2
+		    category = armor
+		}
+		custom_effect_tooltip = available_designer
+		show_ideas_tooltip = AME_future_tank_design
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_norwell
+	icon = GFX_goal_generic_air_bomber
+	x = 38
+	y = 1
+	cost = 10
+	prerequisite = {
+		focus = AME_meet_with_the_new_contractors
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_political_power = -150
+		custom_effect_tooltip = available_designer
+		show_ideas_tooltip = AME_norwell
+		set_technology = { century_bomber = 1 }
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_asturias_sistemas
+	icon = GFX_focus_generic_cas_aircraft
+	x = 30
+	y = 2
+	cost = 10
+	prerequisite = {
+		focus = AME_FutureTech
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_political_power = -150
+		custom_effect_tooltip = available_designer
+		show_ideas_tooltip = AME_asturias_sistemas
+		set_technology = { vindicator = 1 }
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_angstrom_defense
+	icon = GFX_goal_generic_air_fighter
+	x = 32
+	y = 2
+	cost = 10
+	prerequisite = {
+		focus = AME_FutureTech
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_political_power = -150
+		custom_effect_tooltip = available_designer
+		show_ideas_tooltip = AME_angstrom_defense
+		set_technology = { apollo_fighter = 1 }
+	}
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+focus = {
+	id = AME_advanced_systems_consortium
+	icon = GFX_focus_generic_advanced_military_studies
+	x = 31
+	y = 3
+	cost = 20
+	prerequisite = {
+		focus = AME_asturias_sistemas
+		focus = AME_angstrom_defense
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_ideas = AME_advanced_systems
+		add_tech_bonus = {
+		    name = AME_advanced_systems
+		    bonus = 1.0
+		    uses = 2
+		    category = air_equipment
+		}
+	}
+	ai_will_do = {
+		factor = 3
+	}
+}
+
+focus = {
+	id = AME_apollo_program
+	icon = GFX_focus_generic_air_research_boost
+	x = 34
+	y = 2
+	cost = 10
+	prerequisite = {
+		focus = AME_future_electronics
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_ideas = AME_apollo_program_spirit
+		add_tech_bonus = {
+		    name = AME_apollo_program
+		    bonus = 1.0
+		    uses = 2
+		    category = air_equipment
+		}
+	}
+	ai_will_do = {
+		factor = 3
+	}
+}
+
+focus = {
+	id = AME_continental_air_defense
+	icon = GFX_focus_generic_air_defense
+	x = 34
+	y = 3
+	cost = 10
+	prerequisite = {
+		focus = AME_apollo_program
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_ideas = AME_continental_air_defense_spirit
+	}
+	ai_will_do = {
+		factor = 3
+	}
+}
+
+focus = {
+	id = AME_vindicator_program
+	icon = GFX_focus_generic_cas_aircraft
+	x = 36
+	y = 2
+	cost = 10
+	prerequisite = {
+		focus = AME_future_tank_design
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_ideas = AME_vindicator_program_spirit
+	}
+	ai_will_do = {
+		factor = 3
+	}
+}
+
+focus = {
+	id = AME_tactical_strike_wings
+	icon = GFX_focus_generic_multi_role_aircraft
+	x = 36
+	y = 3
+	cost = 10
+	prerequisite = {
+		focus = AME_vindicator_program
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_ideas = AME_tactical_strike_wings_spirit
+		add_tech_bonus = {
+		    name = AME_tactical_strike_wings
+		    bonus = 1.0
+		    uses = 2
+		    category = air_equipment
+		}
+	}
+	ai_will_do = {
+		factor = 3
+	}
+}
+
+focus = {
+	id = AME_century_bomber_program
+	icon = GFX_goal_generic_air_bomber
+	x = 38
+	y = 2
+	cost = 10
+	prerequisite = {
+		focus = AME_norwell
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_ideas = AME_century_bomber_program_spirit
+	}
+	ai_will_do = {
+		factor = 3
+	}
+}
+
+focus = {
+	id = AME_strategic_air_command
+	icon = GFX_goal_generic_air_doctrine
+	x = 38
+	y = 3
+	cost = 20
+	prerequisite = {
+		focus = AME_century_bomber_program
+	}
+	available_if_capitulated = no
+	completion_reward = {
+		add_ideas = AME_strategic_air_command_spirit
+		add_tech_bonus = {
+		    name = AME_strategic_air_command
+		    bonus = 1.0
+		    uses = 2
+		    category = air_doctrine
+		}
+	}
+	ai_will_do = {
+		factor = 3
+	}
+}
+
+}

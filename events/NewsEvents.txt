@@ -134,34 +134,45 @@ news_event = {
 		option = {
 			name = news.400.a
 			trigger = {
-				NOT = {
-					TAG = AOE
-				}
+				TAG = AME
 			}
 		}
 		option = {
 			name = news.400.b
 			trigger = { 
-				TAG = USA
-				TAG = CAN
-				TAG = IRE
-				TAG = SAF
+				OR = {
+					TAG = USA
+					TAG = CAN
+					TAG = IRE
+					TAG = SAF
+				}
 			}
 		}
 		option = {
 			name = news.400.c
 			trigger = {
-				TAG = SOV
-				TAG = SOS
-				TAG = SOE
+				OR = {
+					TAG = SOV
+					TAG = SOS
+					TAG = SOE
+				}
 			}
 		}
 		option = {
 			name = news.400.option_ack
 			trigger = {
-					NOT = { 
-						original_tag = AOE
+				NOT = {
+					OR = {
+						TAG = AME
+						TAG = USA
+						TAG = CAN
+						TAG = IRE
+						TAG = SAF
+						TAG = SOV
+						TAG = SOS
+						TAG = SOE
 					}
+				}
 			}
 		}	
 	}
@@ -179,34 +190,45 @@ news_event = {
 		option = {
 			name = news.401.a
 			trigger = {
-				NOT = {
-					TAG = AOE
-				}
+				TAG = AME
 			}
 		}
 		option = {
 			name = news.401.b
 			trigger = { 
-				TAG = USA
-				TAG = CAN
-				TAG = IRE
-				TAG = SAF
+				OR = {
+					TAG = USA
+					TAG = CAN
+					TAG = IRE
+					TAG = SAF
+				}
 			}
 		}
 		option = {
 			name = news.401.c
 			trigger = {
-				TAG = SOV
-				TAG = SOS
-				TAG = SOE
+				OR = {
+					TAG = SOV
+					TAG = SOS
+					TAG = SOE
+				}
 			}
 		}
 		option = {
 			name = news.401.option_ack
 			trigger = {
-					NOT = { 
-						original_tag = AOE
+				NOT = {
+					OR = {
+						TAG = AME
+						TAG = USA
+						TAG = CAN
+						TAG = IRE
+						TAG = SAF
+						TAG = SOV
+						TAG = SOS
+						TAG = SOE
 					}
+				}
 			}
 		}	
 	}

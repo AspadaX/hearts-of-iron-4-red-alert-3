@@ -1,21 +1,21 @@
-add_namespace = aoe
+add_namespace = ame
 
 # UK is asked about Militarization
 country_event = {
-	id = aoe.3
-	title = aoe.3.t
-	desc = aoe.3.d
+	id = ame.3
+	title = ame.3.t
+	desc = ame.3.d
 	picture = GFX_news_event_ast_planning
 	
 	is_triggered_only = yes
 	
 	option = { # Accept
-		name = aoe.3.a
+		name = ame.3.a
 		ai_chance = {
 			base = 30
 			modifier = {
 				add = -25
-				AOE = { has_army_size = { size < 30 } }
+				AME = { has_army_size = { size < 30 } }
 			}
 			modifier = {
 				add = 100
@@ -23,16 +23,16 @@ country_event = {
 			}
 			modifier = {
 				add = 20
-				is_in_faction_with = AOE
+				is_in_faction_with = AME
 			}
 		}
-		AOE = {
-			country_event = { hours = 2 id = aoe.1 }
+		AME = {
+			country_event = { hours = 2 id = ame.1 }
 		}
 		custom_effect_tooltip = GAME_OVER_TT
 	}
 	option = { # Refuse
-		name = aoe.3.b
+		name = ame.3.b
 		ai_chance = {
 			base = 10			
 			modifier = {
@@ -40,12 +40,12 @@ country_event = {
 				is_historical_focus_on = yes
 			}
 			modifier = {
-				AOE = { has_army_size = { size > 29 } }
+				AME = { has_army_size = { size > 29 } }
 				factor = 0.5
 			}
 			modifier = {
 				add = 20
-				AOE = { has_army_size = { size < 10 } }
+				AME = { has_army_size = { size < 10 } }
 			}
 			#modifier = {
 			#	add = 100
@@ -59,7 +59,7 @@ country_event = {
 			modifier = {
 				factor = 2
 				is_in_faction = yes
-				NOT = { is_in_faction_with = AOE }
+				NOT = { is_in_faction_with = AME }
 			}
 			#modifier = {
 			#	any_other_country = {
@@ -68,8 +68,8 @@ country_event = {
 			#	factor = 5
 			#}
 		}
-		AOE = {
-			country_event = { hours = 2 id = aoe.2 }
+		AME = {
+			country_event = { hours = 2 id = ame.2 }
 			if = { limit = { is_in_faction_with = ENG }
 				remove_from_faction = ENG
 			}
@@ -79,15 +79,15 @@ country_event = {
 
 # Militarizing the United Kingdom Gets Rejected
 country_event = {
-	id = aoe.2
-	title = aoe.2.t
-	desc = aoe.2.d
+	id = ame.2
+	title = ame.2.t
+	desc = ame.2.d
 	picture = GFX_news_event_king_speech
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = aoe.2.a
+		name = ame.2.a
 		add_opinion_modifier = { target = ROOT modifier = large_decrease }
 	}
 }
@@ -95,9 +95,9 @@ country_event = {
 # Militarizing the United Kingdom Gets Accepted
 
 country_event = {
-	id = aoe.1
-	title = aoe.1.t
-	desc = aoe.1.d
+	id = ame.1
+	title = ame.1.t
+	desc = ame.1.d
 	picture = GFX_report_event_soldiers_marching
 	
 	is_triggered_only = yes
@@ -109,107 +109,107 @@ country_event = {
  	#}
 
 	option = {
-		name = aoe.1.a
+		name = ame.1.a
 		127 = {
 			if = {
 				limit = { is_owned_by = ENG }
-				add_core_of = AOE
+				add_core_of = AME
 			}
 		}
 		123 = {
 			if = {
 				limit = { is_owned_by = ENG }
-				add_core_of = AOE
+				add_core_of = AME
 			}
 		}
 		338 = {
 			if = {
 				limit = { is_owned_by = ENG }
-				add_core_of = AOE
+				add_core_of = AME
 			}
 		}
 		126 = {
 			if = {
 				limit = { is_owned_by = ENG }
-				add_core_of = AOE
+				add_core_of = AME
 			}
 		}
 		125 = {
 			if = {
 				limit = { is_owned_by = ENG }
-				add_core_of = AOE
+				add_core_of = AME
 			}
 		}
 		129 = {
 			if = {
 				limit = { is_owned_by = ENG }
-				add_core_of = AOE
+				add_core_of = AME
 			}
 		}
 		128 = {
 			if = {
 				limit = { is_owned_by = ENG }
-				add_core_of = AOE
+				add_core_of = AME
 			}
 		}
 		122 = {
 			if = {
 				limit = { is_owned_by = ENG }
-				add_core_of = AOE
+				add_core_of = AME
 			}
 		}
 		130 = {
 			if = {
 				limit = { is_owned_by = ENG }
-				add_core_of = AOE
+				add_core_of = AME
 			}
 		}
 		132 = {
 			if = {
 				limit = { is_owned_by = ENG }
-				add_core_of = AOE
+				add_core_of = AME
 			}
 		}
 		131 = {
 			if = {
 				limit = { is_owned_by = ENG }
-				add_core_of = AOE
+				add_core_of = AME
 			}
 		}
 		121 = {
 			if = {
 				limit = { is_owned_by = ENG }
-				add_core_of = AOE
+				add_core_of = AME
 			}
 		}
 		133 = {
 			if = {
 				limit = { is_owned_by = ENG }
-				add_core_of = AOE
+				add_core_of = AME
 			}
 		}
 		136 = {
 			if = {
 				limit = { is_owned_by = ENG }
-				add_core_of = AOE
+				add_core_of = AME
 			}
 		}
 		120 = {
 			if = {
 				limit = { is_owned_by = ENG }
-				add_core_of = AOE
+				add_core_of = AME
 			}
 		}
 		119 = {
 			if = {
 				limit = { is_owned_by = ENG }
-				add_core_of = AOE
+				add_core_of = AME
 			}
 		}
 		
 		ENG = {
 			every_unit_leader = {
-				set_nationality = AOE
+				set_nationality = AME
 			}
 		}
 		annex_country = { target = ENG transfer_troops = yes }
@@ -226,20 +226,20 @@ country_event = {
 
 # Ireland is asked about Militarization
 country_event = {
-	id = aoe.4
-	title = aoe.4.t
-	desc = aoe.4.d
+	id = ame.4
+	title = ame.4.t
+	desc = ame.4.d
 	picture = GFX_news_event_ast_planning
 	
 	is_triggered_only = yes
 	
 	option = { # Accept
-		name = aoe.4.a
+		name = ame.4.a
 		ai_chance = {
 			base = 30
 			modifier = {
 				add = -25
-				AOE = { has_army_size = { size < 30 } }
+				AME = { has_army_size = { size < 30 } }
 			}
 			modifier = {
 				add = 100
@@ -247,16 +247,16 @@ country_event = {
 			}
 			modifier = {
 				add = 20
-				is_in_faction_with = AOE
+				is_in_faction_with = AME
 			}
 		}
-		AOE = {
-			country_event = { hours = 2 id = aoe.6 }
+		AME = {
+			country_event = { hours = 2 id = ame.6 }
 		}
 		custom_effect_tooltip = GAME_OVER_TT
 	}
 	option = { # Refuse
-		name = aoe.4.b
+		name = ame.4.b
 		ai_chance = {
 			base = 10			
 			modifier = {
@@ -264,12 +264,12 @@ country_event = {
 				is_historical_focus_on = yes
 			}
 			modifier = {
-				AOE = { has_army_size = { size > 29 } }
+				AME = { has_army_size = { size > 29 } }
 				factor = 0.5
 			}
 			modifier = {
 				add = 20
-				AOE = { has_army_size = { size < 10 } }
+				AME = { has_army_size = { size < 10 } }
 			}
 			#modifier = {
 			#	add = 100
@@ -283,7 +283,7 @@ country_event = {
 			modifier = {
 				factor = 2
 				is_in_faction = yes
-				NOT = { is_in_faction_with = AOE }
+				NOT = { is_in_faction_with = AME }
 			}
 			#modifier = {
 			#	any_other_country = {
@@ -292,8 +292,8 @@ country_event = {
 			#	factor = 5
 			#}
 		}
-		AOE = {
-			country_event = { hours = 2 id = aoe.5 }
+		AME = {
+			country_event = { hours = 2 id = ame.5 }
 			if = { limit = { is_in_faction_with = IRE }
 				remove_from_faction = IRE
 			}
@@ -303,15 +303,15 @@ country_event = {
 
 # Militarizing Ireland Gets Rejected
 country_event = {
-	id = aoe.5
-	title = aoe.5.t
-	desc = aoe.5.d
+	id = ame.5
+	title = ame.5.t
+	desc = ame.5.d
 	picture = GFX_news_event_king_speech
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = aoe.5.a
+		name = ame.5.a
 		add_opinion_modifier = { target = ROOT modifier = large_decrease }
 	}
 }
@@ -319,9 +319,9 @@ country_event = {
 # Militarizing Ireland Gets Accepted
 
 country_event = {
-	id = aoe.6
-	title = aoe.6.t
-	desc = aoe.6.d
+	id = ame.6
+	title = ame.6.t
+	desc = ame.6.d
 	picture = GFX_report_event_soldiers_marching
 	
 	is_triggered_only = yes
@@ -333,29 +333,29 @@ country_event = {
  	#}
 
 	option = {
-		name = aoe.6.a
+		name = ame.6.a
 		134 = {
 			if = {
 				limit = { is_owned_by = IRE }
-				add_core_of = AOE
+				add_core_of = AME
 			}
 		}
 		135 = {
 			if = {
 				limit = { is_owned_by = IRE }
-				add_core_of = AOE
+				add_core_of = AME
 			}
 		}
 		113 = {
 			if = {
 				limit = { is_owned_by = IRE }
-				add_core_of = AOE
+				add_core_of = AME
 			}
 		}
 		
 		IRE = {
 			every_unit_leader = {
-				set_nationality = AOE
+				set_nationality = AME
 			}
 		}
 		annex_country = { target = IRE transfer_troops = yes }
@@ -366,6 +366,114 @@ country_event = {
 		
 		hidden_effect = {
 			news_event = { hours = 6 id = news.401 }
+		}
+	}
+}
+# Bingham's War Conference
+country_event = {
+	id = ame.7
+	title = ame.7.t
+	desc = ame.7.d
+	picture = GFX_news_event_ast_planning
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ame.7.a
+		set_country_flag = AME_strategy_fortress
+		add_war_support = 0.05
+		ai_chance = { base = 34 }
+	}
+	option = {
+		name = ame.7.b
+		set_country_flag = AME_strategy_mobile
+		add_war_support = 0.05
+		ai_chance = { base = 33 }
+	}
+	option = {
+		name = ame.7.c
+		set_country_flag = AME_strategy_resistance
+		add_war_support = 0.05
+		ai_chance = { base = 33 }
+	}
+}
+
+# The Future of Liberated Europe
+country_event = {
+	id = ame.8
+	title = ame.8.t
+	desc = ame.8.d
+	picture = GFX_news_event_ast_planning
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ame.8.a
+		set_country_flag = AME_restore_republics
+		add_political_power = 50
+		ai_chance = { base = 60 }
+	}
+	option = {
+		name = ame.8.b
+		set_country_flag = AME_transitional_administration_route
+		add_political_power = 50
+		ai_chance = { base = 40 }
+	}
+}
+
+# The United States Responds
+country_event = {
+	id = ame.9
+	title = ame.9.t
+	desc = ame.9.d
+	picture = GFX_news_event_ast_planning
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ame.9.a
+		FROM = {
+			set_country_flag = AME_usa_aid
+			add_opinion_modifier = { target = ROOT modifier = large_increase }
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				add = 20
+				FROM = { has_war = yes }
+			}
+		}
+	}
+	option = {
+		name = ame.9.b
+		FROM = {
+			set_country_flag = AME_usa_expeditionary
+			add_opinion_modifier = { target = ROOT modifier = large_increase }
+		}
+		ai_chance = {
+			base = 35
+			modifier = {
+				add = 20
+				FROM = { has_war = yes }
+			}
+		}
+	}
+	option = {
+		name = ame.9.c
+		FROM = {
+			set_country_flag = AME_usa_intervention
+			add_war_support = 0.10
+			add_opinion_modifier = { target = ROOT modifier = large_increase }
+		}
+		ai_chance = {
+			base = 25
+			modifier = {
+				add = 30
+				FROM = { has_war = yes }
+			}
 		}
 	}
 }

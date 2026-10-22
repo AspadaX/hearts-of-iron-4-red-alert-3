@@ -1,0 +1,1322 @@
+AME_initialize_republic = {
+	set_country_flag = AME_restored_republic
+	if = {
+		limit = { NOT = { has_country_leader = { ruling_only = yes } } }
+		set_popularities = {
+			democratic = 90
+			fascism = 5
+			communism = 5
+			neutrality = 0
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		create_country_leader = {
+			name = "AME_provisional_government"
+			desc = "AME_provisional_government_desc"
+			picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
+			expire = "2051.1.1"
+			ideology = liberalism
+			traits = { }
+		}
+	}
+}
+
+AME_release_european_republics = {
+	if = {
+		limit = {
+			NOT = { country_exists = ALB }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = ALB }
+					any_controlled_state = { is_core_of = ALB }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = ALB
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = ALB
+			set_autonomy = {
+				target = ALB
+				autonomy_state = autonomy_free
+			}
+		}
+		ALB = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = ALB
+			ALB = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = ALB
+			autonomy_state = autonomy_free
+		}
+		ALB = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = AUS }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = AUS }
+					any_controlled_state = { is_core_of = AUS }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = AUS
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = AUS
+			set_autonomy = {
+				target = AUS
+				autonomy_state = autonomy_free
+			}
+		}
+		AUS = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = AUS
+			AUS = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = AUS
+			autonomy_state = autonomy_free
+		}
+		AUS = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = BEL }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = BEL }
+					any_controlled_state = { is_core_of = BEL }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = BEL
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = BEL
+			set_autonomy = {
+				target = BEL
+				autonomy_state = autonomy_free
+			}
+		}
+		BEL = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = BEL
+			BEL = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = BEL
+			autonomy_state = autonomy_free
+		}
+		BEL = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = BOS }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = BOS }
+					any_controlled_state = { is_core_of = BOS }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = BOS
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = BOS
+			set_autonomy = {
+				target = BOS
+				autonomy_state = autonomy_free
+			}
+		}
+		BOS = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = BOS
+			BOS = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = BOS
+			autonomy_state = autonomy_free
+		}
+		BOS = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = BUL }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = BUL }
+					any_controlled_state = { is_core_of = BUL }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = BUL
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = BUL
+			set_autonomy = {
+				target = BUL
+				autonomy_state = autonomy_free
+			}
+		}
+		BUL = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = BUL
+			BUL = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = BUL
+			autonomy_state = autonomy_free
+		}
+		BUL = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = CRO }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = CRO }
+					any_controlled_state = { is_core_of = CRO }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = CRO
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = CRO
+			set_autonomy = {
+				target = CRO
+				autonomy_state = autonomy_free
+			}
+		}
+		CRO = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = CRO
+			CRO = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = CRO
+			autonomy_state = autonomy_free
+		}
+		CRO = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = CZE }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = CZE }
+					any_controlled_state = { is_core_of = CZE }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = CZE
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = CZE
+			set_autonomy = {
+				target = CZE
+				autonomy_state = autonomy_free
+			}
+		}
+		CZE = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = CZE
+			CZE = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = CZE
+			autonomy_state = autonomy_free
+		}
+		CZE = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = DEN }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = DEN }
+					any_controlled_state = { is_core_of = DEN }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = DEN
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = DEN
+			set_autonomy = {
+				target = DEN
+				autonomy_state = autonomy_free
+			}
+		}
+		DEN = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = DEN
+			DEN = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = DEN
+			autonomy_state = autonomy_free
+		}
+		DEN = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = ENG }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = ENG }
+					any_controlled_state = { is_core_of = ENG }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = ENG
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = ENG
+			set_autonomy = {
+				target = ENG
+				autonomy_state = autonomy_free
+			}
+		}
+		ENG = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = ENG
+			ENG = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = ENG
+			autonomy_state = autonomy_free
+		}
+		ENG = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = EST }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = EST }
+					any_controlled_state = { is_core_of = EST }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = EST
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = EST
+			set_autonomy = {
+				target = EST
+				autonomy_state = autonomy_free
+			}
+		}
+		EST = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = EST
+			EST = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = EST
+			autonomy_state = autonomy_free
+		}
+		EST = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = FIN }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = FIN }
+					any_controlled_state = { is_core_of = FIN }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = FIN
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = FIN
+			set_autonomy = {
+				target = FIN
+				autonomy_state = autonomy_free
+			}
+		}
+		FIN = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = FIN
+			FIN = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = FIN
+			autonomy_state = autonomy_free
+		}
+		FIN = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = FRA }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = FRA }
+					any_controlled_state = { is_core_of = FRA }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = FRA
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = FRA
+			set_autonomy = {
+				target = FRA
+				autonomy_state = autonomy_free
+			}
+		}
+		FRA = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = FRA
+			FRA = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = FRA
+			autonomy_state = autonomy_free
+		}
+		FRA = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = GER }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = GER }
+					any_controlled_state = { is_core_of = GER }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = GER
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = GER
+			set_autonomy = {
+				target = GER
+				autonomy_state = autonomy_free
+			}
+		}
+		GER = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = GER
+			GER = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = GER
+			autonomy_state = autonomy_free
+		}
+		GER = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = HOL }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = HOL }
+					any_controlled_state = { is_core_of = HOL }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = HOL
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = HOL
+			set_autonomy = {
+				target = HOL
+				autonomy_state = autonomy_free
+			}
+		}
+		HOL = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = HOL
+			HOL = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = HOL
+			autonomy_state = autonomy_free
+		}
+		HOL = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = HUN }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = HUN }
+					any_controlled_state = { is_core_of = HUN }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = HUN
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = HUN
+			set_autonomy = {
+				target = HUN
+				autonomy_state = autonomy_free
+			}
+		}
+		HUN = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = HUN
+			HUN = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = HUN
+			autonomy_state = autonomy_free
+		}
+		HUN = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = ICE }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = ICE }
+					any_controlled_state = { is_core_of = ICE }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = ICE
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = ICE
+			set_autonomy = {
+				target = ICE
+				autonomy_state = autonomy_free
+			}
+		}
+		ICE = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = ICE
+			ICE = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = ICE
+			autonomy_state = autonomy_free
+		}
+		ICE = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = IRE }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = IRE }
+					any_controlled_state = { is_core_of = IRE }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = IRE
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = IRE
+			set_autonomy = {
+				target = IRE
+				autonomy_state = autonomy_free
+			}
+		}
+		IRE = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = IRE
+			IRE = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = IRE
+			autonomy_state = autonomy_free
+		}
+		IRE = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = ITA }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = ITA }
+					any_controlled_state = { is_core_of = ITA }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = ITA
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = ITA
+			set_autonomy = {
+				target = ITA
+				autonomy_state = autonomy_free
+			}
+		}
+		ITA = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = ITA
+			ITA = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = ITA
+			autonomy_state = autonomy_free
+		}
+		ITA = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = LAT }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = LAT }
+					any_controlled_state = { is_core_of = LAT }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = LAT
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = LAT
+			set_autonomy = {
+				target = LAT
+				autonomy_state = autonomy_free
+			}
+		}
+		LAT = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = LAT
+			LAT = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = LAT
+			autonomy_state = autonomy_free
+		}
+		LAT = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = LIT }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = LIT }
+					any_controlled_state = { is_core_of = LIT }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = LIT
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = LIT
+			set_autonomy = {
+				target = LIT
+				autonomy_state = autonomy_free
+			}
+		}
+		LIT = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = LIT
+			LIT = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = LIT
+			autonomy_state = autonomy_free
+		}
+		LIT = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = LUX }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = LUX }
+					any_controlled_state = { is_core_of = LUX }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = LUX
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = LUX
+			set_autonomy = {
+				target = LUX
+				autonomy_state = autonomy_free
+			}
+		}
+		LUX = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = LUX
+			LUX = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = LUX
+			autonomy_state = autonomy_free
+		}
+		LUX = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = MAC }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = MAC }
+					any_controlled_state = { is_core_of = MAC }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = MAC
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = MAC
+			set_autonomy = {
+				target = MAC
+				autonomy_state = autonomy_free
+			}
+		}
+		MAC = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = MAC
+			MAC = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = MAC
+			autonomy_state = autonomy_free
+		}
+		MAC = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = MNT }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = MNT }
+					any_controlled_state = { is_core_of = MNT }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = MNT
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = MNT
+			set_autonomy = {
+				target = MNT
+				autonomy_state = autonomy_free
+			}
+		}
+		MNT = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = MNT
+			MNT = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = MNT
+			autonomy_state = autonomy_free
+		}
+		MNT = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = NOR }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = NOR }
+					any_controlled_state = { is_core_of = NOR }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = NOR
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = NOR
+			set_autonomy = {
+				target = NOR
+				autonomy_state = autonomy_free
+			}
+		}
+		NOR = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = NOR
+			NOR = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = NOR
+			autonomy_state = autonomy_free
+		}
+		NOR = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = POL }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = POL }
+					any_controlled_state = { is_core_of = POL }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = POL
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = POL
+			set_autonomy = {
+				target = POL
+				autonomy_state = autonomy_free
+			}
+		}
+		POL = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = POL
+			POL = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = POL
+			autonomy_state = autonomy_free
+		}
+		POL = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = POR }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = POR }
+					any_controlled_state = { is_core_of = POR }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = POR
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = POR
+			set_autonomy = {
+				target = POR
+				autonomy_state = autonomy_free
+			}
+		}
+		POR = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = POR
+			POR = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = POR
+			autonomy_state = autonomy_free
+		}
+		POR = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = ROM }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = ROM }
+					any_controlled_state = { is_core_of = ROM }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = ROM
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = ROM
+			set_autonomy = {
+				target = ROM
+				autonomy_state = autonomy_free
+			}
+		}
+		ROM = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = ROM
+			ROM = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = ROM
+			autonomy_state = autonomy_free
+		}
+		ROM = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = SER }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = SER }
+					any_controlled_state = { is_core_of = SER }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = SER
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = SER
+			set_autonomy = {
+				target = SER
+				autonomy_state = autonomy_free
+			}
+		}
+		SER = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = SER
+			SER = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = SER
+			autonomy_state = autonomy_free
+		}
+		SER = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = SLV }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = SLV }
+					any_controlled_state = { is_core_of = SLV }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = SLV
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = SLV
+			set_autonomy = {
+				target = SLV
+				autonomy_state = autonomy_free
+			}
+		}
+		SLV = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = SLV
+			SLV = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = SLV
+			autonomy_state = autonomy_free
+		}
+		SLV = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = SPR }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = SPR }
+					any_controlled_state = { is_core_of = SPR }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = SPR
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = SPR
+			set_autonomy = {
+				target = SPR
+				autonomy_state = autonomy_free
+			}
+		}
+		SPR = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = SPR
+			SPR = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = SPR
+			autonomy_state = autonomy_free
+		}
+		SPR = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = SWE }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = SWE }
+					any_controlled_state = { is_core_of = SWE }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = SWE
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = SWE
+			set_autonomy = {
+				target = SWE
+				autonomy_state = autonomy_free
+			}
+		}
+		SWE = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = SWE
+			SWE = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = SWE
+			autonomy_state = autonomy_free
+		}
+		SWE = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = SWI }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = SWI }
+					any_controlled_state = { is_core_of = SWI }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = SWI
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = SWI
+			set_autonomy = {
+				target = SWI
+				autonomy_state = autonomy_free
+			}
+		}
+		SWI = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = SWI
+			SWI = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = SWI
+			autonomy_state = autonomy_free
+		}
+		SWI = { AME_initialize_republic = yes }
+	}
+	if = {
+		limit = {
+			NOT = { country_exists = YUG }
+			ROOT = {
+				OR = {
+					any_owned_state = { is_core_of = YUG }
+					any_controlled_state = { is_core_of = YUG }
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			release_autonomy = {
+				target = YUG
+				autonomy_state = autonomy_free
+				release_non_owned_controlled = yes
+				force_change_controller_for_non_ally_controlled = yes
+			}
+		}
+		else = {
+			release = YUG
+			set_autonomy = {
+				target = YUG
+				autonomy_state = autonomy_free
+			}
+		}
+		YUG = { AME_initialize_republic = yes }
+	}
+	else_if = {
+		limit = {
+			country_exists = YUG
+			YUG = { is_subject_of = ROOT }
+		}
+		set_autonomy = {
+			target = YUG
+			autonomy_state = autonomy_free
+		}
+		YUG = { AME_initialize_republic = yes }
+	}
+
+	every_state = {
+		limit = {
+			is_core_of = ROOT
+			owner = { has_country_flag = AME_restored_republic }
+		}
+		remove_core_of = ROOT
+	}
+}

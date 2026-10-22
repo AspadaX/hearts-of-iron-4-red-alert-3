@@ -70,6 +70,14 @@ The shared Soviet occupation and Comintern expansion branches are replaced by th
 
 All route branches and their rewards remain provisional pending a new non-Ironman campaign. The Union starts with exactly three route-linked crises: `SOV_continent_under_occupation`, `SOV_fractured_supreme_command` and `SOV_diplomatic_isolation`. Cherdenko resolves the occupation burden, Krukov resolves fractured command, and the Commander resolves diplomatic isolation; route directives do not clear a crisis early. Commander rewards emphasize diplomacy modifiers rather than generic stability. `release = TAG` creates a puppet; independence helpers follow it with `set_autonomy` using `autonomy_state = autonomy_free`. SOE/SOS and the four Imperial subjects use the generic focus tree, and their bookmark entries have real focus previews. Source/native/installed validation passes with 47 Soviet focuses and 45 Soviet spirit definitions.
 
+## Allied Nations' Militarized Zone
+
+The former AOE tag is now **AME**. The display name remains “Allied Nations' Militarized Zone in Europe.” The new focus tree has 69 focuses across Industry, European Theatre, Diplomacy and Contractors. Bingham's War Conference locks in one of three strategy branches; the London/Dublin accords and the UK/Ireland militarization branches are mutually exclusive; American Response routes into aid, expeditionary forces or direct intervention. A Greek support focus can invite Greece into the Allied Nations while AME leads the faction.
+
+The post-war settlement releases up to 33 European republics, including Britain and Ireland, while Greece remains a guaranteed ally. The release helper uses TFV autonomy with a non-TFV fallback, installs a provisional democratic government only when no ruling leader exists, and removes AME cores from restored-republic states. All quantities and modifiers remain provisional.
+
+The active event catalog is now 117 events. Source and installed static checks pass with 69 AME focuses and 30 new national spirits. Runtime tree visibility, event delivery, release behavior, localisation rendering and campaign balance remain unconfirmed; test with a new non-Ironman 2008 campaign. See [the implementation record](docs/AME_IMPLEMENTATION.md).
+
 ## RA3 event isolation
 
 The descriptor replaces the `events` directory so base-game and DLC historical event files are not loaded. The mod keeps its USA, Soviet, European, African, and custom news events. The functional generic faction invitation exchange (`generic.5` through `.7`) and its faction announcement (`news.289`) remain as the explicit mechanical diplomacy exception. These are diplomatic mechanics, not historical story chains.
@@ -84,7 +92,7 @@ Run `python3 tools/trace_runtime.py` after preparing the development build to ad
 
 ## Rising Sun campaign redesign
 
-EOR has **189 focuses, 24 decisions and three political routes: Yoshiro, Tatsu and Shinzo**. There are 77 EOR events and 114 active events overall. All routes use standard HOI4 outcomes; the final political focuses consolidate government policy. New Dawn, its automatic territorial-return programs and the custom victory layer are removed. The accepted starting borders and 2008 scenario remain unchanged.
+EOR has **189 focuses, 24 decisions and three political routes: Yoshiro, Tatsu and Shinzo**. There are 77 EOR events and 117 active events overall. All routes use standard HOI4 outcomes; the final political focuses consolidate government policy. New Dawn, its automatic territorial-return programs and the custom victory layer are removed. The accepted starting borders and 2008 scenario remain unchanged.
 
 Decisions are organized into Statecraft, Military Operations, Experimental Projects and Overseas Administration. The emergency relocation decision is removed. Great machines prepare into ready assets and require separate wartime activation. Yuriko missions and subject projects recheck recipients/targets and report invalidation. The newer corporate/state spirit pair is authoritative, government authority uses one regime-appropriate tier, and active spirits have separate descriptive prose. A baseline EOR AI plan and force-structure strategy prioritize industry, research, defense and current subjects without replacing the existing route weights.
 

@@ -1,6 +1,6 @@
 # EOR playability implementation — 19 October 2026
 
-The user approved proceeding with the [playability review](review/EOR_PLAYABILITY_REVIEW.md). The authored build now has **189 focuses, 24 decisions, 77 EOR events, 107 active events overall and 149 country-spirit definitions**. The 19 October sections below describe the earlier 96-decision implementation; the [decision simplification](#decision-simplification-20-october-2026) at the end of this document supersedes their decision inventory. All quantities, costs, durations and modifiers remain provisional. No runtime playthrough was performed by the agent.
+The user approved proceeding with the [playability review](review/EOR_PLAYABILITY_REVIEW.md). The authored build now has **189 focuses, 24 decisions, 77 EOR events, 117 active events overall and 149 country-spirit definitions**. The 19 October sections below describe the earlier 96-decision implementation; the [decision simplification](#decision-simplification-20-october-2026) at the end of this document supersedes their decision inventory. All quantities, costs, durations and modifiers remain provisional. No runtime playthrough was performed by the agent.
 
 ## Focus substance and pacing
 
@@ -16,7 +16,7 @@ Tatsu's doctrine choice opens either an armored equipment contract or a combined
 
 ## Rewards and diplomacy
 
-Divide Our Enemies no longer repeats the one-time event 105 or charges another 75 PP for it. It opens separate envoy preparations for SOV/USA/ENG/AOE: 75 PP and 60 days, one preparation at a time. A valid completion doubles the recipient's acceptance weight for a later settlement request for 180 days. The normal request cost, eligibility, refusal and cooldown still apply; preparation guarantees no pact or peace.
+Divide Our Enemies no longer repeats the one-time event 105 or charges another 75 PP for it. It opens separate envoy preparations for SOV/USA/ENG/AME: 75 PP and 60 days, one preparation at a time. A valid completion doubles the recipient's acceptance weight for a later settlement request for 180 days. The normal request cost, eligibility, refusal and cooldown still apply; preparation guarantees no pact or peace.
 
 Resource Concessions directly delivers eight rubber to a controlled Malayan subject state and eight oil to a controlled Indonesian subject state, when each recipient is eligible. It adds ten subject pressure when a valid resource recipient exists. It no longer grants an unused authorization flag; availability requires an eligible recipient.
 
@@ -92,8 +92,8 @@ Statecraft retains scheduled court review, negotiated coup transition, post-defe
 
 Military Operations keeps Yuriko's assault and sabotage missions, the three great-machine activations and the new `EOR_prepare_major_offensive`. The offensive preparation costs 75 PP, requires an ongoing war, prepares for 30 days and shares a 120-day authorization cooldown; its event `eor.156` offers Soviet, Pacific, general or Yuriko options. Experimental Projects keeps nanocore deployment and the three paid great-machine preparations. Overseas Administration keeps infrastructure investment plus one 120-day investment decision for each current subject — IOT, PHI, MAL and INS — whose events `eor.157`–`eor.160` offer an extraction or partnership settlement.
 
-Focus rewards compensate for the removed programs: `EOR_military_government` grants administrative relief, the land and oceanic shogunates deliver immediate equipment/experience/timed support, the mobilization-law amendments grant permanent spirits and an instant factory, Odessa grants direct Soviet offensive support, and the sacred-will focus delivers a one-time manpower and equipment package. The active event catalog is **107 events overall and 77 EOR events**; `eor.156.desc` avoids collision with option `eor.156.d`.
+Focus rewards compensate for the removed programs: `EOR_military_government` grants administrative relief, the land and oceanic shogunates deliver immediate equipment/experience/timed support, the mobilization-law amendments grant permanent spirits and an instant factory, Odessa grants direct Soviet offensive support, and the sacred-will focus delivers a one-time manpower and equipment package. The active event catalog is **117 events overall and 77 EOR events**; `eor.156.desc` avoids collision with option `eor.156.d`.
 
 The baseline EOR AI uses `common/ai_strategy_plans/EOR_default_strategy_plan.txt` for route-neutral focus and research weights and `common/ai_strategy/EOR.txt` for force ratios, production emphasis and subject support. It does not add a new route-selection mechanic; the existing focus weights still choose Yoshiro, Tatsu or Shinzo. AI behavior and campaign balance remain unverified until a user-run campaign.
 
-Source, native and installed static checks pass with 189 focuses, 24 decisions and 107 active events. Runtime execution, decision visibility, investment delivery, settlement refusal and campaign balance remain unconfirmed; the user launches a fresh non-Ironman campaign.
+Source, native and installed static checks pass with 189 focuses, 24 decisions and 117 active events. Runtime execution, decision visibility, investment delivery, settlement refusal and campaign balance remain unconfirmed; the user launches a fresh non-Ironman campaign.

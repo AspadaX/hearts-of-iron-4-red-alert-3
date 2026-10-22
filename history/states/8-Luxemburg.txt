@@ -12,7 +12,7 @@ state=
 
 	history=
 	{
-		owner = AOE
+		owner = AME
 		buildings = {
 			infrastructure = 6
 			arms_factory = 1
@@ -20,7 +20,7 @@ state=
 		}
 		victory_points = { 6583 5 }
 		add_core_of = LUX
-		add_core_of = AOE
+		add_core_of = AME
 		add_core_of = SOE
 	}
 

@@ -20,7 +20,7 @@ state={
 		}
 		add_core_of = FIN
 		add_core_of = SOS
-		add_core_of = AOE
+		add_core_of = AME
 	}
 
 	provinces={

@@ -24,7 +24,7 @@ state={
 			infrastructure = 6
 		}
 		add_core_of = POL
-		add_core_of = AOE
+		add_core_of = AME
 		add_core_of = SOE
 	}
 

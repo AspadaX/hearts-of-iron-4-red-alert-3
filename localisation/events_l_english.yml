@@ -3185,18 +3185,18 @@
     #Allied Nations' Militarized Zone in Europe
     
         #Militarize the United Kingdom
-        aoe.3.t:0 "Allied Nations Determines to Militarize [ENG.GetNameDef]"
-        aoe.3.d:0 "After a series of discussion in the high command of Allied Nations, the leaders all agreed to militarize [ENG.GetNameDef]"
-        aoe.3.a:0 "We sure will fight together!"
-        aoe.3.b:0 "[ENG.GetNameDef] can take care of itself."
+        ame.3.t:0 "Allied Nations Determines to Militarize [ENG.GetNameDef]"
+        ame.3.d:0 "After a series of discussion in the high command of Allied Nations, the leaders all agreed to militarize [ENG.GetNameDef]"
+        ame.3.a:0 "We sure will fight together!"
+        ame.3.b:0 "[ENG.GetNameDef] can take care of itself."
         
-        aoe.2.t:0 "[ENG.GetNameDef] Refuses to Militarize"
-        aoe.2.d:0 "The leadership of [ENG.GetName] believes they can deal with the red threat without us. Well... Speechless..."
-        aoe.2.a:0 "Sigh...Their next generation shall resent them for today's decision."
+        ame.2.t:0 "[ENG.GetNameDef] Refuses to Militarize"
+        ame.2.d:0 "The leadership of [ENG.GetName] believes they can deal with the red threat without us. Well... Speechless..."
+        ame.2.a:0 "Sigh...Their next generation shall resent them for today's decision."
         
-        aoe.1.t:0 "[ENG.GetNameDef] Accepts to Militarize"
-        aoe.1.d:0 "The leadership of [ENG.GetNameDef] trusts Allied Nations' decsion. They had accepted the militarization proposal!"
-        aoe.1.a:0 "Excellent! Their next generation shall thank them for today's decision."
+        ame.1.t:0 "[ENG.GetNameDef] Accepts to Militarize"
+        ame.1.d:0 "The leadership of [ENG.GetNameDef] trusts Allied Nations' decsion. They had accepted the militarization proposal!"
+        ame.1.a:0 "Excellent! Their next generation shall thank them for today's decision."
         
         news.400.t:0 "The Militarization of [ENG.GetNameDef]"
         news.400.d:0 "Both the leadership of Allied Nations and [ENG.GetNameDef] has agreed to militarize the British Isles. They shall fight the common threat together."
@@ -3204,19 +3204,39 @@
         news.400.b:0 "Excellent!"
         news.400.c:0 "Well, just another capitalist grave good joins the ... Dead Meat Zone in Europe, do I remember correctly?"
         
+        
+        #Bingham's War Conference
+        ame.7.t:0 "Bingham's War Conference"
+        ame.7.d:0 "The commanders of the Militarized Zone have gathered to decide how the war against the Soviets will be fought. Europe must be defended, but there is no agreement on the best method."
+        ame.7.a:0 "Fortify every approach. We will hold the line."
+        ame.7.b:0 "Concentrate our armor. We will take back the initiative."
+        ame.7.c:0 "Strike from the shadows. The resistance will bleed them dry."
+        
+        #The Future of Liberated Europe
+        ame.8.t:0 "The Future of Liberated Europe"
+        ame.8.d:0 "With Soviet forces in retreat, the liberated nations of Europe wait to learn what comes next. Some demand immediate sovereignty; others accept a temporary Allied administration."
+        ame.8.a:0 "Restore the sovereign republics at once."
+        ame.8.b:0 "Guide them through a transitional administration."
+        
+        #The American Response
+        ame.9.t:0 "Washington Responds"
+        ame.9.d:0 "The government of the United States has considered our request for support. Washington must decide whether to send aid, deploy expeditionary forces, or intervene directly in the war."
+        ame.9.a:0 "Send us the tools and we will finish the job."
+        ame.9.b:0 "Send your soldiers. We will fight together."
+        ame.9.c:0 "Join the war. The free world needs America."
         #Militarize Ireland
-        aoe.4.t:0 "Allied Nations Determines to Militarize [IRE.GetNameDef]"
-        aoe.4.d:0 "After a series of discussion in the high command of Allied Nations, the leaders all agreed to militarize [IRE.GetNameDef]"
-        aoe.4.a:0 "We sure will fight together!"
-        aoe.4.b:0 "[IRE.GetNameDef] can take care of itself."
+        ame.4.t:0 "Allied Nations Determines to Militarize [IRE.GetNameDef]"
+        ame.4.d:0 "After a series of discussion in the high command of Allied Nations, the leaders all agreed to militarize [IRE.GetNameDef]"
+        ame.4.a:0 "We sure will fight together!"
+        ame.4.b:0 "[IRE.GetNameDef] can take care of itself."
         
-        aoe.5.t:0 "[IRE.GetNameDef] Refuses to Militarize"
-        aoe.5.d:0 "The leadership of [IRE.GetName] believes they can deal with the red threat without us. Well... Speechless..."
-        aoe.5.a:0 "Sigh...Their next generation shall resent them for today's decision."
+        ame.5.t:0 "[IRE.GetNameDef] Refuses to Militarize"
+        ame.5.d:0 "The leadership of [IRE.GetName] believes they can deal with the red threat without us. Well... Speechless..."
+        ame.5.a:0 "Sigh...Their next generation shall resent them for today's decision."
         
-        aoe.6.t:0 "[IRE.GetNameDef] Accepts to Militarize"
-        aoe.6.d:0 "The leadership of [IRE.GetNameDef] trusts Allied Nations' decsion. They had accepted the militarization proposal!"
-        aoe.6.a:0 "Excellent! Their next generation shall thank them for today's decision."
+        ame.6.t:0 "[IRE.GetNameDef] Accepts to Militarize"
+        ame.6.d:0 "The leadership of [IRE.GetNameDef] trusts Allied Nations' decsion. They had accepted the militarization proposal!"
+        ame.6.a:0 "Excellent! Their next generation shall thank them for today's decision."
         
         news.401.t:0 "The Militarization of [IRE.GetNameDef]"
         news.401.d:0 "Both the leadership of Allied Nations and [IRE.GetNameDef] has agreed to militarize the British Isles. They shall fight the common threat together."

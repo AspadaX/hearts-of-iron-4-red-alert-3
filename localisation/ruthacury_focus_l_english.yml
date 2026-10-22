@@ -24,7 +24,7 @@
     SAF_go_with_allies:0 "Stand by the Allies"
     SAF_go_with_allies_desc:0 "In order to protect our nation we must stick by our loyal allies and beat back the Soviet menace."
     SAF_allies_support_manpower:0 "Send Volunteers"
-    SAF_allies_support_manpower_desc:0 "10000 eager citizens are demanding that they be shipped to the [AOE.GetName] in order to fight for our freedom."
+    SAF_allies_support_manpower_desc:0 "10000 eager citizens are demanding that they be shipped to the [AME.GetName] in order to fight for our freedom."
     SAF_allies_support_infantry_equipment:0 "Send Rifles"
     SAF_allies_support_infantry_equipment_desc:0 "We must play our part in the war effort, 10000 rifles must be sent to our militarized zone to aid in the war effort."
     SAF_allies_support_tank_equipment:0 "Send Tanks"

@@ -117,7 +117,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			AOE = {
+			AME = {
 				dismantle_faction = yes
 			}
 			
@@ -128,7 +128,7 @@ focus_tree = {
 				add_to_faction = CAN
 				add_to_faction = SAF
 				add_to_faction = IRE
-				add_to_faction = AOE
+				add_to_faction = AME
 			}
 			
 		}
@@ -355,7 +355,7 @@ focus_tree = {
 	
 	focus = {
 		id = USA_FutureTech
-		icon = GFX_
+		icon = GFX_focus_generic_advanced_military_studies
 		
 		prerequisite = { focus = USA_the_allies_military }
 		relative_position_id = USA_the_allies_military
@@ -382,7 +382,7 @@ focus_tree = {
 	
 	focus = {
 		id = USA_future_electronics
-		icon = GFX_
+		icon = GFX_focus_research
 		prerequisite = { focus = USA_FutureTech }
 		relative_position_id = USA_FutureTech
 		
@@ -402,20 +402,20 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = AOE_future_electronics
+				name = AME_future_electronics
 				bonus = 1.5
 				uses = 4
 				category = electronics
 			}
 			
 			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = AOE_future_electronics
+			show_ideas_tooltip = AME_future_electronics
 		}
 	}
 	
 	focus = {
 		id = USA_future_tank_design
-		icon = GFX_
+		icon = GFX_focus_generic_tank_assembly
 		prerequisite = { focus = USA_FutureTech }
 		relative_position_id = USA_FutureTech
 		
@@ -435,20 +435,20 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = AOE_future_tank_design
+				name = AME_future_tank_design
 				bonus = 1.5
 				uses = 2
 				category = armor
 			}
 			
 			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = AOE_future_tank_design
+			show_ideas_tooltip = AME_future_tank_design
 		}
 	}
 	
 	focus = {
 		id = USA_norwell
-		icon = GFX_
+		icon = GFX_goal_generic_air_bomber
 		
 		prerequisite = { focus = USA_the_allies_military }
 		relative_position_id = USA_the_allies_military
@@ -470,14 +470,14 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = -150
 			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = AOE_norwell
+			show_ideas_tooltip = AME_norwell
 			set_technology = { century_bomber = 1 }
 		}
 	}
 	
 	focus = {
 		id = USA_asturias_sistemas
-		icon = GFX_
+		icon = GFX_focus_generic_cas_aircraft
 		
 		prerequisite = { focus = USA_the_allies_military }
 		relative_position_id = USA_the_allies_military
@@ -499,14 +499,14 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = -150
 			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = AOE_asturias_sistemas
+			show_ideas_tooltip = AME_asturias_sistemas
 			set_technology = { vindicator = 1 }
 		}
 	}
 	
 	focus = {
 		id = USA_angstrom_defense
-		icon = GFX_
+		icon = GFX_goal_generic_air_fighter
 		
 		prerequisite = { focus = USA_the_allies_military }
 		relative_position_id = USA_the_allies_military
@@ -528,7 +528,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = -150
 			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = AOE_angstrom_defense
+			show_ideas_tooltip = AME_angstrom_defense
 			set_technology = { apollo_fighter = 1 }
 		}
 	}
@@ -632,13 +632,13 @@ focus_tree = {
 		}
 
 		available = {
-			is_in_faction = yes
+			always = yes
 		}
 		
 		bypass = {
 			is_in_faction = no
 		}
-
+		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -649,14 +649,14 @@ focus_tree = {
 
 		completion_reward = {
 			
-			AOE = {
+			AME = {
 				dismantle_faction = yes
 			}
 			
-			AOE = {
+			AME = {
 				create_faction = allied_nations
 				add_to_faction = ENG
-				add_to_faction = AOE
+				add_to_faction = AME
 				add_to_faction = CAN
 				add_to_faction = SAF
 				add_to_faction = IRE
@@ -666,7 +666,7 @@ focus_tree = {
 			add_popularity = { ideology = fascism popularity = 0.1 }
 			
 			add_opinion_modifier = {
-				target = AOE
+				target = AME
 				modifier = withdraw_from_allied_nations
 			}
 			

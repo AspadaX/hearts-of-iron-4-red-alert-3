@@ -9,7 +9,7 @@ state = {
 
 	history = {
 		owner = SOE
-		add_core_of = AOE
+		add_core_of = AME
 		add_core_of = ROM
 		add_core_of = SOE
 

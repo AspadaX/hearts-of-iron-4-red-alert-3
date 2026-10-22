@@ -8,8 +8,8 @@ state=
 	
 	history=
 	{
-		owner = AOE
-		add_core_of = AOE
+		owner = AME
+		add_core_of = AME
 		buildings = {
 			infrastructure = 1
 			12512 ={

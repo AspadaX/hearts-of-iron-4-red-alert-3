@@ -1,0 +1,630 @@
+ideas = {
+	country = {
+	
+		#Politics
+		
+		militarized_zone = {
+			removal_cost = -1
+			
+			picture = generic_war_preparation
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+			
+			modifier = {
+				stability_factor = 0.4
+				
+			}
+		}
+		
+		unyielding_people = {
+			removal_cost = -1
+			
+			picture = hol_liberation
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				has_government = democratic
+			}
+			
+			modifier = {
+				conscription_factor = 0.25
+				war_support_factor = 0.50
+			}
+		}
+		
+		global_headquarter_of_allied_nations = {
+			removal_cost = -1
+			
+			picture = air_support_focus
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				has_government = democratic
+			}
+			
+			modifier = {
+				drift_defence_factor = 0.30
+				
+			}
+			
+			rule = {
+				can_join_opposite_factions = no
+				can_create_factions = yes
+			}
+			
+		}
+		
+		the_army_of_freedom_spirit = {
+			removal_cost = -1
+			
+			picture = usa_desegregation_1
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				has_government = democratic
+			}
+			
+			modifier = {
+				conscription_factor = 0.25
+			}
+		}
+		
+		the_shield_of_europe_spirit = {
+			removal_cost = -1
+			
+			picture = generic_reserve_divisions
+			
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				has_government = democratic
+			}
+			
+			modifier = {
+				army_core_defence_factor = 0.30
+			}
+		}
+		
+		AME_fortress_europe_spirit = {
+			removal_cost = -1
+			picture = generic_wall_line
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				army_defence_factor = 0.15
+				army_core_defence_factor = 0.10
+				production_speed_bunker_factor = 0.20
+			}
+		}
+
+		AME_mobile_counteroffensive_spirit = {
+			removal_cost = -1
+			picture = generic_war_preparation
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				army_speed_factor = 0.10
+				army_armor_attack_factor = 0.10
+				planning_speed = 0.10
+			}
+		}
+
+		AME_resistance_network = {
+			removal_cost = -1
+			picture = hol_liberation
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.05
+				intel_network_gain_factor = 0.10
+			}
+		}
+
+		AME_defense_in_depth_spirit = {
+			removal_cost = -1
+			picture = generic_wall_line
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				army_defence_factor = 0.10
+				army_core_defence_factor = 0.15
+			}
+		}
+
+		AME_combined_arms_command_spirit = {
+			removal_cost = -1
+			picture = generic_war_preparation
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				army_attack_factor = 0.05
+				army_armor_attack_factor = 0.10
+				planning_speed = 0.10
+			}
+		}
+
+		AME_european_resistance_network_spirit = {
+			removal_cost = -1
+			picture = hol_liberation
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.10
+				conscription_factor = 0.05
+			}
+		}
+
+		AME_liberated_europe = {
+			removal_cost = -1
+			picture = hol_liberation
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				war_support_factor = 0.10
+				stability_factor = 0.05
+				opinion_gain_monthly_factor = 0.10
+			}
+		}
+
+		AME_restored_republics = {
+			removal_cost = -1
+			picture = hol_liberation
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				stability_factor = 0.05
+				opinion_gain_monthly_factor = 0.15
+			}
+		}
+
+		AME_transitional_administration = {
+			removal_cost = -1
+			picture = generic_reserve_divisions
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.10
+			}
+		}
+
+		AME_civilian_government = {
+			removal_cost = -1
+			picture = hol_liberation
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.10
+			}
+		}
+
+		AME_allied_cause = {
+			removal_cost = -1
+			picture = air_support_focus
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				opinion_gain_monthly_factor = 0.10
+			}
+		}
+
+		AME_british_cooperation = {
+			removal_cost = -1
+			picture = air_support_focus
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				opinion_gain_monthly_factor = 0.15
+			}
+		}
+
+		AME_irish_cooperation = {
+			removal_cost = -1
+			picture = air_support_focus
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				opinion_gain_monthly_factor = 0.15
+				conscription_factor = 0.05
+			}
+		}
+
+		AME_commonwealth_cooperation = {
+			removal_cost = -1
+			picture = air_support_focus
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				opinion_gain_monthly_factor = 0.15
+			}
+		}
+
+		AME_allied_command = {
+			removal_cost = -1
+			picture = generic_war_preparation
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				command_power_gain = 0.10
+				planning_speed = 0.05
+			}
+		}
+
+		AME_american_aid = {
+			removal_cost = -1
+			picture = air_support_focus
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				industrial_capacity_factory = 0.05
+			}
+		}
+
+		AME_american_expeditionary = {
+			removal_cost = -1
+			picture = generic_reserve_divisions
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				experience_gain_army_factor = 0.10
+				conscription_factor = 0.05
+			}
+		}
+
+		AME_american_intervention = {
+			removal_cost = -1
+			picture = generic_war_preparation
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				war_support_factor = 0.10
+				army_attack_factor = 0.05
+			}
+		}
+
+		AME_joint_command_spirit = {
+			removal_cost = -1
+			picture = generic_war_preparation
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				planning_speed = 0.10
+				command_power_gain = 0.10
+			}
+		}
+
+		AME_grand_alliance = {
+			removal_cost = -1
+			picture = air_support_focus
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				opinion_gain_monthly_factor = 0.15
+				war_support_factor = 0.05
+			}
+		}
+
+		AME_wartime_manufacturing = {
+			removal_cost = -1
+			picture = generic_war_preparation
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				industrial_capacity_factory = 0.10
+				conversion_cost_civ_to_mil_factor = -0.10
+			}
+		}
+
+		AME_continental_supply = {
+			removal_cost = -1
+			picture = generic_wall_line
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				supply_consumption_factor = -0.05
+			}
+		}
+
+		AME_rebuild_liberated_europe = {
+			removal_cost = -1
+			picture = hol_liberation
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				industrial_capacity_factory = 0.05
+				stability_factor = 0.05
+			}
+		}
+
+		AME_advanced_systems = {
+			removal_cost = -1
+			picture = generic_war_preparation
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				research_speed_factor = 0.05
+			}
+		}
+
+		AME_apollo_program_spirit = {
+			removal_cost = -1
+			picture = air_support_focus
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				research_speed_factor = 0.05
+				air_attack_factor = 0.05
+			}
+		}
+
+		AME_continental_air_defense_spirit = {
+			removal_cost = -1
+			picture = generic_wall_line
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				air_defence_factor = 0.10
+				air_agility_factor = 0.05
+			}
+		}
+
+		AME_vindicator_program_spirit = {
+			removal_cost = -1
+			picture = air_support_focus
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				air_attack_factor = 0.10
+				air_agility_factor = 0.05
+			}
+		}
+
+		AME_tactical_strike_wings_spirit = {
+			removal_cost = -1
+			picture = air_support_focus
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				air_range_factor = 0.10
+				air_attack_factor = 0.05
+			}
+		}
+
+		AME_century_bomber_program_spirit = {
+			removal_cost = -1
+			picture = air_support_focus
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				air_attack_factor = 0.10
+				air_range_factor = 0.10
+			}
+		}
+
+		AME_strategic_air_command_spirit = {
+			removal_cost = -1
+			picture = air_support_focus
+			allowed = { always = no }
+			allowed_civil_war = { has_government = democratic }
+			modifier = {
+				air_attack_factor = 0.10
+				air_defence_factor = 0.05
+				experience_gain_air_factor = 0.10
+			}
+		}
+
+		#Construction
+		
+		speed_up_the_fort_construction = {
+		
+			allowed = {
+				original_tag = AME
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_wall_line
+
+			modifier = {
+				production_speed_bunker_factor = 0.2
+			}
+		}
+	}
+		
+		#Manufacturers
+		
+	industrial_concern = { 
+		
+		AME_future_electronics = {
+
+			picture = generic_electronics_concern_1
+			
+			allowed = {
+				OR = {
+					original_tag = AME
+					original_tag = USA
+					original_tag = CAN
+					original_tag = SAF
+					original_tag = ENG
+					original_tag = IRE
+				}
+			}
+			
+			available = {
+				OR = {
+					has_completed_focus = AME_future_electronics
+					has_completed_focus = USA_future_electronics
+				}
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				electronics = 0.20
+			}
+			
+			traits = { electronics_concern }
+		}
+	}
+	
+	tank_manufacturer = {
+	
+		designer = yes
+	
+		AME_future_tank_design = {
+			
+			allowed = {
+				OR = {
+					original_tag = AME
+					original_tag = USA
+					original_tag = CAN
+					original_tag = SAF
+					original_tag = ENG
+					original_tag = IRE
+				}
+			}
+			
+			available = { 
+				OR = {
+					has_completed_focus = AME_future_tank_design
+					has_completed_focus = USA_future_tank_design
+				}
+			}
+				
+			research_bonus = {
+				armor = 0.20
+			}
+			
+			traits = { tank_manufacturer }
+		}
+		
+	}
+	
+	aircraft_manufacturer = {
+		
+		designer = yes
+		
+		AME_norwell	= {
+						
+			allowed = {
+				OR = {
+					original_tag = AME
+					original_tag = USA
+					original_tag = CAN
+					original_tag = SAF
+					original_tag = ENG
+					original_tag = IRE
+				}
+			}
+			
+			available = {
+				OR = {
+					has_completed_focus = AME_norwell
+					has_completed_focus = USA_norwell
+				}
+			}
+			
+			research_bonus = {
+				air_equipment = 0.25
+			}
+			
+			traits = { heavy_aircraft_manufacturer }
+		}
+		
+		AME_asturias_sistemas = {
+						
+			allowed = {
+				OR = {
+					original_tag = AME
+					original_tag = USA
+					original_tag = CAN
+					original_tag = SAF
+					original_tag = ENG
+					original_tag = IRE
+				}
+			}
+			
+			available = {
+				OR = {
+					has_completed_focus = AME_asturias_sistemas
+					has_completed_focus = USA_asturias_sistemas
+				}
+			}
+			
+			research_bonus = {
+				air_equipment = 0.25
+			}
+			
+			traits = { medium_aircraft_manufacturer }
+
+		}
+		
+		AME_angstrom_defense = {
+						
+			allowed = {
+				OR = {
+					original_tag = AME
+					original_tag = USA
+					original_tag = CAN
+					original_tag = SAF
+					original_tag = ENG
+					original_tag = IRE
+				}
+			}
+			
+			available = {
+				OR = {
+					has_completed_focus = AME_angstrom_defense
+					has_completed_focus = USA_angstrom_defense
+				}
+			}
+						
+			research_bonus = {
+				air_equipment = 0.25
+			}
+			
+			traits = { light_aircraft_manufacturer }
+		}
+	}
+	
+	
+		
+		#Economics
+		
+		
+		
+		
+		
+		#Others
+		
+		
+		
+	
+}

@@ -26,7 +26,7 @@ state={
 		}
 		add_core_of = SPR
 		add_core_of = SOE
-		add_core_of = AOE
+		add_core_of = AME
 	}
 
 	provinces={

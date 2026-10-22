@@ -105,17 +105,17 @@ EOR_seek_settlement_eng = {
  }
 }
 
-EOR_seek_settlement_aoe = {
+EOR_seek_settlement_ame = {
  icon = generic_political_discourse
  cost = 75
  visible = { OR = { has_country_flag = EOR_settlement_diplomacy has_country_flag = EOR_route_technocratic } }
- available = { AOE = { eor_can_receive_settlement = yes } }
+ available = { AME = { eor_can_receive_settlement = yes } }
  days_re_enable = 365
  ai_will_do = { factor = 1 }
  complete_effect = {
-  if = { limit = { AOE = { exists = yes } }
-   if = { limit = { has_country_flag = EOR_prepared_negotiation } clr_country_flag = EOR_prepared_negotiation AOE = { set_country_flag = { flag = EOR_prepared_settlement days = 180 } } }
-   AOE = { country_event = { id = eor.114 days = 1 } }
+  if = { limit = { AME = { exists = yes } }
+   if = { limit = { has_country_flag = EOR_prepared_negotiation } clr_country_flag = EOR_prepared_negotiation AME = { set_country_flag = { flag = EOR_prepared_settlement days = 180 } } }
+   AME = { country_event = { id = eor.114 days = 1 } }
   }
  }
 }

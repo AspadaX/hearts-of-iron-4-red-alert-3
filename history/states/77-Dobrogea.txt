@@ -18,7 +18,7 @@ state={
 		add_core_of = ROM
 		add_claim_by = BUL
 		add_core_of = SOE
-		add_core_of = AOE
+		add_core_of = AME
 	}
 
 	provinces={

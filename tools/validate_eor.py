@@ -209,6 +209,53 @@ def check_native(root,game,tree,focuses,positions,manifest,spirits,ideas,dynamic
     check_starting_research(root,game)
     print('PASS native static checks: GUI geometry, assets/modifier names, equipment IDs/load order, unit-bonus stats, starting research and fortress locations. Not an engine run or UI confirmation.')
 
+def check_ame_focus_integrity(root):
+    protected=['common/ideas/ame_ideas.txt','common/national_focus/ame_focus.txt',
+               'common/scripted_effects/ame_focus_effects.txt']
+    for rel in protected:
+        assert not (root/rel).read_bytes().startswith(b'\xef\xbb\xbf'),('UTF-8 BOM in active AME file',rel)
+    localisation=['localisation/ideas_l_english.yml','localisation/focus_l_english.yml',
+                  'localisation/ame_core_l_english.yml','localisation/events_l_english.yml']
+    for rel in localisation:
+        assert (root/rel).read_bytes().startswith(b'\xef\xbb\xbf'),('Missing UTF-8 BOM in active AME localisation',rel)
+    tree=(root/'common/national_focus/ame_focus.txt').read_text()
+    ideas=(root/'common/ideas/ame_ideas.txt').read_text()
+    effects=(root/'common/scripted_effects/ame_focus_effects.txt').read_text()
+    events=(root/'events/AME.txt').read_text()
+    ame_history=(root/"history/countries/AME - Allied Nations' Militarized Zone in Europe.txt").read_text(encoding='utf-8-sig')
+    assert not re.search(r'\badd_to_faction\s*=\s*USA\b',ame_history),('USA must not start in the AME-led faction',)
+    idea_ids=set(re.findall(r'^\s*([A-Za-z0-9_]+)\s*=\s*\{',ideas,re.M))
+    for target in re.findall(r'\badd_ideas\s*=\s*([A-Za-z0-9_]+)',tree):
+        if target=='limited_conscription':continue
+        assert target in idea_ids,('AME focus add_ideas target is not defined',target)
+    assert '$' not in effects,('HOI4 scripted effects do not substitute parameters',)
+    assert 'add_country_flag' not in events,('Invalid HOI4 effect add_country_flag',)
+    focuses={scalar(b,'id'):b for b in blocks(tree,'focus')}
+    routes={'AME_fortress_europe','AME_mobile_counteroffensive','AME_war_behind_enemy_lines'}
+    for fid in routes:
+        groups=[set(re.findall(r'focus\s*=\s*([\w-]+)',q)) for q in blocks(focuses[fid],'mutually_exclusive')]
+        assert len(groups)==1,('AME Bingham route must declare one mutually_exclusive block',fid)
+        assert groups[0]==routes-{fid},('AME Bingham routes must be pairwise mutually exclusive',fid,groups[0])
+    focus_keys=set(re.findall(r'^\s*([A-Za-z0-9_.-]+):\d+',(root/'localisation/focus_l_english.yml').read_text(encoding='utf-8-sig'),re.M))
+    idea_keys=set(re.findall(r'^\s*([A-Za-z0-9_.-]+):\d+',(root/'localisation/ideas_l_english.yml').read_text(encoding='utf-8-sig'),re.M))
+    duplicates={k for k in focus_keys&idea_keys if k.startswith('AME_')}
+    assert not duplicates,('Duplicate AME focus/idea localisation keys',sorted(duplicates))
+
+def check_ame_convergence(root):
+    tree=(root/'common/national_focus/ame_focus.txt').read_text(encoding='utf-8-sig')
+    focuses={scalar(b,'id'):b for b in blocks(tree,'focus')}
+    expected={
+        'AME_the_shield_of_europe':{'AME_approach_the_young_officers','AME_the_army_of_freedom'},
+        'AME_coordinate_the_liberation':{'AME_defense_in_depth','AME_combined_arms_command','AME_european_resistance_network'},
+        'AME_declaration_of_the_allied_nations':{'AME_the_london_accord','AME_the_dublin_accord','AME_commonwealth_outreach'},
+        'AME_joint_command':{'AME_lend_lease_act','AME_expeditionary_forces','AME_direct_intervention'},
+        'AME_the_grand_alliance':{'AME_expeditionary_forces','AME_direct_intervention'},
+    }
+    for fid,alternatives in expected.items():
+        assert fid in focuses,('Missing AME convergence focus',fid)
+        groups=[set(re.findall(r'focus\s*=\s*([\w-]+)',q)) for q in blocks(focuses[fid],'prerequisite')]
+        assert groups==[alternatives],('AME convergence must use one OR prerequisite block',fid,groups)
+
 def check(root,game,source_only=False):
     manifest=json.loads((ROOT/'tools/eor_design_manifest.json').read_text())
     assert manifest['version']==3
@@ -463,7 +510,7 @@ def check(root,game,source_only=False):
     assert 'is_controlled_by = event_target:EOR_overseas_infrastructure_recipient' in end
     assert 'type = infrastructure level = 1 instant_build = yes' in end
     assert 'id = eor.144' in end and 'id = eor.145' in end
-    for tag in ['sov','usa','eng','aoe']:
+    for tag in ['sov','usa','eng','ame']:
         decision=entries['EOR_seek_settlement_'+tag]
         assert 'cost = 75' in decision
         assert tag.upper()+' = { eor_can_receive_settlement = yes }' in decision
@@ -554,6 +601,8 @@ def check(root,game,source_only=False):
     assert re.search(r'modifier\s*=\s*\{\s*add\s*=\s*100\s+tag\s*=\s*IOT',generic)
     assert len(blocks(generic,'focus'))>40,'IOT generic tree is empty or incomplete'
     assert not (root/'common/national_focus/iot_focus.txt').exists()
+    check_ame_focus_integrity(root)
+    check_ame_convergence(root)
     print(f'PASS source phase: {len(focuses)} focus graphs, 3 political routes, {len(entries)} decisions, {len(events)} events, economic/authority/recipient invariants, role-specific prose, event keys and IOT selection.')
     if not source_only:
         required=[game/'interface/nationalfocusview.gui',game/'documentation/modifiers_documentation.md']

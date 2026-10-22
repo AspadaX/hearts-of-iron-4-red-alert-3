@@ -8,7 +8,7 @@ eor_allies_defeated = {
  AND = {
  OR = { has_country_flag = EOR_defeated_USA AND = { NOT = { country_exists = USA } 361 = { controller = { OR = { tag = EOR is_in_faction_with = EOR } } } } USA = { exists = yes is_subject_of = EOR } }
  OR = { has_country_flag = EOR_defeated_ENG AND = { NOT = { country_exists = ENG } 126 = { controller = { OR = { tag = EOR is_in_faction_with = EOR } } } } ENG = { exists = yes is_subject_of = EOR } }
- OR = { has_country_flag = EOR_defeated_AOE AND = { NOT = { country_exists = AOE } 7 = { controller = { OR = { tag = EOR is_in_faction_with = EOR } } } } AOE = { exists = yes is_subject_of = EOR } }
+ OR = { has_country_flag = EOR_defeated_AME AND = { NOT = { country_exists = AME } 7 = { controller = { OR = { tag = EOR is_in_faction_with = EOR } } } } AME = { exists = yes is_subject_of = EOR } }
  }
 }
 eor_coalition_possible = {

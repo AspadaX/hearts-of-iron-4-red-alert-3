@@ -5357,7 +5357,7 @@
     "EOR_seek_settlement_sov",
     "EOR_seek_settlement_usa",
     "EOR_seek_settlement_eng",
-    "EOR_seek_settlement_aoe",
+    "EOR_seek_settlement_ame",
     "EOR_prepare_major_offensive",
     "EOR_omega_assault",
     "EOR_omega_sabotage",
@@ -5481,7 +5481,7 @@
     "EOR_prepare_settlement_sov",
     "EOR_prepare_settlement_usa",
     "EOR_prepare_settlement_eng",
-    "EOR_prepare_settlement_aoe",
+    "EOR_prepare_settlement_ame",
     "EOR_emergency_relocation"
   ],
   "playability_revision": {

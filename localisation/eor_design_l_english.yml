@@ -916,8 +916,8 @@
  EOR_seek_settlement_usa_desc:0 "Spend 75 PP to request a non-aggression pact and one-year truce. A legal request requires an independent target outside our faction without an existing settlement: either an enemy above 35% surrender progress, or a peaceful target weaker than the Empire while our government has neither capitulated nor entered civil war. If Imperial Diplomatic Outreach prepared negotiations, acceptance is more likely; the target may still refuse, costing an additional 15 PP."
  EOR_seek_settlement_eng:0 "Seek a Settlement with Britain"
  EOR_seek_settlement_eng_desc:0 "Spend 75 PP to request a non-aggression pact and one-year truce. A legal request requires an independent target outside our faction without an existing settlement: either an enemy above 35% surrender progress, or a peaceful target weaker than the Empire while our government has neither capitulated nor entered civil war. If Imperial Diplomatic Outreach prepared negotiations, acceptance is more likely; the target may still refuse, costing an additional 15 PP."
- EOR_seek_settlement_aoe:0 "Seek a Settlement with Allied Europe"
- EOR_seek_settlement_aoe_desc:0 "Spend 75 PP to request a non-aggression pact and one-year truce. A legal request requires an independent target outside our faction without an existing settlement: either an enemy above 35% surrender progress, or a peaceful target weaker than the Empire while our government has neither capitulated nor entered civil war. If Imperial Diplomatic Outreach prepared negotiations, acceptance is more likely; the target may still refuse, costing an additional 15 PP."
+ EOR_seek_settlement_ame:0 "Seek a Settlement with Allied Europe"
+ EOR_seek_settlement_ame_desc:0 "Spend 75 PP to request a non-aggression pact and one-year truce. A legal request requires an independent target outside our faction without an existing settlement: either an enemy above 35% surrender progress, or a peaceful target weaker than the Empire while our government has neither capitulated nor entered civil war. If Imperial Diplomatic Outreach prepared negotiations, acceptance is more likely; the target may still refuse, costing an additional 15 PP."
  EOR_subject_iot_pacific_naval_research:0 "Pacific Naval Research — IOT"
  EOR_subject_iot_pacific_naval_research_desc:0 "Spend 75 PP and reserve 3 civilian factories for 120 days. Delivery requires the same recipient to remain an Imperial subject and retain ownership and control of the original project capital. If invalidated, no reward or refund is granted; the reservation expires on schedule."
  EOR_subject_iot_advanced_shipbuilding:0 "Advanced Shipbuilding — IOT"
@@ -1552,9 +1552,9 @@ EOR_overseas_decisions:0 "Overseas Administration"
 
  EOR_prepare_settlement_eng_desc:0 "Spend 75 PP and 60 days preparing a separate agreement with the Britain. The target must remain eligible for an Imperial settlement. Successful preparation doubles its acceptance weight for a later paid request for 180 days; refusal remains possible. Only one envoy preparation can run at a time. Annual authorization cooldown; invalidation gives no refund."
 
- EOR_prepare_settlement_aoe:0 "Prepare Envoys: European administration"
+ EOR_prepare_settlement_ame:0 "Prepare Envoys: European administration"
 
- EOR_prepare_settlement_aoe_desc:0 "Spend 75 PP and 60 days preparing a separate agreement with the European administration. The target must remain eligible for an Imperial settlement. Successful preparation doubles its acceptance weight for a later paid request for 180 days; refusal remains possible. Only one envoy preparation can run at a time. Annual authorization cooldown; invalidation gives no refund."
+ EOR_prepare_settlement_ame_desc:0 "Spend 75 PP and 60 days preparing a separate agreement with the European administration. The target must remain eligible for an Imperial settlement. Successful preparation doubles its acceptance weight for a later paid request for 180 days; refusal remains possible. Only one envoy preparation can run at a time. Annual authorization cooldown; invalidation gives no refund."
 
  eor.41.review:0 "The scheduled court review has assembled ministers and commanders before a military disaster forces their hand. Yoshiro argues for sacred authority, Tatsu offers technical administration and Shinzo seeks a stronger military voice. No foreign evidence has been discovered by this debate. The court must decide which institution should shape the next government."
 

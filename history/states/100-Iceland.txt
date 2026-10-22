@@ -9,8 +9,8 @@ state=
 	
 	history=
 	{
-		owner = AOE
-		add_core_of = AOE
+		owner = AME
+		add_core_of = AME
 		victory_points = { 12674 1 }
 		buildings = {
 			infrastructure = 2

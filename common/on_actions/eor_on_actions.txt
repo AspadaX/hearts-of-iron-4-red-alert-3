@@ -8,7 +8,7 @@ add_to_variable = { var = EOR_imperial_legitimacy value = -15 }
  add_to_variable = { var = EOR_divine_mandate value = -15 }
 eor_refresh_mandate = yes
  } }
- if = { limit = { OR = { tag = SOV tag = USA tag = ENG tag = AOE } FROM = { OR = { tag = EOR is_in_faction_with = EOR } } }
+ if = { limit = { OR = { tag = SOV tag = USA tag = ENG tag = AME } FROM = { OR = { tag = EOR is_in_faction_with = EOR } } }
 if = { limit = { tag = SOV } EOR = { if = { limit = { NOT = { has_country_flag = EOR_defeated_SOV } } set_country_flag = EOR_defeated_SOV add_to_variable = { var = EOR_divine_mandate value = 10 }
 eor_refresh_mandate = yes
 } } }
@@ -18,7 +18,7 @@ eor_refresh_mandate = yes
 if = { limit = { tag = ENG } EOR = { if = { limit = { NOT = { has_country_flag = EOR_defeated_ENG } } set_country_flag = EOR_defeated_ENG add_to_variable = { var = EOR_divine_mandate value = 10 }
 eor_refresh_mandate = yes
 } } }
-if = { limit = { tag = AOE } EOR = { if = { limit = { NOT = { has_country_flag = EOR_defeated_AOE } } set_country_flag = EOR_defeated_AOE add_to_variable = { var = EOR_divine_mandate value = 10 }
+if = { limit = { tag = AME } EOR = { if = { limit = { NOT = { has_country_flag = EOR_defeated_AME } } set_country_flag = EOR_defeated_AME add_to_variable = { var = EOR_divine_mandate value = 10 }
 eor_refresh_mandate = yes
 } } }
 } } }

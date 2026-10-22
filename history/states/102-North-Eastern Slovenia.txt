@@ -16,7 +16,7 @@ state=
 		add_core_of = YUG
 		add_core_of = SLV
 		add_core_of = SOE
-		add_core_of = AOE
+		add_core_of = AME
 	}
 	provinces={
 		596 665 3631 3654 6672 9596

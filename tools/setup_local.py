@@ -81,7 +81,7 @@ def main():
     if backup is not None:
         print(f'Previous development build and logs: {backup}')
     print('Restart HOI4 and start a NEW campaign using the development playset.')
-    print('Expected scenario date: 2008.1.1; custom countries include EOR and AOE.')
+    print('Expected scenario date: 2008.1.1; custom countries include EOR and AME.')
     print('Compatibility with the installed game still requires in-game testing.')
 
 

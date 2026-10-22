@@ -6,7 +6,7 @@ state = {
 	
 	history = {
 		owner = SOS
-		add_core_of = AOE
+		add_core_of = AME
 		add_core_of = NOR
 		add_core_of = SOS
 
