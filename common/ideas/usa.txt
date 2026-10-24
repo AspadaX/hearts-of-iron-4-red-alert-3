@@ -280,23 +280,6 @@ ideas = {
 			}
 		}
 
-		USA_intervention_in_the_americas = {
-			picture = generic_war_preparation
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-			
-			modifier = {
-				planning_speed = 0.05
-			}
-		}
 		USA_intervention_in_europe = {
 			picture = generic_fortify_the_borders
 			
@@ -397,22 +380,6 @@ ideas = {
 				consumer_goods_factor = 0.05	
 			}
 		}
-		USA_the_pentagon = {
-			picture = generic_army_war_college
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-			
-			modifier = {
-				planning_speed = 0.1	
-			}
-		}
 		USA_maritime_commission = {
 			picture = generic_sea_focused_navy
 			allowed = {
@@ -466,6 +433,7 @@ ideas = {
 			modifier = {
 				army_core_defence_factor = 0.2
 				army_core_attack_factor = 0.2
+				planning_speed = 0.1
 			}
 		}
 		USA_armed_forces_desegregation = {
@@ -1260,6 +1228,229 @@ ideas = {
 				consumer_goods_factor = -0.1	
 				conscription_factor = 0.25
 			}			
+		}
+		USA_arsenal_of_liberty_spirit = {
+			allowed = { always = no }
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = generic_war_preparation
+			modifier = {
+				production_speed_arms_factory_factor = 0.10
+				industrial_capacity_factory = 0.05
+				consumer_goods_factor = -0.02
+			}
+		}
+		USA_leadership_of_the_free_world = {
+			allowed = { always = no }
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = generic_pp_unity_bonus
+			modifier = {
+				opinion_gain_monthly_factor = 0.25
+				faction_influence_contribution_factor = 0.25
+				political_power_gain = 0.10
+			}
+		}
+		USA_leadership_of_the_free_world_2 = {
+			allowed = { always = no }
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = generic_pp_unity_bonus
+			modifier = {
+				opinion_gain_monthly_factor = 0.35
+				faction_influence_contribution_factor = 0.35
+				political_power_gain = 0.15
+			}
+		}
+		USA_american_strategic_autonomy = {
+			allowed = { always = no }
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = generic_army_war_college
+			modifier = {
+				max_command_power = 25
+				command_power_gain_mult = 0.10
+				justify_war_goal_time = -0.10
+			}
+		}
+		USA_fortress_america_spirit = {
+			allowed = { always = no }
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = generic_fortify_the_borders
+			modifier = {
+				army_core_defence_factor = 0.10
+				stability_factor = 0.10
+				consumer_goods_factor = -0.03
+			}
+		}
+		USA_presidential_emergency_powers = {
+			allowed = { always = no }
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = generic_political_advisor_europe_6
+			modifier = {
+				political_power_gain = 0.10
+				war_support_factor = 0.05
+				stability_factor = -0.05
+			}
+		}
+		USA_constitutional_resistance = {
+			allowed = { always = no }
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = generic_disjointed_gov
+			modifier = {
+				stability_factor = -0.10
+				political_power_gain = -0.10
+			}
+		}
+		USA_imperial_dependence = {
+			allowed = { always = no }
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = generic_goods_red_bonus
+			modifier = {
+				consumer_goods_factor = 0.05
+				political_power_gain = -0.10
+				stability_factor = -0.05
+			}
+		}
+		USA_new_american_order_spirit = {
+			allowed = { always = no }
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = generic_fascism_drift_bonus
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.10
+				political_power_gain = 0.15
+				conscription_factor = 0.05
+			}
+		}
+		USA_reunited_but_divided = {
+			allowed = { always = no }
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = generic_disjointed_gov
+			modifier = {
+				stability_factor = -0.10
+				political_power_gain = -0.10
+				war_support_factor = -0.05
+			}
+		}
+		USA_reunited_but_divided_2 = {
+			allowed = { always = no }
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = generic_disjointed_gov
+			modifier = {
+				stability_factor = -0.05
+				political_power_gain = -0.05
+			}
+		}
+		USA_the_american_industrial_giant_spirit = {
+			allowed = { always = no }
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = generic_production_bonus
+			modifier = {
+				industrial_capacity_factory = 0.10
+				production_speed_buildings_factor = 0.10
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		USA_the_american_century_spirit = {
+			allowed = { always = no }
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = generic_production_bonus
+			modifier = {
+				opinion_gain_monthly_factor = 0.15
+				faction_influence_contribution_factor = 0.15
+				political_power_gain = 0.05
+			}
+		}
+		USA_federal_research_laboratories_spirit = {
+			allowed = { always = no }
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = generic_research_bonus
+			modifier = {
+				research_speed_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+			}
+		}
+		USA_rushmore_program_spirit = {
+			allowed = { always = no }
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = generic_war_preparation
+			modifier = {
+				research_speed_factor = 0.05
+				war_support_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+			}
 		}
 	
 	}

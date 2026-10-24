@@ -102,45 +102,30 @@ set_convoys = 400
 
 give_guarantee = GRE
 
-1939.1.1 = {
+set_politics = {
+	ruling_party = democratic
+	election_frequency = 48
+	elections_allowed = no
+}
 
-	set_politics = {
+set_popularities = {
+	democratic = 95
+	fascism = 3
+	communism = 2
+	neutrality = 0
+}
 
-		parties = {
-			democratic = { 
-				popularity = 99
-			}
-
-			fascism = {
-				popularity = 0
-			}
-			
-			communism = {
-				popularity = 1
-				#banned = no #default is no
-			}
-		}
-		
-		ruling_party = democratic
-		last_election = "1936.11.3"
-		election_frequency = 48
-		elections_allowed = yes
-	}
-	
-	add_ideas = {
+add_ideas = {
 	free_trade
-	
 	home_of_the_free
 	us_congress
-	}
-
 }
 
 create_country_leader = {
-	name = "Waiting For the Next President"
+	name = "Howard T. Ackerman"
 	desc = "POLITICS_HOWARD_T_ACKERMAN_DESC"
-	picture = "Portrait_Germany_Heinrich_Himmler.dds"
-	expire = "1989.1.1"
+	picture = "Portrait_USA_Howard.dds"
+	expire = "2051.1.1"
 	ideology = liberalism
 	traits = {
 		
@@ -153,7 +138,7 @@ create_country_leader = {
 	name = "William Dudley Pelley"
 	desc = "POLITICS_WILLIAM_DUDLEY_PELLEY_DESC"
 	picture = "Portrait_USA_William_Dudley_Pelley.dds"
-	expire = "1965.1.1"
+	expire = "2051.1.1"
 	ideology = fascism_ideology
 	traits = {
 		
@@ -164,7 +149,7 @@ create_country_leader = {
 	name = "Earl Browder"
 	desc = "POLITICS_EARL_BROWDER_DESC"
 	picture = "portrait_USA_earl_browder.dds"
-	expire = "1965.1.1"
+	expire = "2051.1.1"
 	ideology = marxism
 	traits = {
 		

@@ -1,729 +1,585 @@
 focus_tree = {
 	id = usa_focus
-	
+
 	country = {
 		factor = 0
-		
+
 		modifier = {
 			add = 20
 			tag = USA
 		}
 	}
-	
+
 	default = no
-	
-	# 2008 Election
-	
+	continuous_focus_position = { x = 50 y = 1600 }
+
 	focus = {
-		id = USA_2018_us_election
+		id = USA_2008_us_election
 		icon = GFX_focus_generic_the_giant_wakes
-		x = 13
+		x = 0
 		y = 0
-
-		mutually_exclusive = { focus = USA_america_alone }
 		cost = 1
-
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
-
 		available = {
 			has_government = democratic
 		}
-		
-		bypass = {
-
-		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
 		completion_reward = {
-			add_political_power = 50
 			country_event = usa2.2
 		}
 	}
-	
-	#USA America Leads
 
 	focus = {
 		id = USA_america_leads
 		icon = GFX_goal_anti_comintern_pact
-		x = -3
+		x = -12
 		y = 1
-		relative_position_id = USA_2018_us_election
-
+		prerequisite = { focus = USA_2008_us_election }
 		mutually_exclusive = { focus = USA_america_alone }
-		prerequisite = { focus = USA_2018_us_election }
 		cost = 10
-
 		ai_will_do = {
-			factor = 1
+			factor = 10
 		}
-
 		available = {
-			has_government = democratic
-			has_country_leader = {
-				name = "Howard T. Ackerman"
-				ruling_only = yes
-			}
+			has_country_flag = USA_ackerman_elected
 		}
-		
-		bypass = {
-
-		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
 		completion_reward = {
-			add_political_power = 150
+			add_political_power = 50
+			if = {
+				limit = { NOT = { has_idea = USA_leadership_of_the_free_world } }
+				add_ideas = USA_leadership_of_the_free_world
+			}
 		}
 	}
-	
-	#Rally the Allies
-	
+
 	focus = {
-		id = USA_rally_the_allies
-		icon = GFX_goal_generic_alliance
+		id = USA_arsenal_of_liberty
+		icon = GFX_goal_generic_production
+		x = -14
+		y = 2
 		prerequisite = { focus = USA_america_leads }
-		
-		x = 0
-		y = 1
-		relative_position_id = USA_america_leads
-
 		cost = 10
-
 		ai_will_do = {
-			factor = 1
+			factor = 5
 		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
 		completion_reward = {
-			AME = {
-				dismantle_faction = yes
+			if = {
+				limit = { NOT = { has_idea = USA_arsenal_of_liberty_spirit } }
+				add_ideas = USA_arsenal_of_liberty_spirit
 			}
-			
-			USA = {
-				create_faction = allied_nations
-				add_to_faction = ENG
-				add_to_faction = USA
-				add_to_faction = CAN
-				add_to_faction = SAF
-				add_to_faction = IRE
-				add_to_faction = AME
-			}
-			
-		}
-	}
-	
-	focus = {
-		id = USA_war_in_europe
-		icon = GFX_focus_usa_focus_on_europe
-		prerequisite = { focus = USA_rally_the_allies }
-		
-		x = -1
-		y = 1
-		relative_position_id = USA_rally_the_allies
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			create_wargoal = {
-				type = puppet_wargoal_focus
-				target = SOV
-			}
-		}
-	}
-	
-	focus = {
-		id = USA_strike_the_empire
-		icon = GFX_focus_usa_focus_on_asia
-		prerequisite = { focus = USA_rally_the_allies }
-		
-		x = 1
-		y = 1
-		relative_position_id = USA_rally_the_allies
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			declare_war_on = {
-				target = EOR
-				type = puppet_wargoal_focus
-			}
-			
-			add_ideas = USA_strike_the_empire
-			
-		}
-	}
-	
-	focus = {
-		id = USA_modern_monroe_doctrine
-		icon = GFX_goal_generic_political_pressure
-		prerequisite = { focus = USA_rally_the_allies focus = USA_presidential_power_act }
-		
-		x = 3
-		y = 1
-		relative_position_id = USA_rally_the_allies
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			#Monroe Doctrine
-			give_guarantee = CAN
-			give_guarantee = MEX
-			give_guarantee = CUB
-			give_guarantee = HAI
-			give_guarantee = DOM
-			give_guarantee = GUA
-			give_guarantee = HON
-			give_guarantee = ELS
-			give_guarantee = NIC
-			give_guarantee = COS
-			give_guarantee = PAN
-			give_guarantee = VEN
-			give_guarantee = COL
-			give_guarantee = ECU
-			give_guarantee = PRU
-			give_guarantee = BRA
-			give_guarantee = BOL
-			give_guarantee = CHL
-			give_guarantee = PAR
-			give_guarantee = ARG
-			give_guarantee = URG
-		}
-	}
-	
-	focus = {
-		id = USA_safeguard_the_backyard
-		icon = GFX_goal_generic_position_armies
-		prerequisite = { focus = USA_modern_monroe_doctrine }
-		
-		x = 0
-		y = 1
-		relative_position_id = USA_modern_monroe_doctrine
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-			is_faction_leader = yes
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			
-			MEX = {
-				country_event = usa2.1
-			}
-			
-		}
-	}
-	
-	
-	#The Allies' Military
-	
-	focus = {
-		id = USA_the_allies_military
-		icon = GFX_focus_generic_license_production
-		prerequisite = { focus = USA_america_leads }
-		
-		x = -8
-		y = 1
-		relative_position_id = USA_america_leads
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-			
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			add_political_power = 200
-		}
-	}
-	
-	#Contractors
-	
-	focus = {
-		id = USA_FutureTech
-		icon = GFX_focus_generic_advanced_military_studies
-		
-		prerequisite = { focus = USA_the_allies_military }
-		relative_position_id = USA_the_allies_military
-		
-		x = -2
-		y = 1
-		cost = 10
-		
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.25
-				always = yes
-			}
-		}
-
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_political_power = -150
-			
-		}
-	}
-	
-	focus = {
-		id = USA_future_electronics
-		icon = GFX_focus_research
-		prerequisite = { focus = USA_FutureTech }
-		relative_position_id = USA_FutureTech
-		
-		x = -1
-		y = 1
-		cost = 10
-		
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.25
-				always = yes
-			}
-		}
-
-		available_if_capitulated = no
-
-		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 2 }
 			add_tech_bonus = {
-				name = AME_future_electronics
-				bonus = 1.5
-				uses = 4
+				name = USA_arsenal_of_liberty
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = USA_the_european_lifeline
+		icon = GFX_goal_generic_alliance
+		x = -12
+		y = 2
+		prerequisite = { focus = USA_america_leads }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			if = {
+				limit = { country_exists = AME }
+				AME = {
+					add_opinion_modifier = {
+						target = USA
+						modifier = USA_lend_lease_to_europe_opinion
+					}
+				}
+			}
+			unlock_decision_tooltip = USA_lend_lease_to_europe
+		}
+	}
+
+	focus = {
+		id = USA_join_the_allied_nations
+		icon = GFX_goal_generic_alliance
+		x = -14
+		y = 3
+		prerequisite = { focus = USA_the_european_lifeline }
+		mutually_exclusive = { focus = USA_an_independent_american_command }
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			set_country_flag = USA_sought_allied_membership
+			if = {
+				limit = { country_exists = AME AME = { is_faction_leader = yes } }
+				AME = { country_event = usa2.10 }
+			}
+			else = {
+				create_faction = american_coalition
+				if = {
+					limit = { country_exists = MEX has_country_flag = USA_mexico_allied }
+					add_to_faction = MEX
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_an_independent_american_command
+		icon = GFX_goal_generic_territory_or_war
+		x = -10
+		y = 3
+		prerequisite = { focus = USA_the_european_lifeline }
+		mutually_exclusive = { focus = USA_join_the_allied_nations }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			if = {
+				limit = { is_in_faction = no }
+				create_faction = american_coalition
+				if = {
+					limit = { country_exists = MEX has_country_flag = USA_mexico_allied }
+					add_to_faction = MEX
+				}
+			}
+			if = {
+				limit = { NOT = { has_idea = USA_american_strategic_autonomy } }
+				add_ideas = USA_american_strategic_autonomy
+			}
+		}
+	}
+
+	focus = {
+		id = USA_the_allied_war_council
+		icon = GFX_goal_generic_military_sphere
+		x = -14
+		y = 4
+		prerequisite = { focus = USA_join_the_allied_nations }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			is_in_faction_with = AME
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			if = {
+				limit = { has_idea = USA_war_department }
+				swap_ideas = {
+					remove_idea = USA_war_department
+					add_idea = USA_department_of_defense
+				}
+			}
+			else_if = {
+				limit = { NOT = { has_idea = USA_department_of_defense } }
+				add_ideas = USA_department_of_defense
+			}
+		}
+	}
+
+	focus = {
+		id = USA_the_washington_leadership_conference
+		icon = GFX_goal_generic_political_pressure
+		x = -14
+		y = 5
+		prerequisite = { focus = USA_the_allied_war_council }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			is_in_faction_with = AME
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			if = {
+				limit = { country_exists = AME AME = { is_faction_leader = yes } }
+				AME = { country_event = usa2.11 }
+			}
+		}
+	}
+
+	focus = {
+		id = USA_liberate_europe
+		icon = GFX_focus_usa_focus_on_europe
+		x = -10
+		y = 5
+		prerequisite = { focus = USA_join_the_allied_nations focus = USA_the_allied_war_council focus = USA_an_independent_american_command }
+		cost = 20
+		ai_will_do = {
+			factor = 10
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_idea = USA_intervention_in_europe } }
+				add_ideas = USA_intervention_in_europe
+			}
+			if = {
+				limit = { country_exists = SOV NOT = { is_in_faction_with = SOV } NOT = { has_war_with = SOV } }
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = SOV
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_enemies_of_our_enemies
+		icon = GFX_focus_jap_cast_the_die
+		x = -10
+		y = 6
+		prerequisite = { focus = USA_liberate_europe }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			if = {
+				limit = { NOT = { OR = { country_exists = SOV country_exists = EOR } } }
+				set_country_flag = USA_preserve_allied_unity_choice
+			}
+			country_event = usa2.5
+		}
+	}
+
+	focus = {
+		id = USA_preserve_allied_unity
+		icon = GFX_goal_generic_alliance
+		x = -12
+		y = 7
+		prerequisite = { focus = USA_enemies_of_our_enemies }
+		mutually_exclusive = { focus = USA_the_rushmore_directive }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			has_country_flag = USA_preserve_allied_unity_choice
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			add_political_power = 25
+			add_stability = 0.03
+			set_country_flag = USA_preserve_allied_unity
+			if = {
+				limit = { has_idea = USA_leadership_of_the_free_world }
+				swap_ideas = {
+					remove_idea = USA_leadership_of_the_free_world
+					add_idea = USA_leadership_of_the_free_world_2
+				}
+			}
+			else_if = {
+				limit = { NOT = { has_idea = USA_leadership_of_the_free_world_2 } }
+				add_ideas = USA_leadership_of_the_free_world_2
+			}
+		}
+	}
+
+	focus = {
+		id = USA_the_rushmore_directive
+		icon = GFX_goal_generic_forceful_treaty
+		x = -10
+		y = 7
+		prerequisite = { focus = USA_enemies_of_our_enemies }
+		mutually_exclusive = { focus = USA_preserve_allied_unity }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			has_country_flag = USA_rushmore_choice
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			set_country_flag = USA_rushmore_directive
+			if = {
+				limit = { NOT = { has_idea = USA_american_strategic_autonomy } }
+				add_ideas = USA_american_strategic_autonomy
+			}
+			country_event = usa2.6
+		}
+	}
+
+	focus = {
+		id = USA_project_rushmore
+		icon = GFX_focus_generic_advanced_military_studies
+		x = -10
+		y = 8
+		prerequisite = { focus = USA_the_rushmore_directive }
+		cost = 20
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			has_country_flag = USA_rushmore_escalated
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_idea = USA_rushmore_program_spirit } }
+				add_ideas = USA_rushmore_program_spirit
+			}
+			add_tech_bonus = {
+				name = USA_project_rushmore
+				bonus = 0.5
+				uses = 2
 				category = electronics
 			}
-			
-			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = AME_future_electronics
 		}
 	}
-	
+
 	focus = {
-		id = USA_future_tank_design
-		icon = GFX_focus_generic_tank_assembly
-		prerequisite = { focus = USA_FutureTech }
-		relative_position_id = USA_FutureTech
-		
-		x = 1
-		y = 1
-		cost = 10
-		
+		id = USA_americas_war
+		icon = GFX_goal_generic_territory_or_war
+		x = -10
+		y = 9
+		prerequisite = { focus = USA_project_rushmore }
+		cost = 20
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.25
-				always = yes
-			}
+			factor = 10
 		}
-
+		available = {
+			OR = { country_exists = SOV country_exists = EOR }
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		available_if_capitulated = no
-
 		completion_reward = {
-			add_tech_bonus = {
-				name = AME_future_tank_design
-				bonus = 1.5
-				uses = 2
-				category = armor
+			if = {
+				limit = { country_exists = SOV NOT = { is_in_faction_with = SOV } NOT = { has_war_with = SOV } }
+				create_wargoal = { type = puppet_wargoal_focus target = SOV }
 			}
-			
-			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = AME_future_tank_design
+			if = {
+				limit = { country_exists = EOR NOT = { is_in_faction_with = EOR } NOT = { has_war_with = EOR } }
+				create_wargoal = { type = puppet_wargoal_focus target = EOR }
+			}
 		}
 	}
-	
-	focus = {
-		id = USA_norwell
-		icon = GFX_goal_generic_air_bomber
-		
-		prerequisite = { focus = USA_the_allies_military }
-		relative_position_id = USA_the_allies_military
-		
-		x = 1
-		y = 1
-		cost = 10
-		
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.25
-				always = yes
-			}
-		}
 
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_political_power = -150
-			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = AME_norwell
-			set_technology = { century_bomber = 1 }
-		}
-	}
-	
-	focus = {
-		id = USA_asturias_sistemas
-		icon = GFX_focus_generic_cas_aircraft
-		
-		prerequisite = { focus = USA_the_allies_military }
-		relative_position_id = USA_the_allies_military
-		
-		x = 3
-		y = 1
-		cost = 10
-		
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.25
-				always = yes
-			}
-		}
-
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_political_power = -150
-			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = AME_asturias_sistemas
-			set_technology = { vindicator = 1 }
-		}
-	}
-	
-	focus = {
-		id = USA_angstrom_defense
-		icon = GFX_goal_generic_air_fighter
-		
-		prerequisite = { focus = USA_the_allies_military }
-		relative_position_id = USA_the_allies_military
-		
-		x = 5
-		y = 1
-		cost = 10
-		
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.25
-				always = yes
-			}
-		}
-
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_political_power = -150
-			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = AME_angstrom_defense
-			set_technology = { apollo_fighter = 1 }
-		}
-	}
-	
-	#America Alone
-	
 	focus = {
 		id = USA_america_alone
 		icon = GFX_goal_generic_territory_or_war
-		x = 3
+		x = 10
 		y = 1
-		relative_position_id = USA_2018_us_election
-
+		prerequisite = { focus = USA_2008_us_election }
 		mutually_exclusive = { focus = USA_america_leads }
-		prerequisite = { focus = USA_2018_us_election }
 		cost = 10
-
 		ai_will_do = {
-			factor = 1
+			factor = 5
 		}
-
 		available = {
-			has_government = democratic
-			has_country_leader = {
-				name = "George Lincoln Rockwell"
-				ruling_only = yes
-			}
+			has_country_flag = USA_rockwell_elected
 		}
-		
-		bypass = {
-			
-		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
 		completion_reward = {
-			add_political_power = 150
-			custom_effect_tooltip = available_political_advisor
-		    show_ideas_tooltip = charles_coughlin
-			add_ideas = charles_coughlin
+			add_political_power = 50
+			if = {
+				limit = { NOT = { has_idea = USA_american_strategic_autonomy } }
+				add_ideas = USA_american_strategic_autonomy
+			}
 		}
 	}
-	
-	#Presidential Power Act
-	
+
+	focus = {
+		id = USA_fortress_america
+		icon = GFX_goal_generic_position_armies
+		x = 8
+		y = 2
+		prerequisite = { focus = USA_america_alone }
+		mutually_exclusive = { focus = USA_the_new_order }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			add_stability = 0.03
+			if = {
+				limit = { NOT = { has_idea = USA_fortress_america_spirit } }
+				add_ideas = USA_fortress_america_spirit
+			}
+			unlock_decision_tooltip = USA_federalize_the_national_guard
+		}
+	}
+
+	focus = {
+		id = USA_the_new_order
+		icon = GFX_goal_support_fascism
+		x = 12
+		y = 2
+		prerequisite = { focus = USA_america_alone }
+		mutually_exclusive = { focus = USA_fortress_america }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.15
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.15
+			}
+			set_country_flag = USA_new_order_route
+		}
+	}
+
+	focus = {
+		id = USA_fortress_homeland_defense
+		icon = GFX_focus_usa_build_the_pentagon
+		x = 6
+		y = 3
+		prerequisite = { focus = USA_fortress_america }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			add_stability = 0.03
+			if = {
+				limit = { NOT = { has_idea = USA_homeland_defense } }
+				add_ideas = USA_homeland_defense
+			}
+		}
+	}
+
+	focus = {
+		id = USA_hemispheric_security
+		icon = GFX_goal_generic_position_armies
+		x = 8
+		y = 3
+		prerequisite = { focus = USA_fortress_america }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			unlock_decision_tooltip = USA_enforce_hemispheric_security
+		}
+	}
+
 	focus = {
 		id = USA_presidential_power_act
 		icon = GFX_goal_generic_forceful_treaty
-		prerequisite = { focus = USA_america_alone }
-		
-		x = 0
-		y = 1
-		relative_position_id = USA_america_alone
-
+		x = 12
+		y = 3
+		prerequisite = { focus = USA_the_new_order }
 		cost = 10
-
 		ai_will_do = {
-			factor = 1
+			factor = 8
 		}
-
 		available = {
-			fascism > 0.2
+			has_country_flag = USA_new_order_route
 		}
-		
-		bypass = {
-
-		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = us_congress
-				add_idea = us_congress_2
+			if = {
+				limit = { has_idea = us_congress }
+				swap_ideas = {
+					remove_idea = us_congress
+					add_idea = us_congress_2
+				}
 			}
-			add_ideas = public_objection
+			else_if = {
+				limit = { NOT = { has_idea = us_congress_2 } }
+				add_ideas = us_congress_2
+			}
+			if = {
+				limit = { NOT = { has_idea = USA_presidential_emergency_powers } }
+				add_ideas = USA_presidential_emergency_powers
+			}
+			if = {
+				limit = { NOT = { has_idea = public_objection } }
+				add_ideas = public_objection
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.12
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.12
+			}
+			country_event = usa2.7
 		}
 	}
-	
-	focus = {
-		id = USA_withdraw_from_allied_nations
-		icon = GFX_goal_generic_attack_allies
-		prerequisite = { focus = USA_presidential_power_act }
-		
-		x = -1
-		y = 1
-		relative_position_id = USA_presidential_power_act
 
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-			always = yes
-		}
-		
-		bypass = {
-			is_in_faction = no
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-			
-		}
-
-		completion_reward = {
-			
-			AME = {
-				dismantle_faction = yes
-			}
-			
-			AME = {
-				create_faction = allied_nations
-				add_to_faction = ENG
-				add_to_faction = AME
-				add_to_faction = CAN
-				add_to_faction = SAF
-				add_to_faction = IRE
-			}
-			
-			add_political_power = 150
-			add_popularity = { ideology = fascism popularity = 0.1 }
-			
-			add_opinion_modifier = {
-				target = AME
-				modifier = withdraw_from_allied_nations
-			}
-			
-			add_opinion_modifier = {
-				target = ENG
-				modifier = withdraw_from_allied_nations
-			}
-			
-			add_opinion_modifier = {
-				target = CAN
-				modifier = withdraw_from_allied_nations
-			}
-			
-			add_opinion_modifier = {
-				target = SAF
-				modifier = withdraw_from_allied_nations
-			}
-			
-			add_opinion_modifier = {
-				target = IRE
-				modifier = withdraw_from_allied_nations
-			}
-			
-		}
-	}
-	
 	focus = {
 		id = USA_establish_the_armed_protection_squadron
-		icon = GFX_focus_usa_honor_the_confederacy
+		icon = GFX_focus_generic_military_mission
+		x = 10
+		y = 4
 		prerequisite = { focus = USA_presidential_power_act }
-		
-		x = 1
-		y = 1
-		relative_position_id = USA_presidential_power_act
-
 		cost = 10
-
 		ai_will_do = {
-			factor = 1
+			factor = 8
 		}
-
 		available = {
-			
+			has_country_flag = USA_constitutional_crisis_escalated
 		}
-		
-		bypass = {
-
-		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-		complete_tooltip = {
-			
-		}
-
 		completion_reward = {
 			create_field_marshal = {
 				name = "John Smith"
@@ -736,1092 +592,864 @@ focus_tree = {
 				logistics_skill = 4
 				id = 1000
 			}
-			
 			unlock_decision_tooltip = USA_establish_the_armed_protection_squadron
-			custom_effect_tooltip = USA_establish_the_armed_protection_squadron_tt
-			
 		}
 	}
-	
+
 	focus = {
 		id = USA_question_the_constitution
 		icon = GFX_focus_renounce_the_treaty_of_trianon
-		prerequisite = { focus = USA_withdraw_from_allied_nations }
+		x = 12
+		y = 5
+		prerequisite = { focus = USA_presidential_power_act }
 		prerequisite = { focus = USA_establish_the_armed_protection_squadron }
-		
-		x = 1
-		y = 1
-		relative_position_id = USA_withdraw_from_allied_nations
-
-		cost = 10
-
+		cost = 20
 		ai_will_do = {
-			factor = 1
+			factor = 5
 		}
-
 		available = {
-			fascism > 0.5
+			has_country_flag = USA_constitutional_crisis_escalated
+			fascism > 0.4
 		}
-		
-		bypass = {
-			
-		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-		complete_tooltip = {
-			
-		}
-
 		completion_reward = {
-		
-			remove_ideas = home_of_the_free
-		
-			custom_effect_tooltip = USA_question_the_constitution_tt
-			
-			hidden_effect = {
-			
-				create_country_leader = {
-					name = "Howard T. Ackerman"
-					desc = "POLITICS_HOWARD_T_ACKERMAN_DESC"
-					picture = "Portrait_USA_Howard.dds"
-					expire = "1989.1.1"
-					ideology = liberalism
-					traits = {
-		
-					}
-				}
-				
-				start_civil_war = {
-					ruling_party = fascism
-					ideology = ROOT
-					size = 0.8
-					only_own_territory = no
-					capital = 358
-					states = { 
-						358 357 360 359 386 385 378 379 377 #359 afterwards are pacific states
-					}
-					keep_unit_leaders = {
-						1000
-					}
-				
-				}
-				
-				country_event = usa2.4
-				
+			if = {
+				limit = { has_idea = home_of_the_free }
+				remove_ideas = home_of_the_free
 			}
-			
-			
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			set_popularities = {
+				fascism = 55
+				democratic = 40
+				communism = 5
+				neutrality = 0
+			}
+			if = {
+				limit = { NOT = { has_idea = USA_new_american_order_spirit } }
+				add_ideas = USA_new_american_order_spirit
+			}
+			if = {
+				limit = { NOT = { has_idea = USA_constitutional_resistance } }
+				add_ideas = USA_constitutional_resistance
+			}
+			if = {
+				limit = { has_country_leader = { name = "George Lincoln Rockwell" ruling_only = yes } }
+				set_country_leader_ideology = fascism_ideology
+			}
+			else = {
+				retire_country_leader = yes
+				create_country_leader = {
+					name = "George Lincoln Rockwell"
+					desc = "POLITICS_GEORGE_LINCOLN_ROCKWELL_DESC"
+					picture = "Portrait_USA_Rockwell.dds"
+					expire = "2051.1.1"
+					ideology = fascism_ideology
+					traits = {
+					}
+				}
+			}
+			set_country_flag = USA_civil_war_started
+			start_civil_war = {
+				ruling_party = fascism
+				ideology = democratic
+				size = 0.35
+				capital = 361
+				keep_unit_leaders = {
+					1000
+				}
+				keep_unit_leaders_trigger = {
+					has_id = 1000
+				}
+			}
+			every_country = {
+				limit = { NOT = { tag = USA } }
+				every_unit_leader = {
+					limit = { has_id = 1000 }
+					set_nationality = USA
+				}
+			}
+			every_unit_leader = {
+				limit = { has_id = 1000 }
+				if = {
+					limit = { has_trait = reassigned }
+					remove_unit_leader_trait = reassigned
+				}
+			}
 		}
 	}
-	
+
 	focus = {
 		id = USA_accept_japanese_help
 		icon = GFX_focus_jap_cast_the_die
+		x = 12
+		y = 6
 		prerequisite = { focus = USA_question_the_constitution }
-		
-		x = 1
-		y = 1
-		relative_position_id = USA_question_the_constitution
-
 		cost = 10
-
 		ai_will_do = {
-			factor = 1
+			factor = 3
 		}
-
 		available = {
 			has_civil_war = yes
+			country_exists = EOR
+			NOT = { has_war_with = EOR }
 		}
-		
-		bypass = {
-			
-		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-		complete_tooltip = {
-			
-		}
-
 		completion_reward = {
-		
-			custom_effect_tooltip = USA_accept_japanese_help_tt
-		
-			EOR = {
-				country_event = usa2.3
+			if = {
+				limit = { country_exists = EOR }
+				EOR = { country_event = usa2.3 }
 			}
 		}
 	}
-	
+
 	focus = {
 		id = USA_rebuild_our_nation
+		icon = GFX_goal_generic_construct_civilian
+		x = 10
+		y = 6
+		prerequisite = { focus = USA_question_the_constitution }
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+		available = {
+			has_civil_war = no
+			has_country_flag = USA_civil_war_started
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			if = {
+				limit = { has_idea = USA_constitutional_resistance }
+				remove_ideas = USA_constitutional_resistance
+			}
+			if = {
+				limit = { NOT = { has_idea = USA_reunited_but_divided } }
+				add_ideas = USA_reunited_but_divided
+			}
+			add_stability = 0.03
+			country_event = usa2.4
+		}
+	}
+
+	focus = {
+		id = USA_party_dictatorship
 		icon = GFX_goal_support_fascism
-		prerequisite = { focus = USA_question_the_constitution focus = USA_accept_japanese_help }
-		
-		x = 0
-		y = 2
-		relative_position_id = USA_question_the_constitution
-
+		x = 8
+		y = 7
+		prerequisite = { focus = USA_rebuild_our_nation }
+		mutually_exclusive = { focus = USA_military_dictatorship }
 		cost = 10
-
 		ai_will_do = {
-			factor = 1
+			factor = 5
 		}
-
 		available = {
-
+			has_country_flag = USA_rockwell_regime
 		}
-		
-		bypass = {
-
-		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
 		completion_reward = {
-			remove_ideas = public_objection_2
+			if = {
+				limit = { has_idea = USA_reunited_but_divided }
+				swap_ideas = {
+					remove_idea = USA_reunited_but_divided
+					add_idea = USA_reunited_but_divided_2
+				}
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.03
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.03
+			}
+			add_war_support = 0.03
+			unlock_decision_tooltip = USA_national_propaganda_campaign
 		}
 	}
-	
-	#Industries of Liberty
-	
+
 	focus = {
-		id = USA_the_american_military
-		icon = GFX_focus_chi_mission_to_the_us
-		prerequisite = { focus = USA_america_alone }
-		
-		x = 5
-		y = 1
-		relative_position_id = USA_america_alone
-
+		id = USA_military_dictatorship
+		icon = GFX_goal_generic_army_doctrines
+		x = 12
+		y = 7
+		prerequisite = { focus = USA_rebuild_our_nation }
+		mutually_exclusive = { focus = USA_party_dictatorship }
 		cost = 10
-
 		ai_will_do = {
-			factor = 1
+			factor = 5
 		}
-
 		available = {
-
+			has_country_flag = USA_smith_regime
 		}
-		
-		bypass = {
-
-		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
 		completion_reward = {
-
+			if = {
+				limit = { has_idea = USA_reunited_but_divided }
+				swap_ideas = {
+					remove_idea = USA_reunited_but_divided
+					add_idea = USA_reunited_but_divided_2
+				}
+			}
+			add_war_support = 0.03
 		}
 	}
-	
+
 	focus = {
-		id = USA_armaments
-		icon = GFX_goal_generic_allies_build_infantry
-		
-		prerequisite = { focus = USA_the_american_military }
-		
-		x = 0
-		y = 1
-		relative_position_id = USA_the_american_military
-		
+		id = USA_internal_security
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 6
+		y = 8
+		prerequisite = { focus = USA_party_dictatorship }
 		cost = 10
-
-		available_if_capitulated = yes
-
+		ai_will_do = {
+			factor = 5
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 		completion_reward = {
-			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				bonus = 1.0
-				uses = 1
-				category = infantry_weapons
-				category = artillery
+			add_stability = 0.03
+			if = {
+				limit = { NOT = { has_idea = USA_war_powers_act } }
+				add_ideas = USA_war_powers_act
+			}
+			if = {
+				limit = { has_idea = public_objection }
+				swap_ideas = {
+					remove_idea = public_objection
+					add_idea = public_objection_2
+				}
 			}
 		}
 	}
 
 	focus = {
-		id = USA_motorization_effort
-		icon = GFX_goal_generic_army_motorized
-		prerequisite = { focus = USA_armaments }
-		bypass = { has_tech = motorised_infantry }
-		x = -2
-		y = 1
-		relative_position_id = USA_armaments
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = motorized_bonus
-				bonus = 3.0
-				technology = motorised_infantry
-			}
-		}
-	}
-
-	focus = {
-		id = USA_armaments_2
-		icon = GFX_goal_generic_army_artillery
-		prerequisite = { focus = USA_armaments }
-		x = 0
-		y = 1
-		relative_position_id = USA_armaments
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				bonus = 1.0
-				uses = 1
-				category = infantry_weapons
-				category = artillery
-			}
-		}
-	}
-
-	focus = {
-		id = USA_mechanization_effort
-		icon = GFX_goal_generic_build_tank
-		prerequisite = { focus = USA_motorization_effort }
-		x = 0
-		y = 1
-		relative_position_id = USA_motorization_effort
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = motorized_bonus
-				ahead_reduction = 2
-				uses = 1
-				category = motorized_equipment
-			}
-		}
-	}
-
-	focus = {
-		id = USA_armaments_3
-		icon = GFX_goal_generic_army_artillery2
-		prerequisite = { focus = USA_armaments_2 }
-		x = 0
-		y = 1
-		relative_position_id = USA_armaments_2
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				ahead_reduction = 2
-				uses = 1
-				category = infantry_weapons
-				category = artillery
-			}
-		}
-	}
-
-	focus = {
-		id = USA_armor_effort
-		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = USA_mechanization_effort }
-		x = 0
-		y = 1
-		relative_position_id = USA_mechanization_effort
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = armor_bonus
-				bonus = 1.0
-				uses = 2
-				category = armor
-			}
-		}
-	}
-
-	focus = {
-		id = USA_special_forces
+		id = USA_elite_forces
 		icon = GFX_goal_generic_special_forces
-		prerequisite = { focus = USA_armaments_3 }
-		prerequisite = { focus = USA_armor_effort }
-		x = 0
-		y = 2
-		relative_position_id = USA_armaments_3
+		x = 12
+		y = 8
+		prerequisite = { focus = USA_military_dictatorship }
 		cost = 10
-
-		available_if_capitulated = yes
-
+		ai_will_do = {
+			factor = 5
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 		completion_reward = {
-			add_ideas = special_forces
-			add_tech_bonus = {
-				name = special_forces_bonus
-				bonus = 1.0
-				uses = 1
-				technology = paratroopers
-				technology = paratroopers2
-				technology = marines
-				technology = marines2
-				technology = tech_mountaineers
-				technology = tech_mountaineers2
+			if = {
+				limit = { NOT = { has_idea = USA_airborne_divisions } }
+				add_ideas = USA_airborne_divisions
+			}
+			if = {
+				limit = { NOT = { has_idea = special_forces } }
+				add_ideas = special_forces
 			}
 		}
 	}
-	
-	#   #  ##  ###      ###  ### ###   ##  ###  ### #   # ### #  # ### 
-#   # #  # #  #     #  # #   #  # #  # #  #  #  ## ## #   ## #  #  
-# # # #### ###      #  # ##  ###  #### ###   #  # # # ##  # ##  #  
-# # # #  # #  #     #  # #   #    #  # #  #  #  #   # #   #  #  #  
- # #  #  # #  #     ###  ### #    #  # #  #  #  #   # ### #  #  #  
 
+	focus = {
+		id = USA_military_production
+		icon = GFX_focus_generic_license_production
+		x = 14
+		y = 8
+		prerequisite = { focus = USA_military_dictatorship }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 1 }
+		}
+	}
+
+	focus = {
+		id = USA_the_new_american_order
+		icon = GFX_goal_support_fascism
+		x = 8
+		y = 9
+		prerequisite = { focus = USA_party_dictatorship focus = USA_military_dictatorship }
+		cost = 20
+		ai_will_do = {
+			factor = 10
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			if = {
+				limit = { has_idea = USA_reunited_but_divided }
+				remove_ideas = USA_reunited_but_divided
+			}
+			if = {
+				limit = { has_idea = USA_reunited_but_divided_2 }
+				remove_ideas = USA_reunited_but_divided_2
+			}
+			if = {
+				limit = { has_idea = public_objection }
+				remove_ideas = public_objection
+			}
+			if = {
+				limit = { has_idea = public_objection_2 }
+				remove_ideas = public_objection_2
+			}
+			add_political_power = 75
+			add_stability = 0.03
+			add_war_support = 0.03
+		}
+	}
+
+	focus = {
+		id = USA_modern_monroe_doctrine
+		icon = GFX_goal_generic_political_pressure
+		x = -4
+		y = 2
+		prerequisite = { focus = USA_2008_us_election }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			OR = { has_completed_focus = USA_america_leads has_completed_focus = USA_america_alone }
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					USA_is_american_country = yes
+					NOT = { has_war_with = USA }
+				}
+				USA = { give_guarantee = PREV }
+			}
+			custom_effect_tooltip = USA_modern_monroe_doctrine_tt
+		}
+	}
+
+	focus = {
+		id = USA_safeguard_the_backyard
+		icon = GFX_goal_generic_position_armies
+		x = -6
+		y = 3
+		prerequisite = { focus = USA_modern_monroe_doctrine }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			country_exists = MEX
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			if = {
+				limit = { country_exists = MEX }
+				MEX = { country_event = usa2.1 }
+			}
+		}
+	}
+
+	focus = {
+		id = USA_reindustrialize_the_heartland
+		icon = GFX_goal_generic_construct_civilian
+		x = -8
+		y = 3
+		prerequisite = { focus = USA_2008_us_election }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			OR = { has_completed_focus = USA_america_leads has_completed_focus = USA_america_alone }
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 2 }
+			add_stability = 0.02
+		}
+	}
+
+	focus = {
+		id = USA_mobilize_the_war_economy
+		icon = GFX_goal_generic_production
+		x = -8
+		y = 4
+		prerequisite = { focus = USA_reindustrialize_the_heartland }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 1 }
+			add_war_support = 0.03
+		}
+	}
+
+	focus = {
+		id = USA_continental_supply_network
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -8
+		y = 5
+		prerequisite = { focus = USA_mobilize_the_war_economy }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_stability = 0.02
+		}
+	}
+
+	focus = {
+		id = USA_defense_procurement_board
+		icon = GFX_focus_generic_license_production
+		x = -8
+		y = 6
+		prerequisite = { focus = USA_continental_supply_network }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			add_tech_bonus = {
+				name = USA_defense_procurement_board
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = USA_the_american_industrial_giant
+		icon = GFX_goal_generic_production
+		x = -8
+		y = 7
+		prerequisite = { focus = USA_defense_procurement_board }
+		cost = 20
+		ai_will_do = {
+			factor = 10
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_idea = USA_the_american_industrial_giant_spirit } }
+				add_ideas = USA_the_american_industrial_giant_spirit
+			}
+		}
+	}
 
 	focus = {
 		id = USA_war_department
 		icon = GFX_goal_generic_army_doctrines
-		x = 28
-		y = 0
-		offset = {
-			x = -26
-			y = 0
-			trigger = {
-				not = { has_dlc = "Man the Guns" }
-			}
-		}
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_ideas = USA_war_department
-		}
-	}
-	
-	focus = {
-		id = USA_selective_training_act
-		icon = GFX_focus_generic_military_mission
-		x = -3
-		y = 1
-		prerequisite = { focus = USA_war_department }
-		relative_position_id = USA_war_department
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-			
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-		available_if_capitulated = no
-
-		completion_reward = {
-			if = {
-				limit = {
-					OR = {
-						has_idea = disarmed_nation
-						has_idea = volunteer_only
-					}
-				}
-				add_ideas = limited_conscription
-			}
-			else = {
-				add_political_power = 150
-			}
-			if = {
-				limit = {
-					has_war_support < 0.1
-				}
-				set_war_support = 0.1
-			}
-			
-		}
-	}
-	
-	focus = {
-		id = USA_first_special_service_force
-		icon = GFX_goal_generic_special_forces
-		prerequisite = { focus = USA_selective_training_act }
-		x = -2
-		y = 1
-		relative_position_id = USA_selective_training_act
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			army_experience = 5
-			add_tech_bonus = {
-				name = special_bonus
-				bonus = 1.0
-				uses = 1
-				technology = paratroopers
-				technology = paratroopers2
-				technology = tech_mountaineers
-				technology = tech_mountaineers2
-				technology = tech_engineers
-				technology = tech_engineers2
-				technology = tech_engineers3
-				technology = tech_recon
-				technology = tech_recon2
-				technology = tech_recon3
-			}
-		}
-	}
-	
-	focus = {
-		id = USA_louisiana_maneuvers
-		icon = GFX_goal_generic_cavalry
-		x = 0
-		y = 1
-		prerequisite = { focus = USA_selective_training_act }
-		relative_position_id = USA_selective_training_act
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			army_experience = 20
-			add_tech_bonus = {
-				name = USA_louisiana_maneuvers
-				bonus = 1.0
-				uses = 1
-				category = land_doctrine
-			}
-		}
-	}
-	
-	focus = {
-		id = USA_airborne_divisions
-		icon = GFX_focus_generic_paratrooper
-		x = -2
-		y = 2
-		prerequisite = { focus = USA_louisiana_maneuvers }
-		relative_position_id = USA_selective_training_act
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_ideas = USA_airborne_divisions
-		}
-	}
-	
-	focus = {
-		id = USA_army_of_the_united_states
-		icon = GFX_focus_generic_little_entente
-		x = 0
-		y = 2
-		prerequisite = { focus = USA_louisiana_maneuvers }
-		relative_position_id = USA_selective_training_act
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_ideas = USA_army_of_the_united_states
-		}
-	}
-	
-	focus = {
-		id = USA_womens_armed_service_integration_act
-		icon = GFX_focus_generic_treaty
 		x = 0
 		y = 3
-		prerequisite = { focus = USA_army_of_the_united_states }
-		relative_position_id = USA_selective_training_act
+		prerequisite = { focus = USA_2008_us_election }
 		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-			has_idea = us_congress_2
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_ideas = USA_womens_armed_service_integration_act
-		}
-	}
-	
-	focus = {
-		id = USA_support_rock_island
-		icon = GFX_goal_generic_army_artillery
-		x = 2
-		y = 1
-		relative_position_id = USA_selective_training_act
-		cost = 10
-		prerequisite = { focus = USA_selective_training_act }
 		ai_will_do = {
 			factor = 5
 		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = USA_support_rock_island
-				uses = 2
-				bonus = 1.0
-				category = artillery
-				category = support_tech
-			}
-		}
-	}
-	
-	focus = {
-		id = USA_tank_experiments
-		icon = GFX_goal_generic_army_tanks
-		x = 2
-		y = 2
-		prerequisite = { focus = USA_support_rock_island }
-		relative_position_id = USA_selective_training_act
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
 		available = {
-
+			OR = { has_completed_focus = USA_america_leads has_completed_focus = USA_america_alone }
 		}
-		
-		bypass = {
-
-		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
+		completion_reward = {
+			army_experience = 25
+			if = {
+				limit = { NOT = { has_idea = USA_war_department } }
+				add_ideas = USA_war_department
+			}
+			if = {
+				limit = { NOT = { has_idea = USA_army_of_the_united_states } }
+				add_ideas = USA_army_of_the_united_states
+			}
+		}
+	}
 
+	focus = {
+		id = USA_peacekeeper_program
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 0
+		y = 4
+		prerequisite = { focus = USA_war_department }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 		completion_reward = {
 			add_tech_bonus = {
-				name = USA_tank_experiments
-				uses = 1
-				bonus = 1.0
+				name = USA_peacekeeper_program
+				bonus = 0.5
+				uses = 2
+				category = infantry_tech
+			}
+		}
+	}
+
+	focus = {
+		id = USA_tanyas_special_operations
+		icon = GFX_goal_generic_special_forces
+		x = 2
+		y = 4
+		prerequisite = { focus = USA_war_department }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_idea = special_forces } }
+				add_ideas = special_forces
+			}
+		}
+	}
+
+	focus = {
+		id = USA_two_ocean_navy
+		icon = GFX_goal_generic_navy_battleship
+		x = 4
+		y = 4
+		prerequisite = { focus = USA_war_department }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			add_offsite_building = { type = dockyard level = 1 }
+			if = {
+				limit = { NOT = { has_idea = USA_maritime_commission } }
+				add_ideas = USA_maritime_commission
+			}
+			add_tech_bonus = {
+				name = USA_two_ocean_navy
+				bonus = 0.5
+				uses = 2
+				category = naval_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = USA_guardian_tank_program
+		icon = GFX_goal_generic_army_tanks
+		x = 0
+		y = 5
+		prerequisite = { focus = USA_peacekeeper_program }
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			add_tech_bonus = {
+				name = USA_guardian_tank_program
+				bonus = 0.5
+				uses = 2
 				category = armor
 			}
 		}
 	}
-	
+
 	focus = {
-		id = USA_tank_destroyer_doctrine
-		icon = GFX_focus_usa_tank_destroyer_doctrine
-		x = 2
-		y = 3
-		prerequisite = { focus = USA_tank_experiments }
-		mutually_exclusive = { focus = USA_main_battle_tanks }
-		relative_position_id = USA_selective_training_act
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = tank_destroyer_board
-		}
-	}
-	
-	focus = {
-		id = USA_main_battle_tanks
-		icon = GFX_focus_generic_combined_arms
+		id = USA_carrier_task_forces
+		icon = GFX_goal_generic_navy_carrier
 		x = 4
-		y = 3
-		prerequisite = { focus = USA_tank_experiments }
-		mutually_exclusive = { focus = USA_tank_destroyer_doctrine }
-		relative_position_id = USA_selective_training_act
+		y = 5
+		prerequisite = { focus = USA_two_ocean_navy }
 		cost = 10
-
 		ai_will_do = {
-			factor = 1
+			factor = 5
 		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-		completion_reward = {
-			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = detroit_arsenal
-		}
-	}
-	
-	focus = {
-		id = USA_armored_infantry
-		icon = GFX_goal_generic_build_tank
-		x = 2
-		y = 4
-		prerequisite = { focus = USA_main_battle_tanks focus = USA_tank_destroyer_doctrine }
-		relative_position_id = USA_selective_training_act
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
 		completion_reward = {
 			add_tech_bonus = {
-				name = USA_armored_infantry
-				uses = 2
-				bonus = 1.0
-				category = motorized_equipment
-			}
-		}
-	}
-	
-	focus = {
-		id = USA_build_the_pentagon
-		icon = GFX_focus_usa_build_the_pentagon
-		x = 1
-		y = 1
-		prerequisite = { focus = USA_war_department }
-		relative_position_id = USA_war_department
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_ideas = USA_the_pentagon
-		}
-	}
-	
-	focus = {
-		id = USA_department_of_defense
-		icon = GFX_goal_generic_military_sphere
-		x = 0
-		y = 1
-		prerequisite = { focus = USA_build_the_pentagon }
-		relative_position_id = USA_build_the_pentagon
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = USA_war_department
-				add_idea = USA_department_of_defense
-			}
-		}
-	}
-	
-	#Air Section
-
-	focus = {
-		id = USA_air_war_plans_division
-		icon = GFX_goal_generic_build_airforce
-		x = 4
-		y = 1
-		cost = 10
-		#ai_will_do = {
-		#	factor = 1
-		#}
-		prerequisite = { focus = USA_war_department }
-		relative_position_id = USA_war_department
-		available_if_capitulated = yes
-
-		completion_reward = {
-			air_experience = 25
-			add_tech_bonus = {
-				name = USA_air_war_plans_division
-				bonus = 1.0
-				uses = 2
-				category = air_doctrine
-			} # REVISIT May use modifier?
-			add_ideas = air_war_plans_division_focus
-		}
-	}
-
-	focus = {
-		id = USA_air_support
-		icon = GFX_goal_generic_air_fighter
-		prerequisite = { focus = USA_air_war_plans_division }
-		mutually_exclusive = { focus = USA_strategic_bombing }
-		x = -1
-		y = 1
-		relative_position_id = USA_air_war_plans_division
-		cost = 10
-		#ai_will_do = {
-		#	factor = 1
-		#}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			air_experience = 25
-			add_ideas = air_support_focus
-		}
-	}
-
-	focus = {
-		id = USA_strategic_bombing
-		icon = GFX_goal_generic_occupy_start_war
-		prerequisite = { focus = USA_air_war_plans_division }
-		mutually_exclusive = { focus = USA_air_support }
-		x = 1
-		y = 1
-		relative_position_id = USA_air_war_plans_division
-		cost = 10
-		#ai_will_do = {
-		#	factor = 1
-		#}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			air_experience = 25
-			add_ideas = strategic_bombing_focus
-		}
-	}
-
-	focus = {
-		id = USA_TAC
-		icon = GFX_goal_generic_air_doctrine
-		prerequisite = { focus = USA_air_support }
-		x = 0
-		y = 2
-		relative_position_id = USA_air_support
-		cost = 10
-		#ai_will_do = {
-		#	factor = 1
-		#}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			air_experience = 25
-			add_tech_bonus = {
-				name = USA_TAC
+				name = USA_carrier_task_forces
+				bonus = 0.5
 				uses = 1
-				bonus = 1.0
-				category = tactical_bomber
+				category = naval_equipment
 			}
 		}
 	}
 
 	focus = {
-		id = USA_CAS
-		text = CAS_effort
-		icon = GFX_goal_generic_CAS
-		prerequisite = { focus = USA_air_support }
-		x = -1
-		y = 1
-		relative_position_id = USA_air_support
-		cost = 10
-		#ai_will_do = {
-		#	factor = 1
-		#}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = CAS_effort
-				uses = 1
-				bonus = 1.0
-				category = cas_bomber
-			}
-		}
-	}
-
-	focus = {
-		id = USA_combined_bomber_offensive
+		id = USA_century_bomber_program
 		icon = GFX_goal_generic_air_bomber
-		prerequisite = { focus = USA_strategic_bombing }
-		available = {
-			has_war = yes
-			OR = {
-				is_in_faction_with = GER
-				is_in_faction_with = JAP
-				is_in_faction_with = ITA
-				is_in_faction_with = SOV
-				is_in_faction_with = FRA
-				is_in_faction_with = ENG
-			}
-		}
-		x = 0
-		y = 2
-		relative_position_id = USA_strategic_bombing
+		x = 2
+		y = 5
+		prerequisite = { focus = USA_peacekeeper_program }
 		cost = 10
-		#ai_will_do = {
-		#	factor = 1
-		#}
-
-		available_if_capitulated = yes
-
+		ai_will_do = {
+			factor = 5
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 		completion_reward = {
+			set_technology = { century_bomber = 1 }
 			air_experience = 25
 			add_tech_bonus = {
-				name = USA_combined_bomber_offensive
-				bonus = 1.0
+				name = USA_century_bomber_program
+				bonus = 0.5
 				uses = 1
-				category = heavy_air
+				category = cat_strategic_bomber
 			}
-			add_ideas = combined_bomber_offensive
 		}
 	}
+
 	focus = {
-		id = USA_escort_fighters
-		icon = GFX_focus_usa_escort_fighters
+		id = USA_apollo_fighter_program
+		icon = GFX_goal_generic_air_fighter
 		x = 0
-		y = 2
-		prerequisite = { focus = USA_air_support focus = USA_strategic_bombing }
-		relative_position_id = USA_air_war_plans_division
+		y = 6
+		prerequisite = { focus = USA_guardian_tank_program }
 		cost = 10
-
 		ai_will_do = {
-			factor = 1
+			factor = 5
 		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
 		completion_reward = {
+			set_technology = { apollo_fighter = 1 }
 			add_tech_bonus = {
-				name = USA_escort_fighters
-				bonus = 3.0
+				name = USA_apollo_fighter_program
+				bonus = 0.5
 				uses = 1
-				technology = heavy_fighter1
-				technology = heavy_fighter2
-				technology = heavy_fighter3
+				category = light_fighter
 			}
 		}
 	}
+
 	focus = {
-		id = USA_us_army_airforce
-		icon = GFX_focus_generic_strike_at_democracy1
-		x = -1
-		y = 4
-		prerequisite = { focus = USA_TAC }
-		relative_position_id = USA_air_war_plans_division
+		id = USA_federal_research_laboratories
+		icon = GFX_focus_research
+		x = 16
+		y = 2
+		prerequisite = { focus = USA_2008_us_election }
 		cost = 10
-
 		ai_will_do = {
-			factor = 1
+			factor = 4
 		}
-
 		available = {
-
+			OR = { has_completed_focus = USA_america_leads has_completed_focus = USA_america_alone }
 		}
-		
-		bypass = {
-
-		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_idea = USA_federal_research_laboratories_spirit } }
+				add_ideas = USA_federal_research_laboratories_spirit
+			}
+		}
+	}
 
+	focus = {
+		id = USA_FutureTech
+		icon = GFX_focus_generic_advanced_military_studies
+		x = 18
+		y = 3
+		prerequisite = { focus = USA_federal_research_laboratories }
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			add_political_power = -100
+			add_tech_bonus = {
+				name = USA_FutureTech
+				bonus = 0.5
+				uses = 2
+				category = electronics
+			}
+		}
+	}
+
+	focus = {
+		id = USA_future_electronics
+		icon = GFX_focus_research
+		x = 14
+		y = 4
+		prerequisite = { focus = USA_FutureTech }
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 		completion_reward = {
 			add_tech_bonus = {
-				name = USA_us_army_airforce
+				name = AME_future_electronics
+				bonus = 0.5
 				uses = 2
-				bonus = 1.0
-				category = air_doctrine
+				category = electronics
 			}
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = AME_future_electronics
 		}
 	}
+
 	focus = {
-		id = USA_us_air_force
-		icon = GFX_goal_generic_build_airforce
-		x = 1
+		id = USA_future_tank_design
+		icon = GFX_focus_generic_tank_assembly
+		x = 22
 		y = 4
-		prerequisite = { focus = USA_combined_bomber_offensive }
-		relative_position_id = USA_air_war_plans_division
+		prerequisite = { focus = USA_FutureTech }
 		cost = 10
-
 		ai_will_do = {
-			factor = 1
+			factor = 3
 		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
 		completion_reward = {
-			add_ideas = USA_us_air_force
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = AME_future_tank_design
 		}
 	}
-	
-	#deplomacy
-	
-	
-	
-	
+
+	focus = {
+		id = USA_norwell
+		icon = GFX_goal_generic_air_bomber
+		x = 18
+		y = 5
+		prerequisite = { focus = USA_FutureTech }
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			add_political_power = -100
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = AME_norwell
+			set_technology = { century_bomber = 1 }
+		}
+	}
+
+	focus = {
+		id = USA_asturias_sistemas
+		icon = GFX_focus_generic_cas_aircraft
+		x = 16
+		y = 6
+		prerequisite = { focus = USA_FutureTech }
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		available = {
+			OR = { has_completed_focus = USA_america_leads has_country_flag = USA_allied_member }
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			add_political_power = -100
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = AME_asturias_sistemas
+			set_technology = { vindicator = 1 }
+		}
+	}
+
+	focus = {
+		id = USA_angstrom_defense
+		icon = GFX_goal_generic_air_fighter
+		x = 20
+		y = 6
+		prerequisite = { focus = USA_FutureTech }
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		available = {
+			OR = { has_completed_focus = USA_america_leads has_country_flag = USA_allied_member }
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			add_political_power = -100
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = AME_angstrom_defense
+			set_technology = { apollo_fighter = 1 }
+		}
+	}
+
+	focus = {
+		id = USA_the_american_century
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 0
+		y = 8
+		prerequisite = { focus = USA_the_american_industrial_giant }
+		prerequisite = { focus = USA_modern_monroe_doctrine }
+		cost = 20
+		ai_will_do = {
+			factor = 10
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			add_political_power = 75
+			add_stability = 0.03
+			add_war_support = 0.03
+			if = {
+				limit = { NOT = { has_idea = USA_the_american_century_spirit } }
+				add_ideas = USA_the_american_century_spirit
+			}
+		}
+	}
 }

@@ -1,0 +1,14 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_portrait_USA_Howard"
+		texturefile = "gfx/leaders/USA/Portrait_USA_Howard.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_USA_Rockwell"
+		texturefile = "gfx/leaders/USA/Portrait_USA_Rockwell.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_USA_Smith"
+		texturefile = "gfx/leaders/USA/Portrait_USA_Smith.dds"
+	}
+}

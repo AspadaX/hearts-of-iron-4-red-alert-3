@@ -8,4 +8,10 @@ opinion_modifiers = {
 		value = -100
 	}
 
+	USA_lend_lease_to_europe_opinion = {
+		value = 25
+		months = 60
+		decay = 0.1
+	}
+
 }

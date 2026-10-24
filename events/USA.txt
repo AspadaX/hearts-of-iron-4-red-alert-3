@@ -4,7 +4,7 @@
 
 add_namespace = usa2
 
-# US asks Mexico about alliance
+# Mexico receives the American security offer.
 country_event = {
 	id = usa2.1
 	title = usa2.1.t
@@ -14,111 +14,114 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	#Accept
 	option = {
 		name = usa2.1.a
-		USA = {
-			add_to_faction = MEX
+		ai_chance = {
+			base = 60
 		}
+
+		USA = {
+			if = {
+				limit = {
+					is_faction_leader = yes
+					MEX = { is_in_faction = no }
+				}
+				add_to_faction = MEX
+			}
+			else_if = {
+				limit = {
+					is_in_faction_with = AME
+					MEX = { is_in_faction = no }
+				}
+				AME = { add_to_faction = MEX }
+			}
+			set_country_flag = USA_mexico_allied
+		}
+
 		hidden_effect = {
 			news_event = { hours = 6 id = news.403 }
 		}
 	}
-	
-	#Reject
+
 	option = {
 		name = usa2.1.b
-		
-		USA = {
-			create_wargoal = {
-				type = take_state
-				target = MEX
-				generator = { 277 } 
-			}
+		ai_chance = {
+			base = 25
 		}
-		
+
+		USA = {
+			add_political_power = 25
+		}
+	}
+
+	option = {
+		name = usa2.1.c
+		ai_chance = {
+			base = 15
+		}
+
+		USA = {
+			set_country_flag = USA_mexico_rejected
+		}
+
 		hidden_effect = {
 			news_event = { hours = 6 id = news.404 }
 		}
 	}
-	
 }
 
-# US Election 2008, Ackerman VS Lincoln Rockwell
+# The 2008 presidential election.
 country_event = {
 	id = usa2.2
 	title = usa2.2.t
 	desc = usa2.2.d
 	picture = GFX_report_event_usa_election_generic
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
-	trigger = {
-		tag = USA
-		democratic > 0.5
-		date > 2008.1.1
-		date < 2009.1.1
-	}
-
-	option = { 	
+	option = {
 		name = usa2.2.a
 		ai_chance = {
-			factor = 75
-			#modifier = {
-			#	OR = {
-			#		has_game_rule = {
-			#			rule = USA_ai_behavior
-			#			option = FASCIST
-			#		}
-			#		has_country_flag = USA_AI_RANDOM_FASCIST
-			#	}
-			#	has_dlc = "Man the Guns"
-			#	factor = 0
-			#}
-		}		
-		
-		create_country_leader = {
-			name = "Howard T. Ackerman"
-			desc = "POLITICS_HOWARD_T_ACKERMAN_DESC"
-			picture = "Portrait_USA_Howard.dds"
-			expire = "1989.1.1"
-			ideology = liberalism
-			traits = {
-		
-			}
+			base = 70
 		}
-		
+
+		set_country_flag = USA_ackerman_elected
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = no
+			election_frequency = 48
+		}
+		add_political_power = 50
 	}
 
-	option = { 
+	option = {
 		name = usa2.2.b
 		ai_chance = {
-			factor = 25
-			#modifier = {
-			#	factor = 0
-			#	is_historical_focus_on = yes
-			#	has_game_rule = {
-			#		rule = USA_ai_behavior
-			#		option = DEFAULT
-			#	}
-			#}
-		}		
-		
+			base = 30
+		}
+
+		set_country_flag = USA_rockwell_elected
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = no
+			election_frequency = 48
+		}
+		retire_country_leader = yes
 		create_country_leader = {
 			name = "George Lincoln Rockwell"
-			desc = "POLITICS_ALF_LANDON_DESC"
+			desc = "POLITICS_GEORGE_LINCOLN_ROCKWELL_DESC"
 			picture = "Portrait_USA_Rockwell.dds"
-			expire = "1965.1.1"
+			expire = "2051.1.1"
 			ideology = conservatism
 			traits = {
-				
 			}
 		}
-		
+		add_political_power = 50
 	}
 }
 
-# US asks the empire for help
+# The Empire of the Rising Sun receives the American request for aid.
 country_event = {
 	id = usa2.3
 	title = usa2.3.t
@@ -128,99 +131,54 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	#Accept
 	option = {
 		name = usa2.3.a
-		EOR = {
-			send_equipment = {
-				equipment = infantry_equipment
-				amount = 8000
-				target = USA
-			}
-			
-			377 = {
-				add_core_of = IPS
-			}
-			
-			378 = {
-				add_core_of = IPS
-			}
-			
-			379 = {
-				add_core_of = IPS
-			}
-			
-			385 = {
-				add_core_of = IPS
-			}
-			
-			386 = {
-				add_core_of = IPS
-			}
-			
-			463 = {
-				add_core_of = IPS
-			}
-			
-			739 = {
-				add_core_of = IPS
-			}
-			
-			740 = {
-				add_core_of = IPS
-			}
-			
-			473 = {
-				add_core_of = IPS
-			}
-			
-			471 = {
-				add_core_of = IPS
-			}
-			
-				set_state_owner = 378
-				set_state_owner = 379
-				set_state_owner = 385
-				set_state_owner = 386
-				set_state_owner = 463
-			
-			release_puppet = IPS
-			
-			add_opinion_modifier = {
-				target = USA
-				modifier = american_japanese_tie
-			}
-			
+		ai_chance = {
+			base = 60
 		}
-		
+
+		send_equipment = {
+			equipment = infantry_equipment
+			amount = 8000
+			target = USA
+		}
+
+		add_opinion_modifier = {
+			target = USA
+			modifier = american_japanese_tie
+		}
+
 		USA = {
-			
 			add_opinion_modifier = {
 				target = EOR
 				modifier = american_japanese_tie
 			}
-			
-			swap_ideas = {
-				remove_idea = public_objection
-				add_idea = public_objection_2
+			give_military_access = EOR
+			if = {
+				limit = { NOT = { has_idea = USA_imperial_dependence } }
+				add_ideas = USA_imperial_dependence
 			}
-			
+			country_event = usa2.8
 		}
-		
+
 		hidden_effect = {
 			news_event = { hours = 6 id = news.405 }
 		}
-		
 	}
-	
-	#Reject
-	#option = {
-	#	name = usa2.3.b
-	#}
-	
+
+	option = {
+		name = usa2.3.b
+		ai_chance = {
+			base = 40
+		}
+
+		USA = {
+			country_event = usa2.9
+		}
+	}
 }
 
-# Fascist Leadership Change
+# The new American government chooses its leader.
 country_event = {
 	id = usa2.4
 	title = usa2.4.t
@@ -230,68 +188,265 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	#Lincoln Rockwell remains at office
 	option = {
 		name = usa2.4.a
 		ai_chance = {
-			factor = 75
-			#modifier = {
-			#	OR = {
-			#		has_game_rule = {
-			#			rule = USA_ai_behavior
-			#			option = FASCIST
-			#		}
-			#		has_country_flag = USA_AI_RANDOM_FASCIST
-			#	}
-			#	has_dlc = "Man the Guns"
-			#	factor = 0
-			#}
-		}		
-		
-		create_country_leader = {
-			name = "George Lincoln Rockwell"
-			desc = "POLITICS_HOWARD_T_ACKERMAN_DESC"
-			picture = "Portrait_USA_Rockwell.dds"
-			expire = "1989.1.1"
-			ideology = nazism
-			traits = {
-		
-			}
+			base = 55
 		}
+
+		set_country_flag = USA_rockwell_regime
+		set_country_leader_name = { name = "George Lincoln Rockwell" }
+		set_country_leader_description = { desc = "POLITICS_GEORGE_LINCOLN_ROCKWELL_DESC" }
+		set_country_leader_portrait = { portrait = GFX_portrait_USA_Rockwell }
+		set_country_leader_ideology = fascism_ideology
 	}
-	
-	#John Smith takes over
+
 	option = {
 		name = usa2.4.b
-		
 		ai_chance = {
-			factor = 75
-			#modifier = {
-			#	OR = {
-			#		has_game_rule = {
-			#			rule = USA_ai_behavior
-			#			option = FASCIST
-			#		}
-			#		has_country_flag = USA_AI_RANDOM_FASCIST
-			#	}
-			#	has_dlc = "Man the Guns"
-			#	factor = 0
-			#}
-		}	
-		
-		create_country_leader = {
-			name = "John Smith"
-			desc = "POLITICS_HOWARD_T_ACKERMAN_DESC"
-			picture = "Portrait_USA_Smith.dds"
-			expire = "1989.1.1"
-			ideology = nazism
-			traits = {
-				dictator
+			base = 45
+		}
+
+		set_country_flag = USA_smith_regime
+		set_country_leader_name = { name = "John Smith" }
+		set_country_leader_description = { desc = "POLITICS_JOHN_SMITH_DESC" }
+		set_country_leader_portrait = { portrait = GFX_portrait_USA_Smith }
+		set_country_leader_ideology = fascism_ideology
+		add_country_leader_trait = dictator
+	}
+}
+
+# The United States chooses between allied unity and the Rushmore program.
+country_event = {
+	id = usa2.5
+	title = usa2.5.t
+	desc = usa2.5.d
+	picture = GFX_report_event_hol_cabinet_de_geer
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = usa2.5.a
+		ai_chance = {
+			base = 55
+		}
+
+		set_country_flag = USA_preserve_allied_unity_choice
+		add_political_power = 50
+	}
+
+	option = {
+		name = usa2.5.b
+		ai_chance = {
+			base = 45
+		}
+
+		set_country_flag = USA_rushmore_choice
+		add_war_support = 0.05
+	}
+}
+
+# The Rushmore Affair.
+country_event = {
+	id = usa2.6
+	title = usa2.6.t
+	desc = usa2.6.d
+	picture = GFX_report_event_hol_cabinet_de_geer
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = usa2.6.a
+		ai_chance = {
+			base = 60
+		}
+
+		set_country_flag = USA_rushmore_escalated
+		add_war_support = 0.05
+		add_political_power = 50
+	}
+
+	option = {
+		name = usa2.6.b
+		ai_chance = {
+			base = 40
+		}
+
+		set_country_flag = USA_rushmore_cancelled
+		add_stability = 0.05
+	}
+}
+
+# The constitutional crisis.
+country_event = {
+	id = usa2.7
+	title = usa2.7.t
+	desc = usa2.7.d
+	picture = GFX_report_event_hol_cabinet_de_geer
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = usa2.7.a
+		ai_chance = {
+			base = 50
+		}
+
+		if = {
+			limit = { has_idea = USA_presidential_emergency_powers }
+			remove_ideas = USA_presidential_emergency_powers
+		}
+		if = {
+			limit = { has_idea = public_objection }
+			remove_ideas = public_objection
+		}
+		set_country_flag = USA_constitutional_crisis_resolved
+		add_stability = 0.05
+		add_political_power = -50
+	}
+
+	option = {
+		name = usa2.7.b
+		ai_chance = {
+			base = 50
+		}
+
+		set_country_flag = USA_constitutional_crisis_escalated
+		add_war_support = 0.05
+		add_political_power = 50
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.15
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.15
+		}
+	}
+}
+
+# The Empire accepts the American request.
+country_event = {
+	id = usa2.8
+	title = usa2.8.t
+	desc = usa2.8.d
+	picture = GFX_report_event_hol_cabinet_de_geer
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = usa2.8.a
+		add_political_power = 25
+	}
+}
+
+# The Empire refuses the American request.
+country_event = {
+	id = usa2.9
+	title = usa2.9.t
+	desc = usa2.9.d
+	picture = GFX_report_event_hol_cabinet_de_geer
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = usa2.9.a
+		add_war_support = 0.05
+	}
+}
+
+# AME decides whether to admit the United States.
+country_event = {
+	id = usa2.10
+	title = usa2.10.t
+	desc = usa2.10.d
+	picture = GFX_report_event_hol_cabinet_de_geer
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = usa2.10.a
+		ai_chance = {
+			base = 70
+		}
+
+		if = {
+			limit = { USA = { is_in_faction = no } }
+			add_to_faction = USA
+		}
+		if = {
+			limit = {
+				USA = { has_country_flag = USA_mexico_allied }
+				country_exists = MEX
+				MEX = { is_in_faction = no }
+			}
+			add_to_faction = MEX
+		}
+		USA = {
+			set_country_flag = USA_allied_member
+		}
+	}
+
+	option = {
+		name = usa2.10.b
+		ai_chance = {
+			base = 30
+		}
+
+		USA = {
+			set_country_flag = USA_allied_membership_refused
+			if = {
+				limit = { is_in_faction = no }
+				create_faction = american_coalition
+			}
+			if = {
+				limit = {
+					has_country_flag = USA_mexico_allied
+					country_exists = MEX
+					MEX = { is_in_faction = no }
+				}
+				add_to_faction = MEX
 			}
 		}
 	}
-	
 }
 
+# AME decides whether to transfer command to Washington.
+country_event = {
+	id = usa2.11
+	title = usa2.11.t
+	desc = usa2.11.d
+	picture = GFX_report_event_hol_cabinet_de_geer
 
+	fire_only_once = yes
+	is_triggered_only = yes
 
+	option = {
+		name = usa2.11.a
+		ai_chance = {
+			base = 40
+		}
+
+		USA = {
+			set_faction_leader = yes
+			set_country_flag = USA_allied_leader
+		}
+	}
+
+	option = {
+		name = usa2.11.b
+		ai_chance = {
+			base = 60
+		}
+
+		USA = {
+			set_country_flag = USA_allied_member
+		}
+	}
+}

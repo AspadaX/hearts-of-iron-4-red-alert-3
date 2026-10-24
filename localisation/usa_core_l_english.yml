@@ -1,166 +1,297 @@
 ﻿l_english:
 
-#Idea
+# Ideas
 
  us_congress:0 "The Congress"
- us_congress_desc:0 "The congress is the landmark of the US democracy. It ensures the country's power stays in balance under the concept of "Separation of Powers". However, such a design also brings in some inefficiencies to the US government..."
+ us_congress_desc:0 "The Congress is the landmark of American democracy. It keeps the country's power in balance under the principle of \"Separation of Powers\". That design also brings inefficiency to the American government."
  us_congress_2:0 "The Gived-In Congress"
- us_congress_2_desc:0 "Well, who said the power is going to stay in balance? We all know it is not forever!"
+ us_congress_2_desc:0 "Who said power would stay in balance forever?"
  public_objection:0 "Public Objection"
- public_objection_desc:0 "Why the US president now can dictate the country's policy all by himself?"
- public_objection_2:0 "Diminshed Public Objection"
- public_objection_desc:0 "The public now begins to quiet down..."
+ public_objection_desc:0 "Why can the American president now dictate the country's policy all by himself?"
+ public_objection_2:0 "Diminished Public Objection"
+ public_objection_2_desc:0 "The public is beginning to quiet down."
  USA_strike_the_empire:0 "Strike the Empire"
- USA_strike_the_empire_desc:0 "Let's teach Japanese how to make a true navy, with our invincible carriers!"
+ USA_strike_the_empire_desc:0 "The Empire of the Rising Sun is the principal threat in the Pacific. American carriers and naval aviation must be ready to break its hold on the ocean."
+ USA_homeland_defense:0 "Homeland Defense"
+ USA_homeland_defense_desc:0 "The defense of the continental United States is the first responsibility of the federal government. Coastal approaches, key cities and the industrial heartland must be prepared for attack."
+ USA_arsenal_of_liberty_spirit:0 "Arsenal of Liberty"
+ USA_arsenal_of_liberty_spirit_desc:0 "American factories and shipyards are being turned toward a permanent production effort. The United States will supply its own forces and its partners."
+ USA_leadership_of_the_free_world:0 "Leadership of the Free World"
+ USA_leadership_of_the_free_world_desc:0 "Washington has accepted the responsibilities of coalition leadership. American diplomacy, intelligence and military planning now reach across the Atlantic and Pacific."
+ USA_leadership_of_the_free_world_2:0 "Leadership of the Free World"
+ USA_leadership_of_the_free_world_2_desc:0 "The alliance has been preserved under American leadership. Washington now sets the political direction of the coalition as well as its military strategy."
+ USA_american_strategic_autonomy:0 "American Strategic Autonomy"
+ USA_american_strategic_autonomy_desc:0 "The United States will not subordinate its command to any foreign capital. American strategy, war goals and military operations remain in American hands."
+ USA_fortress_america_spirit:0 "Fortress America"
+ USA_fortress_america_spirit_desc:0 "The Western Hemisphere is being organized as a defended perimeter. The Army and the states prepare for a long war close to home."
+ USA_presidential_emergency_powers:0 "Presidential Emergency Powers"
+ USA_presidential_emergency_powers_desc:0 "Emergency legislation has concentrated authority in the presidency. The government can act quickly, but the constitutional balance is under strain."
+ USA_constitutional_resistance:0 "Constitutional Resistance"
+ USA_constitutional_resistance_desc:0 "Courts, states and loyal officials have refused to accept the new order. Their resistance weakens the regime's authority and slows its administration."
+ USA_imperial_dependence:0 "Imperial Dependence"
+ USA_imperial_dependence_desc:0 "American reconstruction now depends on Imperial equipment and access. The price is paid in sovereignty, consumer production and political independence."
+ USA_new_american_order_spirit:0 "The New American Order"
+ USA_new_american_order_spirit_desc:0 "The old constitutional order has been replaced. The new regime demands unity, discipline and obedience."
+ USA_reunited_but_divided:0 "Reunited, But Divided"
+ USA_reunited_but_divided_desc:0 "The civil war is over, but the country is not healed. Political violence, local resistance and distrust continue to weaken the government."
+ USA_reunited_but_divided_2:0 "A Nation Healing"
+ USA_reunited_but_divided_2_desc:0 "The worst of the division has passed. Reconstruction is slow, but the country is beginning to function as one state again."
+ USA_the_american_industrial_giant_spirit:0 "The American Industrial Giant"
+ USA_the_american_industrial_giant_spirit_desc:0 "The United States has become the largest industrial power in the world. Its factories, laboratories and construction firms set the pace for everyone else."
+ USA_the_american_century_spirit:0 "The American Century"
+ USA_the_american_century_spirit_desc:0 "Washington has turned its industrial and military weight into lasting influence. Allies look to America for leadership, and American preferences shape the coalition's direction."
+ USA_federal_research_laboratories_spirit:0 "Federal Research Laboratories"
+ USA_federal_research_laboratories_spirit_desc:0 "A national network of federal laboratories coordinates advanced research and turns scientific work into military production."
+ USA_rushmore_program_spirit:0 "Project Rushmore"
+ USA_rushmore_program_spirit_desc:0 "Project Rushmore combines strategic research, hardened command facilities and a national strike program under a single emergency authority."
 
-#Praty
+# Party
 
  USA_fascism_party:0 "ANSP"
- GER_fascism_party_long:0 "American National Socialist Party"
- 
-#Country
+ USA_fascism_party_long:0 "American National Socialist Party"
+
+# Country
 
  USA_fascism:0 "National Socialist States of America"
  USA_fascism_DEF:0 "the National Socialist States of America"
  USA_fascism_ADJ:0 "American"
- 
+
  IPS_fascism:0 "Imperial Pacific States"
  IPS_fascism_DEF:0 "the Imperial Pacific States"
  IPS_fascism_ADJ:0 "Japanese"
- 
-#Focus
 
- USA_2018_us_election:0 "US Election of 2008"
- USA_2018_us_election_desc:0 "The red menace is threating our homeland. Under such a crisis, who's going to be our next president?"
- 
- USA_america_leads:0 "Screw Em All!"
- USA_america_leads_desc:0 "Let's send the commies back home to see their mommies shall we?"
- 
- USA_rally_the_allies:0 "Rally the Allies"
- USA_rally_the_allies_desc:0 "The European theatre now is in a great danger, and they cannot even make sure of their own safety. The US should assume the responsibility and lead the Allies to victory!"
- 
- USA_war_in_europe:0 "War in Europe"
- USA_war_in_europe_desc:0 "Let's crush the Soviets!"
- 
- USA_modern_monroe_doctrine:0 "Modern Monroe Doctrine"
- USA_modern_monroe_doctrine_desc:0 "We need to make sure both our North and South American neighbours' safety, because if they are taken over by some commies or japs, our belly will be exposed to the knife!"
- 
- USA_safeguard_the_backyard:0 "Safeguard the Backyard"
- USA_safeguard_the_backyard_desc:0 "Mexico is the key to our countries' safety. We should invite them to our faction. However, if the going isn't good, we shall consider to take them by force!"
- 
- USA_the_allies_military:0 "Meet with the New Contractors"
- USA_the_allies_military_desc:0 "We need to upadate our weaponry now!"
-        
- USA_FutureTech:0 "FutureTech"
- USA_FutureTech_desc:0 "FutureTech Corporation is an Amsterdam-based technology firm operating within Allied jurisdiction. It was responsible for developing many of the technologies used in the Allied arsenal during the War of Three Powers."
-        
- USA_future_electronics:0 "FutureElectronics"
- USA_future_electronics_desc:0 "A branch of FutureTech, which is responsible for developing electronics"
-        
- USA_future_tank_design:0 "FutureTankDesign"
- USA_future_tank_design_desc:0 "A branch of FutureTech, which is responsible for tank design."
-        
- USA_norwell:0 "Norwell-Hucks Corporation"
- USA_norwell_desc:0 "Norwell-Hucks Corp. is an American company whose product is the Century Bomber."
-        
- USA_asturias_sistemas:0 "Asturias Sistemas"
- USA_asturias_sistemas_desc:0 "Asturias Sistemas is a Spanish company whose product is the Vindicator"
-        
- USA_angstrom_defense:0 "Angstrom Defense"
- USA_angstrom_defense_desc:0 "The Stockholm-based Angstrom Defense is a defense contractor that specializes in high performance and experimental weapons. One of their most famous products is the Apollo fighter, the Allies' primary air superiority fighter during the war."
+# Leaders
 
- USA_america_alone:0 "America Only"
- USA_america_alone_desc:0 "Americans can only take care of their own interests. We cannot keep playing games with the Allies and Soviets any more. We need to move on!"
- 
+ POLITICS_HOWARD_T_ACKERMAN_DESC:0 "Howard T. Ackerman entered the presidency promising to restore American strength after years of retreat. He believes the United States must lead the free world, but he is willing to put American interests first whenever the Allies hesitate."
+ POLITICS_GEORGE_LINCOLN_ROCKWELL_DESC:0 "George Lincoln Rockwell built a movement around national rebirth, racial politics and hostility to the old political establishment. He promises a new American order at home and an uncompromising defense of the Western Hemisphere abroad."
+ POLITICS_JOHN_SMITH_DESC:0 "John Smith rose through the officer corps and the Armed Protection Squadron. He distrusts politicians, values discipline and believes the military must guide the nation through its reconstruction."
+
+# Focus
+
+ USA_2008_us_election:0 "The Election of 2008"
+ USA_2008_us_election_desc:0 "The United States stands at a crossroads. President Ackerman seeks a mandate for American leadership, while George Lincoln Rockwell promises a radical break with the old order."
+ USA_america_leads:0 "America Leads"
+ USA_america_leads_desc:0 "Ackerman has won the election. Washington will take up the leadership of the free world and organize its allies against the Soviet and Imperial threats."
+ USA_arsenal_of_liberty:0 "Arsenal of Liberty"
+ USA_arsenal_of_liberty_desc:0 "American industry must be placed on a permanent war footing. New factories, standardized production and federal contracts will equip the alliance."
+ USA_the_european_lifeline:0 "The European Lifeline"
+ USA_the_european_lifeline_desc:0 "Europe is the decisive theater. American shipping, supplies and political support must reach the Allies before the Soviet advance becomes irreversible. The Lend-Lease to Europe decision will allow Washington to ship equipment to the Allied Nations."
+ USA_join_the_allied_nations:0 "Join the Allied Nations"
+ USA_join_the_allied_nations_desc:0 "The United States should enter the Allied Nations and accept a common command. Washington will trade freedom of action for a united front."
+ USA_an_independent_american_command:0 "An Independent American Command"
+ USA_an_independent_american_command_desc:0 "America will fight alongside its partners, not beneath them. The United States will build its own coalition and keep command in American hands."
+ USA_the_allied_war_council:0 "The Allied War Council"
+ USA_the_allied_war_council_desc:0 "A permanent council of Allied commanders and ministers will coordinate strategy, production and the liberation of Europe."
+ USA_the_washington_leadership_conference:0 "The Washington Leadership Conference"
+ USA_the_washington_leadership_conference_desc:0 "The Allies will meet in Washington to settle the question of command. The United States will ask its partners to accept American leadership."
+ USA_the_washington_coalition:0 "The Washington Coalition"
+ USA_the_washington_coalition_desc:0 "Washington will organize a new coalition of like-minded states, with American command and American priorities."
+ USA_liberate_europe:0 "Liberate Europe"
+ USA_liberate_europe_desc:0 "The Soviet occupation of Europe cannot be allowed to stand. American forces and their allies will prepare a campaign to liberate the continent."
+ USA_enemies_of_our_enemies:0 "Enemies of Our Enemies"
+ USA_enemies_of_our_enemies_desc:0 "The Soviet Union and the Empire of the Rising Sun are rivals, but both threaten the American order. Washington must decide which enemy to use and which to destroy."
+ USA_preserve_allied_unity:0 "Preserve Allied Unity"
+ USA_preserve_allied_unity_desc:0 "The coalition is more important than any single quarrel. Washington will hold the alliance together, strengthen its leadership of the free world and defer the final reckoning with Moscow."
+ USA_the_rushmore_directive:0 "The Rushmore Directive"
+ USA_the_rushmore_directive_desc:0 "The emergency has created an opportunity. A secret directive authorizes a national strategic program outside the ordinary chain of command."
+ USA_victory_through_unity:0 "Victory Through Unity"
+ USA_victory_through_unity_desc:0 "A united alliance can still win the war. American leadership will be measured by its ability to keep its partners in the field."
+ USA_project_rushmore:0 "Project Rushmore"
+ USA_project_rushmore_desc:0 "Project Rushmore will concentrate research, industry and military planning under a single emergency authority."
+ USA_rushmore_ascendancy:0 "Rushmore Ascendancy"
+ USA_rushmore_ascendancy_desc:0 "The program is ready for active service. American strategy will be backed by a permanent emergency apparatus."
+ USA_americas_war:0 "America's War"
+ USA_americas_war_desc:0 "The time for limited action is over. The United States will settle its accounts with the Soviet Union and the Empire by force."
+ USA_america_alone:0 "America Alone"
+ USA_america_alone_desc:0 "Rockwell has won the election. The United States will withdraw from the Allied project and pursue its own national destiny."
+ USA_fortress_america:0 "Fortress America"
+ USA_fortress_america_desc:0 "The Western Hemisphere will become an armed fortress. The United States will secure its borders and coasts, and federalize the National Guard as a reserve for the defense of the homeland."
+ USA_the_new_order:0 "The New Order"
+ USA_the_new_order_desc:0 "The old political order has failed. A new national movement will reorganize the state around discipline, unity and the will of the nation."
+ USA_national_sovereignty_act:0 "National Sovereignty Act"
+ USA_national_sovereignty_act_desc:0 "The federal government will assert its authority over the states, the courts and the emergency bureaucracy."
+ USA_fortress_homeland_defense:0 "Fortress Homeland Defense"
+ USA_fortress_homeland_defense_desc:0 "The continental United States will be organized for defense. Coastal cities, industrial centers and key approaches will be fortified."
+ USA_hemispheric_security:0 "Hemispheric Security"
+ USA_hemispheric_security_desc:0 "The Western Hemisphere is America's strategic backyard. Washington will extend its security system across the Americas and prepare to enforce the Monroe Doctrine against hostile influence."
+ USA_continental_deterrent:0 "Continental Deterrent"
+ USA_continental_deterrent_desc:0 "A strong Army and a unified command will deter any power from challenging the American homeland."
  USA_presidential_power_act:0 "Presidential Power Act"
- USA_presidential_power_act_desc:0 "Since the Soviets begin to invade Europe, the world had became an ever-dangerous place to live. Now, we need to allow our president to have more political power in order to reform the country to a safer place."
- 
- USA_withdraw_from_allied_nations:0 "Withdraw From Allied Nations"
- USA_withdraw_from_allied_nations_desc:0 "It's all done, Allies! Americans shall no longer pay their lives and money to buy an impossible peace from those pathetic guys!"
- 
- USA_establish_the_armed_protection_squadron_tt:0 "The US shall be able to construct the Armed Protection Squadron (APS) "
- 
- USA_question_the_constitution:0 "Question the Constitution!"
- USA_question_the_constitution_desc:0 "Those old essays are no longer useful. They may once led us to get rid of the British influence, but now, the British cannot even be sure of their own survival!"
- 
- USA_question_the_constitution_tt:0 "The US constitution has revised. Now the president has the absolute power! However, before the whole country accepts the new reality, we need to eliminate the traitors..."
- 
- USA_accept_japanese_help:0 "Invite Japanese Help"
- USA_accept_japanese_help_desc:0 "Now matter how different our ideology used to be, we now sure have more similarities than differences. So why not ask them to help us?"
- USA_accept_japanese_help_tt:0 "The empire will help us to defeat the rebels on the west coast and reduce the public objection there, but there is a price for sure...\n"
- 
+ USA_presidential_power_act_desc:0 "The president will be granted emergency powers to reorganize the country. Congress may object, but the crisis demands action."
+ USA_establish_the_armed_protection_squadron:0 "Establish the Armed Protection Squadron"
+ USA_establish_the_armed_protection_squadron_desc:0 "Raise four Armed Protection Squadron divisions under reliable command. The force will defend the regime and enforce its authority."
+ USA_question_the_constitution:0 "Question the Constitution"
+ USA_question_the_constitution_desc:0 "The old constitution is no longer adequate to the emergency. The president will claim absolute authority, and those who resist will be treated as enemies of the nation. The movement must command more than 40% fascism support before the coup can proceed."
+ USA_accept_japanese_help:0 "Seek Imperial Assistance"
+ USA_accept_japanese_help_desc:0 "The Empire of the Rising Sun is no friend of the old order. If Washington asks, the Empire may provide equipment and access in exchange for influence."
  USA_rebuild_our_nation:0 "Rebuild Our Nation"
- USA_rebuild_our_nation_desc:0 "The antiques now has been sweeped into the dustbin of history. Let's rebuild our country like our ancestors, the true Americans!"
- 
- USA_the_american_military: "Made in America"
- USA_the_american_military_desc: "We need our military to be American not mixed with Europeans or some jelly beans!"
- 
- USA_armaments: "Armaments"
- USA_armaments_desc:0 "The limits for what equipment can be carried by infantry are constantly being pushed. We will focus on giving our troops the best tools available."
- USA_motorization_effort:0 "Motorization Effort"
- USA_motorization_effort_desc:0 "Mobility and protection are crucial to get infantry into and out of the field safely. Focusing on these developments will allow us to take action quickly."
- USA_armaments_2:0 "Armaments II"
- USA_armaments_2_desc:0 "We will continue our efforts to ensure our infantry and support troops are armed with the best possible equipment of our time."
- USA_mechanization_effort:0 "Mechanization Effort"
- USA_mechanization_effort_desc:0 "Rethinking the possibilities of motorized infantry, we can push the limits of what vehicles can be constructed today."
- USA_armaments_3:0 "Equipment Effort III"
- USA_armaments_3_desc:0 "Instead of imitating or buying foreign equipment, we should aim to become world-leading in infantry weapons."
- USA_armor_effort:0 "Armor Effort"
- USA_armor_effort_desc:0 "Applying what we have learned from mechanizing our infantry, we can improve our armored vehicles as well."
- USA_special_forces:0 "Special Forces"
- USA_special_forces_desc:0 "We have need of elite forces; mountain troops and paratroopers should be our priority."
+ USA_rebuild_our_nation_desc:0 "The civil war has ended. The new government must rebuild the country, settle the question of leadership and heal the divisions it has created."
+ USA_party_dictatorship:0 "Party Dictatorship"
+ USA_party_dictatorship_desc:0 "The party will be the leading institution of the new state. Political discipline will replace parliamentary debate, and a national propaganda campaign will mobilize the country behind the regime."
+ USA_internal_security:0 "Internal Security"
+ USA_internal_security_desc:0 "The regime will expand its security services, suppress dissent and bring the emergency bureaucracy under firm control."
+ USA_ideological_mobilization:0 "Ideological Mobilization"
+ USA_ideological_mobilization_desc:0 "The nation will be mobilized around a single ideology. Schools, media and mass organizations will serve the new order."
+ USA_military_dictatorship:0 "Military Dictatorship"
+ USA_military_dictatorship_desc:0 "The officer corps will guide the nation. Military discipline, chain of command and national service will define the new state."
+ USA_elite_forces:0 "Elite Forces"
+ USA_elite_forces_desc:0 "Paratroopers, special forces and elite infantry will form the spearhead of the new American military."
+ USA_military_production:0 "Military Production"
+ USA_military_production_desc:0 "The armed forces will receive priority in steel, machine tools and factory capacity. Civilian production will be subordinated to rearmament."
+ USA_the_new_american_order:0 "The New American Order"
+ USA_the_new_american_order_desc:0 "The new regime is secure. The United States will enter the next phase of the war as a unified, militarized state."
+ USA_modern_monroe_doctrine:0 "Modern Monroe Doctrine"
+ USA_modern_monroe_doctrine_desc:0 "The Western Hemisphere must remain free of hostile great-power influence. Washington will guarantee the independence of the American nations and organize its neighbors against Soviet and Imperial penetration."
+ USA_safeguard_the_backyard:0 "Safeguard the Backyard"
+ USA_safeguard_the_backyard_desc:0 "Mexico is the key to the southern approach to the United States. Washington will offer security cooperation, and prepare for the possibility of refusal."
+ USA_reindustrialize_the_heartland:0 "Reindustrialize the Heartland"
+ USA_reindustrialize_the_heartland_desc:0 "The industrial heartland will be rebuilt and expanded. New factories and modern machinery will restore American productive power."
+ USA_mobilize_the_war_economy:0 "Mobilize the War Economy"
+ USA_mobilize_the_war_economy_desc:0 "The war economy will be placed on a permanent footing. Arms production, labor policy and procurement will be coordinated at the federal level."
+ USA_continental_supply_network:0 "Continental Supply Network"
+ USA_continental_supply_network_desc:0 "A continental network of rail, road and depot capacity will move men and material across the United States."
+ USA_defense_procurement_board:0 "Defense Procurement Board"
+ USA_defense_procurement_board_desc:0 "A central procurement board will standardize contracts, reduce waste and direct industrial capacity toward military needs."
+ USA_the_american_industrial_giant:0 "The American Industrial Giant"
+ USA_the_american_industrial_giant_desc:0 "The United States has become the workshop of the free world. Its industrial base will sustain a global war."
+ USA_fort_bradley:0 "Fort Bradley"
+ USA_fort_bradley_desc:0 "Fort Bradley will become the principal training and mobilization center for the American infantry."
+ USA_peacekeeper_program:0 "Peacekeeper Program"
+ USA_peacekeeper_program_desc:0 "The Peacekeeper program will produce a professional, well-equipped infantry force capable of sustained operations."
+ USA_tanyas_special_operations:0 "Tanya's Special Operations"
+ USA_tanyas_special_operations_desc:0 "Tanya and her operatives will build a special operations capability for sabotage, raids and battlefield disruption."
+ USA_two_ocean_navy:0 "Two-Ocean Navy"
+ USA_two_ocean_navy_desc:0 "The United States must be able to fight in the Atlantic and the Pacific at the same time. A larger fleet and expanded shipyards are required."
+ USA_carrier_task_forces:0 "Carrier Task Forces"
+ USA_carrier_task_forces_desc:0 "Carrier task forces will become the core of American naval power, projecting air power across the ocean."
+ USA_maritime_bastions:0 "Maritime Bastions"
+ USA_maritime_bastions_desc:0 "A chain of fortified naval bases and supply stations will sustain American fleets across both oceans."
+ USA_guardian_tank_program:0 "Guardian Tank Program"
+ USA_guardian_tank_program_desc:0 "The Guardian program will develop a new generation of American armor for the coming campaigns."
+ USA_mirage_technology:0 "Mirage Technology"
+ USA_mirage_technology_desc:0 "American laboratories will pursue experimental armor and concealment technology for the battlefield."
+ USA_apollo_fighter_program:0 "Apollo Fighter Program"
+ USA_apollo_fighter_program_desc:0 "The Apollo fighter will give the United States air superiority over its rivals."
+ USA_century_bomber_program:0 "Century Bomber Program"
+ USA_century_bomber_program_desc:0 "The B2-X Century bomber will give American strategic aviation the range and payload to strike anywhere in the world."
+ USA_combined_arms_command:0 "Combined Arms Command"
+ USA_combined_arms_command_desc:0 "Infantry, armor, artillery and air power will be integrated under a single operational doctrine."
+ USA_strategic_air_dominance:0 "Strategic Air Dominance"
+ USA_strategic_air_dominance_desc:0 "American air power will be organized around strategic bombing, air superiority and long-range escort."
+ USA_the_allies_military:0 "The Defense Contractors"
+ USA_the_allies_military_desc:0 "American and Allied defense firms will compete for new contracts. Their designs will shape the next generation of weapons."
+ USA_FutureTech:0 "FutureTech"
+ USA_FutureTech_desc:0 "FutureTech is an Allied research and defense conglomerate. Its laboratories work on electronics, armor and experimental weapons."
+ USA_future_electronics:0 "FutureElectronics"
+ USA_future_electronics_desc:0 "FutureTech's electronics division will provide advanced computing, radar and communications equipment."
+ USA_future_tank_design:0 "FutureTankDesign"
+ USA_future_tank_design_desc:0 "FutureTech's armor division will develop new tank designs for the American army."
+ USA_norwell:0 "Norwell-Hucks Corporation"
+ USA_norwell_desc:0 "Norwell-Hucks is the American company behind the Century bomber. Its engineers will improve heavy aircraft production."
+ USA_asturias_sistemas:0 "Asturias Sistemas"
+ USA_asturias_sistemas_desc:0 "Asturias Sistemas is an Allied defense contractor known for the Vindicator ground-attack aircraft."
+ USA_angstrom_defense:0 "Angstrom Defense"
+ USA_angstrom_defense_desc:0 "Angstrom Defense specializes in high-performance aircraft and experimental weapons, including the Apollo fighter."
+ USA_federal_research_laboratories:0 "Federal Research Laboratories"
+ USA_federal_research_laboratories_desc:0 "A national network of federal laboratories will coordinate advanced research without relying on foreign contractors."
+ USA_the_american_century:0 "The American Century"
+ USA_the_american_century_desc:0 "The United States has the industry, the military and the alliances to dominate the coming century. Washington will not let the opportunity pass, and American leadership will become a permanent feature of the world order."
 
+# Decisions
 
-#Event
+ USA_enforce_hemispheric_security:0 "Enforce Hemispheric Security"
+ USA_enforce_hemispheric_security_desc:0 "A hostile great power has established influence in the Americas. Washington will use the Monroe Doctrine to demand a puppet government and remove that influence by force."
+ USA_lend_lease_to_europe:0 "Lend-Lease to Europe"
+ USA_lend_lease_to_europe_desc:0 "Ship American equipment to the Allied Nations so that Europe can continue the war against the Soviet Union."
+ USA_federalize_the_national_guard:0 "Federalize the National Guard"
+ USA_federalize_the_national_guard_desc:0 "Bring state National Guard formations under federal command and deploy them as a reserve for the defense of the homeland."
+ USA_national_propaganda_campaign:0 "National Propaganda Campaign"
+ USA_national_propaganda_campaign_desc:0 "Use the state media and party organizations to strengthen the new order, raise war support and weaken the old democratic opposition."
+ USA_lend_lease_to_europe_opinion:0 "Lend-Lease to Europe"
 
- usa2.1.t:0 "US asks Mexico about Alliance"
- usa2.1.d:0 "Mexico is a very important place for the safety of both North and South America. If two countries can cooperate, the people in the American continent shall never worry about any global threat!"
- usa2.1.a:0 "Mexico will reciprocate."
- usa2.1.b:0 "Nope, we are better off without the US."
- 
- usa2.2.t:0 "Election of [GetYear]"
- usa2.2.d:0 "The day of election has come. This is going to be the turning point of the US history. Which candidate the US citizens shall choose? A democratic guy who calls Americans to arm up against the Soviet threat? Or an ambitious...potentially fascist advocate?"
- usa2.2.a:0 "Howard T. Ackerman trumps! He's going to arm us up!"
- usa2.2.b:0 "Nope, we need George Lincoln Rockwell..."
- 
- usa2.3.t:0 "The States Ask the Empire For Help"
- usa2.3.d:0 "The American government now is changing their political course. If we give them help, we sure will have beneftis..."
- usa2.3.a:0 "Sure, we will help!"
- usa2.3.b:0 "We may consider..."
- 
+ USA_modern_monroe_doctrine_tt:0 "Guarantees the independence of the American nations in the Western Hemisphere that are not at war with the United States."
+
+# Events
+
+ usa2.1.t:0 "The American Security Offer"
+ usa2.1.d:0 "Washington has proposed a formal security partnership with Mexico. Acceptance would tie Mexico to the American camp; refusal would leave the southern border exposed to a more hostile United States."
+ usa2.1.a:0 "Mexico accepts the American security partnership."
+ usa2.1.b:0 "A limited agreement is enough for now."
+ usa2.1.c:0 "Mexico will not be pushed around."
+
+ usa2.2.t:0 "The Election of 2008"
+ usa2.2.d:0 "The American people have gone to the polls. President Howard T. Ackerman asks for a mandate to lead the free world. George Lincoln Rockwell promises a radical break with the old order. The result will shape the American century."
+ usa2.2.a:0 "Ackerman wins. America will lead."
+ usa2.2.b:0 "Rockwell wins. America will stand alone."
+
+ usa2.3.t:0 "The Americans Request Aid"
+ usa2.3.d:0 "The American government is asking the Empire of the Rising Sun for equipment and military access. Helping Washington would weaken the old Atlantic order and give the Empire influence in the Americas."
+ usa2.3.a:0 "The Empire will help."
+ usa2.3.b:0 "The Empire will stay out of the American civil war."
+
  usa2.4.t:0 "A New Leader for the New America"
- usa2.4.d:0 "Now we need a new leader for the new regime. Who's going to be the one?"
- usa2.4.a:0 "Lincoln Rockwell stays!"
- usa2.4.b:0 "John Smith might be a better choice for American people."
- 
-#News Event
+ usa2.4.d:0 "The civil war is over, but the new regime still needs a permanent leader. Rockwell represents the party; John Smith represents the army. The choice will define the new state."
+ usa2.4.a:0 "Rockwell will lead the party state."
+ usa2.4.b:0 "John Smith will lead the military state."
 
- news.403.t:0 "Mexico and the US Proclaim an Alliance"
- news.403.d:0 "Mexco and the US are the two key roles in the American continent, now, both parties offcially enter into an alliance. They shall defend their people's interests together."
- news.403.a:0 "Cool."
- news.403.b:0 "Excellent!"
+ usa2.5.t:0 "Enemies of Our Enemies"
+ usa2.5.d:0 "The Soviet Union and the Empire of the Rising Sun are rivals, and both are enemies of the American order. Washington must decide which one to use and which one to destroy first."
+ usa2.5.a:0 "Preserve the alliance. The Soviets can wait."
+ usa2.5.b:0 "Prepare the Rushmore option. The Empire and the Soviets can both be fought."
 
- news.404.t:0 "Mexico Refuses to Ally with the US"
- news.404.d:0 "Mexco and the US are the two key roles in the American continent, however, Mexico is not interested in the US's offer. The tension between the two countries grows."
- news.404.a:0 "OK."
- news.404.b:0 "Now we will take over Mexico by force!"
- 
- news.405.t:0 "The Empire accepted America's Request For Help"
- news.405.d:0 "The Emperor of the Empire of the Rising Sun today has formally accepted America's request for help. They shall help the American people build a new country."
- news.405.a:0 "OK."
- news.405.b:0 "Excellent!"
- 
- 
- 
-#Decision
- 
- USA_establish_the_armed_protection_squadron:0 "Establish the Armed Proctection Squadron"
- USA_establish_the_armed_protection_squadron_desc:0 "Armed Protection Squadron (German: Waffen-SS) is going to be a new paramilitary force of the country. They will be faithful to the government!"
- 
-#Opinion Modifiers
+ usa2.6.t:0 "The Rushmore Affair"
+ usa2.6.d:0 "A secret program has been prepared under the Rushmore name. It would concentrate research and strike authority in the presidency. Its supporters call it necessary; its opponents call it a coup in waiting."
+ usa2.6.a:0 "Authorize the Rushmore program."
+ usa2.6.b:0 "Shut the program down."
+
+ usa2.7.t:0 "The Constitutional Crisis"
+ usa2.7.d:0 "The President has asked for emergency powers. Congress and the courts are divided. The government can either step back from the brink or press forward with a permanent emergency."
+ usa2.7.a:0 "The President will respect the Constitution."
+ usa2.7.b:0 "The President will not back down."
+
+ usa2.8.t:0 "Imperial Aid Arrives"
+ usa2.8.d:0 "Imperial equipment and advisers have arrived in the United States. The government can continue the war, but it now owes a debt to the Empire of the Rising Sun."
+ usa2.8.a:0 "The aid will be used."
+
+ usa2.9.t:0 "The Empire Refuses"
+ usa2.9.d:0 "The Empire of the Rising Sun has refused the American request. Washington will have to fight on without Imperial support, and the refusal will not be forgotten."
+ usa2.9.a:0 "We will remember this."
+
+ usa2.10.t:0 "The American Request"
+ usa2.10.d:0 "The United States has asked to join the Allied Nations. American industry and manpower would strengthen the alliance, but Washington would also demand a leading role in its councils."
+ usa2.10.a:0 "Admit the United States."
+ usa2.10.b:0 "The alliance can survive without Washington."
+
+ usa2.11.t:0 "The Washington Conference"
+ usa2.11.d:0 "The Allied powers have met in Washington to settle the question of command. The United States has asked for leadership of the alliance."
+ usa2.11.a:0 "Transfer command to Washington."
+ usa2.11.b:0 "The alliance will keep its present command."
+
+# News Events
+
+ news.403.t:0 "Mexico and the United States Proclaim an Alliance"
+ news.403.d:0 "Mexico and the United States have signed a security agreement. The two countries will coordinate their defenses and present a common front in the Americas."
+ news.403.a:0 "A new alignment in the Americas."
+ news.403.b:0 "Washington has secured its southern flank."
+
+ news.404.t:0 "Mexico Refuses to Ally with the United States"
+ news.404.d:0 "Mexico has rejected the American security offer. The refusal has worsened relations between the two countries and exposed the southern border to new tension."
+ news.404.a:0 "Mexico will not be pressured."
+ news.404.b:0 "Washington will not forget this."
+
+ news.405.t:0 "The Empire Accepts America's Request for Help"
+ news.405.d:0 "The Empire of the Rising Sun has agreed to provide equipment and military access to the American government. Imperial influence now reaches into the Americas."
+ news.405.a:0 "The Empire has made its move."
+ news.405.b:0 "Washington has found a new patron."
+
+# Decisions
+
+ USA_authorize_rushmore_strike:0 "Authorize a Rushmore Strike"
+ USA_authorize_rushmore_strike_desc:0 "Use the Rushmore program to strike enemy industry and undermine enemy morale. The attack can be used only once."
+ USA_press_mexico:0 "Press Mexico"
+ USA_press_mexico_desc:0 "Mexico has refused American leadership. Washington will prepare a punitive campaign to take the disputed northern states by force."
+
+# Opinion Modifiers
 
  american_japanese_tie:0 "Japanese-American Tie"
  withdraw_from_allied_nations:0 "Withdraw From Allied Nations"
- 
- 
- 

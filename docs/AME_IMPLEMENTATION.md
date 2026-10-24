@@ -44,7 +44,7 @@ HOI4 scripted effects do not substitute `$PARAM$` parameters. The earlier parame
 - Bingham's three strategy routes now have explicit pairwise `mutually_exclusive` links in addition to their event-gated `available` flags.
 - The release helper uses literal country tags and no scripted-effect parameters.
 - Robert Bingham's DDS header was normalized to the engine's standard 156x210 ARGB layout; the pixel content is unchanged.
-- AME starts the `allied_nations` faction without the USA. `USA_withdraw_from_allied_nations` is available outside a faction and bypasses, so the USA political route is not blocked.
+- AME starts the `allied_nations` faction without the USA. The USA joins through `USA_join_the_allied_nations` and `usa2.10`; refusal creates the `american_coalition` instead.
 
 ## Validation
 

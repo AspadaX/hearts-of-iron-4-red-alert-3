@@ -1,20 +1,17 @@
-war_measures = {
-USA_establish_the_armed_protection_squadron = {
+USA_war_measures = {
+	USA_establish_the_armed_protection_squadron = {
 		icon = generic_prepare_civil_war
 		available = {
 			OR = {
-				AND = {
-					has_war = yes
-				}
+				has_war = yes
 				has_civil_war = yes
 			}
 		}
 		visible = {
 			has_completed_focus = USA_establish_the_armed_protection_squadron
-			not = { has_country_flag = USA_free_corps_raised }
-			#not = { has_government = democratic }
+			NOT = { has_country_flag = USA_aps_raised }
 		}
-		cost = 0
+		cost = 25
 		fire_only_once = yes
 		ai_will_do = {
 			factor = 200
@@ -22,251 +19,271 @@ USA_establish_the_armed_protection_squadron = {
 		complete_effect = {
 			division_template = {
 				name = "Armed Protection Squadron"
-					priority = 1
-					division_names_group = USA_INF_01
-					regiments = {
+				priority = 1
+				division_names_group = USA_INF_01
+				regiments = {
 					infantry = { x = 0 y = 0 }
 					infantry = { x = 0 y = 1 }
 					infantry = { x = 0 y = 2 }
-
 					infantry = { x = 1 y = 0 }
 					infantry = { x = 1 y = 1 }
 					infantry = { x = 1 y = 2 }
-
 					infantry = { x = 2 y = 0 }
 					infantry = { x = 2 y = 1 }
 					infantry = { x = 2 y = 2 }
 				}
 			}
-			366 = {
-					create_unit = {
-						division = "name = \"I/Armed Protection Squadron Florida\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"II/Armed Protection Squadron Florida\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"III/Armed Protection Squadron Florida\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"I/Armed Protection Squadron\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7"
+					owner = ROOT
+				}
 			}
-			365 = {
-					create_unit = {
-						division = "name = \"I/Armed Protection Squadron Georgia\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"II/Armed Protection Squadron Georgia\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"III/Armed Protection Squadron Georgia\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"II/Armed Protection Squadron\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7"
+					owner = ROOT
+				}
 			}
-			367 = {
-					create_unit = {
-						division = "name = \"I/Armed Protection Squadron Alabama\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"II/Armed Protection Squadron Alabama\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"III/Armed Protection Squadron Alabama\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"III/Armed Protection Squadron\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7"
+					owner = ROOT
+				}
 			}
-			370 = {
-					create_unit = {
-						division = "name = \"I/Armed Protection Squadron Mississippi\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"II/Armed Protection Squadron Mississippi\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"III/Armed Protection Squadron Mississippi\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"IV/Armed Protection Squadron\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7"
+					owner = ROOT
+				}
 			}
-			362 = {
-					create_unit = {
-						division = "name = \"I/Armed Protection Squadron Virginia\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
+			set_country_flag = USA_aps_raised
+			army_experience = 25
+		}
+	}
+
+	USA_authorize_rushmore_strike = {
+		icon = generic_air
+		available = {
+			has_war = yes
+		}
+		visible = {
+			has_completed_focus = USA_project_rushmore
+			NOT = { has_country_flag = USA_rushmore_strike_used }
+		}
+		cost = 100
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			every_enemy_country = {
+				add_stability = -0.05
+				add_war_support = -0.05
+				random_owned_state = {
+					limit = { industrial_complex > 0 }
+					damage_building = {
+						type = industrial_complex
+						damage = 1
 					}
-					create_unit = {
-						division = "name = \"II/Armed Protection Squadron Virginia\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"III/Armed Protection Squadron Virginia\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
+				}
 			}
-			363 = {
-					create_unit = {
-						division = "name = \"I/Armed Protection Squadron North Carolina\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"II/Armed Protection Squadron North Carolina\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"III/Armed Protection Squadron North Carolina\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
+			set_country_flag = USA_rushmore_strike_used
+		}
+	}
+
+	USA_press_mexico = {
+		icon = generic_political_discourse
+		available = {
+			country_exists = MEX
+			NOT = { has_war_with = MEX }
+			NOT = { is_in_faction_with = MEX }
+		}
+		visible = {
+			has_completed_focus = USA_safeguard_the_backyard
+			has_country_flag = USA_mexico_rejected
+			NOT = { has_country_flag = USA_mexico_war_goal }
+		}
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			create_wargoal = {
+				type = take_state
+				target = MEX
+				generator = { 277 }
 			}
-			364 = {
-					create_unit = {
-						division = "name = \"I/Armed Protection Squadron South Carolina\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"II/Armed Protection Squadron South Carolina\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"III/Armed Protection Squadron South Carolina\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
+			set_country_flag = USA_mexico_war_goal
+		}
+	}
+
+	USA_enforce_hemispheric_security = {
+		icon = generic_political_discourse
+		available = {
+			NOT = { has_country_flag = USA_monroe_enforced }
+			any_other_country = {
+				USA_is_american_country = yes
+				OR = {
+					is_guaranteed_by = USA
+					is_subject_of = USA
+					is_in_faction_with = USA
+				}
 			}
-			371 = {
-					create_unit = {
-						division = "name = \"I/Armed Protection Squadron Louisiana\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"II/Armed Protection Squadron Louisiana\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"III/Armed Protection Squadron Louisiana\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
+			OR = {
+				AND = {
+					country_exists = SOV
+					NOT = { is_in_faction_with = SOV }
+					NOT = { has_war_with = SOV }
+				}
+				AND = {
+					country_exists = EOR
+					NOT = { is_in_faction_with = EOR }
+					NOT = { has_war_with = EOR }
+				}
 			}
-			375 = {
-					create_unit = {
-						division = "name = \"I/Armed Protection Squadron Texas\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"II/Armed Protection Squadron Texas\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"III/Armed Protection Squadron Texas\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-			}
-			372 = {
-					create_unit = {
-						division = "name = \"I/Armed Protection Squadron Arkansas\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"II/Armed Protection Squadron Arkansas\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"III/Armed Protection Squadron Arkansas\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-						owner = ROOT
-					}
-			}
+		}
+		visible = {
+			has_completed_focus = USA_hemispheric_security
+			NOT = { has_country_flag = USA_monroe_enforced }
+		}
+		cost = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 80
+		}
+		complete_effect = {
 			if = {
-					limit = {
-						has_country_flag = MTG_work_with_the_bund
-					}
-					373 = {
-						create_unit = {
-							division = "name = \"I/Freikorps Missouri\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-							owner = ROOT
-						}
-						create_unit = {
-							division = "name = \"II/Freikorps Missouri\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-							owner = ROOT
-						}
-						create_unit = {
-							division = "name = \"III/Freikorps Missouri\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-							owner = ROOT
-						}
-					}
-					394 = {
-						create_unit = {
-							division = "name = \"I/Freikorps Wisconsin\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-							owner = ROOT
-						}
-						create_unit = {
-							division = "name = \"II/Freikorps Wisconsin\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-							owner = ROOT
-						}
-						create_unit = {
-							division = "name = \"III/Freikorps Wisconsin\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-							owner = ROOT
-						}
-					}
-					395 = {
-						create_unit = {
-							division = "name = \"I/Freikorps Illinois\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-							owner = ROOT
-						}
-						create_unit = {
-							division = "name = \"II/Freikorps Illinois\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-							owner = ROOT
-						}
-						create_unit = {
-							division = "name = \"III/Freikorps Illinois\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-							owner = ROOT
-						}
-					}
-					261 = {
-						create_unit = {
-							division = "name = \"I/Freikorps Ohio\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-							owner = ROOT
-						}
-						create_unit = {
-							division = "name = \"II/Freikorps Ohio\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-							owner = ROOT
-						}
-						create_unit = {
-							division = "name = \"III/Freikorps Ohio\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-							owner = ROOT
-						}
-					}
-					396 = {
-						create_unit = {
-							division = "name = \"I/Freikorps Indiana\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-							owner = ROOT
-						}
-						create_unit = {
-							division = "name = \"II/Freikorps Indiana\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-							owner = ROOT
-						}
-						create_unit = {
-							division = "name = \"III/Freikorps Indiana\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-							owner = ROOT
-						}
-					}
-					393 = {
-						create_unit = {
-							division = "name = \"I/Freikorps Michigan\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-							owner = ROOT
-						}
-						create_unit = {
-							division = "name = \"II/Freikorps Michigan\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-							owner = ROOT
-						}
-						create_unit = {
-							division = "name = \"III/Freikorps Michigan\" division_template = \"Armed Protection Squadron\" start_experience_factor = 0.7" 
-							owner = ROOT
-						}
-					}
+				limit = {
+					country_exists = SOV
+					NOT = { is_in_faction_with = SOV }
+					NOT = { has_war_with = SOV }
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = SOV
+				}
 			}
+			else_if = {
+				limit = {
+					country_exists = EOR
+					NOT = { is_in_faction_with = EOR }
+					NOT = { has_war_with = EOR }
+				}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = EOR
+				}
+			}
+			set_country_flag = USA_monroe_enforced
+		}
+	}
+
+	USA_lend_lease_to_europe = {
+		icon = generic_political_discourse
+		available = {
+			country_exists = AME
+			NOT = { has_war_with = AME }
+			has_equipment = { infantry_equipment > 4999 }
+		}
+		visible = {
+			has_completed_focus = USA_the_european_lifeline
+		}
+		cost = 50
+		days_re_enable = 180
+		ai_will_do = {
+			factor = 60
+		}
+		complete_effect = {
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 5000
+				target = AME
+			}
+			AME = {
+				add_opinion_modifier = {
+					target = USA
+					modifier = USA_lend_lease_to_europe_opinion
+				}
+			}
+		}
+	}
+
+	USA_federalize_the_national_guard = {
+		icon = generic_army_support
+		available = {
+			NOT = { has_country_flag = USA_national_guard_federalized }
+		}
+		visible = {
+			has_completed_focus = USA_fortress_america
+			NOT = { has_country_flag = USA_national_guard_federalized }
+		}
+		cost = 75
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			division_template = {
+				name = "National Guard"
+				priority = 1
+				division_names_group = USA_INF_01
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+				}
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"I/National Guard\" division_template = \"National Guard\" start_experience_factor = 0.3"
+					owner = ROOT
+				}
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"II/National Guard\" division_template = \"National Guard\" start_experience_factor = 0.3"
+					owner = ROOT
+				}
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"III/National Guard\" division_template = \"National Guard\" start_experience_factor = 0.3"
+					owner = ROOT
+				}
+			}
+			set_country_flag = USA_national_guard_federalized
+		}
+	}
+
+	USA_national_propaganda_campaign = {
+		icon = generic_political_discourse
+		available = {
+			has_completed_focus = USA_party_dictatorship
+		}
+		visible = {
+			has_completed_focus = USA_party_dictatorship
+		}
+		cost = 50
+		days_re_enable = 180
+		ai_will_do = {
+			factor = 50
+		}
+		complete_effect = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.02
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.02
+			}
+			add_war_support = 0.03
+			add_stability = -0.02
 		}
 	}
 }
