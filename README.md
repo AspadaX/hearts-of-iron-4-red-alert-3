@@ -16,7 +16,7 @@ Start a new non-Ironman game after restarting HOI4. First verify that the main m
 
 On macOS logs are in `~/Documents/Paradox Interactive/Hearts of Iron IV/logs/`. The most useful files are `error.log`, `game.log`, `setup.log`, and `system.log`. Logs are overwritten on subsequent launches, so preserve logs from a failure before trying again.
 
-The installed game is 1.19.3. The 0.2.2 release declares 1.19.* support; static and installed validation pass, but a new-campaign runtime check remains required before publishing.
+The installed game is 1.19.3. The 0.2.3 release declares 1.19.* support; static and installed validation pass, but a new-campaign runtime check remains required before publishing.
 
 ## Preparing and testing a release
 
@@ -31,7 +31,7 @@ The script runs source validation and the audit regression tests, applies the hi
 Stage the prepared folder as a separate local test copy:
 
 ```sh
-tools/stage_release_test.sh --release-dir dist/red_alert_3-0.2.2
+tools/stage_release_test.sh --release-dir dist/red_alert_3-0.2.3
 ```
 
 This does not modify **Red Alert 3 - Development**. It registers the copy in `mod/red_alert_3_release_test` under the release name **Red Alert 3** and preserves Workshop ID **1722615953**, so the launcher uploader updates the existing item instead of creating a new one. Enable only that local **Red Alert 3** entry, not the subscribed Workshop copy, in a separate playset. Restart HOI4 and start a new non-Ironman campaign. After testing, select the same local entry in the launcher uploader. Remove the staged build with `tools/stage_release_test.sh --remove`.

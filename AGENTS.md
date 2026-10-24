@@ -84,7 +84,7 @@ The user requested removal of vanilla historical events.
 
 ## Compatibility and validation
 
-- The installed development target is **HOI4 1.19.3**. The source descriptor and prepared 0.2.2 release declare `supported_version="1.19.*"`. Static and installed validation pass; a new-campaign runtime check of the release candidate remains required before publishing.
+- The installed development target is **HOI4 1.19.3**. The source descriptor and prepared 0.2.3 release declare `supported_version="1.19.*"`. Static and installed validation pass; a new-campaign runtime check of the release candidate remains required before publishing.
 - Keep engine settings additive in `common/defines/ra3_defines.lua`. Do not restore the archived full `00_defines.lua` or `00_graphics.lua`; they removed required modern defaults.
 - Preserve current research-interface widgets and modern sprite definitions. Extra RA3/legacy sprites live in `interface/ra3_technologies.gfx`; do not restore the obsolete full `Technologies.gfx` override.
 - Loading backgrounds are explicitly registered in `common/frontend/backgrounds/base_backgrounds.txt` using the existing RA3 images.
